@@ -1,0 +1,209 @@
+/* Estilos personalizados SAEBU Theme */
+
+/* Animación suave para scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Menú navegación */
+.menu {
+    @apply flex items-center gap-8;
+}
+
+.menu li {
+    @apply list-none;
+}
+
+.menu a {
+    @apply text-slate-700 font-medium hover:text-blue-600 py-2 border-b-2 border-transparent hover:border-blue-600 transition-all duration-300;
+}
+
+.menu .current-menu-item a,
+.menu .current_page_item a {
+    @apply text-blue-600 border-blue-600;
+}
+
+/* Menú móvil */
+#mobile-menu .menu {
+    @apply flex flex-col gap-2;
+}
+
+#mobile-menu .menu a {
+    @apply block px-4 py-2 hover:bg-gray-50 rounded border-0;
+}
+
+/* Logo personalizado */
+.custom-logo {
+    @apply h-16 w-auto;
+}
+
+/* Line clamp para excerpt */
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Animación de bounce para el indicador de scroll */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    50% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+/* Efecto parallax sutil en el hero */
+.parallax-bg {
+    transition: transform 0.5s ease-out;
+}
+
+/* Mejora de accesibilidad */
+a:focus-visible,
+button:focus-visible {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2 rounded;
+}
+
+/* Transiciones suaves */
+a, button, .group {
+    @apply transition-all duration-300 ease-in-out;
+}
+
+/* Imagen con efecto zoom en hover */
+.group:hover img {
+    @apply transform scale-105;
+}
+
+/* Sombras personalizadas */
+.shadow-custom {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-custom-hover:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Backdrop blur para navegación sticky */
+header.sticky {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Gradiente de texto */
+.gradient-text {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Overlay animado */
+.overlay-animated {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay-animated::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.overlay-animated:hover::before {
+    left: 100%;
+}
+
+/* Estilos para el contenido de las noticias */
+.prose {
+    @apply text-gray-800 leading-relaxed;
+}
+
+.prose h2 {
+    @apply text-2xl font-bold text-slate-900 mt-8 mb-4;
+}
+
+.prose h3 {
+    @apply text-xl font-bold text-slate-900 mt-6 mb-3;
+}
+
+.prose h4 {
+    @apply text-lg font-bold text-slate-900 mt-4 mb-2;
+}
+
+.prose p {
+    @apply mb-4 leading-relaxed;
+}
+
+.prose ul, .prose ol {
+    @apply mb-4 ml-6;
+}
+
+.prose ul {
+    @apply list-disc;
+}
+
+.prose ol {
+    @apply list-decimal;
+}
+
+.prose li {
+    @apply mb-2;
+}
+
+.prose a {
+    @apply text-blue-600 hover:text-blue-700 underline;
+}
+
+.prose img {
+    @apply rounded-lg my-6 shadow-md;
+}
+
+.prose blockquote {
+    @apply border-l-4 border-blue-600 pl-4 italic my-6 text-gray-700;
+}
+
+.prose code {
+    @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono;
+}
+
+.prose pre {
+    @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-6;
+}
+
+.prose table {
+    @apply w-full border-collapse my-6;
+}
+
+.prose th {
+    @apply bg-gray-100 border border-gray-300 px-4 py-2 font-bold text-left;
+}
+
+.prose td {
+    @apply border border-gray-300 px-4 py-2;
+}
+
+/* Line clamp */
+.line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
