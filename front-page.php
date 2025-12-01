@@ -222,7 +222,7 @@ if ($menu_dia) :
 <section class="py-24 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-slate-900 mb-4">Nuestros Departamentos</h2>
+            <h2 class="text-4xl font-bold text-slate-900 mb-4">Departamentos</h2>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                 Servicios especializados para apoyar tu desarrollo universitario
             </p>

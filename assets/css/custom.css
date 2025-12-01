@@ -249,5 +249,249 @@ header.sticky {
     @apply shadow-lg;
 }
 
+/* Imágenes con bordes redondeados en el contenido */
+.prose img {
+    @apply rounded-xl my-8 shadow-lg;
+}
 
-.wp-block-image img{ padding: 5px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+.prose figure img {
+    @apply rounded-xl;
+}
+
+/* Galerías de WordPress */
+.prose .wp-block-gallery img {
+    @apply rounded-lg;
+}
+
+.prose .wp-block-image img {
+    @apply rounded-xl shadow-md;
+}
+
+/* Swiper personalizado */
+.swiper-pagination-bullet {
+    @apply !bg-white !opacity-70;
+}
+
+.swiper-pagination-bullet-active {
+    @apply !opacity-100 !bg-white;
+}
+
+/**
+ * Estilos personalizados para el contenido de las noticias
+ */
+
+/* Contenedor prose mejorado */
+.prose {
+    @apply text-gray-700;
+}
+
+/* Imágenes con bordes redondeados y sombra */
+.prose img {
+    @apply rounded-2xl my-8 shadow-lg;
+    display: block !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Figures de WordPress */
+.prose figure {
+    @apply my-8;
+}
+
+.prose figure img {
+    @apply rounded-2xl shadow-lg m-0;
+}
+
+.prose figcaption {
+    @apply text-center text-sm text-gray-600 italic mt-3;
+}
+
+/* Imágenes alineadas */
+.prose .alignleft {
+    @apply float-left mr-6 mb-4;
+    max-width: 50%;
+}
+
+.prose .alignright {
+    @apply float-right ml-6 mb-4;
+    max-width: 50%;
+}
+
+.prose .aligncenter {
+    @apply block mx-auto;
+}
+
+/* WordPress block gallery */
+.prose .wp-block-gallery {
+    @apply grid gap-4 my-8;
+}
+
+.prose .wp-block-gallery.columns-2 {
+    @apply grid-cols-2;
+}
+
+.prose .wp-block-gallery.columns-3 {
+    @apply grid-cols-3;
+}
+
+.prose .wp-block-gallery img {
+    @apply rounded-xl shadow-md m-0;
+}
+
+/* WordPress image block */
+.prose .wp-block-image {
+    @apply my-8;
+}
+
+.prose .wp-block-image img {
+    @apply rounded-2xl shadow-lg;
+}
+
+.prose .wp-block-image.alignleft {
+    @apply float-left mr-6 mb-4;
+    max-width: 50%;
+}
+
+.prose .wp-block-image.alignright {
+    @apply float-right ml-6 mb-4;
+    max-width: 50%;
+}
+
+.prose .wp-block-image.aligncenter {
+    @apply mx-auto;
+}
+
+/* Párrafos */
+.prose p {
+    @apply my-5 leading-relaxed;
+}
+
+/* Títulos */
+.prose h1 {
+    @apply text-4xl font-bold text-slate-900 mt-8 mb-4;
+}
+
+.prose h2 {
+    @apply text-3xl font-bold text-slate-900 mt-8 mb-4;
+}
+
+.prose h3 {
+    @apply text-2xl font-bold text-slate-900 mt-6 mb-3;
+}
+
+.prose h4 {
+    @apply text-xl font-bold text-slate-900 mt-6 mb-3;
+}
+
+/* Listas */
+.prose ul,
+.prose ol {
+    @apply my-6 space-y-2;
+}
+
+.prose ul li,
+.prose ol li {
+    @apply leading-relaxed;
+}
+
+.prose ul {
+    @apply list-disc pl-6;
+}
+
+.prose ol {
+    @apply list-decimal pl-6;
+}
+
+/* Enlaces */
+.prose a {
+    @apply text-blue-600 hover:text-blue-700 underline decoration-blue-300 hover:decoration-blue-500 transition-colors;
+}
+
+/* Blockquotes */
+.prose blockquote {
+    @apply border-l-4 border-blue-500 pl-6 py-4 my-6 bg-blue-50 rounded-r-lg italic text-gray-700;
+}
+
+/* Tablas */
+.prose table {
+    @apply w-full my-8 border-collapse;
+}
+
+.prose table thead {
+    @apply bg-gray-100;
+}
+
+.prose table th {
+    @apply border border-gray-300 px-4 py-3 text-left font-semibold text-slate-900;
+}
+
+.prose table td {
+    @apply border border-gray-300 px-4 py-3;
+}
+
+.prose table tr:nth-child(even) {
+    @apply bg-gray-50;
+}
+
+/* Código */
+.prose code {
+    @apply bg-gray-100 text-red-600 px-2 py-1 rounded text-sm font-mono;
+}
+
+.prose pre {
+    @apply bg-slate-900 text-gray-100 p-6 rounded-xl my-6 overflow-x-auto;
+}
+
+.prose pre code {
+    @apply bg-transparent text-gray-100 p-0;
+}
+
+/* Separadores */
+.prose hr {
+    @apply my-8 border-t-2 border-gray-200;
+}
+
+/* Video embeds */
+.prose iframe,
+.prose video {
+    @apply rounded-xl shadow-lg my-8 w-full;
+}
+
+/* WordPress embeds */
+.prose .wp-block-embed {
+    @apply my-8;
+}
+
+.prose .wp-block-embed iframe {
+    @apply rounded-xl shadow-lg;
+}
+
+/* Responsive: ajustes para móvil */
+@media (max-width: 640px) {
+    .prose .alignleft,
+    .prose .alignright,
+    .prose .wp-block-image.alignleft,
+    .prose .wp-block-image.alignright {
+        @apply float-none mx-auto mb-6;
+        max-width: 100%;
+    }
+    
+    .prose .wp-block-gallery.columns-3 {
+        @apply grid-cols-2;
+    }
+}
+
+/* Fix para imágenes que vienen con clases de WordPress */
+.prose .size-full,
+.prose .size-large,
+.prose .size-medium {
+    @apply rounded-2xl shadow-lg;
+}
+
+/* Asegurar que las imágenes nunca se desborden */
+.prose img,
+.prose figure img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+}

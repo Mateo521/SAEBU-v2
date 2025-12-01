@@ -34,45 +34,100 @@ function saebu_register_menus()
 }
 add_action('init', 'saebu_register_menus');
 
-// Encolar estilos y scripts
+
+
+/**
+ * Enqueue styles and scripts
+ */
 function saebu_enqueue_assets()
 {
-    // Tailwind CSS desde CDN (para producción usa el CLI de Tailwind)
-    wp_enqueue_script('tailwind-css', 'https://cdn.tailwindcss.com', array(), null);
+    // Tailwind CSS compilado localmente (style.css generado por el CLI)
+    wp_enqueue_style(
+        'saebu-tailwind',
+        get_stylesheet_uri(), // Esto apunta a style.css
+        array(),
+        filemtime(get_template_directory() . '/style.css') // Cache busting
+    );
 
-    // CSS personalizado adicional
-    wp_enqueue_style('saebu-custom-style', get_template_directory_uri() . '/assets/css/custom.css', array('tailwind-css'), '1.0.0');
+    // CSS personalizado adicional (si lo necesitas)
+    if (file_exists(get_template_directory() . '/assets/css/custom.css')) {
+        wp_enqueue_style(
+            'saebu-custom-style',
+            get_template_directory_uri() . '/assets/css/custom.css',
+            array('saebu-tailwind'),
+            filemtime(get_template_directory() . '/assets/css/custom.css')
+        );
+    }
 
-    // JavaScript
-    wp_enqueue_script('saebu-main-script', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
+    // JavaScript principal
+    if (file_exists(get_template_directory() . '/assets/js/main.js')) {
+        wp_enqueue_script(
+            'saebu-main-script',
+            get_template_directory_uri() . '/assets/js/main.js',
+            array('jquery'),
+            filemtime(get_template_directory() . '/assets/js/main.js'),
+            true
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'saebu_enqueue_assets');
 
-// Configuración de Tailwind en el head
-function saebu_tailwind_config()
+/**
+ * Enqueue Google Fonts
+ */
+function saebu_google_fonts()
 {
-?>
-    <script>
-        // Esperar a que Tailwind esté disponible
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof tailwind !== 'undefined') {
-                tailwind.config = {
-                    theme: {
-                        extend: {
-                            colors: {
-                                primary: '#3b82f6',
-                                secondary: '#8b5cf6',
-                                dark: '#1e293b',
-                            }
-                        }
-                    }
-                }
-            }
-        });
-    </script>
-    <?php
+    wp_enqueue_style(
+        'google-fonts',
+        'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap',
+        array(),
+        null
+    );
 }
-add_action('wp_head', 'saebu_tailwind_config', 100); // Cambiar prioridad a 100
+add_action('wp_enqueue_scripts', 'saebu_google_fonts');
+
+/**
+ * Enqueue Swiper.js
+ */
+function saebu_enqueue_swiper()
+{
+    // Swiper CSS
+    wp_enqueue_style(
+        'swiper-css',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        array(),
+        '11.0.0'
+    );
+
+    // Swiper JS
+    wp_enqueue_script(
+        'swiper-js',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        array(),
+        '11.0.0',
+        true
+    );
+
+    // Script personalizado para inicializar Swiper
+    if (file_exists(get_template_directory() . '/assets/js/swiper-init.js')) {
+        wp_enqueue_script(
+            'saebu-swiper-init',
+            get_template_directory_uri() . '/assets/js/swiper-init.js',
+            array('swiper-js'),
+            filemtime(get_template_directory() . '/assets/js/swiper-init.js'),
+            true
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'saebu_enqueue_swiper');
+
+/**
+ * Remover la configuración de Tailwind del CDN (ya no la necesitamos)
+ * Comentar o eliminar esta función:
+ */
+// function saebu_tailwind_config() { ... }
+// add_action('wp_head', 'saebu_tailwind_config', 100);
+
 
 
 
@@ -247,7 +302,7 @@ class SAEBU_Recent_News_Widget extends WP_Widget
         if ($recent_news->have_posts()) :
             echo '<ul class="space-y-3">';
             while ($recent_news->have_posts()) : $recent_news->the_post();
-    ?>
+?>
                 <li class="border-b border-gray-200 pb-3">
                     <a href="<?php the_permalink(); ?>" class="text-blue-600 hover:text-blue-800 font-medium">
                         <?php the_title(); ?>
@@ -695,7 +750,8 @@ function saebu_default_menu()
 /**
  * Custom Post Type: Menú del Día
  */
-function saebu_register_menu_dia_cpt() {
+function saebu_register_menu_dia_cpt()
+{
     $labels = array(
         'name'                  => 'Menú del Día',
         'singular_name'         => 'Menú',
@@ -731,7 +787,8 @@ add_action('init', 'saebu_register_menu_dia_cpt');
 /**
  * Metaboxes personalizados para Menú del Día
  */
-function saebu_menu_dia_metaboxes() {
+function saebu_menu_dia_metaboxes()
+{
     add_meta_box(
         'menu_dia_detalles',
         'Detalles del Menú',
@@ -746,67 +803,68 @@ add_action('add_meta_boxes', 'saebu_menu_dia_metaboxes');
 /**
  * Callback del metabox
  */
-function saebu_menu_dia_metabox_callback($post) {
+function saebu_menu_dia_metabox_callback($post)
+{
     wp_nonce_field('saebu_menu_dia_nonce', 'menu_dia_nonce');
-    
+
     $fecha = get_post_meta($post->ID, '_menu_fecha', true);
     $entrada = get_post_meta($post->ID, '_menu_entrada', true);
     $principal = get_post_meta($post->ID, '_menu_principal', true);
     $postre = get_post_meta($post->ID, '_menu_postre', true);
     $precio = get_post_meta($post->ID, '_menu_precio', true);
     $notificar = get_post_meta($post->ID, '_menu_notificar', true);
-    ?>
-    
+?>
+
     <div style="padding: 10px;">
         <p>
             <label style="display: block; font-weight: bold; margin-bottom: 5px;">
                 <strong>Fecha del Menú:</strong>
             </label>
-            <input type="date" name="menu_fecha" value="<?php echo esc_attr($fecha); ?>" 
-                   style="width: 100%; max-width: 300px; padding: 8px;" />
+            <input type="date" name="menu_fecha" value="<?php echo esc_attr($fecha); ?>"
+                style="width: 100%; max-width: 300px; padding: 8px;" />
         </p>
 
         <p>
             <label style="display: block; font-weight: bold; margin-bottom: 5px;">
                 <strong>Entrada:</strong>
             </label>
-            <input type="text" name="menu_entrada" value="<?php echo esc_attr($entrada); ?>" 
-                   placeholder="Ej: Ensalada mixta" 
-                   style="width: 100%; padding: 8px;" />
+            <input type="text" name="menu_entrada" value="<?php echo esc_attr($entrada); ?>"
+                placeholder="Ej: Ensalada mixta"
+                style="width: 100%; padding: 8px;" />
         </p>
 
         <p>
             <label style="display: block; font-weight: bold; margin-bottom: 5px;">
                 <strong>Plato Principal:</strong>
             </label>
-            <input type="text" name="menu_principal" value="<?php echo esc_attr($principal); ?>" 
-                   placeholder="Ej: Milanesa con papas fritas" 
-                   style="width: 100%; padding: 8px;" />
+            <input type="text" name="menu_principal" value="<?php echo esc_attr($principal); ?>"
+                placeholder="Ej: Milanesa con papas fritas"
+                style="width: 100%; padding: 8px;" />
         </p>
 
         <p>
             <label style="display: block; font-weight: bold; margin-bottom: 5px;">
                 <strong>Postre:</strong>
             </label>
-            <input type="text" name="menu_postre" value="<?php echo esc_attr($postre); ?>" 
-                   placeholder="Ej: Flan con dulce de leche" 
-                   style="width: 100%; padding: 8px;" />
+            <input type="text" name="menu_postre" value="<?php echo esc_attr($postre); ?>"
+                placeholder="Ej: Flan con dulce de leche"
+                style="width: 100%; padding: 8px;" />
         </p>
 
         <p>
             <label style="display: block; font-weight: bold; margin-bottom: 5px;">
                 <strong>Precio:</strong>
             </label>
-            <input type="text" name="menu_precio" value="<?php echo esc_attr($precio); ?>" 
-                   placeholder="Ej: $350" 
-                   style="width: 100%; max-width: 200px; padding: 8px;" />
+            <input type="text" name="menu_precio" value="<?php echo esc_attr($precio); ?>"
+                placeholder="Ej: $350"
+                style="width: 100%; max-width: 200px; padding: 8px;" />
         </p>
 
         <p style="background: #f0f7ff; padding: 15px; border-left: 4px solid #0073aa; margin-top: 20px;">
             <label style="display: flex; align-items: center; cursor: pointer;">
-                <input type="checkbox" name="menu_notificar" value="1" 
-                       <?php checked($notificar, '1'); ?> 
-                       style="margin-right: 10px;" />
+                <input type="checkbox" name="menu_notificar" value="1"
+                    <?php checked($notificar, '1'); ?>
+                    style="margin-right: 10px;" />
                 <strong>Enviar notificación push cuando se publique este menú</strong>
             </label>
             <small style="display: block; margin-top: 5px; color: #666;">
@@ -814,14 +872,15 @@ function saebu_menu_dia_metabox_callback($post) {
             </small>
         </p>
     </div>
-    
-    <?php
+
+<?php
 }
 
 /**
  * Guardar metadatos del menú
  */
-function saebu_save_menu_dia_meta($post_id) {
+function saebu_save_menu_dia_meta($post_id)
+{
     // Verificaciones de seguridad
     if (!isset($_POST['menu_dia_nonce']) || !wp_verify_nonce($_POST['menu_dia_nonce'], 'saebu_menu_dia_nonce')) {
         return;
@@ -870,9 +929,10 @@ add_action('save_post_menu_dia', 'saebu_save_menu_dia_meta');
 /**
  * Función para obtener el menú del día actual
  */
-function saebu_get_menu_del_dia() {
+function saebu_get_menu_del_dia()
+{
     $hoy = date('Y-m-d');
-    
+
     $args = array(
         'post_type'      => 'menu_dia',
         'posts_per_page' => 1,
@@ -910,3 +970,224 @@ function saebu_get_menu_del_dia() {
 
     return null;
 }
+
+
+
+
+
+/**
+ * Metabox para Galería de Imágenes (Swiper)
+ */
+function saebu_galeria_metabox()
+{
+    add_meta_box(
+        'saebu_galeria',
+        'Galería de Imágenes (Swiper)',
+        'saebu_galeria_metabox_callback',
+        'noticia',
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'saebu_galeria_metabox');
+
+/**
+ * Callback del Metabox de Galería
+ */
+function saebu_galeria_metabox_callback($post)
+{
+    wp_nonce_field('saebu_galeria_nonce', 'galeria_nonce');
+
+    $galeria_ids = get_post_meta($post->ID, '_galeria_imagenes', true);
+?>
+
+    <div class="saebu-galeria-container">
+        <div id="galeria-imagenes-container" class="galeria-preview">
+            <?php
+            if ($galeria_ids) {
+                $imagenes = explode(',', $galeria_ids);
+                foreach ($imagenes as $imagen_id) {
+                    $imagen_url = wp_get_attachment_image_url($imagen_id, 'medium');
+                    if ($imagen_url) {
+                        echo '<div class="galeria-item" data-id="' . esc_attr($imagen_id) . '">';
+                        echo '<img src="' . esc_url($imagen_url) . '" />';
+                        echo '<button type="button" class="remove-imagen">×</button>';
+                        echo '</div>';
+                    }
+                }
+            }
+            ?>
+        </div>
+
+        <input type="hidden" id="galeria_imagenes" name="galeria_imagenes" value="<?php echo esc_attr($galeria_ids); ?>" />
+
+        <p>
+            <button type="button" class="button button-primary" id="agregar-imagenes-galeria">
+                Agregar Imágenes a la Galería
+            </button>
+            <button type="button" class="button" id="limpiar-galeria">
+                Limpiar Galería
+            </button>
+        </p>
+
+        <p class="description">
+            Estas imágenes se mostrarán en un slider Swiper en la parte superior de la noticia.
+        </p>
+    </div>
+
+    <style>
+        .galeria-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 100px;
+        }
+
+        .galeria-item {
+            position: relative;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .galeria-item .remove-imagen {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #dc3232;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .galeria-item .remove-imagen:hover {
+            background: #a00;
+        }
+    </style>
+
+    <script>
+        jQuery(document).ready(function($) {
+            var frame;
+
+            // Agregar imágenes
+            $('#agregar-imagenes-galeria').on('click', function(e) {
+                e.preventDefault();
+
+                if (frame) {
+                    frame.open();
+                    return;
+                }
+
+                frame = wp.media({
+                    title: 'Seleccionar Imágenes para la Galería',
+                    button: {
+                        text: 'Agregar a Galería'
+                    },
+                    multiple: true
+                });
+
+                frame.on('select', function() {
+                    var selection = frame.state().get('selection');
+                    var ids = $('#galeria_imagenes').val();
+                    var idsArray = ids ? ids.split(',') : [];
+
+                    selection.map(function(attachment) {
+                        attachment = attachment.toJSON();
+
+                        if (idsArray.indexOf(String(attachment.id)) === -1) {
+                            idsArray.push(attachment.id);
+
+                            var imgUrl = attachment.sizes && attachment.sizes.medium ?
+                                attachment.sizes.medium.url :
+                                attachment.url;
+
+                            $('#galeria-imagenes-container').append(
+                                '<div class="galeria-item" data-id="' + attachment.id + '">' +
+                                '<img src="' + imgUrl + '" />' +
+                                '<button type="button" class="remove-imagen">×</button>' +
+                                '</div>'
+                            );
+                        }
+                    });
+
+                    $('#galeria_imagenes').val(idsArray.join(','));
+                });
+
+                frame.open();
+            });
+
+            // Remover imagen individual
+            $(document).on('click', '.remove-imagen', function(e) {
+                e.preventDefault();
+                var item = $(this).closest('.galeria-item');
+                var id = item.data('id');
+                var ids = $('#galeria_imagenes').val();
+                var idsArray = ids.split(',');
+
+                idsArray = idsArray.filter(function(val) {
+                    return val != id;
+                });
+
+                $('#galeria_imagenes').val(idsArray.join(','));
+                item.remove();
+            });
+
+            // Limpiar toda la galería
+            $('#limpiar-galeria').on('click', function(e) {
+                e.preventDefault();
+                if (confirm('¿Estás seguro de que querés limpiar toda la galería?')) {
+                    $('#galeria-imagenes-container').empty();
+                    $('#galeria_imagenes').val('');
+                }
+            });
+        });
+    </script>
+
+<?php
+}
+
+/**
+ * Guardar Galería
+ */
+function saebu_save_galeria_meta($post_id)
+{
+    if (!isset($_POST['galeria_nonce']) || !wp_verify_nonce($_POST['galeria_nonce'], 'saebu_galeria_nonce')) {
+        return;
+    }
+
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+
+    if (isset($_POST['galeria_imagenes'])) {
+        update_post_meta($post_id, '_galeria_imagenes', sanitize_text_field($_POST['galeria_imagenes']));
+    } else {
+        delete_post_meta($post_id, '_galeria_imagenes');
+    }
+}
+add_action('save_post_noticia', 'saebu_save_galeria_meta');
