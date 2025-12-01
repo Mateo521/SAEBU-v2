@@ -690,3 +690,223 @@ function saebu_default_menu()
     </ul>
 <?php
 }
+
+
+/**
+ * Custom Post Type: Menú del Día
+ */
+function saebu_register_menu_dia_cpt() {
+    $labels = array(
+        'name'                  => 'Menú del Día',
+        'singular_name'         => 'Menú',
+        'menu_name'             => 'Menú del Día',
+        'add_new'               => 'Agregar Menú',
+        'add_new_item'          => 'Agregar Nuevo Menú',
+        'edit_item'             => 'Editar Menú',
+        'new_item'              => 'Nuevo Menú',
+        'view_item'             => 'Ver Menú',
+        'search_items'          => 'Buscar Menús',
+        'not_found'             => 'No se encontraron menús',
+        'not_found_in_trash'    => 'No hay menús en la papelera',
+    );
+
+    $args = array(
+        'labels'                => $labels,
+        'public'                => true,
+        'has_archive'           => true,
+        'publicly_queryable'    => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'menu_position'         => 20,
+        'menu_icon'             => 'dashicons-food',
+        'supports'              => array('title', 'editor', 'thumbnail'),
+        'show_in_rest'          => true,
+        'rewrite'               => array('slug' => 'menu-dia'),
+    );
+
+    register_post_type('menu_dia', $args);
+}
+add_action('init', 'saebu_register_menu_dia_cpt');
+
+/**
+ * Metaboxes personalizados para Menú del Día
+ */
+function saebu_menu_dia_metaboxes() {
+    add_meta_box(
+        'menu_dia_detalles',
+        'Detalles del Menú',
+        'saebu_menu_dia_metabox_callback',
+        'menu_dia',
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'saebu_menu_dia_metaboxes');
+
+/**
+ * Callback del metabox
+ */
+function saebu_menu_dia_metabox_callback($post) {
+    wp_nonce_field('saebu_menu_dia_nonce', 'menu_dia_nonce');
+    
+    $fecha = get_post_meta($post->ID, '_menu_fecha', true);
+    $entrada = get_post_meta($post->ID, '_menu_entrada', true);
+    $principal = get_post_meta($post->ID, '_menu_principal', true);
+    $postre = get_post_meta($post->ID, '_menu_postre', true);
+    $precio = get_post_meta($post->ID, '_menu_precio', true);
+    $notificar = get_post_meta($post->ID, '_menu_notificar', true);
+    ?>
+    
+    <div style="padding: 10px;">
+        <p>
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">
+                <strong>Fecha del Menú:</strong>
+            </label>
+            <input type="date" name="menu_fecha" value="<?php echo esc_attr($fecha); ?>" 
+                   style="width: 100%; max-width: 300px; padding: 8px;" />
+        </p>
+
+        <p>
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">
+                <strong>Entrada:</strong>
+            </label>
+            <input type="text" name="menu_entrada" value="<?php echo esc_attr($entrada); ?>" 
+                   placeholder="Ej: Ensalada mixta" 
+                   style="width: 100%; padding: 8px;" />
+        </p>
+
+        <p>
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">
+                <strong>Plato Principal:</strong>
+            </label>
+            <input type="text" name="menu_principal" value="<?php echo esc_attr($principal); ?>" 
+                   placeholder="Ej: Milanesa con papas fritas" 
+                   style="width: 100%; padding: 8px;" />
+        </p>
+
+        <p>
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">
+                <strong>Postre:</strong>
+            </label>
+            <input type="text" name="menu_postre" value="<?php echo esc_attr($postre); ?>" 
+                   placeholder="Ej: Flan con dulce de leche" 
+                   style="width: 100%; padding: 8px;" />
+        </p>
+
+        <p>
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">
+                <strong>Precio:</strong>
+            </label>
+            <input type="text" name="menu_precio" value="<?php echo esc_attr($precio); ?>" 
+                   placeholder="Ej: $350" 
+                   style="width: 100%; max-width: 200px; padding: 8px;" />
+        </p>
+
+        <p style="background: #f0f7ff; padding: 15px; border-left: 4px solid #0073aa; margin-top: 20px;">
+            <label style="display: flex; align-items: center; cursor: pointer;">
+                <input type="checkbox" name="menu_notificar" value="1" 
+                       <?php checked($notificar, '1'); ?> 
+                       style="margin-right: 10px;" />
+                <strong>Enviar notificación push cuando se publique este menú</strong>
+            </label>
+            <small style="display: block; margin-top: 5px; color: #666;">
+                Se enviará una notificación a todos los usuarios suscritos cuando publiques este menú.
+            </small>
+        </p>
+    </div>
+    
+    <?php
+}
+
+/**
+ * Guardar metadatos del menú
+ */
+function saebu_save_menu_dia_meta($post_id) {
+    // Verificaciones de seguridad
+    if (!isset($_POST['menu_dia_nonce']) || !wp_verify_nonce($_POST['menu_dia_nonce'], 'saebu_menu_dia_nonce')) {
+        return;
+    }
+
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+
+    // Guardar campos
+    if (isset($_POST['menu_fecha'])) {
+        update_post_meta($post_id, '_menu_fecha', sanitize_text_field($_POST['menu_fecha']));
+    }
+
+    if (isset($_POST['menu_entrada'])) {
+        update_post_meta($post_id, '_menu_entrada', sanitize_text_field($_POST['menu_entrada']));
+    }
+
+    if (isset($_POST['menu_principal'])) {
+        update_post_meta($post_id, '_menu_principal', sanitize_text_field($_POST['menu_principal']));
+    }
+
+    if (isset($_POST['menu_postre'])) {
+        update_post_meta($post_id, '_menu_postre', sanitize_text_field($_POST['menu_postre']));
+    }
+
+    if (isset($_POST['menu_precio'])) {
+        update_post_meta($post_id, '_menu_precio', sanitize_text_field($_POST['menu_precio']));
+    }
+
+    // Checkbox de notificación
+    $notificar = isset($_POST['menu_notificar']) ? '1' : '0';
+    update_post_meta($post_id, '_menu_notificar', $notificar);
+
+    // Si se marca para notificar y el post se está publicando
+    if ($notificar === '1' && get_post_status($post_id) === 'publish') {
+        saebu_enviar_notificacion_menu($post_id);
+    }
+}
+add_action('save_post_menu_dia', 'saebu_save_menu_dia_meta');
+
+/**
+ * Función para obtener el menú del día actual
+ */
+function saebu_get_menu_del_dia() {
+    $hoy = date('Y-m-d');
+    
+    $args = array(
+        'post_type'      => 'menu_dia',
+        'posts_per_page' => 1,
+        'post_status'    => 'publish',
+        'meta_query'     => array(
+            array(
+                'key'     => '_menu_fecha',
+                'value'   => $hoy,
+                'compare' => '=',
+            ),
+        ),
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        return $query->posts[0];
+    }
+
+    // Si no hay menú para hoy, buscar el más reciente
+    $args = array(
+        'post_type'      => 'menu_dia',
+        'posts_per_page' => 1,
+        'post_status'    => 'publish',
+        'orderby'        => 'meta_value',
+        'meta_key'       => '_menu_fecha',
+        'order'          => 'DESC',
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        return $query->posts[0];
+    }
+
+    return null;
+}

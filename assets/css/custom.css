@@ -207,3 +207,47 @@ header.sticky {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+/* Paginación personalizada */
+.pagination {
+    @apply flex items-center justify-center gap-2 mt-8;
+}
+
+.page-numbers {
+    @apply inline-flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-md transition-colors;
+}
+
+.page-numbers.current {
+    @apply bg-blue-600 text-white;
+}
+
+.page-numbers:not(.current):not(.dots) {
+    @apply bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 hover:border-blue-500;
+}
+
+.page-numbers.dots {
+    @apply text-gray-500 border-0;
+}
+
+.page-numbers.prev,
+.page-numbers.next {
+    @apply inline-flex items-center gap-2;
+}
+
+/* Mejoras para artículos en archivo */
+.news-archive article {
+    @apply transition-all duration-300;
+}
+
+/* Animación suave para imágenes */
+.news-archive article img {
+    @apply transition-all duration-500;
+}
+
+/* Efectos hover en tarjetas */
+.news-archive article:hover {
+    @apply shadow-lg;
+}
+
+
+.wp-block-image img{ padding: 5px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
