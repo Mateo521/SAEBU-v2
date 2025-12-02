@@ -458,8 +458,8 @@
 
 
 
-<!-- Últimas Noticias -->
-<section class="py-12 md:py-16 bg-white">
+<!-- Últimas Noticias - Overlay Elegante -->
+<section class="py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white">
     <div class="container mx-auto px-4">
         <div class="flex items-center justify-between mb-8 md:mb-10">
             <div>
@@ -467,10 +467,10 @@
                 <p class="text-sm text-gray-600">Mantente informado sobre nuestras actividades</p>
             </div>
             <a href="<?php echo get_post_type_archive_link('noticia'); ?>"
-                class="hidden md:inline-flex items-center gap-2 text-[#cda2ff] font-semibold hover:gap-3 transition-all">
+                class="hidden md:inline-flex items-center gap-2 text-[#416ed2] font-semibold hover:gap-3 transition-all group">
                 Ver todas
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
             </a>
         </div>
@@ -485,52 +485,69 @@
             if ($latest_news->have_posts()) :
                 while ($latest_news->have_posts()) : $latest_news->the_post();
             ?>
-                    <article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-gray-300 hover:shadow-md transition-all">
-                        <?php if (has_post_thumbnail()) : ?>
-                            <a href="<?php the_permalink(); ?>" class="block overflow-hidden">
-                                <?php the_post_thumbnail('noticia-thumbnail', array('class' => 'w-full h-48 object-cover')); ?>
-                            </a>
-                        <?php else : ?>
-                            <a href="<?php the_permalink(); ?>" class="block h-48 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center">
-                                <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                            </a>
-                        <?php endif; ?>
-
-                        <div class="p-5">
-                            <div class="flex items-center gap-3 mb-3">
-                                <?php
-                                $terms = get_the_terms(get_the_ID(), 'departamento');
-                                if ($terms && !is_wp_error($terms)) :
-                                    $term = array_shift($terms);
-                                ?>
-                                    <span class="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-lg">
-                                        <?php echo esc_html($term->name); ?>
+                    <article class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500">
+                        
+                        <!-- Imagen con overlay -->
+                        <div class="relative h-64 overflow-hidden">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <?php the_post_thumbnail('large', array('class' => 'w-full h-full object-cover group-hover:scale-110 transition-transform duration-700')); ?>
+                            <?php else : ?>
+                                <div class="w-full h-full bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 flex items-center justify-center">
+                                    <svg class="w-20 h-20 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                            <?php endif; ?>
+                            
+                            <!-- Overlay con degradado -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                            
+                            <!-- Contenido sobre imagen -->
+                            <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+                                
+                                <!-- Tags y fecha -->
+                                <div class="flex items-center gap-2 mb-3">
+                                    <?php
+                                    $terms = get_the_terms(get_the_ID(), 'departamento');
+                                    if ($terms && !is_wp_error($terms)) :
+                                        $term = array_shift($terms);
+                                    ?>
+                                        <span class="inline-flex items-center gap-1 bg-white/20 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/30">
+                                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+                                            </svg>
+                                            <?php echo esc_html($term->name); ?>
+                                        </span>
+                                    <?php endif; ?>
+                                    
+                                    <span class="text-white/80 text-xs font-medium flex items-center gap-1">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                        </svg>
+                                        <?php echo get_the_date('d M, Y'); ?>
                                     </span>
-                                <?php endif; ?>
+                                </div>
 
-                                <span class="text-gray-400 text-xs">
-                                    <?php echo get_the_date('d/m/Y'); ?>
-                                </span>
-                            </div>
+                                <!-- Título -->
+                                <h3 class="text-lg font-bold leading-tight line-clamp-2 mb-2">
+                                    <a href="<?php the_permalink(); ?>" class="text-white hover:text-blue-200 transition-colors">
+                                        <?php the_title(); ?>
+                                    </a>
+                                </h3>
 
-                            <h3 class="text-lg font-bold mb-2 leading-snug line-clamp-2">
-                                <a href="<?php the_permalink(); ?>" class="text-slate-900 hover:text-[#cda2ff] transition-colors">
-                                    <?php the_title(); ?>
+                                <!-- Extracto (opcional, solo en desktop) -->
+                                <p class="text-white/90 text-sm line-clamp-2 hidden md:block mb-3">
+                                    <?php echo wp_trim_words(get_the_excerpt(), 12); ?>
+                                </p>
+
+                                <!-- Botón leer más -->
+                                <a href="<?php the_permalink(); ?>" class="inline-flex items-center gap-1 text-white font-semibold text-sm hover:gap-2 transition-all group/link">
+                                    Leer más
+                                    <svg class="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
                                 </a>
-                            </h3>
-
-                            <p class="text-gray-600 text-sm mb-4 line-clamp-2">
-                                <?php echo wp_trim_words(get_the_excerpt(), 15); ?>
-                            </p>
-
-                            <a href="<?php the_permalink(); ?>" class="inline-flex items-center gap-1 text-[#cda2ff] font-medium text-sm hover:gap-2 transition-all">
-                                Leer más
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                            </a>
+                            </div>
                         </div>
                     </article>
                 <?php
@@ -539,26 +556,32 @@
             else :
                 ?>
                 <div class="col-span-full text-center py-12">
-                    <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                    </svg>
-                    <p class="text-gray-600">No hay noticias disponibles</p>
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gray-100 mb-4">
+                        <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-gray-600 font-medium">No hay noticias disponibles</p>
+                    <p class="text-gray-400 text-sm mt-1">Vuelve pronto para ver las novedades</p>
                 </div>
             <?php endif; ?>
-        </div>
+        </div> 
 
-        <!-- Botón móvil -->
-        <div class="text-center mt-8 md:hidden">
+        <!-- Botón Ver Todas -->
+        <div class="text-center mt-10">
             <a href="<?php echo get_post_type_archive_link('noticia'); ?>"
-                class="inline-flex items-center gap-2 bg-[#416ed2] text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                class="inline-flex items-center gap-2 bg-[#416ed2] text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95">
                 Ver todas las noticias
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
             </a>
         </div>
     </div>
 </section>
+
+
+
 
 
 

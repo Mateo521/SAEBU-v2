@@ -7,8 +7,8 @@
 :root {
   --color-purple-custom: #cda2ff;
   --color-blue-custom: #3b82f6;
-  --font-sans:   "Noticia Text", serif;
-  --font-display:  "Noticia Text", serif;
+  --font-sans:   "Noto Sans", sans-serif;
+  --font-display:  "Noto Sans", sans-serif;
   --font-mono: 'Fira Code', ui-monospace, monospace;
 }
 
