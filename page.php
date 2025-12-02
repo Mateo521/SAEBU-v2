@@ -76,7 +76,7 @@
                             <div class="flex flex-wrap gap-3">
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>"
                                     target="_blank" rel="noopener"
-                                    class="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm font-medium transition-colors">
+                                    class="inline-flex items-center gap-2 bg-[#416ed2] text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm font-medium transition-colors">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                                     </svg>
@@ -129,13 +129,13 @@
                                     <a href="<?php echo get_permalink($child->ID); ?>"
                                         class="group bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:border-blue-500 transition-all">
                                         <div class="flex items-start gap-4">
-                                            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 text-[#416ed2] rounded-lg flex items-center justify-center group-hover:bg-[#416ed2] group-hover:text-white transition-colors">
                                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                                 </svg>
                                             </div>
                                             <div class="flex-1">
-                                                <h3 class="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                                                <h3 class="font-bold text-slate-900 mb-2 group-hover:text-[#416ed2] transition-colors">
                                                     <?php echo $child->post_title; ?>
                                                 </h3>
                                                 <?php if ($child->post_excerpt) : ?>
@@ -144,7 +144,7 @@
                                                     </p>
                                                 <?php endif; ?>
                                             </div>
-                                            <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <svg class="w-5 h-5 text-gray-400 group-hover:text-[#416ed2] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                             </svg>
                                         </div>
@@ -169,7 +169,7 @@
 
 
         <!-- CTA al final (sin ACF) -->
-        <section class="py-16 bg-gradient-to-br from-blue-600 to-blue-800">
+        <section class="py-16 bg-gradient-to-br from-[#416ed2] to-blue-800">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center text-white">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">
@@ -180,7 +180,7 @@
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="<?php echo home_url('/contacto'); ?>"
-                            class="inline-flex items-center justify-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 shadow-xl transition-all">
+                            class="inline-flex items-center justify-center gap-2 bg-white text-[#416ed2] px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 shadow-xl transition-all">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                             </svg>

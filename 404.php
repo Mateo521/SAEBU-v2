@@ -18,7 +18,7 @@ get_header();
                     </h1>
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="text-center">
-                            <svg class="w-24 h-24 md:w-32 md:h-32 text-blue-600 mx-auto mb-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-24 h-24 md:w-32 md:h-32 text-[#416ed2] mx-auto mb-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
@@ -34,7 +34,7 @@ get_header();
 
                 <!-- Botón principal -->
                 <a href="<?php echo home_url('/'); ?>" 
-                   class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all">
+                   class="inline-flex items-center gap-2 bg-[#416ed2] text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                     </svg>
@@ -61,7 +61,7 @@ get_header();
                                        required>
                             </div>
                             <button type="submit" 
-                                    class="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors whitespace-nowrap">
+                                    class="bg-[#416ed2] text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors whitespace-nowrap">
                                 Buscar
                             </button>
                         </div>
@@ -77,39 +77,39 @@ get_header();
                 <div class="grid md:grid-cols-3 gap-4">
                     <a href="<?php echo home_url('/'); ?>" 
                        class="group flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all">
-                        <div class="flex-shrink-0 w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <div class="flex-shrink-0 w-12 h-12 bg-blue-100 text-[#416ed2] rounded-lg flex items-center justify-center group-hover:bg-[#416ed2] group-hover:text-white transition-colors">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900 group-hover:text-blue-600">Inicio</h4>
+                            <h4 class="font-bold text-slate-900 group-hover:text-[#416ed2]">Inicio</h4>
                             <p class="text-sm text-gray-600">Página principal</p>
                         </div>
                     </a>
 
                     <a href="<?php echo home_url('/noticias'); ?>" 
                        class="group flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all">
-                        <div class="flex-shrink-0 w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <div class="flex-shrink-0 w-12 h-12 bg-blue-100 text-[#416ed2] rounded-lg flex items-center justify-center group-hover:bg-[#416ed2] group-hover:text-white transition-colors">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900 group-hover:text-blue-600">Noticias</h4>
+                            <h4 class="font-bold text-slate-900 group-hover:text-[#416ed2]">Noticias</h4>
                             <p class="text-sm text-gray-600">Ver todas</p>
                         </div>
                     </a>
 
                     <a href="<?php echo home_url('/contacto'); ?>" 
                        class="group flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all">
-                        <div class="flex-shrink-0 w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <div class="flex-shrink-0 w-12 h-12 bg-blue-100 text-[#416ed2] rounded-lg flex items-center justify-center group-hover:bg-[#416ed2] group-hover:text-white transition-colors">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900 group-hover:text-blue-600">Contacto</h4>
+                            <h4 class="font-bold text-slate-900 group-hover:text-[#416ed2]">Contacto</h4>
                             <p class="text-sm text-gray-600">Comunicate</p>
                         </div>
                     </a>
@@ -119,19 +119,19 @@ get_header();
                 <div class="mt-6 pt-6 border-t border-gray-200">
                     <div class="flex flex-wrap gap-3 justify-center">
                         <a href="<?php echo home_url('/becas'); ?>" 
-                           class="text-blue-600 hover:text-blue-700 font-medium">Becas</a>
+                           class="text-[#416ed2] hover:text-blue-700 font-medium">Becas</a>
                         <span class="text-gray-300">•</span>
                         <a href="<?php echo home_url('/camping'); ?>" 
-                           class="text-blue-600 hover:text-blue-700 font-medium">Camping</a>
+                           class="text-[#416ed2] hover:text-blue-700 font-medium">Camping</a>
                         <span class="text-gray-300">•</span>
                         <a href="<?php echo home_url('/ceseu'); ?>" 
-                           class="text-blue-600 hover:text-blue-700 font-medium">CESEU</a>
+                           class="text-[#416ed2] hover:text-blue-700 font-medium">CESEU</a>
                         <span class="text-gray-300">•</span>
                         <a href="<?php echo home_url('/trabajo-social'); ?>" 
-                           class="text-blue-600 hover:text-blue-700 font-medium">Trabajo Social</a>
+                           class="text-[#416ed2] hover:text-blue-700 font-medium">Trabajo Social</a>
                         <span class="text-gray-300">•</span>
                         <a href="<?php echo home_url('/deportes'); ?>" 
-                           class="text-blue-600 hover:text-blue-700 font-medium">Deportes</a>
+                           class="text-[#416ed2] hover:text-blue-700 font-medium">Deportes</a>
                     </div>
                 </div>
             </div>
@@ -175,13 +175,13 @@ get_header();
                                     </div>
                                     
                                     <h4 class="text-lg font-bold mb-3 leading-tight line-clamp-2">
-                                        <a href="<?php the_permalink(); ?>" class="text-slate-900 hover:text-blue-600 transition-colors">
+                                        <a href="<?php the_permalink(); ?>" class="text-slate-900 hover:text-[#416ed2] transition-colors">
                                             <?php the_title(); ?>
                                         </a>
                                     </h4>
                                     
                                     <a href="<?php the_permalink(); ?>" 
-                                       class="inline-flex items-center gap-1 text-blue-600 font-medium hover:text-blue-700 transition-colors text-sm">
+                                       class="inline-flex items-center gap-1 text-[#416ed2] font-medium hover:text-blue-700 transition-colors text-sm">
                                         Leer más
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -204,7 +204,7 @@ get_header();
                     ¿Seguís teniendo problemas para encontrar lo que buscás?
                 </p>
                 <a href="<?php echo home_url('/contacto'); ?>" 
-                   class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium">
+                   class="inline-flex items-center gap-2 text-[#416ed2] hover:text-blue-700 font-medium">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
                     </svg>

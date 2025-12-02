@@ -15,12 +15,12 @@ html {
 }
 
 .menu a {
-    @apply text-slate-700 font-medium hover:text-blue-600 py-2 border-b-2 border-transparent hover:border-blue-600 transition-all duration-300;
+    @apply text-slate-700 font-medium hover:text-[#416ed2] py-2 border-b-2 border-transparent hover:border-[#416ed2] transition-all duration-300;
 }
 
 .menu .current-menu-item a,
 .menu .current_page_item a {
-    @apply text-blue-600 border-blue-600;
+    @apply text-[#416ed2] border-[#416ed2];
 }
 
 /* Menú móvil */
@@ -162,7 +162,7 @@ header.sticky {
 }
 
 .prose a {
-    @apply text-blue-600 hover:text-blue-700 underline;
+    @apply text-[#416ed2] hover:text-blue-700 underline;
 }
 
 .prose img {
@@ -170,7 +170,7 @@ header.sticky {
 }
 
 .prose blockquote {
-    @apply border-l-4 border-blue-600 pl-4 italic my-6 text-gray-700;
+    @apply border-l-4 border-[#416ed2] pl-4 italic my-6 text-gray-700;
 }
 
 .prose code {
@@ -218,7 +218,7 @@ header.sticky {
 }
 
 .page-numbers.current {
-    @apply bg-blue-600 text-white;
+    @apply bg-[#416ed2] text-white;
 }
 
 .page-numbers:not(.current):not(.dots) {
@@ -287,7 +287,7 @@ header.sticky {
 
 /* Imágenes con bordes redondeados y sombra */
 .prose img {
-    @apply rounded-2xl my-8 shadow-lg;
+    @apply rounded my-8 shadow-lg;
     display: block !important;
     max-width: 100% !important;
     height: auto !important;
@@ -299,7 +299,7 @@ header.sticky {
 }
 
 .prose figure img {
-    @apply rounded-2xl shadow-lg m-0;
+    @apply rounded shadow-lg m-0;
 }
 
 .prose figcaption {
@@ -344,7 +344,7 @@ header.sticky {
 }
 
 .prose .wp-block-image img {
-    @apply rounded-2xl shadow-lg;
+    @apply rounded shadow-lg;
 }
 
 .prose .wp-block-image.alignleft {
@@ -404,7 +404,7 @@ header.sticky {
 
 /* Enlaces */
 .prose a {
-    @apply text-blue-600 hover:text-blue-700 underline decoration-blue-300 hover:decoration-blue-500 transition-colors;
+    @apply text-[#416ed2] hover:text-blue-700 underline decoration-blue-300 hover:decoration-blue-500 transition-colors;
 }
 
 /* Blockquotes */
@@ -485,7 +485,7 @@ header.sticky {
 .prose .size-full,
 .prose .size-large,
 .prose .size-medium {
-    @apply rounded-2xl shadow-lg;
+    @apply rounded shadow-lg;
 }
 
 /* Asegurar que las imágenes nunca se desborden */

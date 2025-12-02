@@ -19,7 +19,7 @@
             <section class="relative bg-slate-900 py-8 md:py-16">
                 <div class="container mx-auto px-4">
                     <div class="max-w-6xl mx-auto">
-                        <div class="swiper gallery-swiper rounded-3xl overflow-hidden shadow-2xl">
+                        <div class="swiper gallery-swiper rounded overflow-hidden shadow-2xl">
                             <div class="swiper-wrapper">
                                 <?php foreach ($imagenes as $imagen_id) :
                                     $imagen_url = wp_get_attachment_image_url($imagen_id, 'large');
@@ -29,7 +29,7 @@
                                         <div class="swiper-slide">
                                             <img src="<?php echo esc_url($imagen_url); ?>"
                                                 alt="<?php echo esc_attr($imagen_alt); ?>"
-                                                class="w-full h-64 md:h-96 lg:h-[500px] object-cover">
+                                                class="w-full  object-cover"> <!-- h-64 md:h-96   lg:h-[500px]-->
                                         </div>
                                 <?php
                                     endif;
@@ -51,7 +51,7 @@
                 <div class="container mx-auto px-4">
                     <div class="max-w-6xl mx-auto">
                         <?php the_post_thumbnail('large', array(
-                            'class' => 'w-full h-64 md:h-96 lg:h-[500px] object-cover rounded-3xl shadow-2xl'
+                            'class' => 'w-full h-64 md:h-96 lg:h-[500px] object-cover rounded shadow-2xl'
                         )); ?>
                     </div>
                 </div>
@@ -91,29 +91,25 @@
 
                     <!-- Título -->
                     <header class="mb-10">
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-slate-900 mb-6 leading-tight">
+                        <h1 class="text-xl md:text-2xl lg:text-3xl font-bold font-display text-slate-900 mb-6 leading-tight">
                             <?php the_title(); ?>
                         </h1>
 
-                        <?php if (get_the_excerpt()) : ?>
-                            <p class="text-xl md:text-2xl text-gray-600 leading-relaxed font-light">
-                                <?php echo get_the_excerpt(); ?>
-                            </p>
-                        <?php endif; ?>
+
                     </header>
 
                     <!-- Contenido principal con más padding -->
-                    <article class="bg-white rounded-3xl shadow-lg border border-gray-100 p-6 md:p-10 lg:p-16 mb-8">
-                        <div class="prose prose-lg md:prose-xl max-w-none">
+                    <article class="bg-white rounded shadow-lg border border-gray-100 py-6 px-4 md:p-4 lg:p-8 mb-8">
+                        <div class="prose   max-w-none"> <!-- prose-lg md:prose-xl -->
                             <?php the_content(); ?>
                         </div>
                     </article>
 
                     <!-- Compartir -->
-                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl shadow-sm border border-blue-100 p-6 md:p-8 mb-12">
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded shadow-sm border border-blue-100 p-6 md:p-8 mb-12">
                         <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                             <div class="flex items-center gap-3">
-                                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                                <div class="w-12 h-12 bg-[#416ed2] rounded-full flex items-center justify-center">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
                                     </svg>
@@ -124,7 +120,7 @@
                             <div class="flex flex-wrap gap-3">
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>"
                                     target="_blank" rel="noopener"
-                                    class="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-lg hover:bg-blue-700 text-sm font-medium transition-all hover:shadow-lg">
+                                    class="inline-flex items-center gap-2 bg-[#416ed2] text-white px-5 py-2.5 rounded-lg hover:bg-blue-700 text-sm font-medium transition-all hover:shadow-lg">
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                                     </svg>
@@ -180,7 +176,7 @@
                                 <h2 class="text-3xl md:text-4xl font-bold font-display text-slate-900 mb-8">Noticias relacionadas</h2>
                                 <div class="grid md:grid-cols-3 gap-8">
                                     <?php while ($relacionadas->have_posts()) : $relacionadas->the_post(); ?>
-                                        <article class="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                                        <article class="group bg-white border border-gray-200 rounded overflow-hidden hover:shadow-xl transition-all duration-300">
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <a href="<?php the_permalink(); ?>" class="block overflow-hidden">
                                                     <?php the_post_thumbnail('medium', array('class' => 'w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500')); ?>
@@ -197,12 +193,12 @@
                                                 <div class="text-sm text-gray-500 mb-3">
                                                     <?php echo get_the_date('d/m/Y'); ?>
                                                 </div>
-                                                <h3 class="font-bold text-lg text-slate-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2 leading-snug">
+                                                <h3 class="font-bold text-lg text-slate-900 mb-3 group-hover:text-[#416ed2] transition-colors line-clamp-2 leading-snug">
                                                     <a href="<?php the_permalink(); ?>">
                                                         <?php the_title(); ?>
                                                     </a>
                                                 </h3>
-                                                <a href="<?php the_permalink(); ?>" class="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 font-medium text-sm group-hover:gap-2 transition-all">
+                                                <a href="<?php the_permalink(); ?>" class="inline-flex items-center gap-1 text-[#416ed2] hover:text-blue-700 font-medium text-sm group-hover:gap-2 transition-all">
                                                     Leer más
                                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>

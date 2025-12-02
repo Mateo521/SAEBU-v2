@@ -37,7 +37,7 @@
                     <?php else : ?>
                         <div>
                             <h1 class="text-2xl font-bold text-slate-800 leading-tight">
-                                <a href="<?php echo home_url('/'); ?>" class="hover:text-blue-600">
+                                <a href="<?php echo home_url('/'); ?>" class="hover:text-[#416ed2]">
                                     <?php bloginfo('name'); ?>
                                 </a>
                             </h1>

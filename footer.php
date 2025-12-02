@@ -35,7 +35,7 @@
 </footer>
 
 <!-- Scroll to Top -->
-<button id="scroll-to-top" class="fixed bottom-8 right-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white w-12 h-12 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:scale-110 flex items-center justify-center">
+<button id="scroll-to-top" class="fixed bottom-8 right-8 bg-gradient-to-r from-[#416ed2] to-purple-600 text-white w-12 h-12 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:scale-110 flex items-center justify-center">
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
     </svg>

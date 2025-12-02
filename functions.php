@@ -41,12 +41,12 @@ add_action('init', 'saebu_register_menus');
  */
 function saebu_enqueue_assets()
 {
-    // Tailwind CSS compilado localmente (style.css generado por el CLI)
+    // Tailwind CSS compilado (output.css)
     wp_enqueue_style(
         'saebu-tailwind',
-        get_stylesheet_uri(), // Esto apunta a style.css
+        get_template_directory_uri() . '/assets/css/output.css',
         array(),
-        filemtime(get_template_directory() . '/style.css') // Cache busting
+        filemtime(get_template_directory() . '/assets/css/output.css')
     );
 
     // CSS personalizado adicional (si lo necesitas)
@@ -72,19 +72,6 @@ function saebu_enqueue_assets()
 }
 add_action('wp_enqueue_scripts', 'saebu_enqueue_assets');
 
-/**
- * Enqueue Google Fonts
- */
-function saebu_google_fonts()
-{
-    wp_enqueue_style(
-        'google-fonts',
-        'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap',
-        array(),
-        null
-    );
-}
-add_action('wp_enqueue_scripts', 'saebu_google_fonts');
 
 /**
  * Enqueue Swiper.js
@@ -129,6 +116,15 @@ add_action('wp_enqueue_scripts', 'saebu_enqueue_swiper');
 // add_action('wp_head', 'saebu_tailwind_config', 100);
 
 
+function saebu_enqueue_all_fonts() {
+    wp_enqueue_style(
+        'saebu-all-fonts',
+        'https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap',
+        [],
+        null
+    );
+}
+add_action('wp_enqueue_scripts', 'saebu_enqueue_all_fonts');
 
 
 // Función auxiliar para obtener noticias por departamento
@@ -304,7 +300,7 @@ class SAEBU_Recent_News_Widget extends WP_Widget
             while ($recent_news->have_posts()) : $recent_news->the_post();
 ?>
                 <li class="border-b border-gray-200 pb-3">
-                    <a href="<?php the_permalink(); ?>" class="text-blue-600 hover:text-blue-800 font-medium">
+                    <a href="<?php the_permalink(); ?>" class="text-[#416ed2] hover:text-blue-800 font-medium">
                         <?php the_title(); ?>
                     </a>
                     <span class="block text-sm text-gray-500 mt-1"><?php echo get_the_date(); ?></span>
@@ -408,7 +404,7 @@ function saebu_breadcrumbs()
 
     // Inicio
     echo '<li class="flex items-center">';
-    echo '<a href="' . home_url('/') . '" class="flex items-center gap-1 text-gray-600 hover:text-blue-600 font-medium">';
+    echo '<a href="' . home_url('/') . '" class="flex items-center gap-1 text-gray-600 hover:text-[#416ed2] font-medium">';
     echo '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>';
     echo $home_title;
     echo '</a>';
@@ -418,7 +414,7 @@ function saebu_breadcrumbs()
     if (is_singular('noticia')) {
         // Enlace a archivo de noticias
         echo '<li class="flex items-center">';
-        echo '<a href="' . get_post_type_archive_link('noticia') . '" class="text-gray-600 hover:text-blue-600 font-medium">Noticias</a>';
+        echo '<a href="' . get_post_type_archive_link('noticia') . '" class="text-gray-600 hover:text-[#416ed2] font-medium">Noticias</a>';
         echo $separator;
         echo '</li>';
 
@@ -427,7 +423,7 @@ function saebu_breadcrumbs()
         if ($terms && !is_wp_error($terms)) {
             $term = array_shift($terms);
             echo '<li class="flex items-center">';
-            echo '<a href="' . get_term_link($term) . '" class="text-gray-600 hover:text-blue-600 font-medium">' . esc_html($term->name) . '</a>';
+            echo '<a href="' . get_term_link($term) . '" class="text-gray-600 hover:text-[#416ed2] font-medium">' . esc_html($term->name) . '</a>';
             echo $separator;
             echo '</li>';
         }
@@ -443,7 +439,7 @@ function saebu_breadcrumbs()
     } elseif (is_tax('departamento')) {
         $term = get_queried_object();
         echo '<li class="flex items-center">';
-        echo '<a href="' . get_post_type_archive_link('noticia') . '" class="text-gray-600 hover:text-blue-600 font-medium">Noticias</a>';
+        echo '<a href="' . get_post_type_archive_link('noticia') . '" class="text-gray-600 hover:text-[#416ed2] font-medium">Noticias</a>';
         echo $separator;
         echo '</li>';
         echo '<li class="flex items-center">';
@@ -457,7 +453,7 @@ function saebu_breadcrumbs()
 
             while ($parent_id) {
                 $page = get_page($parent_id);
-                $breadcrumbs[] = '<li class="flex items-center"><a href="' . get_permalink($page->ID) . '" class="text-gray-600 hover:text-blue-600 font-medium">' . get_the_title($page->ID) . '</a>' . $separator . '</li>';
+                $breadcrumbs[] = '<li class="flex items-center"><a href="' . get_permalink($page->ID) . '" class="text-gray-600 hover:text-[#416ed2] font-medium">' . get_the_title($page->ID) . '</a>' . $separator . '</li>';
                 $parent_id = $page->post_parent;
             }
 
@@ -653,8 +649,8 @@ function saebu_contact_info_shortcode($atts)
     <div class="bg-white rounded-lg shadow-lg p-6 space-y-4">
         <?php if ($telefono) : ?>
             <div class="border-b border-gray-200 pb-4">
-                <strong class="block text-blue-600 mb-2">Teléfono:</strong>
-                <a href="tel:<?php echo esc_attr($telefono); ?>" class="text-gray-800 hover:text-blue-600">
+                <strong class="block text-[#416ed2] mb-2">Teléfono:</strong>
+                <a href="tel:<?php echo esc_attr($telefono); ?>" class="text-gray-800 hover:text-[#416ed2]">
                     <?php echo esc_html($telefono); ?>
                 </a>
             </div>
@@ -662,8 +658,8 @@ function saebu_contact_info_shortcode($atts)
 
         <?php if ($email) : ?>
             <div class="border-b border-gray-200 pb-4">
-                <strong class="block text-blue-600 mb-2">Email:</strong>
-                <a href="mailto:<?php echo esc_attr($email); ?>" class="text-gray-800 hover:text-blue-600">
+                <strong class="block text-[#416ed2] mb-2">Email:</strong>
+                <a href="mailto:<?php echo esc_attr($email); ?>" class="text-gray-800 hover:text-[#416ed2]">
                     <?php echo esc_html($email); ?>
                 </a>
             </div>
@@ -671,14 +667,14 @@ function saebu_contact_info_shortcode($atts)
 
         <?php if ($direccion) : ?>
             <div class="border-b border-gray-200 pb-4">
-                <strong class="block text-blue-600 mb-2">Dirección:</strong>
+                <strong class="block text-[#416ed2] mb-2">Dirección:</strong>
                 <span class="text-gray-800"><?php echo esc_html($direccion); ?></span>
             </div>
         <?php endif; ?>
 
         <?php if ($horario) : ?>
             <div>
-                <strong class="block text-blue-600 mb-2">Horario de Atención:</strong>
+                <strong class="block text-[#416ed2] mb-2">Horario de Atención:</strong>
                 <div class="text-gray-800 leading-relaxed">
                     <?php echo nl2br(esc_html($horario)); ?>
                 </div>
@@ -735,13 +731,13 @@ function saebu_default_menu()
 {
     ?>
     <ul class="flex items-center gap-8">
-        <li><a href="<?php echo home_url('/'); ?>" class="text-slate-700 font-medium hover:text-blue-600">Inicio</a></li>
-        <li><a href="<?php echo home_url('/institucional'); ?>" class="text-slate-700 font-medium hover:text-blue-600">Institucional</a></li>
-        <li><a href="<?php echo home_url('/becas'); ?>" class="text-slate-700 font-medium hover:text-blue-600">Becas</a></li>
-        <li><a href="<?php echo home_url('/camping'); ?>" class="text-slate-700 font-medium hover:text-blue-600">Camping</a></li>
-        <li><a href="<?php echo home_url('/ceseu'); ?>" class="text-slate-700 font-medium hover:text-blue-600">CeSEU</a></li>
-        <li><a href="<?php echo get_post_type_archive_link('noticia'); ?>" class="text-slate-700 font-medium hover:text-blue-600">Noticias</a></li>
-        <li><a href="<?php echo home_url('/contacto'); ?>" class="text-slate-700 font-medium hover:text-blue-600">Contacto</a></li>
+        <li><a href="<?php echo home_url('/'); ?>" class="text-slate-700 font-medium hover:text-[#416ed2]">Inicio</a></li>
+        <li><a href="<?php echo home_url('/institucional'); ?>" class="text-slate-700 font-medium hover:text-[#416ed2]">Institucional</a></li>
+        <li><a href="<?php echo home_url('/becas'); ?>" class="text-slate-700 font-medium hover:text-[#416ed2]">Becas</a></li>
+        <li><a href="<?php echo home_url('/camping'); ?>" class="text-slate-700 font-medium hover:text-[#416ed2]">Camping</a></li>
+        <li><a href="<?php echo home_url('/ceseu'); ?>" class="text-slate-700 font-medium hover:text-[#416ed2]">CeSEU</a></li>
+        <li><a href="<?php echo get_post_type_archive_link('noticia'); ?>" class="text-slate-700 font-medium hover:text-[#416ed2]">Noticias</a></li>
+        <li><a href="<?php echo home_url('/contacto'); ?>" class="text-slate-700 font-medium hover:text-[#416ed2]">Contacto</a></li>
     </ul>
 <?php
 }

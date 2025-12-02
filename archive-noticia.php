@@ -31,7 +31,7 @@ get_header();
                 <div class="flex flex-wrap items-center gap-3">
                     <span class="text-sm font-medium text-gray-700">Filtrar por:</span>
                     <a href="<?php echo get_post_type_archive_link('noticia'); ?>" 
-                       class="inline-block px-4 py-2 text-sm rounded-md bg-blue-600 text-white font-medium">
+                       class="inline-block px-4 py-2 text-sm rounded-md bg-[#416ed2] text-white font-medium">
                         Todas
                     </a>
                     <?php
@@ -86,7 +86,7 @@ get_header();
                                     <?php endif; ?>
                                     
                                     <h2 class="text-xl font-bold mb-3 leading-tight">
-                                        <a href="<?php the_permalink(); ?>" class="text-slate-900 hover:text-blue-600 transition-colors">
+                                        <a href="<?php the_permalink(); ?>" class="text-slate-900 hover:text-[#416ed2] transition-colors">
                                             <?php the_title(); ?>
                                         </a>
                                     </h2>
@@ -99,7 +99,7 @@ get_header();
                                         <?php echo wp_trim_words(get_the_excerpt(), 15); ?>
                                     </p>
                                     
-                                    <a href="<?php the_permalink(); ?>" class="text-blue-600 font-medium text-sm hover:text-blue-700">
+                                    <a href="<?php the_permalink(); ?>" class="text-[#416ed2] font-medium text-sm hover:text-blue-700">
                                         Leer más →
                                     </a>
                                 </div>
@@ -125,7 +125,7 @@ get_header();
                                     <li>
                                         <?php 
                                         $page = str_replace('page-numbers', 'inline-flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-md', $page);
-                                        $page = str_replace('current', 'bg-blue-600 text-white', $page);
+                                        $page = str_replace('current', 'bg-[#416ed2] text-white', $page);
                                         $page = str_replace('<a', '<a class="bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 hover:border-blue-500"', $page);
                                         $page = str_replace('dots', 'text-gray-500', $page);
                                         echo $page;

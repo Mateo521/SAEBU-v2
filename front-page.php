@@ -31,15 +31,15 @@
         <div class="text-center mb-12 md:mb-16">
             <!-- Badge superior -->
             <div class="inline-block mb-6 animate-fade-in">
-             
+
                 <span class="bg-white/10 flex items-center gap-3 backdrop-blur-xl text-white px-5 py-2.5 rounded-full text-sm font-medium border border-white/20 shadow-lg">
-                       <img class="w-7 h-auto" src="<?php echo get_template_directory_uri();?>/logo-unsl-2.png" alt="">
+                    <img class="w-7 h-auto" src="<?php echo get_template_directory_uri(); ?>/logo-unsl-2.png" alt="">
                     Universidad Nacional de San Luis
                 </span>
             </div>
 
             <!-- Título principal -->
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up">
+            <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight animate-fade-in-up">
                 Secretaría de Asuntos Estudiantiles<br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-200">
                     Bienestar Universitario
@@ -64,7 +64,7 @@
                 $postre = get_post_meta($menu_dia->ID, '_menu_postre', true);
                 $precio = get_post_meta($menu_dia->ID, '_menu_precio', true);
             ?>
-                <div class="bg-white/10 backdrop-blur-2xl rounded-3xl border border-white/20 overflow-hidden shadow-2xl hover:bg-white/15 transition-all duration-300 animate-slide-in-left">
+                <div class="bg-white/10 backdrop-blur-2xl rounded border border-white/20 overflow-hidden shadow-2xl hover:bg-white/15 transition-all duration-300 animate-slide-in-left">
 
                     <!-- Header del menú integrado -->
                     <div class="p-6 md:p-8 border-b border-white/20">
@@ -175,7 +175,7 @@
             <div class="space-y-6 animate-slide-in-right">
 
                 <!-- Botones de acción principales -->
-                <div class="bg-white/10 backdrop-blur-2xl rounded-3xl border border-white/20 p-6 md:p-8 shadow-2xl">
+                <div class="bg-white/10 backdrop-blur-2xl rounded border border-white/20 p-6 md:p-8 shadow-2xl">
                     <h3 class="text-xl font-bold text-white mb-6">¿Qué estás buscando?</h3>
 
                     <div class="space-y-3">
@@ -221,7 +221,7 @@
                 </div>
 
                 <!-- Información destacada -->
-                <div class="bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-2xl rounded-3xl border border-white/20 p-6 md:p-8 shadow-2xl">
+                <div class="bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-2xl rounded border border-white/20 p-6 md:p-8 shadow-2xl">
                     <div class="flex items-start gap-4">
                         <div class="flex-shrink-0 w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -249,7 +249,7 @@
         </div>
 
         <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div class="absolute flex justify-center w-full bottom-2 left-0">
             <a href="#servicios" class="flex flex-col items-center gap-2 text-white/60 hover:text-white/80 transition-colors">
                 <span class="text-xs uppercase tracking-wider font-medium">Explorar</span>
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -363,14 +363,14 @@
 <!-- Barra de estadísticas flotante -->
 <!--section class="relative -mt-20 z-10">
     <div class="container mx-auto px-4">
-        <div class="bg-white rounded-2xl shadow-2xl px-4 py-6 max-w-5xl mx-auto">
+        <div class="bg-white rounded shadow-2xl px-4 py-6 max-w-5xl mx-auto">
             <div class="grid md:grid-cols-2 gap-8 text-center">
                 <div class="border-r border-gray-200 last:border-0">
-                    <h3 class="text-xl font-bold text-blue-600 mb-2">Secretario</h3>
+                    <h3 class="text-xl font-bold text-[#cda2ff] mb-2">Secretario</h3>
                     <p class="text-gray-700 font-medium">Prof. Rodolfo Nahuel Sirur Flores</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold text-blue-600 mb-2">Secretaría de Asuntos Estudiantiles y Bienestar Universitario</h3>
+                    <h3 class="text-xl font-bold text-[#cda2ff] mb-2">Secretaría de Asuntos Estudiantiles y Bienestar Universitario</h3>
                     <p class="text-gray-700 font-medium"> <span class="text-gray-100 bg-gray-600 px-2 rounded">Villa Mercedes</span> Ing. Nicolás Ariel Ramos</p>
                 </div>
             </div>
@@ -435,16 +435,16 @@
             ?>
                 <a href="<?php echo home_url('/' . $depto['slug']); ?>"
                     class="group bg-white border border-gray-200 rounded-lg px-4 py-6 hover:border-blue-500 hover:shadow-lg transition-all duration-300">
-                    <div class="text-blue-600 mb-4 transform  transition-transform duration-300"> <!-- group-hover:scale-110 -->
+                    <div class="text-[#416ed2] mb-4 transform  transition-transform duration-300"> <!-- group-hover:scale-110 -->
                         <?php echo $depto['svg']; ?>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-[#cda2ff] transition-colors">
                         <?php echo $depto['name']; ?>
                     </h3>
                     <p class="text-gray-600 text-sm mb-4">
                         <?php echo $depto['description']; ?>
                     </p>
-                    <span class="text-blue-600 text-sm font-medium">
+                    <span class="text-[#416ed2] text-sm font-medium">
                         Más información →
                     </span>
                 </a>
@@ -455,6 +455,110 @@
 
 
 
+
+
+
+<!-- Últimas Noticias -->
+<section class="py-12 md:py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between mb-8 md:mb-10">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Últimas Noticias</h2>
+                <p class="text-sm text-gray-600">Mantente informado sobre nuestras actividades</p>
+            </div>
+            <a href="<?php echo get_post_type_archive_link('noticia'); ?>"
+                class="hidden md:inline-flex items-center gap-2 text-[#cda2ff] font-semibold hover:gap-3 transition-all">
+                Ver todas
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            <?php
+            $latest_news = new WP_Query(array(
+                'post_type' => 'noticia',
+                'posts_per_page' => 6,
+            ));
+
+            if ($latest_news->have_posts()) :
+                while ($latest_news->have_posts()) : $latest_news->the_post();
+            ?>
+                    <article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-gray-300 hover:shadow-md transition-all">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <a href="<?php the_permalink(); ?>" class="block overflow-hidden">
+                                <?php the_post_thumbnail('noticia-thumbnail', array('class' => 'w-full h-48 object-cover')); ?>
+                            </a>
+                        <?php else : ?>
+                            <a href="<?php the_permalink(); ?>" class="block h-48 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </a>
+                        <?php endif; ?>
+
+                        <div class="p-5">
+                            <div class="flex items-center gap-3 mb-3">
+                                <?php
+                                $terms = get_the_terms(get_the_ID(), 'departamento');
+                                if ($terms && !is_wp_error($terms)) :
+                                    $term = array_shift($terms);
+                                ?>
+                                    <span class="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-lg">
+                                        <?php echo esc_html($term->name); ?>
+                                    </span>
+                                <?php endif; ?>
+
+                                <span class="text-gray-400 text-xs">
+                                    <?php echo get_the_date('d/m/Y'); ?>
+                                </span>
+                            </div>
+
+                            <h3 class="text-lg font-bold mb-2 leading-snug line-clamp-2">
+                                <a href="<?php the_permalink(); ?>" class="text-slate-900 hover:text-[#cda2ff] transition-colors">
+                                    <?php the_title(); ?>
+                                </a>
+                            </h3>
+
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                                <?php echo wp_trim_words(get_the_excerpt(), 15); ?>
+                            </p>
+
+                            <a href="<?php the_permalink(); ?>" class="inline-flex items-center gap-1 text-[#cda2ff] font-medium text-sm hover:gap-2 transition-all">
+                                Leer más
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                <?php
+                endwhile;
+                wp_reset_postdata();
+            else :
+                ?>
+                <div class="col-span-full text-center py-12">
+                    <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    <p class="text-gray-600">No hay noticias disponibles</p>
+                </div>
+            <?php endif; ?>
+        </div>
+
+        <!-- Botón móvil -->
+        <div class="text-center mt-8 md:hidden">
+            <a href="<?php echo get_post_type_archive_link('noticia'); ?>"
+                class="inline-flex items-center gap-2 bg-[#416ed2] text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                Ver todas las noticias
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
 
 
 

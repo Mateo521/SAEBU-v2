@@ -1,136 +1,57 @@
 @import "tailwindcss";
 
-/* Configuración del tema en CSS (Tailwind v4) */
-@plugin "@tailwindcss/typography";
+/* Google Fonts */
+/*
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thaana:wght@100..900&family=Science+Gothic:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+*/
+:root {
+  --color-purple-custom: #cda2ff;
+  --color-blue-custom: #3b82f6;
+  --font-sans:   "Noticia Text", serif;
+  --font-display:  "Noticia Text", serif;
+  --font-mono: 'Fira Code', ui-monospace, monospace;
+}
 
-/* Gradientes personalizados */
-@layer utilities {
-  .text-gradient-hero {
-    background-image: linear-gradient(to right, #93c5fd, #67e8f9, #bfdbfe);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
   
-  .text-gradient-price {
-    background-image: linear-gradient(to right, #3b82f6, #a855f7);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+
+  
+
+  
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Títulos con fuente display */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  /* Tamaños de títulos */
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.75rem; }
+  h4 { font-size: 1.5rem; }
+  h5 { font-size: 1.25rem; }
+  h6 { font-size: 1rem; }
+   
+  /* Links */
+  a {
+    transition: color 0.2s ease;
   }
 }
 
-/* Typography personalizado */
-@layer components {
-  .prose {
-    --tw-prose-body: theme('colors.gray.700');
-    --tw-prose-headings: theme('colors.gray.900');
-    --tw-prose-links: theme('colors.blue.600');
-    --tw-prose-bold: theme('colors.gray.900');
-    --tw-prose-counters: theme('colors.gray.500');
-    --tw-prose-bullets: theme('colors.gray.300');
-    --tw-prose-hr: theme('colors.gray.200');
-    --tw-prose-quotes: theme('colors.gray.900');
-    --tw-prose-quote-borders: theme('colors.gray.200');
-    --tw-prose-captions: theme('colors.gray.500');
-    --tw-prose-code: theme('colors.gray.900');
-    --tw-prose-pre-code: theme('colors.gray.200');
-    --tw-prose-pre-bg: theme('colors.gray.800');
-    --tw-prose-th-borders: theme('colors.gray.300');
-    --tw-prose-td-borders: theme('colors.gray.200');
-  }
-
-  .prose img {
-    border-radius: 1rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  }
-}
-
-/* Animaciones */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slide-in-left {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out;
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out;
-  animation-delay: 0.2s;
-  animation-fill-mode: both;
-}
-
-.animate-slide-in-left {
-  animation: slide-in-left 0.8s ease-out;
-  animation-delay: 0.4s;
-  animation-fill-mode: both;
-}
-
-.animate-slide-in-right {
-  animation: slide-in-right 0.8s ease-out;
-  animation-delay: 0.6s;
-  animation-fill-mode: both;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@import "tailwindcss";
-
-/* Line clamp utilities */
+/* Utilities */
 @layer utilities {
   .line-clamp-2 {
     display: -webkit-box;
@@ -144,5 +65,12 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+  
+  /* Clase para texto gradient */
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
