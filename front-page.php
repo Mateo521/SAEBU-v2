@@ -1,9 +1,11 @@
 <?php get_header(); ?>
 
-<!-- Hero Banner con imagen de fondo -->
-<section class="relative h-[600px] md:h-[700px] overflow-hidden">
-    <!-- Imagen de fondo -->
-    <div class="absolute inset-0">
+
+
+<!-- Hero Banner Unificado con Menú del Día -->
+<section class="relative min-h-screen overflow-hidden">
+    <!-- Imagen de fondo con overlay -->
+    <div class="absolute inset-0 z-0">
         <?php
         // Obtener imagen destacada de la página de inicio o imagen por defecto
         $hero_image = get_theme_mod('hero_background_image');
@@ -11,7 +13,6 @@
             $hero_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
         }
         if (!$hero_image) {
-            // Imagen por defecto - puedes cambiar esta URL
             $hero_image = get_template_directory_uri() . '/assets/images/hero-default.jpg';
         }
         ?>
@@ -19,189 +20,350 @@
             alt="Banner SAEBU"
             class="w-full h-full object-cover scale-105">
 
-        <!-- Overlay con gradiente -->
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-slate-900/70 to-blue-800/80"></div>
-
-        <!-- Efecto blur en los bordes -->
-        <div class="absolute inset-0 backdrop-blur-[2px]"></div>
+        <!-- Overlay con gradiente más fuerte -->
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-900/85 via-slate-900/80 to-slate-900/90"></div>
     </div>
 
-    <!-- Contenido del Hero -->
-    <div class="relative h-full flex items-center">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <!-- Badge superior -->
-                <div class="inline-block mb-6">
-                    <span class="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30">
-                        Universidad Nacional de San Luis
-                    </span>
-                </div>
+    <!-- Contenido -->
+    <div class="relative z-10 container mx-auto px-4 py-16 md:py-20">
 
-                <h1 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
-                    Secretaría de Asuntos Estudiantiles y
-
-                    <span class="text-blue-300">Bienestar Universitario</span>
-                </h1>
-
-                <p class="text-base md:text-xl text-gray-100 mb-10 leading-relaxed max-w-3xl mx-auto drop-shadow-lg">
-                    Asistencia y acompañamiento para contribuir a un óptimo desempeño académico.
-
-
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="<?php echo home_url('/noticias'); ?>"
-                        class="inline-block bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-                        Ver Noticias
-                    </a>
-                    <a href="<?php echo home_url('/institucional'); ?>"
-                        class="inline-block bg-transparent text-white border-2 border-white/80 backdrop-blur-sm px-8 py-4 rounded-lg font-semibold hover:bg-white/10 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-                        Conocer Más
-                    </a>
-                </div>
-
-                <!-- Scroll indicator -->
-                <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                    <svg class="w-6 h-6 text-white opacity-75" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                    </svg>
-                </div>
+        <!-- Header Section -->
+        <div class="text-center mb-12 md:mb-16">
+            <!-- Badge superior -->
+            <div class="inline-block mb-6 animate-fade-in">
+             
+                <span class="bg-white/10 flex items-center gap-3 backdrop-blur-xl text-white px-5 py-2.5 rounded-full text-sm font-medium border border-white/20 shadow-lg">
+                       <img class="w-7 h-auto" src="<?php echo get_template_directory_uri();?>/logo-unsl-2.png" alt="">
+                    Universidad Nacional de San Luis
+                </span>
             </div>
+
+            <!-- Título principal -->
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up">
+                Secretaría de Asuntos Estudiantiles<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-200">
+                    Bienestar Universitario
+                </span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl mx-auto animate-fade-in-up">
+                Asistencia y acompañamiento para contribuir a un óptimo desempeño académico
+            </p>
         </div>
-    </div>
-</section>
-<!-- Menú del Día -->
-<?php
-$menu_dia = saebu_get_menu_del_dia();
-if ($menu_dia) :
-    $fecha = get_post_meta($menu_dia->ID, '_menu_fecha', true);
-    $entrada = get_post_meta($menu_dia->ID, '_menu_entrada', true);
-    $principal = get_post_meta($menu_dia->ID, '_menu_principal', true);
-    $postre = get_post_meta($menu_dia->ID, '_menu_postre', true);
-    $precio = get_post_meta($menu_dia->ID, '_menu_precio', true);
-    $imagen = get_the_post_thumbnail_url($menu_dia->ID, 'large');
-?>
-    <section class="relative py-3 md:mt-[-130px] z-10"> <!-- -mt-20 -->
-        <div class="container mx-auto px-4">
-            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden max-w-xs md:max-w-xl mx-auto">
 
-                <div class="grid md:grid-cols-2 gap-0">
+        <!-- Grid: Menú del Día + Botones -->
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-6 md:gap-8 items-start">
 
-                    <!-- Imagen del menú -->
-                    <div class="relative  md:h-auto"> <!-- h-64 -->
-                        <?php if ($imagen) : ?>
-                            <img src="<?php echo esc_url($imagen); ?>"
-                                alt="Menú del día"
-                                class="w-full h-full object-cover">
-                        <?php else : ?>
-                            <div class="w-full h-full bg-gradient-to-br from-blue-500 to-red-600 flex items-center justify-center">
-                                <svg class="w-24 h-24 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                                </svg>
-                            </div>
-                        <?php endif; ?>
+            <!-- Menú del Día Card -->
+            <?php
+            $menu_dia = saebu_get_menu_del_dia();
+            if ($menu_dia) :
+                $fecha = get_post_meta($menu_dia->ID, '_menu_fecha', true);
+                $entrada = get_post_meta($menu_dia->ID, '_menu_entrada', true);
+                $principal = get_post_meta($menu_dia->ID, '_menu_principal', true);
+                $postre = get_post_meta($menu_dia->ID, '_menu_postre', true);
+                $precio = get_post_meta($menu_dia->ID, '_menu_precio', true);
+            ?>
+                <div class="bg-white/10 backdrop-blur-2xl rounded-3xl border border-white/20 overflow-hidden shadow-2xl hover:bg-white/15 transition-all duration-300 animate-slide-in-left">
 
-                        <!-- Badge de fecha -->
-                        <div class="absolute top-4 right-4 bg-white rounded-lg px-2 py-2 shadow-lg">
-                            <div class="text-center">
-                                <div class="text-xs font-medium text-gray-600 uppercase">
-                                    <?php echo date_i18n('F', strtotime($fecha)); ?>
+                    <!-- Header del menú integrado -->
+                    <div class="p-6 md:p-8 border-b border-white/20">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    </svg>
                                 </div>
-                                <div class="text-2xl font-bold text-blue-600">
+                                <div>
+                                    <h3 class="text-xl md:text-2xl font-bold text-white">Menú del Día</h3>
+                                    <p class="text-blue-200 text-sm">Comedor Universitario</p>
+                                </div>
+                            </div>
+
+                            <!-- Fecha badge -->
+                            <div class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl px-3 py-2 text-center min-w-[70px]">
+                                <div class="text-xs font-semibold uppercase text-blue-200">
+                                    <?php echo date_i18n('M', strtotime($fecha)); ?>
+                                </div>
+                                <div class="text-2xl font-bold text-white leading-none mt-0.5">
                                     <?php echo date_i18n('d', strtotime($fecha)); ?>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Información del menú -->
-                    <div class="p-3 md:p-6">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                                </svg>
-                            </div>
-                            <h2 class="text-xl font-bold text-slate-900">Menú del Día</h2>
-                        </div>
+                    <!-- Contenido del menú -->
+                    <div class="p-6 md:p-8 space-y-4">
 
-                        <p class="text-gray-600 mb-3">
-                            <?php echo date_i18n('l, d \d\e F \d\e Y', strtotime($fecha)); ?>
-                        </p>
-
-                        <div class="space-y-4 mb-6">
-                            <?php if ($entrada) : ?>
-                                <div class="flex items-start gap-3">
-                                    <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        <?php if ($entrada) : ?>
+                            <div class="flex items-start gap-3 group">
+                                <div class="flex-shrink-0 w-8 h-8 bg-blue-400/20 rounded-lg flex items-center justify-center mt-0.5 group-hover:bg-blue-400/30 transition-colors">
+                                    <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
-                                    <div>
-                                        <h4 class="font-semibold text-slate-900">Entrada</h4>
-                                        <p class="text-gray-700"><?php echo esc_html($entrada); ?></p>
-                                    </div>
                                 </div>
-                            <?php endif; ?>
-
-                            <?php if ($principal) : ?>
-                                <div class="flex items-start gap-3">
-                                    <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                    <div>
-                                        <h4 class="font-semibold text-slate-900">Plato Principal</h4>
-                                        <p class="text-gray-700"><?php echo esc_html($principal); ?></p>
-                                    </div>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="text-xs font-semibold text-blue-200 uppercase tracking-wider mb-1">Entrada</h4>
+                                    <p class="text-base md:text-lg text-white font-medium"><?php echo esc_html($entrada); ?></p>
                                 </div>
-                            <?php endif; ?>
-
-                            <?php if ($postre) : ?>
-                                <div class="flex items-start gap-3">
-                                    <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                    <div>
-                                        <h4 class="font-semibold text-slate-900">Postre</h4>
-                                        <p class="text-gray-700"><?php echo esc_html($postre); ?></p>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-
-                        <?php if ($precio) : ?>
-                            <div class="flex items-center justify-between p-4 bg-blue-50 rounded-lg border border-blue-200">
-                                <span class="text-gray-700 font-medium">Precio:</span>
-                                <span class="text-xl font-bold text-blue-600"><?php echo esc_html($precio); ?></span>
                             </div>
                         <?php endif; ?>
 
-                        <!-- Botón de suscripción -->
-                        <div class="mt-3 pt-3 border-t border-gray-200">
-                            <button id="suscribir-menu-btn"
-                                class="w-full inline-flex items-center text-sm justify-center gap-1 bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                                </svg>
-                                Recibir notificaciones del menú
-                            </button>
-                            <p class="text-xs text-gray-500 text-center mt-2">
-                                Te notificaremos cada día sobre el menú disponible
-                            </p>
+                        <?php if ($principal) : ?>
+                            <div class="flex items-start gap-3 group">
+                                <div class="flex-shrink-0 w-8 h-8 bg-purple-400/20 rounded-lg flex items-center justify-center mt-0.5 group-hover:bg-purple-400/30 transition-colors">
+                                    <svg class="w-4 h-4 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="text-xs font-semibold text-purple-200 uppercase tracking-wider mb-1">Plato Principal</h4>
+                                    <p class="text-base md:text-lg text-white font-medium"><?php echo esc_html($principal); ?></p>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if ($postre) : ?>
+                            <div class="flex items-start gap-3 group">
+                                <div class="flex-shrink-0 w-8 h-8 bg-pink-400/20 rounded-lg flex items-center justify-center mt-0.5 group-hover:bg-pink-400/30 transition-colors">
+                                    <svg class="w-4 h-4 text-pink-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="text-xs font-semibold text-pink-200 uppercase tracking-wider mb-1">Postre</h4>
+                                    <p class="text-base md:text-lg text-white font-medium"><?php echo esc_html($postre); ?></p>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if ($precio) : ?>
+                            <!-- Precio integrado -->
+                            <div class="pt-4 mt-4 border-t border-white/20">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-white/80 font-medium">Precio</span>
+                                    <span class="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
+                                        <?php echo esc_html($precio); ?>
+                                    </span>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+
+                        <!-- Botón de notificaciones compacto -->
+                        <button id="suscribir-menu-btn"
+                            class="w-full mt-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-4 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                            </svg>
+                            Recibir notificaciones
+                        </button>
+                    </div>
+
+                    <!-- Footer con indicador -->
+                    <div class="px-6 pb-6">
+                        <div class="flex items-center justify-center gap-2 text-xs text-white/60">
+                            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                            <span>Actualizado hoy</span>
                         </div>
                     </div>
 
                 </div>
+            <?php endif; ?>
+
+            <!-- Columna derecha: Acciones y Info -->
+            <div class="space-y-6 animate-slide-in-right">
+
+                <!-- Botones de acción principales -->
+                <div class="bg-white/10 backdrop-blur-2xl rounded-3xl border border-white/20 p-6 md:p-8 shadow-2xl">
+                    <h3 class="text-xl font-bold text-white mb-6">¿Qué estás buscando?</h3>
+
+                    <div class="space-y-3">
+                        <a href="<?php echo home_url('/noticias'); ?>"
+                            class="group w-full flex items-center justify-between bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-[1.02]">
+                            <span class="flex items-center gap-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                                </svg>
+                                Ver Noticias
+                            </span>
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+
+                        <a href="<?php echo home_url('/institucional'); ?>"
+                            class="group w-full flex items-center justify-between bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-[1.02]">
+                            <span class="flex items-center gap-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Conocer más sobre SAEBU
+                            </span>
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+
+                        <a href="<?php echo home_url('/servicios'); ?>"
+                            class="group w-full flex items-center justify-between bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-[1.02]">
+                            <span class="flex items-center gap-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                </svg>
+                                Nuestros Servicios
+                            </span>
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Información destacada -->
+                <div class="bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-2xl rounded-3xl border border-white/20 p-6 md:p-8 shadow-2xl">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white mb-2">¿Necesitás ayuda?</h4>
+                            <p class="text-white/80 text-sm leading-relaxed mb-4">
+                                Nuestro equipo está disponible para asesorarte en todo lo que necesites
+                            </p>
+                            <a href="#contacto"
+                                class="inline-flex items-center gap-2 text-blue-300 hover:text-blue-200 font-semibold text-sm transition-colors">
+                                Contactar ahora
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
             </div>
+
         </div>
-    </section>
-<?php endif; ?>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#servicios" class="flex flex-col items-center gap-2 text-white/60 hover:text-white/80 transition-colors">
+                <span class="text-xs uppercase tracking-wider font-medium">Explorar</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Animaciones personalizadas */
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slide-in-left {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slide-in-right {
+        from {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 0.6s ease-out;
+    }
+
+    .animate-fade-in-up {
+        animation: fade-in-up 0.8s ease-out;
+        animation-delay: 0.2s;
+        animation-fill-mode: both;
+    }
+
+    .animate-slide-in-left {
+        animation: slide-in-left 0.8s ease-out;
+        animation-delay: 0.4s;
+        animation-fill-mode: both;
+    }
+
+    .animate-slide-in-right {
+        animation: slide-in-right 0.8s ease-out;
+        animation-delay: 0.6s;
+        animation-fill-mode: both;
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+    }
+
+    .animate-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Backdrop blur fallback */
+    @supports not (backdrop-filter: blur(40px)) {
+        .backdrop-blur-2xl {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    }
+</style>
+
 
 
 
 <!-- Barra de estadísticas flotante -->
 <!--section class="relative -mt-20 z-10">
     <div class="container mx-auto px-4">
-        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-5xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-2xl px-4 py-6 max-w-5xl mx-auto">
             <div class="grid md:grid-cols-2 gap-8 text-center">
                 <div class="border-r border-gray-200 last:border-0">
                     <h3 class="text-xl font-bold text-blue-600 mb-2">Secretario</h3>
@@ -272,8 +434,8 @@ if ($menu_dia) :
             foreach ($departamentos as $depto) :
             ?>
                 <a href="<?php echo home_url('/' . $depto['slug']); ?>"
-                    class="group bg-white border border-gray-200 rounded-lg p-8 hover:border-blue-500 hover:shadow-lg transition-all duration-300">
-                    <div class="text-blue-600 mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                    class="group bg-white border border-gray-200 rounded-lg px-4 py-6 hover:border-blue-500 hover:shadow-lg transition-all duration-300">
+                    <div class="text-blue-600 mb-4 transform  transition-transform duration-300"> <!-- group-hover:scale-110 -->
                         <?php echo $depto['svg']; ?>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
@@ -291,77 +453,9 @@ if ($menu_dia) :
     </div>
 </section>
 
-<!-- Últimas Noticias -->
-<section class="py-24 bg-gray-50">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-slate-900 mb-4">Últimas Noticias</h2>
-            <p class="text-lg text-gray-600">Mantente informado sobre nuestras actividades</p>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <?php
-            $latest_news = new WP_Query(array(
-                'post_type' => 'noticia',
-                'posts_per_page' => 6,
-            ));
 
-            if ($latest_news->have_posts()) :
-                while ($latest_news->have_posts()) : $latest_news->the_post();
-            ?>
-                    <article class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                        <?php if (has_post_thumbnail()) : ?>
-                            <a href="<?php the_permalink(); ?>" class="block overflow-hidden group">
-                                <?php the_post_thumbnail('noticia-thumbnail', array('class' => 'w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500')); ?>
-                            </a>
-                        <?php endif; ?>
 
-                        <div class="p-6">
-                            <?php
-                            $terms = get_the_terms(get_the_ID(), 'departamento');
-                            if ($terms && !is_wp_error($terms)) :
-                                $term = array_shift($terms);
-                            ?>
-                                <span class="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
-                                    <?php echo esc_html($term->name); ?>
-                                </span>
-                            <?php endif; ?>
 
-                            <h3 class="text-xl font-bold mb-3 leading-tight">
-                                <a href="<?php the_permalink(); ?>" class="text-slate-900 hover:text-blue-600 transition-colors">
-                                    <?php the_title(); ?>
-                                </a>
-                            </h3>
-
-                            <p class="text-gray-500 text-sm mb-3">
-                                <?php echo get_the_date('d/m/Y'); ?>
-                            </p>
-
-                            <p class="text-gray-700 mb-4 line-clamp-3">
-                                <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
-                            </p>
-
-                            <a href="<?php the_permalink(); ?>" class="text-blue-600 font-medium text-sm hover:text-blue-700 transition-colors">
-                                Leer más →
-                            </a>
-                        </div>
-                    </article>
-                <?php
-                endwhile;
-                wp_reset_postdata();
-            else :
-                ?>
-                <p class="col-span-full text-center text-gray-600">No hay noticias disponibles.</p>
-            <?php endif; ?>
-        </div>
-
-        <div class="text-center mt-12">
-            <a href="<?php echo get_post_type_archive_link('noticia'); ?>"
-                class="inline-block bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors shadow-md hover:shadow-lg">
-                Ver Todas las Noticias
-            </a>
-        </div>
-    </div>
-</section>
 
 <?php get_footer(); ?>

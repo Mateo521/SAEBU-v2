@@ -5,31 +5,6 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tailwind CSS con Typography Plugin -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    typography: {
-                        DEFAULT: {
-                            css: {
-                                maxWidth: 'none',
-                                img: {
-                                    borderRadius: '1rem',
-                                    marginTop: '2rem',
-                                    marginBottom: '2rem',
-                                    boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)',
-                                },
-                            },
-                        },
-                    },
-                },
-            },
-        }
-    </script>
-
-
     <?php wp_head(); ?>
 </head>
 
