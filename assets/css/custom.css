@@ -92,7 +92,7 @@ a, button, .group {
 /* Backdrop blur para navegación sticky */
 header.sticky {
     backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.70);
 }
 
 /* Gradiente de texto */
