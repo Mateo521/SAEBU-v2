@@ -80,7 +80,7 @@ get_header();
                 <div class="max-w-6xl mx-auto">
 
                     <!-- Intro del departamento -->
-                    <div class="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 border-2 border-indigo-300 rounded-3xl p-8 md:p-12 shadow-xl mb-12">
+                    <div class="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 border-2 border-indigo-300 rounded-xl p-8 md:p-12 shadow-xl mb-12">
                         <div class="flex items-start gap-6">
                             <div class="w-16 h-16 bg-gradient-to-br from-indigo-600 to-purple-700 text-white rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -120,7 +120,7 @@ get_header();
                     <div class="grid md:grid-cols-3 gap-6">
 
                         <!-- TIPO 1: Licitación Privada -->
-                        <div class="bg-white border-2 border-indigo-300 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
+                        <div class="bg-white border-2 border-indigo-300 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
                             <div class="bg-gradient-to-r from-indigo-600 to-purple-700 text-white p-6">
                                 <div class="flex items-start gap-4">
                                     <div class="w-12 h-12 bg-white/20 backdrop-blur-xl rounded-xl flex items-center justify-center flex-shrink-0">
@@ -172,7 +172,7 @@ get_header();
                         </div>
 
                         <!-- TIPO 2: Compra Directa -->
-                        <div class="bg-white border-2 border-green-300 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
+                        <div class="bg-white border-2 border-green-300 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
                             <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-6">
                                 <div class="flex items-start gap-4">
                                     <div class="w-12 h-12 bg-white/20 backdrop-blur-xl rounded-xl flex items-center justify-center flex-shrink-0">
@@ -224,7 +224,7 @@ get_header();
                         </div>
 
                         <!-- TIPO 3: Plan Anual -->
-                        <div class="bg-white border-2 border-blue-300 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
+                        <div class="bg-white border-2 border-blue-300 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
                             <div class="bg-gradient-to-r from-blue-500 to-cyan-600 text-white p-6">
                                 <div class="flex items-start gap-4">
                                     <div class="w-12 h-12 bg-white/20 backdrop-blur-xl rounded-xl flex items-center justify-center flex-shrink-0">
@@ -443,7 +443,7 @@ get_header();
             <div class="container mx-auto px-4">
                 <div class="max-w-5xl mx-auto">
 
-                    <div class="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-3xl overflow-hidden shadow-2xl">
+                    <div class="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-xl overflow-hidden shadow-2xl">
                         <div class="grid md:grid-cols-2 gap-8 items-center">
                             
                             <!-- Contenido -->
@@ -479,7 +479,7 @@ get_header();
                             <!-- Imagen/Icono decorativo -->
                             <div class="hidden md:flex items-center justify-center p-12 bg-white/10 backdrop-blur-xl">
                                 <div class="relative">
-                                    <div class="w-64 h-64 bg-white/20 rounded-3xl flex items-center justify-center backdrop-blur-xl border-2 border-white/30 shadow-2xl">
+                                    <div class="w-64 h-64 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-xl border-2 border-white/30 shadow-2xl">
                                         <svg class="w-32 h-32 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                         </svg>
@@ -769,7 +769,7 @@ get_header();
                     <div class="grid md:grid-cols-2 gap-6">
                         
                         <!-- Insumos Comedor -->
-                        <div class="bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-300 rounded-3xl p-8 shadow-xl">
+                        <div class="bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-300 rounded-xl p-8 shadow-xl">
                             <div class="flex items-start gap-4 mb-6">
                                 <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 text-white rounded-2xl flex items-center justify-center flex-shrink-0">
                                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -810,7 +810,7 @@ get_header();
                         </div>
 
                         <!-- Equipamiento -->
-                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-300 rounded-3xl p-8 shadow-xl">
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-300 rounded-xl p-8 shadow-xl">
                             <div class="flex items-start gap-4 mb-6">
                                 <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center flex-shrink-0">
                                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">

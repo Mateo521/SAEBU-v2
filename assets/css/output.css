@@ -990,7 +990,7 @@
   .rounded-2xl {
     border-radius: var(--radius-2xl);
   }
-  .rounded-3xl {
+  .rounded-xl {
     border-radius: var(--radius-3xl);
   }
   .rounded-full {

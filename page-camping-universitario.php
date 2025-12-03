@@ -231,7 +231,7 @@ get_header();
                     <div class="grid md:grid-cols-2 gap-8 mb-12">
 
                         <!-- Sectores de Acampe -->
-                        <div class="bg-white border-2 border-green-200 rounded-3xl p-8 shadow-lg">
+                        <div class="bg-white border-2 border-green-200 rounded-xl p-8 shadow-lg">
                             <div class="flex items-center gap-3 mb-6">
                                 <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-xl flex items-center justify-center shadow-lg">
                                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -278,7 +278,7 @@ get_header();
                         </div>
 
                         <!-- Para pasar el día -->
-                        <div class="bg-white border-2 border-emerald-200 rounded-3xl p-8 shadow-lg">
+                        <div class="bg-white border-2 border-emerald-200 rounded-xl p-8 shadow-lg">
                             <div class="flex items-center gap-3 mb-6">
                                 <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-600 text-white rounded-xl flex items-center justify-center shadow-lg">
                                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -380,7 +380,7 @@ get_header();
                     </div>
 
                     <!-- Card de cabañas -->
-                    <div class="bg-gradient-to-br from-white to-teal-50/50 border-2 border-teal-200 rounded-3xl overflow-hidden shadow-xl">
+                    <div class="bg-gradient-to-br from-white to-teal-50/50 border-2 border-teal-200 rounded-xl overflow-hidden shadow-xl">
                         <div class="grid md:grid-cols-2">
 
                             <!-- Imagen ilustrativa -->
@@ -476,7 +476,7 @@ get_header();
                     </div>
 
                     <!-- Tabla de tarifas -->
-                    <div class="bg-white border-2 border-green-200 rounded-3xl overflow-hidden shadow-xl">
+                    <div class="bg-white border-2 border-green-200 rounded-xl overflow-hidden shadow-xl">
 
                         <!-- Header de tabla -->
                         <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-6">

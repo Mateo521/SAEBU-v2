@@ -80,7 +80,7 @@ get_header();
 
                         <!-- Sede San Luis -->
                         <div
-                            class="group bg-gradient-to-br from-white to-pink-50/50 border-2 border-pink-200 rounded-3xl p-8 md:p-10 hover:shadow-2xl hover:border-pink-400 transition-all duration-500">
+                            class="group bg-gradient-to-br from-white to-pink-50/50 border-2 border-pink-200 rounded-xl p-8 md:p-10 hover:shadow-2xl hover:border-pink-400 transition-all duration-500">
 
                             <!-- Header -->
                             <div class="flex items-center gap-4 mb-6">
@@ -190,7 +190,7 @@ get_header();
 
                         <!-- Sede Villa Mercedes -->
                         <div
-                            class="group bg-gradient-to-br from-white to-purple-50/50 border-2 border-purple-200 rounded-3xl p-8 md:p-10 hover:shadow-2xl hover:border-purple-400 transition-all duration-500">
+                            class="group bg-gradient-to-br from-white to-purple-50/50 border-2 border-purple-200 rounded-xl p-8 md:p-10 hover:shadow-2xl hover:border-purple-400 transition-all duration-500">
 
                             <!-- Header -->
                             <div class="flex items-center gap-4 mb-6">
@@ -307,7 +307,7 @@ get_header();
                     </div>
 
                     <!-- Card de inscripción -->
-                    <div class="bg-white border-2 border-purple-200 rounded-3xl p-8 md:p-12 shadow-xl">
+                    <div class="bg-white border-2 border-purple-200 rounded-xl p-8 md:p-12 shadow-xl">
 
                         <!-- Requisitos -->
                         <div class="mb-10">
@@ -451,7 +451,7 @@ get_header();
 
                         <!-- Certificado de Salud - Ingreso -->
                         <div
-                            class="bg-gradient-to-br from-white to-pink-50/50 border-2 border-pink-200 rounded-3xl p-8 md:p-10 hover:shadow-xl transition-all">
+                            class="bg-gradient-to-br from-white to-pink-50/50 border-2 border-pink-200 rounded-xl p-8 md:p-10 hover:shadow-xl transition-all">
                             <div class="flex items-start gap-5 mb-6">
                                 <div
                                     class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 text-white rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
@@ -526,7 +526,7 @@ get_header();
 
                         <!-- Certificado Comedor sin TACC -->
                         <div
-                            class="bg-gradient-to-br from-white to-purple-50/50 border-2 border-purple-200 rounded-3xl p-8 md:p-10 hover:shadow-xl transition-all">
+                            class="bg-gradient-to-br from-white to-purple-50/50 border-2 border-purple-200 rounded-xl p-8 md:p-10 hover:shadow-xl transition-all">
                             <div class="flex items-start gap-5">
                                 <div
                                     class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
@@ -559,7 +559,7 @@ get_header();
 
                         <!-- Programa REMEDIAR -->
                         <div
-                            class="bg-gradient-to-br from-white to-green-50/50 border-2 border-green-200 rounded-3xl p-8 md:p-10 hover:shadow-xl transition-all">
+                            class="bg-gradient-to-br from-white to-green-50/50 border-2 border-green-200 rounded-xl p-8 md:p-10 hover:shadow-xl transition-all">
                             <div class="flex items-start gap-5">
                                 <div
                                     class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
@@ -619,7 +619,7 @@ get_header();
                     <div class="grid md:grid-cols-2 gap-8">
 
                         <!-- Turnos San Luis -->
-                        <div class="bg-white border-2 border-pink-200 rounded-3xl p-8 shadow-lg">
+                        <div class="bg-white border-2 border-pink-200 rounded-xl p-8 shadow-lg">
                             <div class="flex items-center gap-3 mb-6">
                                 <div
                                     class="w-12 h-12 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center">
@@ -705,7 +705,7 @@ get_header();
                         </div>
 
                         <!-- Turnos Villa Mercedes -->
-                        <div class="bg-white border-2 border-purple-200 rounded-3xl p-8 shadow-lg">
+                        <div class="bg-white border-2 border-purple-200 rounded-xl p-8 shadow-lg">
                             <div class="flex items-center gap-3 mb-6">
                                 <div
                                     class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center">

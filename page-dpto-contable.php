@@ -81,7 +81,7 @@ get_header();
                 <div class="max-w-6xl mx-auto">
 
                     <!-- Intro con dependencia -->
-                    <div class="bg-gradient-to-br from-slate-50 to-blue-50 border-2 border-slate-300 rounded-3xl p-8 md:p-12 shadow-xl mb-12">
+                    <div class="bg-gradient-to-br from-slate-50 to-blue-50 border-2 border-slate-300 rounded-xl p-8 md:p-12 shadow-xl mb-12">
                         <div class="flex items-start gap-6 mb-8">
                             <div class="w-16 h-16 bg-gradient-to-br from-slate-600 to-slate-800 text-white rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -137,7 +137,7 @@ get_header();
                     <div class="grid md:grid-cols-2 gap-6">
 
                         <!-- TAREA 1: Control y Administración -->
-                        <div class="bg-white border-2 border-slate-300 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
+                        <div class="bg-white border-2 border-slate-300 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
                             <div class="bg-gradient-to-r from-slate-600 to-slate-800 text-white p-6">
                                 <div class="flex items-start gap-4">
                                     <div class="w-12 h-12 bg-white/20 backdrop-blur-xl rounded-xl flex items-center justify-center flex-shrink-0">
@@ -165,7 +165,7 @@ get_header();
                         </div>
 
                         <!-- TAREA 2: Pago de Becas -->
-                        <div class="bg-white border-2 border-emerald-300 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
+                        <div class="bg-white border-2 border-emerald-300 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
                             <div class="bg-gradient-to-r from-emerald-500 to-green-600 text-white p-6">
                                 <div class="flex items-start gap-4">
                                     <div class="w-12 h-12 bg-white/20 backdrop-blur-xl rounded-xl flex items-center justify-center flex-shrink-0">
@@ -230,7 +230,7 @@ get_header();
                         </div>
 
                         <!-- TAREA 3: Comedor -->
-                        <div class="bg-white border-2 border-blue-300 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
+                        <div class="bg-white border-2 border-blue-300 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
                             <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6">
                                 <div class="flex items-start gap-4">
                                     <div class="w-12 h-12 bg-white/20 backdrop-blur-xl rounded-xl flex items-center justify-center flex-shrink-0">
@@ -262,7 +262,7 @@ get_header();
                         </div>
 
                         <!-- TAREA 4: Proveedores -->
-                        <div class="bg-white border-2 border-purple-300 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
+                        <div class="bg-white border-2 border-purple-300 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
                             <div class="bg-gradient-to-r from-purple-500 to-pink-600 text-white p-6">
                                 <div class="flex items-start gap-4">
                                     <div class="w-12 h-12 bg-white/20 backdrop-blur-xl rounded-xl flex items-center justify-center flex-shrink-0">
@@ -290,7 +290,7 @@ get_header();
                         </div>
 
                         <!-- TAREA 5: Servicios Contratados -->
-                        <div class="bg-white border-2 border-orange-300 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
+                        <div class="bg-white border-2 border-orange-300 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
                             <div class="bg-gradient-to-r from-orange-500 to-red-600 text-white p-6">
                                 <div class="flex items-start gap-4">
                                     <div class="w-12 h-12 bg-white/20 backdrop-blur-xl rounded-xl flex items-center justify-center flex-shrink-0">
@@ -323,7 +323,7 @@ get_header();
                         </div>
 
                         <!-- TAREA 6: La Florida -->
-                        <div class="bg-white border-2 border-cyan-300 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
+                        <div class="bg-white border-2 border-cyan-300 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all group">
                             <div class="bg-gradient-to-r from-cyan-500 to-teal-600 text-white p-6">
                                 <div class="flex items-start gap-4">
                                     <div class="w-12 h-12 bg-white/20 backdrop-blur-xl rounded-xl flex items-center justify-center flex-shrink-0">
@@ -365,11 +365,11 @@ get_header();
             <div class="container mx-auto px-4">
                 <div class="max-w-5xl mx-auto">
 
-                    <div class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 border-2 border-emerald-300 rounded-3xl p-8 md:p-12 shadow-2xl">
+                    <div class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 border-2 border-emerald-300 rounded-xl p-8 md:p-12 shadow-2xl">
                         <div class="flex flex-col md:flex-row items-start gap-8">
 
                             <!-- Icono destacado -->
-                            <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-3xl flex items-center justify-center flex-shrink-0 shadow-xl">
+                            <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-xl">
                                 <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                                 </svg>
@@ -462,7 +462,7 @@ get_header();
                     <!-- Diagrama visual -->
                     <div class="relative">
                         <!-- Centro: Departamento Contable -->
-                        <div class="bg-gradient-to-br from-slate-700 to-slate-900 border-4 border-slate-500 text-white rounded-3xl p-8 max-w-md mx-auto relative z-10 shadow-2xl">
+                        <div class="bg-gradient-to-br from-slate-700 to-slate-900 border-4 border-slate-500 text-white rounded-xl p-8 max-w-md mx-auto relative z-10 shadow-2xl">
                             <div class="text-center">
                                 <div class="w-16 h-16 bg-white/20 backdrop-blur-xl rounded-2xl flex items-center justify-center mx-auto mb-4">
                                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -533,7 +533,7 @@ get_header();
             <div class="container mx-auto px-4">
                 <div class="max-w-3xl mx-auto">
 
-                    <div class="bg-gradient-to-br from-slate-50 to-blue-50 border-2 border-slate-300 rounded-3xl p-8 md:p-10 shadow-xl">
+                    <div class="bg-gradient-to-br from-slate-50 to-blue-50 border-2 border-slate-300 rounded-xl p-8 md:p-10 shadow-xl">
                         <div class="flex items-start gap-6">
                             <div class="w-16 h-16 bg-gradient-to-br from-slate-600 to-slate-800 text-white rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -879,7 +879,7 @@ get_header();
 
                         <!-- Servicio 1: Becas -->
                         <div class="group">
-                            <div class="bg-gradient-to-br from-emerald-50 to-green-50 border-2 border-emerald-300 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all h-full">
+                            <div class="bg-gradient-to-br from-emerald-50 to-green-50 border-2 border-emerald-300 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all h-full">
                                 <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -917,7 +917,7 @@ get_header();
 
                         <!-- Servicio 2: Operaciones -->
                         <div class="group">
-                            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-300 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all h-full">
+                            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-300 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all h-full">
                                 <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
@@ -955,7 +955,7 @@ get_header();
 
                         <!-- Servicio 3: La Florida -->
                         <div class="group">
-                            <div class="bg-gradient-to-br from-cyan-50 to-teal-50 border-2 border-cyan-300 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all h-full">
+                            <div class="bg-gradient-to-br from-cyan-50 to-teal-50 border-2 border-cyan-300 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all h-full">
                                 <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-teal-600 text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path>

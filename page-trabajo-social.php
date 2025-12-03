@@ -224,7 +224,7 @@ get_header();
                     <div class="grid md:grid-cols-2 gap-8">
 
                         <!-- Objetivo -->
-                        <div class="bg-white border-2 border-indigo-200 rounded-3xl p-8 shadow-lg">
+                        <div class="bg-white border-2 border-indigo-200 rounded-xl p-8 shadow-lg">
                             <div class="flex items-start gap-4 mb-6">
                                 <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 text-white rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
                                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -255,7 +255,7 @@ get_header();
                         </div>
 
                         <!-- Ubicación e info -->
-                        <div class="bg-white border-2 border-indigo-200 rounded-3xl p-8 shadow-lg">
+                        <div class="bg-white border-2 border-indigo-200 rounded-xl p-8 shadow-lg">
                             <div class="flex items-start gap-4 mb-6">
                                 <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
                                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -352,7 +352,7 @@ get_header();
                     </div>
 
                     <!-- Novedades destacadas -->
-                    <div class="bg-gradient-to-br from-green-500 to-emerald-600 text-white rounded-3xl p-8 md:p-10 mb-12 shadow-2xl">
+                    <div class="bg-gradient-to-br from-green-500 to-emerald-600 text-white rounded-xl p-8 md:p-10 mb-12 shadow-2xl">
                         <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -448,7 +448,7 @@ get_header();
                     </div>
 
                     <!-- Inscripciones -->
-                    <div class="bg-white border-2 border-blue-200 rounded-3xl overflow-hidden shadow-xl mb-8">
+                    <div class="bg-white border-2 border-blue-200 rounded-xl overflow-hidden shadow-xl mb-8">
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6 md:p-8">
                             <h3 class="text-2xl font-bold flex items-center gap-3">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -500,7 +500,7 @@ get_header();
                     </div>
 
                     <!-- Requisitos -->
-                    <div class="bg-white border-2 border-purple-200 rounded-3xl overflow-hidden shadow-xl mb-8">
+                    <div class="bg-white border-2 border-purple-200 rounded-xl overflow-hidden shadow-xl mb-8">
                         <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-6 md:p-8">
                             <h3 class="text-2xl font-bold flex items-center gap-3">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -614,7 +614,7 @@ get_header();
                     </div>
 
                     <!-- Montos y Pagos -->
-                    <div class="bg-white border-2 border-green-200 rounded-3xl overflow-hidden shadow-xl mb-8">
+                    <div class="bg-white border-2 border-green-200 rounded-xl overflow-hidden shadow-xl mb-8">
                         <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-6 md:p-8">
                             <h3 class="text-2xl font-bold flex items-center gap-3">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -749,7 +749,7 @@ get_header();
                     </div>
 
                     <!-- Reclamos -->
-                    <div class="bg-white border-2 border-red-200 rounded-3xl overflow-hidden shadow-xl">
+                    <div class="bg-white border-2 border-red-200 rounded-xl overflow-hidden shadow-xl">
                         <div class="bg-gradient-to-r from-red-500 to-rose-600 text-white p-6 md:p-8">
                             <h3 class="text-2xl font-bold flex items-center gap-3">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -803,7 +803,7 @@ get_header();
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Acercamos los beneficios a todos los estudiantes</p>
                     </div>
 
-                    <div class="bg-white border-2 border-blue-200 rounded-3xl p-8 md:p-10 shadow-xl">
+                    <div class="bg-white border-2 border-blue-200 rounded-xl p-8 md:p-10 shadow-xl">
                         <div class="flex items-start gap-6 mb-8">
                             <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -910,7 +910,7 @@ get_header();
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Inclusión e integración de estudiantes en situación de discapacidad</p>
                     </div>
 
-                    <div class="bg-white border-2 border-purple-200 rounded-3xl overflow-hidden shadow-xl">
+                    <div class="bg-white border-2 border-purple-200 rounded-xl overflow-hidden shadow-xl">
 
                         <!-- Header con gradiente -->
                         <div class="bg-gradient-to-r from-purple-500 to-pink-600 text-white p-8 md:p-10">

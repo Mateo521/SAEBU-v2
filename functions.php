@@ -116,7 +116,8 @@ add_action('wp_enqueue_scripts', 'saebu_enqueue_swiper');
 // add_action('wp_head', 'saebu_tailwind_config', 100);
 
 
-function saebu_enqueue_all_fonts() {
+function saebu_enqueue_all_fonts()
+{
     wp_enqueue_style(
         'saebu-all-fonts',
         'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap',
@@ -1192,30 +1193,34 @@ add_action('save_post_noticia', 'saebu_save_galeria_meta');
 /**
  * Custom Walker for Desktop Menu with Dropdowns
  */
-class Saebu_Desktop_Walker_Nav_Menu extends Walker_Nav_Menu {
-    
+class Saebu_Desktop_Walker_Nav_Menu extends Walker_Nav_Menu
+{
+
     // Start Level (submenu wrapper)
-    function start_lvl(&$output, $depth = 0, $args = null) {
+    function start_lvl(&$output, $depth = 0, $args = null)
+    {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<ul class=\"absolute left-0 top-full mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50\">\n";
     }
-    
+
     // End Level
-    function end_lvl(&$output, $depth = 0, $args = null) {
+    function end_lvl(&$output, $depth = 0, $args = null)
+    {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</ul>\n";
     }
-    
+
     // Start Element (menu item)
-    function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
+    function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+    {
         $indent = ($depth) ? str_repeat("\t", $depth) : '';
-        
+
         $classes = empty($item->classes) ? array() : (array) $item->classes;
         $classes[] = 'menu-item-' . $item->ID;
-        
+
         // Check if item has children
         $has_children = in_array('menu-item-has-children', $classes);
-        
+
         if ($depth === 0) {
             // Top level menu item
             $li_class = 'relative group';
@@ -1225,16 +1230,16 @@ class Saebu_Desktop_Walker_Nav_Menu extends Walker_Nav_Menu {
             $li_class = '';
             $a_class = 'block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors';
         }
-        
+
         $output .= $indent . '<li class="' . $li_class . '">';
-        
+
         $atts = array();
         $atts['title']  = !empty($item->attr_title) ? $item->attr_title : '';
         $atts['target'] = !empty($item->target) ? $item->target : '';
         $atts['rel']    = !empty($item->xfn) ? $item->xfn : '';
         $atts['href']   = !empty($item->url) ? $item->url : '';
         $atts['class']  = $a_class;
-        
+
         $attributes = '';
         foreach ($atts as $attr => $value) {
             if (!empty($value)) {
@@ -1242,19 +1247,19 @@ class Saebu_Desktop_Walker_Nav_Menu extends Walker_Nav_Menu {
                 $attributes .= ' ' . $attr . '="' . $value . '"';
             }
         }
-        
+
         $item_output = $args->before;
         $item_output .= '<a' . $attributes . '>';
         $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
-        
+
         // Add dropdown icon if has children
         if ($has_children && $depth === 0) {
             $item_output .= '<svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
         }
-        
+
         $item_output .= '</a>';
         $item_output .= $args->after;
-        
+
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
 }
@@ -1262,29 +1267,33 @@ class Saebu_Desktop_Walker_Nav_Menu extends Walker_Nav_Menu {
 /**
  * Custom Walker for Mobile Menu with Accordions
  */
-class Saebu_Mobile_Walker_Nav_Menu extends Walker_Nav_Menu {
-    
+class Saebu_Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
+{
+
     private $current_item_has_children = false;
-    
-    function start_lvl(&$output, $depth = 0, $args = null) {
+
+    function start_lvl(&$output, $depth = 0, $args = null)
+    {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<ul class=\"pl-4 mt-2 space-y-2 hidden\" x-show=\"open\" x-collapse>\n";
     }
-    
-    function end_lvl(&$output, $depth = 0, $args = null) {
+
+    function end_lvl(&$output, $depth = 0, $args = null)
+    {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</ul>\n";
     }
-    
-    function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
+
+    function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+    {
         $indent = ($depth) ? str_repeat("\t", $depth) : '';
-        
+
         $classes = empty($item->classes) ? array() : (array) $item->classes;
         $has_children = in_array('menu-item-has-children', $classes);
-        
+
         if ($depth === 0 && $has_children) {
             $output .= $indent . '<li x-data="{ open: false }">';
-            
+
             // Parent item with toggle
             $output .= '<div class="flex items-center justify-between px-4 py-3 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium transition-colors">';
             $output .= '<a href="' . esc_url($item->url) . '" class="flex-1">' . apply_filters('the_title', $item->title, $item->ID) . '</a>';
@@ -1292,21 +1301,21 @@ class Saebu_Mobile_Walker_Nav_Menu extends Walker_Nav_Menu {
             $output .= '<svg class="w-5 h-5 transition-transform" :class="{ \'rotate-180\': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
             $output .= '</button>';
             $output .= '</div>';
-            
         } else {
             $li_class = '';
             $a_class = 'block px-4 py-3 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium transition-colors';
-            
+
             if ($depth > 0) {
                 $a_class = 'block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors';
             }
-            
+
             $output .= $indent . '<li class="' . $li_class . '">';
             $output .= '<a href="' . esc_url($item->url) . '" class="' . $a_class . '">' . apply_filters('the_title', $item->title, $item->ID) . '</a>';
         }
     }
-    
-    function end_el(&$output, $item, $depth = 0, $args = null) {
+
+    function end_el(&$output, $item, $depth = 0, $args = null)
+    {
         $output .= "</li>\n";
     }
 }
