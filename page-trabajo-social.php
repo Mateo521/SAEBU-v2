@@ -45,7 +45,7 @@ get_header();
                     </div>
 
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                        Becas y Residencia<br>Universitaria
+                        Departamento de Trabajo Social
                     </h1>
 
                     <p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-8">
