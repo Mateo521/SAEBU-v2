@@ -423,6 +423,9 @@
   .top-20 {
     top: calc(var(--spacing) * 20);
   }
+  .top-24 {
+    top: calc(var(--spacing) * 24);
+  }
   .top-full {
     top: 100%;
   }
@@ -599,6 +602,9 @@
   }
   .mr-1 {
     margin-right: calc(var(--spacing) * 1);
+  }
+  .mr-2 {
+    margin-right: calc(var(--spacing) * 2);
   }
   .mr-6 {
     margin-right: calc(var(--spacing) * 6);
@@ -1159,6 +1165,10 @@
     border-style: var(--tw-border-style);
     border-width: 4px;
   }
+  .border-y {
+    border-block-style: var(--tw-border-style);
+    border-block-width: 1px;
+  }
   .border-t {
     border-top-style: var(--tw-border-style);
     border-top-width: 1px;
@@ -1178,6 +1188,10 @@
   .border-b-2 {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
+  }
+  .border-b-4 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 4px;
   }
   .border-l-4 {
     border-left-style: var(--tw-border-style);
@@ -1342,6 +1356,12 @@
       border-color: color-mix(in oklab, var(--color-white) 30%, transparent);
     }
   }
+  .border-white\/40 {
+    border-color: color-mix(in srgb, #fff 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-white) 40%, transparent);
+    }
+  }
   .border-white\/50 {
     border-color: color-mix(in srgb, #fff 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1479,6 +1499,9 @@
   }
   .bg-gray-200 {
     background-color: var(--color-gray-200);
+  }
+  .bg-gray-300 {
+    background-color: var(--color-gray-300);
   }
   .bg-gray-600 {
     background-color: var(--color-gray-600);
@@ -1645,6 +1668,9 @@
   .bg-sky-500 {
     background-color: var(--color-sky-500);
   }
+  .bg-slate-50 {
+    background-color: var(--color-slate-50);
+  }
   .bg-slate-100 {
     background-color: var(--color-slate-100);
   }
@@ -1753,6 +1779,9 @@
   .bg-gradient-to-t {
     --tw-gradient-position: to top in oklab;
     background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .bg-\[url\(\'data\:image\/svg\+xml\;base64\,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI\+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4\=\'\)\] {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=');
   }
   .from-\[\#416ed2\] {
     --tw-gradient-from: #416ed2;
@@ -3230,6 +3259,9 @@
   .opacity-10 {
     opacity: 10%;
   }
+  .opacity-20 {
+    opacity: 20%;
+  }
   .opacity-40 {
     opacity: 40%;
   }
@@ -3383,6 +3415,11 @@
       rotate: 180deg;
     }
   }
+  .group-open\:border-gray-100 {
+    &:is(:where(.group):is([open], :popover-open, :open) *) {
+      border-color: var(--color-gray-100);
+    }
+  }
   .group-hover\:visible {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -3455,6 +3492,13 @@
         @supports (color: color-mix(in lab, red, red)) {
           border-color: color-mix(in oklab, var(--color-white) 50%, transparent);
         }
+      }
+    }
+  }
+  .group-hover\:bg-\[\#005eb8\] {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        background-color: #005eb8;
       }
     }
   }
@@ -3767,6 +3811,13 @@
     &:hover {
       @media (hover: hover) {
         border-color: var(--color-cyan-300);
+      }
+    }
+  }
+  .hover\:border-gray-300 {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-gray-300);
       }
     }
   }
@@ -4758,6 +4809,11 @@
       grid-column: span 1 / span 1;
     }
   }
+  .lg\:col-span-2 {
+    @media (width >= 64rem) {
+      grid-column: span 2 / span 2;
+    }
+  }
   .lg\:col-span-3 {
     @media (width >= 64rem) {
       grid-column: span 3 / span 3;
@@ -4806,6 +4862,11 @@
   .lg\:grid-cols-\[1\.5fr_1fr\] {
     @media (width >= 64rem) {
       grid-template-columns: 1.5fr 1fr;
+    }
+  }
+  .lg\:grid-cols-\[1fr_1\.5fr\] {
+    @media (width >= 64rem) {
+      grid-template-columns: 1fr 1.5fr;
     }
   }
   .lg\:gap-12 {
