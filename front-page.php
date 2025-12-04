@@ -452,8 +452,8 @@
 
         <!-- Botón Ver Todos -->
         <div class="text-center mt-12">
-            <a href="<?php echo home_url('/departamentos'); ?>" 
-               class="inline-flex items-center gap-2 bg-[#416ed2] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#2d4d9e] transition-all hover:scale-105 shadow-lg">
+            <a href="<?php echo home_url('/departamentos'); ?>"
+                class="inline-flex items-center gap-2 bg-[#416ed2] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#2d4d9e] transition-all hover:scale-105 shadow-lg">
                 <span>Ver Todos los Departamentos</span>
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>

@@ -489,7 +489,7 @@ get_header();
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
                                     </svg>
                                     <div>
-                                        <p class="font-bold text-amber-900 mb-1">⚠️ Importante</p>
+                                        <p class="font-bold text-amber-900 mb-1"> Importante</p>
                                         <p class="text-sm text-amber-800">
                                             Los formularios de inscripción de <strong>ANSES no tienen ningún tipo de validez</strong> en el nivel universitario y serán rechazados.
                                         </p>
@@ -627,7 +627,7 @@ get_header();
                         <div class="p-6 md:p-8">
                             <!-- Info de pagos -->
                             <div class="bg-green-50 border-2 border-green-200 rounded-xl p-6 mb-8">
-                                <h4 class="text-lg font-bold text-slate-900 mb-3">📅 Modalidad de pago</h4>
+                                <h4 class="text-lg font-bold text-slate-900 mb-3"> Modalidad de pago</h4>
                                 <ul class="space-y-2 text-gray-700">
                                     <li class="flex items-start gap-2">
                                         <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -652,7 +652,7 @@ get_header();
 
                             <!-- Tabla Universidad General -->
                             <div class="mb-8">
-                                <h4 class="text-xl font-bold text-slate-900 mb-4">💰 Montos - Universidad</h4>
+                                <h4 class="text-xl font-bold text-slate-900 mb-4"> Montos - Universidad</h4>
                                 <div class="overflow-x-auto">
                                     <table class="w-full border-collapse">
                                         <thead>
@@ -695,7 +695,7 @@ get_header();
 
                             <!-- Tabla Enfermería -->
                             <div>
-                                <h4 class="text-xl font-bold text-slate-900 mb-4">🏥 Montos - Progresar Enfermería (ex PRONAFE)</h4>
+                                <h4 class="text-xl font-bold text-slate-900 mb-4"> Montos - Progresar Enfermería (ex PRONAFE)</h4>
                                 <div class="overflow-x-auto">
                                     <table class="w-full border-collapse">
                                         <thead>
@@ -737,7 +737,7 @@ get_header();
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                                     </svg>
                                     <div>
-                                        <p class="font-bold text-green-900 mb-1">📈 Aumentos significativos</p>
+                                        <p class="font-bold text-green-900 mb-1"> Aumentos significativos</p>
                                         <p class="text-sm text-green-800">
                                             Aumentos en los montos de hasta un <strong>92%</strong> en Progresar Universitario y hasta un <strong>135%</strong> en el caso de Progresar Enfermería.
                                         </p>

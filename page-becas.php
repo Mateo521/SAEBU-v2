@@ -97,15 +97,15 @@ get_header();
                                 <!-- Centros -->
                                 <div class="grid md:grid-cols-3 gap-4">
                                     <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl p-4 text-center">
-                                        <div class="text-xl mb-2">🏛️</div>
+                                        <div class="text-xl mb-2"></div>
                                         <p class="font-bold text-slate-900">San Luis</p>
                                     </div>
                                     <div class="bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-200 rounded-xl p-4 text-center">
-                                        <div class="text-xl mb-2">🏞️</div>
+                                        <div class="text-xl mb-2"></div>
                                         <p class="font-bold text-slate-900">Villa de Merlo</p>
                                     </div>
                                     <div class="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl p-4 text-center">
-                                        <div class="text-xl mb-2">🏙️</div>
+                                        <div class="text-xl mb-2"></div>
                                         <p class="font-bold text-slate-900">Villa Mercedes</p>
                                     </div>
                                 </div>
@@ -276,7 +276,7 @@ get_header();
                                     </div>
                                     <div class="flex-1">
                                         <h3 class="text-2xl md:text-xl font-bold mb-2">Beca de Comedor</h3>
-                                        <p class="text-orange-100">24 viandas mensuales gratuitas</p>
+                                        <p class="text-orange-800">24 viandas mensuales gratuitas</p>
                                     </div>
                                     <div class="hidden md:block">
                                         <span class="inline-flex items-center gap-1 bg-white/20 backdrop-blur-xl px-4 py-2 rounded-full text-sm font-bold">

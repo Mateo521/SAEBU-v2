@@ -58,7 +58,7 @@ get_header();
                             <div class="text-xs text-indigo-100">Licitaciones</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-xl font-bold text-green-300 mb-1">⚡</div>
+                            <div class="text-xl font-bold text-green-300 mb-1"></div>
                             <div class="text-xs text-indigo-100">Compras Directas</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
@@ -66,7 +66,7 @@ get_header();
                             <div class="text-xs text-indigo-100">Insumos Comedor</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-xl font-bold text-pink-300 mb-1">📊</div>
+                            <div class="text-xl font-bold text-pink-300 mb-1"></div>
                             <div class="text-xs text-indigo-100">Plan Anual</div>
                         </div>
                     </div-->

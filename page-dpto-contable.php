@@ -55,19 +55,19 @@ get_header();
                     <!-- Stats rápidas -->
                     <!--div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-xl font-bold text-emerald-400 mb-1">💰</div>
+                            <div class="text-xl font-bold text-emerald-400 mb-1"></div>
                             <div class="text-xs text-slate-200">Gestión de Becas</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-xl font-bold text-blue-400 mb-1">🏪</div>
+                            <div class="text-xl font-bold text-blue-400 mb-1"></div>
                             <div class="text-xs text-slate-200">Comedor</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-xl font-bold text-purple-400 mb-1">🏖️</div>
+                            <div class="text-xl font-bold text-purple-400 mb-1"></div>
                             <div class="text-xs text-slate-200">La Florida</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-xl font-bold text-orange-400 mb-1">📊</div>
+                            <div class="text-xl font-bold text-orange-400 mb-1"></div>
                             <div class="text-xs text-slate-200">Control Total</div>
                         </div>
                     </div-->
@@ -250,11 +250,11 @@ get_header();
                                 </p>
                                 <div class="mt-4 grid grid-cols-2 gap-3">
                                     <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 text-center">
-                                        <p class="text-2xl font-bold text-blue-600 mb-1">📊</p>
+                                        <p class="text-2xl font-bold text-blue-600 mb-1"></p>
                                         <p class="text-xs text-blue-900 font-semibold">Control de cuentas</p>
                                     </div>
                                     <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 text-center">
-                                        <p class="text-2xl font-bold text-blue-600 mb-1">💳</p>
+                                        <p class="text-2xl font-bold text-blue-600 mb-1"></p>
                                         <p class="text-xs text-blue-900 font-semibold">Gestión de cobros</p>
                                     </div>
                                 </div>
@@ -343,11 +343,11 @@ get_header();
                                 </p>
                                 <div class="mt-4 grid grid-cols-2 gap-3">
                                     <div class="bg-cyan-50 border border-cyan-200 rounded-lg p-3 text-center">
-                                        <p class="text-2xl font-bold text-cyan-600 mb-1">🏖️</p>
+                                        <p class="text-2xl font-bold text-cyan-600 mb-1"></p>
                                         <p class="text-xs text-cyan-900 font-semibold">Complejo turístico</p>
                                     </div>
                                     <div class="bg-cyan-50 border border-cyan-200 rounded-lg p-3 text-center">
-                                        <p class="text-2xl font-bold text-cyan-600 mb-1">💰</p>
+                                        <p class="text-2xl font-bold text-cyan-600 mb-1"></p>
                                         <p class="text-xs text-cyan-900 font-semibold">Gestión financiera</p>
                                     </div>
                                 </div>
@@ -559,7 +559,7 @@ get_header();
                 <div class="max-w-7xl mx-auto text-center">
 
                     <div class="inline-block bg-white/10 backdrop-blur-xl text-white px-5 py-2 rounded-full font-semibold mb-6 border border-white/20">
-                        💼 ¿Necesitás Información Contable?
+                         ¿Necesitás Información Contable?
                     </div>
 
                     <h2 class="text-xl md:text-2xl font-bold text-white mb-6">
@@ -750,28 +750,28 @@ get_header();
 
                         <!-- Stat 1 -->
                         <div class="bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl p-6 text-white shadow-xl">
-                            <div class="text-5xl font-bold mb-2">💰</div>
+                            <div class="text-5xl font-bold mb-2"></div>
                             <div class="text-xl font-bold mb-2">4</div>
                             <div class="text-emerald-100">Tipos de Becas Gestionadas</div>
                         </div>
 
                         <!-- Stat 2 -->
                         <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-6 text-white shadow-xl">
-                            <div class="text-5xl font-bold mb-2">🏪</div>
+                            <div class="text-5xl font-bold mb-2"></div>
                             <div class="text-xl font-bold mb-2">1</div>
                             <div class="text-blue-100">Comedor Universitario</div>
                         </div>
 
                         <!-- Stat 3 -->
                         <div class="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl p-6 text-white shadow-xl">
-                            <div class="text-5xl font-bold mb-2">📊</div>
+                            <div class="text-5xl font-bold mb-2"></div>
                             <div class="text-xl font-bold mb-2">6</div>
                             <div class="text-purple-100">Áreas de Gestión</div>
                         </div>
 
                         <!-- Stat 4 -->
                         <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-6 text-white shadow-xl">
-                            <div class="text-5xl font-bold mb-2">⚡</div>
+                            <div class="text-5xl font-bold mb-2"></div>
                             <div class="text-xl font-bold mb-2">100%</div>
                             <div class="text-orange-100">Operativo (Pandemia)</div>
                         </div>
