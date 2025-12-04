@@ -12,7 +12,7 @@ get_header();
     <div class="absolute inset-0 bg-black/20"></div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
+            <h1 class="text-xl md:text-2xl lg:text-4xl font-bold mb-6 animate-fade-in">
                 Institucional
             </h1>
             <p class="text-lg md:text-base text-blue-100 max-w-2xl mx-auto">
@@ -33,7 +33,7 @@ get_header();
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                     </svg>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Nuestra Misión</h2>
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900">Nuestra Misión</h2>
             </div>
 
             <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded p-8 md:p-12 shadow-xl border border-blue-100">
@@ -120,7 +120,7 @@ get_header();
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                     </svg>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Nuestra Visión</h2>
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900">Nuestra Visión</h2>
             </div>
 
             <div class="bg-white rounded p-8 md:p-12 shadow-xl border border-indigo-100">
@@ -155,7 +155,7 @@ get_header();
                         </svg>
                     </div>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nuestros Valores</h2>
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">Nuestros Valores</h2>
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                     Los principios fundamentales que guían nuestro trabajo y relaciones
                 </p>
@@ -258,7 +258,7 @@ get_header();
 <section class="py-16 bg-gradient-to-r from-blue-600 to-indigo-700">
     <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center text-white">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            <h2 class="text-xl md:text-2xl font-bold mb-6">
                 ¿Quieres conocer más sobre nosotros?
             </h2>
             <p class="text-base text-blue-100 mb-8">

@@ -38,7 +38,7 @@ function saebu_create_default_departamentos() {
         'becas',
         'camping',
         'ceseu',
-        'trabajo-social',
+        'dpto-trabajo-social',
         'club-universitario',
         'dpto-deportes',
     );

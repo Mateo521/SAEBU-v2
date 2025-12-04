@@ -91,7 +91,7 @@
 
                     <!-- Título -->
                     <header class="mb-10">
-                        <h1 class="text-xl md:text-2xl lg:text-3xl font-bold font-display text-slate-900 mb-6 leading-tight">
+                        <h1 class="text-xl md:text-2xl lg:text-xl font-bold font-display text-slate-900 mb-6 leading-tight">
                             <?php the_title(); ?>
                         </h1>
 
@@ -173,7 +173,7 @@
                         if ($relacionadas->have_posts()) :
                     ?>
                             <section class="mt-16">
-                                <h2 class="text-3xl md:text-4xl font-bold font-display text-slate-900 mb-8">Noticias relacionadas</h2>
+                                <h2 class="text-xl md:text-2xl font-bold font-display text-slate-900 mb-8">Noticias relacionadas</h2>
                                 <div class="grid md:grid-cols-3 gap-8">
                                     <?php while ($relacionadas->have_posts()) : $relacionadas->the_post(); ?>
                                         <article class="group bg-white border border-gray-200 rounded overflow-hidden hover:shadow-xl transition-all duration-300">

@@ -43,7 +43,7 @@ get_header();
                         </span>
                     </div>
 
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                    <h1 class="text-2xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                         Departamento de Compras
                     </h1>
                     
@@ -52,24 +52,24 @@ get_header();
                     </p>
 
                     <!-- Stats rápidas -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                    <!--div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-3xl font-bold text-yellow-300 mb-1">📋</div>
+                            <div class="text-xl font-bold text-yellow-300 mb-1">📋</div>
                             <div class="text-xs text-indigo-100">Licitaciones</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-3xl font-bold text-green-300 mb-1">⚡</div>
+                            <div class="text-xl font-bold text-green-300 mb-1">⚡</div>
                             <div class="text-xs text-indigo-100">Compras Directas</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-3xl font-bold text-blue-300 mb-1">🍽️</div>
+                            <div class="text-xl font-bold text-blue-300 mb-1">🍽️</div>
                             <div class="text-xs text-indigo-100">Insumos Comedor</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-3xl font-bold text-pink-300 mb-1">📊</div>
+                            <div class="text-xl font-bold text-pink-300 mb-1">📊</div>
                             <div class="text-xs text-indigo-100">Plan Anual</div>
                         </div>
-                    </div>
+                    </div-->
                 </div>
             </div>
         </section>
@@ -88,7 +88,7 @@ get_header();
                                 </svg>
                             </div>
                             <div>
-                                <h2 class="text-3xl font-bold text-slate-900 mb-4">¿Qué Hacemos?</h2>
+                                <h2 class="text-xl font-bold text-slate-900 mb-4">¿Qué Hacemos?</h2>
                                 <p class="text-gray-700 text-lg leading-relaxed">
                                     En el Departamento de Compras se llevan a cabo los <strong>trámites de Licitación Privada</strong> para adquirir los insumos de alimentos necesarios para prestar el servicio de comedor. Como también se inicia todo trámite de Compras requerido por los demás departamentos de SAEBU (Dpto. Deportes, Complejo recreativo y turístico La Florida, entre otros), ya sea por <strong>Licitación Privada</strong>, <strong>Compra Directa por Compulsa Abreviada</strong> en casos de urgencia, o para incluir en el <strong>Plan Anual de Compras</strong>.
                                 </p>
@@ -113,7 +113,7 @@ get_header();
                             </svg>
                             Modalidades de Adquisición
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Tipos de Compras que Gestionamos</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Tipos de Compras que Gestionamos</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Diferentes procedimientos según la necesidad y urgencia</p>
                     </div>
 
@@ -293,7 +293,7 @@ get_header();
                             </svg>
                             Nuestros Clientes Internos
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Departamentos que Atendemos</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Departamentos que Atendemos</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Gestionamos las compras para todas las áreas de la SAEBU</p>
                     </div>
 
@@ -365,7 +365,7 @@ get_header();
                             </svg>
                             ¿Cómo Funciona?
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Proceso de Compra Paso a Paso</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Proceso de Compra Paso a Paso</h2>
                         <p class="text-lg text-gray-600">Seguimos un procedimiento ordenado y transparente</p>
                     </div>
 
@@ -455,7 +455,7 @@ get_header();
                                     Portal Web Oficial
                                 </div>
 
-                                <h2 class="text-3xl md:text-4xl font-bold mb-6">Portal de Compras UNSL</h2>
+                                <h2 class="text-xl md:text-2xl font-bold mb-6">Portal de Compras UNSL</h2>
                                 
                                 <p class="text-indigo-100 text-lg leading-relaxed mb-8">
                                     Accedé al portal oficial de compras de la Universidad Nacional de San Luis para consultar licitaciones, procedimientos y resultados.
@@ -509,7 +509,7 @@ get_header();
                             </svg>
                             Contactanos
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Información de Contacto</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Información de Contacto</h2>
                         <p class="text-lg text-gray-600">Estamos disponibles para resolver tus consultas sobre compras</p>
                     </div>
 
@@ -564,7 +564,7 @@ get_header();
 
                     <!-- CTA Destacado -->
                     <div class="mt-12 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-2xl p-8 text-center shadow-2xl">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-4">¿Necesitás Iniciar un Trámite de Compra?</h3>
+                        <h3 class="text-2xl md:text-xl font-bold mb-4">¿Necesitás Iniciar un Trámite de Compra?</h3>
                         <p class="text-indigo-100 text-lg mb-6 max-w-2xl mx-auto">
                             Contactate con nosotros para asesorarte sobre el mejor procedimiento según tu necesidad
                         </p>
@@ -600,7 +600,7 @@ get_header();
                             </svg>
                             Preguntas Frecuentes
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Consultas Comunes sobre Compras</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Consultas Comunes sobre Compras</h2>
                     </div>
 
                     <div class="space-y-4">
@@ -695,7 +695,7 @@ get_header();
                 <div class="max-w-6xl mx-auto">
 
                     <div class="text-center mb-12">
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">¿Por Qué Elegirnos?</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">¿Por Qué Elegirnos?</h2>
                         <p class="text-lg text-gray-600">Nuestro compromiso con la excelencia en gestión de compras</p>
                     </div>
 
@@ -763,7 +763,7 @@ get_header();
                             </svg>
                             Áreas Prioritarias
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Principales Compras que Gestionamos</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Principales Compras que Gestionamos</h2>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6">
@@ -861,7 +861,7 @@ get_header();
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center text-white">
                     
-                    <h2 class="text-3xl md:text-4xl font-bold mb-12">Nuestro Impacto</h2>
+                    <h2 class="text-xl md:text-2xl font-bold mb-12">Nuestro Impacto</h2>
 
                     <div class="grid md:grid-cols-3 gap-8">
                         
@@ -895,7 +895,7 @@ get_header();
                 <div class="max-w-5xl mx-auto">
 
                     <div class="text-center mb-12">
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Recursos y Enlaces Útiles</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Recursos y Enlaces Útiles</h2>
                         <p class="text-lg text-gray-600">Información adicional para proveedores y departamentos</p>
                     </div>
 

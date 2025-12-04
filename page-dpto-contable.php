@@ -44,7 +44,7 @@ get_header();
                         </span>
                     </div>
 
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                    <h1 class="text-2xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                         Departamento Contable
                     </h1>
 
@@ -53,24 +53,24 @@ get_header();
                     </p>
 
                     <!-- Stats rápidas -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                    <!--div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-3xl font-bold text-emerald-400 mb-1">💰</div>
+                            <div class="text-xl font-bold text-emerald-400 mb-1">💰</div>
                             <div class="text-xs text-slate-200">Gestión de Becas</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-3xl font-bold text-blue-400 mb-1">🏪</div>
+                            <div class="text-xl font-bold text-blue-400 mb-1">🏪</div>
                             <div class="text-xs text-slate-200">Comedor</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-3xl font-bold text-purple-400 mb-1">🏖️</div>
+                            <div class="text-xl font-bold text-purple-400 mb-1">🏖️</div>
                             <div class="text-xs text-slate-200">La Florida</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-3xl font-bold text-orange-400 mb-1">📊</div>
+                            <div class="text-xl font-bold text-orange-400 mb-1">📊</div>
                             <div class="text-xs text-slate-200">Control Total</div>
                         </div>
-                    </div>
+                    </div-->
                 </div>
             </div>
         </section>
@@ -95,7 +95,7 @@ get_header();
                                     </svg>
                                     Dependencia Directa
                                 </div>
-                                <h2 class="text-3xl font-bold text-slate-900 mb-4">Función del Departamento</h2>
+                                <h2 class="text-xl font-bold text-slate-900 mb-4">Función del Departamento</h2>
                                 <p class="text-gray-700 text-lg leading-relaxed mb-4">
                                     El Departamento Contable tiene <strong>dependencia inmediata de la Dirección Administrativo-Contable</strong>. Esta oficina tiene una función muy importante ya que tiene a su cargo, dentro de la estructura de la Secretaría, toda la <strong>administración financiera</strong> de la misma.
                                 </p>
@@ -130,7 +130,7 @@ get_header();
                             </svg>
                             6 Áreas Principales
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Tareas a Nuestro Cargo</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Tareas a Nuestro Cargo</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Gestión integral de todos los aspectos financieros de la Secretaría</p>
                     </div>
 
@@ -383,7 +383,7 @@ get_header();
                                     Trabajo Destacado
                                 </div>
 
-                                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                                <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-6">
                                     Compromiso Durante la Pandemia
                                 </h2>
 
@@ -455,7 +455,7 @@ get_header();
                             </svg>
                             Proceso Integrado
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Conexión con Todas las Áreas</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Conexión con Todas las Áreas</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">El Departamento Contable es el punto central de convergencia financiera</p>
                     </div>
 
@@ -562,7 +562,7 @@ get_header();
                         💼 ¿Necesitás Información Contable?
                     </div>
 
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                    <h2 class="text-xl md:text-2xl font-bold text-white mb-6">
                         Estamos para Atenderte
                     </h2>
 
@@ -635,7 +635,7 @@ get_header();
                             </svg>
                             Preguntas Frecuentes
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Consultas Comunes</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Consultas Comunes</h2>
                     </div>
 
                     <div class="space-y-4">
@@ -742,7 +742,7 @@ get_header();
                 <div class="max-w-6xl mx-auto">
 
                     <div class="text-center mb-12">
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Nuestro Alcance</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Nuestro Alcance</h2>
                         <p class="text-lg text-gray-600">Impacto del Departamento Contable en números</p>
                     </div>
 
@@ -751,28 +751,28 @@ get_header();
                         <!-- Stat 1 -->
                         <div class="bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl p-6 text-white shadow-xl">
                             <div class="text-5xl font-bold mb-2">💰</div>
-                            <div class="text-3xl font-bold mb-2">4</div>
+                            <div class="text-xl font-bold mb-2">4</div>
                             <div class="text-emerald-100">Tipos de Becas Gestionadas</div>
                         </div>
 
                         <!-- Stat 2 -->
                         <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-6 text-white shadow-xl">
                             <div class="text-5xl font-bold mb-2">🏪</div>
-                            <div class="text-3xl font-bold mb-2">1</div>
+                            <div class="text-xl font-bold mb-2">1</div>
                             <div class="text-blue-100">Comedor Universitario</div>
                         </div>
 
                         <!-- Stat 3 -->
                         <div class="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl p-6 text-white shadow-xl">
                             <div class="text-5xl font-bold mb-2">📊</div>
-                            <div class="text-3xl font-bold mb-2">6</div>
+                            <div class="text-xl font-bold mb-2">6</div>
                             <div class="text-purple-100">Áreas de Gestión</div>
                         </div>
 
                         <!-- Stat 4 -->
                         <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-6 text-white shadow-xl">
                             <div class="text-5xl font-bold mb-2">⚡</div>
-                            <div class="text-3xl font-bold mb-2">100%</div>
+                            <div class="text-xl font-bold mb-2">100%</div>
                             <div class="text-orange-100">Operativo (Pandemia)</div>
                         </div>
 
@@ -794,7 +794,7 @@ get_header();
                             </svg>
                             Por Qué Somos Importantes
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Beneficios de Una Gestión Eficiente</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Beneficios de Una Gestión Eficiente</h2>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6">
@@ -871,7 +871,7 @@ get_header();
                 <div class="max-w-6xl mx-auto">
 
                     <div class="text-center mb-12">
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Servicios Prioritarios</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Servicios Prioritarios</h2>
                         <p class="text-lg text-gray-600">Actividades clave que impactan directamente en la comunidad estudiantil</p>
                     </div>
 

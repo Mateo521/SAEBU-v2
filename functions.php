@@ -187,7 +187,7 @@ function saebu_get_noticias_destacadas($num_posts = 3)
  */
 function saebu_custom_rewrite_rules()
 {
-    $departamentos = array('becas', 'camping', 'ceseu', 'trabajo-social', 'club-universitario', 'dpto-deportes');
+    $departamentos = array('becas', 'camping', 'ceseu', 'dpto-trabajo-social', 'club-universitario', 'dpto-deportes');
 
     foreach ($departamentos as $depto) {
         // URL: /departamento/noticias

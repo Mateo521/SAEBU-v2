@@ -25,7 +25,7 @@ get_header();
                     </div>
                 </div>
 
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">
                     Página no encontrada
                 </h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
@@ -83,7 +83,7 @@ get_header();
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900 group-hover:text-[#416ed2]">Inicio</h4>
+                            <h4 class="font-bold text-slate-900 group-hover:text-[#416ed2] text-base">Inicio</h4>
                             <p class="text-sm text-gray-600">Página principal</p>
                         </div>
                     </a>
@@ -96,7 +96,7 @@ get_header();
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900 group-hover:text-[#416ed2]">Noticias</h4>
+                            <h4 class="font-bold text-slate-900 group-hover:text-[#416ed2] text-base">Noticias</h4>
                             <p class="text-sm text-gray-600">Ver todas</p>
                         </div>
                     </a>
@@ -109,7 +109,7 @@ get_header();
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900 group-hover:text-[#416ed2]">Contacto</h4>
+                            <h4 class="font-bold text-slate-900 group-hover:text-[#416ed2] text-base">Contacto</h4>
                             <p class="text-sm text-gray-600">Comunicate</p>
                         </div>
                     </a>
@@ -127,7 +127,7 @@ get_header();
                         <a href="<?php echo home_url('/ceseu'); ?>" 
                            class="text-[#416ed2] hover:text-blue-700 font-medium">CESEU</a>
                         <span class="text-gray-300">•</span>
-                        <a href="<?php echo home_url('/trabajo-social'); ?>" 
+                        <a href="<?php echo home_url('/dpto-trabajo-social'); ?>" 
                            class="text-[#416ed2] hover:text-blue-700 font-medium">Trabajo Social</a>
                         <span class="text-gray-300">•</span>
                         <a href="<?php echo home_url('/deportes'); ?>" 

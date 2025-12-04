@@ -23,7 +23,7 @@ $total_posts = $wp_query->found_posts;
                     </span>
                 </div>
                 
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                <h1 class="text-2xl md:text-5xl font-bold mb-4">
                     <?php echo esc_html($term->name); ?>
                 </h1>
                 
@@ -111,7 +111,7 @@ $total_posts = $wp_query->found_posts;
                                         </div>
                                         
                                         <!-- Título -->
-                                        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4 leading-tight">
+                                        <h2 class="text-2xl md:text-xl font-bold text-slate-900 mb-4 leading-tight">
                                             <a href="<?php the_permalink(); ?>" class="hover:text-[#416ed2] transition-colors">
                                                 <?php the_title(); ?>
                                             </a>
@@ -212,7 +212,7 @@ $total_posts = $wp_query->found_posts;
     <section class="py-16 bg-white border-t border-gray-200">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto bg-gradient-to-br from-[#416ed2] to-blue-800 rounded p-8 md:p-12 text-center text-white">
-                <h2 class="text-3xl font-bold mb-4">¿Necesitas más información?</h2>
+                <h2 class="text-xl font-bold mb-4">¿Necesitas más información?</h2>
                 <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
                     Visita la página principal de <?php echo esc_html($term->name); ?> para conocer todos nuestros servicios y actividades.
                 </p>

@@ -44,7 +44,7 @@ get_header();
                         </span>
                     </div>
 
-                    <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
+                    <h1 class="text-2xl md:text-xl lg:text-2xl font-bold text-white mb-6 leading-tight">
                         Complejo Turístico y<br>Recreativo La Florida
                     </h1>
 
@@ -100,7 +100,7 @@ get_header();
                             </svg>
                             Servicios
                         </div>
-                        <h2 class="text-xl md:text-3xl font-bold text-slate-900 mb-4">Lo que ofrecemos</h2>
+                        <h2 class="text-xl md:text-xl font-bold text-slate-900 mb-4">Lo que ofrecemos</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Una variedad de servicios e instalaciones para tu comodidad y disfrute</p>
                     </div>
 
@@ -225,7 +225,7 @@ get_header();
                             </svg>
                             Sectores e Instalaciones
                         </div>
-                        <h2 class="text-xl md:text-3xl font-bold text-slate-900 mb-4">Espacios para Acampar y Día de Campo</h2>
+                        <h2 class="text-xl md:text-xl font-bold text-slate-900 mb-4">Espacios para Acampar y Día de Campo</h2>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-8 mb-12">
@@ -375,7 +375,7 @@ get_header();
                             </svg>
                             Alojamiento
                         </div>
-                        <h2 class="text-xl md:text-3xl font-bold text-slate-900 mb-4">Cabañas Disponibles</h2>
+                        <h2 class="text-xl md:text-xl font-bold text-slate-900 mb-4">Cabañas Disponibles</h2>
                         <p class="text-lg text-gray-600">Totalmente equipadas para tu comodidad</p>
                     </div>
 
@@ -471,7 +471,7 @@ get_header();
                             </svg>
                             Tarifas 2024
                         </div>
-                        <h2 class="text-xl md:text-3xl font-bold text-slate-900 mb-4">Precios y Tarifas</h2>
+                        <h2 class="text-xl md:text-xl font-bold text-slate-900 mb-4">Precios y Tarifas</h2>
                         <p class="text-lg text-gray-600">Información actualizada sobre costos de acceso</p>
                     </div>
 
@@ -684,7 +684,7 @@ get_header();
                             </svg>
                             Novedades
                         </div>
-                        <h2 class="text-xl md:text-3xl font-bold text-slate-900 mb-4">Noticias del Camping</h2>
+                        <h2 class="text-xl md:text-xl font-bold text-slate-900 mb-4">Noticias del Camping</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Mantente informado sobre las últimas novedades del Complejo La Florida</p>
                     </div>
 
@@ -813,7 +813,7 @@ get_header();
                             Planificá tu visita
                         </div>
 
-                        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                        <h2 class="text-xl md:text-2xl font-bold mb-4">
                             ¿Listo para disfrutar de La Florida?
                         </h2>
                         <p class="text-xl text-green-100 mb-8 max-w-2xl mx-auto leading-relaxed">

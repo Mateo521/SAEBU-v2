@@ -44,7 +44,7 @@ get_header();
                         </span>
                     </div>
 
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                    <h1 class="text-2xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                         Departamento de Trabajo Social
                     </h1>
 
@@ -53,24 +53,24 @@ get_header();
                     </p>
 
                     <!-- Stats rápidas -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                    <!--div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-3xl font-bold text-white mb-1">40</div>
+                            <div class="text-xl font-bold text-white mb-1">40</div>
                             <div class="text-xs text-blue-100">Módulos disponibles</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-3xl font-bold text-white mb-1">36</div>
+                            <div class="text-xl font-bold text-white mb-1">36</div>
                             <div class="text-xs text-blue-100">Estudiantes alojados</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-3xl font-bold text-white mb-1">2</div>
+                            <div class="text-xl font-bold text-white mb-1">2</div>
                             <div class="text-xs text-blue-100">Convocatorias anuales</div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                            <div class="text-3xl font-bold text-white mb-1">12</div>
+                            <div class="text-xl font-bold text-white mb-1">12</div>
                             <div class="text-xs text-blue-100">Cuotas mensuales</div>
                         </div>
-                    </div>
+                    </div-->
                 </div>
             </div>
         </section>
@@ -88,7 +88,7 @@ get_header();
                             </svg>
                             Proceso
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Circuito de Becas</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Circuito de Becas</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Conocé el proceso completo desde el asesoramiento hasta la adjudicación</p>
                     </div>
 
@@ -217,7 +217,7 @@ get_header();
                             </svg>
                             Alojamiento
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Residencia Universitaria</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Residencia Universitaria</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Un espacio de convivencia y apoyo para estudiantes</p>
                     </div>
 
@@ -244,11 +244,11 @@ get_header();
                             <!-- Estadísticas -->
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-4 text-center">
-                                    <div class="text-3xl font-bold text-indigo-600 mb-1">40</div>
+                                    <div class="text-xl font-bold text-indigo-600 mb-1">40</div>
                                     <div class="text-xs text-gray-600">Módulos disponibles</div>
                                 </div>
                                 <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-4 text-center">
-                                    <div class="text-3xl font-bold text-indigo-600 mb-1">36</div>
+                                    <div class="text-xl font-bold text-indigo-600 mb-1">36</div>
                                     <div class="text-xs text-gray-600">Estudiantes actualmente</div>
                                 </div>
                             </div>
@@ -347,7 +347,7 @@ get_header();
                             </svg>
                             Becas Nacionales
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Programa Nacional de Becas Progresar</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Programa Nacional de Becas Progresar</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Apoyo económico del Ministerio de Educación de la Nación para estudiantes universitarios</p>
                     </div>
 
@@ -799,7 +799,7 @@ get_header();
                             </svg>
                             Difusión
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Promoción de la SAEBU</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Promoción de la SAEBU</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Acercamos los beneficios a todos los estudiantes</p>
                     </div>
 
@@ -906,7 +906,7 @@ get_header();
                             </svg>
                             Inclusión
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Trabajo Social y Discapacidad</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Trabajo Social y Discapacidad</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Inclusión e integración de estudiantes en situación de discapacidad</p>
                     </div>
 
@@ -921,7 +921,7 @@ get_header();
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Desde 2008</h3>
+                                    <h3 class="text-2xl md:text-xl font-bold mb-2">Desde 2008</h3>
                                     <p class="text-purple-100 text-lg">
                                         Trabajando en pos de la inclusión e integración
                                     </p>
@@ -1057,7 +1057,7 @@ get_header();
                         ¿Necesitás más información?
                     </div>
 
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                    <h2 class="text-xl md:text-2xl font-bold text-white mb-6">
                         Estamos para Ayudarte
                     </h2>
 

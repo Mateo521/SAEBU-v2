@@ -25,7 +25,7 @@ get_header();
                         </svg>
                     </div>
                     
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    <h1 class="text-xl md:text-2xl lg:text-4xl font-bold mb-6 leading-tight">
                         <?php the_title(); ?>
                     </h1>
                     

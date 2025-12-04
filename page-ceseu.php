@@ -51,7 +51,7 @@ get_header();
                         </span>
                     </div>
 
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                    <h1 class="text-2xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                         Centro de Salud<br>Estudiantil Universitaria
                     </h1>
 
@@ -70,7 +70,7 @@ get_header();
 
                     <!-- Título -->
                     <div class="text-center mb-12">
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Nuestras Sedes</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Nuestras Sedes</h2>
                         <p class="text-lg text-gray-600 max-w-2xl mx-auto">Contamos con dos sedes para brindarte atención de
                             calidad</p>
                     </div>
@@ -301,7 +301,7 @@ get_header();
                             </svg>
                             Inscripciones
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Cómo Registrarse</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Cómo Registrarse</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Las/os estudiantes regulares de la UNSL deben
                             enviar la siguiente documentación en PDF</p>
                     </div>
@@ -441,7 +441,7 @@ get_header();
                             </svg>
                             Servicios
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Certificados y Turnos</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Certificados y Turnos</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Información importante sobre certificados y cómo
                             solicitar turnos</p>
                     </div>
@@ -610,7 +610,7 @@ get_header();
                             </svg>
                             Especialidades
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Solicitar Turnos</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Solicitar Turnos</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Asistir a los centros de salud con turno
                             programado según protocolos COVID-19</p>
                     </div>
@@ -803,7 +803,7 @@ get_header();
                             </svg>
                             Novedades
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Últimas Noticias</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Últimas Noticias</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Mantente informado sobre novedades del Centro de
                             Salud</p>
                     </div>
@@ -978,7 +978,7 @@ get_header();
                             ¿Necesitás más información?
                         </div>
 
-                        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                        <h2 class="text-xl md:text-2xl font-bold mb-4">
                             Estamos para cuidar tu salud
                         </h2>
                         <p class="text-xl text-pink-100 mb-8 max-w-2xl mx-auto leading-relaxed">

@@ -53,7 +53,7 @@ get_header();
                     </p>
 
                     <!-- Stats rápidas -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                    <!--div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
                             <div class="text-xl font-bold text-white mb-1">9</div>
                             <div class="text-xs text-blue-100">Tipos de becas</div>
@@ -70,7 +70,7 @@ get_header();
                             <div class="text-xl font-bold text-white mb-1">100%</div>
                             <div class="text-xs text-blue-100">Gratuito</div>
                         </div>
-                    </div>
+                    </div-->
                 </div>
             </div>
         </section>

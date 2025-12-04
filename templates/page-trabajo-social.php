@@ -28,7 +28,7 @@ get_header();
             
             <div class="news-list">
                 <?php
-                $noticias = saebu_get_noticias_by_departamento('trabajo-social', 10);
+                $noticias = saebu_get_noticias_by_departamento('dpto-trabajo-social', 10);
 
                 if ($noticias->have_posts()) :
                     while ($noticias->have_posts()) : $noticias->the_post();
@@ -72,7 +72,7 @@ get_header();
             </div>
             
             <div class="view-all-news">
-                <a href="<?php echo home_url('/trabajo-social/noticias'); ?>" class="btn-primary">
+                <a href="<?php echo home_url('/dpto-trabajo-social/noticias'); ?>" class="btn-primary">
                     Ver todas las noticias de Trabajo Social
                 </a>
             </div>

@@ -27,7 +27,7 @@ get_header();
                         </svg>
                     </div>
 
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    <h1 class="text-xl md:text-2xl lg:text-4xl font-bold mb-6 leading-tight">
                         <?php the_title(); ?>
                     </h1>
 
@@ -107,7 +107,7 @@ get_header();
                 <!-- Encabezado de sección -->
                 <div class="flex items-center justify-between mb-10">
                     <div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Noticias de Camping</h2>
+                        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-2">Noticias de Camping</h2>
                         <p class="text-gray-600">Mantente informado sobre nuestras actividades y novedades</p>
                     </div>
                 </div>
@@ -197,7 +197,7 @@ get_header();
     <section class="py-16 bg-gradient-to-br from-green-600 to-green-800">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center text-white">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Querés reservar el camping?</h2>
+                <h2 class="text-xl md:text-2xl font-bold mb-4">¿Querés reservar el camping?</h2>
                 <p class="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
                     Contactanos para conocer la disponibilidad y los servicios que ofrecemos
                 </p>

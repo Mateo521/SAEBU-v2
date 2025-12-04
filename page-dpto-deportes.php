@@ -44,7 +44,7 @@ get_header();
                         </span>
                     </div>
 
-                    <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-6 leading-tight">
+                    <h1 class="text-xl md:text-2xl lg:text-xl font-bold text-white mb-6 leading-tight">
                         Educación Física y Deportes
                     </h1>
 
@@ -53,7 +53,7 @@ get_header();
                     </p>
 
                     <!-- Stats rápidas -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                    <!--div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
                         <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded p-4">
                             <div class="text-2xl font-bold text-white mb-1">16</div>
                             <div class="text-xs text-orange-100">Disciplinas deportivas</div>
@@ -70,7 +70,7 @@ get_header();
                             <div class="text-2xl font-bold text-white mb-1">JUR</div>
                             <div class="text-xs text-orange-100">Juegos Regionales</div>
                         </div>
-                    </div>
+                    </div-->
                 </div>
             </div>
         </section>
@@ -89,7 +89,7 @@ get_header();
                             </svg>
                             Nuestra Visión
                         </div>
-                        <h2 class="text-2xl md:text-4xl font-bold text-slate-900 mb-4">El Deporte en la Universidad</h2>
+                        <h2 class="text-2xl md:text-2xl font-bold text-slate-900 mb-4">El Deporte en la Universidad</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Más que actividad física, una herramienta de formación integral</p>
                     </div>
 
@@ -321,7 +321,7 @@ get_header();
                             </svg>
                             3 Ubicaciones
                         </div>
-                        <h2 class="text-2xl md:text-4xl font-bold text-slate-900 mb-4">Nuestros Centros</h2>
+                        <h2 class="text-2xl md:text-2xl font-bold text-slate-900 mb-4">Nuestros Centros</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Instalaciones deportivas en las principales ciudades de la provincia</p>
                     </div>
 
@@ -428,7 +428,7 @@ get_header();
                             </svg>
                             Competencias
                         </div>
-                        <h2 class="text-2xl md:text-4xl font-bold text-slate-900 mb-4">Juegos Universitarios Regionales</h2>
+                        <h2 class="text-2xl md:text-2xl font-bold text-slate-900 mb-4">Juegos Universitarios Regionales</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Representá a la UNSL en competencias regionales</p>
                     </div>
 
@@ -556,7 +556,7 @@ get_header();
                             </svg>
                             Nuevo 2024
                         </div>
-                        <h2 class="text-2xl md:text-4xl font-bold text-slate-900 mb-4">Club Universitario UNSL</h2>
+                        <h2 class="text-2xl md:text-2xl font-bold text-slate-900 mb-4">Club Universitario UNSL</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Vinculando a la comunidad universitaria a través del deporte y la salud</p>
                     </div>
 
@@ -715,7 +715,7 @@ get_header();
                             </svg>
                             Contacto
                         </div>
-                        <h2 class="text-2xl md:text-4xl font-bold text-white mb-4">¿Querés participar?</h2>
+                        <h2 class="text-2xl md:text-2xl font-bold text-white mb-4">¿Querés participar?</h2>
                         <p class="text-lg text-blue-200 max-w-3xl mx-auto">Comunicate con el Departamento de Educación Física y Deportes</p>
                     </div>
 
@@ -921,7 +921,7 @@ get_header();
                             </svg>
                             Actualidad Deportiva
                         </div>
-                        <h2 class="text-2xl md:text-4xl font-bold text-slate-900 mb-4">Últimas Noticias</h2>
+                        <h2 class="text-2xl md:text-2xl font-bold text-slate-900 mb-4">Últimas Noticias</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Mantenete informado sobre actividades, competencias y novedades</p>
                     </div>
 
@@ -1034,7 +1034,7 @@ get_header();
                         ¡Sumate al Deporte Universitario!
                     </div>
 
-                    <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">
+                    <h2 class="text-2xl md:text-2xl font-bold text-white mb-6">
                         Tu Vida Deportiva Empieza Hoy
                     </h2>
 

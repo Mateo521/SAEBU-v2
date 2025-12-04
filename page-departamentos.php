@@ -6,79 +6,125 @@
 
 get_header();
 
-// Lista de departamentos con sus datos
+// Lista de departamentos de SAEBU
 $departamentos = array(
-    array(
-        'titulo' => 'Salud',
-        'slug' => 'salud',
-        'descripcion' => 'Atención médica integral y prevención de la salud',
-        'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>',
-        'color' => 'from-red-500 to-pink-600',
-        'color_bg' => 'from-red-50 to-pink-50',
-        'color_icon' => 'bg-red-100 text-red-600',
-    ),
-    array(
-        'titulo' => 'Comedor',
-        'slug' => 'comedor',
-        'descripcion' => 'Alimentación saludable y nutritiva para estudiantes',
-        'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>',
-        'color' => 'from-orange-500 to-amber-600',
-        'color_bg' => 'from-orange-50 to-amber-50',
-        'color_icon' => 'bg-orange-100 text-orange-600',
-    ),
-    array(
-        'titulo' => 'Deportes',
-        'slug' => 'deportes',
-        'descripcion' => 'Actividades deportivas y recreativas para todos',
-        'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>',
-        'color' => 'from-green-500 to-emerald-600',
-        'color_bg' => 'from-green-50 to-emerald-50',
-        'color_icon' => 'bg-green-100 text-green-600',
-    ),
     array(
         'titulo' => 'Becas',
         'slug' => 'becas',
-        'descripcion' => 'Apoyo económico para continuar tus estudios',
+        'descripcion' => 'Apoyo económico para continuar tus estudios universitarios',
         'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>',
         'color' => 'from-blue-500 to-indigo-600',
         'color_bg' => 'from-blue-50 to-indigo-50',
         'color_icon' => 'bg-blue-100 text-blue-600',
     ),
     array(
-        'titulo' => 'Residencias',
-        'slug' => 'residencias',
-        'descripcion' => 'Alojamiento seguro y cómodo para estudiantes',
-        'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>',
-        'color' => 'from-purple-500 to-violet-600',
-        'color_bg' => 'from-purple-50 to-violet-50',
-        'color_icon' => 'bg-purple-100 text-purple-600',
+        'titulo' => 'Mesa de Entradas y Personal',
+        'slug' => 'mesa-entradas-personal',
+        'descripcion' => 'Gestión de trámites administrativos y recursos humanos',
+        'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>',
+        'color' => 'from-slate-500 to-gray-600',
+        'color_bg' => 'from-slate-50 to-gray-50',
+        'color_icon' => 'bg-slate-100 text-slate-600',
     ),
     array(
-        'titulo' => 'Cultura',
-        'slug' => 'cultura',
-        'descripcion' => 'Actividades culturales y artísticas',
-        'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>',
-        'color' => 'from-pink-500 to-rose-600',
-        'color_bg' => 'from-pink-50 to-rose-50',
-        'color_icon' => 'bg-pink-100 text-pink-600',
+        'titulo' => 'Compras y Contrataciones',
+        'slug' => 'compras-contrataciones',
+        'descripcion' => 'Gestión de adquisiciones y contrataciones institucionales',
+        'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>',
+        'color' => 'from-amber-500 to-orange-600',
+        'color_bg' => 'from-amber-50 to-orange-50',
+        'color_icon' => 'bg-amber-100 text-amber-600',
+    ),
+    array(
+        'titulo' => 'Club Universitario',
+        'slug' => 'club-universitario',
+        'descripcion' => 'Espacio de recreación, deportes y actividades sociales',
+        'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>',
+        'color' => 'from-emerald-500 to-green-600',
+        'color_bg' => 'from-emerald-50 to-green-50',
+        'color_icon' => 'bg-emerald-100 text-emerald-600',
+    ),
+    array(
+        'titulo' => 'Contable',
+        'slug' => 'contable',
+        'descripcion' => 'Administración financiera y control presupuestario',
+        'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>',
+        'color' => 'from-teal-500 to-cyan-600',
+        'color_bg' => 'from-teal-50 to-cyan-50',
+        'color_icon' => 'bg-teal-100 text-teal-600',
+    ),
+    array(
+        'titulo' => 'Educación Física y Deporte',
+        'slug' => 'educacion-fisica-deporte',
+        'descripcion' => 'Actividades deportivas, recreativas y gimnasio universitario',
+        'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>',
+        'color' => 'from-green-500 to-lime-600',
+        'color_bg' => 'from-green-50 to-lime-50',
+        'color_icon' => 'bg-green-100 text-green-600',
+        'submenu' => true,
+        'badge' => 'Incluye Gimnasio'
     ),
     array(
         'titulo' => 'Trabajo Social',
-        'slug' => 'trabajo-social',
-        'descripcion' => 'Acompañamiento y orientación social',
+        'slug' => 'dpto-trabajo-social',
+        'descripcion' => 'Acompañamiento social y Centro de Salud Estudiantil',
         'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>',
-        'color' => 'from-cyan-500 to-teal-600',
-        'color_bg' => 'from-cyan-50 to-teal-50',
-        'color_icon' => 'bg-cyan-100 text-cyan-600',
+        'color' => 'from-pink-500 to-rose-600',
+        'color_bg' => 'from-pink-50 to-rose-50',
+        'color_icon' => 'bg-pink-100 text-pink-600',
+        'submenu' => true,
+        'badge' => 'Con Centro de Salud'
     ),
     array(
-        'titulo' => 'Psicología',
-        'slug' => 'psicologia',
-        'descripcion' => 'Apoyo psicológico y orientación estudiantil',
-        'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>',
-        'color' => 'from-indigo-500 to-blue-600',
-        'color_bg' => 'from-indigo-50 to-blue-50',
-        'color_icon' => 'bg-indigo-100 text-indigo-600',
+        'titulo' => 'Complejo Turístico La Florida',
+        'slug' => 'complejo-la-florida',
+        'descripcion' => 'Centro recreativo y turístico con camping e historia',
+        'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>',
+        'color' => 'from-sky-500 to-blue-600',
+        'color_bg' => 'from-sky-50 to-blue-50',
+        'color_icon' => 'bg-sky-100 text-sky-600',
+        'submenu' => true,
+        'badge' => 'Historia del Camping'
+    ),
+    array(
+        'titulo' => 'Comedor Universitario',
+        'slug' => 'comedor-universitario',
+        'descripcion' => 'Alimentación saludable y nutritiva para estudiantes',
+        'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>',
+        'color' => 'from-orange-500 to-red-600',
+        'color_bg' => 'from-orange-50 to-red-50',
+        'color_icon' => 'bg-orange-100 text-orange-600',
+    ),
+);
+
+// Sedes de SAEBU
+$sedes = array(
+    array(
+        'titulo' => 'SAEBU San Luis',
+        'slug' => 'san-luis',
+        'descripcion' => 'Sede central - San Luis Capital',
+        'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>',
+        'color' => 'from-blue-600 to-indigo-700',
+        'color_bg' => 'from-blue-50 to-indigo-50',
+        'color_icon' => 'bg-blue-100 text-blue-700',
+    ),
+    array(
+        'titulo' => 'SAEBU Villa Mercedes',
+        'slug' => 'villa-mercedes',
+        'descripcion' => 'Sede Villa Mercedes',
+        'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>',
+        'color' => 'from-purple-600 to-violet-700',
+        'color_bg' => 'from-purple-50 to-violet-50',
+        'color_icon' => 'bg-purple-100 text-purple-700',
+    ),
+    array(
+        'titulo' => 'SAEBU Merlo',
+        'slug' => 'merlo',
+        'descripcion' => 'Sede Merlo',
+        'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>',
+        'color' => 'from-green-600 to-emerald-700',
+        'color_bg' => 'from-green-50 to-emerald-50',
+        'color_icon' => 'bg-green-100 text-green-700',
     ),
 );
 ?>
@@ -93,7 +139,7 @@ $departamentos = array(
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                 </svg>
             </div>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 class="text-xl md:text-2xl lg:text-4xl font-bold mb-6">
                 Nuestros Departamentos
             </h1>
             <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto">
@@ -101,7 +147,7 @@ $departamentos = array(
             </p>
         </div>
     </div>
-   
+  
 </section>
 
 <!-- Departamentos Grid -->
@@ -111,6 +157,9 @@ $departamentos = array(
             
             <!-- Intro text -->
             <div class="text-center mb-16">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+                    Departamentos y Servicios
+                </h2>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto">
                     Cada departamento está comprometido con tu desarrollo integral. Haz clic en cualquier tarjeta para conocer más detalles.
                 </p>
@@ -120,7 +169,19 @@ $departamentos = array(
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <?php foreach ($departamentos as $dpto) : ?>
                     <a href="<?php echo esc_url(home_url('/departamento-' . $dpto['slug'])); ?>" 
-                       class="group block bg-gradient-to-br <?php echo $dpto['color_bg']; ?> rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+                       class="group block bg-gradient-to-br <?php echo $dpto['color_bg']; ?> rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative overflow-hidden">
+                        
+                        <!-- Badge si tiene submenú -->
+                        <?php if (isset($dpto['submenu']) && $dpto['submenu']) : ?>
+                            <div class="absolute top-4 right-4">
+                                <span class="inline-flex items-center gap-1 px-3 py-1 bg-white/80 backdrop-blur-sm rounded-full text-xs font-semibold text-gray-700 shadow-sm">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                    <?php echo isset($dpto['badge']) ? $dpto['badge'] : 'Con subsecciones'; ?>
+                                </span>
+                            </div>
+                        <?php endif; ?>
                         
                         <!-- Icono -->
                         <div class="flex items-center justify-between mb-6">
@@ -159,33 +220,97 @@ $departamentos = array(
                 <?php endforeach; ?>
             </div>
 
-            <!-- Stats Section -->
-            <div class="mt-20 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-8 md:p-12 text-white">
-                <div class="grid sm:grid-cols-3 gap-8 text-center">
-                    <div>
-                        <div class="text-4xl md:text-5xl font-bold mb-2"><?php echo count($departamentos); ?></div>
-                        <div class="text-blue-100">Departamentos</div>
-                    </div>
-                    <div>
-                        <div class="text-4xl md:text-5xl font-bold mb-2">24/7</div>
-                        <div class="text-blue-100">Atención Disponible</div>
-                    </div>
-                    <div>
-                        <div class="text-4xl md:text-5xl font-bold mb-2">100%</div>
-                        <div class="text-blue-100">Compromiso</div>
-                    </div>
-                </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sedes SAEBU -->
+<section class="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+    <div class="container mx-auto px-4">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+                    Presencia Provincial
+                </span>
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+                    Nuestras Sedes
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    SAEBU está presente en las principales ciudades de San Luis
+                </p>
+            </div>
+
+            <!-- Grid de sedes -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <?php foreach ($sedes as $sede) : ?>
+                    <a href="<?php echo esc_url(home_url('/sede-' . $sede['slug'])); ?>" 
+                       class="group block bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-blue-200">
+                        
+                        <!-- Icono -->
+                        <div class="w-20 h-20 <?php echo $sede['color_icon']; ?> rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-md mx-auto mb-6">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <?php echo $sede['icono']; ?>
+                            </svg>
+                        </div>
+
+                        <!-- Contenido -->
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-blue-600 transition-colors">
+                            <?php echo esc_html($sede['titulo']); ?>
+                        </h3>
+                        <p class="text-gray-600 text-center leading-relaxed mb-6">
+                            <?php echo esc_html($sede['descripcion']); ?>
+                        </p>
+
+                        <!-- CTA -->
+                        <div class="text-center">
+                            <span class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
+                                Ver información
+                                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
             </div>
 
         </div>
     </div>
 </section>
 
+<!-- Stats Section -->
+<section class="py-16 bg-gradient-to-r from-blue-600 to-indigo-700">
+    <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center text-white">
+                <div>
+                    <div class="text-2xl md:text-5xl font-bold mb-2"><?php echo count($departamentos); ?></div>
+                    <div class="text-blue-100">Departamentos</div>
+                </div>
+                <div>
+                    <div class="text-2xl md:text-5xl font-bold mb-2"><?php echo count($sedes); ?></div>
+                    <div class="text-blue-100">Sedes en San Luis</div>
+                </div>
+                <div>
+                    <div class="text-2xl md:text-5xl font-bold mb-2">24/7</div>
+                    <div class="text-blue-100">Atención Disponible</div>
+                </div>
+                <div>
+                    <div class="text-2xl md:text-5xl font-bold mb-2">100%</div>
+                    <div class="text-blue-100">Compromiso</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- CTA Section -->
-<section class="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
+<section class="py-16 bg-white">
     <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">
                 ¿Necesitas más información?
             </h2>
             <p class="text-lg text-gray-600 mb-8">

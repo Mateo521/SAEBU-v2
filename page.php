@@ -20,7 +20,7 @@
                     <?php endif; ?>
 
                     <header class="text-center">
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 leading-tight">
+                        <h1 class="text-2xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 leading-tight">
                             <?php the_title(); ?>
                         </h1>
 
@@ -172,7 +172,7 @@
         <section class="py-16 bg-gradient-to-br from-[#416ed2] to-blue-800">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center text-white">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <h2 class="text-xl md:text-2xl font-bold mb-4">
                         ¿Necesitás más información?
                     </h2>
                     <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
