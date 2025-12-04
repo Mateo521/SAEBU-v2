@@ -16,7 +16,7 @@ $total_posts = $wp_query->found_posts;
     <!-- Hero del departamento -->
     <section class="bg-gradient-to-br from-[#416ed2] to-blue-800 text-white py-16">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
+            <div class="max-w-7xl mx-auto text-center">
                 <div class="inline-block mb-4">
                     <span class="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30">
                         Departamento
@@ -28,7 +28,7 @@ $total_posts = $wp_query->found_posts;
                 </h1>
                 
                 <?php if ($term->description) : ?>
-                    <div class="text-lg text-blue-50 leading-relaxed max-w-2xl mx-auto">
+                    <div class="text-lg text-blue-50 leading-relaxed mx-auto">
                         <?php echo wpautop($term->description); ?>
                     </div>
                 <?php endif; ?>
@@ -211,9 +211,9 @@ $total_posts = $wp_query->found_posts;
     <!-- Banner de llamada a la acción -->
     <section class="py-16 bg-white border-t border-gray-200">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto bg-gradient-to-br from-[#416ed2] to-blue-800 rounded p-8 md:p-12 text-center text-white">
+            <div class="max-w-7xl mx-auto bg-gradient-to-br from-[#416ed2] to-blue-800 rounded p-8 md:p-12 text-center text-white">
                 <h2 class="text-xl font-bold mb-4">¿Necesitas más información?</h2>
-                <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+                <p class="text-lg text-blue-100 mb-8 mx-auto">
                     Visita la página principal de <?php echo esc_html($term->name); ?> para conocer todos nuestros servicios y actividades.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">

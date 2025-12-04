@@ -71,7 +71,7 @@ get_header();
                     <!-- Título -->
                     <div class="text-center mb-12">
                         <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Nuestras Sedes</h2>
-                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Contamos con dos sedes para brindarte atención de
+                        <p class="text-lg text-gray-600 mx-auto">Contamos con dos sedes para brindarte atención de
                             calidad</p>
                     </div>
 
@@ -943,7 +943,7 @@ get_header();
             <div class="absolute bottom-10 left-10 w-80 h-80 bg-pink-300/20 rounded-full blur-3xl"></div>
 
             <div class="container mx-auto px-4 relative">
-                <div class="max-w-4xl mx-auto">
+                <div class="max-w-7xl mx-auto">
 
                     <!-- Alerta COVID -->
                     <div class="bg-white/10 backdrop-blur-xl border-2 border-white/20 rounded-2xl p-8 mb-10">
@@ -981,7 +981,7 @@ get_header();
                         <h2 class="text-xl md:text-2xl font-bold mb-4">
                             Estamos para cuidar tu salud
                         </h2>
-                        <p class="text-xl text-pink-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+                        <p class="text-xl text-pink-100 mb-8 mx-auto leading-relaxed">
                             Contactanos para solicitar turnos, información sobre servicios o cualquier consulta sobre tu
                             salud
                         </p>

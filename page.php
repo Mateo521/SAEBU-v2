@@ -10,7 +10,7 @@
         <!-- Hero de la página -->
         <section class="bg-white border-b border-gray-200 py-12 md:py-16">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto">
+                <div class="max-w-7xl mx-auto">
 
                     <?php if (has_post_thumbnail()) : ?>
                         <!-- Con imagen destacada -->
@@ -38,7 +38,7 @@
         <!-- Contenido principal -->
         <section class="py-12 md:py-16">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto">
+                <div class="max-w-7xl mx-auto">
 
                     <article class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 md:p-12">
 
@@ -171,11 +171,11 @@
         <!-- CTA al final (sin ACF) -->
         <section class="py-16 bg-gradient-to-br from-[#416ed2] to-blue-800">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center text-white">
+                <div class="max-w-7xl mx-auto text-center text-white">
                     <h2 class="text-xl md:text-2xl font-bold mb-4">
                         ¿Necesitás más información?
                     </h2>
-                    <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                    <p class="text-xl text-blue-100 mb-8 mx-auto">
                         Contactanos y te ayudaremos con lo que necesites
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">

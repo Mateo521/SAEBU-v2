@@ -1028,7 +1028,7 @@ get_header();
         <!-- CTA Final -->
         <section class="py-16 md:py-20 bg-gradient-to-br from-orange-600 via-red-600 to-pink-700">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center">
+                <div class="max-w-7xl mx-auto text-center">
 
                     <div class="inline-block bg-white/10 backdrop-blur-xl text-white px-5 py-2 rounded-full font-semibold mb-6 border border-white/20">
                         ¡Sumate al Deporte Universitario!
@@ -1038,7 +1038,7 @@ get_header();
                         Tu Vida Deportiva Empieza Hoy
                     </h2>
 
-                    <p class="text-xl text-orange-100 mb-10 max-w-2xl mx-auto">
+                    <p class="text-xl text-orange-100 mb-10 mx-auto">
                         Formá parte de la familia deportiva UNSL. Elegí tu disciplina, conocé gente nueva y llevá una vida más saludable.
                     </p>
 

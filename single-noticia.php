@@ -61,7 +61,7 @@
         <!-- Contenido de la noticia -->
         <section class="py-12 md:py-16">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto">
+                <div class="max-w-7xl mx-auto">
 
                     <!-- Categorías y fecha -->
                     <div class="flex flex-wrap items-center gap-4 mb-8">

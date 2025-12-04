@@ -11,11 +11,11 @@ get_header();
 <section class="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-20">
     <div class="absolute inset-0 bg-black/20"></div>
     <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-4xl mx-auto text-center">
+        <div class="max-w-7xl mx-auto text-center">
             <h1 class="text-xl md:text-2xl lg:text-4xl font-bold mb-6 animate-fade-in">
                 Institucional
             </h1>
-            <p class="text-lg md:text-base text-blue-100 max-w-2xl mx-auto">
+            <p class="text-lg md:text-base text-blue-100 mx-auto">
                 Conoce nuestra misión, visión y los valores que guían nuestro trabajo diario
             </p>
         </div>
@@ -156,7 +156,7 @@ get_header();
                     </div>
                 </div>
                 <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">Nuestros Valores</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                <p class="text-lg text-gray-600 mx-auto">
                     Los principios fundamentales que guían nuestro trabajo y relaciones
                 </p>
             </div>
@@ -257,7 +257,7 @@ get_header();
 <!-- CTA Section -->
 <section class="py-16 bg-gradient-to-r from-blue-600 to-indigo-700">
     <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center text-white">
+        <div class="max-w-7xl mx-auto text-center text-white">
             <h2 class="text-xl md:text-2xl font-bold mb-6">
                 ¿Quieres conocer más sobre nosotros?
             </h2>

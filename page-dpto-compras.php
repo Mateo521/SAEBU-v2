@@ -565,7 +565,7 @@ get_header();
                     <!-- CTA Destacado -->
                     <div class="mt-12 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-2xl p-8 text-center shadow-2xl">
                         <h3 class="text-2xl md:text-xl font-bold mb-4">¿Necesitás Iniciar un Trámite de Compra?</h3>
-                        <p class="text-indigo-100 text-lg mb-6 max-w-2xl mx-auto">
+                        <p class="text-indigo-100 text-lg mb-6 mx-auto">
                             Contactate con nosotros para asesorarte sobre el mejor procedimiento según tu necesidad
                         </p>
                         <div class="flex flex-wrap gap-4 justify-center">
@@ -591,7 +591,7 @@ get_header();
         <!-- FAQ -->
         <section class="py-16 md:py-20 bg-white">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto">
+                <div class="max-w-7xl mx-auto">
                     
                     <div class="text-center mb-12">
                         <div class="inline-flex items-center gap-2 bg-indigo-600 text-white px-5 py-2 rounded-full font-semibold mb-4">
@@ -859,7 +859,7 @@ get_header();
         <!-- Estadísticas del Departamento -->
         <section class="py-16 md:py-20 bg-gradient-to-br from-indigo-700 via-purple-700 to-pink-700">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center text-white">
+                <div class="max-w-7xl mx-auto text-center text-white">
                     
                     <h2 class="text-xl md:text-2xl font-bold mb-12">Nuestro Impacto</h2>
 

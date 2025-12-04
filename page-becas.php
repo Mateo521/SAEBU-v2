@@ -877,7 +877,7 @@ get_header();
         <!-- Proceso de Control -->
         <section class="py-16 md:py-20 bg-white">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto">
+                <div class="max-w-7xl mx-auto">
 
                     <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl p-8 md:p-12">
                         <div class="flex items-start gap-6 mb-8">
@@ -921,7 +921,7 @@ get_header();
         <!-- CTA de Contacto -->
         <section class="py-16 md:py-20 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center">
+                <div class="max-w-7xl mx-auto text-center">
 
                     <div class="inline-block bg-white/10 backdrop-blur-xl text-white px-5 py-2 rounded-full font-semibold mb-6 border border-white/20">
                          ¿Tenés Dudas sobre las Becas?
@@ -931,7 +931,7 @@ get_header();
                         Estamos para Ayudarte
                     </h2>
 
-                    <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+                    <p class="text-xl text-blue-100 mb-10 mx-auto">
                         Nuestro equipo está disponible para orientarte en el proceso de solicitud y resolver todas tus consultas
                     </p>
 
@@ -991,7 +991,7 @@ get_header();
         <!-- FAQ Rápido -->
         <section class="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto">
+                <div class="max-w-7xl mx-auto">
 
                     <div class="text-center mb-12">
                         <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-5 py-2 rounded-full font-semibold mb-4">

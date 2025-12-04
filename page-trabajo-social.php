@@ -1052,7 +1052,7 @@ get_header();
         <!-- CTA Final -->
         <section class="py-16 md:py-20 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center">
+                <div class="max-w-7xl mx-auto text-center">
                     <div class="inline-block bg-white/10 backdrop-blur-xl text-white px-5 py-2 rounded-full font-semibold mb-6 border border-white/20">
                         ¿Necesitás más información?
                     </div>
@@ -1061,7 +1061,7 @@ get_header();
                         Estamos para Ayudarte
                     </h2>
 
-                    <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+                    <p class="text-xl text-blue-100 mb-10 mx-auto">
                         Nuestro equipo de Trabajo Social está disponible para asesorarte sobre becas, residencia y todos los beneficios disponibles
                     </p>
 

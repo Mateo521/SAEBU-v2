@@ -133,7 +133,7 @@ $sedes = array(
 <section class="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-20">
     <div class="absolute inset-0 bg-black/20"></div>
     <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-4xl mx-auto text-center">
+        <div class="max-w-7xl mx-auto text-center">
             <div class="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6">
                 <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
@@ -142,7 +142,7 @@ $sedes = array(
             <h1 class="text-xl md:text-2xl lg:text-4xl font-bold mb-6">
                 Nuestros Departamentos
             </h1>
-            <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto">
+            <p class="text-lg md:text-xl text-blue-100 mx-auto">
                 Conoce todos los servicios y áreas que trabajan para tu bienestar universitario
             </p>
         </div>
@@ -309,7 +309,7 @@ $sedes = array(
 <!-- CTA Section -->
 <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center">
+        <div class="max-w-7xl mx-auto text-center">
             <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">
                 ¿Necesitas más información?
             </h2>

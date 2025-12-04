@@ -13,7 +13,7 @@ get_header();
     <!-- Hero -->
     <section class="bg-gradient-to-br from-slate-800 to-slate-900 text-white py-16">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
+            <div class="max-w-7xl mx-auto text-center">
                 <h1 class="text-2xl md:text-5xl font-bold mb-4">
                     Todas las Noticias
                 </h1>

@@ -67,7 +67,7 @@ get_header();
         <!-- Ubicación -->
         <section class="py-12 bg-white border-b-2 border-green-100">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto">
+                <div class="max-w-7xl mx-auto">
                     <div class="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl p-8 md:p-10">
                         <div class="flex items-start gap-5">
                             <div class="w-14 h-14 bg-green-500 text-white rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
@@ -816,7 +816,7 @@ get_header();
                         <h2 class="text-xl md:text-2xl font-bold mb-4">
                             ¿Listo para disfrutar de La Florida?
                         </h2>
-                        <p class="text-xl text-green-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+                        <p class="text-xl text-green-100 mb-8 mx-auto leading-relaxed">
                             Contactanos para reservas, consultas o más información sobre el complejo
                         </p>
                     </div>

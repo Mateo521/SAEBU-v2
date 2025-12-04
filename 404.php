@@ -7,7 +7,7 @@ get_header();
 
 <main class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-16">
     <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-7xl mx-auto">
             
             <!-- Error principal -->
             <div class="text-center mb-16">
@@ -28,7 +28,7 @@ get_header();
                 <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">
                     Página no encontrada
                 </h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+                <p class="text-xl text-gray-600 mx-auto mb-8">
                     Lo sentimos, la página que estás buscando no existe, ha sido movida o está temporalmente no disponible.
                 </p>
 
@@ -44,7 +44,7 @@ get_header();
 
             <!-- Búsqueda -->
             <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 mb-8">
-                <div class="max-w-2xl mx-auto">
+                <div class="mx-auto">
                     <h3 class="text-2xl font-bold text-slate-900 mb-4 text-center">
                         ¿Qué estabas buscando?
                     </h3>

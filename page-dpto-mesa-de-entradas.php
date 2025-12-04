@@ -17,7 +17,7 @@ get_header();
             </div>
 
             <div class="container mx-auto px-4 relative">
-                <div class="max-w-4xl mx-auto text-center">
+                <div class="max-w-7xl mx-auto text-center">
                     <!-- Breadcrumb minimalista -->
                     <div class="mb-6">
                         <nav class="inline-flex items-center gap-2 text-sm text-blue-100">
@@ -43,7 +43,7 @@ get_header();
                         Mesa de Entrada<br>y Personal
                     </h1>
 
-                    <p class="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
+                    <p class="text-xl text-blue-100 mx-auto leading-relaxed">
                         Atención y gestión de trámites estudiantiles
                     </p>
                 </div>

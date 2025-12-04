@@ -46,7 +46,7 @@
                 </span>
             </h1>
 
-            <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl mx-auto animate-fade-in-up">
+            <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed mx-auto animate-fade-in-up">
                 Asistencia y acompañamiento para contribuir a un óptimo desempeño académico
             </p>
         </div>
@@ -366,7 +366,7 @@
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <h2 class="text-2xl font-bold text-slate-900 mb-4">Departamentos</h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p class="text-lg text-gray-600 mx-auto">
                 Servicios especializados para apoyar tu desarrollo universitario
             </p>
         </div>

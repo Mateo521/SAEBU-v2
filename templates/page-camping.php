@@ -19,7 +19,7 @@ get_header();
             </div>
 
             <div class="container mx-auto px-4 relative z-10">
-                <div class="max-w-4xl mx-auto text-center">
+                <div class="max-w-7xl mx-auto text-center">
                     <!-- Icono del departamento -->
                     <div class="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-md rounded-full mb-6">
                         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -46,7 +46,7 @@ get_header();
         <!-- Contenido principal -->
         <section class="py-16">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto">
+                <div class="max-w-7xl mx-auto">
 
                     <!-- Información del departamento -->
                     <?php if (get_the_content()) : ?>
@@ -196,9 +196,9 @@ get_header();
     <!-- Llamada a la acción -->
     <section class="py-16 bg-gradient-to-br from-green-600 to-green-800">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center text-white">
+            <div class="max-w-7xl mx-auto text-center text-white">
                 <h2 class="text-xl md:text-2xl font-bold mb-4">¿Querés reservar el camping?</h2>
-                <p class="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
+                <p class="text-xl text-green-100 mb-8 mx-auto">
                     Contactanos para conocer la disponibilidad y los servicios que ofrecemos
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
