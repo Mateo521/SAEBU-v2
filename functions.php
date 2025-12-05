@@ -1319,3 +1319,700 @@ class Saebu_Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
         $output .= "</li>\n";
     }
 }
+
+
+/**
+ * ============================================
+ * PERSONALIZACIÓN DEL LOGIN DE WORDPRESS
+ * SAEBU - UNSL
+ * ============================================
+ */
+
+// 1. PERSONALIZAR LOGO Y ESTILOS DEL LOGIN
+function saebu_custom_login_styles() {
+    ?>
+    <style>
+        /* ====================
+           VARIABLES Y RESET
+        ==================== */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #0891b2;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ====================
+           BODY Y FONDO
+        ==================== */
+        body.login {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Patrón decorativo de fondo */
+        body.login::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        /* ====================
+           CONTENEDOR PRINCIPAL
+        ==================== */
+        login {
+            padding: 4% 0 0 !important;
+            width: 100% !important;
+            max-width: 440px !important;
+            margin: 0 auto !important;
+        }
+
+        /* ====================
+           LOGO
+        ==================== */
+        login h1 {
+            margin-bottom: 24px !important;
+        }
+
+        login h1 a {
+            background-image: url('<?php echo get_template_directory_uri(); ?>/logo-unsl-2.png') !important;
+            background-size: contain !important;
+            background-position: center !important;
+            width: 100% !important;
+            height: 80px !important;
+            margin: 0 auto 20px !important;
+            padding: 0 !important;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+            transition: all 0.3s ease !important;
+        }
+
+        login h1 a:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.15));
+        }
+
+        /* Badge institucional */
+        login h1::after {
+            content: 'Secretaría de Asuntos Estudiantiles';
+            display: block;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 12px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            letter-spacing: 0.5px;
+        }
+
+        /* ====================
+           FORMULARIO
+        ==================== */
+        loginform,
+        registerform,
+        lostpasswordform {
+            background: white !important;
+            border: none !important;
+            border-radius: 20px !important;
+            padding: 40px !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25),
+                        0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+            margin-bottom: 20px !important;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decoración superior del formulario */
+        loginform::before,
+        registerform::before,
+        lostpasswordform::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #06b6d4, #10b981);
+        }
+
+        /* ====================
+           LABELS
+        ==================== */
+        loginform label,
+        registerform label,
+        lostpasswordform label {
+            color: var(--text-dark) !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            margin-bottom: 8px !important;
+            display: block !important;
+            letter-spacing: 0.3px;
+        }
+
+        /* ====================
+           INPUTS
+        ==================== */
+        loginform input[type="text"],
+        loginform input[type="password"],
+        loginform input[type="email"],
+        registerform input[type="text"],
+        registerform input[type="email"],
+        lostpasswordform input[type="text"] {
+            background: var(--bg-light) !important;
+            border: 2px solid #e2e8f0 !important;
+            border-radius: 12px !important;
+            padding: 14px 16px !important;
+            font-size: 15px !important;
+            color: var(--text-dark) !important;
+            width: 100% !important;
+            margin: 0 0 6px 0 !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        loginform input[type="text"]:focus,
+        loginform input[type="password"]:focus,
+        loginform input[type="email"]:focus,
+        registerform input[type="text"]:focus,
+        registerform input[type="email"]:focus,
+        lostpasswordform input[type="text"]:focus {
+            background: white !important;
+            border-color: var(--primary) !important;
+            outline: none !important;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1),
+                        0 4px 6px rgba(0, 0, 0, 0.05) !important;
+            transform: translateY(-1px);
+        }
+
+        /* Placeholder */
+        loginform input::placeholder,
+        registerform input::placeholder,
+        lostpasswordform input::placeholder {
+            color: var(--text-light) !important;
+            opacity: 0.6;
+        }
+
+        /* ====================
+           CHECKBOX RECORDARME
+        ==================== */
+        .login .forgetmenot {
+            margin: 16px 0 20px 0 !important;
+        }
+
+        .login label[for="rememberme"] {
+            font-weight: 500 !important;
+            color: var(--text-light) !important;
+            font-size: 14px !important;
+        }
+
+        rememberme {
+            margin-right: 8px !important;
+            width: 18px !important;
+            height: 18px !important;
+            border-radius: 4px !important;
+            border: 2px solid #cbd5e1 !important;
+            cursor: pointer !important;
+        }
+
+        rememberme:checked {
+            background-color: var(--primary) !important;
+            border-color: var(--primary) !important;
+        }
+
+        /* ====================
+           BOTÓN PRINCIPAL
+        ==================== */
+        .wp-core-ui .button-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
+            border: none !important;
+            border-radius: 12px !important;
+            padding: 14px 24px !important;
+            font-size: 15px !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.5px !important;
+            text-shadow: none !important;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3),
+                        0 2px 4px rgba(0, 0, 0, 0.1) !important;
+            width: 100% !important;
+            height: auto !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wp-core-ui .button-primary:hover {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary)) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4),
+                        0 4px 8px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        .wp-core-ui .button-primary:active {
+            transform: translateY(0) !important;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3) !important;
+        }
+
+        .wp-core-ui .button-primary:focus {
+            outline: none !important;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2),
+                        0 4px 12px rgba(37, 99, 235, 0.3) !important;
+        }
+
+        /* Efecto ripple en el botón */
+        .wp-core-ui .button-primary::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .wp-core-ui .button-primary:active::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* ====================
+           ENLACES
+        ==================== */
+        nav,
+        backtoblog {
+            text-align: center !important;
+            padding: 0 24px !important;
+            margin: 16px 0 !important;
+        }
+
+        nav a,
+        backtoblog a {
+            color: white !important;
+            text-decoration: none !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            transition: all 0.3s ease !important;
+            padding: 8px 12px !important;
+            display: inline-block !important;
+            background: rgba(255, 255, 255, 0.1) !important;
+            backdrop-filter: blur(10px) !important;
+            border-radius: 8px !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        }
+
+        nav a:hover,
+        backtoblog a:hover {
+            background: rgba(255, 255, 255, 0.2) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Separador entre enlaces */
+        nav {
+            display: flex !important;
+            justify-content: center !important;
+            gap: 12px !important;
+            flex-wrap: wrap !important;
+        }
+
+        /* ====================
+           MENSAJES
+        ==================== */
+        .message,
+        login_error,
+        .login .success {
+            border-left-width: 4px !important;
+            border-radius: 12px !important;
+            padding: 16px 20px !important;
+            margin: 0 0 20px 0 !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+            font-size: 14px !important;
+            line-height: 1.6 !important;
+        }
+
+        /* Mensaje de error */
+        login_error {
+            background: #fef2f2 !important;
+            border-left-color: #ef4444 !important;
+            border: 1px solid #fecaca !important;
+            border-left-width: 4px !important;
+            color: #991b1b !important;
+        }
+
+        /* Mensaje de éxito */
+        .login .success,
+        .message {
+            background: #f0fdf4 !important;
+            border-left-color: #10b981 !important;
+            border: 1px solid #bbf7d0 !important;
+            border-left-width: 4px !important;
+            color: #065f46 !important;
+        }
+
+        /* ====================
+           FOOTER
+        ==================== */
+        .login #backtoblog {
+            margin-top: 24px !important;
+        }
+
+        /* Información adicional en el footer */
+        body.login::after {
+            content: '© 2024 Universidad Nacional de San Luis • Todos los derechos reservados';
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* ====================
+           PRIVACY LINK
+        ==================== */
+        .privacy-policy-page-link {
+            text-align: center !important;
+            margin-top: 20px !important;
+        }
+
+        .privacy-policy-page-link a {
+            color: white !important;
+            text-decoration: none !important;
+            font-size: 13px !important;
+            padding: 8px 16px !important;
+            background: rgba(255, 255, 255, 0.1) !important;
+            backdrop-filter: blur(10px) !important;
+            border-radius: 8px !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            display: inline-block !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .privacy-policy-page-link a:hover {
+            background: rgba(255, 255, 255, 0.2) !important;
+            transform: translateY(-2px);
+        }
+
+        /* ====================
+           ANIMACIONES
+        ==================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        login {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        login h1 {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        loginform,
+        registerform,
+        lostpasswordform {
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        nav,
+        backtoblog {
+            animation: fadeIn 0.8s ease-out 0.4s both;
+        }
+
+        /* ====================
+           RESPONSIVE
+        ==================== */
+        @media screen and (max-width: 480px) {
+            body.login {
+                padding: 20px;
+            }
+
+            login {
+                padding: 20px 0 0 !important;
+                max-width: 100% !important;
+            }
+
+            loginform,
+            registerform,
+            lostpasswordform {
+                padding: 30px 24px !important;
+                border-radius: 16px !important;
+            }
+
+            login h1 a {
+                height: 60px !important;
+            }
+
+            login h1::after {
+                font-size: 12px !important;
+                padding: 6px 12px !important;
+            }
+
+            body.login::after {
+                font-size: 11px !important;
+                padding: 0 20px;
+                line-height: 1.4;
+            }
+
+            nav {
+                flex-direction: column !important;
+                gap: 8px !important;
+            }
+
+            nav a,
+            backtoblog a {
+                width: 100% !important;
+                text-align: center !important;
+            }
+        }
+
+        /* ====================
+           MODO OSCURO (si usas prefer-color-scheme)
+        ==================== */
+        @media (prefers-color-scheme: dark) {
+            body.login {
+                background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+            }
+        }
+
+        /* ====================
+           ACCESIBILIDAD
+        ==================== */
+        *:focus {
+            outline: 2px solid var(--primary) !important;
+            outline-offset: 2px !important;
+        }
+
+        /* Alto contraste para lectores de pantalla */
+        @media (prefers-contrast: high) {
+            body.login {
+                background: #1e293b !important;
+            }
+
+            loginform,
+            registerform,
+            lostpasswordform {
+                border: 2px solid var(--primary) !important;
+            }
+        }
+    </style>
+    <?php
+}
+add_action('login_enqueue_scripts', 'saebu_custom_login_styles');
+
+// 2. CAMBIAR EL ENLACE DEL LOGO
+function saebu_login_logo_url() {
+    return home_url();
+}
+add_filter('login_headerurl', 'saebu_login_logo_url');
+
+// 3. CAMBIAR EL TÍTULO DEL LOGO
+function saebu_login_logo_url_title() {
+    return 'SAEBU - Universidad Nacional de San Luis';
+}
+add_filter('login_headertext', 'saebu_login_logo_url_title');
+
+// 4. PERSONALIZAR MENSAJE DE ERROR (más amigable)
+function saebu_custom_login_errors($error) {
+    global $errors;
+    $err_codes = $errors->get_error_codes();
+
+    // Error de nombre de usuario
+    if (in_array('invalid_username', $err_codes)) {
+        $error = '<strong>Error:</strong> El nombre de usuario ingresado no existe. Por favor, verificá tus credenciales.';
+    }
+
+    // Error de contraseña
+    if (in_array('incorrect_password', $err_codes)) {
+        $error = '<strong>Error:</strong> La contraseña ingresada es incorrecta. <a href="' . wp_lostpassword_url() . '">¿Olvidaste tu contraseña?</a>';
+    }
+
+    return $error;
+}
+add_filter('login_errors', 'saebu_custom_login_errors');
+
+// 5. AÑADIR TEXTO PERSONALIZADO EN EL FOOTER DEL LOGIN
+function saebu_login_footer_message() {
+    ?>
+    <style>
+        .custom-login-footer {
+            position: fixed;
+            bottom: 60px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 1000;
+        }
+        .custom-login-footer .info-box {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 16px 24px;
+            color: white;
+            font-size: 13px;
+            line-height: 1.6;
+            max-width: 440px;
+            margin: 0 auto;
+        }
+        .custom-login-footer .info-box strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        .custom-login-footer .info-box a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .custom-login-footer .info-box a:hover {
+            border-bottom-color: #60a5fa;
+        }
+    </style>
+    <div class="custom-login-footer">
+        <div class="info-box">
+            <strong>¿Necesitás ayuda?</strong>
+            Contactá a soporte: <a href="mailto:soporte@unsl.edu.ar">soporte@unsl.edu.ar</a>
+        </div>
+    </div>
+    <?php
+}
+add_action('login_footer', 'saebu_login_footer_message');
+
+// 6. REDIRECCIONAR DESPUÉS DEL LOGIN SEGÚN ROL
+function saebu_login_redirect($redirect_to, $request, $user) {
+    if (isset($user->roles) && is_array($user->roles)) {
+        // Si es administrador
+        if (in_array('administrator', $user->roles)) {
+            return admin_url();
+        }
+        // Si es editor o autor
+        elseif (in_array('editor', $user->roles) || in_array('author', $user->roles)) {
+            return admin_url('edit.php');
+        }
+        // Otros roles van al inicio
+        else {
+            return home_url();
+        }
+    }
+    return $redirect_to;
+}
+add_filter('login_redirect', 'saebu_login_redirect', 10, 3);
+
+// 7. MENSAJE DE BIENVENIDA PERSONALIZADO
+function saebu_login_message($message) {
+    // Solo mostrar en la página principal de login (no en recuperación de contraseña)
+    if (empty($message) && !isset($_GET['action'])) {
+        $message = '<p class="message" style="background: rgba(255, 255, 255, 0.15) !important; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2) !important; color: white !important; border-left: 4px solid #60a5fa !important; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
+            <strong>Bienvenido al Sistema de Gestión SAEBU</strong><br>
+            Ingresá tus credenciales para acceder al panel de administración.
+        </p>';
+    }
+    return $message;
+}
+add_filter('login_message', 'saebu_login_message');
+
+// 8. AGREGAR FAVICON AL LOGIN
+function saebu_login_favicon() {
+    ?>
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" type="image/x-icon">
+    <?php
+}
+add_action('login_head', 'saebu_login_favicon');
+
+// 9. CAMBIAR EL TEXTO "Recordarme"
+function saebu_custom_remember_me_text() {
+    add_filter('gettext', function($translated_text, $text, $domain) {
+        if ($text === 'Remember Me') {
+            return 'Mantener sesión iniciada';
+        }
+        return $translated_text;
+    }, 20, 3);
+}
+add_action('init', 'saebu_custom_remember_me_text');
+
+// 10. SEGURIDAD: Limitar intentos de login (opcional pero recomendado)
+function saebu_limit_login_attempts() {
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $transient_key = 'login_attempts_' . md5($ip);
+    $attempts = get_transient($transient_key);
+
+    if ($attempts && $attempts >= 5) {
+        wp_die(
+            '<div style="text-align: center; padding: 50px; font-family: sans-serif;">
+                <h1>🔒 Demasiados intentos</h1>
+                <p>Has excedido el número máximo de intentos de inicio de sesión.</p>
+                <p>Por favor, intenta nuevamente en 15 minutos.</p>
+                <a href="' . home_url() . '" style="display: inline-block; margin-top: 20px; padding: 12px 24px; background: #2563eb; color: white; text-decoration: none; border-radius: 8px;">Volver al inicio</a>
+            </div>'
+        );
+    }
+}
+add_action('wp_login_failed', function() {
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $transient_key = 'login_attempts_' . md5($ip);
+    $attempts = get_transient($transient_key);
+    
+    if (!$attempts) {
+        set_transient($transient_key, 1, 15 * MINUTE_IN_SECONDS);
+    } else {
+        set_transient($transient_key, $attempts + 1, 15 * MINUTE_IN_SECONDS);
+    }
+});
+add_action('login_head', 'saebu_limit_login_attempts');
+
+// 11. Limpiar intentos después de login exitoso
+add_action('wp_login', function() {
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $transient_key = 'login_attempts_' . md5($ip);
+    delete_transient($transient_key);
+});

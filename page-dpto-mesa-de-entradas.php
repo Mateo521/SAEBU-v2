@@ -43,7 +43,7 @@ get_header();
                                 <div class="w-12 h-12 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center mb-4">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                                 </div>
-                                <h3 class="font-bold text-gray-900 mb-2">Ubicación</h3>
+                                <h3 class="font-bold text-gray-900 mb-2 text-base">Ubicación</h3>
                                 <p class="text-gray-600 text-sm">Rivadavia 1029, 1º Piso<br>San Luis Capital</p>
                             </div>
 
@@ -51,7 +51,7 @@ get_header();
                                 <div class="w-12 h-12 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center mb-4">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                 </div>
-                                <h3 class="font-bold text-gray-900 mb-2">Horario de Atención</h3>
+                                <h3 class="font-bold text-gray-900 mb-2 text-base">Horario de Atención</h3>
                                 <p class="text-gray-600 text-sm">Lunes a Viernes<br>8:00 a 13:00 hs | 18:00 a 20:00 hs</p>
                             </div>
 
@@ -59,7 +59,7 @@ get_header();
                                 <div class="w-12 h-12 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center mb-4">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                                 </div>
-                                <h3 class="font-bold text-gray-900 mb-2">Contacto</h3>
+                                <h3 class="font-bold text-gray-900 mb-2 text-base">Contacto</h3>
                                 <a href="tel:4420123" class="text-blue-600 font-medium hover:underline text-sm block mb-1">Tel: (0266) 4520300 int. 8139</a>
                                 <a href="mailto:mesadeentradassaebu@gmail.com" class="text-blue-600 font-medium hover:underline text-sm block">mesadeentradassaebu@gmail.com</a>
                             </div>
