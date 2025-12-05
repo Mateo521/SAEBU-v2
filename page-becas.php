@@ -24,7 +24,7 @@ get_header();
                         Becas y Beneficios
                     </h1>
                     
-                    <div class="w-24 h-1 bg-[#005eb8] mx-auto mb-6"></div>
+                    <div class="w-24 h-1 bg-[#416ed2] mx-auto mb-6"></div>
 
                     <p class="text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
                         Gestionamos programas de apoyo económico para garantizar la igualdad de oportunidades y la permanencia en tus estudios universitarios.
@@ -39,7 +39,7 @@ get_header();
                     
                     <div class="lg:col-span-2">
                         <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                            <span class="w-2 h-8 bg-[#005eb8] rounded-sm"></span>
+                            <span class="w-2 h-8 bg-[#416ed2] rounded-sm"></span>
                             Gestión de Becas
                         </h2>
                         <p class="text-gray-600 text-lg mb-8">
@@ -104,7 +104,7 @@ get_header();
                             </ul>
                             
                             <div class="mt-6 pt-4 border-t border-gray-200">
-                                <a href="mailto:becasunsl@gmail.com" class="block w-full text-center bg-[#005eb8] hover:bg-[#004a99] text-white font-bold py-2 px-4 rounded transition-colors text-sm">
+                                <a href="mailto:becasunsl@gmail.com" class="block w-full text-center bg-[#416ed2] hover:bg-[#004a99] text-white font-bold py-2 px-4 rounded transition-colors text-sm">
                                     Enviar Consulta
                                 </a>
                             </div>
@@ -225,7 +225,7 @@ get_header();
                         foreach ($becas as $beca) : ?>
                             <article class="bg-white border border-gray-200 rounded-md p-6 hover:shadow-lg hover:border-[#005eb8] transition-all duration-300 group flex flex-col h-full">
                                 <div class="flex items-start gap-4 mb-4">
-                                    <div class="w-12 h-12 bg-blue-50 rounded-md flex items-center justify-center flex-shrink-0 group-hover:bg-[#005eb8] transition-colors duration-300">
+                                    <div class="w-12 h-12 bg-blue-50 rounded-md flex items-center justify-center flex-shrink-0 group-hover:bg-[#416ed2] transition-colors duration-300">
                                         <svg class="w-6 h-6 text-[#005eb8] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="<?php echo $beca['icon']; ?>"></path>
                                         </svg>

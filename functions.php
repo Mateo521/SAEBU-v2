@@ -1191,16 +1191,23 @@ add_action('save_post_noticia', 'saebu_save_galeria_meta');
 
 
 /**
- * Custom Walker for Desktop Menu with Dropdowns
+ * Custom Walker for Desktop Menu with Multi-level Dropdowns
  */
 class Saebu_Desktop_Walker_Nav_Menu extends Walker_Nav_Menu
 {
-
     // Start Level (submenu wrapper)
     function start_lvl(&$output, $depth = 0, $args = null)
     {
         $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class=\"absolute left-0 top-full mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50\">\n";
+        
+        if ($depth === 0) {
+            // Primer nivel de dropdown (directo desde el menú principal)
+            $output .= "\n$indent<ul class=\"absolute left-0 top-full mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50\">\n";
+        } else {
+            // Sub-submenús (nivel 2+)
+            // Se posicionan a la derecha del elemento padre
+            $output .= "\n$indent<ul class=\"absolute left-full top-0 ml-1 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50\">\n";
+        }
     }
 
     // End Level
@@ -1222,13 +1229,20 @@ class Saebu_Desktop_Walker_Nav_Menu extends Walker_Nav_Menu
         $has_children = in_array('menu-item-has-children', $classes);
 
         if ($depth === 0) {
-            // Top level menu item
+            // Top level menu item (nivel principal)
             $li_class = 'relative group';
             $a_class = 'flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors';
         } else {
-            // Submenu item
-            $li_class = '';
-            $a_class = 'block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors';
+            // Submenu items (nivel 1+)
+            if ($has_children) {
+                // Item con hijos (necesita group para el hover)
+                $li_class = 'relative group';
+                $a_class = 'flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors';
+            } else {
+                // Item sin hijos
+                $li_class = '';
+                $a_class = 'block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors';
+            }
         }
 
         $output .= $indent . '<li class="' . $li_class . '">';
@@ -1253,8 +1267,14 @@ class Saebu_Desktop_Walker_Nav_Menu extends Walker_Nav_Menu
         $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
 
         // Add dropdown icon if has children
-        if ($has_children && $depth === 0) {
-            $item_output .= '<svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
+        if ($has_children) {
+            if ($depth === 0) {
+                // Icono hacia abajo para el nivel principal
+                $item_output .= '<svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
+            } else {
+                // Icono hacia la derecha para submenús
+                $item_output .= '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>';
+            }
         }
 
         $item_output .= '</a>';
@@ -1264,18 +1284,26 @@ class Saebu_Desktop_Walker_Nav_Menu extends Walker_Nav_Menu
     }
 }
 
+
+
 /**
- * Custom Walker for Mobile Menu with Accordions
+ * Custom Walker for Mobile Menu with Accordions (CORREGIDO)
  */
 class Saebu_Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
 {
-
-    private $current_item_has_children = false;
-
     function start_lvl(&$output, $depth = 0, $args = null)
     {
         $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class=\"pl-4 mt-2 space-y-2 hidden\" x-show=\"open\" x-collapse>\n";
+        // Removemos x-collapse y usamos x-show con transición
+        $output .= "\n$indent<ul class=\"pl-4 mt-2 space-y-2\" 
+                    x-show=\"open\" 
+                    x-transition:enter=\"transition ease-out duration-200\"
+                    x-transition:enter-start=\"opacity-0 -translate-y-1\"
+                    x-transition:enter-end=\"opacity-100 translate-y-0\"
+                    x-transition:leave=\"transition ease-in duration-150\"
+                    x-transition:leave-start=\"opacity-100 translate-y-0\"
+                    x-transition:leave-end=\"opacity-0 -translate-y-1\"
+                    style=\"display: none;\">\n";
     }
 
     function end_lvl(&$output, $depth = 0, $args = null)
@@ -1292,25 +1320,49 @@ class Saebu_Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
         $has_children = in_array('menu-item-has-children', $classes);
 
         if ($depth === 0 && $has_children) {
-            $output .= $indent . '<li x-data="{ open: false }">';
+            // Item padre con submenú
+            $output .= $indent . '<li x-data="{ open: false }" class="relative">';
 
-            // Parent item with toggle
-            $output .= '<div class="flex items-center justify-between px-4 py-3 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium transition-colors">';
-            $output .= '<a href="' . esc_url($item->url) . '" class="flex-1">' . apply_filters('the_title', $item->title, $item->ID) . '</a>';
-            $output .= '<button @click="open = !open" class="p-1 hover:bg-blue-100 rounded transition-colors">';
-            $output .= '<svg class="w-5 h-5 transition-transform" :class="{ \'rotate-180\': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
+            // Contenedor flex para el link y el botón
+            $output .= '<div class="flex items-center justify-between">';
+            
+            // Link del padre
+            $output .= '<a href="' . esc_url($item->url) . '" 
+                        class="flex-1 px-4 py-3 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium transition-colors">' 
+                        . apply_filters('the_title', $item->title, $item->ID) . 
+                        '</a>';
+            
+            // Botón toggle
+            $output .= '<button @click.prevent="open = !open" 
+                        type="button"
+                        class="p-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 mr-2"
+                        :aria-expanded="open.toString()"
+                        aria-label="Toggle submenu">';
+            $output .= '<svg class="w-5 h-5 transition-transform duration-200" 
+                        :class="{ \'rotate-180\': open }" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>';
             $output .= '</button>';
             $output .= '</div>';
+
+        } elseif ($depth === 0 && !$has_children) {
+            // Item padre sin submenú
+            $output .= $indent . '<li>';
+            $output .= '<a href="' . esc_url($item->url) . '" 
+                        class="block px-4 py-3 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium transition-colors">' 
+                        . apply_filters('the_title', $item->title, $item->ID) . 
+                        '</a>';
+
         } else {
-            $li_class = '';
-            $a_class = 'block px-4 py-3 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium transition-colors';
-
-            if ($depth > 0) {
-                $a_class = 'block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors';
-            }
-
-            $output .= $indent . '<li class="' . $li_class . '">';
-            $output .= '<a href="' . esc_url($item->url) . '" class="' . $a_class . '">' . apply_filters('the_title', $item->title, $item->ID) . '</a>';
+            // Items de submenú
+            $output .= $indent . '<li>';
+            $output .= '<a href="' . esc_url($item->url) . '" 
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-700 rounded-lg transition-colors">' 
+                        . apply_filters('the_title', $item->title, $item->ID) . 
+                        '</a>';
         }
     }
 

@@ -23,13 +23,14 @@
 
             <div class="space-y-6">
                 <div class="inline-flex items-center gap-3 border-l-4 border-[#005eb8] pl-4">
+                    <img class="w-8" src="<?php echo esc_url( get_template_directory_uri() ); ?>/logo-unsl-2.png" alt="">
                     <span class="text-sm text-gray-300 font-medium tracking-wide uppercase">Universidad Nacional de San Luis</span>
                 </div>
 
                 <div>
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
                         Secretaría de <br>
-                        Asuntos Estudiantiles
+                        Asuntos Estudiantiles y Bienestar Universitario
                     </h1>
                     <p class="text-lg text-gray-300 max-w-2xl leading-relaxed font-light">
                         Gestionamos y promovemos el bienestar de la comunidad universitaria a través de becas, salud, deportes y servicios esenciales.
@@ -38,7 +39,7 @@
 
                 <div class="flex flex-wrap gap-4 pt-4">
                     <a href="<?php echo home_url('/servicios'); ?>"
-                        class="inline-flex items-center gap-2 bg-[#005eb8] hover:bg-[#004a99] text-white px-8 py-3 rounded-md font-semibold transition-colors duration-300 shadow-sm">
+                        class="inline-flex items-center gap-2 bg-[#416ed2] hover:bg-[#004a99] text-white px-8 py-3 rounded-md font-semibold transition-colors duration-300 shadow-sm">
                         <span>Nuestros Servicios</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -72,7 +73,7 @@
                                 </h3>
                                 <p class="text-sm text-gray-500">Menú del día</p>
                             </div>
-                            <div class="text-center bg-[#005eb8] text-white px-3 py-1 rounded">
+                            <div class="text-center bg-[#416ed2] text-white px-3 py-1 rounded">
                                 <span class="block text-xs uppercase">Hoy</span>
                                 <span class="block text-lg font-bold leading-none"><?php echo date_i18n('d', strtotime($fecha)); ?></span>
                             </div>
@@ -115,7 +116,7 @@
     </div>
 </section>
 
-<section class="bg-[#005eb8] py-8">
+<section class="bg-[#416ed2] py-8">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-white text-center divide-y md:divide-y-0 md:divide-x divide-white/20">
             <div class="px-4 py-2">
@@ -197,11 +198,11 @@
     </div>
 </section>
 
-<section class="py-20 bg-white">
+<section class="py-20 bg-[#cda2ff47]">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900 mb-3">Departamentos y Áreas</h2>
-            <div class="w-20 h-1 bg-[#005eb8] mx-auto mb-4"></div>
+            <div class="w-20 h-1 bg-[#416ed2] mx-auto mb-4"></div>
             <p class="text-gray-600 max-w-2xl mx-auto">Estructura organizativa al servicio de la comunidad universitaria.</p>
         </div>
 
@@ -340,7 +341,7 @@
                             if ($terms && !is_wp_error($terms)) :
                                 $term = array_shift($terms);
                             ?>
-                                <span class="absolute bottom-0 left-0 bg-[#005eb8] text-white text-xs font-bold px-3 py-1">
+                                <span class="absolute bottom-0 left-0 bg-[#416ed2] text-white text-xs font-bold px-3 py-1">
                                     <?php echo esc_html($term->name); ?>
                                 </span>
                             <?php endif; ?>

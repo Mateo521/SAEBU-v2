@@ -145,7 +145,7 @@ $sedes = array(
                         Departamentos y Servicios
                     </h1>
                     
-                    <div class="w-24 h-1 bg-[#005eb8] mx-auto mb-6"></div>
+                    <div class="w-24 h-1 bg-[#416ed2] mx-auto mb-6"></div>
 
                     <p class="text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
                         Estructura organizativa de la Secretaría de Asuntos Estudiantiles, diseñada para brindar bienestar integral a la comunidad universitaria.
@@ -269,7 +269,7 @@ $sedes = array(
             </div>
         </section>
 
-        <section class="py-16 bg-[#005eb8] text-white">
+        <section class="py-16 bg-[#416ed2] text-white">
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-2xl font-bold mb-4">¿No encontrás lo que buscás?</h2>
                 <p class="text-blue-100 mb-8 max-w-2xl mx-auto">

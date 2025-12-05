@@ -24,7 +24,7 @@ get_header();
                         Departamento de Trabajo Social
                     </h1>
                     
-                    <div class="w-24 h-1 bg-[#005eb8] mx-auto mb-6"></div>
+                    <div class="w-24 h-1 bg-[#416ed2] mx-auto mb-6"></div>
 
                     <p class="text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
                         Gestionamos el acceso a beneficios económicos, alojamiento universitario y programas de inclusión para acompañar tu trayectoria académica.
@@ -75,7 +75,7 @@ get_header();
                     <div class="grid lg:grid-cols-2 gap-12 items-start">
                         <div>
                             <div class="flex items-center gap-3 mb-6">
-                                <div class="p-3 bg-[#005eb8] rounded text-white">
+                                <div class="p-3 bg-[#416ed2] rounded text-white">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                                 </div>
                                 <h2 class="text-2xl font-bold text-gray-900">Residencia Universitaria</h2>
@@ -183,7 +183,7 @@ get_header();
                             <h4 class="font-bold text-gray-900 mb-3 text-sm">Montos Universidad General</h4>
                             <div class="border border-gray-200 rounded-lg overflow-hidden">
                                 <table class="w-full text-sm text-left">
-                                    <thead class="bg-[#005eb8] text-white">
+                                    <thead class="bg-[#416ed2] text-white">
                                         <tr>
                                             <th class="px-4 py-3">Año</th>
                                             <th class="px-4 py-3 text-right">Estratégica</th>
@@ -271,7 +271,7 @@ get_header();
             </div>
         </section>
 
-        <section class="py-16 bg-[#005eb8] text-white" id="contacto">
+        <section class="py-16 bg-[#416ed2] text-white" id="contacto">
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-2xl font-bold mb-4">¿Necesitás asesoramiento?</h2>
                 <p class="text-blue-100 mb-8 max-w-2xl mx-auto">

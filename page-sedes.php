@@ -40,11 +40,11 @@ get_header();
                 <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
 
                     <article class="bg-white rounded-lg shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-200 overflow-hidden flex flex-col group">
-                        <div class="h-2 w-full bg-[#005eb8]"></div>
+                        <div class="h-2 w-full bg-[#416ed2]"></div>
 
                         <div class="p-8 flex-1 flex flex-col">
                             <div class="flex items-center justify-between mb-6">
-                                <div class="w-14 h-14 bg-blue-50 text-[#005eb8] rounded-lg flex items-center justify-center group-hover:bg-[#005eb8] group-hover:text-white transition-colors">
+                                <div class="w-14 h-14 bg-blue-50 text-[#005eb8] rounded-lg flex items-center justify-center group-hover:bg-[#416ed2] group-hover:text-white transition-colors">
                                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                                     </svg>
@@ -187,7 +187,7 @@ get_header();
                         </div>
                         <div class="hidden md:block h-px w-24 bg-gray-300"></div>
                         <div class="text-center">
-                            <div class="w-6 h-6 bg-[#005eb8] rounded-full mx-auto mb-2 ring-4 ring-blue-100"></div>
+                            <div class="w-6 h-6 bg-[#416ed2] rounded-full mx-auto mb-2 ring-4 ring-blue-100"></div>
                             <p class="font-bold text-gray-800">San Luis</p>
                             <p class="text-xs text-gray-500">Centro</p>
                         </div>

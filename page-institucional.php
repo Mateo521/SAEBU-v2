@@ -18,7 +18,7 @@ get_header();
             <h1 class="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
                 Misión, Visión y Valores
             </h1>
-            <div class="w-24 h-1 bg-[#005eb8] mx-auto mb-6"></div>
+            <div class="w-24 h-1 bg-[#416ed2] mx-auto mb-6"></div>
             <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto font-light">
                 Los pilares fundamentales que sostienen nuestro compromiso con la comunidad universitaria y guían nuestro accionar diario.
             </p>
@@ -33,7 +33,7 @@ get_header();
                 
                 <div>
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 bg-[#005eb8] rounded-md flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <div class="w-12 h-12 bg-[#416ed2] rounded-md flex items-center justify-center flex-shrink-0 shadow-sm">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                         </div>
                         <h2 class="text-3xl font-bold text-gray-900">Nuestra Misión</h2>
@@ -135,7 +135,7 @@ get_header();
 
                 foreach ($valores as $valor) : ?>
                     <div class="group p-6 border border-gray-200 rounded-md hover:shadow-lg hover:border-[#005eb8] transition-all duration-300 bg-white">
-                        <div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center mb-4 group-hover:bg-[#005eb8] transition-colors duration-300">
+                        <div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center mb-4 group-hover:bg-[#416ed2] transition-colors duration-300">
                             <svg class="w-6 h-6 text-[#005eb8] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="<?php echo $valor['icon']; ?>"></path>
                             </svg>
@@ -149,7 +149,7 @@ get_header();
     </div>
 </section>
 
-<section class="py-16 bg-[#005eb8]">
+<section class="py-16 bg-[#416ed2]">
     <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center text-white">
             <h2 class="text-2xl font-bold mb-4">

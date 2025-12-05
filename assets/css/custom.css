@@ -495,3 +495,103 @@ header.sticky {
     height: auto !important;
     display: block;
 }
+
+
+/* ==========================================
+   DESKTOP MENU - MULTI-LEVEL DROPDOWNS
+========================================== */
+
+/* Menú principal */
+.menu > .menu-item {
+    position: relative;
+}
+
+/* Primer nivel de dropdown */
+.menu > .menu-item > ul {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 0.5rem;
+}
+
+/* Sub-submenús (nivel 2+) */
+.menu .menu-item ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-left: 0.25rem;
+}
+
+/* Asegurar que los submenús se muestren al hacer hover */
+.menu .menu-item:hover > ul {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Prevenir que el submenú se cierre cuando se hace hover en él */
+.menu .menu-item ul:hover {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Espacio para evitar que se cierre el menú al mover el mouse */
+.menu .menu-item > ul::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -0.5rem;
+    height: 0.5rem;
+    background: transparent;
+}
+
+/* Para sub-submenús (espacio a la izquierda) */
+.menu .menu-item ul ul::before {
+    content: '';
+    position: absolute;
+    left: -0.25rem;
+    top: 0;
+    bottom: 0;
+    width: 0.25rem;
+    background: transparent;
+}
+
+/* Animación suave */
+.menu .menu-item ul {
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    transform: translateY(-10px);
+}
+
+.menu .menu-item:hover > ul {
+    transform: translateY(0);
+}
+
+/* Para sub-submenús (animación desde la izquierda) */
+.menu .menu-item ul ul {
+    transform: translateX(-10px);
+}
+
+.menu .menu-item ul .menu-item:hover > ul {
+    transform: translateX(0);
+}
+
+/* Indicador visual del ítem activo */
+.menu .menu-item.current-menu-item > a,
+.menu .menu-item.current-menu-ancestor > a {
+    color: #2563eb;
+    background-color: #eff6ff;
+}
+
+/* Sombra adicional para sub-submenús */
+.menu .menu-item ul ul {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive: Ocultar en móvil */
+@media (max-width: 1023px) {
+    .menu > .menu-item > ul,
+    .menu .menu-item ul ul {
+        display: none !important;
+    }
+}
