@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Complejo Turístico La Florida
  */
@@ -9,9 +10,16 @@ get_header();
 
     <?php while (have_posts()) : the_post(); ?>
 
-        <section class="relative bg-[#1a4731] text-white py-20 border-b-4 border-green-600">
+
+        <section class="relative bg-[#1a4731] text-white py-20 border-b-4 border-green-600 overflow-hidden">
+
+            <?php
+            $hero_image = get_template_directory_uri() . '/assets/images/camping/banner.jpg';
+            ?>
+            <img class="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-overlay" src="<?php echo esc_url($hero_image); ?>" alt="Paisaje La Florida">
+
             <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-            
+
             <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-4xl mx-auto text-center">
                     <nav class="flex justify-center items-center gap-2 text-sm text-green-200 mb-6">
@@ -23,25 +31,29 @@ get_header();
                     <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
                         Complejo Turístico y Recreativo
                     </h1>
-                    
+
                     <div class="w-24 h-1 bg-green-500 mx-auto mb-6"></div>
 
                     <p class="text-xl text-green-100 max-w-2xl mx-auto font-light leading-relaxed">
                         Un espacio natural a orillas del dique, equipado para el descanso, el deporte y la recreación al aire libre.
                     </p>
 
-                    <div class="mt-8 inline-flex items-center gap-2 bg-green-900/50 border border-green-500/30 px-6 py-3 rounded-lg text-sm">
-                        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <div class="mt-8 inline-flex items-center gap-2 bg-green-900/50 border border-green-500/30 px-6 py-3 rounded-lg text-sm backdrop-blur-sm">
+                        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
                         <span>Ruta Provincial Nº 39, La Florida (A 45 km de San Luis)</span>
                     </div>
                 </div>
             </div>
         </section>
 
+
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
-                    
+
                     <div class="text-center mb-12">
                         <h2 class="text-3xl font-bold text-gray-900 mb-4">Servicios e Instalaciones</h2>
                         <p class="text-gray-600 max-w-3xl mx-auto">
@@ -50,7 +62,7 @@ get_header();
                     </div>
 
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <?php 
+                        <?php
                         $servicios = [
                             ['titulo' => 'Recreación', 'desc' => 'Actividades deportivas para todas las edades.', 'icon' => 'M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'],
                             ['titulo' => 'Enfermería', 'desc' => 'Servicio de primeros auxilios disponible.', 'icon' => 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'],
@@ -66,7 +78,9 @@ get_header();
                         foreach ($servicios as $servicio) : ?>
                             <div class="flex items-start gap-4 p-5 border border-gray-200 rounded-lg hover:border-green-600 hover:shadow-md transition-all duration-300 group bg-white">
                                 <div class="text-green-700 bg-green-50 p-3 rounded-lg group-hover:bg-green-700 group-hover:text-white transition-colors">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="<?php echo $servicio['icon']; ?>"></path></svg>
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="<?php echo $servicio['icon']; ?>"></path>
+                                    </svg>
                                 </div>
                                 <div>
                                     <h3 class="font-bold text-gray-900 mb-1 text-base"><?php echo $servicio['titulo']; ?></h3>
@@ -90,7 +104,9 @@ get_header();
                         <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden flex flex-col">
                             <div class="bg-green-700 p-4 text-white">
                                 <h3 class="font-bold text-lg flex items-center gap-2">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                    </svg>
                                     Camping y Acampe
                                 </h3>
                             </div>
@@ -98,11 +114,15 @@ get_header();
                                 <p class="text-gray-600 mb-4">Parcelas delimitadas por cercos ligustrinos para mayor privacidad.</p>
                                 <ul class="space-y-3">
                                     <li class="flex items-start gap-3 text-sm text-gray-700">
-                                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
                                         <span><strong>Parcelas con Quincho:</strong> Incluyen asador individual, agua y electricidad.</span>
                                     </li>
                                     <li class="flex items-start gap-3 text-sm text-gray-700">
-                                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
                                         <span><strong>Parcelas generales:</strong> Con asador, mesa, agua y electricidad.</span>
                                     </li>
                                 </ul>
@@ -112,7 +132,9 @@ get_header();
                         <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden flex flex-col">
                             <div class="bg-green-800 p-4 text-white">
                                 <h3 class="font-bold text-lg flex items-center gap-2">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
                                     Cabañas Equipadas
                                 </h3>
                             </div>
@@ -120,15 +142,21 @@ get_header();
                                 <p class="text-gray-600 mb-4">Alojamiento confortable con vistas panorámicas al dique.</p>
                                 <ul class="space-y-3">
                                     <li class="flex items-start gap-3 text-sm text-gray-700">
-                                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
                                         <span>Capacidad para <strong>6 personas</strong>.</span>
                                     </li>
                                     <li class="flex items-start gap-3 text-sm text-gray-700">
-                                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
                                         <span>Totalmente equipadas con cocina y baño privado.</span>
                                     </li>
                                     <li class="flex items-start gap-3 text-sm text-gray-700">
-                                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
                                         <span>Accesibles para personas con movilidad reducida.</span>
                                     </li>
                                 </ul>
@@ -245,26 +273,30 @@ get_header();
                         if ($news_query->have_posts()) :
                             while ($news_query->have_posts()) : $news_query->the_post();
                         ?>
-                            <article class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden flex flex-col hover:shadow-md transition-shadow">
-                                <div class="h-48 overflow-hidden bg-gray-200 relative">
-                                    <?php if (has_post_thumbnail()) : ?>
-                                        <?php the_post_thumbnail('medium', ['class' => 'w-full h-full object-cover transition-transform duration-500 hover:scale-105']); ?>
-                                    <?php else : ?>
-                                        <div class="w-full h-full flex items-center justify-center text-gray-400">
-                                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
-                                <div class="p-5 flex-1 flex flex-col">
-                                    <span class="text-xs text-gray-500 mb-2"><?php echo get_the_date('d/m/Y'); ?></span>
-                                    <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug">
-                                        <a href="<?php the_permalink(); ?>" class="hover:text-green-700"><?php the_title(); ?></a>
-                                    </h3>
-                                    <p class="text-sm text-gray-600 line-clamp-3 mb-4 flex-1"><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
-                                    <a href="<?php the_permalink(); ?>" class="text-green-700 text-sm font-semibold hover:underline">Leer más</a>
-                                </div>
-                            </article>
-                        <?php endwhile; wp_reset_postdata(); else : ?>
+                                <article class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden flex flex-col hover:shadow-md transition-shadow">
+                                    <div class="h-48 overflow-hidden bg-gray-200 relative">
+                                        <?php if (has_post_thumbnail()) : ?>
+                                            <?php the_post_thumbnail('medium', ['class' => 'w-full h-full object-cover transition-transform duration-500 hover:scale-105']); ?>
+                                        <?php else : ?>
+                                            <div class="w-full h-full flex items-center justify-center text-gray-400">
+                                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                                </svg>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="p-5 flex-1 flex flex-col">
+                                        <span class="text-xs text-gray-500 mb-2"><?php echo get_the_date('d/m/Y'); ?></span>
+                                        <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug">
+                                            <a href="<?php the_permalink(); ?>" class="hover:text-green-700"><?php the_title(); ?></a>
+                                        </h3>
+                                        <p class="text-sm text-gray-600 line-clamp-3 mb-4 flex-1"><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
+                                        <a href="<?php the_permalink(); ?>" class="text-green-700 text-sm font-semibold hover:underline">Leer más</a>
+                                    </div>
+                                </article>
+                            <?php endwhile;
+                            wp_reset_postdata();
+                        else : ?>
                             <div class="col-span-3 text-center py-10 text-gray-500">
                                 No hay noticias recientes disponibles.
                             </div>
@@ -278,14 +310,18 @@ get_header();
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-2xl font-bold mb-4">¿Consultas o Reservas?</h2>
                 <p class="text-green-100 mb-8 max-w-2xl mx-auto">Comunicate con nosotros para verificar disponibilidad de cabañas o realizar consultas sobre el camping.</p>
-                
+
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="tel:02664422818" class="inline-flex items-center justify-center gap-2 bg-white text-green-800 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
                         Llamar ahora
                     </a>
                     <a href="mailto:contacto@laflorida.unsl.edu.ar" class="inline-flex items-center justify-center gap-2 bg-transparent border border-white/30 text-white px-6 py-3 rounded-lg font-bold hover:bg-white/10 transition-colors">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
                         Enviar Email
                     </a>
                 </div>
