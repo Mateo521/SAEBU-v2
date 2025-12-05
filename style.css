@@ -1,0 +1,223 @@
+/* ==========================================
+   DESKTOP MENU - RESPONSIVE DROPDOWNS
+========================================== */
+
+@media (min-width: 1024px) {
+    
+    /* Contenedor principal del menú */
+    .menu {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    /* Items del menú principal */
+    .menu > .menu-item {
+        position: relative;
+    }
+
+    /* Dropdowns nivel 1 */
+    .menu > .menu-item > .dropdown-menu {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        min-width: 220px;
+        max-width: 280px;
+        white-space: normal;
+    }
+
+    /* Sub-dropdowns (nivel 2+) */
+    .dropdown-submenu {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        min-width: 220px;
+        max-width: 280px;
+    }
+
+    /* Ajuste automático cuando se sale de la pantalla - Nivel 1 */
+    .menu > .menu-item:nth-last-child(1) > .dropdown-menu,
+    .menu > .menu-item:nth-last-child(2) > .dropdown-menu {
+        left: auto;
+        right: 0;
+    }
+
+    /* Prevenir overflow de texto */
+    .dropdown-menu a,
+    .dropdown-submenu a {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+    /* Asegurar visibilidad en hover */
+    .menu .menu-item:hover > ul {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    /* Zona de buffer para evitar que se cierre */
+    .menu > .menu-item > .dropdown-menu::before {
+        content: '';
+        position: absolute;
+        top: -0.5rem;
+        left: 0;
+        right: 0;
+        height: 0.5rem;
+        background: transparent;
+    }
+
+    .dropdown-submenu::before {
+        content: '';
+        position: absolute;
+        left: -0.25rem;
+        top: 0;
+        bottom: 0;
+        width: 0.25rem;
+        background: transparent;
+    }
+
+    /* Ancho máximo responsive */
+    .dropdown-menu,
+    .dropdown-submenu {
+        max-width: min(280px, 90vw);
+    }
+
+    /* ===== RESPONSIVE BREAKPOINTS ===== */
+
+    /* Pantallas HD y menores (≤ 1440px) */
+    @media (max-width: 1440px) {
+        .menu > .menu-item > a {
+            padding: 0.5rem 0.75rem;
+            font-size: 14px;
+            gap: 0.375rem;
+        }
+
+        .dropdown-menu,
+        .dropdown-submenu {
+            min-width: 180px;
+            max-width: 220px;
+            font-size: 13px;
+        }
+
+        .menu svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    /* Pantallas pequeñas (≤ 1280px) */
+    @media (max-width: 1280px) {
+        .menu {
+            gap: 0;
+        }
+
+        .menu > .menu-item > a {
+            padding: 0.5rem 0.625rem;
+            font-size: 13px;
+        }
+
+        .dropdown-menu,
+        .dropdown-submenu {
+            min-width: 160px;
+            max-width: 200px;
+            font-size: 12px;
+        }
+
+        .dropdown-menu a,
+        .dropdown-submenu a {
+            padding: 0.375rem 0.75rem !important;
+        }
+    }
+
+    /* Pantallas muy pequeñas (≤ 1100px) */
+    @media (max-width: 1100px) {
+        .menu > .menu-item > a {
+            padding: 0.5rem 0.5rem;
+            font-size: 12px;
+        }
+
+        .dropdown-menu,
+        .dropdown-submenu {
+            min-width: 150px;
+            max-width: 180px;
+            font-size: 11px;
+        }
+    }
+}
+
+/* ===== FORZAR AJUSTE CUANDO SE SALE ===== */
+@media (min-width: 1024px) {
+    /* Clase para ajuste dinámico por JavaScript */
+    .dropdown-align-right {
+        left: auto !important;
+        right: 0 !important;
+    }
+
+    .dropdown-align-left {
+        left: auto !important;
+        right: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0.25rem !important;
+    }
+}
+
+
+
+/* ===== AJUSTES DEL HEADER EN PANTALLAS PEQUEÑAS ===== */
+
+@media (max-width: 1440px) and (min-width: 1024px) {
+    /* Reducir padding del container */
+    header .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Logo más compacto */
+    .site-branding h1 {
+        font-size: 1.125rem;
+    }
+
+    .site-branding p {
+        font-size: 10px;
+    }
+
+    .site-branding .w-12 {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .site-branding svg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+}
+
+@media (max-width: 1280px) and (min-width: 1024px) {
+    /* Ocultar descripción del sitio */
+    .site-branding p {
+        display: none;
+    }
+
+    .site-branding h1 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1100px) and (min-width: 1024px) {
+    /* Logo aún más compacto */
+    .site-branding .w-12 {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .site-branding svg {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .site-branding h1 {
+        font-size: 0.875rem;
+    }
+}

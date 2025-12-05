@@ -1201,23 +1201,20 @@ class Saebu_Desktop_Walker_Nav_Menu extends Walker_Nav_Menu
         $indent = str_repeat("\t", $depth);
         
         if ($depth === 0) {
-            // Primer nivel de dropdown (directo desde el menú principal)
-            $output .= "\n$indent<ul class=\"absolute left-0 top-full mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50\">\n";
+            // Primer nivel de dropdown
+            $output .= "\n$indent<ul class=\"dropdown-menu absolute left-0 top-full mt-2 min-w-[220px] bg-white rounded-xl shadow-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50\">\n";
         } else {
             // Sub-submenús (nivel 2+)
-            // Se posicionan a la derecha del elemento padre
-            $output .= "\n$indent<ul class=\"absolute left-full top-0 ml-1 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50\">\n";
+            $output .= "\n$indent<ul class=\"dropdown-submenu absolute left-full top-0 ml-1 min-w-[220px] bg-white rounded-xl shadow-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50\">\n";
         }
     }
 
-    // End Level
     function end_lvl(&$output, $depth = 0, $args = null)
     {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</ul>\n";
     }
 
-    // Start Element (menu item)
     function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
     {
         $indent = ($depth) ? str_repeat("\t", $depth) : '';
@@ -1225,22 +1222,17 @@ class Saebu_Desktop_Walker_Nav_Menu extends Walker_Nav_Menu
         $classes = empty($item->classes) ? array() : (array) $item->classes;
         $classes[] = 'menu-item-' . $item->ID;
 
-        // Check if item has children
         $has_children = in_array('menu-item-has-children', $classes);
 
         if ($depth === 0) {
-            // Top level menu item (nivel principal)
-            $li_class = 'relative group';
-            $a_class = 'flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors';
+            $li_class = 'menu-item relative group';
+            $a_class = 'flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap';
         } else {
-            // Submenu items (nivel 1+)
             if ($has_children) {
-                // Item con hijos (necesita group para el hover)
-                $li_class = 'relative group';
+                $li_class = 'menu-item relative group';
                 $a_class = 'flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors';
             } else {
-                // Item sin hijos
-                $li_class = '';
+                $li_class = 'menu-item';
                 $a_class = 'block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors';
             }
         }
@@ -1266,13 +1258,10 @@ class Saebu_Desktop_Walker_Nav_Menu extends Walker_Nav_Menu
         $item_output .= '<a' . $attributes . '>';
         $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
 
-        // Add dropdown icon if has children
         if ($has_children) {
             if ($depth === 0) {
-                // Icono hacia abajo para el nivel principal
                 $item_output .= '<svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
             } else {
-                // Icono hacia la derecha para submenús
                 $item_output .= '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>';
             }
         }
@@ -1283,8 +1272,6 @@ class Saebu_Desktop_Walker_Nav_Menu extends Walker_Nav_Menu
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
 }
-
-
 
 /**
  * Custom Walker for Mobile Menu with Accordions (CORREGIDO)
@@ -1325,13 +1312,13 @@ class Saebu_Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
 
             // Contenedor flex para el link y el botón
             $output .= '<div class="flex items-center justify-between">';
-            
+
             // Link del padre
             $output .= '<a href="' . esc_url($item->url) . '" 
-                        class="flex-1 px-4 py-3 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium transition-colors">' 
-                        . apply_filters('the_title', $item->title, $item->ID) . 
-                        '</a>';
-            
+                        class="flex-1 px-4 py-3 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium transition-colors">'
+                . apply_filters('the_title', $item->title, $item->ID) .
+                '</a>';
+
             // Botón toggle
             $output .= '<button @click.prevent="open = !open" 
                         type="button"
@@ -1347,22 +1334,20 @@ class Saebu_Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
                         </svg>';
             $output .= '</button>';
             $output .= '</div>';
-
         } elseif ($depth === 0 && !$has_children) {
             // Item padre sin submenú
             $output .= $indent . '<li>';
             $output .= '<a href="' . esc_url($item->url) . '" 
-                        class="block px-4 py-3 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium transition-colors">' 
-                        . apply_filters('the_title', $item->title, $item->ID) . 
-                        '</a>';
-
+                        class="block px-4 py-3 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium transition-colors">'
+                . apply_filters('the_title', $item->title, $item->ID) .
+                '</a>';
         } else {
             // Items de submenú
             $output .= $indent . '<li>';
             $output .= '<a href="' . esc_url($item->url) . '" 
-                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-700 rounded-lg transition-colors">' 
-                        . apply_filters('the_title', $item->title, $item->ID) . 
-                        '</a>';
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-700 rounded-lg transition-colors">'
+                . apply_filters('the_title', $item->title, $item->ID) .
+                '</a>';
         }
     }
 
@@ -1381,8 +1366,9 @@ class Saebu_Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
  */
 
 // 1. PERSONALIZAR LOGO Y ESTILOS DEL LOGIN
-function saebu_custom_login_styles() {
-    ?>
+function saebu_custom_login_styles()
+{
+?>
     <style>
         /* ====================
            VARIABLES Y RESET
@@ -1490,7 +1476,7 @@ function saebu_custom_login_styles() {
             border-radius: 20px !important;
             padding: 40px !important;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25),
-                        0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+                0 0 0 1px rgba(255, 255, 255, 0.1) !important;
             margin-bottom: 20px !important;
             position: relative;
             overflow: hidden;
@@ -1554,7 +1540,7 @@ function saebu_custom_login_styles() {
             border-color: var(--primary) !important;
             outline: none !important;
             box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1),
-                        0 4px 6px rgba(0, 0, 0, 0.05) !important;
+                0 4px 6px rgba(0, 0, 0, 0.05) !important;
             transform: translateY(-1px);
         }
 
@@ -1606,7 +1592,7 @@ function saebu_custom_login_styles() {
             letter-spacing: 0.5px !important;
             text-shadow: none !important;
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3),
-                        0 2px 4px rgba(0, 0, 0, 0.1) !important;
+                0 2px 4px rgba(0, 0, 0, 0.1) !important;
             width: 100% !important;
             height: auto !important;
             cursor: pointer !important;
@@ -1619,7 +1605,7 @@ function saebu_custom_login_styles() {
             background: linear-gradient(135deg, var(--primary-dark), var(--primary)) !important;
             transform: translateY(-2px) !important;
             box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4),
-                        0 4px 8px rgba(0, 0, 0, 0.15) !important;
+                0 4px 8px rgba(0, 0, 0, 0.15) !important;
         }
 
         .wp-core-ui .button-primary:active {
@@ -1630,7 +1616,7 @@ function saebu_custom_login_styles() {
         .wp-core-ui .button-primary:focus {
             outline: none !important;
             box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2),
-                        0 4px 12px rgba(37, 99, 235, 0.3) !important;
+                0 4px 12px rgba(37, 99, 235, 0.3) !important;
         }
 
         /* Efecto ripple en el botón */
@@ -1781,6 +1767,7 @@ function saebu_custom_login_styles() {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -1791,6 +1778,7 @@ function saebu_custom_login_styles() {
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -1892,24 +1880,27 @@ function saebu_custom_login_styles() {
             }
         }
     </style>
-    <?php
+<?php
 }
 add_action('login_enqueue_scripts', 'saebu_custom_login_styles');
 
 // 2. CAMBIAR EL ENLACE DEL LOGO
-function saebu_login_logo_url() {
+function saebu_login_logo_url()
+{
     return home_url();
 }
 add_filter('login_headerurl', 'saebu_login_logo_url');
 
 // 3. CAMBIAR EL TÍTULO DEL LOGO
-function saebu_login_logo_url_title() {
+function saebu_login_logo_url_title()
+{
     return 'SAEBU - Universidad Nacional de San Luis';
 }
 add_filter('login_headertext', 'saebu_login_logo_url_title');
 
 // 4. PERSONALIZAR MENSAJE DE ERROR (más amigable)
-function saebu_custom_login_errors($error) {
+function saebu_custom_login_errors($error)
+{
     global $errors;
     $err_codes = $errors->get_error_codes();
 
@@ -1928,8 +1919,9 @@ function saebu_custom_login_errors($error) {
 add_filter('login_errors', 'saebu_custom_login_errors');
 
 // 5. AÑADIR TEXTO PERSONALIZADO EN EL FOOTER DEL LOGIN
-function saebu_login_footer_message() {
-    ?>
+function saebu_login_footer_message()
+{
+?>
     <style>
         .custom-login-footer {
             position: fixed;
@@ -1939,6 +1931,7 @@ function saebu_login_footer_message() {
             text-align: center;
             z-index: 1000;
         }
+
         .custom-login-footer .info-box {
             display: inline-block;
             background: rgba(255, 255, 255, 0.15);
@@ -1952,12 +1945,14 @@ function saebu_login_footer_message() {
             max-width: 440px;
             margin: 0 auto;
         }
+
         .custom-login-footer .info-box strong {
             display: block;
             font-size: 14px;
             margin-bottom: 4px;
             color: rgba(255, 255, 255, 0.95);
         }
+
         .custom-login-footer .info-box a {
             color: #60a5fa;
             text-decoration: none;
@@ -1965,6 +1960,7 @@ function saebu_login_footer_message() {
             border-bottom: 1px solid transparent;
             transition: all 0.3s ease;
         }
+
         .custom-login-footer .info-box a:hover {
             border-bottom-color: #60a5fa;
         }
@@ -1975,12 +1971,13 @@ function saebu_login_footer_message() {
             Contactá a soporte: <a href="mailto:soporte@unsl.edu.ar">soporte@unsl.edu.ar</a>
         </div>
     </div>
-    <?php
+<?php
 }
 add_action('login_footer', 'saebu_login_footer_message');
 
 // 6. REDIRECCIONAR DESPUÉS DEL LOGIN SEGÚN ROL
-function saebu_login_redirect($redirect_to, $request, $user) {
+function saebu_login_redirect($redirect_to, $request, $user)
+{
     if (isset($user->roles) && is_array($user->roles)) {
         // Si es administrador
         if (in_array('administrator', $user->roles)) {
@@ -2000,7 +1997,8 @@ function saebu_login_redirect($redirect_to, $request, $user) {
 add_filter('login_redirect', 'saebu_login_redirect', 10, 3);
 
 // 7. MENSAJE DE BIENVENIDA PERSONALIZADO
-function saebu_login_message($message) {
+function saebu_login_message($message)
+{
     // Solo mostrar en la página principal de login (no en recuperación de contraseña)
     if (empty($message) && !isset($_GET['action'])) {
         $message = '<p class="message" style="background: rgba(255, 255, 255, 0.15) !important; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2) !important; color: white !important; border-left: 4px solid #60a5fa !important; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
@@ -2013,17 +2011,19 @@ function saebu_login_message($message) {
 add_filter('login_message', 'saebu_login_message');
 
 // 8. AGREGAR FAVICON AL LOGIN
-function saebu_login_favicon() {
-    ?>
+function saebu_login_favicon()
+{
+?>
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" type="image/x-icon">
-    <?php
+<?php
 }
 add_action('login_head', 'saebu_login_favicon');
 
 // 9. CAMBIAR EL TEXTO "Recordarme"
-function saebu_custom_remember_me_text() {
-    add_filter('gettext', function($translated_text, $text, $domain) {
+function saebu_custom_remember_me_text()
+{
+    add_filter('gettext', function ($translated_text, $text, $domain) {
         if ($text === 'Remember Me') {
             return 'Mantener sesión iniciada';
         }
@@ -2033,7 +2033,8 @@ function saebu_custom_remember_me_text() {
 add_action('init', 'saebu_custom_remember_me_text');
 
 // 10. SEGURIDAD: Limitar intentos de login (opcional pero recomendado)
-function saebu_limit_login_attempts() {
+function saebu_limit_login_attempts()
+{
     $ip = $_SERVER['REMOTE_ADDR'];
     $transient_key = 'login_attempts_' . md5($ip);
     $attempts = get_transient($transient_key);
@@ -2049,11 +2050,11 @@ function saebu_limit_login_attempts() {
         );
     }
 }
-add_action('wp_login_failed', function() {
+add_action('wp_login_failed', function () {
     $ip = $_SERVER['REMOTE_ADDR'];
     $transient_key = 'login_attempts_' . md5($ip);
     $attempts = get_transient($transient_key);
-    
+
     if (!$attempts) {
         set_transient($transient_key, 1, 15 * MINUTE_IN_SECONDS);
     } else {
@@ -2063,7 +2064,7 @@ add_action('wp_login_failed', function() {
 add_action('login_head', 'saebu_limit_login_attempts');
 
 // 11. Limpiar intentos después de login exitoso
-add_action('wp_login', function() {
+add_action('wp_login', function () {
     $ip = $_SERVER['REMOTE_ADDR'];
     $transient_key = 'login_attempts_' . md5($ip);
     delete_transient($transient_key);
