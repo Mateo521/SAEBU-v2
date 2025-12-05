@@ -1199,7 +1199,7 @@ class Saebu_Desktop_Walker_Nav_Menu extends Walker_Nav_Menu
     function start_lvl(&$output, $depth = 0, $args = null)
     {
         $indent = str_repeat("\t", $depth);
-        
+
         if ($depth === 0) {
             // Primer nivel de dropdown
             $output .= "\n$indent<ul class=\"dropdown-menu absolute left-0 top-full mt-2 min-w-[220px] bg-white rounded-xl shadow-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50\">\n";
@@ -2069,3 +2069,139 @@ add_action('wp_login', function () {
     $transient_key = 'login_attempts_' . md5($ip);
     delete_transient($transient_key);
 });
+
+
+/**
+ * Función para mostrar la sección de noticias por departamento
+ * 
+ * @param array $args Array con la configuración del departamento
+ */
+function saebu_noticias_departamento($args = array())
+{
+
+    // Valores por defecto
+    $defaults = array(
+        'slug'        => 'becas',
+        'nombre'      => 'Becas',
+        'color'       => 'blue',
+        'descripcion' => 'Últimas novedades del departamento.',
+        'posts_count' => 3,
+        'icono'       => 'M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z',
+    );
+
+    // Combinar con los argumentos proporcionados
+    $config = wp_parse_args($args, $defaults);
+
+    // Query de noticias
+    $noticias_query = new WP_Query(array(
+        'post_type'      => 'noticia',
+        'posts_per_page' => $config['posts_count'],
+        'tax_query'      => array(
+            array(
+                'taxonomy' => 'departamento',
+                'field'    => 'slug',
+                'terms'    => $config['slug'],
+            ),
+        ),
+    ));
+
+    // Output del HTML
+?>
+    <section class="py-20 bg-white border-t border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
+
+                <!-- Header -->
+                <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2 border-l-4 border-<?php echo esc_attr($config['color']); ?>-600 pl-3">
+                            Novedades de <?php echo esc_html($config['nombre']); ?>
+                        </h2>
+                        <p class="text-gray-600 text-sm">
+                            <?php echo esc_html($config['descripcion']); ?>
+                        </p>
+                    </div>
+                    <a href="<?php echo esc_url(get_term_link($config['slug'], 'departamento')); ?>"
+                        class="text-sm font-semibold text-<?php echo esc_attr($config['color']); ?>-600 hover:text-<?php echo esc_attr($config['color']); ?>-700 flex items-center gap-1 transition-colors">
+                        Ver todas las noticias
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Grid de Noticias -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <?php if ($noticias_query->have_posts()) : ?>
+                        <?php while ($noticias_query->have_posts()) : $noticias_query->the_post(); ?>
+                            <article class="flex flex-col h-full bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg hover:border-<?php echo esc_attr($config['color']); ?>-300 transition-all duration-300 group">
+
+                                <!-- Imagen -->
+                                <a href="<?php the_permalink(); ?>" class="block relative h-48 overflow-hidden bg-gray-100">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <?php the_post_thumbnail('medium', array('class' => 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-105')); ?>
+                                    <?php else : ?>
+                                        <div class="w-full h-full flex items-center justify-center text-gray-300">
+                                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="<?php echo esc_attr($config['icono']); ?>"></path>
+                                            </svg>
+                                        </div>
+                                    <?php endif; ?>
+
+                                    <!-- Badge -->
+                                    <div class="absolute top-3 left-3">
+                                        <span class="px-2 py-1 bg-<?php echo esc_attr($config['color']); ?>-600 text-white text-[10px] font-bold uppercase tracking-wider rounded">
+                                            <?php echo esc_html($config['nombre']); ?>
+                                        </span>
+                                    </div>
+                                </a>
+
+                                <!-- Contenido -->
+                                <div class="p-6 flex-1 flex flex-col">
+                                    <!-- Fecha -->
+                                    <div class="text-xs text-gray-500 mb-2 flex items-center gap-2">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                        </svg>
+                                        <?php echo get_the_date('d/m/Y'); ?>
+                                    </div>
+
+                                    <!-- Título -->
+                                    <h3 class="text-lg font-bold text-gray-900 mb-3 leading-snug group-hover:text-<?php echo esc_attr($config['color']); ?>-600 transition-colors">
+                                        <a href="<?php the_permalink(); ?>">
+                                            <?php the_title(); ?>
+                                        </a>
+                                    </h3>
+
+                                    <!-- Extracto -->
+                                    <p class="text-sm text-gray-600 line-clamp-3 mb-4 flex-1">
+                                        <?php echo wp_trim_words(get_the_excerpt(), 15, '...'); ?>
+                                    </p>
+
+                                    <!-- Link -->
+                                    <a href="<?php the_permalink(); ?>" class="inline-flex items-center text-sm font-semibold text-<?php echo esc_attr($config['color']); ?>-600 hover:underline mt-auto">
+                                        Leer más
+                                        <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </article>
+                        <?php endwhile; ?>
+                        <?php wp_reset_postdata(); ?>
+                    <?php else : ?>
+                        <!-- Sin resultados -->
+                        <div class="col-span-3 bg-<?php echo esc_attr($config['color']); ?>-50 border border-<?php echo esc_attr($config['color']); ?>-200 rounded-lg p-8 text-center">
+                            <svg class="w-12 h-12 text-<?php echo esc_attr($config['color']); ?>-300 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="<?php echo esc_attr($config['icono']); ?>"></path>
+                            </svg>
+                            <p class="text-gray-600 font-medium">No hay novedades de <?php echo esc_html($config['nombre']); ?> en este momento.</p>
+                        </div>
+                    <?php endif; ?>
+                </div>
+
+            </div>
+        </div>
+    </section>
+<?php
+}

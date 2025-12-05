@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Educación Física y Deportes
  */
@@ -11,7 +12,7 @@ get_header();
 
         <section class="relative bg-slate-900 text-white py-20 border-b-4 border-orange-600">
             <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-20"></div>
-            
+
             <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-4xl mx-auto text-center">
                     <nav class="flex justify-center items-center gap-2 text-sm text-gray-400 mb-6">
@@ -21,9 +22,9 @@ get_header();
                     </nav>
 
                     <h1 class="text-3xl md:text-5xl font-bold mb-6 uppercase tracking-tight">
-                        Educación Física y Deportes
+                        Departamento de Educación Física y Deporte
                     </h1>
-                    
+
                     <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
 
                     <p class="text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
@@ -55,20 +56,26 @@ get_header();
                         </p>
                         <ul class="space-y-4">
                             <li class="flex items-start gap-3">
-                                <div class="p-1 bg-blue-100 rounded text-blue-800 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                                <div class="p-1 bg-blue-100 rounded text-blue-800 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg></div>
                                 <span class="text-gray-700"><strong>Salud y Bienestar:</strong> Mejora la calidad de vida y reduce el estrés académico.</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <div class="p-1 bg-blue-100 rounded text-blue-800 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                                <div class="p-1 bg-blue-100 rounded text-blue-800 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg></div>
                                 <span class="text-gray-700"><strong>Inclusión Social:</strong> Un espacio de encuentro e igualdad para toda la comunidad.</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <div class="p-1 bg-blue-100 rounded text-blue-800 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                                <div class="p-1 bg-blue-100 rounded text-blue-800 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg></div>
                                 <span class="text-gray-700"><strong>Valores:</strong> Fomento de la solidaridad, el trabajo en equipo y el respeto.</span>
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div class="grid grid-cols-2 gap-4">
                         <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-orange-500">
                             <span class="block text-3xl font-bold text-gray-900 mb-1">+15</span>
@@ -122,16 +129,20 @@ get_header();
                         foreach ($disciplinas as $deporte) : ?>
                             <div class="bg-white border border-gray-200 rounded p-4 flex flex-col items-center justify-center hover:border-orange-500 hover:shadow-md transition-all duration-300 group cursor-default">
                                 <div class="text-gray-400 group-hover:text-orange-500 transition-colors mb-3">
-                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="<?php echo $deporte['icono']; ?>"></path></svg>
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="<?php echo $deporte['icono']; ?>"></path>
+                                    </svg>
                                 </div>
                                 <span class="font-bold text-sm text-gray-800 text-center"><?php echo $deporte['nombre']; ?></span>
                             </div>
                         <?php endforeach; ?>
                     </div>
-                    
+
                     <div class="text-center mt-8">
                         <span class="inline-flex items-center text-sm text-gray-500 bg-white px-4 py-2 rounded border border-gray-200 shadow-sm">
-                            <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
                             Incluye seguro de asistencia deportiva
                         </span>
                     </div>
@@ -142,7 +153,7 @@ get_header();
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4">
                 <h2 class="text-2xl font-bold text-center text-gray-900 mb-10">Sedes y Centros Deportivos</h2>
-                
+
                 <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                     <div class="border border-gray-200 rounded-lg overflow-hidden group">
                         <div class="bg-slate-800 p-4 text-white">
@@ -151,7 +162,10 @@ get_header();
                         <div class="p-6 bg-white">
                             <p class="text-gray-600 text-sm mb-4">Centro principal de actividades deportivas y administrativas.</p>
                             <div class="flex items-start gap-3 text-sm text-gray-500">
-                                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
                                 <span>Rivadavia 1029 (1er Piso)</span>
                             </div>
                         </div>
@@ -164,7 +178,10 @@ get_header();
                         <div class="p-6 bg-white">
                             <p class="text-gray-600 text-sm mb-4">Instalaciones completas para el campus de ingeniería y ciencias.</p>
                             <div class="flex items-start gap-3 text-sm text-gray-500">
-                                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
                                 <span>Consultar ubicación en campus</span>
                             </div>
                         </div>
@@ -177,7 +194,10 @@ get_header();
                         <div class="p-6 bg-white">
                             <p class="text-gray-600 text-sm mb-4">Actividades recreativas y turismo universitario.</p>
                             <div class="flex items-start gap-3 text-sm text-gray-500">
-                                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
                                 <span>Campus Universitario Barranca Colorada</span>
                             </div>
                         </div>
@@ -224,25 +244,29 @@ get_header();
                     if ($deportes_query->have_posts()) :
                         while ($deportes_query->have_posts()) : $deportes_query->the_post();
                     ?>
-                        <article class="bg-white rounded border border-gray-200 overflow-hidden hover:border-orange-300 transition-colors group">
-                            <div class="h-48 overflow-hidden bg-gray-100 relative">
-                                <?php if (has_post_thumbnail()) : ?>
-                                    <?php the_post_thumbnail('medium', ['class' => 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-105']); ?>
-                                <?php else : ?>
-                                    <div class="w-full h-full flex items-center justify-center text-gray-300">
-                                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                    </div>
-                                <?php endif; ?>
-                            </div>
-                            <div class="p-5">
-                                <span class="text-xs text-orange-600 font-bold uppercase mb-2 block">Novedades</span>
-                                <h3 class="text-lg font-bold text-gray-900 mb-2 leading-tight">
-                                    <a href="<?php the_permalink(); ?>" class="hover:underline"><?php the_title(); ?></a>
-                                </h3>
-                                <div class="text-sm text-gray-500 mt-4"><?php echo get_the_date(); ?></div>
-                            </div>
-                        </article>
-                    <?php endwhile; wp_reset_postdata(); else : ?>
+                            <article class="bg-white rounded border border-gray-200 overflow-hidden hover:border-orange-300 transition-colors group">
+                                <div class="h-48 overflow-hidden bg-gray-100 relative">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <?php the_post_thumbnail('medium', ['class' => 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-105']); ?>
+                                    <?php else : ?>
+                                        <div class="w-full h-full flex items-center justify-center text-gray-300">
+                                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                            </svg>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="p-5">
+                                    <span class="text-xs text-orange-600 font-bold uppercase mb-2 block">Novedades</span>
+                                    <h3 class="text-lg font-bold text-gray-900 mb-2 leading-tight">
+                                        <a href="<?php the_permalink(); ?>" class="hover:underline"><?php the_title(); ?></a>
+                                    </h3>
+                                    <div class="text-sm text-gray-500 mt-4"><?php echo get_the_date(); ?></div>
+                                </div>
+                            </article>
+                        <?php endwhile;
+                        wp_reset_postdata();
+                    else : ?>
                         <div class="col-span-3 text-center py-8 text-gray-500 bg-gray-50 rounded">
                             No hay noticias deportivas recientes.
                         </div>
@@ -258,19 +282,23 @@ get_header();
                     <div class="flex flex-col md:flex-row justify-center gap-8 items-center">
                         <div class="flex items-center gap-3">
                             <div class="p-3 bg-white/10 rounded-full">
-                                <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
                             </div>
                             <div class="text-left">
                                 <span class="block text-xs text-blue-200 uppercase font-bold">Email</span>
                                 <a href="mailto:unsldeportes@gmail.com" class="font-medium hover:text-white transition-colors">unsldeportes@gmail.com</a>
                             </div>
                         </div>
-                        
+
                         <div class="h-8 w-px bg-white/20 hidden md:block"></div>
 
                         <div class="flex items-center gap-3">
                             <div class="p-3 bg-white/10 rounded-full">
-                                <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
                             </div>
                             <div class="text-left">
                                 <span class="block text-xs text-blue-200 uppercase font-bold">Teléfono</span>
@@ -283,6 +311,18 @@ get_header();
         </section>
 
     <?php endwhile; ?>
+
+
+    <?php
+    saebu_noticias_departamento(array(
+        'slug'        => 'dpto-deportes',
+        'nombre'      => 'Dpto. Deportes',
+        'color'       => 'orange',
+        'descripcion' => 'Actividades deportivas, torneos y entrenamientos.',
+        'posts_count' => 3,
+        'icono'       => 'M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+    ));
+    ?>
 
 </main>
 

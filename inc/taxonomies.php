@@ -32,20 +32,24 @@ function saebu_register_departamento_taxonomy() {
 }
 add_action('init', 'saebu_register_departamento_taxonomy');
 
-// Crear términos de taxonomía por defecto
+// Crear términos de taxonomía por defecto (CORREGIDO)
 function saebu_create_default_departamentos() {
     $departamentos = array(
-        'becas',
-        'camping',
-        'ceseu',
-        'dpto-trabajo-social',
-        'club-universitario',
-        'dpto-deportes',
+        'becas'                => 'Becas',
+        'camping'              => 'Camping',
+        'ceseu'                => 'CESEU',
+        'dpto-trabajo-social'  => 'Dpto. Trabajo Social',
+        'club-universitario'   => 'Club Universitario',
+        'dpto-deportes'        => 'Dpto. Deportes',
     );
 
-    foreach ($departamentos as $depto) {
-        if (!term_exists($depto, 'departamento')) {
-            wp_insert_term($depto, 'departamento', array('slug' => $depto));
+    foreach ($departamentos as $slug => $nombre) {
+        if (!term_exists($slug, 'departamento')) {
+            wp_insert_term(
+                $nombre,              // Nombre visible
+                'departamento',       // Taxonomía
+                array('slug' => $slug) // URL amigable
+            );
         }
     }
 }
