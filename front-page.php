@@ -336,6 +336,9 @@
                                 </div>
                             <?php endif; ?>
 
+
+
+                            
                             <?php
                             $terms = get_the_terms(get_the_ID(), 'departamento');
                             if ($terms && !is_wp_error($terms)) :
@@ -345,6 +348,10 @@
                                     <?php echo esc_html($term->name); ?>
                                 </span>
                             <?php endif; ?>
+
+
+
+
                         </a>
 
                         <div class="p-5 flex-1 flex flex-col">

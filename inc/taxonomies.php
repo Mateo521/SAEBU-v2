@@ -37,7 +37,7 @@ function saebu_create_default_departamentos() {
     $departamentos = array(
         'becas'                => 'Becas',
         'camping'              => 'Camping',
-        'ceseu'                => 'CESEU',
+        'ceseu'                => 'CeSEU',
         'dpto-trabajo-social'  => 'Dpto. Trabajo Social',
         'club-universitario'   => 'Club Universitario',
         'dpto-deportes'        => 'Dpto. Deportes',
