@@ -81,21 +81,21 @@
 
                         <div class="p-6 space-y-4">
                             <?php if ($entrada): ?>
-                                <div class="flex gap-4">
+                                <div class="flex items-center gap-4">
                                     <span class="text-xs font-bold text-gray-400 uppercase w-16 pt-1">Entrada</span>
                                     <span class="text-gray-800 font-medium flex-1"><?php echo esc_html($entrada); ?></span>
                                 </div>
                             <?php endif; ?>
 
                             <?php if ($principal): ?>
-                                <div class="flex gap-4">
+                                <div class="flex items-center gap-4">
                                     <span class="text-xs font-bold text-[#005eb8] uppercase w-16 pt-1">Principal</span>
                                     <span class="text-gray-900 font-semibold flex-1 text-lg"><?php echo esc_html($principal); ?></span>
                                 </div>
                             <?php endif; ?>
 
                             <?php if ($postre): ?>
-                                <div class="flex gap-4">
+                                <div class="flex items-center gap-4">
                                     <span class="text-xs font-bold text-gray-400 uppercase w-16 pt-1">Postre</span>
                                     <span class="text-gray-800 font-medium flex-1"><?php echo esc_html($postre); ?></span>
                                 </div>
@@ -318,7 +318,7 @@
             <?php
             $latest_news = new WP_Query(array(
                 'post_type' => 'noticia',
-                'posts_per_page' => 3, // Solo 3 noticias principales para mantener el orden
+                'posts_per_page' => 3,  
             ));
 
             if ($latest_news->have_posts()) :

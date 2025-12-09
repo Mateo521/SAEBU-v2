@@ -1,252 +1,310 @@
 <?php
 /**
- * Template Name: Autoridades (Directorio)
- * Description: Diseño de grilla tipo directorio/staff
+ * Template Name: Autoridades (Organigrama Institucional)
+ * Description: Diseño jerárquico sobrio, con líneas conectoras y estilo corporativo.
  */
 get_header();
 
-// --- DATOS (Unificados para el directorio) ---
-// Agregamos una clave 'categoria' para el filtro
-$staff = [
-    [
+// --- DATOS (Misma estructura) ---
+$organizacion = [
+    'secretario' => [
         'nombre' => 'Lic. Raúl "Rulo" González',
         'cargo' => 'Secretario General',
         'area' => 'Conducción',
         'email' => 'secretario.saebu@unsl.edu.ar',
         'telefono' => 'Int. 5500',
-        'imagen' => 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop',
-        'categoria' => 'conduccion'
+        'imagen' => 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=500&h=500',
+        'region' => 'San Luis'
     ],
-    [
-        'nombre' => 'Lic. Mariana Vega',
-        'cargo' => 'Subsecretaria',
-        'area' => 'Conducción',
-        'email' => 'subsecretaria@saebu.unsl.edu.ar',
-        'telefono' => 'Int. 5502',
-        'imagen' => 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop',
-        'categoria' => 'conduccion'
+    'subsecretarios' => [
+        [
+            'nombre' => 'Lic. Mariana Vega',
+            'cargo' => 'Subsecretaria',
+            'area' => 'Sede San Luis',
+            'email' => 'subsecretaria@saebu.unsl.edu.ar',
+            'telefono' => 'Int. 5502',
+            'imagen' => 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400',
+            'region' => 'San Luis'
+        ],
+        [
+            'nombre' => 'Lic. Fernando Morales',
+            'cargo' => 'Subsecretario',
+            'area' => 'Sede Villa Mercedes',
+            'email' => 'subsecretario.vm@saebu.unsl.edu.ar',
+            'telefono' => 'Int. 6502',
+            'imagen' => 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400&h=400',
+            'region' => 'Villa Mercedes'
+        ]
     ],
-    [
-        'nombre' => 'CPN. María Eugenia López',
-        'cargo' => 'Directora Contable',
-        'area' => 'Administración',
-        'email' => 'contable@saebu.unsl.edu.ar',
-        'telefono' => 'Int. 8139',
-        'imagen' => 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop',
-        'categoria' => 'departamentos'
-    ],
-    [
-        'nombre' => 'Lic. Carlos Rodriguez',
-        'cargo' => 'Director de Deportes',
-        'area' => 'Deportes',
-        'email' => 'deportes@saebu.unsl.edu.ar',
-        'telefono' => 'Int. 8450',
-        'imagen' => 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800&auto=format&fit=crop',
-        'categoria' => 'departamentos'
-    ],
-    [
-        'nombre' => 'Dra. Ana Sofía Martinez',
-        'cargo' => 'Coordinadora Médica',
-        'area' => 'Salud (CeSEU)',
-        'email' => 'salud@saebu.unsl.edu.ar',
-        'telefono' => 'Int. 8820',
-        'imagen' => 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop',
-        'categoria' => 'departamentos'
-    ],
-    [
-        'nombre' => 'Tec. Jorge Luis Torres',
-        'cargo' => 'Jefe de Servicio',
-        'area' => 'Comedor',
-        'email' => 'comedor@saebu.unsl.edu.ar',
-        'telefono' => 'Int. 8112',
-        'imagen' => 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop',
-        'categoria' => 'departamentos'
-    ],
-    [
-        'nombre' => 'Lic. Patricia Venecia',
-        'cargo' => 'Jefa de Becas',
-        'area' => 'Becas',
-        'email' => 'becas@saebu.unsl.edu.ar',
-        'telefono' => 'Int. 8134',
-        'imagen' => 'https://images.unsplash.com/photo-1598550874175-4d7112ee5365?q=80&w=800&auto=format&fit=crop',
-        'categoria' => 'departamentos'
-    ],
-    [
-        'nombre' => 'Sr. Roberto Mendez',
-        'cargo' => 'Responsable La Florida',
-        'area' => 'Turismo',
-        'email' => 'camping@saebu.unsl.edu.ar',
-        'telefono' => 'Int. 5200',
-        'imagen' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop',
-        'categoria' => 'departamentos'
-    ],
-    [
-        'nombre' => 'Lic. Ricardo Gomez',
-        'cargo' => 'Jefe de Compras',
-        'area' => 'Compras',
-        'email' => 'compras@saebu.unsl.edu.ar',
-        'telefono' => 'Int. 8140',
-        'imagen' => 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop',
-        'categoria' => 'departamentos'
-    ],
-    [
-        'nombre' => 'Sra. Laura Diaz',
-        'cargo' => 'Responsable Administrativa',
-        'area' => 'Mesa de Entrada',
-        'email' => 'entrada@saebu.unsl.edu.ar',
-        'telefono' => 'Int. 8100',
-        'imagen' => 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop',
-        'categoria' => 'departamentos'
+    'departamentos' => [
+        'san_luis' => [
+            ['nombre' => 'CPN. María Eugenia López', 'cargo' => 'Directora Contable', 'area' => 'Administración', 'email' => 'contable@saebu.unsl.edu.ar', 'telefono' => 'Int. 8139', 'imagen' => 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400&h=400', 'region' => 'San Luis'],
+            ['nombre' => 'Lic. Carlos Rodriguez', 'cargo' => 'Director de Deportes', 'area' => 'Deportes', 'email' => 'deportes@saebu.unsl.edu.ar', 'telefono' => 'Int. 8450', 'imagen' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400&h=400', 'region' => 'San Luis'],
+            ['nombre' => 'Dra. Ana Sofía Martinez', 'cargo' => 'Coordinadora Médica', 'area' => 'Salud (CeSEU)', 'email' => 'salud@saebu.unsl.edu.ar', 'telefono' => 'Int. 8820', 'imagen' => 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400&h=400', 'region' => 'San Luis'],
+            ['nombre' => 'Tec. Jorge Luis Torres', 'cargo' => 'Jefe de Servicio', 'area' => 'Comedor', 'email' => 'comedor@saebu.unsl.edu.ar', 'telefono' => 'Int. 8112', 'imagen' => 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400&h=400', 'region' => 'San Luis'],
+            ['nombre' => 'Lic. Patricia Venecia', 'cargo' => 'Jefa de Becas', 'area' => 'Becas', 'email' => 'becas@saebu.unsl.edu.ar', 'telefono' => 'Int. 8134', 'imagen' => 'https://images.unsplash.com/photo-1598550874175-4d7112ee5365?auto=format&fit=crop&q=80&w=400&h=400', 'region' => 'San Luis'],
+            ['nombre' => 'Sr. Roberto Mendez', 'cargo' => 'Responsable La Florida', 'area' => 'Turismo', 'email' => 'camping@saebu.unsl.edu.ar', 'telefono' => 'Int. 5200', 'imagen' => 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400&h=400', 'region' => 'San Luis']
+        ],
+        'villa_mercedes' => [
+            ['nombre' => 'Lic. Ricardo Gomez', 'cargo' => 'Jefe de Compras', 'area' => 'Compras', 'email' => 'compras.vm@saebu.unsl.edu.ar', 'telefono' => 'Int. 6140', 'imagen' => 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=400', 'region' => 'Villa Mercedes'],
+            ['nombre' => 'Sra. Laura Diaz', 'cargo' => 'Responsable Administrativa', 'area' => 'Mesa de Entrada', 'email' => 'entrada.vm@saebu.unsl.edu.ar', 'telefono' => 'Int. 6100', 'imagen' => 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400&h=400', 'region' => 'Villa Mercedes'],
+            ['nombre' => 'Prof. Miguel Ángel Sosa', 'cargo' => 'Coordinador de Deportes', 'area' => 'Deportes VM', 'email' => 'deportes.vm@saebu.unsl.edu.ar', 'telefono' => 'Int. 6450', 'imagen' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400&h=400', 'region' => 'Villa Mercedes'],
+            ['nombre' => 'Lic. Carmen Ruiz', 'cargo' => 'Jefa de Comedor', 'area' => 'Servicios Alimentarios', 'email' => 'comedor.vm@saebu.unsl.edu.ar', 'telefono' => 'Int. 6112', 'imagen' => 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400', 'region' => 'Villa Mercedes']
+        ]
     ]
 ];
 ?>
 
 <style>
-    /* Estilos para la animación de filtrado */
-    .staff-card {
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Tipografía Serif para autoridad */
+    .font-serif-inst {
+        font-family: 'Merriweather', 'Playfair Display', serif;
+    }
+
+    /* Líneas conectoras del organigrama */
+    .org-connector-v {
+        width: 1px;
+        background-color: #cbd5e1; /* slate-300 */
+        margin: 0 auto;
     }
     
-    .staff-card.hidden {
+    .org-connector-h {
+        height: 1px;
+        background-color: #cbd5e1; /* slate-300 */
+        margin: 0 auto;
+    }
+
+    /* Transiciones sutiles */
+    .fade-element {
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .fade-element.hidden-org {
         display: none;
         opacity: 0;
-        transform: scale(0.95);
+        transform: translateY(10px);
     }
 
-    .staff-card.visible {
-        display: block;
-        opacity: 1;
-        transform: scale(1);
-        animation: fadeIn 0.5s forwards;
+    /* Tabs de filtro institucionales */
+    .filter-tab {
+        position: relative;
+        color: #64748b; /* slate-500 */
+        transition: color 0.3s ease;
     }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+    
+    .filter-tab::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #1e3a8a; /* blue-900 */
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+        transform-origin: center;
     }
-
-    /* Hover suave en botones de filtro */
-    .filter-btn.active {
-        background-color: #0f172a; /* Slate 900 */
-        color: white;
-        border-color: #0f172a;
+    
+    .filter-tab.active {
+        color: #1e3a8a; /* blue-900 */
+        font-weight: 600;
+    }
+    
+    .filter-tab.active::after {
+        transform: scaleX(1);
     }
 </style>
 
-<main class="bg-gray-50 min-h-screen">
+<main class="bg-gray-50 min-h-screen py-16 px-4">
 
-    <section class="bg-white border-b border-gray-200 pt-24 pb-12">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Directorio de Autoridades</h1>
-            <p class="text-gray-600 max-w-2xl mx-auto text-lg">
-                Equipo de gestión de la Secretaría de Asuntos Estudiantiles y Bienestar Universitario.
-            </p>
+    <header class="max-w-4xl mx-auto text-center mb-16">
+        <h1 class="text-3xl md:text-4xl font-serif-inst font-bold text-slate-900 mb-4 tracking-tight">
+            Autoridades
+        </h1>
+        <div class="h-1 w-20 bg-blue-900 mx-auto mb-6"></div> <p class="text-slate-600 text-lg max-w-2xl mx-auto font-light">
+            Estructura orgánica de la Secretaría de Asuntos Estudiantiles y Bienestar Universitario.
+        </p>
 
-            <div class="flex flex-wrap justify-center gap-3 mt-8">
-                <button onclick="filterStaff('todos')" class="filter-btn active px-6 py-2 rounded-full border border-slate-200 text-slate-600 font-semibold hover:border-slate-900 hover:text-slate-900 transition-all text-sm">
-                    Todos
-                </button>
-                <button onclick="filterStaff('conduccion')" class="filter-btn px-6 py-2 rounded-full border border-slate-200 text-slate-600 font-semibold hover:border-slate-900 hover:text-slate-900 transition-all text-sm">
-                    Conducción
-                </button>
-                <button onclick="filterStaff('departamentos')" class="filter-btn px-6 py-2 rounded-full border border-slate-200 text-slate-600 font-semibold hover:border-slate-900 hover:text-slate-900 transition-all text-sm">
-                    Departamentos
-                </button>
-            </div>
+        <div class="flex justify-center gap-8 mt-10 border-b border-gray-200 pb-1">
+            <button onclick="filterRegion('todas')" class="filter-tab active px-4 py-2 text-sm uppercase tracking-wider" data-region="todas">
+                Organigrama Completo
+            </button>
+            <button onclick="filterRegion('San Luis')" class="filter-tab px-4 py-2 text-sm uppercase tracking-wider" data-region="San Luis">
+                Sede San Luis
+            </button>
+            <button onclick="filterRegion('Villa Mercedes')" class="filter-tab px-4 py-2 text-sm uppercase tracking-wider" data-region="Villa Mercedes">
+                Sede Villa Mercedes
+            </button>
         </div>
-    </section>
+    </header>
 
-    <section class="py-16 px-4">
-        <div class="container mx-auto max-w-7xl">
+    <div class="max-w-7xl mx-auto">
+
+        <section class="mb-0 relative z-20">
+            <div class="max-w-md mx-auto">
+                <div class="bg-white rounded-lg shadow-md border-t-4 border-blue-900 p-8 text-center relative hover:shadow-lg transition-shadow duration-300">
+                    
+                    <div class="w-50 h-50 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gray-50 shadow-inner">
+                        <img src="<?php echo esc_url($organizacion['secretario']['imagen']); ?>" 
+                             alt="<?php echo esc_attr($organizacion['secretario']['nombre']); ?>" 
+                             class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500">
+                    </div>
+
+                    <h2 class="text-2xl font-serif-inst font-bold text-slate-900 mb-1">
+                        <?php echo esc_html($organizacion['secretario']['nombre']); ?>
+                    </h2>
+                    <p class="text-sm font-bold text-blue-900 uppercase tracking-widest mb-4">
+                        <?php echo esc_html($organizacion['secretario']['cargo']); ?>
+                    </p>
+
+                    <div class="flex flex-col items-center gap-2 text-sm text-slate-500 font-light border-t border-gray-100 pt-4">
+                        <a href="mailto:<?php echo $organizacion['secretario']['email']; ?>" class="hover:text-blue-900 transition-colors">
+                            <?php echo esc_html($organizacion['secretario']['email']); ?>
+                        </a>
+                        <span><?php echo esc_html($organizacion['secretario']['telefono']); ?></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="org-connector-v h-12"></div>
+        </section>
+
+        <section class="relative z-10">
+            <div class="max-w-3xl mx-auto relative h-8 mb-0 hidden md:block border-t border-slate-300 border-x rounded-t-xl" style="width: 60%;"></div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="staff-grid">
-                
-                <?php foreach ($staff as $persona) : ?>
-                    <div class="staff-card visible bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 group" data-category="<?php echo $persona['categoria']; ?>">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-20 max-w-4xl mx-auto">
+                <?php foreach ($organizacion['subsecretarios'] as $sub) : 
+                     // Determinar visibilidad inicial basada en la región
+                     $regionSlug = $sub['region'];
+                ?>
+                    <div class="subsecretario-wrapper fade-element flex flex-col items-center" data-region="<?php echo $regionSlug; ?>">
                         
-                        <div class="flex items-start justify-between mb-6">
-                            <div class="relative">
-                                <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-white shadow-md group-hover:ring-2 ring-blue-100 transition-all">
-                                    <img src="<?php echo esc_url($persona['imagen']); ?>" 
-                                         alt="<?php echo esc_attr($persona['nombre']); ?>" 
-                                         class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500">
-                                </div>
-                                <div class="absolute bottom-1 right-1 w-4 h-4 bg-green-400 border-2 border-white rounded-full" title="Disponible"></div>
+                        <div class="org-connector-v h-8 md:hidden"></div>
+                        
+                        <div class="w-full bg-white rounded-lg shadow-sm border border-gray-200 border-t-4 border-slate-600 p-6 text-center hover:shadow-md transition-shadow">
+                            <div class="w-44 h-44 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-100">
+                                <img src="<?php echo esc_url($sub['imagen']); ?>" 
+                                     class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500">
                             </div>
                             
-                            <span class="inline-block px-3 py-1 bg-slate-50 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded-lg border border-slate-100">
-                                <?php echo esc_html($persona['area']); ?>
-                            </span>
-                        </div>
-
-                        <div class="mb-6">
-                            <h3 class="text-lg font-bold text-slate-900 leading-tight mb-1 group-hover:text-blue-700 transition-colors">
-                                <?php echo esc_html($persona['nombre']); ?>
+                            <h3 class="text-lg font-serif-inst font-bold text-slate-900 mb-1">
+                                <?php echo esc_html($sub['nombre']); ?>
                             </h3>
-                            <p class="text-sm text-blue-600 font-medium">
-                                <?php echo esc_html($persona['cargo']); ?>
+                            <p class="text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">
+                                <?php echo esc_html($sub['cargo']); ?>
                             </p>
-                        </div>
+                            <span class="inline-block px-2 py-0.5 bg-gray-100 text-slate-500 text-[10px] uppercase tracking-wide rounded mb-3">
+                                <?php echo esc_html($sub['area']); ?>
+                            </span>
 
-                        <div class="space-y-3 pt-4 border-t border-gray-50">
-                            <a href="mailto:<?php echo $persona['email']; ?>" class="flex items-center gap-3 text-sm text-gray-500 hover:text-slate-900 transition-colors p-2 rounded-lg hover:bg-gray-50 -mx-2">
-                                <div class="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                </div>
-                                <span class="truncate"><?php echo esc_html($persona['email']); ?></span>
-                            </a>
-                            
-                            <div class="flex items-center gap-3 text-sm text-gray-500 p-2 rounded-lg -mx-2">
-                                <div class="w-8 h-8 rounded-full bg-slate-50 text-slate-600 flex items-center justify-center flex-shrink-0">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                                </div>
-                                <span><?php echo esc_html($persona['telefono']); ?></span>
+                            <div class="text-xs text-slate-400">
+                                <a href="mailto:<?php echo $sub['email']; ?>" class="hover:text-slate-700 transition-colors block mb-1">
+                                    <?php echo esc_html($sub['email']); ?>
+                                </a>
+                                <span><?php echo esc_html($sub['telefono']); ?></span>
                             </div>
                         </div>
 
+                        <div class="org-connector-v h-8 flex-grow"></div>
                     </div>
                 <?php endforeach; ?>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="bg-white border-t border-gray-200 py-12">
-        <div class="container mx-auto text-center">
-            <p class="text-gray-500 mb-4">¿Necesitas comunicarte con un área específica?</p>
-            <a href="<?php echo home_url('/contacto'); ?>" class="inline-flex items-center gap-2 text-slate-900 font-bold hover:text-blue-600 transition-colors">
-                Ir al Formulario de Contacto
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-            </a>
-        </div>
+        <section class="border-t border-slate-200 pt-8 mt-0 relative bg-white/50 rounded-xl p-6">
+            
+            <h3 class="text-center text-sm font-bold text-slate-400 uppercase tracking-widest mb-8">Direcciones y Departamentos</h3>
+
+            <div class="dept-group fade-element" data-region="San Luis">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <?php foreach ($organizacion['departamentos']['san_luis'] as $depto) : ?>
+                        <div class="bg-white rounded border border-gray-200 p-5 flex flex-col items-center gap-4 hover:border-blue-300 transition-colors group">
+                            <div class="w-44 h-44 rounded-full overflow-hidden flex-shrink-0 border border-gray-100">
+                                <img src="<?php echo esc_url($depto['imagen']); ?>" 
+                                     class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all">
+                            </div>
+                            <div class="flex-grow min-w-0">
+                                <h4 class="text-sm font-bold text-slate-900 truncate" title="<?php echo esc_attr($depto['nombre']); ?>">
+                                    <?php echo esc_html($depto['nombre']); ?>
+                                </h4>
+                                <p class="text-xs text-blue-800 font-medium uppercase truncate mb-1">
+                                    <?php echo esc_html($depto['cargo']); ?>
+                                </p>
+                                <p class="text-[10px] text-slate-400 truncate">
+                                    <?php echo esc_html($depto['area']); ?>
+                                </p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+            <div class="dept-group fade-element mt-8 lg:mt-0" data-region="Villa Mercedes">
+                 <div class="hidden-org block h-px bg-slate-200 my-8 w-1/2 mx-auto separator-line"></div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <?php foreach ($organizacion['departamentos']['villa_mercedes'] as $depto) : ?>
+                        <div class="bg-white rounded border border-gray-200 p-5 flex flex-col items-center gap-4 hover:border-emerald-300 transition-colors group">
+                            <div class="w-44 h-44 rounded-full overflow-hidden flex-shrink-0 border border-gray-100">
+                                <img src="<?php echo esc_url($depto['imagen']); ?>" 
+                                     class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all">
+                            </div>
+                            <div class="flex-grow min-w-0">
+                                <h4 class="text-sm font-bold text-slate-900 truncate" title="<?php echo esc_attr($depto['nombre']); ?>">
+                                    <?php echo esc_html($depto['nombre']); ?>
+                                </h4>
+                                <p class="text-xs text-emerald-800 font-medium uppercase truncate mb-1">
+                                    <?php echo esc_html($depto['cargo']); ?>
+                                </p>
+                                <p class="text-[10px] text-slate-400 truncate">
+                                    <?php echo esc_html($depto['area']); ?>
+                                </p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <section class="max-w-2xl mx-auto text-center mt-16 border-t border-gray-200 pt-8">
+        <a href="<?php echo esc_url(home_url('/contacto')); ?>" 
+           class="text-sm font-serif-inst font-medium text-slate-600 hover:text-blue-900 transition-colors border-b border-transparent hover:border-blue-900 pb-0.5">
+            Ir al Formulario de Contacto Institucional
+        </a>
     </section>
 
 </main>
 
 <script>
-    function filterStaff(category) {
-        const cards = document.querySelectorAll('.staff-card');
-        const buttons = document.querySelectorAll('.filter-btn');
-
-        // Actualizar botones
-        buttons.forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.textContent.trim().toLowerCase().includes(category) || (category === 'todos' && btn.textContent.trim() === 'Todos') || (category === 'departamentos' && btn.textContent.trim() === 'Departamentos')) {
-                 // Simple lógica para coincidencia de texto, idealmente usar IDs
-                 if(btn.getAttribute('onclick').includes(category)) {
-                     btn.classList.add('active');
-                 }
-            }
+    function filterRegion(region) {
+        // 1. Gestionar Tabs
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.classList.remove('active');
+            if(tab.dataset.region === region) tab.classList.add('active');
         });
 
-        // Filtrar tarjetas
-        cards.forEach(card => {
-            if (category === 'todos' || card.dataset.category === category) {
-                card.classList.remove('hidden');
-                card.classList.add('visible');
+        // 2. Filtrar Elementos
+        const elements = document.querySelectorAll('.subsecretario-wrapper, .dept-group');
+        const separator = document.querySelector('.separator-line');
+
+        elements.forEach(el => {
+            const elRegion = el.dataset.region;
+
+            if (region === 'todas') {
+                el.classList.remove('hidden-org');
+                if(separator) separator.classList.remove('hidden'); // Mostrar separador
             } else {
-                card.classList.remove('visible');
-                card.classList.add('hidden');
+                if (elRegion === region) {
+                    el.classList.remove('hidden-org');
+                } else {
+                    el.classList.add('hidden-org');
+                }
+                if(separator) separator.classList.add('hidden'); // Ocultar separador en vista individual
             }
         });
     }
