@@ -19,7 +19,7 @@ $departamentos = array(
     ),
     array(
         'titulo' => 'Mesa de Entradas y Personal',
-        'slug' => 'mesa-entradas-personal',
+        'slug' => 'dpto-mesa-de-entradas',
         'descripcion' => 'Gestión de trámites administrativos y recursos humanos',
         'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>',
         'color' => 'from-slate-500 to-gray-600',
@@ -28,7 +28,7 @@ $departamentos = array(
     ),
     array(
         'titulo' => 'Compras y Contrataciones',
-        'slug' => 'compras-contrataciones',
+        'slug' => 'dpto-compras',
         'descripcion' => 'Gestión de adquisiciones y contrataciones institucionales',
         'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>',
         'color' => 'from-amber-500 to-orange-600',
@@ -46,7 +46,7 @@ $departamentos = array(
     ),
     array(
         'titulo' => 'Contable',
-        'slug' => 'contable',
+        'slug' => 'dpto-contable',
         'descripcion' => 'Administración financiera y control presupuestario',
         'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>',
         'color' => 'from-teal-500 to-cyan-600',
@@ -55,7 +55,7 @@ $departamentos = array(
     ),
     array(
         'titulo' => 'Educación Física y Deporte',
-        'slug' => 'educacion-fisica-deporte',
+        'slug' => 'dpto-deportes',
         'descripcion' => 'Actividades deportivas, recreativas y gimnasio universitario',
         'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>',
         'color' => 'from-green-500 to-lime-600',
@@ -77,7 +77,7 @@ $departamentos = array(
     ),
     array(
         'titulo' => 'Complejo Turístico La Florida',
-        'slug' => 'complejo-la-florida',
+        'slug' => 'camping-universitario',
         'descripcion' => 'Centro recreativo y turístico con camping e historia',
         'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>',
         'color' => 'from-sky-500 to-blue-600',
@@ -109,7 +109,7 @@ $sedes = array(
     ),
     array(
         'titulo' => 'SAEBU Villa Mercedes',
-        'slug' => 'villa-mercedes',
+        'slug' => 'saebu-villa-mercedes',
         'descripcion' => 'Centro Regional',
         'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>',
         'color_bar' => 'bg-purple-600',
@@ -117,7 +117,7 @@ $sedes = array(
     ),
     array(
         'titulo' => 'SAEBU Merlo',
-        'slug' => 'merlo',
+        'slug' => 'saebu-merlo',
         'descripcion' => 'Sede Turística',
         'icono' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>',
         'color_bar' => 'bg-teal-600',
@@ -138,7 +138,7 @@ $sedes = array(
                     <nav class="flex justify-center items-center gap-2 text-sm text-gray-400 mb-6">
                         <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                         <span>/</span>
-                        <span class="text-white font-medium">Departamentos</span>
+                        <span class="text-white font-medium">Departamentos y servicios</span>
                     </nav>
 
                     <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">

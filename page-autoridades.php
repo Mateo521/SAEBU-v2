@@ -149,7 +149,7 @@ $organizacion = [
                     <div class="w-50 h-50 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gray-50 shadow-inner">
                         <img src="<?php echo esc_url($organizacion['secretario']['imagen']); ?>" 
                              alt="<?php echo esc_attr($organizacion['secretario']['nombre']); ?>" 
-                             class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500">
+                             class="w-full h-full object-cover  transition-all duration-500">
                     </div>
 
                     <h2 class="text-2xl font-serif-inst font-bold text-slate-900 mb-1">
@@ -186,7 +186,7 @@ $organizacion = [
                         <div class="w-full bg-white rounded-lg shadow-sm border border-gray-200 border-t-4 border-slate-600 p-6 text-center hover:shadow-md transition-shadow">
                             <div class="w-44 h-44 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-100">
                                 <img src="<?php echo esc_url($sub['imagen']); ?>" 
-                                     class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500">
+                                     class="w-full h-full object-cover  transition-all duration-500">
                             </div>
                             
                             <h3 class="text-lg font-serif-inst font-bold text-slate-900 mb-1">
@@ -223,7 +223,7 @@ $organizacion = [
                         <div class="bg-white rounded border border-gray-200 p-5 flex flex-col items-center gap-4 hover:border-blue-300 transition-colors group">
                             <div class="w-44 h-44 rounded-full overflow-hidden flex-shrink-0 border border-gray-100">
                                 <img src="<?php echo esc_url($depto['imagen']); ?>" 
-                                     class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all">
+                                     class="w-full h-full object-cover  transition-all">
                             </div>
                             <div class="flex-grow min-w-0">
                                 <h4 class="text-sm font-bold text-slate-900 truncate" title="<?php echo esc_attr($depto['nombre']); ?>">
@@ -249,7 +249,7 @@ $organizacion = [
                         <div class="bg-white rounded border border-gray-200 p-5 flex flex-col items-center gap-4 hover:border-emerald-300 transition-colors group">
                             <div class="w-44 h-44 rounded-full overflow-hidden flex-shrink-0 border border-gray-100">
                                 <img src="<?php echo esc_url($depto['imagen']); ?>" 
-                                     class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all">
+                                     class="w-full h-full object-cover  transition-all">
                             </div>
                             <div class="flex-grow min-w-0">
                                 <h4 class="text-sm font-bold text-slate-900 truncate" title="<?php echo esc_attr($depto['nombre']); ?>">
