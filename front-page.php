@@ -23,7 +23,7 @@
 
             <div class="space-y-6">
                 <div class="inline-flex items-center gap-3 border-l-4 border-[#005eb8] pl-4">
-                    <img class="w-8" src="<?php echo esc_url( get_template_directory_uri() ); ?>/logo-unsl-2.png" alt="">
+                    <img class="w-8" src="<?php echo esc_url(get_template_directory_uri()); ?>/logo-unsl-2.png" alt="">
                     <span class="text-sm text-gray-300 font-medium tracking-wide uppercase">Universidad Nacional de San Luis</span>
                 </div>
 
@@ -33,14 +33,14 @@
                         Asuntos Estudiantiles y Bienestar Universitario
                     </h1>
                     <p class="text-lg text-gray-300 max-w-2xl leading-relaxed font-light">
-                        Gestionamos y promovemos el bienestar de la comunidad universitaria a través de becas, salud, deportes y servicios esenciales.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit minima earum modi eligendi voluptatum
                     </p>
                 </div>
 
                 <div class="flex flex-wrap gap-4 pt-4">
                     <a href="<?php echo home_url('/servicios'); ?>"
                         class="inline-flex items-center gap-2 bg-[#416ed2] hover:bg-[#004a99] text-white px-8 py-3 rounded-md font-semibold transition-colors duration-300 shadow-sm">
-                        <span>Nuestros Servicios</span>
+                        <span>Lorem</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
@@ -63,6 +63,7 @@
             ?>
                 <div class="lg:pl-8">
                     <div class="bg-white rounded-lg shadow-xl overflow-hidden max-w-md mx-auto border-t-4 border-[#005eb8]">
+
                         <div class="bg-gray-50 p-5 border-b border-gray-200 flex justify-between items-center">
                             <div>
                                 <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2">
@@ -108,8 +109,52 @@
                                 </div>
                             <?php endif; ?>
                         </div>
+
+                        <div class="bg-blue-50 p-4 border-t border-blue-100 text-center">
+                            <p class="text-xs text-blue-600 mb-2 font-medium">¿Querés saber el menú antes que nadie?</p>
+                            <button id="btn-suscribir-menu" class="w-full bg-[#005eb8] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow transition-colors duration-200 flex items-center justify-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                                </svg>
+                                Recibir notificación diaria
+                            </button>
+                        </div>
+
                     </div>
                 </div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        // Detectamos ambos botones (el de la tarjeta chica y el de la página grande)
+                        const botones = document.querySelectorAll('#btn-suscribir-menu, #btn-suscribir-single');
+
+                        botones.forEach(function(boton) {
+                            boton.addEventListener('click', function(e) {
+                                e.preventDefault();
+
+                                // MAGIA AQUÍ: 
+                                // 1. Si OneSignal no existe aún, creamos un arreglo vacío para que no de error
+                                window.OneSignal = window.OneSignal || [];
+
+                                // 2. "Empujamos" la orden a la cola. 
+                                // Si el sistema ya cargó, se ejecuta ya. Si no, se ejecuta apenas termine de cargar.
+                                window.OneSignal.push(function() {
+                                    // Forzamos el prompt
+                                    window.OneSignal.showSlidedownPrompt({
+                                        force: true
+                                    });
+                                });
+
+                                // Feedback visual opcional: Cambiar texto del botón brevemente
+                                const textoOriginal = boton.innerHTML;
+                                boton.innerHTML = '<span class="text-xs">Procesando...</span>';
+                                setTimeout(() => {
+                                    boton.innerHTML = textoOriginal;
+                                }, 2000);
+                            });
+                        });
+                    });
+                </script>
             <?php endif; ?>
 
         </div>
@@ -318,7 +363,7 @@
             <?php
             $latest_news = new WP_Query(array(
                 'post_type' => 'noticia',
-                'posts_per_page' => 3,  
+                'posts_per_page' => 3,
             ));
 
             if ($latest_news->have_posts()) :
@@ -338,7 +383,7 @@
 
 
 
-                            
+
                             <?php
                             $terms = get_the_terms(get_the_ID(), 'departamento');
                             if ($terms && !is_wp_error($terms)) :

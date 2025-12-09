@@ -15,7 +15,7 @@
                     </h3>
                 </div>
                 <p class="text-sm text-gray-400 leading-relaxed mb-6">
-                    <?php bloginfo('description'); ?>. Trabajamos para el bienestar y desarrollo integral de la comunidad universitaria.
+                    <?php bloginfo('description'); ?>. Lorem.
                 </p>
 
                 <div class="flex gap-4">
