@@ -88,7 +88,7 @@
 
     <div class="bg-slate-950 py-6 border-t border-slate-800">
         <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-            <p>&copy; <?php echo date('Y'); ?> Universidad Nacional de San Luis - Secretaría de Asuntos Estudiantiles.</p>
+            <p>&copy; <?php echo date('Y'); ?> Universidad Nacional de San Luis - Secretaría de Imagen y Comunicación Institucional.</p>
             <div class="flex gap-6">
                 <a href="#" class="hover:text-gray-300 transition-colors">Política de Privacidad</a>
                 <a href="#" class="hover:text-gray-300 transition-colors">Mapa del Sitio</a>
