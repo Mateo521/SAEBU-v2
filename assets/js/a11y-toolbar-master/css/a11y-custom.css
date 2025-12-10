@@ -41,9 +41,9 @@ outline: 3px solid rgba(255,200,0,0.95) !important;
 background: rgba(255,255,0,0.06) !important;
 }
 /* Cursores (añade tus archivos .cur/.png en public/assets/cursors/) */
-.cursor-large *{ cursor: url('/assets/archivos/cursor-large.cur'), auto !
+.cursor-large *{ cursor: url('https://saebuvz.unsl.edu.ar/wp-content/themes/SAEBU-v2/assets/archivos/cursor-large.cur'), auto !
 important; }
-.cursor-dot *{ cursor: url('/assets/archivos/cursor-dot.cur'), auto !
+.cursor-dot *{ cursor: url('https://saebuvz.unsl.edu.ar/wp-content/themes/SAEBU-v2/assets/archivos/cursor-dot.cur'), auto !
 important; }
 /* Pequeñas mejoras para controles inyectados si no usas Tailwind en los
 controles */

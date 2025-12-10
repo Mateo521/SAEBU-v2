@@ -72,17 +72,15 @@
   function createControlsPanel() {
     const panelId = 'ci-a11y-custom-panel';
 
-
     const existing = document.getElementById(panelId);
     if (existing) {
-
       return existing;
     }
 
     const panel = document.createElement('div');
     panel.id = panelId;
     panel.className =
-      'a11y-custom-panel fixed bottom-28 left-4 w-80 max-w-[90vw] bg-white dark:bg-slate-800 p-3 rounded shadow-lg ring-1 ring-slate-200';
+      'a11y-custom-panel fixed bottom-28 left-4 w-80 max-w-[90vw] bg-white dark:bg-slate-800 p-3 rounded shadow-lg ring-1 ring-slate-200 z-[9999]';
     panel.setAttribute('role', 'dialog');
     panel.setAttribute('aria-modal', 'false');
     panel.setAttribute('aria-hidden', 'true');
@@ -149,7 +147,6 @@
       </div>
     `;
 
-
     document.body.appendChild(panel);
 
     const addedPanel = document.getElementById(panelId);
@@ -158,12 +155,10 @@
       return null;
     }
 
-
     return addedPanel;
   }
 
   function createToggleButton() {
-
     let host = null;
     for (const sel of TOOLBAR_SELECTORS) {
       const n = document.querySelector(sel);
@@ -180,9 +175,20 @@
     return btn;
   }
 
+  function togglePanel(show) {
+    const panel = document.getElementById('ci-a11y-custom-panel');
+    const btn = document.getElementById('ci-a11y-toggle');
+
+    if (!panel || !btn) return;
+
+    if (show === undefined) show = panel.getAttribute('aria-hidden') === 'true';
+
+    panel.setAttribute('aria-hidden', show ? 'false' : 'true');
+    btn.setAttribute('aria-expanded', show ? 'true' : 'false');
+    panel.classList.toggle('hidden', !show);
+  }
+
   function wireUi(panel) {
-
-
     if (!panel) {
       console.error('ERROR: Panel es null en wireUi');
       return;
@@ -190,45 +196,29 @@
 
     const state = loadState();
 
-
-    // Función helper para obtener elementos
-    const getElement = (id) => {
-      const element = document.getElementById(id);
-
-      return element;
+    // Mapear elementos
+    const elementMap = {
+      'ci-a11y-sat': document.getElementById('ci-a11y-sat'),
+      'ci-a11y-inv': document.getElementById('ci-a11y-inv'),
+      'ci-a11y-hl': document.getElementById('ci-a11y-hl'),
+      'ci-a11y-font': document.getElementById('ci-a11y-font'),
+      'ci-a11y-line': document.getElementById('ci-a11y-line'),
+      'ci-a11y-letter': document.getElementById('ci-a11y-letter'),
+      'ci-a11y-align': document.getElementById('ci-a11y-align'),
+      'ci-a11y-contrast': document.getElementById('ci-a11y-contrast'),
+      'ci-a11y-hide-media': document.getElementById('ci-a11y-hide-media'),
+      'ci-a11y-cursor': document.getElementById('ci-a11y-cursor')
     };
 
-    // Verificar que todos los elementos existan antes de continuar
-    const elements = [
-      'ci-a11y-sat', 'ci-a11y-inv', 'ci-a11y-hl', 'ci-a11y-font',
-      'ci-a11y-line', 'ci-a11y-letter', 'ci-a11y-align', 'ci-a11y-contrast',
-      'ci-a11y-hide-media', 'ci-a11y-cursor', 'ci-a11y-reset', 'ci-a11y-save', 'ci-a11y-close'
-    ];
-
-
-    const elementMap = {};
-    let allElementsExist = true;
-
-    for (const id of elements) {
-      const element = getElement(id);
-      elementMap[id] = element;
-      if (!element) {
-        console.error(`ERROR: Elemento no encontrado: ${id}`);
-        allElementsExist = false;
-      }
-    }
-
-    if (!allElementsExist) {
-      console.error('ERROR: No todos los elementos existen. Abortando wireUi.');
-      // Mostrar el HTML del panel para debug
-
+    // Verificar que todos los elementos existen
+    const missingElements = Object.keys(elementMap).filter(key => !elementMap[key]);
+    if (missingElements.length > 0) {
+      console.error('ERROR: Elementos faltantes:', missingElements);
       return;
     }
 
-
-
-    // Usar try-catch para cada asignación
-    try {
+    // Función para sincronizar valores del estado con el UI
+    const syncValues = () => {
       elementMap['ci-a11y-sat'].value = state.saturation;
       elementMap['ci-a11y-inv'].checked = state.invert;
       elementMap['ci-a11y-hl'].checked = state.highlightLinks;
@@ -239,82 +229,148 @@
       elementMap['ci-a11y-contrast'].value = state.contrast;
       elementMap['ci-a11y-hide-media'].checked = state.hideMedia;
       elementMap['ci-a11y-cursor'].value = state.cursor;
+    };
 
-
-    } catch (error) {
-      console.error('ERROR al configurar valores iniciales:', error);
-      return;
-    }
-
+    syncValues();
     applyState(state);
 
-    // Event listeners con verificación
-    const addListener = (id, event, handler) => {
-      const element = elementMap[id];
-      if (element) {
-        element.addEventListener(event, handler);
+    // Remover listeners anteriores si existen
+    if (panel._a11yHandler) {
+      panel.removeEventListener('input', panel._a11yHandler);
+      panel.removeEventListener('change', panel._a11yHandler);
+      panel.removeEventListener('click', panel._a11yHandler);
+    }
 
-      } else {
-        console.error(`No se pudo agregar listener a ${id}`);
+    // Crear el handler único con delegación de eventos
+    const handleEvent = (e) => {
+      const target = e.target;
+      const id = target.id;
+
+      switch (id) {
+        case 'ci-a11y-sat':
+          state.saturation = +target.value;
+          applyState(state);
+          saveState(state);
+          break;
+        case 'ci-a11y-inv':
+          state.invert = target.checked;
+          applyState(state);
+          saveState(state);
+          break;
+        case 'ci-a11y-hl':
+          state.highlightLinks = target.checked;
+          applyState(state);
+          saveState(state);
+          break;
+        case 'ci-a11y-font':
+          state.fontScale = +target.value;
+          applyState(state);
+          saveState(state);
+          break;
+        case 'ci-a11y-line':
+          state.lineHeight = +target.value;
+          applyState(state);
+          saveState(state);
+          break;
+        case 'ci-a11y-letter':
+          state.letterSpacing = +target.value;
+          applyState(state);
+          saveState(state);
+          break;
+        case 'ci-a11y-align':
+          state.textAlign = target.value;
+          applyState(state);
+          saveState(state);
+          break;
+        case 'ci-a11y-contrast':
+          state.contrast = +target.value;
+          applyState(state);
+          saveState(state);
+          break;
+        case 'ci-a11y-hide-media':
+          state.hideMedia = target.checked;
+          applyState(state);
+          saveState(state);
+          break;
+        case 'ci-a11y-cursor':
+          state.cursor = target.value;
+          applyState(state);
+          saveState(state);
+          break;
+        case 'ci-a11y-reset':
+          localStorage.removeItem(KEY);
+          Object.assign(state, DEFAULTS);
+          applyState(state);
+          saveState(state);
+          syncValues();
+          break;
+        case 'ci-a11y-save':
+          saveState(state);
+
+          // Verificar si ya existe una notificación
+          const existingNotif = document.getElementById('a11y-save-notification');
+          if (existingNotif) {
+            existingNotif.remove();
+          }
+
+          // Crear notificación temporal con estilos inline completos
+          const notif = document.createElement('div');
+          notif.id = 'a11y-save-notification';
+          notif.textContent = ' Preferencias guardadas';
+          notif.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #16a34a;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+    z-index: 10000;
+    font-weight: 500;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  `;
+
+          document.body.appendChild(notif);
+
+          // Fade in
+          requestAnimationFrame(() => {
+            notif.style.opacity = '1';
+          });
+
+          // Fade out y remover
+          setTimeout(() => {
+            notif.style.opacity = '0';
+            setTimeout(() => {
+              notif.remove();
+            }, 300);
+          }, 2000);
+
+          break;
       }
     };
 
-    addListener('ci-a11y-sat', 'input', e => { state.saturation = +e.target.value; applyState(state); saveState(state); });
-    addListener('ci-a11y-inv', 'change', e => { state.invert = e.target.checked; applyState(state); saveState(state); });
-    addListener('ci-a11y-hl', 'change', e => { state.highlightLinks = e.target.checked; applyState(state); saveState(state); });
-    addListener('ci-a11y-font', 'input', e => { state.fontScale = +e.target.value; applyState(state); saveState(state); });
-    addListener('ci-a11y-line', 'input', e => { state.lineHeight = +e.target.value; applyState(state); saveState(state); });
-    addListener('ci-a11y-letter', 'input', e => { state.letterSpacing = +e.target.value; applyState(state); saveState(state); });
-    addListener('ci-a11y-align', 'change', e => { state.textAlign = e.target.value; applyState(state); saveState(state); });
-    addListener('ci-a11y-contrast', 'input', e => { state.contrast = +e.target.value; applyState(state); saveState(state); });
-    addListener('ci-a11y-hide-media', 'change', e => { state.hideMedia = e.target.checked; applyState(state); saveState(state); });
-    addListener('ci-a11y-cursor', 'change', e => { state.cursor = e.target.value; applyState(state); saveState(state); });
+    // Guardar referencia del handler en el panel
+    panel._a11yHandler = handleEvent;
 
-    addListener('ci-a11y-reset', 'click', () => {
-      localStorage.removeItem(KEY);
-      Object.assign(state, DEFAULTS);
-      applyState(state);
-      saveState(state);
-      wireUi(panel);
-    });
+    // Agregar listeners con delegación
+    panel.addEventListener('input', handleEvent);
+    panel.addEventListener('change', handleEvent);
+    panel.addEventListener('click', handleEvent);
 
-    addListener('ci-a11y-save', 'click', () => {
-      saveState(state);
-      alert('Preferencias guardadas');
-    });
-
-    addListener('ci-a11y-close', 'click', () => togglePanel(false));
-
-    document.addEventListener('keydown', (ev) => {
-      if (ev.key === 'Escape') togglePanel(false);
-    });
-
-
+    // Listener para ESC (solo agregar una vez)
+    if (!document._a11yEscHandler) {
+      document._a11yEscHandler = (ev) => {
+        if (ev.key === 'Escape') togglePanel(false);
+      };
+      document.addEventListener('keydown', document._a11yEscHandler);
+    }
   }
 
-  function togglePanel(show) {
-
-    const panel = document.getElementById('ci-a11y-custom-panel');
-    const btn = document.getElementById('ci-a11y-toggle');
-
-
-
-    if (!panel || !btn) return;
-
-    if (show === undefined) show = panel.getAttribute('aria-hidden') === 'true';
-
-
-    panel.setAttribute('aria-hidden', show ? 'false' : 'true');
-    btn.setAttribute('aria-expanded', show ? 'true' : 'false');
-    panel.classList.toggle('hidden', !show);
-
-
-  }
-
-  // Función de inicialización con retry
+  // Función de inicialización
   function initializeA11y() {
-
-
     try {
       const panel = createControlsPanel();
       if (!panel) {
@@ -330,14 +386,20 @@
 
       panel.classList.add('hidden');
 
-
       setTimeout(() => {
-
         wireUi(panel);
-        toggle.addEventListener('click', () => togglePanel());
+
+        // Remover listener anterior del toggle si existe
+        if (toggle._toggleHandler) {
+          toggle.removeEventListener('click', toggle._toggleHandler);
+        }
+
+        // Crear y guardar el handler
+        toggle._toggleHandler = () => togglePanel();
+        toggle.addEventListener('click', toggle._toggleHandler);
+
         window.CI_A11Y_APPLY = applyState;
         window.CI_A11Y_LOAD = loadState;
-
       }, 50);
 
       return true;
@@ -347,17 +409,15 @@
     }
   }
 
-
+  // Inicialización
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeA11y);
   } else {
-
     initializeA11y();
   }
 
   window.addEventListener('load', () => {
     if (!document.getElementById('ci-a11y-custom-panel')) {
-
       initializeA11y();
     }
   });
