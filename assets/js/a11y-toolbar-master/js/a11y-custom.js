@@ -306,13 +306,11 @@
           break;
         case 'ci-a11y-save':
           saveState(state);
-
           // Verificar si ya existe una notificación
           const existingNotif = document.getElementById('a11y-save-notification');
           if (existingNotif) {
             existingNotif.remove();
           }
-
           // Crear notificación temporal con estilos inline completos
           const notif = document.createElement('div');
           notif.id = 'a11y-save-notification';
@@ -332,9 +330,7 @@
     opacity: 0;
     transition: opacity 0.3s ease;
   `;
-
           document.body.appendChild(notif);
-
           // Fade in
           requestAnimationFrame(() => {
             notif.style.opacity = '1';
