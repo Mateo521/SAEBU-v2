@@ -4,11 +4,11 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Alpine.js desde CDN -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
-    
+
     <?php wp_head(); ?>
 </head>
 
@@ -57,7 +57,7 @@
     <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-md">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between h-20">
-                
+
                 <!-- Logo -->
                 <div class="site-branding flex items-center gap-3 relative">
                     <?php if (has_custom_logo()) : ?>
@@ -102,18 +102,20 @@
                         echo '<li><a href="#" class="px-4 py-2 text-gray-700 hover:text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">Contacto</a></li>';
                         echo '</ul>';
                     }
+
                     ?>
+
+
                 </nav>
 
                 <!-- Mobile Menu Button -->
-                <button 
+                <button
                     type="button"
                     @click="mobileMenuOpen = !mobileMenuOpen"
                     class="lg:hidden relative z-[9999] w-10 h-10 flex items-center justify-center text-slate-800 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
                     :class="{ 'text-white hover:bg-white/10': mobileMenuOpen }"
                     :aria-expanded="mobileMenuOpen.toString()"
-                    aria-label="Toggle menu"
-                >
+                    aria-label="Toggle menu">
                     <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -126,7 +128,7 @@
     </header>
 
     <!-- Mobile Menu Overlay -->
-    <div 
+    <div
         x-show="mobileMenuOpen"
         x-transition:enter="transition-opacity ease-out duration-300"
         x-transition:enter-start="opacity-0"
@@ -136,11 +138,10 @@
         x-transition:leave-end="opacity-0"
         @click="mobileMenuOpen = false"
         class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9990] lg:hidden"
-        x-cloak
-    ></div>
-    
+        x-cloak></div>
+
     <!-- Mobile Navigation with Accordions -->
-    <nav 
+    <nav
         x-show="mobileMenuOpen"
         x-transition:enter="transition-transform ease-out duration-300"
         x-transition:enter-start="translate-x-full"
@@ -151,10 +152,9 @@
         @click.away="mobileMenuOpen = false"
         @keydown.escape.window="mobileMenuOpen = false"
         class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl z-[9995] lg:hidden overflow-y-auto"
-        x-cloak
-    >
+        x-cloak>
         <div class="p-6 pt-24">
-            
+
             <!-- Mobile Menu Items with Accordions -->
             <div class="space-y-2 mb-8">
                 <?php
@@ -196,8 +196,23 @@
             </div>
         </div>
     </nav>
-
+    <!--script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Buscar el enlace con href="#menu-del-dia"
+            const menuLinks = document.querySelectorAll('a[href="#menu-del-dia"]');
+            menuLinks.forEach(function(link) {
+                link.href = '<?php echo esc_url(saebu_get_ultimo_menu_url()); ?>';
+            });
+        });
+    </script-->
     <!-- Style para x-cloak -->
     <style>
-        [x-cloak] { display: none !important; }
+        [x-cloak] {
+            display: none !important;
+        }
     </style>
+
+
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/js/a11y-toolbar-master/css/a11y-toolbar.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/js/a11y-toolbar-master/css/a11y-custom.css">
+    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/a11y-toolbar-master/js/a11y-custom.js"></script>

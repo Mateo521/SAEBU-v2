@@ -35,6 +35,22 @@ function saebu_register_menus()
 add_action('init', 'saebu_register_menus');
 
 
+function mi_script_header()
+{
+    wp_enqueue_script(
+        'mi-script',
+        get_template_directory_uri() . '/assets/js/a11y-toolbar-master/js/a11y-custom.js',
+        array(),
+        null,
+        true
+    );
+
+    wp_localize_script('mi-script', 'miThemeData', array(
+        'imgAccesibilidad' => get_template_directory_uri() . '/assets/images/accesibilidad-blanco.png'
+    ));
+}
+add_action('wp_enqueue_scripts', 'mi_script_header');
+
 
 /**
  * Enqueue styles and scripts
@@ -792,7 +808,7 @@ function saebu_menu_dia_metabox_callback($post)
     $postre = get_post_meta($post->ID, '_menu_postre', true);
     $precio = get_post_meta($post->ID, '_menu_precio', true);
     $notificar = get_post_meta($post->ID, '_menu_notificar', true);
-?>
+    ?>
 
     <div style="padding: 10px;">
         <p>
@@ -866,7 +882,7 @@ function saebu_enviar_notificacion_menu($post_id)
     $fecha     = get_post_meta($post_id, '_menu_fecha', true);
     $principal = get_post_meta($post_id, '_menu_principal', true);
     $precio    = get_post_meta($post_id, '_menu_precio', true);
-    
+
     // Formato de fecha para el título
     $fecha_formateada = date_i18n('d/m', strtotime($fecha));
 
@@ -878,7 +894,7 @@ function saebu_enviar_notificacion_menu($post_id)
     }
 
     // 3. Credenciales de OneSignal
-    $app_id = '58790c7e-7e27-46bc-a016-4861b88f45d3'; 
+    $app_id = '58790c7e-7e27-46bc-a016-4861b88f45d3';
     $rest_api_key = 'M2NlM2MzODItOGFkYS00NjYyLTk1MTUtMWQ1NTQyM2Q4NTBi';
 
     // 4. Configurar envío
@@ -953,10 +969,10 @@ function saebu_save_menu_dia_meta($post_id)
     // LÓGICA DE DISPARO:
     // Si se marcó "Notificar" y el estado es "Publicado"
     if ($notificar === '1' && get_post_status($post_id) === 'publish') {
-        
+
         // 1. Enviar la notificación
         saebu_enviar_notificacion_menu($post_id);
-        
+
         // 2. Desmarcar el checkbox automáticamente para evitar reenvíos accidentales si editas de nuevo
         update_post_meta($post_id, '_menu_notificar', '0');
     }
@@ -1544,9 +1560,10 @@ function saebu_noticias_departamento($args = array())
  */
 
 // 1. Crear el archivo manifest.json dinámicamente
-function saebu_manifest_json() {
+function saebu_manifest_json()
+{
     header('Content-Type: application/json');
-    
+
     $manifest = array(
         'name' => get_bloginfo('name'),
         'short_name' => 'SAEBU',
@@ -1570,26 +1587,29 @@ function saebu_manifest_json() {
             )
         )
     );
-    
+
     echo json_encode($manifest);
     exit;
 }
 
 // 2. Crear la ruta del manifest
-function saebu_manifest_rewrite() {
+function saebu_manifest_rewrite()
+{
     add_rewrite_rule('^manifest\.json$', 'index.php?manifest=1', 'top');
 }
 add_action('init', 'saebu_manifest_rewrite');
 
 // 3. Detectar la query var
-function saebu_manifest_query_vars($vars) {
+function saebu_manifest_query_vars($vars)
+{
     $vars[] = 'manifest';
     return $vars;
 }
 add_filter('query_vars', 'saebu_manifest_query_vars');
 
 // 4. Ejecutar la función cuando se llame al manifest
-function saebu_manifest_template() {
+function saebu_manifest_template()
+{
     if (get_query_var('manifest')) {
         saebu_manifest_json();
     }
@@ -1597,24 +1617,42 @@ function saebu_manifest_template() {
 add_action('template_redirect', 'saebu_manifest_template');
 
 // 5. Agregar meta tags en el head
-function saebu_pwa_meta_tags() {
-    ?>
+function saebu_pwa_meta_tags()
+{
+?>
     <link rel="manifest" href="<?php echo home_url('/manifest.json'); ?>">
     <meta name="theme-color" content="#005eb8">
     <meta name="mobile-web-app-capable" content="yes">
-    
+
     <!-- iOS específico -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="SAEBU">
     <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/icon-192.png">
-    <?php
+<?php
 }
 add_action('wp_head', 'saebu_pwa_meta_tags');
 
 // 6. IMPORTANTE: Refrescar permalinks (ejecuta una sola vez)
-function saebu_activate_manifest() {
+function saebu_activate_manifest()
+{
     saebu_manifest_rewrite();
     flush_rewrite_rules();
 }
 register_activation_hook(__FILE__, 'saebu_activate_manifest');
+
+
+/**
+ * Obtener URL del último menú del día disponible
+ */
+function saebu_get_ultimo_menu_url()
+{
+    $menu = saebu_get_menu_del_dia();
+
+    if ($menu) {
+        return get_permalink($menu->ID);
+    }
+
+    // Si no hay menú, redirigir al archivo de menús
+    return get_post_type_archive_link('menu_dia');
+}

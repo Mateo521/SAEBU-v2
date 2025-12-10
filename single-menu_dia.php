@@ -52,8 +52,8 @@ while ( have_posts() ) : the_post();
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
                 </div>
             <?php else: ?>
-                <div class="absolute inset-0 bg-[#005eb8]">
-                    <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 50%, #ffffff 50%, #ffffff 75%, transparent 75%, transparent); background-size: 20px 20px;"></div>
+                <div class="absolute inset-0 bg-[#416ed2]">
+                    <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(45deg, #cda2ff 25%, transparent 25%, transparent 50%, #cda2ff 50%, #cda2ff 75%, transparent 75%, transparent); background-size: 20px 20px;"></div>
                 </div>
             <?php endif; ?>
 
