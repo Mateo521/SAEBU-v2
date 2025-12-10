@@ -29,7 +29,7 @@ get_header();
                     </nav>
 
                     <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-                        Complejo Turístico y Recreativo
+                        Complejo Turístico y Recreativo La Florida
                     </h1>
 
                     <div class="w-24 h-1 bg-green-500 mx-auto mb-6"></div>

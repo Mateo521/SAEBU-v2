@@ -141,7 +141,7 @@ get_header();
 
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <?php
-                        // Array de Becas para mantener el código limpio y consistente
+                        // Array de Becas con sus videos
                         $becas = [
                             [
                                 'titulo' => 'Ayuda Económica',
@@ -151,7 +151,8 @@ get_header();
                                 'detalles' => [
                                     '100% Gratuita',
                                     'Depósito bancario'
-                                ]
+                                ],
+                                'video' => get_template_directory_uri() . '/assets/videos/ayuda-economica.mp4'
                             ],
                             [
                                 'titulo' => 'Comedor Universitario',
@@ -161,7 +162,8 @@ get_header();
                                 'detalles' => [
                                     'Para ingresantes y avanzados',
                                     'Marzo a Diciembre'
-                                ]
+                                ],
+                                'video' => get_template_directory_uri() . '/assets/videos/comedor.mp4'
                             ],
                             [
                                 'titulo' => 'Transporte',
@@ -171,7 +173,8 @@ get_header();
                                 'detalles' => [
                                     'Cobertura 10 meses',
                                     'Req: Localidad aledaña'
-                                ]
+                                ],
+                                'video' => get_template_directory_uri() . '/assets/videos/transporte.mp4'
                             ],
                             [
                                 'titulo' => 'Cuidados Infantiles',
@@ -181,7 +184,8 @@ get_header();
                                 'detalles' => [
                                     'Hijos/as < 4 años',
                                     'Para ingresantes y avanzados'
-                                ]
+                                ],
+                                'video' => get_template_directory_uri() . '/assets/videos/cuidados-infantiles.mp4'
                             ],
                             [
                                 'titulo' => 'Contraprestación',
@@ -191,7 +195,8 @@ get_header();
                                 'detalles' => [
                                     'Máx. 10 horas semanales',
                                     'Requiere 1º año cursado'
-                                ]
+                                ],
+                                'video' => get_template_directory_uri() . '/assets/videos/contraprestacion.mp4'
                             ],
                             [
                                 'titulo' => 'Residencia',
@@ -201,7 +206,8 @@ get_header();
                                 'detalles' => [
                                     'Distancia > 30km',
                                     'Toda la carrera'
-                                ]
+                                ],
+                                'video' => get_template_directory_uri() . '/assets/videos/residencia.mp4'
                             ],
                             [
                                 'titulo' => 'Beca Integral',
@@ -211,7 +217,8 @@ get_header();
                                 'detalles' => [
                                     'A partir de 2º año',
                                     '70% materias aprobadas'
-                                ]
+                                ],
+                                'video' => get_template_directory_uri() . '/assets/videos/integral.mp4'
                             ],
                             [
                                 'titulo' => 'Beca Excepcional',
@@ -221,7 +228,8 @@ get_header();
                                 'detalles' => [
                                     'Por única vez',
                                     'Solicitud por nota'
-                                ]
+                                ],
+                                'video' => get_template_directory_uri() . '/assets/videos/excepcional.mp4'
                             ],
                             [
                                 'titulo' => 'Beca CREER',
@@ -231,11 +239,12 @@ get_header();
                                 'detalles' => [
                                     'Promedio > 8',
                                     'Carreras Prioritarias'
-                                ]
+                                ],
+                                'video' => get_template_directory_uri() . '/assets/videos/becas.mp4'
                             ]
                         ];
 
-                        foreach ($becas as $beca) : ?>
+                        foreach ($becas as $index => $beca) : ?>
                             <article class="bg-white border border-gray-200 rounded-md p-6 hover:shadow-lg hover:border-[#005eb8] transition-all duration-300 group flex flex-col h-full">
                                 <div class="flex items-start gap-4 mb-4">
                                     <div class="w-12 h-12 bg-blue-50 rounded-md flex items-center justify-center flex-shrink-0 group-hover:bg-[#416ed2] transition-colors duration-300">
@@ -265,7 +274,10 @@ get_header();
                                         <?php endforeach; ?>
                                     </ul>
 
-                                    <button class="w-full py-2 bg-gray-50 text-gray-600 text-xs font-bold rounded hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+                                    <button
+                                        data-video="<?php echo esc_url($beca['video']); ?>"
+                                        data-titulo="<?php echo esc_attr($beca['titulo']); ?>"
+                                        class="btn-ver-video w-full py-2 bg-gray-50 text-gray-600 text-xs font-bold rounded hover:bg-[#005eb8] hover:text-white transition-colors flex items-center justify-center gap-2">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -334,7 +346,114 @@ get_header();
 
     <?php endwhile; ?>
 
+    <!-- Modal para reproducir videos -->
+    <div id="video-modal" class="fixed inset-0 bg-black bg-opacity-75 z-[10000] hidden flex items-center justify-center p-4">
+        <div class="relative w-full max-w-4xl bg-white rounded-lg shadow-2xl overflow-hidden">
+            <!-- Header del modal -->
+            <div class="flex items-center justify-between p-4 border-b border-gray-200 bg-slate-50">
+                <h3 id="modal-titulo" class="text-lg font-bold text-gray-900"></h3>
+                <button id="cerrar-modal" class="p-2 hover:bg-gray-200 rounded-full transition-colors" aria-label="Cerrar video">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
 
+            <!-- Contenedor del video -->
+            <div class="relative bg-black aspect-video">
+                <video
+                    id="video-player"
+                    class="w-full h-full"
+                    controls
+                    preload="metadata"
+                    aria-label="Video explicativo de la beca">
+                    <source src="" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+            </div>
+
+            <!-- Footer con información -->
+            <div class="p-4 bg-slate-50 border-t border-gray-200">
+                <div class="flex items-center gap-3 text-sm text-gray-600">
+                    <svg class="w-5 h-5 text-[#005eb8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <p>Este video incluye interpretación en Lengua de Señas Argentina (LSA)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('video-modal');
+            const videoPlayer = document.getElementById('video-player');
+            const videoSource = videoPlayer.querySelector('source');
+            const modalTitulo = document.getElementById('modal-titulo');
+            const cerrarModal = document.getElementById('cerrar-modal');
+            const botonesVideo = document.querySelectorAll('.btn-ver-video');
+
+            // Abrir modal y cargar video
+            botonesVideo.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const videoUrl = this.getAttribute('data-video');
+                    const titulo = this.getAttribute('data-titulo');
+
+                    // Configurar modal
+                    modalTitulo.textContent = titulo;
+                    videoSource.src = videoUrl;
+                    videoPlayer.load();
+
+                    // Mostrar modal
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+
+                    // Prevenir scroll del body
+                    document.body.style.overflow = 'hidden';
+
+                    // Reproducir automáticamente
+                    videoPlayer.play().catch(err => {
+                        console.log('Autoplay bloqueado:', err);
+                    });
+                });
+            });
+
+            // Función para cerrar modal
+            function closeModal() {
+                videoPlayer.pause();
+                videoPlayer.currentTime = 0;
+                videoSource.src = '';
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+
+            // Cerrar con botón X
+            cerrarModal.addEventListener('click', closeModal);
+
+            // Cerrar con clic fuera del contenido
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Cerrar con tecla ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+
+            // Pausar video si se sale de la página
+            window.addEventListener('beforeunload', function() {
+                if (!videoPlayer.paused) {
+                    videoPlayer.pause();
+                }
+            });
+        });
+    </script>
 
     <?php
     saebu_noticias_departamento(array(
@@ -346,8 +465,6 @@ get_header();
         'icono'       => 'M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z',
     ));
     ?>
-
-
 
 </main>
 

@@ -127,7 +127,7 @@ get_header();
                             </div>
                             <h3 class="text-lg font-bold text-slate-900 mb-2">Complejo La Florida</h3>
                             <p class="text-sm text-gray-600 leading-relaxed">
-                                Coordinación contable de ingresos y egresos del Complejo Turístico y Recreativo.
+                                Coordinación contable de ingresos y egresos del Complejo Turístico y Recreativo La Florida.
                             </p>
                         </div>
 
