@@ -1533,3 +1533,88 @@ function saebu_noticias_departamento($args = array())
     </section>
 <?php
 }
+
+
+
+
+/**
+ * ============================================
+ * CONVERTIR EL SITIO EN PWA
+ * ============================================
+ */
+
+// 1. Crear el archivo manifest.json dinámicamente
+function saebu_manifest_json() {
+    header('Content-Type: application/json');
+    
+    $manifest = array(
+        'name' => get_bloginfo('name'),
+        'short_name' => 'SAEBU',
+        'description' => get_bloginfo('description'),
+        'start_url' => home_url('/'),
+        'display' => 'standalone',
+        'background_color' => '#ffffff',
+        'theme_color' => '#005eb8',
+        'icons' => array(
+            array(
+                'src' => get_template_directory_uri() . '/assets/img/icon-192.png',
+                'sizes' => '192x192',
+                'type' => 'image/png',
+                'purpose' => 'any maskable'
+            ),
+            array(
+                'src' => get_template_directory_uri() . '/assets/img/icon-512.png',
+                'sizes' => '512x512',
+                'type' => 'image/png',
+                'purpose' => 'any maskable'
+            )
+        )
+    );
+    
+    echo json_encode($manifest);
+    exit;
+}
+
+// 2. Crear la ruta del manifest
+function saebu_manifest_rewrite() {
+    add_rewrite_rule('^manifest\.json$', 'index.php?manifest=1', 'top');
+}
+add_action('init', 'saebu_manifest_rewrite');
+
+// 3. Detectar la query var
+function saebu_manifest_query_vars($vars) {
+    $vars[] = 'manifest';
+    return $vars;
+}
+add_filter('query_vars', 'saebu_manifest_query_vars');
+
+// 4. Ejecutar la función cuando se llame al manifest
+function saebu_manifest_template() {
+    if (get_query_var('manifest')) {
+        saebu_manifest_json();
+    }
+}
+add_action('template_redirect', 'saebu_manifest_template');
+
+// 5. Agregar meta tags en el head
+function saebu_pwa_meta_tags() {
+    ?>
+    <link rel="manifest" href="<?php echo home_url('/manifest.json'); ?>">
+    <meta name="theme-color" content="#005eb8">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- iOS específico -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="SAEBU">
+    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/icon-192.png">
+    <?php
+}
+add_action('wp_head', 'saebu_pwa_meta_tags');
+
+// 6. IMPORTANTE: Refrescar permalinks (ejecuta una sola vez)
+function saebu_activate_manifest() {
+    saebu_manifest_rewrite();
+    flush_rewrite_rules();
+}
+register_activation_hook(__FILE__, 'saebu_activate_manifest');

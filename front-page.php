@@ -75,9 +75,11 @@
                                 <p class="text-sm text-gray-500">Menú del día</p>
                             </div>
                             <div class="text-center bg-[#416ed2] text-white px-3 py-1 rounded">
-                                <span class="block text-xs uppercase">Hoy</span>
                                 <span class="block text-lg font-bold leading-none"><?php echo date_i18n('d', strtotime($fecha)); ?></span>
+                                <span class="block text-xs uppercase"><?php echo date_i18n('M Y', strtotime($fecha)); ?></span>
+
                             </div>
+
                         </div>
 
                         <div class="p-6 space-y-4">
@@ -112,7 +114,7 @@
 
                         <div class="bg-blue-50 p-4 border-t border-blue-100 text-center">
                             <p class="text-xs text-blue-600 mb-2 font-medium">¿Querés saber el menú antes que nadie?</p>
-                            <button id="btn-suscribir-menu" class="w-full bg-[#005eb8] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow transition-colors duration-200 flex items-center justify-center gap-2">
+                            <button id="btn-suscribir-menu" class="w-full bg-[#005eb8] hover:bg-blue-700  text-white font-bold py-2 px-4 rounded shadow transition-colors duration-200 flex items-center justify-center gap-2">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
                                 </svg>
@@ -125,36 +127,142 @@
 
                 <script>
                     document.addEventListener('DOMContentLoaded', function() {
-                        // Detectamos ambos botones (el de la tarjeta chica y el de la página grande)
                         const botones = document.querySelectorAll('#btn-suscribir-menu, #btn-suscribir-single');
 
                         botones.forEach(function(boton) {
                             boton.addEventListener('click', function(e) {
                                 e.preventDefault();
 
-                                // MAGIA AQUÍ: 
-                                // 1. Si OneSignal no existe aún, creamos un arreglo vacío para que no de error
-                                window.OneSignal = window.OneSignal || [];
+                                // Detectar dispositivo
+                                const userAgent = navigator.userAgent;
+                                const isIOS = /iPhone|iPad|iPod/.test(userAgent);
+                                const isAndroid = /Android/.test(userAgent);
+                                const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
 
-                                // 2. "Empujamos" la orden a la cola. 
-                                // Si el sistema ya cargó, se ejecuta ya. Si no, se ejecuta apenas termine de cargar.
-                                window.OneSignal.push(function() {
-                                    // Forzamos el prompt
+                                // Si es iOS y NO está instalada la PWA
+                                if (isIOS && !isStandalone) {
+                                    mostrarInstruccionesIOS();
+                                    return;
+                                }
+
+                                // Si es Android y NO está instalada
+                                if (isAndroid && !isStandalone) {
+                                    mostrarInstruccionesAndroid();
+                                    return;
+                                }
+
+                                // Si ya está instalada o es desktop, mostrar prompt normal
+                                activarNotificaciones(boton);
+                            });
+                        });
+
+                        // Función para mostrar instrucciones iOS
+                        function mostrarInstruccionesIOS() {
+                            const modal = document.createElement('div');
+                            modal.innerHTML = `
+                <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px;">
+                    <div style="background: white; border-radius: 20px; padding: 30px; max-width: 400px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+                        <div style="font-size: 50px; margin-bottom: 15px;">📱</div>
+                        <h3 style="font-size: 22px; font-weight: bold; color: #005eb8; margin-bottom: 15px;">
+                            Instala la App
+                        </h3>
+                        <p style="color: #666; margin-bottom: 20px; line-height: 1.6;">
+                            Para recibir notificaciones en iPhone, necesitas instalar nuestra app:
+                        </p>
+                        
+                        <div style="text-align: left; background: #f5f5f5; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                            <div style="display: flex; align-items: start; margin-bottom: 15px;">
+                                <span style="background: #005eb8; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; flex-shrink: 0;">1</span>
+                                <span style="color: #333;">Toca el botón <strong>Compartir</strong> <svg style="display: inline; width: 16px; height: 16px;" fill="currentColor" viewBox="0 0 24 24"><path d="M16 5l-1.42 1.42-1.59-1.59V16h-1.98V4.83L9.42 6.42 8 5l4-4 4 4zm4 5v11c0 1.1-.9 2-2 2H6c-1.11 0-2-.9-2-2V10c0-1.11.89-2 2-2h3v2H6v11h12V10h-3V8h3c1.1 0 2 .89 2 2z"/></svg> en Safari</span>
+                            </div>
+                            <div style="display: flex; align-items: start; margin-bottom: 15px;">
+                                <span style="background: #005eb8; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; flex-shrink: 0;">2</span>
+                                <span style="color: #333;">Selecciona <strong>"Agregar a pantalla de inicio"</strong></span>
+                            </div>
+                            <div style="display: flex; align-items: start;">
+                                <span style="background: #005eb8; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; flex-shrink: 0;">3</span>
+                                <span style="color: #333;">Abre la app desde tu pantalla de inicio y vuelve aquí</span>
+                            </div>
+                        </div>
+
+                        <button onclick="this.closest('div').parentElement.remove()" style="background: #005eb8; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-weight: bold; font-size: 16px; cursor: pointer; width: 100%;">
+                            Entendido
+                        </button>
+                    </div>
+                </div>
+            `;
+                            document.body.appendChild(modal);
+                        }
+
+                        // Función para mostrar instrucciones Android
+                        function mostrarInstruccionesAndroid() {
+                            const modal = document.createElement('div');
+                            modal.innerHTML = `
+                <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px;">
+                    <div style="background: white; border-radius: 20px; padding: 30px; max-width: 400px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+                        <div style="font-size: 50px; margin-bottom: 15px;">📱</div>
+                        <h3 style="font-size: 22px; font-weight: bold; color: #005eb8; margin-bottom: 15px;">
+                            Instala la App
+                        </h3>
+                        <p style="color: #666; margin-bottom: 20px; line-height: 1.6;">
+                            Para una mejor experiencia y recibir notificaciones:
+                        </p>
+                        
+                        <div style="text-align: left; background: #f5f5f5; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                            <div style="display: flex; align-items: start; margin-bottom: 15px;">
+                                <span style="background: #005eb8; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; flex-shrink: 0;">1</span>
+                                <span style="color: #333;">Toca el menú <strong>⋮</strong> (tres puntos) en tu navegador</span>
+                            </div>
+                            <div style="display: flex; align-items: start; margin-bottom: 15px;">
+                                <span style="background: #005eb8; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; flex-shrink: 0;">2</span>
+                                <span style="color: #333;">Selecciona <strong>"Instalar app"</strong> o <strong>"Agregar a pantalla de inicio"</strong></span>
+                            </div>
+                            <div style="display: flex; align-items: start;">
+                                <span style="background: #005eb8; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; flex-shrink: 0;">3</span>
+                                <span style="color: #333;">Abrí la app y volvé a activar las notificaciones</span>
+                            </div>
+                        </div>
+
+                        <button onclick="this.closest('div').parentElement.remove()" style="background: #005eb8; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-weight: bold; font-size: 16px; cursor: pointer; width: 100%;">
+                            Entendido
+                        </button>
+                    </div>
+                </div>
+            `;
+                            document.body.appendChild(modal);
+                        }
+
+                        // Función para activar notificaciones (cuando ya está instalada)
+                        function activarNotificaciones(boton) {
+                            const textoOriginal = boton.innerHTML;
+                            boton.innerHTML = '<span class="text-xs">Procesando...</span>';
+
+                            window.OneSignal = window.OneSignal || [];
+                            window.OneSignal.push(function() {
+                                if (typeof window.OneSignal.showSlidedownPrompt === 'function') {
                                     window.OneSignal.showSlidedownPrompt({
                                         force: true
                                     });
-                                });
-
-                                // Feedback visual opcional: Cambiar texto del botón brevemente
-                                const textoOriginal = boton.innerHTML;
-                                boton.innerHTML = '<span class="text-xs">Procesando...</span>';
-                                setTimeout(() => {
-                                    boton.innerHTML = textoOriginal;
-                                }, 2000);
+                                } else if (typeof window.OneSignal.Slidedown === 'object' &&
+                                    typeof window.OneSignal.Slidedown.promptPush === 'function') {
+                                    window.OneSignal.Slidedown.promptPush({
+                                        force: true
+                                    });
+                                } else if (typeof window.OneSignal.showNativePrompt === 'function') {
+                                    window.OneSignal.showNativePrompt();
+                                } else {
+                                    window.OneSignal.registerForPushNotifications();
+                                }
                             });
-                        });
+
+                            setTimeout(() => {
+                                boton.innerHTML = textoOriginal;
+                            }, 2000);
+                        }
                     });
                 </script>
+
+
             <?php endif; ?>
 
         </div>
