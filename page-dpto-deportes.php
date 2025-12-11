@@ -15,32 +15,49 @@ get_header();
 
             <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-4xl mx-auto text-center">
-                    <nav class="flex justify-center items-center gap-2 text-sm text-gray-400 mb-6">
-                        <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
-                        <span>/</span>
-                        <span class="text-white font-medium">Deportes</span>
+                    <nav class="flex justify-center items-center gap-2 text-sm text-gray-400 mb-6 font-sans uppercase tracking-widest text-xs">
+                        <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors font-bold">INICIO</a>
+                        <span class="text-gray-600">/</span>
+                        <?php
+                        // Lógica para detectar padres (Jerarquía)
+                        global $post;
+                        if (is_page() && $post->post_parent) {
+                            // Obtener ancestros (padres, abuelos...)
+                            $ancestors = get_post_ancestors($post->ID);
+                            // Invertimos el orden para que vaya de Padre -> Hijo
+                            $ancestors = array_reverse($ancestors);
+                            foreach ($ancestors as $ancestor_id) {
+                        ?>
+                                <a href="<?php echo get_permalink($ancestor_id); ?>" class="hover:text-white transition-colors font-bold">
+                                    <?php echo get_the_title($ancestor_id); ?>
+                                </a>
+                                <span class="text-gray-600">/</span>
+                        <?php
+                            }
+                        }
+                        ?>
+                        <span class="text-white font-bold">
+                            <?php the_title(); ?>
+                        </span>
                     </nav>
-
-                    <h1 class="text-3xl md:text-5xl font-bold mb-6 uppercase tracking-tight">
-                        Departamento de Educación Física y Deporte
+                    <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight  tracking-tight text-white">
+                        <?php the_title(); ?>
                     </h1>
-
-                    <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
-
-                    <p class="text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
-                        Promovemos la vida saludable, la integración social y los valores a través de la práctica deportiva universitaria.
-                    </p>
-
-                    <div class="mt-8 flex justify-center gap-4">
-                        <a href="#disciplinas" class="px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded transition-colors">
-                            Ver Disciplinas
-                        </a>
-                        <a href="#contacto" class="px-6 py-3 border border-gray-500 hover:border-white text-white font-medium rounded transition-colors">
-                            Contacto
-                        </a>
+                    <div class="w-24 h-1 bg-[#416ed2] mx-auto mb-6"></div>
+                    <div class="text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed font-sans">
+                        <?php
+                        if (has_excerpt()) {
+                            echo get_the_excerpt();
+                        } else {
+                            // Fallback opcional si no cargaron extracto
+                            echo 'Información institucional y servicios de ' . get_the_title();
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
+
+
         </section>
 
         <section class="py-16 bg-white">

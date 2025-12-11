@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Departamento de Compras
  */
@@ -11,33 +12,52 @@ get_header();
 
         <section class="relative bg-slate-900 text-white py-20 border-b-4 border-indigo-600">
             <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M0 40L40 0H20L0 20M40 40V20L20 40\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-            
+
             <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-4xl mx-auto text-center">
-                    <nav class="flex justify-center items-center gap-2 text-sm text-slate-400 mb-6">
-                        <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
-                        <span>/</span>
-                        <span class="text-white font-medium">Administración</span>
+                    <nav class="flex justify-center items-center gap-2 text-sm text-gray-400 mb-6 font-sans uppercase tracking-widest text-xs">
+                        <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors font-bold">INICIO</a>
+                        <span class="text-gray-600">/</span>
+                        <?php
+                        // Lógica para detectar padres (Jerarquía)
+                        global $post;
+                        if (is_page() && $post->post_parent) {
+                            // Obtener ancestros (padres, abuelos...)
+                            $ancestors = get_post_ancestors($post->ID);
+                            // Invertimos el orden para que vaya de Padre -> Hijo
+                            $ancestors = array_reverse($ancestors);
+                            foreach ($ancestors as $ancestor_id) {
+                        ?>
+                                <a href="<?php echo get_permalink($ancestor_id); ?>" class="hover:text-white transition-colors font-bold">
+                                    <?php echo get_the_title($ancestor_id); ?>
+                                </a>
+                                <span class="text-gray-600">/</span>
+                        <?php
+                            }
+                        }
+                        ?>
+                        <span class="text-white font-bold">
+                            <?php the_title(); ?>
+                        </span>
                     </nav>
-
-                    <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-                        Departamento de Compras
+                    <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight  tracking-tight text-white">
+                        <?php the_title(); ?>
                     </h1>
-                    
-                    <div class="w-24 h-1 bg-indigo-600 mx-auto mb-6"></div>
-
-                    <p class="text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
-                        Gestión centralizada de adquisiciones, licitaciones y suministros para el funcionamiento integral de la Secretaría.
-                    </p>
-
-                    <div class="mt-8">
-                        <a href="https://compras.unsl.edu.ar" target="_blank" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-md font-bold transition-all shadow-lg border border-indigo-500">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
-                            Ir al Portal de Compras UNSL
-                        </a>
+                    <div class="w-24 h-1 bg-[#416ed2] mx-auto mb-6"></div>
+                    <div class="text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed font-sans">
+                        <?php
+                        if (has_excerpt()) {
+                            echo get_the_excerpt();
+                        } else {
+                            // Fallback opcional si no cargaron extracto
+                            echo 'Información institucional y servicios de ' . get_the_title();
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
+
+
         </section>
 
         <section class="py-16 bg-white border-b border-gray-200">
@@ -53,7 +73,7 @@ get_header();
                                 Desde insumos alimenticios para el Comedor Universitario hasta equipamiento deportivo complejo, asegurando el cumplimiento de la normativa vigente y la transparencia en la gestión pública.
                             </p>
                         </div>
-                        
+
                         <div class="w-full md:w-1/3 bg-slate-50 border border-gray-200 rounded-lg p-6">
                             <h3 class="font-bold text-slate-900 mb-4">Áreas Asistidas</h3>
                             <ul class="space-y-3">
@@ -95,7 +115,9 @@ get_header();
                     <div class="grid md:grid-cols-3 gap-6">
                         <div class="bg-white p-8 rounded-lg border border-gray-200 shadow-sm hover:border-indigo-500 transition-all group">
                             <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
                             </div>
                             <h3 class="text-lg font-bold text-slate-900 mb-3">Licitación Privada</h3>
                             <p class="text-sm text-gray-600 mb-4 leading-relaxed">
@@ -106,7 +128,9 @@ get_header();
 
                         <div class="bg-white p-8 rounded-lg border border-gray-200 shadow-sm hover:border-indigo-500 transition-all group">
                             <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
                             </div>
                             <h3 class="text-lg font-bold text-slate-900 mb-3">Compra Directa</h3>
                             <p class="text-sm text-gray-600 mb-4 leading-relaxed">
@@ -117,7 +141,9 @@ get_header();
 
                         <div class="bg-white p-8 rounded-lg border border-gray-200 shadow-sm hover:border-indigo-500 transition-all group">
                             <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
                             </div>
                             <h3 class="text-lg font-bold text-slate-900 mb-3">Plan Anual</h3>
                             <p class="text-sm text-gray-600 mb-4 leading-relaxed">
@@ -134,7 +160,7 @@ get_header();
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
                     <h2 class="text-2xl font-bold text-center text-slate-900 mb-12">Circuito Administrativo</h2>
-                    
+
                     <div class="relative">
                         <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2 z-0"></div>
 
@@ -175,7 +201,9 @@ get_header();
                         <h2 class="text-2xl font-bold mb-2">Portal de Compras UNSL</h2>
                         <p class="text-indigo-200 mb-4">Acceso a licitaciones, proveedores y estado de trámites.</p>
                         <div class="flex items-center gap-2 text-xs text-indigo-300">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
                             Sitio seguro y oficial
                         </div>
                     </div>
@@ -190,11 +218,13 @@ get_header();
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center">
                     <h2 class="text-2xl font-bold text-slate-900 mb-8">Contacto Directo</h2>
-                    
+
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="p-6 border border-gray-200 rounded-lg hover:border-indigo-500 transition-colors">
                             <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-600">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
                             </div>
                             <h4 class="font-bold text-slate-900 mb-1">Correo Electrónico</h4>
                             <a href="mailto:dptocomprassaebu@gmail.com" class="text-indigo-600 font-medium hover:underline">dptocomprassaebu@gmail.com</a>
@@ -203,7 +233,9 @@ get_header();
 
                         <div class="p-6 border border-gray-200 rounded-lg hover:border-indigo-500 transition-colors">
                             <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-600">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
                             </div>
                             <h4 class="font-bold text-slate-900 mb-1">Teléfono Interno</h4>
                             <p class="text-indigo-600 font-medium text-lg">8139</p>

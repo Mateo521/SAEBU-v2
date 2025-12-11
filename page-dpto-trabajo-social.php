@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Becas y Residencia Universitaria
  */
@@ -11,32 +12,59 @@ get_header();
 
         <section class="relative bg-slate-900 text-white py-20 border-b-4 border-[#005eb8]">
             <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-20"></div>
-            
+
+
+
             <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-4xl mx-auto text-center">
-                    <nav class="flex justify-center items-center gap-2 text-sm text-gray-400 mb-6">
-                        <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
-                        <span>/</span>
-                        <span class="text-white font-medium">Trabajo Social y Residencias</span>
+                    <nav class="flex justify-center items-center gap-2 text-sm text-gray-400 mb-6 font-sans uppercase tracking-widest text-xs">
+                        <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors font-bold">INICIO</a>
+                        <span class="text-gray-600">/</span>
+                        <?php
+                        // Lógica para detectar padres (Jerarquía)
+                        global $post;
+                        if (is_page() && $post->post_parent) {
+                            // Obtener ancestros (padres, abuelos...)
+                            $ancestors = get_post_ancestors($post->ID);
+                            // Invertimos el orden para que vaya de Padre -> Hijo
+                            $ancestors = array_reverse($ancestors);
+                            foreach ($ancestors as $ancestor_id) {
+                        ?>
+                                <a href="<?php echo get_permalink($ancestor_id); ?>" class="hover:text-white transition-colors font-bold">
+                                    <?php echo get_the_title($ancestor_id); ?>
+                                </a>
+                                <span class="text-gray-600">/</span>
+                        <?php
+                            }
+                        }
+                        ?>
+                        <span class="text-white font-bold">
+                            <?php the_title(); ?>
+                        </span>
                     </nav>
-
-                    <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-                        Departamento de Trabajo Social
+                    <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight  tracking-tight text-white">
+                        <?php the_title(); ?>
                     </h1>
-                    
                     <div class="w-24 h-1 bg-[#416ed2] mx-auto mb-6"></div>
-
-                    <p class="text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
-                        Gestionamos el acceso a beneficios económicos, alojamiento universitario y programas de inclusión para acompañar tu trayectoria académica.
-                    </p>
+                    <div class="text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed font-sans">
+                        <?php
+                        if (has_excerpt()) {
+                            echo get_the_excerpt();
+                        } else {
+                            // Fallback opcional si no cargaron extracto
+                            echo 'Información institucional y servicios de ' . get_the_title();
+                        }
+                        ?>
+                    </div>
                 </div>
             </div>
+
         </section>
 
         <section class="py-16 bg-white border-b border-gray-200">
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
-                    
+
                     <div class="text-center mb-12">
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Circuito de Gestión de Becas</h2>
                         <p class="text-gray-600 max-w-3xl mx-auto">
@@ -45,7 +73,7 @@ get_header();
                     </div>
 
                     <div class="grid md:grid-cols-4 gap-6">
-                        <?php 
+                        <?php
                         $pasos = [
                             ['num' => '01', 'titulo' => 'Asesoramiento', 'desc' => 'Información sobre becas UNSL y Programa Nacional Progresar en la Promoción de Carreras.'],
                             ['num' => '02', 'titulo' => 'Convocatoria', 'desc' => 'Apertura de inscripciones mediante el sistema informático, coordinado con el Dpto. de Becas.'],
@@ -71,16 +99,18 @@ get_header();
         <section class="py-16 bg-gray-50">
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
-                    
+
                     <div class="grid lg:grid-cols-2 gap-12 items-start">
                         <div>
                             <div class="flex items-center gap-3 mb-6">
                                 <div class="p-3 bg-[#416ed2] rounded text-white">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                    </svg>
                                 </div>
                                 <h2 class="text-2xl font-bold text-gray-900">Residencia Universitaria</h2>
                             </div>
-                            
+
                             <div class="prose prose-gray text-gray-600 mb-8">
                                 <p>
                                     Nuestro objetivo es atender las necesidades habitacionales y de convivencia de los estudiantes, coordinando con las autoridades las demandas de infraestructura para garantizar una estadía adecuada.
@@ -104,24 +134,31 @@ get_header();
 
                         <div class="bg-white border-l-4 border-[#005eb8] shadow-sm p-8 rounded-r-lg">
                             <h3 class="text-xl font-bold text-gray-900 mb-6">Información de la Sede</h3>
-                            
+
                             <ul class="space-y-6">
                                 <li class="flex gap-4">
-                                    <svg class="w-6 h-6 text-gray-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                    <svg class="w-6 h-6 text-gray-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
                                     <div>
                                         <span class="block font-bold text-gray-900">Dirección</span>
                                         <span class="text-gray-600">Calle Justo Daract Nº 1661, San Luis Capital.</span>
                                     </div>
                                 </li>
                                 <li class="flex gap-4">
-                                    <svg class="w-6 h-6 text-gray-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                                    <svg class="w-6 h-6 text-gray-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
                                     <div>
                                         <span class="block font-bold text-gray-900">Distribución</span>
                                         <span class="text-gray-600">Sectores divididos para varones y mujeres.</span>
                                     </div>
                                 </li>
                                 <li class="flex gap-4">
-                                    <svg class="w-6 h-6 text-gray-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                                    <svg class="w-6 h-6 text-gray-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    </svg>
                                     <div>
                                         <span class="block font-bold text-gray-900">Población</span>
                                         <span class="text-gray-600">Prioridad a becarios SAEBU y Progresar.</span>
@@ -138,7 +175,7 @@ get_header();
         <section class="py-16 bg-white border-t border-gray-200">
             <div class="container mx-auto px-4">
                 <div class="max-w-5xl mx-auto">
-                    
+
                     <div class="mb-10 flex items-center justify-between border-b border-gray-200 pb-4">
                         <h2 class="text-2xl font-bold text-gray-900">Programa Nacional de Becas Progresar</h2>
                         <a href="https://www.argentina.gob.ar/educacion/progresar" target="_blank" class="text-sm text-[#005eb8] font-bold hover:underline">Sitio Oficial &rarr;</a>
@@ -147,7 +184,9 @@ get_header();
                     <div class="bg-amber-50 border-l-4 border-amber-500 p-4 mb-8">
                         <div class="flex">
                             <div class="flex-shrink-0">
-                                <svg class="h-5 w-5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                                <svg class="h-5 w-5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
                             </div>
                             <div class="ml-3">
                                 <p class="text-sm text-amber-800">
@@ -191,11 +230,31 @@ get_header();
                                         </tr>
                                     </thead>
                                     <tbody class="divide-y divide-gray-200 bg-white">
-                                        <tr><td class="px-4 py-2 font-medium">1° Año</td><td class="px-4 py-2 text-right">-</td><td class="px-4 py-2 text-right">$3.600</td></tr>
-                                        <tr><td class="px-4 py-2 font-medium">2° Año</td><td class="px-4 py-2 text-right">$4.340</td><td class="px-4 py-2 text-right">$3.600</td></tr>
-                                        <tr><td class="px-4 py-2 font-medium">3° Año</td><td class="px-4 py-2 text-right">$5.740</td><td class="px-4 py-2 text-right">$3.800</td></tr>
-                                        <tr><td class="px-4 py-2 font-medium">4° Año</td><td class="px-4 py-2 text-right">$7.490</td><td class="px-4 py-2 text-right">$3.800</td></tr>
-                                        <tr><td class="px-4 py-2 font-medium">5° Año</td><td class="px-4 py-2 text-right">$9.960</td><td class="px-4 py-2 text-right">$4.600</td></tr>
+                                        <tr>
+                                            <td class="px-4 py-2 font-medium">1° Año</td>
+                                            <td class="px-4 py-2 text-right">-</td>
+                                            <td class="px-4 py-2 text-right">$3.600</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 font-medium">2° Año</td>
+                                            <td class="px-4 py-2 text-right">$4.340</td>
+                                            <td class="px-4 py-2 text-right">$3.600</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 font-medium">3° Año</td>
+                                            <td class="px-4 py-2 text-right">$5.740</td>
+                                            <td class="px-4 py-2 text-right">$3.800</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 font-medium">4° Año</td>
+                                            <td class="px-4 py-2 text-right">$7.490</td>
+                                            <td class="px-4 py-2 text-right">$3.800</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 font-medium">5° Año</td>
+                                            <td class="px-4 py-2 text-right">$9.960</td>
+                                            <td class="px-4 py-2 text-right">$4.600</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -212,11 +271,26 @@ get_header();
                                         </tr>
                                     </thead>
                                     <tbody class="divide-y divide-gray-200 bg-white">
-                                        <tr><td class="px-4 py-2 font-medium">1° Año</td><td class="px-4 py-2 text-right">$5.000</td></tr>
-                                        <tr><td class="px-4 py-2 font-medium">2° Año</td><td class="px-4 py-2 text-right">$6.000</td></tr>
-                                        <tr><td class="px-4 py-2 font-medium">3° Año</td><td class="px-4 py-2 text-right">$7.000</td></tr>
-                                        <tr><td class="px-4 py-2 font-medium">4° Año</td><td class="px-4 py-2 text-right">$8.000</td></tr>
-                                        <tr><td class="px-4 py-2 font-medium">5° Año</td><td class="px-4 py-2 text-right">$9.700</td></tr>
+                                        <tr>
+                                            <td class="px-4 py-2 font-medium">1° Año</td>
+                                            <td class="px-4 py-2 text-right">$5.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 font-medium">2° Año</td>
+                                            <td class="px-4 py-2 text-right">$6.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 font-medium">3° Año</td>
+                                            <td class="px-4 py-2 text-right">$7.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 font-medium">4° Año</td>
+                                            <td class="px-4 py-2 text-right">$8.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 font-medium">5° Año</td>
+                                            <td class="px-4 py-2 text-right">$9.700</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -233,7 +307,7 @@ get_header();
                     <h2 class="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-[#005eb8] pl-3">
                         Área de Discapacidad e Inclusión
                     </h2>
-                    
+
                     <div class="grid md:grid-cols-2 gap-8">
                         <div>
                             <p class="text-gray-600 mb-6 leading-relaxed">
@@ -248,12 +322,12 @@ get_header();
                                     'Recursos Tecnológicos' => 'Herramientas de accesibilidad digital.',
                                     'Recursos Económicos' => 'Gestión de becas y ayudas financieras.'
                                 ];
-                                foreach($recursos_discapacidad as $titulo => $desc):
+                                foreach ($recursos_discapacidad as $titulo => $desc):
                                 ?>
-                                <div class="bg-white p-4 border border-gray-200 rounded-md">
-                                    <h5 class="text-[#005eb8] font-bold text-sm mb-1"><?php echo $titulo; ?></h5>
-                                    <p class="text-xs text-gray-500"><?php echo $desc; ?></p>
-                                </div>
+                                    <div class="bg-white p-4 border border-gray-200 rounded-md">
+                                        <h5 class="text-[#005eb8] font-bold text-sm mb-1"><?php echo $titulo; ?></h5>
+                                        <p class="text-xs text-gray-500"><?php echo $desc; ?></p>
+                                    </div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
