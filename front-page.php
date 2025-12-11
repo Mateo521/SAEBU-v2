@@ -3,6 +3,7 @@
 <section class="relative min-h-[85vh] flex items-center bg-slate-900">
     <div class="absolute inset-0 z-0">
         <?php
+
         $hero_image = get_theme_mod('hero_background_image');
         if (!$hero_image && has_post_thumbnail()) {
             $hero_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
@@ -10,12 +11,21 @@
         if (!$hero_image) {
             $hero_image = get_template_directory_uri() . '/assets/images/hero-default.jpg';
         }
+
+        
+        $video_url = get_template_directory_uri() . '/assets/videos/background-hero.mp4';
         ?>
-        <img src="<?php echo esc_url($hero_image); ?>"
-            alt="SAEBU Universidad Nacional de San Luis"
+
+        <video autoplay muted loop playsinline
+            poster="<?php echo esc_url($hero_image); ?>"
             class="w-full h-full object-cover opacity-40">
 
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900/60"></div>
+            <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
+
+            <img src="<?php echo esc_url($hero_image); ?>" alt="Fondo UNSL">
+        </video>
+ 
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/70 to-slate-900/20"></div>
     </div>
 
     <div class="relative z-10 container mx-auto px-4 py-12">
@@ -351,7 +361,7 @@
     </div>
 </section>
 
-<section class="py-20 bg-[#cda2ff47]">
+<section id="servydep" class="py-20 bg-[#cda2ff47]">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900 mb-3">Departamentos y Áreas</h2>

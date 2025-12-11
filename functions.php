@@ -768,7 +768,8 @@ add_action('add_meta_boxes', 'saebu_menu_dia_metaboxes');
 /**
  * Registro del CPT: Menú del Día
  */
-function saebu_register_menu_dia_cpt() {
+function saebu_register_menu_dia_cpt()
+{
     $labels = array(
         'name'                  => 'Menú del Día',
         'singular_name'         => 'Menú',
@@ -808,7 +809,8 @@ add_action('init', 'saebu_register_menu_dia_cpt');
 
 
 
-function saebu_menu_dia_metabox_callback($post) {
+function saebu_menu_dia_metabox_callback($post)
+{
     wp_nonce_field('saebu_menu_dia_nonce', 'menu_dia_nonce');
     $fecha = get_post_meta($post->ID, '_menu_fecha', true);
     $entrada = get_post_meta($post->ID, '_menu_entrada', true);
@@ -823,12 +825,12 @@ function saebu_menu_dia_metabox_callback($post) {
         <p><label><strong>Principal:</strong></label><br><input type="text" name="menu_principal" value="<?php echo esc_attr($principal); ?>" style="width:100%;" /></p>
         <p><label><strong>Postre:</strong></label><br><input type="text" name="menu_postre" value="<?php echo esc_attr($postre); ?>" style="width:100%;" /></p>
         <p><label><strong>Precio:</strong></label><br><input type="text" name="menu_precio" value="<?php echo esc_attr($precio); ?>" style="width:100%;max-width:200px;" /></p>
-        
+
         <p style="background:#f0f7ff;padding:15px;border-left:4px solid #0073aa;margin-top:20px;">
             <label><input type="checkbox" name="menu_notificar" value="1" <?php checked($notificar, '1'); ?> /> <strong>Enviar notificación push (Categoría: Menú)</strong></label>
         </p>
     </div>
-    <?php
+<?php
 }
 
 
@@ -838,26 +840,43 @@ function saebu_menu_dia_metabox_callback($post) {
 /**
  * ENVÍO PUSH MENU (Configurado para llave 'menu')
  */
-function saebu_enviar_notificacion_menu($post_id) {
-    $fecha = get_post_meta($post_id, '_menu_fecha', true);
+function saebu_enviar_notificacion_menu($post_id)
+{
+    $fecha     = get_post_meta($post_id, '_menu_fecha', true);
     $principal = get_post_meta($post_id, '_menu_principal', true);
-    $precio = get_post_meta($post_id, '_menu_precio', true);
+    $precio    = get_post_meta($post_id, '_menu_precio', true);
 
-    $titulo = "Menú del " . date_i18n('d/m', strtotime($fecha));
-    $mensaje = "Principal: " . $principal . ($precio ? " - Valor: " . $precio : "");
+    $fecha_formateada = date_i18n('d/m', strtotime($fecha));
+    $titulo = "Menú del " . $fecha_formateada;
+    $mensaje = "Principal: " . $principal;
+    if ($precio) {
+        $mensaje .= " - Valor: " . $precio;
+    }
 
-
-    
     $app_id = '58790c7e-7e27-46bc-a016-4861b88f45d3'; 
     $rest_api_key = 'M2NlM2MzODItOGFkYS00NjYyLTk1MTUtMWQ1NTQyM2Q4NTBi';
 
     $fields = array(
         'app_id' => $app_id,
-        'filters' => array(array('field' => 'tag', 'key' => 'menu', 'relation' => '=', 'value' => '1')),
+        // Filtro Menú
+        'filters' => array(
+            array('field' => 'tag', 'key' => 'menu', 'relation' => '=', 'value' => '1')
+        ),
         'headings' => array("en" => $titulo, "es" => $titulo),
         'contents' => array("en" => $mensaje, "es" => $mensaje),
         'url' => get_permalink($post_id),
     );
+
+    // --- CORRECCIÓN DE IMÁGENES (Si el menú tiene foto destacada) ---
+    if (has_post_thumbnail($post_id)) {
+        $img_url_raw = get_the_post_thumbnail_url($post_id, 'large');
+        $img_url = set_url_scheme($img_url_raw, 'https');
+
+        $fields['big_picture'] = $img_url;      
+        $fields['chrome_web_image'] = $img_url; 
+        $fields['chrome_web_icon'] = $img_url;
+        $fields['firefox_icon'] = $img_url;
+    }
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
@@ -881,15 +900,17 @@ function saebu_enviar_notificacion_menu($post_id) {
 /**
  * Metabox Notificación para Noticias
  */
-function saebu_cpt_noticia_push_metabox() {
+function saebu_cpt_noticia_push_metabox()
+{
     add_meta_box('noticia_push_box', 'Notificaciones App', 'saebu_cpt_noticia_callback', 'noticia', 'side', 'high');
 }
 add_action('add_meta_boxes', 'saebu_cpt_noticia_push_metabox');
 
-function saebu_cpt_noticia_callback($post) {
+function saebu_cpt_noticia_callback($post)
+{
     wp_nonce_field('saebu_noticia_nonce', 'noticia_nonce');
     $notificar = get_post_meta($post->ID, '_noticia_enviar_push', true);
-    ?>
+?>
     <div style="margin-top: 10px;">
         <label style="font-weight:bold;">
             <input type="checkbox" name="noticia_enviar_push" value="1" <?php checked($notificar, '1'); ?> />
@@ -897,13 +918,14 @@ function saebu_cpt_noticia_callback($post) {
         </label>
         <p class="description">Se enviará a la categoría <strong>"Noticias universitarias"</strong>.</p>
     </div>
-    <?php
+<?php
 }
 
 /**
  * Guardar Noticia
  */
-function saebu_save_cpt_noticia_meta($post_id) {
+function saebu_save_cpt_noticia_meta($post_id)
+{
     if (!isset($_POST['noticia_nonce']) || !wp_verify_nonce($_POST['noticia_nonce'], 'saebu_noticia_nonce')) return;
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
     if (get_post_type($post_id) !== 'noticia') return;
@@ -921,30 +943,45 @@ add_action('save_post_noticia', 'saebu_save_cpt_noticia_meta');
 /**
  * ENVÍO PUSH NOTICIA (Configurado para llave 'noticias')
  */
-function saebu_enviar_push_noticia_cpt($post_id) {
+function saebu_enviar_push_noticia_cpt($post_id)
+{
     $titulo_post = get_the_title($post_id);
+
+    // Contenido
     $contenido = get_the_excerpt($post_id);
     if (empty($contenido)) {
-        $contenido = wp_trim_words(strip_shortcodes(get_post_field('post_content', $post_id)), 20, '...');
+        $contenido_raw = get_post_field('post_content', $post_id);
+        $contenido = wp_trim_words(strip_shortcodes($contenido_raw), 20, '...');
     }
 
-    
-    
-    $app_id = '58790c7e-7e27-46bc-a016-4861b88f45d3'; 
+    $app_id = '58790c7e-7e27-46bc-a016-4861b88f45d3';
     $rest_api_key = 'M2NlM2MzODItOGFkYS00NjYyLTk1MTUtMWQ1NTQyM2Q4NTBi';
 
     $fields = array(
         'app_id' => $app_id,
-        'filters' => array(array('field' => 'tag', 'key' => 'noticias', 'relation' => '=', 'value' => '1')),
+        // Filtro Noticias
+        'filters' => array(
+            array('field' => 'tag', 'key' => 'noticias', 'relation' => '=', 'value' => '1')
+        ),
         'headings' => array("en" => "SAEBU Informa", "es" => "SAEBU Informa"),
         'contents' => array("en" => $titulo_post, "es" => $titulo_post),
         'url' => get_permalink($post_id),
     );
 
+    // --- CORRECCIÓN DE IMÁGENES ---
     if (has_post_thumbnail($post_id)) {
-        $img_url = get_the_post_thumbnail_url($post_id, 'large');
+        // Obtenemos la URL y forzamos HTTPS por seguridad
+        $img_url_raw = get_the_post_thumbnail_url($post_id, 'large');
+        $img_url = set_url_scheme($img_url_raw, 'https');
+
+        // 1. Chrome Web Image / Big Picture (Imagen grande debajo del texto)
         $fields['big_picture'] = $img_url;
         $fields['chrome_web_image'] = $img_url;
+
+        // 2. Large Icon (El cuadradito a la derecha del texto)
+        // Usamos la misma imagen para que destaque
+        $fields['chrome_web_icon'] = $img_url;
+        $fields['firefox_icon'] = $img_url;
     }
 
     $ch = curl_init();
