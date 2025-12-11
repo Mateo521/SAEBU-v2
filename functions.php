@@ -846,7 +846,8 @@ function saebu_enviar_notificacion_menu($post_id) {
     $titulo = "Menú del " . date_i18n('d/m', strtotime($fecha));
     $mensaje = "Principal: " . $principal . ($precio ? " - Valor: " . $precio : "");
 
-    // --- TUS CLAVES AQUÍ ---
+
+    
     $app_id = '58790c7e-7e27-46bc-a016-4861b88f45d3'; 
     $rest_api_key = 'M2NlM2MzODItOGFkYS00NjYyLTk1MTUtMWQ1NTQyM2Q4NTBi';
 
@@ -927,7 +928,8 @@ function saebu_enviar_push_noticia_cpt($post_id) {
         $contenido = wp_trim_words(strip_shortcodes(get_post_field('post_content', $post_id)), 20, '...');
     }
 
-    // --- TUS CLAVES AQUÍ ---
+    
+    
     $app_id = '58790c7e-7e27-46bc-a016-4861b88f45d3'; 
     $rest_api_key = 'M2NlM2MzODItOGFkYS00NjYyLTk1MTUtMWQ1NTQyM2Q4NTBi';
 
