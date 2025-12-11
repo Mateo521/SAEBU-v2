@@ -66,12 +66,12 @@
 
                         <div class="bg-gray-50 p-5 border-b border-gray-200 flex justify-between items-center">
                             <div>
-                                <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+                                <h1 class="text-lg font-bold text-gray-800 flex items-center gap-2">
                                     <svg class="w-5 h-5 text-[#005eb8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                                     </svg>
                                     Comedor Universitario
-                                </h3>
+                                </h1>
                                 <p class="text-sm text-gray-500">Menú del día</p>
                             </div>
                             <div class="text-center bg-[#416ed2] text-white px-3 py-1 rounded">
@@ -85,7 +85,7 @@
                         <div class="p-6 space-y-4">
                             <?php if ($entrada): ?>
                                 <div class="flex items-center gap-4">
-                                    <span class="text-xs font-bold text-gray-400 uppercase w-16 pt-1">Entrada</span>
+                                    <span class="text-xs font-bold text-gray-700 uppercase w-16 pt-1">Entrada</span>
                                     <span class="text-gray-800 font-medium flex-1"><?php echo esc_html($entrada); ?></span>
                                 </div>
                             <?php endif; ?>
@@ -99,7 +99,7 @@
 
                             <?php if ($postre): ?>
                                 <div class="flex items-center gap-4">
-                                    <span class="text-xs font-bold text-gray-400 uppercase w-16 pt-1">Postre</span>
+                                    <span class="text-xs font-bold text-gray-700 uppercase w-16 pt-1">Postre</span>
                                     <span class="text-gray-800 font-medium flex-1"><?php echo esc_html($postre); ?></span>
                                 </div>
                             <?php endif; ?>
@@ -274,15 +274,15 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-white text-center divide-y md:divide-y-0 md:divide-x divide-white/20">
             <div class="px-4 py-2">
                 <p class="text-3xl font-bold mb-1">+5</p>
-                <p class="text-sm text-blue-100 uppercase tracking-wider">Departamentos</p>
+                <p class="text-sm text-white uppercase tracking-wider">Departamentos</p>
             </div>
             <div class="px-4 py-2">
                 <p class="text-3xl font-bold mb-1">+10</p>
-                <p class="text-sm text-blue-100 uppercase tracking-wider">Servicios al Estudiante</p>
+                <p class="text-sm text-white uppercase tracking-wider">Servicios al Estudiante</p>
             </div>
             <div class="px-4 py-2">
                 <p class="text-3xl font-bold mb-1">UNSL</p>
-                <p class="text-sm text-blue-100 uppercase tracking-wider">Compromiso Público</p>
+                <p class="text-sm text-white uppercase tracking-wider">Compromiso Público</p>
             </div>
         </div>
     </div>
@@ -439,7 +439,7 @@
             foreach ($departamentos as $depto) : ?>
                 <a href="<?php echo home_url('/' . $depto['slug']); ?>"
                     class="group bg-white border border-gray-200 rounded-md p-6 hover:border-[#005eb8] hover:shadow-md transition-all duration-300 flex items-start gap-4">
-                    <div class="text-gray-400 group-hover:text-[#005eb8] transition-colors">
+                    <div class="text-gray-700 group-hover:text-[#005eb8] transition-colors">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="<?php echo $depto['icon']; ?>"></path>
                         </svg>
@@ -478,20 +478,16 @@
                 while ($latest_news->have_posts()) : $latest_news->the_post();
             ?>
                     <article class="bg-white rounded-sm shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
-                        <a href="<?php the_permalink(); ?>" class="block relative aspect-video overflow-hidden bg-gray-200">
+                        <a title="Link <?php the_title(); ?>" href="<?php the_permalink(); ?>" class="block relative aspect-video overflow-hidden bg-gray-200">
                             <?php if (has_post_thumbnail()) : ?>
                                 <?php the_post_thumbnail('medium_large', array('class' => 'w-full h-full object-cover transition-transform duration-500 hover:scale-105')); ?>
                             <?php else : ?>
-                                <div class="w-full h-full flex items-center justify-center text-gray-400">
+                                <div class="w-full h-full flex items-center justify-center text-gray-700">
                                     <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                     </svg>
                                 </div>
                             <?php endif; ?>
-
-
-
-
                             <?php
                             $terms = get_the_terms(get_the_ID(), 'departamento');
                             if ($terms && !is_wp_error($terms)) :
@@ -501,10 +497,6 @@
                                     <?php echo esc_html($term->name); ?>
                                 </span>
                             <?php endif; ?>
-
-
-
-
                         </a>
 
                         <div class="p-5 flex-1 flex flex-col">

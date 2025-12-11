@@ -743,10 +743,32 @@ add_action('wp_head', 'saebu_add_og_tags');
 
 
 /**
- * Custom Post Type: Menú del Día
+ * Metaboxes personalizados para Menú del Día
  */
-function saebu_register_menu_dia_cpt()
+function saebu_menu_dia_metaboxes()
 {
+    add_meta_box(
+        'menu_dia_detalles',
+        'Detalles del Menú',
+        'saebu_menu_dia_metabox_callback',
+        'menu_dia',
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'saebu_menu_dia_metaboxes');
+
+
+
+
+/* ==========================================================================
+   1. CONFIGURACIÓN DEL MENÚ DEL DÍA
+   ========================================================================== */
+
+/**
+ * Registro del CPT: Menú del Día
+ */
+function saebu_register_menu_dia_cpt() {
     $labels = array(
         'name'                  => 'Menú del Día',
         'singular_name'         => 'Menú',
@@ -780,28 +802,14 @@ function saebu_register_menu_dia_cpt()
 add_action('init', 'saebu_register_menu_dia_cpt');
 
 /**
- * Metaboxes personalizados para Menú del Día
+ * Metaboxes para Menú del Día
  */
-function saebu_menu_dia_metaboxes()
-{
-    add_meta_box(
-        'menu_dia_detalles',
-        'Detalles del Menú',
-        'saebu_menu_dia_metabox_callback',
-        'menu_dia',
-        'normal',
-        'high'
-    );
-}
-add_action('add_meta_boxes', 'saebu_menu_dia_metaboxes');
 
-/**
- * Callback del metabox
- */
-function saebu_menu_dia_metabox_callback($post)
-{
+
+
+
+function saebu_menu_dia_metabox_callback($post) {
     wp_nonce_field('saebu_menu_dia_nonce', 'menu_dia_nonce');
-
     $fecha = get_post_meta($post->ID, '_menu_fecha', true);
     $entrada = get_post_meta($post->ID, '_menu_entrada', true);
     $principal = get_post_meta($post->ID, '_menu_principal', true);
@@ -809,119 +817,147 @@ function saebu_menu_dia_metabox_callback($post)
     $precio = get_post_meta($post->ID, '_menu_precio', true);
     $notificar = get_post_meta($post->ID, '_menu_notificar', true);
     ?>
-
     <div style="padding: 10px;">
-        <p>
-            <label style="display: block; font-weight: bold; margin-bottom: 5px;">
-                <strong>Fecha del Menú:</strong>
-            </label>
-            <input type="date" name="menu_fecha" value="<?php echo esc_attr($fecha); ?>"
-                style="width: 100%; max-width: 300px; padding: 8px;" />
-        </p>
-
-        <p>
-            <label style="display: block; font-weight: bold; margin-bottom: 5px;">
-                <strong>Entrada:</strong>
-            </label>
-            <input type="text" name="menu_entrada" value="<?php echo esc_attr($entrada); ?>"
-                placeholder="Ej: Ensalada mixta"
-                style="width: 100%; padding: 8px;" />
-        </p>
-
-        <p>
-            <label style="display: block; font-weight: bold; margin-bottom: 5px;">
-                <strong>Plato Principal:</strong>
-            </label>
-            <input type="text" name="menu_principal" value="<?php echo esc_attr($principal); ?>"
-                placeholder="Ej: Milanesa con papas fritas"
-                style="width: 100%; padding: 8px;" />
-        </p>
-
-        <p>
-            <label style="display: block; font-weight: bold; margin-bottom: 5px;">
-                <strong>Postre:</strong>
-            </label>
-            <input type="text" name="menu_postre" value="<?php echo esc_attr($postre); ?>"
-                placeholder="Ej: Flan con dulce de leche"
-                style="width: 100%; padding: 8px;" />
-        </p>
-
-        <p>
-            <label style="display: block; font-weight: bold; margin-bottom: 5px;">
-                <strong>Precio:</strong>
-            </label>
-            <input type="text" name="menu_precio" value="<?php echo esc_attr($precio); ?>"
-                placeholder="Ej: $350"
-                style="width: 100%; max-width: 200px; padding: 8px;" />
-        </p>
-
-        <p style="background: #f0f7ff; padding: 15px; border-left: 4px solid #0073aa; margin-top: 20px;">
-            <label style="display: flex; align-items: center; cursor: pointer;">
-                <input type="checkbox" name="menu_notificar" value="1"
-                    <?php checked($notificar, '1'); ?>
-                    style="margin-right: 10px;" />
-                <strong>Enviar notificación push cuando se publique este menú</strong>
-            </label>
-            <small style="display: block; margin-top: 5px; color: #666;">
-                Se enviará una notificación a todos los usuarios suscritos cuando publiques este menú.
-            </small>
+        <p><label><strong>Fecha:</strong></label><br><input type="date" name="menu_fecha" value="<?php echo esc_attr($fecha); ?>" style="width:100%;max-width:300px;" /></p>
+        <p><label><strong>Entrada:</strong></label><br><input type="text" name="menu_entrada" value="<?php echo esc_attr($entrada); ?>" style="width:100%;" /></p>
+        <p><label><strong>Principal:</strong></label><br><input type="text" name="menu_principal" value="<?php echo esc_attr($principal); ?>" style="width:100%;" /></p>
+        <p><label><strong>Postre:</strong></label><br><input type="text" name="menu_postre" value="<?php echo esc_attr($postre); ?>" style="width:100%;" /></p>
+        <p><label><strong>Precio:</strong></label><br><input type="text" name="menu_precio" value="<?php echo esc_attr($precio); ?>" style="width:100%;max-width:200px;" /></p>
+        
+        <p style="background:#f0f7ff;padding:15px;border-left:4px solid #0073aa;margin-top:20px;">
+            <label><input type="checkbox" name="menu_notificar" value="1" <?php checked($notificar, '1'); ?> /> <strong>Enviar notificación push (Categoría: Menú)</strong></label>
         </p>
     </div>
-
-<?php
+    <?php
 }
 
+
+
+
+
 /**
- * -----------------------------------------------------------
- * NUEVA FUNCIÓN: Enviar la notificación a OneSignal
- * -----------------------------------------------------------
+ * ENVÍO PUSH MENU (Configurado para llave 'menu')
  */
-function saebu_enviar_notificacion_menu($post_id)
-{
-    // 1. Obtener datos
-    $fecha     = get_post_meta($post_id, '_menu_fecha', true);
+function saebu_enviar_notificacion_menu($post_id) {
+    $fecha = get_post_meta($post_id, '_menu_fecha', true);
     $principal = get_post_meta($post_id, '_menu_principal', true);
-    $precio    = get_post_meta($post_id, '_menu_precio', true);
+    $precio = get_post_meta($post_id, '_menu_precio', true);
 
-    // Formato de fecha para el título
-    $fecha_formateada = date_i18n('d/m', strtotime($fecha));
+    $titulo = "Menú del " . date_i18n('d/m', strtotime($fecha));
+    $mensaje = "Principal: " . $principal . ($precio ? " - Valor: " . $precio : "");
 
-    // 2. Construir mensaje
-    $titulo = "Menú del " . $fecha_formateada;
-    $mensaje = "Principal: " . $principal;
-    if ($precio) {
-        $mensaje .= " - Valor: " . $precio;
-    }
-
-    // 3. Credenciales de OneSignal
-    $app_id = '58790c7e-7e27-46bc-a016-4861b88f45d3';
+    // --- TUS CLAVES AQUÍ ---
+    $app_id = '58790c7e-7e27-46bc-a016-4861b88f45d3'; 
     $rest_api_key = 'M2NlM2MzODItOGFkYS00NjYyLTk1MTUtMWQ1NTQyM2Q4NTBi';
 
-    // 4. Configurar envío
     $fields = array(
         'app_id' => $app_id,
-        'included_segments' => array('All'),
+        'filters' => array(array('field' => 'tag', 'key' => 'menu', 'relation' => '=', 'value' => '1')),
         'headings' => array("en" => $titulo, "es" => $titulo),
         'contents' => array("en" => $mensaje, "es" => $mensaje),
         'url' => get_permalink($post_id),
     );
 
-    // 5. Ejecutar cURL
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Content-Type: application/json; charset=utf-8',
-        'Authorization: Basic ' . $rest_api_key
-    ));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8', 'Authorization: Basic ' . $rest_api_key));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
     curl_setopt($ch, CURLOPT_HEADER, FALSE);
     curl_setopt($ch, CURLOPT_POST, TRUE);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-
-    $response = curl_exec($ch);
+    curl_exec($ch);
     curl_close($ch);
 }
+
+
+
+
+
+
+
+
+/**
+ * Metabox Notificación para Noticias
+ */
+function saebu_cpt_noticia_push_metabox() {
+    add_meta_box('noticia_push_box', 'Notificaciones App', 'saebu_cpt_noticia_callback', 'noticia', 'side', 'high');
+}
+add_action('add_meta_boxes', 'saebu_cpt_noticia_push_metabox');
+
+function saebu_cpt_noticia_callback($post) {
+    wp_nonce_field('saebu_noticia_nonce', 'noticia_nonce');
+    $notificar = get_post_meta($post->ID, '_noticia_enviar_push', true);
+    ?>
+    <div style="margin-top: 10px;">
+        <label style="font-weight:bold;">
+            <input type="checkbox" name="noticia_enviar_push" value="1" <?php checked($notificar, '1'); ?> />
+            Enviar notificación Push
+        </label>
+        <p class="description">Se enviará a la categoría <strong>"Noticias universitarias"</strong>.</p>
+    </div>
+    <?php
+}
+
+/**
+ * Guardar Noticia
+ */
+function saebu_save_cpt_noticia_meta($post_id) {
+    if (!isset($_POST['noticia_nonce']) || !wp_verify_nonce($_POST['noticia_nonce'], 'saebu_noticia_nonce')) return;
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (get_post_type($post_id) !== 'noticia') return;
+
+    $notificar = isset($_POST['noticia_enviar_push']) ? '1' : '0';
+    update_post_meta($post_id, '_noticia_enviar_push', $notificar);
+
+    if ($notificar === '1' && get_post_status($post_id) === 'publish') {
+        saebu_enviar_push_noticia_cpt($post_id);
+        update_post_meta($post_id, '_noticia_enviar_push', '0');
+    }
+}
+add_action('save_post_noticia', 'saebu_save_cpt_noticia_meta');
+
+/**
+ * ENVÍO PUSH NOTICIA (Configurado para llave 'noticias')
+ */
+function saebu_enviar_push_noticia_cpt($post_id) {
+    $titulo_post = get_the_title($post_id);
+    $contenido = get_the_excerpt($post_id);
+    if (empty($contenido)) {
+        $contenido = wp_trim_words(strip_shortcodes(get_post_field('post_content', $post_id)), 20, '...');
+    }
+
+    // --- TUS CLAVES AQUÍ ---
+    $app_id = '58790c7e-7e27-46bc-a016-4861b88f45d3'; 
+    $rest_api_key = 'M2NlM2MzODItOGFkYS00NjYyLTk1MTUtMWQ1NTQyM2Q4NTBi';
+
+    $fields = array(
+        'app_id' => $app_id,
+        'filters' => array(array('field' => 'tag', 'key' => 'noticias', 'relation' => '=', 'value' => '1')),
+        'headings' => array("en" => "SAEBU Informa", "es" => "SAEBU Informa"),
+        'contents' => array("en" => $titulo_post, "es" => $titulo_post),
+        'url' => get_permalink($post_id),
+    );
+
+    if (has_post_thumbnail($post_id)) {
+        $img_url = get_the_post_thumbnail_url($post_id, 'large');
+        $fields['big_picture'] = $img_url;
+        $fields['chrome_web_image'] = $img_url;
+    }
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8', 'Authorization: Basic ' . $rest_api_key));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($ch, CURLOPT_HEADER, FALSE);
+    curl_setopt($ch, CURLOPT_POST, TRUE);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_exec($ch);
+    curl_close($ch);
+}
+
+
 
 /**
  * Guardar metadatos del menú y disparar notificación

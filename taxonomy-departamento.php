@@ -96,12 +96,7 @@ $total_posts = $wp_query->found_posts;
                                                 <?php echo get_the_date('d/m/Y'); ?>
                                             </span>
                                             
-                                            <span class="inline-flex items-center gap-1 text-sm text-gray-600">
-                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                                                </svg>
-                                                <?php the_author(); ?>
-                                            </span>
+                                           
                                             
                                             <?php if (get_post_meta(get_the_ID(), '_noticia_destacada', true) === '1') : ?>
                                                 <span class="inline-block bg-yellow-100 text-yellow-800 text-xs font-bold px-2 py-1 rounded-full uppercase tracking-wide">

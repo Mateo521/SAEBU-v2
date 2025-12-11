@@ -304,6 +304,9 @@
           saveState(state);
           syncValues();
           break;
+        case 'ci-a11y-close':
+          togglePanel(false);
+          break;
         case 'ci-a11y-save':
           saveState(state);
           // Verificar si ya existe una notificación
@@ -343,7 +346,7 @@
               notif.remove();
             }, 300);
           }, 2000);
-
+          togglePanel(false);
           break;
       }
     };

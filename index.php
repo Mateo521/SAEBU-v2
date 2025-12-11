@@ -46,7 +46,7 @@ get_header();
                         
                         <div class="post-meta">
                             <span class="post-date"><?php echo get_the_date(); ?></span>
-                            <span class="post-author">Por <?php the_author(); ?></span>
+                            <!--span class="post-author">Por <?php the_author(); ?></span-->
                         </div>
                         
                         <div class="post-excerpt">
