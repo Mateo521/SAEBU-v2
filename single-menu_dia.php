@@ -8,34 +8,29 @@ get_header();
 
 while ( have_posts() ) : the_post();
 
-    // Recuperamos los metadatos
+    // 1. Recuperamos los metadatos GENERALES
     $post_id   = get_the_ID();
     $fecha     = get_post_meta($post_id, '_menu_fecha', true);
-    
-    // --- CORRECCIÓN DE FECHAS (Método WordPress) ---
-    // Convertimos la fecha guardada a timestamp
-    $timestamp = strtotime($fecha);
-    
-    // date_i18n utiliza el idioma del sitio configurado en WordPress
-    // 'l' = Nombre completo del día
-    // 'd' = Día numérico
-    // 'F' = Nombre completo del mes
-    // 'Y' = Año
-    
-    $dia_nombre = ucfirst(date_i18n('l', $timestamp)); 
-    $dia_numero = date('d', $timestamp);
-    $mes_nombre = ucfirst(date_i18n('F', $timestamp));
-    $anio       = date('Y', $timestamp);
-
-    // Recuperamos el resto de datos
     $entrada   = get_post_meta($post_id, '_menu_entrada', true);
     $principal = get_post_meta($post_id, '_menu_principal', true);
     $postre    = get_post_meta($post_id, '_menu_postre', true);
     $precio    = get_post_meta($post_id, '_menu_precio', true);
+
+    // 2. Recuperamos los metadatos SIN TACC (NUEVO)
+    $entrada_st   = get_post_meta($post_id, '_menu_entrada_sintacc', true);
+    $principal_st = get_post_meta($post_id, '_menu_principal_sintacc', true);
+    $postre_st    = get_post_meta($post_id, '_menu_postre_sintacc', true);
+    
+    // --- CORRECCIÓN DE FECHAS ---
+    $timestamp  = strtotime($fecha);
+    $dia_nombre = ucfirst(date_i18n('l', $timestamp)); 
+    $dia_numero = date('d', $timestamp);
+    $mes_nombre = ucfirst(date_i18n('F', $timestamp));
+    $anio       = date('Y', $timestamp);
 ?>
 
 <div class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8 font-sans text-slate-800">
-     
+      
     <div class="max-w-3xl mx-auto mb-6">
         <a href="<?php echo home_url(); ?>" class="inline-flex items-center text-slate-400 hover:text-[#005eb8] transition-colors text-[10px] uppercase tracking-widest font-bold">
             <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
@@ -93,7 +88,6 @@ while ( have_posts() ) : the_post();
             <?php endif; ?>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 mb-10 border-t border-b border-slate-100">
-                
                 <?php if ($entrada): ?>
                     <div class="py-6 md:pr-6 md:border-r border-slate-100 flex flex-col items-center md:items-start text-center md:text-left group">
                         <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 group-hover:text-[#005eb8] transition-colors">
@@ -115,8 +109,38 @@ while ( have_posts() ) : the_post();
                         </p>
                     </div>
                 <?php endif; ?>
-
             </div>
+
+            <?php if ($principal_st || $entrada_st || $postre_st): ?>
+                <div class="mb-10 bg-green-50 rounded-lg p-6 border border-green-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-[#70b62c] text-white text-[9px] font-bold uppercase tracking-widest py-1 px-3 rounded-bl-lg">
+                        Sin TACC
+                    </div>
+
+                    <div class="flex flex-col md:flex-row gap-6 items-center">
+                        <div class="flex-shrink-0 text-[#70b62c]">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div class="text-center md:text-left flex-1">
+                            <h3 class="text-xs font-bold text-[#70b62c] uppercase tracking-widest mb-3">Opción Celíaca</h3>
+                            
+                            <?php if ($principal_st): ?>
+                                <p class="text-lg font-bold text-gray-800 mb-2"><?php echo esc_html($principal_st); ?></p>
+                            <?php endif; ?>
+                            
+                            <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-gray-600">
+                                <?php if ($entrada_st): ?>
+                                    <span><strong class="text-gray-400 font-normal">Entrada:</strong> <?php echo esc_html($entrada_st); ?></span>
+                                <?php endif; ?>
+                                
+                                <?php if ($postre_st): ?>
+                                    <span><strong class="text-gray-400 font-normal">Postre:</strong> <?php echo esc_html($postre_st); ?></span>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
 
             <div class="flex flex-col md:flex-row items-center justify-between gap-6 bg-slate-50 p-6 rounded border border-slate-100">
                 
@@ -154,7 +178,11 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             if (window.OneSignal) {
                 window.OneSignal.push(function() {
-                    window.OneSignal.showSlidedownPrompt();
+                    if (typeof window.OneSignal.showSlidedownPrompt === 'function') {
+                        window.OneSignal.showSlidedownPrompt({force: true});
+                    } else {
+                        window.OneSignal.registerForPushNotifications();
+                    }
                 });
             }
         });

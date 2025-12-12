@@ -250,7 +250,7 @@ get_header();
                 <h3 class="text-xl font-bold text-slate-900">Gustavo Garay</h3>
                 <p class="text-sm text-slate-500 mb-8">Responsable Departamento Contable</p>
 
-                <div class="flex justify-center gap-4">
+                <div class="flex md:flex-row flex-col justify-center gap-4">
                     <a href="mailto:contable@saebu.unsl.edu.ar" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white rounded-md hover:bg-slate-700 transition-colors font-medium">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         contable@saebu.unsl.edu.ar

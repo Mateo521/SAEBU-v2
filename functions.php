@@ -6,6 +6,7 @@
  */
 
 // Cargar archivos necesarios
+
 require_once get_template_directory() . '/inc/custom-post-types.php';
 require_once get_template_directory() . '/inc/taxonomies.php';
 
@@ -742,27 +743,16 @@ add_action('wp_head', 'saebu_add_og_tags');
 
 
 
-/**
- * Metaboxes personalizados para Menú del Día
- */
-function saebu_menu_dia_metaboxes()
-{
-    add_meta_box(
-        'menu_dia_detalles',
-        'Detalles del Menú',
-        'saebu_menu_dia_metabox_callback',
-        'menu_dia',
-        'normal',
-        'high'
-    );
-}
-add_action('add_meta_boxes', 'saebu_menu_dia_metaboxes');
+
+
+
+
 
 
 
 
 /* ==========================================================================
-   1. CONFIGURACIÓN DEL MENÚ DEL DÍA
+   1. CONFIGURACIÓN DEL MENÚ DEL DÍA (Con opción Sin TACC)
    ========================================================================== */
 
 /**
@@ -805,26 +795,60 @@ add_action('init', 'saebu_register_menu_dia_cpt');
 /**
  * Metaboxes para Menú del Día
  */
+function saebu_menu_dia_metaboxes()
+{
+    add_meta_box('menu_dia_detalles', 'Detalles del Menú', 'saebu_menu_dia_metabox_callback', 'menu_dia', 'normal', 'high');
+}
+add_action('add_meta_boxes', 'saebu_menu_dia_metaboxes');
 
-
-
-
+/**
+ * Callback del metabox (Formulario con campos Sin TACC)
+ */
 function saebu_menu_dia_metabox_callback($post)
 {
     wp_nonce_field('saebu_menu_dia_nonce', 'menu_dia_nonce');
-    $fecha = get_post_meta($post->ID, '_menu_fecha', true);
-    $entrada = get_post_meta($post->ID, '_menu_entrada', true);
+
+    // 1. Obtener datos Menú Común
+    $fecha     = get_post_meta($post->ID, '_menu_fecha', true);
+    $entrada   = get_post_meta($post->ID, '_menu_entrada', true);
     $principal = get_post_meta($post->ID, '_menu_principal', true);
-    $postre = get_post_meta($post->ID, '_menu_postre', true);
-    $precio = get_post_meta($post->ID, '_menu_precio', true);
+    $postre    = get_post_meta($post->ID, '_menu_postre', true);
+    $precio    = get_post_meta($post->ID, '_menu_precio', true);
+
+    // 2. Obtener datos Menú Sin TACC
+    $entrada_st   = get_post_meta($post->ID, '_menu_entrada_sintacc', true);
+    $principal_st = get_post_meta($post->ID, '_menu_principal_sintacc', true);
+    $postre_st    = get_post_meta($post->ID, '_menu_postre_sintacc', true);
+
     $notificar = get_post_meta($post->ID, '_menu_notificar', true);
     ?>
     <div style="padding: 10px;">
-        <p><label><strong>Fecha:</strong></label><br><input type="date" name="menu_fecha" value="<?php echo esc_attr($fecha); ?>" style="width:100%;max-width:300px;" /></p>
-        <p><label><strong>Entrada:</strong></label><br><input type="text" name="menu_entrada" value="<?php echo esc_attr($entrada); ?>" style="width:100%;" /></p>
-        <p><label><strong>Principal:</strong></label><br><input type="text" name="menu_principal" value="<?php echo esc_attr($principal); ?>" style="width:100%;" /></p>
-        <p><label><strong>Postre:</strong></label><br><input type="text" name="menu_postre" value="<?php echo esc_attr($postre); ?>" style="width:100%;" /></p>
-        <p><label><strong>Precio:</strong></label><br><input type="text" name="menu_precio" value="<?php echo esc_attr($precio); ?>" style="width:100%;max-width:200px;" /></p>
+        <div style="display:flex; gap: 20px; flex-wrap:wrap; background:#f9f9f9; padding:10px; border:1px solid #ddd; margin-bottom:15px;">
+            <div style="flex:1;">
+                <label><strong> Fecha del Menú:</strong></label><br>
+                <input type="date" name="menu_fecha" value="<?php echo esc_attr($fecha); ?>" style="width:100%;" />
+            </div>
+            <div style="flex:1;">
+                <label><strong> Precio del Ticket:</strong></label><br>
+                <input type="text" name="menu_precio" value="<?php echo esc_attr($precio); ?>" placeholder="$3500" style="width:100%;" />
+            </div>
+        </div>
+
+        <div style="display:flex; gap: 20px; flex-wrap:wrap;">
+            <div style="flex:1; min-width:250px;">
+                <h3 style="margin:0 0 10px 0; border-bottom:2px solid #005eb8; padding-bottom:5px; color:#005eb8;"> Menú General</h3>
+                <p><label><strong>Entrada:</strong></label><br><input type="text" name="menu_entrada" value="<?php echo esc_attr($entrada); ?>" style="width:100%;" /></p>
+                <p><label><strong>Plato Principal:</strong></label><br><input type="text" name="menu_principal" value="<?php echo esc_attr($principal); ?>" style="width:100%;" /></p>
+                <p><label><strong>Postre:</strong></label><br><input type="text" name="menu_postre" value="<?php echo esc_attr($postre); ?>" style="width:100%;" /></p>
+            </div>
+
+            <div style="flex:1; min-width:250px;">
+                <h3 style="margin:0 0 10px 0; border-bottom:2px solid #70b62c; padding-bottom:5px; color:#70b62c;"> Menú Sin TACC</h3>
+                <p><label><strong>Entrada Sin TACC:</strong></label><br><input type="text" name="menu_entrada_sintacc" value="<?php echo esc_attr($entrada_st); ?>" style="width:100%;" placeholder="Opcional" /></p>
+                <p><label><strong>Principal Sin TACC:</strong></label><br><input type="text" name="menu_principal_sintacc" value="<?php echo esc_attr($principal_st); ?>" style="width:100%;" placeholder="Opcional" /></p>
+                <p><label><strong>Postre Sin TACC:</strong></label><br><input type="text" name="menu_postre_sintacc" value="<?php echo esc_attr($postre_st); ?>" style="width:100%;" placeholder="Opcional" /></p>
+            </div>
+        </div>
 
         <p style="background:#f0f7ff;padding:15px;border-left:4px solid #0073aa;margin-top:20px;">
             <label><input type="checkbox" name="menu_notificar" value="1" <?php checked($notificar, '1'); ?> /> <strong>Enviar notificación push (Categoría: Menú)</strong></label>
@@ -834,31 +858,156 @@ function saebu_menu_dia_metabox_callback($post)
 }
 
 
+function saebu_save_menu_dia_meta($post_id)
+{
+    // 🔍 DEBUG 1: Ver si la función se ejecuta
+    error_log("=== GUARDANDO MENU ID: $post_id ===");
+
+    if (!isset($_POST['menu_dia_nonce']) || !wp_verify_nonce($_POST['menu_dia_nonce'], 'saebu_menu_dia_nonce')) {
+        error_log(" NONCE FALLÓ");
+        return;
+    }
+
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        error_log(" AUTOSAVE");
+        return;
+    }
+
+    if (!current_user_can('edit_post', $post_id)) {
+        error_log(" SIN PERMISOS");
+        return;
+    }
+
+    // 🔍 DEBUG 2: Ver qué llega en $_POST
+    error_log("POST menu_entrada_sintacc: " . (isset($_POST['menu_entrada_sintacc']) ? $_POST['menu_entrada_sintacc'] : 'NO EXISTE'));
+    error_log("POST menu_principal_sintacc: " . (isset($_POST['menu_principal_sintacc']) ? $_POST['menu_principal_sintacc'] : 'NO EXISTE'));
+    error_log("POST menu_postre_sintacc: " . (isset($_POST['menu_postre_sintacc']) ? $_POST['menu_postre_sintacc'] : 'NO EXISTE'));
+
+    // Campos Comunes
+    if (isset($_POST['menu_fecha'])) {
+        update_post_meta($post_id, '_menu_fecha', sanitize_text_field($_POST['menu_fecha']));
+    }
+    if (isset($_POST['menu_entrada'])) {
+        update_post_meta($post_id, '_menu_entrada', sanitize_text_field($_POST['menu_entrada']));
+    }
+    if (isset($_POST['menu_principal'])) {
+        update_post_meta($post_id, '_menu_principal', sanitize_text_field($_POST['menu_principal']));
+    }
+    if (isset($_POST['menu_postre'])) {
+        update_post_meta($post_id, '_menu_postre', sanitize_text_field($_POST['menu_postre']));
+    }
+    if (isset($_POST['menu_precio'])) {
+        update_post_meta($post_id, '_menu_precio', sanitize_text_field($_POST['menu_precio']));
+    }
+
+    // Campos Sin TACC
+    if (isset($_POST['menu_entrada_sintacc'])) {
+        $valor = sanitize_text_field($_POST['menu_entrada_sintacc']);
+        error_log(" Guardando entrada_st: '$valor'");
+        if (!empty($valor)) {
+            update_post_meta($post_id, '_menu_entrada_sintacc', $valor);
+        } else {
+            delete_post_meta($post_id, '_menu_entrada_sintacc');
+        }
+    }
+
+    if (isset($_POST['menu_principal_sintacc'])) {
+        $valor = sanitize_text_field($_POST['menu_principal_sintacc']);
+        error_log(" Guardando principal_st: '$valor'");
+        if (!empty($valor)) {
+            update_post_meta($post_id, '_menu_principal_sintacc', $valor);
+        } else {
+            delete_post_meta($post_id, '_menu_principal_sintacc');
+        }
+    }
+
+    if (isset($_POST['menu_postre_sintacc'])) {
+        $valor = sanitize_text_field($_POST['menu_postre_sintacc']);
+        error_log(" Guardando postre_st: '$valor'");
+        if (!empty($valor)) {
+            update_post_meta($post_id, '_menu_postre_sintacc', $valor);
+        } else {
+            delete_post_meta($post_id, '_menu_postre_sintacc');
+        }
+    }
+
+    $notificar = isset($_POST['menu_notificar']) ? '1' : '0';
+    update_post_meta($post_id, '_menu_notificar', $notificar);
+
+    if ($notificar === '1' && get_post_status($post_id) === 'publish') {
+        saebu_enviar_notificacion_menu($post_id);
+        update_post_meta($post_id, '_menu_notificar', '0');
+    }
+
+    error_log("=== FIN GUARDADO ===");
+}
+
+//  BORRA ESTO:
+// add_action('save_post_menu_dia', 'saebu_save_menu_dia_meta');
+
+//  USA ESTO EN SU LUGAR:
+add_action('save_post', 'saebu_save_menu_dia_meta_wrapper', 10, 2);
+
+function saebu_save_menu_dia_meta_wrapper($post_id, $post)
+{
+    // Solo ejecutar para menu_dia
+    if ($post->post_type !== 'menu_dia') {
+        return;
+    }
+
+    error_log(" Wrapper ejecutado para menu_dia ID: $post_id");
+    saebu_save_menu_dia_meta($post_id);
+}
 
 
 
-/**
- * ENVÍO PUSH MENU (Configurado para llave 'menu')
- */
 function saebu_enviar_notificacion_menu($post_id)
 {
-    $fecha     = get_post_meta($post_id, '_menu_fecha', true);
-    $principal = get_post_meta($post_id, '_menu_principal', true);
-    $precio    = get_post_meta($post_id, '_menu_precio', true);
+
+    // 1. Obtener TODOS los datos
+    $fecha        = get_post_meta($post_id, '_menu_fecha', true);
+    $entrada      = get_post_meta($post_id, '_menu_entrada', true);
+    $principal    = get_post_meta($post_id, '_menu_principal', true);
+    $postre       = get_post_meta($post_id, '_menu_postre', true);
+    $precio       = get_post_meta($post_id, '_menu_precio', true);
+
+    $entrada_st   = get_post_meta($post_id, '_menu_entrada_sintacc', true);
+    $principal_st = get_post_meta($post_id, '_menu_principal_sintacc', true);
+    $postre_st    = get_post_meta($post_id, '_menu_postre_sintacc', true);
+
 
     $fecha_formateada = date_i18n('d/m', strtotime($fecha));
     $titulo = "Menú del " . $fecha_formateada;
-    $mensaje = "Principal: " . $principal;
-    if ($precio) {
-        $mensaje .= " - Valor: " . $precio;
+
+
+    $lineas = array();
+    if (!empty($principal)) {
+        $lineas[] = "Principal: " . $principal;
+        if (!empty($entrada)) $lineas[] = "Entrada: " . $entrada;
+        if (!empty($postre))  $lineas[] = "Postre: " . $postre;
+    }
+    if (!empty($principal_st)) {
+        $lineas[] = "Sin TACC: " . $principal_st;
+        if (!empty($entrada_st)) $lineas[] = "Entrada : " . $entrada_st;
+        if (!empty($postre_st))  $lineas[] = "Postre : " . $postre_st;
+    }
+    if (!empty($precio)) {
+        $lineas[] = "$" . $precio;
     }
 
-    $app_id = '58790c7e-7e27-46bc-a016-4861b88f45d3'; 
+    $mensaje = implode("\n", $lineas);
+
+
+    // Fallback
+    if (empty($mensaje)) $mensaje = "Haz clic para ver el menú completo.";
+
+
+
+    $app_id = '58790c7e-7e27-46bc-a016-4861b88f45d3';
     $rest_api_key = 'M2NlM2MzODItOGFkYS00NjYyLTk1MTUtMWQ1NTQyM2Q4NTBi';
 
     $fields = array(
         'app_id' => $app_id,
-        // Filtro Menú
         'filters' => array(
             array('field' => 'tag', 'key' => 'menu', 'relation' => '=', 'value' => '1')
         ),
@@ -867,29 +1016,34 @@ function saebu_enviar_notificacion_menu($post_id)
         'url' => get_permalink($post_id),
     );
 
-    // --- CORRECCIÓN DE IMÁGENES (Si el menú tiene foto destacada) ---
+    // Imagen
     if (has_post_thumbnail($post_id)) {
         $img_url_raw = get_the_post_thumbnail_url($post_id, 'large');
         $img_url = set_url_scheme($img_url_raw, 'https');
-
-        $fields['big_picture'] = $img_url;      
-        $fields['chrome_web_image'] = $img_url; 
+        $fields['big_picture'] = $img_url;
+        $fields['chrome_web_image'] = $img_url;
         $fields['chrome_web_icon'] = $img_url;
         $fields['firefox_icon'] = $img_url;
     }
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8', 'Authorization: Basic ' . $rest_api_key));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json; charset=utf-8',
+        'Authorization: Basic ' . $rest_api_key
+    ));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
     curl_setopt($ch, CURLOPT_HEADER, FALSE);
     curl_setopt($ch, CURLOPT_POST, TRUE);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-    curl_exec($ch);
-    curl_close($ch);
-}
 
+    $response = curl_exec($ch);
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+
+}
 
 
 
@@ -998,65 +1152,7 @@ function saebu_enviar_push_noticia_cpt($post_id)
 
 
 
-/**
- * Guardar metadatos del menú y disparar notificación
- */
-function saebu_save_menu_dia_meta($post_id)
-{
-    // Verificaciones de seguridad
-    if (!isset($_POST['menu_dia_nonce']) || !wp_verify_nonce($_POST['menu_dia_nonce'], 'saebu_menu_dia_nonce')) {
-        return;
-    }
 
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        return;
-    }
-
-    if (!current_user_can('edit_post', $post_id)) {
-        return;
-    }
-
-    // Guardar campos
-    if (isset($_POST['menu_fecha'])) {
-        update_post_meta($post_id, '_menu_fecha', sanitize_text_field($_POST['menu_fecha']));
-    }
-
-    if (isset($_POST['menu_entrada'])) {
-        update_post_meta($post_id, '_menu_entrada', sanitize_text_field($_POST['menu_entrada']));
-    }
-
-    if (isset($_POST['menu_principal'])) {
-        update_post_meta($post_id, '_menu_principal', sanitize_text_field($_POST['menu_principal']));
-    }
-
-    if (isset($_POST['menu_postre'])) {
-        update_post_meta($post_id, '_menu_postre', sanitize_text_field($_POST['menu_postre']));
-    }
-
-    if (isset($_POST['menu_precio'])) {
-        update_post_meta($post_id, '_menu_precio', sanitize_text_field($_POST['menu_precio']));
-    }
-
-    // Checkbox de notificación
-    $notificar = isset($_POST['menu_notificar']) ? '1' : '0';
-    update_post_meta($post_id, '_menu_notificar', $notificar);
-
-    // LÓGICA DE DISPARO:
-    // Si se marcó "Notificar" y el estado es "Publicado"
-    if ($notificar === '1' && get_post_status($post_id) === 'publish') {
-
-        // 1. Enviar la notificación
-        saebu_enviar_notificacion_menu($post_id);
-
-        // 2. Desmarcar el checkbox automáticamente para evitar reenvíos accidentales si editas de nuevo
-        update_post_meta($post_id, '_menu_notificar', '0');
-    }
-}
-add_action('save_post_menu_dia', 'saebu_save_menu_dia_meta');
-
-/**
- * Función para obtener el menú del día actual
- */
 function saebu_get_menu_del_dia()
 {
     $hoy = date('Y-m-d');
@@ -1065,11 +1161,15 @@ function saebu_get_menu_del_dia()
         'post_type'      => 'menu_dia',
         'posts_per_page' => 1,
         'post_status'    => 'publish',
+        'orderby'        => array(
+            'ID' => 'DESC',  // El menú más nuevo primero
+        ),
         'meta_query'     => array(
             array(
                 'key'     => '_menu_fecha',
                 'value'   => $hoy,
                 'compare' => '=',
+                'type'    => 'DATE',
             ),
         ),
     );
@@ -1077,27 +1177,39 @@ function saebu_get_menu_del_dia()
     $query = new WP_Query($args);
 
     if ($query->have_posts()) {
+        wp_reset_postdata();
         return $query->posts[0];
     }
 
-    // Si no hay menú para hoy, buscar el más reciente
+    // Si no hay de hoy, buscar el más reciente
     $args = array(
         'post_type'      => 'menu_dia',
         'posts_per_page' => 1,
         'post_status'    => 'publish',
-        'orderby'        => 'meta_value',
         'meta_key'       => '_menu_fecha',
-        'order'          => 'DESC',
+        'orderby'        => array(
+            'meta_value' => 'DESC',
+            'ID'         => 'DESC',
+        ),
+        'meta_query'     => array(
+            array(
+                'key'     => '_menu_fecha',
+                'compare' => 'EXISTS',
+            ),
+        ),
     );
 
     $query = new WP_Query($args);
 
     if ($query->have_posts()) {
+        wp_reset_postdata();
         return $query->posts[0];
     }
 
     return null;
 }
+
+
 
 
 
