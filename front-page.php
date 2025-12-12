@@ -1,42 +1,49 @@
 <?php get_header(); ?>
 
 <section class="relative min-h-[85vh] flex items-center bg-slate-900">
-    <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 z-0 overflow-hidden bg-slate-900">
         <?php
-
-        $hero_image = get_theme_mod('hero_background_image');
-        if (!$hero_image && has_post_thumbnail()) {
-            $hero_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
+        // 1. Configuración
+        $folder_path = get_template_directory() . '/assets/images/hero-slides/'; // Ruta del servidor
+        $folder_url  = get_template_directory_uri() . '/assets/images/hero-slides/'; // URL del navegador
+        // 2. Buscar imágenes disponibles
+        $images = glob($folder_path . '*.{jpg,jpeg,png,webp}', GLOB_BRACE);
+        $final_image_url = '';
+        // 3. Lógica de selección
+        if ($images && !empty($images)) {
+            // --- OPCIÓN RANDOM SIMPLE ---
+            // Elegimos una clave aleatoria del array de imágenes encontradas
+            $random_key = array_rand($images);
+            $selected_path = $images[$random_key];
+            // Construimos la URL final
+            $final_image_url = $folder_url . basename($selected_path);
+        } else {
+            // --- FALLBACK (Si la carpeta está vacía) ---
+            $hero_image = get_theme_mod('hero_background_image');
+            if (!$hero_image && has_post_thumbnail()) {
+                $hero_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
+            }
+            if (!$hero_image) {
+                $hero_image = get_template_directory_uri() . '/assets/images/hero-default.jpg';
+            }
+            $final_image_url = $hero_image;
         }
-        if (!$hero_image) {
-            $hero_image = get_template_directory_uri() . '/assets/images/hero-default.jpg';
-        }
-
-
-        $video_url = get_template_directory_uri() . '/assets/videos/background-hero.mp4';
         ?>
-
-        <video autoplay muted loop playsinline
-            poster="<?php echo esc_url($hero_image); ?>"
-            class="w-full h-full object-cover opacity-40">
-
-            <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
-
-            <img src="<?php echo esc_url($hero_image); ?>" alt="Fondo UNSL">
-        </video>
-
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/70 to-slate-900/20"></div>
+        <?php if (!empty($final_image_url)) : ?>
+            <img src="<?php echo esc_url($final_image_url); ?>"
+                alt="Fondo UNSL"
+                fetchpriority="high"
+                class="absolute inset-0 w-full h-full object-cover opacity-40">
+        <?php endif; ?>
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/70 to-slate-900/20 z-10"></div>
     </div>
-
     <div class="relative z-10 container mx-auto px-4 py-12">
         <div class="grid lg:grid-cols-[1.5fr_1fr] gap-12 items-center">
-
             <div class="space-y-6">
                 <div class="inline-flex items-center gap-3 border-l-4 border-[#005eb8] pl-4">
                     <img class="w-8" src="<?php echo esc_url(get_template_directory_uri()); ?>/logo-unsl-2.png" alt="">
                     <span class="text-sm text-gray-300 font-medium tracking-wide uppercase">Universidad Nacional de San Luis</span>
                 </div>
-
                 <div>
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
                         Secretaría de <br>
@@ -46,7 +53,6 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit minima earum modi eligendi voluptatum
                     </p>
                 </div>
-
                 <div class="flex flex-wrap gap-4 pt-4">
                     <a href="<?php echo home_url('/servicios'); ?>"
                         class="inline-flex items-center gap-2 bg-[#416ed2] hover:bg-[#004a99] text-white px-8 py-3 rounded-md font-semibold transition-colors duration-300 shadow-sm">
@@ -62,169 +68,162 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+</section>
+
+<section>
 
 
 
+    <?php
+    $menu_dia = saebu_get_menu_del_dia();
 
-            <?php
+    if ($menu_dia) :
+        // Obtención de datos
+        $fecha     = get_post_meta($menu_dia->ID, '_menu_fecha', true);
+        $entrada   = get_post_meta($menu_dia->ID, '_menu_entrada', true);
+        $principal = get_post_meta($menu_dia->ID, '_menu_principal', true);
+        $postre    = get_post_meta($menu_dia->ID, '_menu_postre', true);
+        $precio    = get_post_meta($menu_dia->ID, '_menu_precio', true);
 
-            $menu_dia = saebu_get_menu_del_dia();
+        // Sin TACC
+        $entrada_st   = get_post_meta($menu_dia->ID, '_menu_entrada_sintacc', true);
+        $principal_st = get_post_meta($menu_dia->ID, '_menu_principal_sintacc', true);
+        $postre_st    = get_post_meta($menu_dia->ID, '_menu_postre_sintacc', true);
+    ?>
 
-            if ($menu_dia) :
+        <div class="w-full bg-white  shadow-lg border-l-4 border-r-4 border-[#005eb8] overflow-hidden"> <!--  my-6 -->  
 
-                $fecha     = get_post_meta($menu_dia->ID, '_menu_fecha', true);
-                $entrada   = get_post_meta($menu_dia->ID, '_menu_entrada', true);
-                $principal = get_post_meta($menu_dia->ID, '_menu_principal', true);
-                $postre    = get_post_meta($menu_dia->ID, '_menu_postre', true);
-                $precio    = get_post_meta($menu_dia->ID, '_menu_precio', true);
+            <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[140px]">
 
-                // Sin TACC
-                $entrada_st   = get_post_meta($menu_dia->ID, '_menu_entrada_sintacc', true);
-                $principal_st = get_post_meta($menu_dia->ID, '_menu_principal_sintacc', true);
-                $postre_st    = get_post_meta($menu_dia->ID, '_menu_postre_sintacc', true);
-
-
-                echo "";
-                echo "";
-            ?>
-                <div class="lg:pl-8">
-                    <div class="bg-white rounded-lg shadow-xl overflow-hidden max-w-md mx-auto border-t-4 border-[#005eb8]">
-
-                        <div class="bg-gray-50 p-5 border-b border-gray-200 flex justify-between items-center">
-                            <div>
-                                <h1 class="text-lg font-bold text-gray-800 flex items-center gap-2">
-                                    <svg class="w-5 h-5 text-[#005eb8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                                    </svg>
-                                    Comedor Universitario
-                                </h1>
-                                <p class="text-sm text-gray-500">Menú del día</p>
-                            </div>
-                            <div class="text-center bg-[#416ed2] text-white px-3 py-1 rounded">
-                                <span class="block text-lg font-bold leading-none"><?php echo date_i18n('d', strtotime($fecha)); ?></span>
-                                <span class="block text-xs uppercase"><?php echo date_i18n('M', strtotime($fecha)); ?></span>
+                <div class="bg-gray-50 p-4 flex flex-row lg:flex-col justify-between lg:justify-center items-center text-center border-b lg:border-b-0 lg:border-r border-gray-100 lg:col-span-2">
+                    <div class="mb-0 lg:mb-2">
+                        <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider">Menú del</h3>
+                        <div class="flex items-center justify-center gap-1 text-[#005eb8]">
+                            <span class="text-3xl font-bold leading-none"><?php echo date_i18n('d', strtotime($fecha)); ?></span>
+                            <div class="flex flex-col text-xs font-bold uppercase leading-none text-left">
+                                <span><?php echo date_i18n('M', strtotime($fecha)); ?></span>
+                                <span><?php echo date_i18n('Y', strtotime($fecha)); ?></span>
                             </div>
                         </div>
-
-                        <div class="p-6 space-y-4">
-
-                            <div class="space-y-3">
-                                <?php if ($entrada): ?>
-                                    <div class="flex items-start gap-4">
-                                        <span class="text-xs font-bold text-gray-700 uppercase w-16 pt-1">Entrada</span>
-                                        <span class="text-gray-600 font-medium flex-1 text-sm"><?php echo esc_html($entrada); ?></span>
-                                    </div>
-                                <?php endif; ?>
-
-                                <?php if ($principal): ?>
-                                    <div class="flex items-start gap-4">
-                                        <span class="text-xs font-bold text-[#005eb8] uppercase w-16 pt-1">Principal</span>
-                                        <span class="text-gray-900 font-bold flex-1 text-lg leading-tight"><?php echo esc_html($principal); ?></span>
-                                    </div>
-                                <?php endif; ?>
-
-                                <?php if ($postre): ?>
-                                    <div class="flex items-start gap-4">
-                                        <span class="text-xs font-bold text-gray-700 uppercase w-16 pt-1">Postre</span>
-                                        <span class="text-gray-600 font-medium flex-1 text-sm"><?php echo esc_html($postre); ?></span>
-                                    </div>
-                                <?php endif; ?>
-                            </div>
-
-                            <?php
-
-                            if ($principal_st || $entrada_st || $postre_st):
-                            ?>
-                                <div class="mt-4 pt-4 border-t border-dashed border-gray-200">
-                                    <h4 class="text-xs font-bold text-[#70b62c] uppercase mb-3 flex items-center gap-1">
-                                        Opción Sin TACC
-                                    </h4>
-                                    <div class="space-y-2 pl-2   border-[#70b62c]/30">
- 
-                                        <?php if ($entrada_st): ?>
-                                            <div class="flex items-center gap-2">
-                                                <span class="text-[10px] font-bold text-gray-700 uppercase w-14">Entrada</span>
-                                                <span class="text-gray-600 text-sm"><?php echo esc_html($entrada_st); ?></span>
-                                            </div>
-                                        <?php endif; ?>
-
-                                        <?php if ($principal_st): ?>
-                                            <div class="flex items-center gap-2">
-                                                <span class="text-[10px] font-bold text-[#70b62c] uppercase w-14">Principal</span>
-                                                <span class="text-gray-800 font-semibold text-base"><?php echo esc_html($principal_st); ?></span>
-                                            </div>
-                                        <?php endif; ?>
-
-                                        <?php if ($postre_st): ?>
-                                            <div class="flex items-center gap-2">
-                                                <span class="text-[10px] font-bold text-gray-700 uppercase w-14">Postre</span>
-                                                <span class="text-gray-600 text-sm"><?php echo esc_html($postre_st); ?></span>
-                                            </div>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
-
-                            <?php if ($precio): ?>
-                                <div class="mt-6 pt-4 border-t border-gray-100 flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">Valor del ticket</span>
-                                    <span class="text-xl font-bold text-[#005eb8]"><?php echo esc_html($precio); ?></span>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-
-                        <div class="bg-blue-50 p-4 border-t border-blue-100 text-center">
-                            <p class="text-xs text-blue-600 mb-2 font-medium">¿Querés saber el menú antes que nadie?</p>
-                            <button id="btn-suscribir-menu" class="w-full bg-[#005eb8] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow transition-colors duration-200 flex items-center justify-center gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                                </svg>
-                                Recibir notificación diaria
-                            </button>
-                        </div>
-
+                    </div>
+                    <div class="hidden lg:block mt-2">
+                        <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-blue-100 text-blue-800 text-[10px] font-bold uppercase">
+                            Comedor UNSL
+                        </span>
                     </div>
                 </div>
-            <?php endif; ?>
+
+                <div class="p-5 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-gray-100 lg:col-span-4 relative">
+                    <div class="absolute top-2 right-2 opacity-5 pointer-events-none">
+                        <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z" />
+                        </svg>
+                    </div>
+
+                    <div class="space-y-3 z-10">
+                        <?php if ($entrada): ?>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wide w-16 shrink-0">Entrada</span>
+                                <span class="text-sm text-gray-600 font-medium leading-tight"><?php echo esc_html($entrada); ?></span>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if ($principal): ?>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-wide w-16 shrink-0">Principal</span>
+                                <span class="text-lg text-gray-900 font-bold leading-tight"><?php echo esc_html($principal); ?></span>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if ($postre): ?>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wide w-16 shrink-0">Postre</span>
+                                <span class="text-sm text-gray-600 font-medium leading-tight"><?php echo esc_html($postre); ?></span>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+
+                <?php if ($principal_st || $entrada_st): ?>
+                    <div class="p-5 flex flex-col justify-center bg-[#fcfdfa] border-b lg:border-b-0 lg:border-r border-dashed border-gray-200 lg:col-span-3">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="w-2 h-2 rounded-full bg-[#70b62c]"></span>
+                            <h4 class="text-xs font-bold text-[#437017] uppercase tracking-wider">Opción Sin TACC</h4>
+                        </div>
+
+                        <div class="space-y-2 pl-2 border-l-2 border-[#70b62c]/20">
+                            <?php if ($principal_st): ?>
+                                <div>
+                                    <p class="text-[10px] text-[#437017] font-bold uppercase mb-0.5">Principal</p>
+                                    <p class="text-sm font-semibold text-gray-800 leading-tight"><?php echo esc_html($principal_st); ?></p>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if ($entrada_st || $postre_st): ?>
+                                <div class="text-xs text-gray-500 mt-1">
+                                    <?php if ($entrada_st) echo '<span class="mr-2">Ent: ' . esc_html($entrada_st) . '</span>'; ?>
+                                    <?php if ($postre_st) echo '<span>Pos: ' . esc_html($postre_st) . '</span>'; ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <div class="hidden lg:block lg:col-span-3 bg-gray-50/50"></div>
+                <?php endif; ?>
+
+                <div class="p-4 flex flex-col justify-between items-center text-center bg-gray-50 lg:col-span-3">
+                    <?php if ($precio): ?>
+                        <div class="mt-2 mb-3">
+                            <span class="block text-[10px] text-gray-500 uppercase font-semibold">Valor Ticket</span>
+                            <span class="text-2xl font-bold text-[#005eb8]"><?php echo esc_html($precio); ?></span>
+                        </div>
+                    <?php endif; ?>
+
+                    <button id="btn-suscribir-menu" class="group w-full bg-white hover:bg-[#005eb8] text-[#005eb8] hover:text-white border border-[#005eb8] font-bold py-2 px-3 rounded text-xs transition-all duration-200 flex items-center justify-center gap-2 shadow-sm hover:shadow-md">
+                        <svg class="w-4 h-4 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                        </svg>
+                        <span>Notificarme</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    <?php endif; ?>
 
 
-
-
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    const botones = document.querySelectorAll('#btn-suscribir-menu, #btn-suscribir-single');
-
-                    botones.forEach(function(boton) {
-                        boton.addEventListener('click', function(e) {
-                            e.preventDefault();
-
-                            // Detectar dispositivo
-                            const userAgent = navigator.userAgent;
-                            const isIOS = /iPhone|iPad|iPod/.test(userAgent);
-                            const isAndroid = /Android/.test(userAgent);
-                            const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
-
-                            // Si es iOS y NO está instalada la PWA
-                            if (isIOS && !isStandalone) {
-                                mostrarInstruccionesIOS();
-                                return;
-                            }
-
-                            // Si es Android y NO está instalada
-                            if (isAndroid && !isStandalone) {
-                                mostrarInstruccionesAndroid();
-                                return;
-                            }
-
-                            // Si ya está instalada o es desktop, mostrar prompt normal
-                            activarNotificaciones(boton);
-                        });
-                    });
-
-                    // Función para mostrar instrucciones iOS
-                    function mostrarInstruccionesIOS() {
-                        const modal = document.createElement('div');
-                        modal.innerHTML = `
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const botones = document.querySelectorAll('#btn-suscribir-menu, #btn-suscribir-single');
+            botones.forEach(function(boton) {
+                boton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Detectar dispositivo
+                    const userAgent = navigator.userAgent;
+                    const isIOS = /iPhone|iPad|iPod/.test(userAgent);
+                    const isAndroid = /Android/.test(userAgent);
+                    const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+                    // Si es iOS y NO está instalada la PWA
+                    if (isIOS && !isStandalone) {
+                        mostrarInstruccionesIOS();
+                        return;
+                    }
+                    // Si es Android y NO está instalada
+                    if (isAndroid && !isStandalone) {
+                        mostrarInstruccionesAndroid();
+                        return;
+                    }
+                    // Si ya está instalada o es desktop, mostrar prompt normal
+                    activarNotificaciones(boton);
+                });
+            });
+            // Función para mostrar instrucciones iOS
+            function mostrarInstruccionesIOS() {
+                const modal = document.createElement('div');
+                modal.innerHTML = `
                 <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px;">
                     <div style="background: white; border-radius: 20px; padding: 30px; max-width: 400px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
                         <div style="font-size: 50px; margin-bottom: 15px;">📱</div>
@@ -249,20 +248,18 @@
                                 <span style="color: #333;">Abre la app desde tu pantalla de inicio y vuelve aquí</span>
                             </div>
                         </div>
-
                         <button onclick="this.closest('div').parentElement.remove()" style="background: #005eb8; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-weight: bold; font-size: 16px; cursor: pointer; width: 100%;">
                             Entendido
                         </button>
                     </div>
                 </div>
             `;
-                        document.body.appendChild(modal);
-                    }
-
-                    // Función para mostrar instrucciones Android
-                    function mostrarInstruccionesAndroid() {
-                        const modal = document.createElement('div');
-                        modal.innerHTML = `
+                document.body.appendChild(modal);
+            }
+            // Función para mostrar instrucciones Android
+            function mostrarInstruccionesAndroid() {
+                const modal = document.createElement('div');
+                modal.innerHTML = `
                 <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px;">
                     <div style="background: white; border-radius: 20px; padding: 30px; max-width: 400px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
                         <div style="font-size: 50px; margin-bottom: 15px;">📱</div>
@@ -287,52 +284,46 @@
                                 <span style="color: #333;">Abrí la app y volvé a activar las notificaciones</span>
                             </div>
                         </div>
-
                         <button onclick="this.closest('div').parentElement.remove()" style="background: #005eb8; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-weight: bold; font-size: 16px; cursor: pointer; width: 100%;">
                             Entendido
                         </button>
                     </div>
                 </div>
             `;
-                        document.body.appendChild(modal);
-                    }
-
-                    // Función para activar notificaciones (cuando ya está instalada)
-                    function activarNotificaciones(boton) {
-                        const textoOriginal = boton.innerHTML;
-                        boton.innerHTML = '<span class="text-xs">Procesando...</span>';
-
-                        window.OneSignal = window.OneSignal || [];
-                        window.OneSignal.push(function() {
-                            if (typeof window.OneSignal.showSlidedownPrompt === 'function') {
-                                window.OneSignal.showSlidedownPrompt({
-                                    force: true
-                                });
-                            } else if (typeof window.OneSignal.Slidedown === 'object' &&
-                                typeof window.OneSignal.Slidedown.promptPush === 'function') {
-                                window.OneSignal.Slidedown.promptPush({
-                                    force: true
-                                });
-                            } else if (typeof window.OneSignal.showNativePrompt === 'function') {
-                                window.OneSignal.showNativePrompt();
-                            } else {
-                                window.OneSignal.registerForPushNotifications();
-                            }
+                document.body.appendChild(modal);
+            }
+            // Función para activar notificaciones (cuando ya está instalada)
+            function activarNotificaciones(boton) {
+                const textoOriginal = boton.innerHTML;
+                boton.innerHTML = '<span class="text-xs">Procesando...</span>';
+                window.OneSignal = window.OneSignal || [];
+                window.OneSignal.push(function() {
+                    if (typeof window.OneSignal.showSlidedownPrompt === 'function') {
+                        window.OneSignal.showSlidedownPrompt({
+                            force: true
                         });
-
-                        setTimeout(() => {
-                            boton.innerHTML = textoOriginal;
-                        }, 2000);
+                    } else if (typeof window.OneSignal.Slidedown === 'object' &&
+                        typeof window.OneSignal.Slidedown.promptPush === 'function') {
+                        window.OneSignal.Slidedown.promptPush({
+                            force: true
+                        });
+                    } else if (typeof window.OneSignal.showNativePrompt === 'function') {
+                        window.OneSignal.showNativePrompt();
+                    } else {
+                        window.OneSignal.registerForPushNotifications();
                     }
                 });
-            </script>
-
-
-
-
-        </div>
-    </div>
+                setTimeout(() => {
+                    boton.innerHTML = textoOriginal;
+                }, 2000);
+            }
+        });
+    </script>
 </section>
+
+
+
+
 
 <section class="bg-[#416ed2] py-8">
     <div class="container mx-auto px-4">
