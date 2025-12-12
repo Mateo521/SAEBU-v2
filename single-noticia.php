@@ -30,7 +30,7 @@
                     ?>
                 </div>
 
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight tracking-tight">
+                <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 leading-tight tracking-tight">
                     <?php the_title(); ?>
                 </h1>
 
@@ -95,7 +95,7 @@
                         prose-p:leading-relaxed prose-p:text-slate-700
                         prose-a:text-[#005eb8] prose-a:no-underline hover:prose-a:underline prose-a:font-semibold
                         prose-img:rounded-sm prose-img:border prose-img:border-gray-200
-                        first-letter:text-5xl first-letter:font-bold first-letter:text-slate-900 first-letter:float-left first-letter:mr-3 first-letter:mt-1">
+                        ">
                 <?php the_content(); ?>
             </div>
 

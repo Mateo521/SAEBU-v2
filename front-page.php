@@ -111,7 +111,7 @@
                             <div class="space-y-3">
                                 <?php if ($entrada): ?>
                                     <div class="flex items-start gap-4">
-                                        <span class="text-xs font-bold text-gray-400 uppercase w-16 pt-1">Entrada</span>
+                                        <span class="text-xs font-bold text-gray-700 uppercase w-16 pt-1">Entrada</span>
                                         <span class="text-gray-600 font-medium flex-1 text-sm"><?php echo esc_html($entrada); ?></span>
                                     </div>
                                 <?php endif; ?>
@@ -125,7 +125,7 @@
 
                                 <?php if ($postre): ?>
                                     <div class="flex items-start gap-4">
-                                        <span class="text-xs font-bold text-gray-400 uppercase w-16 pt-1">Postre</span>
+                                        <span class="text-xs font-bold text-gray-700 uppercase w-16 pt-1">Postre</span>
                                         <span class="text-gray-600 font-medium flex-1 text-sm"><?php echo esc_html($postre); ?></span>
                                     </div>
                                 <?php endif; ?>
@@ -140,10 +140,10 @@
                                         Opción Sin TACC
                                     </h4>
                                     <div class="space-y-2 pl-2   border-[#70b62c]/30">
-
+ 
                                         <?php if ($entrada_st): ?>
                                             <div class="flex items-center gap-2">
-                                                <span class="text-[10px] font-bold text-gray-400 uppercase w-14">Entrada</span>
+                                                <span class="text-[10px] font-bold text-gray-700 uppercase w-14">Entrada</span>
                                                 <span class="text-gray-600 text-sm"><?php echo esc_html($entrada_st); ?></span>
                                             </div>
                                         <?php endif; ?>
@@ -157,7 +157,7 @@
 
                                         <?php if ($postre_st): ?>
                                             <div class="flex items-center gap-2">
-                                                <span class="text-[10px] font-bold text-gray-400 uppercase w-14">Postre</span>
+                                                <span class="text-[10px] font-bold text-gray-700 uppercase w-14">Postre</span>
                                                 <span class="text-gray-600 text-sm"><?php echo esc_html($postre_st); ?></span>
                                             </div>
                                         <?php endif; ?>
