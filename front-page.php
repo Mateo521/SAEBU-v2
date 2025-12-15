@@ -55,24 +55,7 @@
                 </div>
                 <div class="flex flex-wrap items-center gap-4 pt-4">
 
-                    <div class="gtranslate_wrapper"></div>
-                    <script>
-                        window.gtranslateSettings = {
-                            "default_language": "es",
-                            "native_language_names": true,
-                            "detect_browser_language": true,
-                            "languages": ["en", "es", "pt", "de"],
-                            "globe_color": "#66aaff",
-                            "wrapper_selector": ".gtranslate_wrapper",
-                            "alt_flags": {
-                                "en": "usa",
-                                "pt": "brazil",
-                                "es": "argentina"
-                            }
-                        }
-                    </script>
-                    <script src="https://cdn.gtranslate.net/widgets/latest/globe.js" defer></script>
-
+            
                     <a href="<?php echo home_url('/servicios'); ?>"
                         class="inline-flex items-center gap-2 bg-[#416ed2] hover:bg-[#004a99] text-white px-8 py-3 rounded-md font-semibold transition-colors duration-300 shadow-sm">
                         <span>Lorem</span>

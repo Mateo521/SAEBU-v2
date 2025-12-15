@@ -84,7 +84,27 @@
                 </div>
 
                 <!-- Desktop Navigation with Dropdowns -->
-                <nav class="hidden lg:flex items-center">
+                <nav class="hidden lg:flex gap-1 items-center">
+
+                    <div class="gtranslate_wrapper"></div>
+                    <script>
+                        window.gtranslateSettings = {
+                            "default_language": "en",
+                            "native_language_names": true,
+                            "detect_browser_language": true,
+                            "languages": ["en", "es", "pt", "de"],
+                            "globe_color": "#66aaff",
+                            "wrapper_selector": ".gtranslate_wrapper",
+                            "alt_flags": {
+                                "en": "usa",
+                                "pt": "brazil",
+                                "es": "argentina"
+                            },
+                            "globe_size": 20
+                        }
+                    </script>
+                    <script src="https://cdn.gtranslate.net/widgets/latest/globe.js" defer></script>
+
                     <?php
                     if (has_nav_menu('menu-principal')) {
                         wp_nav_menu(array(
@@ -104,6 +124,8 @@
                     }
 
                     ?>
+
+
 
 
                 </nav>
