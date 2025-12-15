@@ -79,4 +79,38 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Noticias Slider
+    const noticiasSwiper = document.querySelector('.noticias-swiper');
+    if (noticiasSwiper) {
+        new Swiper('.noticias-swiper', {
+            loop: true,
+            spaceBetween: 32,
+            slidesPerView: 1,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next-noticias',
+                prevEl: '.swiper-button-prev-noticias',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 32,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 32,
+                },
+            },
+        });
+    }
+
+
 });

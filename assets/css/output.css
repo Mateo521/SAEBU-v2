@@ -47,6 +47,7 @@
     --color-teal-500: oklch(70.4% 0.14 182.503);
     --color-teal-600: oklch(60% 0.118 184.704);
     --color-teal-700: oklch(51.1% 0.096 186.391);
+    --color-teal-800: oklch(43.7% 0.078 188.216);
     --color-sky-500: oklch(68.5% 0.169 237.323);
     --color-sky-600: oklch(58.8% 0.158 241.966);
     --color-blue-50: oklch(97% 0.014 254.604);
@@ -61,8 +62,6 @@
     --color-blue-900: oklch(37.9% 0.146 265.522);
     --color-indigo-50: oklch(96.2% 0.018 272.314);
     --color-indigo-100: oklch(93% 0.034 272.788);
-    --color-indigo-200: oklch(87% 0.065 274.039);
-    --color-indigo-300: oklch(78.5% 0.115 274.713);
     --color-indigo-500: oklch(58.5% 0.233 277.117);
     --color-indigo-600: oklch(51.1% 0.262 276.966);
     --color-indigo-700: oklch(45.7% 0.24 277.023);
@@ -1572,6 +1571,9 @@
   .bg-teal-600 {
     background-color: var(--color-teal-600);
   }
+  .bg-teal-700 {
+    background-color: var(--color-teal-700);
+  }
   .bg-transparent {
     background-color: transparent;
   }
@@ -1809,6 +1811,9 @@
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
+  .px-12 {
+    padding-inline: calc(var(--spacing) * 12);
+  }
   .py-0 {
     padding-block: calc(var(--spacing) * 0);
   }
@@ -1895,6 +1900,9 @@
   }
   .pb-4 {
     padding-bottom: calc(var(--spacing) * 4);
+  }
+  .pb-12 {
+    padding-bottom: calc(var(--spacing) * 12);
   }
   .pb-16 {
     padding-bottom: calc(var(--spacing) * 16);
@@ -2173,9 +2181,6 @@
   }
   .text-orange-500 {
     color: var(--color-orange-500);
-  }
-  .text-orange-600 {
-    color: var(--color-orange-600);
   }
   .text-orange-700 {
     color: var(--color-orange-700);
@@ -2574,10 +2579,10 @@
       }
     }
   }
-  .group-hover\:bg-teal-600 {
+  .group-hover\:bg-teal-700 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
-        background-color: var(--color-teal-600);
+        background-color: var(--color-teal-700);
       }
     }
   }
@@ -2949,10 +2954,10 @@
       }
     }
   }
-  .hover\:bg-teal-700 {
+  .hover\:bg-teal-800 {
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-teal-700);
+        background-color: var(--color-teal-800);
       }
     }
   }
@@ -3628,6 +3633,11 @@
   .lg\:px-8 {
     @media (width >= 64rem) {
       padding-inline: calc(var(--spacing) * 8);
+    }
+  }
+  .lg\:px-16 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 16);
     }
   }
   .lg\:text-3xl {

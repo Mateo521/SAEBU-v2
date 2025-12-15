@@ -11,7 +11,7 @@
         $final_image_url = '';
         // 3. Lógica de selección
         if ($images && !empty($images)) {
-            // --- OPCIÓN RANDOM SIMPLE ---
+
             // Elegimos una clave aleatoria del array de imágenes encontradas
             $random_key = array_rand($images);
             $selected_path = $images[$random_key];
@@ -53,7 +53,26 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit minima earum modi eligendi voluptatum
                     </p>
                 </div>
-                <div class="flex flex-wrap gap-4 pt-4">
+                <div class="flex flex-wrap items-center gap-4 pt-4">
+
+                    <div class="gtranslate_wrapper"></div>
+                    <script>
+                        window.gtranslateSettings = {
+                            "default_language": "es",
+                            "native_language_names": true,
+                            "detect_browser_language": true,
+                            "languages": ["en", "es", "pt", "de"],
+                            "globe_color": "#66aaff",
+                            "wrapper_selector": ".gtranslate_wrapper",
+                            "alt_flags": {
+                                "en": "usa",
+                                "pt": "brazil",
+                                "es": "argentina"
+                            }
+                        }
+                    </script>
+                    <script src="https://cdn.gtranslate.net/widgets/latest/globe.js" defer></script>
+
                     <a href="<?php echo home_url('/servicios'); ?>"
                         class="inline-flex items-center gap-2 bg-[#416ed2] hover:bg-[#004a99] text-white px-8 py-3 rounded-md font-semibold transition-colors duration-300 shadow-sm">
                         <span>Lorem</span>
@@ -93,7 +112,7 @@
         $postre_st    = get_post_meta($menu_dia->ID, '_menu_postre_sintacc', true);
     ?>
 
-        <div class="w-full bg-white  shadow-lg border-l-4 border-r-4 border-[#005eb8] overflow-hidden"> <!--  my-6 -->  
+        <div class="w-full bg-white  shadow-lg border-l-4 border-r-4 border-[#005eb8] overflow-hidden"> <!--  my-6 -->
 
             <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[140px]">
 
@@ -517,72 +536,95 @@
 </section>
 
 <section class="py-16 bg-gray-100 border-t border-gray-200">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-4 ">
         <div class="flex items-center justify-between mb-10 max-w-7xl mx-auto">
-            <h2 class="text-2xl font-bold text-gray-900 border-l-4 border-[#005eb8] pl-3">Novedades Institucionales</h2>
-            <a href="<?php echo get_post_type_archive_link('noticia'); ?>" class="text-sm font-semibold text-[#005eb8] hover:underline">Ver archivo de noticias &rarr;</a>
+            <h2 class="text-2xl font-bold text-gray-900 border-l-4 border-[#005eb8] pl-3">Novedades</h2>
+            <a href="<?php echo get_post_type_archive_link('noticia'); ?>" class="text-sm font-semibold text-[#005eb8] hover:underline">Ver archivo de noticias →</a>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            <?php
-            $latest_news = new WP_Query(array(
-                'post_type' => 'noticia',
-                'posts_per_page' => 3,
-            ));
+        <div class="max-w-7xl mx-auto relative">
+            <!-- Contenedor con padding solo para las flechas -->
+            <div class="px-12 lg:px-16 relative">
+                <!-- Swiper Container -->
+                <div class="swiper noticias-swiper pb-12">
+                    <div class="swiper-wrapper">
+                        <?php
+                        $latest_news = new WP_Query(array(
+                            'post_type' => 'noticia',
+                            'posts_per_page' => 6,
+                        ));
 
-            if ($latest_news->have_posts()) :
-                while ($latest_news->have_posts()) : $latest_news->the_post();
-            ?>
-                    <article class="bg-white rounded-sm shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
-                        <a title="Link <?php the_title(); ?>" href="<?php the_permalink(); ?>" class="block relative aspect-video overflow-hidden bg-gray-200">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <?php the_post_thumbnail('medium_large', array('class' => 'w-full h-full object-cover transition-transform duration-500 hover:scale-105')); ?>
-                            <?php else : ?>
-                                <div class="w-full h-full flex items-center justify-center text-gray-700">
-                                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                    </svg>
+                        if ($latest_news->have_posts()) :
+                            while ($latest_news->have_posts()) : $latest_news->the_post();
+                        ?>
+                                <div class="swiper-slide">
+                                    <article class="bg-white rounded-sm shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+                                        <a title="Link <?php the_title(); ?>" href="<?php the_permalink(); ?>" class="block relative aspect-video overflow-hidden bg-gray-200">
+                                            <?php if (has_post_thumbnail()) : ?>
+                                                <?php the_post_thumbnail('medium_large', array('class' => 'w-full h-full object-cover transition-transform duration-500 hover:scale-105')); ?>
+                                            <?php else : ?>
+                                                <div class="w-full h-full flex items-center justify-center text-gray-700">
+                                                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                                    </svg>
+                                                </div>
+                                            <?php endif; ?>
+                                            <?php
+                                            $terms = get_the_terms(get_the_ID(), 'departamento');
+                                            if ($terms && !is_wp_error($terms)) :
+                                                $term = array_shift($terms);
+                                            ?>
+                                                <span class="absolute bottom-0 left-0 bg-[#416ed2] text-white text-xs font-bold px-3 py-1">
+                                                    <?php echo esc_html($term->name); ?>
+                                                </span>
+                                            <?php endif; ?>
+                                        </a>
+
+                                        <div class="p-5 flex-1 flex flex-col">
+                                            <div class="text-xs text-gray-500 mb-2 font-medium">
+                                                <?php echo get_the_date('d \d\e F, Y'); ?>
+                                            </div>
+
+                                            <h3 class="text-lg font-bold text-gray-900 leading-tight mb-3 flex-1">
+                                                <a href="<?php the_permalink(); ?>" class="hover:text-[#005eb8] transition-colors">
+                                                    <?php the_title(); ?>
+                                                </a>
+                                            </h3>
+
+                                            <div class="text-gray-600 text-sm line-clamp-3 mb-4">
+                                                <?php the_excerpt(); ?>
+                                            </div>
+
+                                            <a href="<?php the_permalink(); ?>" class="text-[#005eb8] text-sm font-semibold hover:underline mt-auto inline-block">
+                                                Leer noticia completa
+                                            </a>
+                                        </div>
+                                    </article>
                                 </div>
-                            <?php endif; ?>
-                            <?php
-                            $terms = get_the_terms(get_the_ID(), 'departamento');
-                            if ($terms && !is_wp_error($terms)) :
-                                $term = array_shift($terms);
-                            ?>
-                                <span class="absolute bottom-0 left-0 bg-[#416ed2] text-white text-xs font-bold px-3 py-1">
-                                    <?php echo esc_html($term->name); ?>
-                                </span>
-                            <?php endif; ?>
-                        </a>
+                        <?php
+                            endwhile;
+                            wp_reset_postdata();
+                        endif;
+                        ?>
+                    </div>
 
-                        <div class="p-5 flex-1 flex flex-col">
-                            <div class="text-xs text-gray-500 mb-2 font-medium">
-                                <?php echo get_the_date('d \d\e F, Y'); ?>
-                            </div>
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
 
-                            <h3 class="text-lg font-bold text-gray-900 leading-tight mb-3 flex-1">
-                                <a href="<?php the_permalink(); ?>" class="hover:text-[#005eb8] transition-colors">
-                                    <?php the_title(); ?>
-                                </a>
-                            </h3>
-
-                            <div class="text-gray-600 text-sm line-clamp-3 mb-4">
-                                <?php the_excerpt(); ?>
-                            </div>
-
-                            <a href="<?php the_permalink(); ?>" class="text-[#005eb8] text-sm font-semibold hover:underline mt-auto inline-block">
-                                Leer noticia completa
-                            </a>
-                        </div>
-                    </article>
-            <?php
-                endwhile;
-                wp_reset_postdata();
-            endif;
-            ?>
+                <!-- Navigation Buttons -->
+                <div class="swiper-button-prev-noticias"></div>
+                <div class="swiper-button-next-noticias"></div>
+            </div>
         </div>
+
+
+
+
+
     </div>
 </section>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

@@ -627,3 +627,119 @@ header.sticky {
         display: none !important;
     }
 }
+
+
+
+
+
+
+
+/* Prevenir scroll horizontal en el body */
+body {
+    overflow-x: hidden;
+}
+
+/* Contenedor del swiper */
+.noticias-swiper {
+    overflow: hidden; /* Cambiado de visible a hidden */
+}
+
+/* Flechas personalizadas */
+.swiper-button-prev-noticias,
+.swiper-button-next-noticias {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    color: #005eb8;
+}
+
+.swiper-button-prev-noticias {
+    left: 0; /* Ahora están dentro del padding */
+}
+
+.swiper-button-next-noticias {
+    right: 0;
+}
+
+.swiper-button-prev-noticias:hover,
+.swiper-button-next-noticias:hover {
+    background: #005eb8;
+    color: white;
+    box-shadow: 0 6px 16px rgba(0, 94, 184, 0.3);
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* Iconos de las flechas */
+.swiper-button-prev-noticias::after,
+.swiper-button-next-noticias::after {
+    font-family: swiper-icons;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.swiper-button-prev-noticias::after {
+    content: 'prev';
+}
+
+.swiper-button-next-noticias::after {
+    content: 'next';
+}
+
+/* Estados deshabilitados */
+.swiper-button-prev-noticias.swiper-button-disabled,
+.swiper-button-next-noticias.swiper-button-disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .swiper-button-prev-noticias,
+    .swiper-button-next-noticias {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .swiper-button-prev-noticias::after,
+    .swiper-button-next-noticias::after {
+        font-size: 20px;
+    }
+}
+
+/* Ocultar flechas en móvil si quieres */
+@media (max-width: 768px) {
+    .swiper-button-prev-noticias,
+    .swiper-button-next-noticias {
+        display: none; /* Opcional: solo usar swipe en móvil */
+    }
+}
+
+/* Personalización de la paginación */
+.noticias-swiper .swiper-pagination {
+    bottom: 0 !important;
+}
+
+.noticias-swiper .swiper-pagination-bullet {
+    background: #005eb8;
+    opacity: 0.5;
+    width: 10px;
+    height: 10px;
+}
+
+.noticias-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 24px;
+    border-radius: 5px;
+}

@@ -66,7 +66,7 @@ get_header();
                     <div>
                         <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
                             <span class="w-2 h-8 bg-blue-900 rounded-sm"></span>
-                            El Deporte en la Universidad
+                            El Deporte en la universidad
                         </h2>
                         <p class="text-gray-600 text-lg mb-6 leading-relaxed">
                             Consideramos la actividad física no solo como un medio para la salud, sino como una herramienta pedagógica fundamental para la formación integral de nuestros estudiantes.
@@ -82,7 +82,7 @@ get_header();
                                 <div class="p-1 bg-blue-100 rounded text-blue-800 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg></div>
-                                <span class="text-gray-700"><strong>Inclusión Social:</strong> Un espacio de encuentro e igualdad para toda la comunidad.</span>
+                                <span class="text-gray-700"><strong>Inclusión social:</strong> Un espacio de encuentro e igualdad para toda la comunidad.</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <div class="p-1 bg-blue-100 rounded text-blue-800 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,11 +104,11 @@ get_header();
                         </div>
                         <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-900">
                             <span class="block text-3xl font-bold text-gray-900 mb-1">3</span>
-                            <span class="text-sm text-gray-500 uppercase font-semibold">Centros Deportivos</span>
+                            <span class="text-sm text-gray-500 uppercase font-semibold">Centros deportivos</span>
                         </div>
                         <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-orange-500">
                             <span class="block text-3xl font-bold text-gray-900 mb-1">JUR</span>
-                            <span class="text-sm text-gray-500 uppercase font-semibold">Competencia Regional</span>
+                            <span class="text-sm text-gray-500 uppercase font-semibold">Competencia regional</span>
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,7 @@ get_header();
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
                     <div class="text-center mb-10">
-                        <h2 class="text-3xl font-bold text-gray-900">Nuestras Disciplinas</h2>
+                        <h2 class="text-3xl font-bold text-gray-900">Nuestras disciplinas</h2>
                         <p class="text-gray-500 mt-2">Disponibles en modalidad recreativa y competitiva</p>
                     </div>
 
@@ -127,14 +127,14 @@ get_header();
                         <?php
                         $disciplinas = [
                             ['nombre' => 'Atletismo', 'icono' => 'M13 10V3L4 14h7v7l9-11h-7z'],
-                            ['nombre' => 'Básquetbol', 'icono' => 'M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z'],
-                            ['nombre' => 'Fútbol', 'icono' => 'M21 12a9 9 0 11-18 0 9 9 0 0118 0z'],
+                            ['nombre' => 'Básquetbol', 'icono' => 'M12 2a10 10 0 1 0 10 10A10.009 10.009 0 0 0 12 2Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.093 20.093 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM10 3.707a8.82 8.82 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.755 45.755 0 0 0 10 3.707Zm-6.358 6.555a8.57 8.57 0 0 1 4.73-5.981 53.99 53.99 0 0 1 3.168 4.941 32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.641 31.641 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM12 20.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 15.113 13a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z'],
+                            ['nombre' => 'Fútbol', 'icono' => 'M4.37 7.657c2.063.528 2.396 2.806 3.202 3.87 1.07 1.413 2.075 1.228 3.192 2.644 1.805 2.289 1.312 5.705 1.312 6.705M20 15h-1a4 4 0 0 0-4 4v1M8.587 3.992c0 .822.112 1.886 1.515 2.58 1.402.693 2.918.351 2.918 2.334 0 .276 0 2.008 1.972 2.008 2.026.031 2.026-1.678 2.026-2.008 0-.65.527-.9 1.177-.9H20M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z'],
                             ['nombre' => 'Vóley', 'icono' => 'M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5'],
                             ['nombre' => 'Rugby', 'icono' => 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'],
                             ['nombre' => 'Hockey', 'icono' => 'M13 10V3L4 14h7v7l9-11h-7z'],
                             ['nombre' => 'Hándball', 'icono' => 'M21 12a9 9 0 11-18 0 9 9 0 0118 0z M9 10h.01 M15 10h.01'],
                             ['nombre' => 'Tenis de Mesa', 'icono' => 'M21 12a9 9 0 11-18 0 9 9 0 0118 0z'],
-                            ['nombre' => 'Ajedrez', 'icono' => 'M11 6.5h2M11 18h2m-7-5v-2m12 2v-2'],
+                            ['nombre' => 'Ajedrez', 'icono' => 'M12 18.5A2.493 2.493 0 0 1 7.51 20H7.5a2.468 2.468 0 0 1-2.4-3.154 2.98 2.98 0 0 1-.85-5.274 2.468 2.468 0 0 1 .92-3.182 2.477 2.477 0 0 1 1.876-3.344 2.5 2.5 0 0 1 3.41-1.856A2.5 2.5 0 0 1 12 5.5m0 13v-13m0 13a2.493 2.493 0 0 0 4.49 1.5h.01a2.468 2.468 0 0 0 2.403-3.154 2.98 2.98 0 0 0 .847-5.274 2.468 2.468 0 0 0-.921-3.182 2.477 2.477 0 0 0-1.875-3.344A2.5 2.5 0 0 0 14.5 3 2.5 2.5 0 0 0 12 5.5m-8 5a2.5 2.5 0 0 1 3.48-2.3m-.28 8.551a3 3 0 0 1-2.953-5.185M20 10.5a2.5 2.5 0 0 0-3.481-2.3m.28 8.551a3 3 0 0 0 2.954-5.185'],
                             ['nombre' => 'Karate', 'icono' => 'M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z'],
                             ['nombre' => 'Yoga', 'icono' => 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'],
                             ['nombre' => 'Aeróbica', 'icono' => 'M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'],
@@ -169,7 +169,7 @@ get_header();
 
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4">
-                <h2 class="text-2xl font-bold text-center text-gray-900 mb-10">Sedes y Centros Deportivos</h2>
+                <h2 class="text-2xl font-bold text-center text-gray-900 mb-10">Sedes y Centros deportivos</h2>
 
                 <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                     <div class="border border-gray-200 rounded-lg overflow-hidden group">
@@ -215,7 +215,7 @@ get_header();
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                 </svg>
-                                <span>Campus Universitario Barranca Colorada</span>
+                                <span>Campus universitario Barranca Colorada</span>
                             </div>
                         </div>
                     </div>
@@ -227,9 +227,9 @@ get_header();
             <div class="container mx-auto px-4">
                 <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-8 items-center">
                     <div class="md:w-1/3 text-center md:text-right">
-                        <h3 class="text-2xl font-bold text-blue-900 mb-2">Competencia Regional</h3>
+                        <h3 class="text-2xl font-bold text-blue-900 mb-2">Competencia regional</h3>
                         <div class="text-6xl font-black text-gray-600">JUR</div>
-                        <p class="text-sm font-bold text-gray-500 uppercase tracking-widest mt-2">Juegos Universitarios Regionales</p>
+                        <p class="text-sm font-bold text-gray-500 uppercase tracking-widest mt-2">Juegos universitarios regionales</p>
                     </div>
                     <div class="md:w-2/3 border-l-4 border-orange-500 pl-8">
                         <p class="text-gray-700 mb-4 leading-relaxed">
@@ -249,7 +249,7 @@ get_header();
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4 max-w-6xl">
                 <div class="flex items-center justify-between mb-8">
-                    <h2 class="text-2xl font-bold text-gray-900 border-l-4 border-orange-600 pl-3">Actualidad Deportiva</h2>
+                    <h2 class="text-2xl font-bold text-gray-900 border-l-4 border-orange-600 pl-3">Actualidad deportiva</h2>
                     <a href="<?php echo get_category_link(get_cat_ID('deportes')); ?>" class="text-orange-700 text-sm font-semibold hover:underline">Ver archivo &rarr;</a>
                 </div>
 
@@ -295,7 +295,7 @@ get_header();
         <section id="contacto" class="bg-blue-900 py-16 text-white">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-2xl font-bold mb-6">Sumate al Deporte Universitario</h2>
+                    <h2 class="text-2xl font-bold mb-6">Sumate al deporte universitario</h2>
                     <div class="flex flex-col md:flex-row justify-center gap-8 items-center">
                         <div class="flex items-center gap-3">
                             <div class="p-3 bg-white/10 rounded-full">

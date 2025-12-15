@@ -68,10 +68,10 @@ get_header();
                             ['titulo' => 'Enfermería', 'desc' => 'Servicio de primeros auxilios disponible.', 'icon' => 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'],
                             ['titulo' => 'Playas Habilitadas', 'desc' => 'Sectores boyados con servicio de guardavidas.', 'icon' => 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z'],
                             ['titulo' => 'Sanitarios', 'desc' => 'Duchas con agua caliente y baños completos.', 'icon' => 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707'],
-                            ['titulo' => 'Estacionamiento', 'desc' => 'Cocheras techadas para vehículos.', 'icon' => 'M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2'],
+                            ['titulo' => 'Estacionamiento', 'desc' => 'Cocheras techadas para vehículos.', 'icon' => 'M13 7h6l2 4m-8-4v8m0-8V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v9h2m8 0H9m4 0h2m4 0h2v-4m0 0h-5m3.5 5.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm-10 0a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z'],
                             ['titulo' => 'Náutica', 'desc' => 'Desembarcadero para embarcaciones y kayaks.', 'icon' => 'M13 10V3L4 14h7v7l9-11h-7z'],
-                            ['titulo' => 'Juegos Infantiles', 'desc' => 'Plazas y espacios exclusivos para niños.', 'icon' => 'M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5'],
-                            ['titulo' => 'Pesca', 'desc' => 'Zonas habilitadas para pesca deportiva.', 'icon' => 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343'],
+                            ['titulo' => 'Juegos Infantiles', 'desc' => 'Plazas y espacios exclusivos para niños.', 'icon' => 'M8 18V6l8 6-8 6Z'],
+                            ['titulo' => 'Pesca', 'desc' => 'Zonas habilitadas para pesca deportiva.', 'icon' => 'M6 12c0 1.6 3.35786 4 7.5 4 4.1421 0 6.9231-3.2 7.5-4-.5769-.8-3.3579-4-7.5-4C9.35786 8 6 10.4 6 12Zm0 0L3 9m3 3-3 3m12.9866-3.3723h.01M14 8c-1.7264 3.302-1.7098 5.0561 0 8'],
                             ['titulo' => 'Proveeduría', 'desc' => 'Buffet, parrilla y quincho cerrado.', 'icon' => 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z']
                         ];
 

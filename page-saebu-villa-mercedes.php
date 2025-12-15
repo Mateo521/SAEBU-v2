@@ -96,7 +96,7 @@ get_header();
 
                         <div class="h-full min-h-[400px] bg-gray-100 rounded-lg overflow-hidden border border-gray-200 shadow-sm">
                              
-                            <iframe 
+                            <iframe  title="Mapa de Google"
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3357.8!2d-65.466!3d-33.676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d2deff0000000%3A0x0!2sBuenos%20Aires%20122%2C%20Villa%20Mercedes%2C%20San%20Luis!5e0!3m2!1ses!2sar!4v1234567890" 
                                 width="100%" 
                                 height="100%" 
