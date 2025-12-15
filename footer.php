@@ -7,12 +7,12 @@
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center text-white">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h1"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white leading-tight">
+                    <h1 class="text-xl font-bold text-white leading-tight">
                         <?php bloginfo('name'); ?>
-                    </h3>
+                    </h1>
                 </div>
                 <p class="text-sm text-gray-400 leading-relaxed mb-6">
                     <?php bloginfo('description'); ?>. Lorem.
@@ -38,7 +38,7 @@
             </div>
 
             <div>
-                <h4 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Contacto</h4>
+                <h1 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Contacto</h1>
                 <ul class="space-y-3 text-sm">
                     <li class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-[#005eb8] mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -63,7 +63,7 @@
             </div>
 
             <div>
-                <h4 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Áreas</h4>
+                <h1 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Áreas</h1>
                 <ul class="space-y-2 text-sm">
                     <li><a href="<?php echo home_url('/becas'); ?>" class="hover:text-[#005eb8] transition-colors">Becas</a></li>
                     <li><a href="<?php echo home_url('/comedor'); ?>" class="hover:text-[#005eb8] transition-colors">Comedor Universitario</a></li>
@@ -74,7 +74,7 @@
             </div>
 
             <div>
-                <h4 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Institucional</h4>
+                <h1 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Institucional</h1>
                 <ul class="space-y-2 text-sm">
                     <li><a href="<?php echo home_url('/autoridades'); ?>" class="hover:text-[#005eb8] transition-colors">Autoridades</a></li>
                     <li><a href="<?php echo home_url('/sedes'); ?>" class="hover:text-[#005eb8] transition-colors">Sedes Regionales</a></li>
@@ -110,7 +110,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // ===== SCROLL TO TOP =====
+        
         const scrollBtn = document.getElementById('scroll-to-top');
 
         if (scrollBtn) {
@@ -132,7 +132,7 @@
             });
         }
 
-        // ===== AUTO-AJUSTE DE DROPDOWNS =====
+      
         function adjustDropdowns() {
             // Solo en desktop
             if (window.innerWidth < 1024) return;

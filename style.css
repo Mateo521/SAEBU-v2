@@ -1,6 +1,4 @@
-/* ==========================================
-   DESKTOP MENU - RESPONSIVE DROPDOWNS
-========================================== */
+
 
 @media (min-width: 1024px) {
     
@@ -84,7 +82,7 @@
         max-width: min(280px, 90vw);
     }
 
-    /* ===== RESPONSIVE BREAKPOINTS ===== */
+ 
 
     /* Pantallas HD y menores (≤ 1440px) */
     @media (max-width: 1440px) {
@@ -147,7 +145,7 @@
     }
 }
 
-/* ===== FORZAR AJUSTE CUANDO SE SALE ===== */
+
 @media (min-width: 1024px) {
     /* Clase para ajuste dinámico por JavaScript */
     .dropdown-align-right {
@@ -165,7 +163,7 @@
 
 
 
-/* ===== AJUSTES DEL HEADER EN PANTALLAS PEQUEÑAS ===== */
+
 
 @media (max-width: 1440px) and (min-width: 1024px) {
     /* Reducir padding del container */

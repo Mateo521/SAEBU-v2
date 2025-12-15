@@ -99,7 +99,7 @@
 
                 <div class="bg-gray-50 p-4 flex flex-row lg:flex-col justify-between lg:justify-center items-center text-center border-b lg:border-b-0 lg:border-r border-gray-100 lg:col-span-2">
                     <div class="mb-0 lg:mb-2">
-                        <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider">Menú del</h3>
+                        <h1 class="text-xs font-bold text-gray-500 uppercase tracking-wider">Menú del</h1>
                         <div class="flex items-center justify-center gap-1 text-[#005eb8]">
                             <span class="text-3xl font-bold leading-none"><?php echo date_i18n('d', strtotime($fecha)); ?></span>
                             <div class="flex flex-col text-xs font-bold uppercase leading-none text-left">
@@ -125,7 +125,7 @@
                     <div class="space-y-3 z-10">
                         <?php if ($entrada): ?>
                             <div class="flex items-baseline gap-2">
-                                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wide w-16 shrink-0">Entrada</span>
+                                <span class="text-[10px] font-bold text-gray-700 uppercase tracking-wide w-16 shrink-0">Entrada</span>
                                 <span class="text-sm text-gray-600 font-medium leading-tight"><?php echo esc_html($entrada); ?></span>
                             </div>
                         <?php endif; ?>
@@ -139,7 +139,7 @@
 
                         <?php if ($postre): ?>
                             <div class="flex items-baseline gap-2">
-                                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wide w-16 shrink-0">Postre</span>
+                                <span class="text-[10px] font-bold text-gray-700 uppercase tracking-wide w-16 shrink-0">Postre</span>
                                 <span class="text-sm text-gray-600 font-medium leading-tight"><?php echo esc_html($postre); ?></span>
                             </div>
                         <?php endif; ?>
@@ -150,7 +150,7 @@
                     <div class="p-5 flex flex-col justify-center bg-[#fcfdfa] border-b lg:border-b-0 lg:border-r border-dashed border-gray-200 lg:col-span-3">
                         <div class="flex items-center gap-2 mb-3">
                             <span class="w-2 h-2 rounded-full bg-[#70b62c]"></span>
-                            <h4 class="text-xs font-bold text-[#437017] uppercase tracking-wider">Opción Sin TACC</h4>
+                            <h1 class="text-xs font-bold text-[#437017] uppercase tracking-wider">Opción Sin TACC</h1>
                         </div>
 
                         <div class="space-y-2 pl-2 border-l-2 border-[#70b62c]/20">
@@ -163,8 +163,8 @@
 
                             <?php if ($entrada_st || $postre_st): ?>
                                 <div class="text-xs text-gray-500 mt-1">
-                                    <?php if ($entrada_st) echo '<span class="mr-2">Ent: ' . esc_html($entrada_st) . '</span>'; ?>
-                                    <?php if ($postre_st) echo '<span>Pos: ' . esc_html($postre_st) . '</span>'; ?>
+                                    <?php if ($entrada_st) echo '<span class="mr-2">Entrada: ' . esc_html($entrada_st) . '</span>'; ?>
+                                    <?php if ($postre_st) echo '<span>Postre: ' . esc_html($postre_st) . '</span>'; ?>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -329,16 +329,16 @@
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-white text-center divide-y md:divide-y-0 md:divide-x divide-white/20">
             <div class="px-4 py-2">
-                <p class="text-3xl font-bold mb-1">+5</p>
+                <p class="text-3xl font-bold mb-1">lorem</p>
                 <p class="text-sm text-white uppercase tracking-wider">Departamentos</p>
             </div>
             <div class="px-4 py-2">
-                <p class="text-3xl font-bold mb-1">+10</p>
-                <p class="text-sm text-white uppercase tracking-wider">Servicios al Estudiante</p>
+                <p class="text-3xl font-bold mb-1">lorem</p>
+                <p class="text-sm text-white uppercase tracking-wider">Servicios al estudiante</p>
             </div>
             <div class="px-4 py-2">
-                <p class="text-3xl font-bold mb-1">UNSL</p>
-                <p class="text-sm text-white uppercase tracking-wider">Compromiso Público</p>
+                <p class="text-3xl font-bold mb-1">lorem</p>
+                <p class="text-sm text-white uppercase tracking-wider">Compromiso público</p>
             </div>
         </div>
     </div>
@@ -353,7 +353,7 @@
                     Sobre SAEBU
                 </h2>
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    La Secretaría de Asuntos Estudiantiles trabaja día a día para garantizar la igualdad de oportunidades y la permanencia de los estudiantes en la Universidad Nacional de San Luis.
+                    La Secretaría de Asuntos Estudiantiles y Bienestar Universitario trabaja día a día para garantizar la igualdad de oportunidades y la permanencia de los estudiantes en la Universidad Nacional de San Luis.
                 </p>
                 <ul class="space-y-4 mb-8">
                     <li class="flex items-start gap-3">

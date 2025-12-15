@@ -228,7 +228,7 @@ get_header();
                 <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-8 items-center">
                     <div class="md:w-1/3 text-center md:text-right">
                         <h3 class="text-2xl font-bold text-blue-900 mb-2">Competencia Regional</h3>
-                        <div class="text-6xl font-black text-gray-200">JUR</div>
+                        <div class="text-6xl font-black text-gray-600">JUR</div>
                         <p class="text-sm font-bold text-gray-500 uppercase tracking-widest mt-2">Juegos Universitarios Regionales</p>
                     </div>
                     <div class="md:w-2/3 border-l-4 border-orange-500 pl-8">
@@ -274,7 +274,7 @@ get_header();
                                     <?php endif; ?>
                                 </div>
                                 <div class="p-5">
-                                    <span class="text-xs text-orange-600 font-bold uppercase mb-2 block">Novedades</span>
+                                    <span class="text-xs text-orange-800 font-bold uppercase mb-2 block">Novedades</span>
                                     <h3 class="text-lg font-bold text-gray-900 mb-2 leading-tight">
                                         <a href="<?php the_permalink(); ?>" class="hover:underline"><?php the_title(); ?></a>
                                     </h3>

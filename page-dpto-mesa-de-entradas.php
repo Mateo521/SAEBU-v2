@@ -70,7 +70,7 @@ get_header();
                                 <div class="w-12 h-12 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center mb-4">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                                 </div>
-                                <h3 class="font-bold text-gray-900 mb-2 text-base">Ubicación</h3>
+                                <h1 class="font-bold text-gray-900 mb-2 text-base">Ubicación</h1>
                                 <p class="text-gray-600 text-sm">Rivadavia 1029, 1º Piso<br>San Luis Capital</p>
                             </div>
 
@@ -78,15 +78,15 @@ get_header();
                                 <div class="w-12 h-12 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center mb-4">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                 </div>
-                                <h3 class="font-bold text-gray-900 mb-2 text-base">Horario de Atención</h3>
+                                <h1 class="font-bold text-gray-900 mb-2 text-base">Horario de Atención</h1>
                                 <p class="text-gray-600 text-sm">Lunes a Viernes<br>8:00 a 13:00 hs | 18:00 a 20:00 hs</p>
                             </div>
 
                             <div class="flex flex-col items-center text-center p-4">
                                 <div class="w-12 h-12 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center mb-4">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h1.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                                 </div>
-                                <h3 class="font-bold text-gray-900 mb-2 text-base">Contacto</h3>
+                                <h1 class="font-bold text-gray-900 mb-2 text-base">Contacto</h1>
                                 <a href="tel:4420123" class="text-blue-600 font-medium hover:underline text-sm block mb-1">Tel: (0266) 4520300 int. 8139</a>
                                 <a href="mailto:mesadeentradassaebu@gmail.com" class="text-blue-600 font-medium hover:underline text-sm block">mesadeentradassaebu@gmail.com</a>
                             </div>
@@ -114,7 +114,7 @@ get_header();
                             <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center mb-4">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                             </div>
-                            <h3 class="text-lg font-bold text-slate-900 mb-3">Trámites de Comedor</h3>
+                            <h1 class="text-lg font-bold text-slate-900 mb-3">Trámites de Comedor</h1>
                             <p class="text-sm text-gray-600 leading-relaxed mb-4">
                                 Recepción y procesamiento de la documentación para acceder a las becas de comedor y beneficios alimentarios.
                             </p>
@@ -125,7 +125,7 @@ get_header();
                             <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center mb-4">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2"></path></svg>
                             </div>
-                            <h3 class="text-lg font-bold text-slate-900 mb-3">Expedientes y Notas</h3>
+                            <h1 class="text-lg font-bold text-slate-900 mb-3">Expedientes y Notas</h1>
                             <p class="text-sm text-gray-600 leading-relaxed mb-4">
                                 Mesa de entrada oficial para la presentación de notas, expedientes y actuaciones dirigidas a las autoridades de SAEBU.
                             </p>
@@ -136,7 +136,7 @@ get_header();
                             <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center mb-4">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>
-                            <h3 class="text-lg font-bold text-slate-900 mb-3">Información General</h3>
+                            <h1 class="text-lg font-bold text-slate-900 mb-3">Información General</h1>
                             <p class="text-sm text-gray-600 leading-relaxed mb-4">
                                 Asesoramiento y orientación al estudiante sobre los diferentes servicios, ubicaciones y requisitos de la Secretaría.
                             </p>
@@ -182,11 +182,11 @@ get_header();
                                 
                                 <div class="p-5 flex-1 flex flex-col">
                                     <span class="text-xs text-gray-500 mb-2 block"><?php echo get_the_date('d/m/Y'); ?></span>
-                                    <h3 class="text-lg font-bold text-slate-900 mb-2 leading-snug">
+                                    <h1 class="text-lg font-bold text-slate-900 mb-2 leading-snug">
                                         <a href="<?php the_permalink(); ?>" class="group-hover:text-blue-700 transition-colors">
                                             <?php the_title(); ?>
                                         </a>
-                                    </h3>
+                                    </h1>
                                     <p class="text-sm text-gray-600 line-clamp-3 mb-4 flex-1">
                                         <?php echo wp_trim_words(get_the_excerpt(), 15); ?>
                                     </p>

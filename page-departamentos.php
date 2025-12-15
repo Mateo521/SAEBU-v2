@@ -98,7 +98,7 @@ $sedes = array(
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center">
 
-                    <nav class="flex justify-center items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
+                    <nav class="flex justify-center items-center gap-2 text-xs font-bold text-gray-700 uppercase tracking-widest mb-6">
                         <a href="<?php echo home_url(); ?>" class="hover:text-gray-900 transition-colors">Inicio</a>
                         <span class="text-gray-300">/</span>
                         <span class="text-gray-900">Departamentos</span>
@@ -125,7 +125,7 @@ $sedes = array(
                                 class="group block h-full bg-white border-t-2 border-gray-100 p-8 hover:border-[#003366] hover:bg-gray-50 transition-all duration-300 relative">
 
                                 <div class="flex items-start justify-between mb-6">
-                                    <div class="text-slate-400 group-hover:text-[#003366] transition-colors duration-300">
+                                    <div class="text-slate-700 group-hover:text-[#003366] transition-colors duration-300">
                                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <?php echo $dpto['icono']; ?>
                                         </svg>
@@ -139,15 +139,15 @@ $sedes = array(
                                 </div>
 
                                 <div>
-                                    <h3 class="text-xl  font-bold text-slate-900 mb-3 group-hover:text-[#003366] transition-colors">
+                                    <h1 class="text-xl  font-bold text-slate-900 mb-3 group-hover:text-[#003366] transition-colors">
                                         <?php echo esc_html($dpto['titulo']); ?>
-                                    </h3>
+                                    </h1>
                                     <p class="text-slate-500 text-sm leading-relaxed mb-6">
                                         <?php echo esc_html($dpto['descripcion']); ?>
                                     </p>
                                 </div>
 
-                                <div class="flex items-center text-sm font-bold text-slate-400 group-hover:text-[#003366] transition-colors mt-auto">
+                                <div class="flex items-center text-sm font-bold text-slate-700 group-hover:text-[#003366] transition-colors mt-auto">
                                     <span class="mr-2">Acceder</span>
                                     <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -177,20 +177,20 @@ $sedes = array(
                     <div class="grid md:grid-cols-3 gap-6">
                         <?php foreach ($sedes as $sede) : ?>
                             <div class="bg-white p-6 border border-gray-200 shadow-sm flex items-start gap-4">
-                                <div class="flex-shrink-0 text-slate-400">
+                                <div class="flex-shrink-0 text-slate-700">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <?php echo $sede['icono']; ?>
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wide mb-1">
+                                    <h1 class="text-sm font-bold text-slate-900 uppercase tracking-wide mb-1">
                                         <?php echo esc_html($sede['titulo']); ?>
-                                    </h3>
+                                    </h1>
                                     <p class="text-slate-500 text-sm  italic">
                                         <?php echo esc_html($sede['direccion']); ?>
                                     </p>
                                     <div class="mt-3">
-                                        <a href="<?php echo esc_url(home_url('/' . $sede['slug'])); ?>" class="text-xs font-semibold text-slate-400 hover:text-[#003366] transition-colors">
+                                        <a href="<?php echo esc_url(home_url('/' . $sede['slug'])); ?>" class="text-xs font-semibold text-slate-700 hover:text-[#003366] transition-colors">
                                             + Información
                                         </a>
                                     </div>

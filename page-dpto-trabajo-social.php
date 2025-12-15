@@ -83,7 +83,7 @@ get_header();
 
                         foreach ($pasos as $paso) : ?>
                             <div class="relative p-6 border border-gray-200 rounded-lg hover:border-[#005eb8] transition-all duration-300 group">
-                                <div class="text-4xl font-bold text-gray-200 mb-4 group-hover:text-[#005eb8] transition-colors">
+                                <div class="text-4xl font-bold text-gray-800 mb-4 group-hover:text-[#005eb8] transition-colors">
                                     <?php echo $paso['num']; ?>
                                 </div>
                                 <h3 class="text-lg font-bold text-gray-900 mb-2"><?php echo $paso['titulo']; ?></h3>
@@ -148,7 +148,7 @@ get_header();
                                 </li>
                                 <li class="flex gap-4">
                                     <svg class="w-6 h-6 text-gray-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h1"></path>
                                     </svg>
                                     <div>
                                         <span class="block font-bold text-gray-900">Distribución</span>
@@ -219,7 +219,7 @@ get_header();
 
                     <div class="grid lg:grid-cols-2 gap-8">
                         <div>
-                            <h4 class="font-bold text-gray-900 mb-3 text-sm">Montos Universidad General</h4>
+                            <h1 class="font-bold text-gray-900 mb-3 text-sm">Montos Universidad General</h1>
                             <div class="border border-gray-200 rounded-lg overflow-hidden">
                                 <table class="w-full text-sm text-left">
                                     <thead class="bg-[#416ed2] text-white">
@@ -261,7 +261,7 @@ get_header();
                         </div>
 
                         <div>
-                            <h4 class="font-bold text-gray-900 mb-3 text-sm">Montos Enfermería</h4>
+                            <h1 class="font-bold text-gray-900 mb-3 text-sm">Montos Enfermería</h1>
                             <div class="border border-gray-200 rounded-lg overflow-hidden">
                                 <table class="w-full text-sm text-left">
                                     <thead class="bg-gray-800 text-white">
@@ -313,7 +313,7 @@ get_header();
                             <p class="text-gray-600 mb-6 leading-relaxed">
                                 Trabajamos desde 2008 para lograr la plena integración de alumnos en situación de discapacidad en la vida universitaria, proporcionando los recursos necesarios para su desarrollo académico.
                             </p>
-                            <h4 class="font-bold text-gray-900 mb-4">Nuestros Servicios:</h4>
+                            <h1 class="font-bold text-base text-gray-900 mb-4">Nuestros Servicios:</h1>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <?php
                                 $recursos_discapacidad = [
@@ -325,14 +325,14 @@ get_header();
                                 foreach ($recursos_discapacidad as $titulo => $desc):
                                 ?>
                                     <div class="bg-white p-4 border border-gray-200 rounded-md">
-                                        <h5 class="text-[#005eb8] font-bold text-sm mb-1"><?php echo $titulo; ?></h5>
+                                        <h1 class="text-[#005eb8] font-bold text-sm mb-1"><?php echo $titulo; ?></h1>
                                         <p class="text-xs text-gray-500"><?php echo $desc; ?></p>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
                         <div class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm">
-                            <h3 class="font-bold text-gray-900 mb-4">Promoción y Difusión</h3>
+                            <h1 class="font-bold text-base text-gray-900 mb-4">Promoción y Difusión</h1>
                             <p class="text-sm text-gray-600 mb-4">
                                 Realizamos talleres informativos en cursos de ingreso y promoción de carreras para acercar los beneficios al estudiante de manera temprana.
                             </p>
@@ -348,7 +348,7 @@ get_header();
         <section class="py-16 bg-[#416ed2] text-white" id="contacto">
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-2xl font-bold mb-4">¿Necesitás asesoramiento?</h2>
-                <p class="text-blue-100 mb-8 max-w-2xl mx-auto">
+                <p class="text-white mb-8 max-w-2xl mx-auto">
                     El equipo de Trabajo Social está disponible para guiarte en tus trámites.
                 </p>
                 <div class="flex justify-center gap-4">

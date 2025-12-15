@@ -193,8 +193,8 @@ get_header();
 
                         <div class="w-full md:w-1/3">
                             <div class="p-6 bg-emerald-50 border border-emerald-200 rounded text-center">
-                                <p class="text-emerald-800 font-semibold text-sm">Funcionamiento de Servicios</p>
-                                <p class="text-xs text-emerald-600 mt-1">Becas, Comedor, Residencia</p>
+                                <p class="text-emerald-900 font-semibold text-sm">Funcionamiento de Servicios</p>
+                                <p class="text-xs text-emerald-800 mt-1">Becas, Comedor, Residencia</p>
                             </div>
                         </div>
                     </div>

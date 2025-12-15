@@ -167,25 +167,25 @@ get_header();
                         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
                             <div class="bg-white p-4 text-center">
                                 <div class="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold border-4 border-white">1</div>
-                                <h4 class="font-bold text-slate-900 mb-2">Solicitud</h4>
+                                <h1 class="font-bold text-slate-900 text-base mb-2">Solicitud</h1>
                                 <p class="text-xs text-gray-500">El departamento requirente envía el pedido formal.</p>
                             </div>
 
                             <div class="bg-white p-4 text-center">
                                 <div class="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold border-4 border-white">2</div>
-                                <h4 class="font-bold text-slate-900 mb-2">Evaluación</h4>
+                                <h1 class="font-bold text-slate-900 text-base mb-2">Evaluación</h1>
                                 <p class="text-xs text-gray-500">Compras clasifica y selecciona el procedimiento.</p>
                             </div>
 
                             <div class="bg-white p-4 text-center">
                                 <div class="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold border-4 border-white">3</div>
-                                <h4 class="font-bold text-slate-900 mb-2">Tramitación</h4>
+                                <h1 class="font-bold text-slate-900 text-base mb-2">Tramitación</h1>
                                 <p class="text-xs text-gray-500">Pliegos, presupuestos y selección de proveedor.</p>
                             </div>
 
                             <div class="bg-white p-4 text-center">
                                 <div class="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold border-4 border-white">4</div>
-                                <h4 class="font-bold text-slate-900 mb-2">Adjudicación</h4>
+                                <h1 class="font-bold text-slate-900 text-base mb-2">Adjudicación</h1>
                                 <p class="text-xs text-gray-500">Compra efectiva y entrega del insumo.</p>
                             </div>
                         </div>
@@ -199,8 +199,8 @@ get_header();
                 <div class="max-w-4xl mx-auto bg-indigo-700 rounded-lg p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
                     <div>
                         <h2 class="text-2xl font-bold mb-2">Portal de Compras UNSL</h2>
-                        <p class="text-indigo-200 mb-4">Acceso a licitaciones, proveedores y estado de trámites.</p>
-                        <div class="flex items-center gap-2 text-xs text-indigo-300">
+                        <p class="text-indigo-100 mb-4">Acceso a licitaciones, proveedores y estado de trámites.</p>
+                        <div class="flex items-center gap-2 text-xs text-indigo-100">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                             </svg>
@@ -226,7 +226,7 @@ get_header();
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                 </svg>
                             </div>
-                            <h4 class="font-bold text-slate-900 mb-1">Correo Electrónico</h4>
+                            <h1 class="font-bold text-base text-slate-900 mb-1">Correo Electrónico</h1>
                             <a href="mailto:dptocomprassaebu@gmail.com" class="text-indigo-600 font-medium hover:underline">dptocomprassaebu@gmail.com</a>
                             <p class="text-xs text-gray-500 mt-2">Consultas y envío de solicitudes</p>
                         </div>
@@ -237,7 +237,7 @@ get_header();
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                                 </svg>
                             </div>
-                            <h4 class="font-bold text-slate-900 mb-1">Teléfono Interno</h4>
+                            <h1 class="font-bold text-base text-slate-900 mb-1">Teléfono Interno</h1>
                             <p class="text-indigo-600 font-medium text-lg">8139</p>
                             <p class="text-xs text-gray-500 mt-2">Red interna UNSL</p>
                         </div>

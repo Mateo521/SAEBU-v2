@@ -1645,7 +1645,7 @@ function saebu_noticias_departamento($args = array())
                 <!-- Header -->
                 <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
                     <div>
-                        <h2 class="text-2xl font-bold text-gray-900 mb-2 border-l-4 border-<?php echo esc_attr($config['color']); ?>-600 pl-3">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2 border-l-4 border-<?php echo esc_attr($config['color']); ?>-700 pl-3">
                             Novedades de <?php echo esc_html($config['nombre']); ?>
                         </h2>
                         <p class="text-gray-600 text-sm">
@@ -1653,7 +1653,7 @@ function saebu_noticias_departamento($args = array())
                         </p>
                     </div>
                     <a href="<?php echo esc_url(get_term_link($config['slug'], 'departamento')); ?>"
-                        class="text-sm font-semibold text-<?php echo esc_attr($config['color']); ?>-600 hover:text-<?php echo esc_attr($config['color']); ?>-700 flex items-center gap-1 transition-colors">
+                        class="text-sm font-semibold text-<?php echo esc_attr($config['color']); ?>-700 hover:text-<?php echo esc_attr($config['color']); ?>-800 flex items-center gap-1 transition-colors">
                         Ver todas las noticias
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -1710,7 +1710,7 @@ function saebu_noticias_departamento($args = array())
                                     </p>
 
                                     <!-- Link -->
-                                    <a href="<?php the_permalink(); ?>" class="inline-flex items-center text-sm font-semibold text-<?php echo esc_attr($config['color']); ?>-600 hover:underline mt-auto">
+                                    <a href="<?php the_permalink(); ?>" class="inline-flex items-center text-sm font-semibold text-<?php echo esc_attr($config['color']); ?>-700 hover:underline mt-auto">
                                         Leer más
                                         <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>

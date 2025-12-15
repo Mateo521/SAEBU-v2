@@ -53,7 +53,7 @@ get_header();
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
                                     </svg></div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900">Convocatorias</h4>
+                                    <h1 class="font-bold text-base text-gray-900">Convocatorias</h1>
                                     <p class="text-sm text-gray-500">Gestión anual de inscripciones.</p>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@ get_header();
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg></div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900">Adjudicación</h4>
+                                    <h1 class="font-bold text-base text-gray-900">Adjudicación</h1>
                                     <p class="text-sm text-gray-500">Preselección y otorgamiento.</p>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@ get_header();
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                                     </svg></div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900">Control Académico</h4>
+                                    <h1 class="font-bold text-base text-gray-900">Control Académico</h1>
                                     <p class="text-sm text-gray-500">Seguimiento de rendimiento.</p>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@ get_header();
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg></div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900">Pagos</h4>
+                                    <h1 class="font-bold text-base text-gray-900">Pagos</h1>
                                     <p class="text-sm text-gray-500">Gestión mensual de beneficios.</p>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@ get_header();
 
                     <div class="lg:col-span-1">
                         <div class="bg-slate-50 border border-gray-200 rounded-lg p-6 shadow-sm sticky top-24">
-                            <h3 class="text-lg font-bold text-gray-900 mb-4 border-b border-gray-200 pb-2">Contacto</h3>
+                            <h1 class="text-lg font-bold text-gray-900 mb-4 border-b border-gray-200 pb-2">Contacto</h1>
 
                             <ul class="space-y-4">
                                 <li class="flex items-start gap-3">
@@ -168,7 +168,7 @@ get_header();
                             [
                                 'titulo' => 'Transporte',
                                 'subtitulo' => 'Traslado interurbano',
-                                'icon' => 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
+                                'icon' => 'M8 20V7m0 13-4-4m4 4 4-4m4-12v13m0-13 4 4m-4-4-4 4',
                                 'desc' => 'Monto mensual durante 10 meses para estudiantes con domicilio en localidades aledañas que deban viajar para cursar.',
                                 'detalles' => [
                                     'Cobertura 10 meses',
@@ -212,7 +212,7 @@ get_header();
                             [
                                 'titulo' => 'Beca Integral',
                                 'subtitulo' => 'Doble monto',
-                                'icon' => 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
+                                'icon' => 'M8 8v8m0-8h8M8 8H6a2 2 0 1 1 2-2v2Zm0 8h8m-8 0H6a2 2 0 1 0 2 2v-2Zm8 0V8m0 8h2a2 2 0 1 1-2 2v-2Zm0-8h2a2 2 0 1 0-2-2v2Z',
                                 'desc' => 'Otorga el doble del monto de ayuda económica. Requiere haber rendido el 70% de las materias del plan de estudios del año anterior.',
                                 'detalles' => [
                                     'A partir de 2º año',
@@ -234,13 +234,13 @@ get_header();
                             [
                                 'titulo' => 'Beca CREER',
                                 'subtitulo' => 'Mérito Académico',
-                                'icon' => 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z',
+                                'icon' => 'M14.7141 15h4.268c.4043 0 .732-.3838.732-.8571V3.85714c0-.47338-.3277-.85714-.732-.85714H6.71411c-.55228 0-1 .44772-1 1v4m10.99999 7v-3h3v3h-3Zm-3 6H6.71411c-.55228 0-1-.4477-1-1 0-1.6569 1.34315-3 3-3h2.99999c1.6569 0 3 1.3431 3 3 0 .5523-.4477 1-1 1Zm-1-9.5c0 1.3807-1.1193 2.5-2.5 2.5s-2.49999-1.1193-2.49999-2.5S8.8334 9 10.2141 9s2.5 1.1193 2.5 2.5Z',
                                 'desc' => 'Para estudiantes de nivel medio con promedio superior a 8 en los dos últimos años, inscriptos en carreras prioritarias.',
                                 'detalles' => [
                                     'Promedio > 8',
                                     'Carreras Prioritarias'
                                 ],
-                                'video' => get_template_directory_uri() . '/assets/videos/becas.mp4'
+                                'video' => null
                             ]
                         ];
 
@@ -273,17 +273,20 @@ get_header();
                                             </li>
                                         <?php endforeach; ?>
                                     </ul>
-
-                                    <button
-                                        data-video="<?php echo esc_url($beca['video']); ?>"
-                                        data-titulo="<?php echo esc_attr($beca['titulo']); ?>"
-                                        class="btn-ver-video w-full py-2 bg-gray-50 text-gray-600 text-xs font-bold rounded hover:bg-[#005eb8] hover:text-white transition-colors flex items-center justify-center gap-2">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                        </svg>
-                                        Ver Video Explicativo
-                                    </button>
+                                    <?php
+                                    if ($beca['video']) : ?>
+                                        <button
+                                            data-video="<?php echo esc_url($beca['video']); ?>"
+                                            data-titulo="<?php echo esc_attr($beca['titulo']); ?>"
+                                            class="btn-ver-video w-full py-2 bg-gray-50 text-gray-600 text-xs font-bold rounded hover:bg-[#005eb8] hover:text-white transition-colors flex items-center justify-center gap-2">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            Ver Video Explicativo
+                                        </button>
+                                    <?php
+                                    endif; ?>
                                 </div>
                             </article>
                         <?php endforeach; ?>
@@ -291,7 +294,7 @@ get_header();
 
                     <div class="mt-8 bg-blue-50 border border-blue-100 rounded-md p-4 flex items-center justify-center gap-3 text-[#005eb8] text-sm font-medium">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h1m10 0h1M3 12h18M3 16h1m10 0h1M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1h1a1 1 0 00-1 1v14a1 1 0 001 1z"></path>
                         </svg>
                         Toda la información está disponible en Lengua de Señas Argentina.
                     </div>
