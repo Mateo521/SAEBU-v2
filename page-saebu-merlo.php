@@ -84,7 +84,7 @@ get_header();
                                         </svg>
                                     </div>
                                     <div>
-                                        <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wide mb-1">Correo Electrónico</h3>
+                                        <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wide mb-1">Correo electrónico</h3>
                                         <a href="mailto:saebumerloftu@gmail.com" class="text-teal-700 font-medium hover:underline break-all">saebumerloftu@gmail.com</a>
                                     </div>
                                 </div>

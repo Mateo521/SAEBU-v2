@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Becas y Residencia Universitaria
+ * Template Name: Becas y Residencia universitaria
  */
 get_header();
 ?>
@@ -108,7 +108,7 @@ get_header();
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                                     </svg>
                                 </div>
-                                <h2 class="text-2xl font-bold text-gray-900">Residencia Universitaria</h2>
+                                <h2 class="text-2xl font-bold text-gray-900">Residencia universitaria</h2>
                             </div>
 
                             <div class="prose prose-gray text-gray-600 mb-8">
@@ -178,7 +178,7 @@ get_header();
 
                     <div class="mb-10 flex items-center justify-between border-b border-gray-200 pb-4">
                         <h2 class="text-2xl font-bold text-gray-900">Programa Nacional de Becas Progresar</h2>
-                        <a href="https://www.argentina.gob.ar/educacion/progresar" target="_blank" class="text-sm text-[#005eb8] font-bold hover:underline">Sitio Oficial &rarr;</a>
+                        <a href="https://www.argentina.gob.ar/educacion/progresar" target="_blank" class="text-sm text-[#005eb8] font-bold hover:underline">Sitio oficial &rarr;</a>
                     </div>
 
                     <div class="bg-amber-50 border-l-4 border-amber-500 p-4 mb-8">
@@ -353,7 +353,7 @@ get_header();
                 </p>
                 <div class="flex justify-center gap-4">
                     <a href="<?php echo home_url('/contacto'); ?>" class="inline-block bg-white text-[#005eb8] font-bold py-3 px-8 rounded hover:bg-gray-100 transition-colors">
-                        Contactar Área
+                        Contactar área
                     </a>
                 </div>
             </div>

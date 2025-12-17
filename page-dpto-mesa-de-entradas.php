@@ -211,7 +211,7 @@ get_header();
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-2xl font-bold mb-4">¿Necesitás iniciar un trámite?</h2>
                 <p class="text-slate-300 mb-8 max-w-2xl mx-auto">
-                    Podés enviarnos tu consulta por correo electrónico o acercarte personalmente a nuestras oficinas.
+                    Podés enviarnos tu consulta por Correo electrónico o acercarte personalmente a nuestras oficinas.
                 </p>
                 <div class="flex justify-center gap-4">
                     <a href="mailto:mesadeentradassaebu@gmail.com" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-bold transition-colors shadow-lg">

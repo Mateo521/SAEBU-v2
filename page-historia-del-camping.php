@@ -139,15 +139,15 @@ get_header();
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <?php
                     $fotos = array(
-                        ['id' => 1, 'alt' => 'Obras iniciales', 'titulo' => 'Movimiento de Suelos', 'fecha' => 'Fase I'],
-                        ['id' => 2, 'alt' => 'Estructura de quinchos', 'titulo' => 'Estructura de Quinchos', 'fecha' => 'Fase I'],
-                        ['id' => 3, 'alt' => 'Forestación temprana', 'titulo' => 'Inicio de Forestación', 'fecha' => '1988'],
+                        ['id' => 1, 'alt' => 'Bungalow individual', 'titulo' => 'Fachada frontal', 'fecha' => 'Fase I'],
+                        ['id' => 2, 'alt' => 'Vista del dique', 'titulo' => 'Entorno natural', 'fecha' => 'Fase I'],
+                        ['id' => 3, 'alt' => 'Construcción temprana', 'titulo' => 'Obras', 'fecha' => '1988'],
                         ['id' => 4, 'alt' => 'Instalaciones sanitarias', 'titulo' => 'Obra Sanitaria', 'fecha' => 'Fase I'],
                         ['id' => 5, 'alt' => 'Quincho cerrado', 'titulo' => 'Techado del SUM', 'fecha' => '1989'],
-                        ['id' => 6, 'alt' => 'Vista del dique', 'titulo' => 'Entorno Natural', 'fecha' => '1990'],
-                        ['id' => 7, 'alt' => 'Cocina', 'titulo' => 'Equipamiento de Cocina', 'fecha' => 'Mayo 1990'],
-                        ['id' => 8, 'alt' => 'Asadores', 'titulo' => 'Zona de Asadores', 'fecha' => '1990'],
-                        ['id' => 9, 'alt' => 'Planta tratamiento', 'titulo' => 'Infraestructura de Agua', 'fecha' => 'Fase I'],
+                        ['id' => 6, 'alt' => 'Vista del dique', 'titulo' => 'Entorno natural', 'fecha' => '1990'],
+                        ['id' => 7, 'alt' => 'Cocina', 'titulo' => 'Equipamiento de cocina', 'fecha' => 'Mayo 1990'],
+                        ['id' => 8, 'alt' => 'Asadores', 'titulo' => 'Zona de asadores', 'fecha' => '1990'],
+                        ['id' => 9, 'alt' => 'Planta tratamiento', 'titulo' => 'Infraestructura de agua', 'fecha' => 'Fase I'],
                     );
 
                     foreach ($fotos as $index => $foto) :

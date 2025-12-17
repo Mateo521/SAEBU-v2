@@ -226,7 +226,7 @@ get_header();
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                 </svg>
                             </div>
-                            <h1 class="font-bold text-base text-slate-900 mb-1">Correo Electrónico</h1>
+                            <h1 class="font-bold text-base text-slate-900 mb-1">Correo electrónico</h1>
                             <a href="mailto:dptocomprassaebu@gmail.com" class="text-indigo-600 font-medium hover:underline">dptocomprassaebu@gmail.com</a>
                             <p class="text-xs text-gray-500 mt-2">Consultas y envío de solicitudes</p>
                         </div>

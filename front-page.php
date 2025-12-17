@@ -145,7 +145,7 @@
 
                         <?php if ($principal): ?>
                             <div class="mb-6">
-                                <p class=" text-3xl md:text-4xl font-bold text-slate-900 dark:text-white leading-tight">
+                                <p class=" text-xl md:text-2xl font-bold text-slate-900 dark:text-white leading-tight">
                                     <?php echo esc_html($principal); ?>
                                 </p>
                             </div>
