@@ -55,7 +55,7 @@
                 </div>
                 <div class="flex flex-wrap items-center gap-4 pt-4">
 
-            
+
                     <a href="<?php echo home_url('/servicios'); ?>"
                         class="inline-flex items-center gap-2 bg-[#416ed2] hover:bg-[#004a99] text-white px-8 py-3 rounded-md font-semibold transition-colors duration-300 shadow-sm">
                         <span>Lorem</span>
@@ -79,7 +79,12 @@
 
 
     <?php
-    $menu_dia = saebu_get_menu_del_dia();
+    // Aseguramos que no haya errores si la función no existe
+    if (function_exists('saebu_get_menu_del_dia')) {
+        $menu_dia = saebu_get_menu_del_dia();
+    } else {
+        $menu_dia = false;
+    }
 
     if ($menu_dia) :
         // Obtención de datos
@@ -93,108 +98,130 @@
         $entrada_st   = get_post_meta($menu_dia->ID, '_menu_entrada_sintacc', true);
         $principal_st = get_post_meta($menu_dia->ID, '_menu_principal_sintacc', true);
         $postre_st    = get_post_meta($menu_dia->ID, '_menu_postre_sintacc', true);
+
+        // Ruta assets (Ajusta si es necesario)
+        $assets_url = get_stylesheet_directory_uri() . '/assets';
     ?>
 
-        <div class="w-full bg-white  shadow-lg border-l-4 border-r-4 border-[#005eb8] overflow-hidden"> <!--  my-6 -->
+        <div class=" bg-white dark:bg-slate-900  shadow-xl overflow-hidden  mx-auto border border-gray-100 dark:border-slate-800 "> <!-- font-sans -->
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[140px]">
+            <div class="bg-[#416ed2] p-6 flex flex-col md:flex-row items-center justify-between text-white relative overflow-hidden">
+                <div class="absolute top-0 right-0 opacity-10 pointer-events-none transform translate-x-1/4 -translate-y-1/4">
 
-                <div class="bg-gray-50 p-4 flex flex-row lg:flex-col justify-between lg:justify-center items-center text-center border-b lg:border-b-0 lg:border-r border-gray-100 lg:col-span-2">
-                    <div class="mb-0 lg:mb-2">
-                        <h1 class="text-xs font-bold text-gray-500 uppercase tracking-wider">Menú del</h1>
-                        <div class="flex items-center justify-center gap-1 text-[#005eb8]">
-                            <span class="text-3xl font-bold leading-none"><?php echo date_i18n('d', strtotime($fecha)); ?></span>
-                            <div class="flex flex-col text-xs font-bold uppercase leading-none text-left">
-                                <span><?php echo date_i18n('M', strtotime($fecha)); ?></span>
-                                <span><?php echo date_i18n('Y', strtotime($fecha)); ?></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hidden lg:block mt-2">
-                        <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-blue-100 text-blue-800 text-[10px] font-bold uppercase">
-                            Comedor UNSL
-                        </span>
+
+
+                    <svg class="w-64 h-64 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
+                    </svg>
+
+
+
+                </div>
+
+                <div class="flex items-center gap-4 relative z-10">
+                    <span class="text-6xl  font-bold leading-none"><?php echo date_i18n('d', strtotime($fecha)); ?></span>
+                    <div class="flex flex-col leading-tight uppercase tracking-widest text-sm opacity-90">
+                        <span class="font-semibold"><?php echo date_i18n('F', strtotime($fecha)); ?></span>
+                        <span><?php echo date_i18n('Y', strtotime($fecha)); ?></span>
                     </div>
                 </div>
 
-                <div class="p-5 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-gray-100 lg:col-span-4 relative">
-                    <div class="absolute top-2 right-2 opacity-5 pointer-events-none">
-                        <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z" />
-                        </svg>
-                    </div>
+                <div class="mt-4 md:mt-0 relative z-10 flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
+                    <svg class="w-5 h-5 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="uppercase text-xs font-bold tracking-wider">Comedor universitario UNSL</span>
+                </div>
+            </div>
 
-                    <div class="space-y-3 z-10">
-                        <?php if ($entrada): ?>
-                            <div class="flex items-baseline gap-2">
-                                <span class="text-[10px] font-bold text-gray-700 uppercase tracking-wide w-16 shrink-0">Entrada</span>
-                                <span class="text-sm text-gray-600 font-medium leading-tight"><?php echo esc_html($entrada); ?></span>
-                            </div>
-                        <?php endif; ?>
+            <div class="flex flex-col md:flex-row mx-auto max-w-7xl w-full">
+
+                <div class="md:w-[65%] p-8 relative">
+
+                    <div class="mb-8">
+                        <h3 class=" text-2xl text-[#416ed2] dark:text-blue-400 mb-6 pb-3 border-b border-gray-100 dark:border-slate-800 flex items-center gap-2">
+                            <span>Menú del día</span>
+                        </h3>
 
                         <?php if ($principal): ?>
-                            <div class="flex items-baseline gap-2">
-                                <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-wide w-16 shrink-0">Principal</span>
-                                <span class="text-lg text-gray-900 font-bold leading-tight"><?php echo esc_html($principal); ?></span>
+                            <div class="mb-6">
+                                <p class=" text-3xl md:text-4xl font-bold text-slate-900 dark:text-white leading-tight">
+                                    <?php echo esc_html($principal); ?>
+                                </p>
                             </div>
                         <?php endif; ?>
 
-                        <?php if ($postre): ?>
-                            <div class="flex items-baseline gap-2">
-                                <span class="text-[10px] font-bold text-gray-700 uppercase tracking-wide w-16 shrink-0">Postre</span>
-                                <span class="text-sm text-gray-600 font-medium leading-tight"><?php echo esc_html($postre); ?></span>
+                        <?php if ($entrada || $postre): ?>
+                            <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate-600 dark:text-slate-300 bg-gray-50 dark:bg-slate-800/50 p-4 rounded-lg inline-block">
+                                <?php if ($entrada): ?>
+                                    <div class="flex flex-col">
+                                        <span class="uppercase text-[10px] font-bold tracking-wider text-slate-400 mb-1">Entrada</span>
+                                        <span class="font-medium text-base text-slate-800 dark:text-slate-200"><?php echo esc_html($entrada); ?></span>
+                                    </div>
+                                <?php endif; ?>
+
+                                <?php if ($entrada && $postre): ?>
+                                    <div class="w-px bg-gray-300 dark:bg-slate-700 h-auto self-stretch"></div>
+                                <?php endif; ?>
+
+                                <?php if ($postre): ?>
+                                    <div class="flex flex-col">
+                                        <span class="uppercase text-[10px] font-bold tracking-wider text-slate-400 mb-1">Postre</span>
+                                        <span class="font-medium text-base text-slate-800 dark:text-slate-200"><?php echo esc_html($postre); ?></span>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         <?php endif; ?>
                     </div>
-                </div>
 
-                <?php if ($principal_st || $entrada_st): ?>
-                    <div class="p-5 flex flex-col justify-center bg-[#fcfdfa] border-b lg:border-b-0 lg:border-r border-dashed border-gray-200 lg:col-span-3">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="w-2 h-2 rounded-full bg-[#70b62c]"></span>
-                            <h1 class="text-xs font-bold text-[#437017] uppercase tracking-wider">Opción Sin TACC</h1>
-                        </div>
+                    <?php if ($principal_st || $entrada_st): ?>
+                        <div class="pt-6 border-t border-dashed border-gray-200 dark:border-slate-800">
+                            <h4 class="flex items-center gap-3  text-xl text-slate-700 dark:text-slate-200 mb-4">
+                                <img src="<?php echo esc_url($assets_url . '/images/sintacc.png'); ?>" alt="Sin TACC" class="w-7 h-7" onerror="this.outerHTML='<svg class=\'w-6 h-6 text-green-600\' fill=\'none\' stroke=\'currentColor\' viewBox=\'0 0 24 24\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\'/></svg>'">
+                                <span>Opción libre de gluten (Sin TACC)</span>
+                            </h4>
 
-                        <div class="space-y-2 pl-2 border-l-2 border-[#70b62c]/20">
-                            <?php if ($principal_st): ?>
-                                <div>
-                                    <p class="text-[10px] text-[#437017] font-bold uppercase mb-0.5">Principal</p>
-                                    <p class="text-sm font-semibold text-gray-800 leading-tight"><?php echo esc_html($principal_st); ?></p>
+                            <div class="pl-10">
+                                <?php if ($principal_st): ?>
+                                    <p class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-2"><?php echo esc_html($principal_st); ?></p>
+                                <?php endif; ?>
+
+                                <div class="text-sm text-slate-500 dark:text-slate-400 flex gap-4">
+                                    <?php if ($entrada_st) echo '<span><strong>Entrada:</strong> ' . esc_html($entrada_st) . '</span>'; ?>
+                                    <?php if ($postre_st) echo '<span><strong>Postre:</strong> ' . esc_html($postre_st) . '</span>'; ?>
                                 </div>
-                            <?php endif; ?>
-
-                            <?php if ($entrada_st || $postre_st): ?>
-                                <div class="text-xs text-gray-500 mt-1">
-                                    <?php if ($entrada_st) echo '<span class="mr-2">Entrada: ' . esc_html($entrada_st) . '</span>'; ?>
-                                    <?php if ($postre_st) echo '<span>Postre: ' . esc_html($postre_st) . '</span>'; ?>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                <?php else: ?>
-                    <div class="hidden lg:block lg:col-span-3 bg-gray-50/50"></div>
-                <?php endif; ?>
-
-                <div class="p-4 flex flex-col justify-between items-center text-center bg-gray-50 lg:col-span-3">
-                    <?php if ($precio): ?>
-                        <div class="mt-2 mb-3">
-                            <span class="block text-[10px] text-gray-500 uppercase font-semibold">Valor Ticket</span>
-                            <span class="text-2xl font-bold text-[#005eb8]"><?php echo esc_html($precio); ?></span>
+                            </div>
                         </div>
                     <?php endif; ?>
 
-                    <button id="btn-suscribir-menu" class="group w-full bg-white hover:bg-[#005eb8] text-[#005eb8] hover:text-white border border-[#005eb8] font-bold py-2 px-3 rounded text-xs transition-all duration-200 flex items-center justify-center gap-2 shadow-sm hover:shadow-md">
-                        <svg class="w-4 h-4 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                </div>
+
+                <div class="md:w-[35%] bg-gray-50 dark:bg-slate-800/50 p-8 flex flex-col justify-center items-center border-t md:border-t-0 md:border-l border-gray-200 dark:border-slate-800">
+
+                    <?php if ($precio): ?>
+                        <div class="text-center mb-8">
+                            <span class="block uppercase tracking-widest text-xs font-bold text-slate-400 mb-2">Valor del Cubierto</span>
+                            <span class=" text-5xl font-bold text-[#416ed2] dark:text-white"><?php echo esc_html($precio); ?></span>
+                        </div>
+                    <?php endif; ?>
+
+                    <button id="btn-suscribir-menu" class="group w-full bg-[#416ed2] hover:bg-[#001a3d] text-white transition-all duration-300 rounded-lg px-6 py-4 flex items-center justify-center gap-3 shadow-md hover:shadow-lg font-semibold tracking-wide">
+                        <svg class="w-5 h-5 transition-transform group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
                         </svg>
-                        <span>Notificarme</span>
+                        <span>Suscribirse al Menú</span>
                     </button>
+
+                    <p class="text-xs text-slate-400 text-center mt-4 leading-relaxed px-4">
+                        Recibí las notificaciones del menú diario directamente en tu dispositivo.
+                    </p>
                 </div>
 
             </div>
         </div>
 
     <?php endif; ?>
+
 
 
     <script>
@@ -348,7 +375,7 @@
 
 <section class="py-20 bg-gray-50 border-b border-gray-200">
     <div class="container mx-auto px-4">
-        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
 
             <div class="order-2 md:order-1">
                 <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-[#005eb8] inline-block pb-2">
@@ -430,14 +457,14 @@
                 ],
                 // CeSEU
                 [
-                    'name' => 'Salud Estudiantil',
+                    'name' => 'Salud estudiantil',
                     'slug' => 'ceseu',
                     'desc' => 'Atención primaria, prevención y cuidado.',
                     'icon' => 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
                 ],
                 // Comedor
                 [
-                    'name' => 'Comedor Universitario',
+                    'name' => 'Comedor universitario',
                     'slug' => 'comedor',
                     'desc' => 'Alimentación nutricional accesible.',
                     'icon' => 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z'

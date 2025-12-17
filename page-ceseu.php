@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Centro de Salud Estudiantil
+ * Template Name: Centro de Salud estudiantil
  */
 get_header();
 ?>
@@ -17,11 +17,11 @@ get_header();
                     <nav class="flex justify-center items-center gap-2 text-sm text-gray-400 mb-6">
                         <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                         <span>/</span>
-                        <span class="text-white font-medium">Salud Estudiantil</span>
+                        <span class="text-white font-medium">Salud estudiantil</span>
                     </nav>
 
                     <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-                        Centro de Salud Estudiantil Universitario (CeSEU)
+                        Centro de Salud estudiantil Universitario (CeSEU)
                     </h1>
                     
                     <div class="w-24 h-1 bg-pink-600 mx-auto mb-6"></div>
@@ -109,7 +109,7 @@ get_header();
         <section class="py-16 bg-gray-50">
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Especialidades Médicas</h2>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Especialidades médicas</h2>
                     
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                         <?php 
@@ -135,7 +135,7 @@ get_header();
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4">
                 <div class="max-w-5xl mx-auto">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Trámites y Programas</h2>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Trámites y programas</h2>
 
                     <div class="grid md:grid-cols-2 gap-8">
                         <div class="bg-gray-50 rounded-lg border border-gray-200 p-6">
@@ -200,11 +200,19 @@ get_header();
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <?php
-                    $args = [
-                        'post_type' => 'noticia',
+                      $args = array(
+                        'post_type'      => 'noticia',
                         'posts_per_page' => 3,
-                        'tax_query' => [['taxonomy' => 'departamento', 'field' => 'slug', 'terms' => 'ceseu']]
-                    ];
+                        'orderby'        => 'date',
+                        'order'          => 'DESC',
+                        'tax_query'      => array(
+                            array(
+                                'taxonomy' => 'departamento',
+                                'field'    => 'slug',
+                                'terms'    => 'ceseu',
+                            ),
+                        ),
+                    );
                     $news_query = new WP_Query($args);
 
                     if ($news_query->have_posts()) :

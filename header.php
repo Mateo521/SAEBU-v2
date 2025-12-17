@@ -89,11 +89,11 @@
                     <div class="gtranslate_wrapper"></div>
                     <script>
                         window.gtranslateSettings = {
-                            "default_language": "en",
+                            "default_language": "es",
                             "native_language_names": true,
                             "detect_browser_language": true,
                             "languages": ["en", "es", "pt", "de"],
-                            "globe_color": "#66aaff",
+                            "globe_color": "#071629ff",
                             "wrapper_selector": ".gtranslate_wrapper",
                             "alt_flags": {
                                 "en": "usa",

@@ -114,7 +114,7 @@ get_header();
                             <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center mb-4">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                             </div>
-                            <h1 class="text-lg font-bold text-slate-900 mb-3">Trámites de Comedor</h1>
+                            <h1 class="text-lg font-bold text-slate-900 mb-3">Trámites de comedor</h1>
                             <p class="text-sm text-gray-600 leading-relaxed mb-4">
                                 Recepción y procesamiento de la documentación para acceder a las becas de comedor y beneficios alimentarios.
                             </p>
@@ -125,7 +125,7 @@ get_header();
                             <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center mb-4">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2"></path></svg>
                             </div>
-                            <h1 class="text-lg font-bold text-slate-900 mb-3">Expedientes y Notas</h1>
+                            <h1 class="text-lg font-bold text-slate-900 mb-3">Expedientes y notas</h1>
                             <p class="text-sm text-gray-600 leading-relaxed mb-4">
                                 Mesa de entrada oficial para la presentación de notas, expedientes y actuaciones dirigidas a las autoridades de SAEBU.
                             </p>
@@ -136,7 +136,7 @@ get_header();
                             <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center mb-4">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>
-                            <h1 class="text-lg font-bold text-slate-900 mb-3">Información General</h1>
+                            <h1 class="text-lg font-bold text-slate-900 mb-3">Información general</h1>
                             <p class="text-sm text-gray-600 leading-relaxed mb-4">
                                 Asesoramiento y orientación al estudiante sobre los diferentes servicios, ubicaciones y requisitos de la Secretaría.
                             </p>
@@ -152,7 +152,7 @@ get_header();
             <div class="container mx-auto px-4">
                 <div class="max-w-5xl mx-auto">
                     <div class="flex items-center justify-between mb-8">
-                        <h2 class="text-2xl font-bold text-slate-900 border-l-4 border-blue-600 pl-3">Comunicados Recientes</h2>
+                        <h2 class="text-2xl font-bold text-slate-900 border-l-4 border-blue-600 pl-3">Comunicados recientes</h2>
                         <a href="<?php echo get_post_type_archive_link('noticia'); ?>" class="text-sm font-semibold text-blue-600 hover:underline">Ver todos &rarr;</a>
                     </div>
 
@@ -199,7 +199,7 @@ get_header();
                         else :
                         ?>
                             <div class="col-span-3 text-center py-12 bg-gray-50 rounded-lg border border-gray-100">
-                                <p class="text-gray-500">No hay comunicados recientes en esta área.</p>
+                                <p class="text-gray-500">No hay Comunicados recientes en esta área.</p>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -216,7 +216,7 @@ get_header();
                 <div class="flex justify-center gap-4">
                     <a href="mailto:mesadeentradassaebu@gmail.com" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-bold transition-colors shadow-lg">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        Enviar Email
+                        Enviar email
                     </a>
                 </div>
             </div>

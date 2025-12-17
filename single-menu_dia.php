@@ -56,7 +56,7 @@ while ( have_posts() ) : the_post();
                 <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
                     <div>
                         <span class="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-1">
-                            Comedor Universitario
+                            Comedor universitario
                         </span>
                         <h1 class="text-2xl md:text-4xl font-bold leading-tight tracking-tight">
                             Menú del Día

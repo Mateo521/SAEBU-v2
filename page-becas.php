@@ -118,7 +118,7 @@ get_header();
 
                             <div class="mt-6 pt-4 border-t border-gray-200">
                                 <a href="mailto:becasunsl@gmail.com" class="block w-full text-center bg-[#416ed2] hover:bg-[#004a99] text-white font-bold py-2 px-4 rounded transition-colors text-sm">
-                                    Enviar Consulta
+                                    Enviar consulta
                                 </a>
                             </div>
                         </div>
@@ -132,7 +132,7 @@ get_header();
                 <div class="max-w-7xl mx-auto">
 
                     <div class="text-center mb-12">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestra Oferta de Becas</h2>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestra oferta de becas</h2>
                         <div class="w-16 h-1 bg-gray-300 mx-auto mb-4"></div>
                         <p class="text-gray-600 max-w-2xl mx-auto">
                             Disponemos de 9 tipos de beneficios diseñados para acompañar las distintas necesidades de la comunidad estudiantil.
@@ -155,10 +155,10 @@ get_header();
                                 'video' => get_template_directory_uri() . '/assets/videos/ayuda-economica.mp4'
                             ],
                             [
-                                'titulo' => 'Comedor Universitario',
+                                'titulo' => 'Comedor universitario',
                                 'subtitulo' => 'Alimentación nutricional',
                                 'icon' => 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z',
-                                'desc' => 'Consiste en 24 viandas mensuales del comedor universitario sin costo alguno. Cobertura de marzo a diciembre.',
+                                'desc' => 'Consiste en 24 viandas mensuales del Comedor universitario sin costo alguno. Cobertura de marzo a diciembre.',
                                 'detalles' => [
                                     'Para ingresantes y avanzados',
                                     'Marzo a Diciembre'
@@ -283,7 +283,7 @@ get_header();
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                             </svg>
-                                            Ver Video Explicativo
+                                            Ver video explicativo
                                         </button>
                                     <?php
                                     endif; ?>
@@ -305,7 +305,7 @@ get_header();
 
         <section class="py-16 bg-white border-t border-gray-200">
             <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-2xl font-bold text-center text-gray-900 mb-10">Preguntas Frecuentes</h2>
+                <h2 class="text-2xl font-bold text-center text-gray-900 mb-10">Preguntas frecuentes</h2>
 
                 <div class="space-y-2">
                     <details class="group bg-white border border-gray-200 rounded-md">

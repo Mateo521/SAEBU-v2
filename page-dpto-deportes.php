@@ -76,7 +76,7 @@ get_header();
                                 <div class="p-1 bg-blue-100 rounded text-blue-800 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg></div>
-                                <span class="text-gray-700"><strong>Salud y Bienestar:</strong> Mejora la calidad de vida y reduce el estrés académico.</span>
+                                <span class="text-gray-700"><strong>Salud y bienestar:</strong> Mejora la calidad de vida y reduce el estrés académico.</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <div class="p-1 bg-blue-100 rounded text-blue-800 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -255,8 +255,22 @@ get_header();
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <?php
-                    $args = ['post_type' => 'post', 'posts_per_page' => 3, 'category_name' => 'deportes'];
+                    $args = array(
+                        'post_type'      => 'noticia',
+                        'posts_per_page' => 3,
+                        'orderby'        => 'date',
+                        'order'          => 'DESC',
+                        'tax_query'      => array(
+                            array(
+                                'taxonomy' => 'departamento',
+                                'field'    => 'slug',
+                                'terms'    => 'dpto-deportes',
+                            ),
+                        ),
+                    );
+
                     $deportes_query = new WP_Query($args);
+
 
                     if ($deportes_query->have_posts()) :
                         while ($deportes_query->have_posts()) : $deportes_query->the_post();
@@ -330,16 +344,7 @@ get_header();
     <?php endwhile; ?>
 
 
-    <?php
-    saebu_noticias_departamento(array(
-        'slug'        => 'dpto-deportes',
-        'nombre'      => 'Dpto. Deportes',
-        'color'       => 'orange',
-        'descripcion' => 'Actividades deportivas, torneos y entrenamientos.',
-        'posts_count' => 3,
-        'icono'       => 'M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
-    ));
-    ?>
+
 
 </main>
 

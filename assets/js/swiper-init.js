@@ -83,18 +83,20 @@ document.addEventListener('DOMContentLoaded', function () {
     const noticiasSwiper = document.querySelector('.noticias-swiper');
     if (noticiasSwiper) {
         new Swiper('.noticias-swiper', {
-            loop: true,
+            loop: false,
             spaceBetween: 32,
             slidesPerView: 1,
             autoplay: {
                 delay: 5000,
                 disableOnInteraction: false,
             },
+            /*
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
-                dynamicBullets: true,
+                dynamicBullets: false,
             },
+            */
             navigation: {
                 nextEl: '.swiper-button-next-noticias',
                 prevEl: '.swiper-button-prev-noticias',

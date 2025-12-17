@@ -165,7 +165,7 @@ $total_posts = $wp_query->found_posts;
             <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
                     <h2 class="text-xl font-bold mb-1">¿Consultas sobre <?php echo esc_html($term->name); ?>?</h2>
-                    <p class="text-blue-200 text-sm">Accede a los servicios y contacto directo de esta área.</p>
+                    <p class="text-blue-200 text-sm">Accede a los servicios y Contacto directo de esta área.</p>
                 </div>
                 <div class="flex gap-4">
                     <a href="<?php echo home_url('/' . $term->slug); ?>" 

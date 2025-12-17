@@ -65,21 +65,21 @@ get_header();
                 <div class="max-w-5xl mx-auto">
                     <div class="flex flex-col md:flex-row gap-12 items-start">
                         <div class="flex-1">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-4 border-l-4 border-indigo-600 pl-4">Función del Área</h2>
+                            <h2 class="text-2xl font-bold text-slate-900 mb-4 border-l-4 border-indigo-600 pl-4">Función del área</h2>
                             <p class="text-gray-600 text-lg leading-relaxed mb-6">
                                 El Departamento de Compras ejecuta los procesos administrativos necesarios para la adquisición de bienes y servicios requeridos por todas las áreas de la SAEBU.
                             </p>
                             <p class="text-gray-600 text-lg leading-relaxed">
-                                Desde insumos alimenticios para el Comedor Universitario hasta equipamiento deportivo complejo, asegurando el cumplimiento de la normativa vigente y la transparencia en la gestión pública.
+                                Desde insumos alimenticios para el Comedor universitario hasta equipamiento deportivo complejo, asegurando el cumplimiento de la normativa vigente y la transparencia en la gestión pública.
                             </p>
                         </div>
 
                         <div class="w-full md:w-1/3 bg-slate-50 border border-gray-200 rounded-lg p-6">
-                            <h3 class="font-bold text-slate-900 mb-4">Áreas Asistidas</h3>
+                            <h3 class="font-bold text-slate-900 mb-4">áreas Asistidas</h3>
                             <ul class="space-y-3">
                                 <li class="flex items-center gap-3 text-sm text-gray-700">
                                     <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                                    Comedor Universitario
+                                    Comedor universitario
                                 </li>
                                 <li class="flex items-center gap-3 text-sm text-gray-700">
                                     <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
@@ -108,7 +108,7 @@ get_header();
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
                     <div class="text-center mb-12">
-                        <h2 class="text-2xl font-bold text-slate-900">Modalidades de Adquisición</h2>
+                        <h2 class="text-2xl font-bold text-slate-900">Modalidades de adquisición</h2>
                         <p class="text-gray-500 mt-2">Procedimientos administrativos según normativa</p>
                     </div>
 
@@ -119,7 +119,7 @@ get_header();
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                 </svg>
                             </div>
-                            <h3 class="text-lg font-bold text-slate-900 mb-3">Licitación Privada</h3>
+                            <h3 class="text-lg font-bold text-slate-900 mb-3">Licitación privada</h3>
                             <p class="text-sm text-gray-600 mb-4 leading-relaxed">
                                 Procedimiento formal utilizado para compras de gran volumen, como los insumos alimenticios del comedor. Requiere pliegos y múltiples oferentes.
                             </p>
@@ -132,7 +132,7 @@ get_header();
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                 </svg>
                             </div>
-                            <h3 class="text-lg font-bold text-slate-900 mb-3">Compra Directa</h3>
+                            <h3 class="text-lg font-bold text-slate-900 mb-3">Compra directa</h3>
                             <p class="text-sm text-gray-600 mb-4 leading-relaxed">
                                 Procedimiento ágil por compulsa abreviada. Se utiliza para necesidades urgentes, montos menores o proveedores específicos.
                             </p>
@@ -145,7 +145,7 @@ get_header();
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                 </svg>
                             </div>
-                            <h3 class="text-lg font-bold text-slate-900 mb-3">Plan Anual</h3>
+                            <h3 class="text-lg font-bold text-slate-900 mb-3">Plan anual</h3>
                             <p class="text-sm text-gray-600 mb-4 leading-relaxed">
                                 Planificación estratégica de adquisiciones recurrentes para todo el año fiscal, optimizando recursos y tiempos administrativos.
                             </p>
@@ -217,7 +217,7 @@ get_header();
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-8">Contacto Directo</h2>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-8">Contacto directo</h2>
 
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="p-6 border border-gray-200 rounded-lg hover:border-indigo-500 transition-colors">

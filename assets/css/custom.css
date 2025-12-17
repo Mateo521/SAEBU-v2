@@ -732,14 +732,18 @@ body {
 }
 
 .noticias-swiper .swiper-pagination-bullet {
-    background: #005eb8;
-    opacity: 0.5;
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
+    padding: 14px;  
+    box-sizing: content-box;
 }
 
+
 .noticias-swiper .swiper-pagination-bullet-active {
+
     opacity: 1;
     width: 24px;
     border-radius: 5px;
 }
+
+
