@@ -67,7 +67,7 @@
                 <ul class="space-y-2 text-sm">
                     <li><a href="<?php echo home_url('/becas'); ?>" class="hover:text-[#005eb8] transition-colors">Becas</a></li>
                     <li><a href="<?php echo home_url('/comedor'); ?>" class="hover:text-[#005eb8] transition-colors">Comedor universitario</a></li>
-                    <li><a href="<?php echo home_url('/salud'); ?>" class="hover:text-[#005eb8] transition-colors">Salud (CeSEU)</a></li>
+                    <li><a href="<?php echo home_url('/ceseu'); ?>" class="hover:text-[#005eb8] transition-colors">Salud (CeSEU)</a></li>
                     <li><a href="<?php echo home_url('/deportes'); ?>" class="hover:text-[#005eb8] transition-colors">Deportes</a></li>
                     <li><a href="<?php echo home_url('/turismo'); ?>" class="hover:text-[#005eb8] transition-colors">Complejo La Florida</a></li>
                 </ul>
@@ -77,7 +77,7 @@
                 <h1 class="text-white font-bold uppercase tracking-wider text-sm mb-4">Institucional</h1>
                 <ul class="space-y-2 text-sm">
                     <li><a href="<?php echo home_url('/autoridades'); ?>" class="hover:text-[#005eb8] transition-colors">Autoridades</a></li>
-                    <li><a href="<?php echo home_url('/sedes'); ?>" class="hover:text-[#005eb8] transition-colors">Sedes Regionales</a></li>
+                    <li><a href="<?php echo home_url('/sedes'); ?>" class="hover:text-[#005eb8] transition-colors">Sedes regionales</a></li>
                     <li><a href="<?php echo home_url('/noticias'); ?>" class="hover:text-[#005eb8] transition-colors">Noticias</a></li>
                     <li><a href="<?php echo home_url('/contacto'); ?>" class="hover:text-[#005eb8] transition-colors">Contacto</a></li>
                 </ul>

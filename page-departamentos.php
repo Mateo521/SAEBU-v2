@@ -166,7 +166,7 @@ $sedes = array(
  
                     <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-gray-200 pb-4">
                         <div>
-                            <h2 class="text-2xl  font-bold text-slate-900">Sedes Regionales</h2>
+                            <h2 class="text-2xl  font-bold text-slate-900">Sedes regionales</h2>
                             <p class="text-slate-500 text-sm mt-1">Ubicación de centros de atención administrativa.</p>
                         </div>
                         <div class="mt-4 md:mt-0">

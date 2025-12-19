@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Sedes Regionales
+ * Template Name: Sedes regionales
  * Description: Listado de Sedes de la SAEBU
  */
 get_header();
@@ -78,7 +78,7 @@ get_header();
                             </div>
 
                             <a href="<?php echo home_url('/contacto'); ?>" class="block w-full text-center py-3 rounded-md border border-gray-300 text-gray-700 font-semibold hover:border-[#005eb8] hover:text-[#005eb8] transition-all">
-                                Ver Información
+                                Ver información
                             </a>
                         </div>
                     </article>

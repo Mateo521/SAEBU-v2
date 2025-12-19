@@ -88,7 +88,7 @@ get_header();
 
 <section class="py-20 bg-slate-50 border-y border-gray-200">
     <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-sm border-l-4 border-[#005eb8]">
+        <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-sm border-l-4 border-r-4 border-[#005eb8]">
             <div class="flex flex-col md:flex-row items-start gap-6">
                 <div class="flex-shrink-0">
                     <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center">
@@ -162,9 +162,9 @@ get_header();
                 <a href="<?php echo esc_url(home_url('/contacto')); ?>" class="inline-flex items-center justify-center gap-2 bg-white text-[#005eb8] px-8 py-3 rounded-md font-bold hover:bg-gray-100 transition-colors shadow-sm">
                     <span>Contactar área</span>
                 </a>
-                <a href="<?php echo esc_url(home_url('/servicios')); ?>" class="inline-flex items-center justify-center gap-2 bg-transparent border border-white/40 text-white px-8 py-3 rounded-md font-bold hover:bg-white/10 transition-colors">
+                <!--a href="<?php echo esc_url(home_url('/servicios')); ?>" class="inline-flex items-center justify-center gap-2 bg-transparent border border-white/40 text-white px-8 py-3 rounded-md font-bold hover:bg-white/10 transition-colors">
                     <span>Ver Servicios</span>
-                </a>
+                </a-->
             </div>
         </div>
     </div>

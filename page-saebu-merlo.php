@@ -19,7 +19,7 @@ get_header();
                     <nav class="flex justify-center items-center gap-2 text-sm text-teal-200 mb-6">
                         <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                         <span>/</span>
-                        <span class="text-white font-medium">Sedes Regionales</span>
+                        <span class="text-white font-medium">Sedes regionales</span>
                     </nav>
 
                     <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">

@@ -62,7 +62,7 @@ get_header();
             <div class="container mx-auto px-4">
                 <div class="max-w-5xl mx-auto">
                     
-                    <div class="bg-white border-l-4 border-slate-500 shadow-sm rounded-r-lg p-8 flex flex-col md:flex-row items-start gap-8">
+                    <div class="bg-white border-l-4 border-r-4 border-slate-500 shadow-sm  p-8 flex flex-col md:flex-row items-start gap-8">
                         <div class="flex-1">
                             <h2 class="text-2xl font-bold text-slate-900 mb-4">Función Institucional</h2>
                             <p class="text-gray-600 text-lg leading-relaxed mb-6">

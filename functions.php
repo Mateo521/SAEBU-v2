@@ -797,7 +797,7 @@ add_action('init', 'saebu_register_menu_dia_cpt');
  */
 function saebu_menu_dia_metaboxes()
 {
-    add_meta_box('menu_dia_detalles', 'Detalles del Menú', 'saebu_menu_dia_metabox_callback', 'menu_dia', 'normal', 'high');
+    add_meta_box('menu_dia_detalles', 'Configuración de Menús por Sede', 'saebu_menu_dia_metabox_callback', 'menu_dia', 'normal', 'high');
 }
 add_action('add_meta_boxes', 'saebu_menu_dia_metaboxes');
 
@@ -808,129 +808,111 @@ function saebu_menu_dia_metabox_callback($post)
 {
     wp_nonce_field('saebu_menu_dia_nonce', 'menu_dia_nonce');
 
-    // 1. Obtener datos Menú Común
-    $fecha     = get_post_meta($post->ID, '_menu_fecha', true);
-    $entrada   = get_post_meta($post->ID, '_menu_entrada', true);
-    $principal = get_post_meta($post->ID, '_menu_principal', true);
-    $postre    = get_post_meta($post->ID, '_menu_postre', true);
-    $precio    = get_post_meta($post->ID, '_menu_precio', true);
+    // Carga de datos Sede San Luis
+    $sl_data = array(
+        'fecha'     => get_post_meta($post->ID, '_menu_sl_fecha', true),
+        'precio'    => get_post_meta($post->ID, '_menu_sl_precio', true),
+        'entrada'   => get_post_meta($post->ID, '_menu_sl_entrada', true),
+        'principal' => get_post_meta($post->ID, '_menu_sl_principal', true),
+        'postre'    => get_post_meta($post->ID, '_menu_sl_postre', true),
+        'ent_st'    => get_post_meta($post->ID, '_menu_sl_ent_st', true),
+        'pri_st'    => get_post_meta($post->ID, '_menu_sl_pri_st', true),
+        'pos_st'    => get_post_meta($post->ID, '_menu_sl_pos_st', true),
+    );
 
-    // 2. Obtener datos Menú Sin TACC
-    $entrada_st   = get_post_meta($post->ID, '_menu_entrada_sintacc', true);
-    $principal_st = get_post_meta($post->ID, '_menu_principal_sintacc', true);
-    $postre_st    = get_post_meta($post->ID, '_menu_postre_sintacc', true);
+    // Carga de datos Sede Villa Mercedes
+    $vm_data = array(
+        'precio'    => get_post_meta($post->ID, '_menu_vm_precio', true),
+        'entrada'   => get_post_meta($post->ID, '_menu_vm_entrada', true),
+        'principal' => get_post_meta($post->ID, '_menu_vm_principal', true),
+        'postre'    => get_post_meta($post->ID, '_menu_vm_postre', true),
+        'ent_st'    => get_post_meta($post->ID, '_menu_vm_ent_st', true),
+        'pri_st'    => get_post_meta($post->ID, '_menu_vm_pri_st', true),
+        'pos_st'    => get_post_meta($post->ID, '_menu_vm_pos_st', true),
+    );
 
     $notificar = get_post_meta($post->ID, '_menu_notificar', true);
     ?>
-    <div style="padding: 10px;">
-        <div style="display:flex; gap: 20px; flex-wrap:wrap; background:#f9f9f9; padding:10px; border:1px solid #ddd; margin-bottom:15px;">
-            <div style="flex:1;">
-                <label><strong> Fecha del Menú:</strong></label><br>
-                <input type="date" name="menu_fecha" value="<?php echo esc_attr($fecha); ?>" style="width:100%;" />
-            </div>
-            <div style="flex:1;">
-                <label><strong> Precio del Ticket:</strong></label><br>
-                <input type="text" name="menu_precio" value="<?php echo esc_attr($precio); ?>" placeholder="$3500" style="width:100%;" />
-            </div>
-        </div>
 
-        <div style="display:flex; gap: 20px; flex-wrap:wrap;">
-            <div style="flex:1; min-width:250px;">
-                <h3 style="margin:0 0 10px 0; border-bottom:2px solid #005eb8; padding-bottom:5px; color:#005eb8;"> Menú General</h3>
-                <p><label><strong>Entrada:</strong></label><br><input type="text" name="menu_entrada" value="<?php echo esc_attr($entrada); ?>" style="width:100%;" /></p>
-                <p><label><strong>Plato Principal:</strong></label><br><input type="text" name="menu_principal" value="<?php echo esc_attr($principal); ?>" style="width:100%;" /></p>
-                <p><label><strong>Postre:</strong></label><br><input type="text" name="menu_postre" value="<?php echo esc_attr($postre); ?>" style="width:100%;" /></p>
-            </div>
-
-            <div style="flex:1; min-width:250px;">
-                <h3 style="margin:0 0 10px 0; border-bottom:2px solid #70b62c; padding-bottom:5px; color:#70b62c;"> Menú Sin TACC</h3>
-                <p><label><strong>Entrada Sin TACC:</strong></label><br><input type="text" name="menu_entrada_sintacc" value="<?php echo esc_attr($entrada_st); ?>" style="width:100%;" placeholder="Opcional" /></p>
-                <p><label><strong>Principal Sin TACC:</strong></label><br><input type="text" name="menu_principal_sintacc" value="<?php echo esc_attr($principal_st); ?>" style="width:100%;" placeholder="Opcional" /></p>
-                <p><label><strong>Postre Sin TACC:</strong></label><br><input type="text" name="menu_postre_sintacc" value="<?php echo esc_attr($postre_st); ?>" style="width:100%;" placeholder="Opcional" /></p>
-            </div>
-        </div>
-
-        <p style="background:#f0f7ff;padding:15px;border-left:4px solid #0073aa;margin-top:20px;">
-            <label><input type="checkbox" name="menu_notificar" value="1" <?php checked($notificar, '1'); ?> /> <strong>Enviar notificación push (Categoría: Menú)</strong></label>
-        </p>
+    <div style="background:#eee; padding:15px; margin-bottom:20px; border-radius:5px;">
+        <label><strong> Fecha general del menú:</strong></label>
+        <input type="date" name="menu_sl_fecha" value="<?php echo esc_attr($sl_data['fecha']); ?>" />
     </div>
+
+    <div style="display: flex; gap: 20px;">
+
+        <div style="flex: 1; border: 2px solid #005eb8; padding: 15px; border-radius: 8px;">
+            <h2 style="color:#005eb8; border-bottom: 2px solid #005eb8; margin-top:0;"> Sede San Luis</h2>
+            <p><label>Precio Ticket:</label><input type="text" name="menu_sl_precio" value="<?php echo esc_attr($sl_data['precio']); ?>" style="width:100%" /></p>
+
+            <fieldset style="background:#f0faff; padding:10px; border:1px solid #b3d4fc;">
+                <legend><strong>Menú General SL</strong></legend>
+                <input type="text" name="menu_sl_entrada" placeholder="Entrada" value="<?php echo esc_attr($sl_data['entrada']); ?>" style="width:100%; margin-bottom:5px;" />
+                <input type="text" name="menu_sl_principal" placeholder="Principal" value="<?php echo esc_attr($sl_data['principal']); ?>" style="width:100%; margin-bottom:5px;" />
+                <input type="text" name="menu_sl_postre" placeholder="Postre" value="<?php echo esc_attr($sl_data['postre']); ?>" style="width:100%;" />
+            </fieldset>
+
+            <fieldset style="background:#f2fff0; padding:10px; border:1px solid #b8e0b3; margin-top:10px;">
+                <legend><strong>Menú Sin TACC SL</strong></legend>
+                <input type="text" name="menu_sl_ent_st" placeholder="Entrada Sin TACC" value="<?php echo esc_attr($sl_data['ent_st']); ?>" style="width:100%; margin-bottom:5px;" />
+                <input type="text" name="menu_sl_pri_st" placeholder="Principal Sin TACC" value="<?php echo esc_attr($sl_data['pri_st']); ?>" style="width:100%; margin-bottom:5px;" />
+                <input type="text" name="menu_sl_pos_st" placeholder="Postre Sin TACC" value="<?php echo esc_attr($sl_data['pos_st']); ?>" style="width:100%;" />
+            </fieldset>
+        </div>
+
+        <div style="flex: 1; border: 2px solid #e67e22; padding: 15px; border-radius: 8px;">
+            <h2 style="color:#e67e22; border-bottom: 2px solid #e67e22; margin-top:0;"> Sede Villa Mercedes</h2>
+            <p><label>Precio Ticket:</label><input type="text" name="menu_vm_precio" value="<?php echo esc_attr($vm_data['precio']); ?>" style="width:100%" /></p>
+
+            <fieldset style="background:#fff7f0; padding:10px; border:1px solid #fad7b3;">
+                <legend><strong>Menú General VM</strong></legend>
+                <input type="text" name="menu_vm_entrada" placeholder="Entrada" value="<?php echo esc_attr($vm_data['entrada']); ?>" style="width:100%; margin-bottom:5px;" />
+                <input type="text" name="menu_vm_principal" placeholder="Principal" value="<?php echo esc_attr($vm_data['principal']); ?>" style="width:100%; margin-bottom:5px;" />
+                <input type="text" name="menu_vm_postre" placeholder="Postre" value="<?php echo esc_attr($vm_data['postre']); ?>" style="width:100%;" />
+            </fieldset>
+
+            <fieldset style="background:#f2fff0; padding:10px; border:1px solid #b8e0b3; margin-top:10px;">
+                <legend><strong>Menú Sin TACC VM</strong></legend>
+                <input type="text" name="menu_vm_ent_st" placeholder="Entrada Sin TACC" value="<?php echo esc_attr($vm_data['ent_st']); ?>" style="width:100%; margin-bottom:5px;" />
+                <input type="text" name="menu_vm_pri_st" placeholder="Principal Sin TACC" value="<?php echo esc_attr($vm_data['pri_st']); ?>" style="width:100%; margin-bottom:5px;" />
+                <input type="text" name="menu_vm_pos_st" placeholder="Postre Sin TACC" value="<?php echo esc_attr($vm_data['pos_st']); ?>" style="width:100%;" />
+            </fieldset>
+        </div>
+    </div>
+
+    <p style="background:#fff3cd; padding:15px; border-left:4px solid #ffc107; margin-top:20px;">
+        <label><input type="checkbox" name="menu_notificar" value="1" <?php checked($notificar, '1'); ?> /> <strong>Enviar notificación push global (San Luis y Villa Mercedes)</strong></label>
+    </p>
 <?php
 }
 
 
+
+
 function saebu_save_menu_dia_meta($post_id)
 {
-    // 🔍 DEBUG 1: Ver si la función se ejecuta
-    error_log("=== GUARDANDO MENU ID: $post_id ===");
+    if (!isset($_POST['menu_dia_nonce']) || !wp_verify_nonce($_POST['menu_dia_nonce'], 'saebu_menu_dia_nonce')) return;
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (!current_user_can('edit_post', $post_id)) return;
 
-    if (!isset($_POST['menu_dia_nonce']) || !wp_verify_nonce($_POST['menu_dia_nonce'], 'saebu_menu_dia_nonce')) {
-        error_log(" NONCE FALLÓ");
-        return;
-    }
+    // Prefijos para facilitar el guardado en bucle
+    $campos = array(
+        'sl' => array('fecha', 'precio', 'entrada', 'principal', 'postre', 'ent_st', 'pri_st', 'pos_st'),
+        'vm' => array('precio', 'entrada', 'principal', 'postre', 'ent_st', 'pri_st', 'pos_st')
+    );
 
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        error_log(" AUTOSAVE");
-        return;
-    }
+    foreach ($campos as $sede => $lista) {
+        foreach ($lista as $campo) {
+            $key_post = "menu_{$sede}_{$campo}";
+            $key_meta = "_menu_{$sede}_{$campo}";
 
-    if (!current_user_can('edit_post', $post_id)) {
-        error_log(" SIN PERMISOS");
-        return;
-    }
-
-    // 🔍 DEBUG 2: Ver qué llega en $_POST
-    error_log("POST menu_entrada_sintacc: " . (isset($_POST['menu_entrada_sintacc']) ? $_POST['menu_entrada_sintacc'] : 'NO EXISTE'));
-    error_log("POST menu_principal_sintacc: " . (isset($_POST['menu_principal_sintacc']) ? $_POST['menu_principal_sintacc'] : 'NO EXISTE'));
-    error_log("POST menu_postre_sintacc: " . (isset($_POST['menu_postre_sintacc']) ? $_POST['menu_postre_sintacc'] : 'NO EXISTE'));
-
-    // Campos Comunes
-    if (isset($_POST['menu_fecha'])) {
-        update_post_meta($post_id, '_menu_fecha', sanitize_text_field($_POST['menu_fecha']));
-    }
-    if (isset($_POST['menu_entrada'])) {
-        update_post_meta($post_id, '_menu_entrada', sanitize_text_field($_POST['menu_entrada']));
-    }
-    if (isset($_POST['menu_principal'])) {
-        update_post_meta($post_id, '_menu_principal', sanitize_text_field($_POST['menu_principal']));
-    }
-    if (isset($_POST['menu_postre'])) {
-        update_post_meta($post_id, '_menu_postre', sanitize_text_field($_POST['menu_postre']));
-    }
-    if (isset($_POST['menu_precio'])) {
-        update_post_meta($post_id, '_menu_precio', sanitize_text_field($_POST['menu_precio']));
-    }
-
-    // Campos Sin TACC
-    if (isset($_POST['menu_entrada_sintacc'])) {
-        $valor = sanitize_text_field($_POST['menu_entrada_sintacc']);
-        error_log(" Guardando entrada_st: '$valor'");
-        if (!empty($valor)) {
-            update_post_meta($post_id, '_menu_entrada_sintacc', $valor);
-        } else {
-            delete_post_meta($post_id, '_menu_entrada_sintacc');
+            if (isset($_POST[$key_post])) {
+                update_post_meta($post_id, $key_meta, sanitize_text_field($_POST[$key_post]));
+            }
         }
     }
 
-    if (isset($_POST['menu_principal_sintacc'])) {
-        $valor = sanitize_text_field($_POST['menu_principal_sintacc']);
-        error_log(" Guardando principal_st: '$valor'");
-        if (!empty($valor)) {
-            update_post_meta($post_id, '_menu_principal_sintacc', $valor);
-        } else {
-            delete_post_meta($post_id, '_menu_principal_sintacc');
-        }
-    }
-
-    if (isset($_POST['menu_postre_sintacc'])) {
-        $valor = sanitize_text_field($_POST['menu_postre_sintacc']);
-        error_log(" Guardando postre_st: '$valor'");
-        if (!empty($valor)) {
-            update_post_meta($post_id, '_menu_postre_sintacc', $valor);
-        } else {
-            delete_post_meta($post_id, '_menu_postre_sintacc');
-        }
-    }
-
+    // Notificación
     $notificar = isset($_POST['menu_notificar']) ? '1' : '0';
     update_post_meta($post_id, '_menu_notificar', $notificar);
 
@@ -938,15 +920,11 @@ function saebu_save_menu_dia_meta($post_id)
         saebu_enviar_notificacion_menu($post_id);
         update_post_meta($post_id, '_menu_notificar', '0');
     }
-
-    error_log("=== FIN GUARDADO ===");
 }
+add_action('save_post_menu_dia', 'saebu_save_menu_dia_meta'); // Hook específico para el CPT
 
-//  BORRA ESTO:
-// add_action('save_post_menu_dia', 'saebu_save_menu_dia_meta');
 
-//  USA ESTO EN SU LUGAR:
-add_action('save_post', 'saebu_save_menu_dia_meta_wrapper', 10, 2);
+
 
 function saebu_save_menu_dia_meta_wrapper($post_id, $post)
 {
@@ -960,49 +938,40 @@ function saebu_save_menu_dia_meta_wrapper($post_id, $post)
 }
 
 
-
 function saebu_enviar_notificacion_menu($post_id)
 {
+    // 1. Recuperamos los metadatos de Sede San Luis
+    $fecha_sl     = get_post_meta($post_id, '_menu_sl_fecha', true);
+    $principal_sl = get_post_meta($post_id, '_menu_sl_principal', true);
+    $precio_sl    = get_post_meta($post_id, '_menu_sl_precio', true);
 
-    // 1. Obtener TODOS los datos
-    $fecha        = get_post_meta($post_id, '_menu_fecha', true);
-    $entrada      = get_post_meta($post_id, '_menu_entrada', true);
-    $principal    = get_post_meta($post_id, '_menu_principal', true);
-    $postre       = get_post_meta($post_id, '_menu_postre', true);
-    $precio       = get_post_meta($post_id, '_menu_precio', true);
+    // 2. Recuperamos los metadatos de Sede Villa Mercedes
+    $principal_vm = get_post_meta($post_id, '_menu_vm_principal', true);
+    $precio_vm    = get_post_meta($post_id, '_menu_vm_precio', true);
 
-    $entrada_st   = get_post_meta($post_id, '_menu_entrada_sintacc', true);
-    $principal_st = get_post_meta($post_id, '_menu_principal_sintacc', true);
-    $postre_st    = get_post_meta($post_id, '_menu_postre_sintacc', true);
+    // Si no hay platos principales, cancelamos el envío para no enviar una notificación vacía
+    if (empty($principal_sl) && empty($principal_vm)) {
+        return;
+    }
 
+    // Formateo de fecha (usando San Luis como referencia)
+    $fecha_formateada = date_i18n('d/m', strtotime($fecha_sl));
+    $titulo = "Menu del Dia (" . $fecha_formateada . ")";
 
-    $fecha_formateada = date_i18n('d/m', strtotime($fecha));
-    $titulo = "Menú del " . $fecha_formateada;
-
-
+    // Construcción del mensaje combinando ambas sedes
     $lineas = array();
-    if (!empty($principal)) {
-        $lineas[] = "Principal: " . $principal;
-        if (!empty($entrada)) $lineas[] = "Entrada: " . $entrada;
-        if (!empty($postre))  $lineas[] = "Postre: " . $postre;
+
+    if (!empty($principal_sl)) {
+        $lineas[] = "San Luis: " . $principal_sl;
     }
-    if (!empty($principal_st)) {
-        $lineas[] = "Sin TACC: " . $principal_st;
-        if (!empty($entrada_st)) $lineas[] = "Entrada : " . $entrada_st;
-        if (!empty($postre_st))  $lineas[] = "Postre : " . $postre_st;
-    }
-    if (!empty($precio)) {
-        $lineas[] = "$" . $precio;
+
+    if (!empty($principal_vm)) {
+        $lineas[] = "Villa Mercedes: " . $principal_vm;
     }
 
     $mensaje = implode("\n", $lineas);
 
-
-    // Fallback
-    if (empty($mensaje)) $mensaje = "Haz clic para ver el menú completo.";
-
-
-
+    // Configuración de OneSignal
     $app_id = '58790c7e-7e27-46bc-a016-4861b88f45d3';
     $rest_api_key = 'M2NlM2MzODItOGFkYS00NjYyLTk1MTUtMWQ1NTQyM2Q4NTBi';
 
@@ -1016,14 +985,12 @@ function saebu_enviar_notificacion_menu($post_id)
         'url' => get_permalink($post_id),
     );
 
-    // Imagen
+    // Imagen destacada (si existe)
     if (has_post_thumbnail($post_id)) {
         $img_url_raw = get_the_post_thumbnail_url($post_id, 'large');
         $img_url = set_url_scheme($img_url_raw, 'https');
         $fields['big_picture'] = $img_url;
         $fields['chrome_web_image'] = $img_url;
-        $fields['chrome_web_icon'] = $img_url;
-        $fields['firefox_icon'] = $img_url;
     }
 
     $ch = curl_init();
@@ -1039,11 +1006,14 @@ function saebu_enviar_notificacion_menu($post_id)
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
 
     $response = curl_exec($ch);
-    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
-
-
 }
+
+
+
+
+
+
 
 
 
@@ -1153,20 +1123,21 @@ function saebu_enviar_push_noticia_cpt($post_id)
 
 
 
+
 function saebu_get_menu_del_dia()
 {
     $hoy = date('Y-m-d');
 
+    // 1. Intentar buscar el menú exacto de HOY
     $args = array(
         'post_type'      => 'menu_dia',
         'posts_per_page' => 1,
         'post_status'    => 'publish',
-        'orderby'        => array(
-            'ID' => 'DESC',  // El menú más nuevo primero
-        ),
+        'orderby'        => 'ID',
+        'order'          => 'DESC',
         'meta_query'     => array(
             array(
-                'key'     => '_menu_fecha',
+                'key'     => '_menu_sl_fecha', // Cambiado de _menu_fecha a _menu_sl_fecha
                 'value'   => $hoy,
                 'compare' => '=',
                 'type'    => 'DATE',
@@ -1177,39 +1148,29 @@ function saebu_get_menu_del_dia()
     $query = new WP_Query($args);
 
     if ($query->have_posts()) {
-        wp_reset_postdata();
         return $query->posts[0];
     }
 
-    // Si no hay de hoy, buscar el más reciente
-    $args = array(
+    // 2. Si no hay de hoy, buscar el más reciente que tenga fecha cargada
+    $args_fallback = array(
         'post_type'      => 'menu_dia',
         'posts_per_page' => 1,
         'post_status'    => 'publish',
-        'meta_key'       => '_menu_fecha',
+        'meta_key'       => '_menu_sl_fecha', // Cambiado
         'orderby'        => array(
             'meta_value' => 'DESC',
             'ID'         => 'DESC',
         ),
-        'meta_query'     => array(
-            array(
-                'key'     => '_menu_fecha',
-                'compare' => 'EXISTS',
-            ),
-        ),
     );
 
-    $query = new WP_Query($args);
+    $query_fallback = new WP_Query($args_fallback);
 
-    if ($query->have_posts()) {
-        wp_reset_postdata();
-        return $query->posts[0];
+    if ($query_fallback->have_posts()) {
+        return $query_fallback->posts[0];
     }
 
     return null;
 }
-
-
 
 
 

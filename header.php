@@ -12,7 +12,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('bg-white'); ?> x-data="{ mobileMenuOpen: false }" :class="{ 'overflow-hidden': mobileMenuOpen }">
+<body <?php body_class('bg-white overflow-x-hidden'); ?> x-data="{ mobileMenuOpen: false }" :class="{ 'overflow-hidden': mobileMenuOpen }">
     <?php wp_body_open(); ?>
 
     <!-- Top Bar -->
@@ -84,26 +84,10 @@
                 </div>
 
                 <!-- Desktop Navigation with Dropdowns -->
-                <nav class="hidden lg:flex gap-1 items-center">
+                <nav class="hidden xl:flex gap-1 items-center">
 
                     <div class="gtranslate_wrapper"></div>
-                    <script>
-                        window.gtranslateSettings = {
-                            "default_language": "es",
-                            "native_language_names": true,
-                            "detect_browser_language": true,
-                            "languages": ["en", "es", "pt", "de"],
-                            "globe_color": "#071629ff",
-                            "wrapper_selector": ".gtranslate_wrapper",
-                            "alt_flags": {
-                                "en": "usa",
-                                "pt": "brazil",
-                                "es": "argentina"
-                            },
-                            "globe_size": 20
-                        }
-                    </script>
-                    <script src="https://cdn.gtranslate.net/widgets/latest/globe.js" defer></script>
+
 
                     <?php
                     if (has_nav_menu('menu-principal')) {
@@ -134,7 +118,7 @@
                 <button
                     type="button"
                     @click="mobileMenuOpen = !mobileMenuOpen"
-                    class="lg:hidden relative z-[9999] w-10 h-10 flex items-center justify-center text-slate-800 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="xl:hidden relative z-[9999] w-10 h-10 flex items-center justify-center text-slate-800 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
                     :class="{ 'text-white hover:bg-white/10': mobileMenuOpen }"
                     :aria-expanded="mobileMenuOpen.toString()"
                     aria-label="Toggle menu">
@@ -159,7 +143,7 @@
         x-transition:leave-start="opacity-100"
         x-transition:leave-end="opacity-0"
         @click="mobileMenuOpen = false"
-        class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9990] lg:hidden"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9990] xl:hidden"
         x-cloak></div>
 
     <!-- Mobile Navigation with Accordions -->
@@ -173,7 +157,7 @@
         x-transition:leave-end="translate-x-full"
         @click.away="mobileMenuOpen = false"
         @keydown.escape.window="mobileMenuOpen = false"
-        class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl z-[9995] lg:hidden overflow-y-auto"
+        class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl z-[9995] xl:hidden overflow-y-auto"
         x-cloak>
         <div class="p-6 pt-24">
 
@@ -196,6 +180,9 @@
                     echo '</ul>';
                 }
                 ?>
+                <div class="pl-6 py-3 pr-3">
+                    <div class="gtranslate_wrapper"></div>
+                </div>
             </div>
 
             <!-- Mobile Contact Info -->
@@ -238,3 +225,20 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/js/a11y-toolbar-master/css/a11y-toolbar.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/js/a11y-toolbar-master/css/a11y-custom.css">
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/a11y-toolbar-master/js/a11y-custom.js"></script>
+    <script>
+        window.gtranslateSettings = {
+            "default_language": "es",
+            "native_language_names": true,
+            "detect_browser_language": true,
+            "languages": ["en", "es", "pt", "de"],
+            "globe_color": "#071629ff",
+            "wrapper_selector": ".gtranslate_wrapper",
+            "alt_flags": {
+                "en": "usa",
+                "pt": "brazil",
+                "es": "argentina"
+            },
+            "globe_size": 20
+        }
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/globe.js" defer></script>

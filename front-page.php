@@ -79,7 +79,10 @@
 
 
     <?php
-    // Aseguramos que no haya errores si la función no existe
+    /**
+     * Componente: Menú del Día - Doble Sede Institucional (Full Fields)
+     */
+
     if (function_exists('saebu_get_menu_del_dia')) {
         $menu_dia = saebu_get_menu_del_dia();
     } else {
@@ -87,140 +90,178 @@
     }
 
     if ($menu_dia) :
-        // Obtención de datos
-        $fecha     = get_post_meta($menu_dia->ID, '_menu_fecha', true);
-        $entrada   = get_post_meta($menu_dia->ID, '_menu_entrada', true);
-        $principal = get_post_meta($menu_dia->ID, '_menu_principal', true);
-        $postre    = get_post_meta($menu_dia->ID, '_menu_postre', true);
-        $precio    = get_post_meta($menu_dia->ID, '_menu_precio', true);
+        $post_id = $menu_dia->ID;
 
-        // Sin TACC
-        $entrada_st   = get_post_meta($menu_dia->ID, '_menu_entrada_sintacc', true);
-        $principal_st = get_post_meta($menu_dia->ID, '_menu_principal_sintacc', true);
-        $postre_st    = get_post_meta($menu_dia->ID, '_menu_postre_sintacc', true);
+        // --- SEDE SAN LUIS ---
+        $sl = array(
+            'fecha'     => get_post_meta($post_id, '_menu_sl_fecha', true),
+            'precio'    => get_post_meta($post_id, '_menu_sl_precio', true),
+            'principal' => get_post_meta($post_id, '_menu_sl_principal', true),
+            'entrada'   => get_post_meta($post_id, '_menu_sl_entrada', true),
+            'postre'    => get_post_meta($post_id, '_menu_sl_postre', true),
+            'pri_st'    => get_post_meta($post_id, '_menu_sl_pri_st', true),
+            'ent_st'    => get_post_meta($post_id, '_menu_sl_ent_st', true), // Campo agregado
+            'pos_st'    => get_post_meta($post_id, '_menu_sl_pos_st', true), // Campo agregado
+        );
+        // --- SEDE VILLA MERCEDES ---
+        $vm = array(
+            'precio'    => get_post_meta($post_id, '_menu_vm_precio', true),
+            'principal' => get_post_meta($post_id, '_menu_vm_principal', true),
+            'entrada'   => get_post_meta($post_id, '_menu_vm_entrada', true),
+            'postre'    => get_post_meta($post_id, '_menu_vm_postre', true),
+            'pri_st'    => get_post_meta($post_id, '_menu_vm_pri_st', true),
+            'ent_st'    => get_post_meta($post_id, '_menu_vm_ent_st', true), // Campo agregado
+            'pos_st'    => get_post_meta($post_id, '_menu_vm_pos_st', true), // Campo agregado
+        );
 
-        // Ruta assets (Ajusta si es necesario)
-        $assets_url = get_stylesheet_directory_uri() . '/assets';
+        $timestamp = strtotime($sl['fecha']);
     ?>
 
-        <div class=" bg-white dark:bg-slate-900  shadow-xl overflow-hidden  mx-auto border border-gray-100 dark:border-slate-800 "> <!-- font-sans -->
+        <div class="bg-white dark:bg-slate-950  overflow-hidden border border-slate-100 dark:border-slate-800 font-sans"> <!-- shadow-2xl rounded-2xl -->
 
-            <div class="bg-[#416ed2] p-6 flex flex-col md:flex-row items-center justify-between text-white relative overflow-hidden">
-                <div class="absolute top-0 right-0 opacity-10 pointer-events-none transform translate-x-1/4 -translate-y-1/4">
-
-
-
-                    <svg class="w-64 h-64 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
+            <div class="bg-[#00305d] p-8 flex flex-col md:flex-row items-center justify-between text-white relative">
+                <div class="absolute inset-0 opacity-10 pointer-events-none">
+                    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path d="M0 100 C 20 0 50 0 100 100 Z" fill="black"></path>
                     </svg>
-
-
-
                 </div>
 
-                <div class="flex items-center gap-4 relative z-10">
-                    <span class="text-6xl  font-bold leading-none"><?php echo date_i18n('d', strtotime($fecha)); ?></span>
-                    <div class="flex flex-col leading-tight uppercase tracking-widest text-sm opacity-90">
-                        <span class="font-semibold"><?php echo date_i18n('F', strtotime($fecha)); ?></span>
-                        <span><?php echo date_i18n('Y', strtotime($fecha)); ?></span>
+                <div class="flex items-center gap-6 relative z-10">
+                    <div class="text-center md:text-left border-r border-white/20 pr-6">
+                        <span class="text-5xl font-black leading-none block"><?php echo date_i18n('d', $timestamp); ?></span>
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] opacity-80"><?php echo date_i18n('F', $timestamp); ?></span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-bold tracking-tight uppercase">Menú</h1>
+                        <p class="text-xs font-medium text-white/70 tracking-widest uppercase italic">San Luis & Villa Mercedes</p>
                     </div>
                 </div>
 
-                <div class="mt-4 md:mt-0 relative z-10 flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
-                    <svg class="w-5 h-5 opacity-80" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                    </svg>
-                    <span class="uppercase text-xs font-bold tracking-wider">Comedor universitario UNSL</span>
-                </div>
+                <!--div class="mt-6 md:mt-0 relative z-10 flex items-center gap-3 bg-black/10 px-5 py-2.5 rounded-full border border-white/10 backdrop-blur-md">
+                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span class="uppercase text-[10px] font-extrabold tracking-[0.15em]">Servicio Activo</span>
+                </div-->
             </div>
 
-            <div class="flex flex-col md:flex-row mx-auto max-w-7xl w-full">
+            <div class="flex flex-col lg:flex-row max-w-7xl mx-auto">
 
-                <div class="md:w-[65%] p-8 relative">
-
-                    <div class="mb-8">
-                        <h3 class=" text-2xl text-[#416ed2] dark:text-blue-400 mb-6 pb-3 border-b border-gray-100 dark:border-slate-800 flex items-center gap-2">
-                            <span>Menú del día</span>
-                        </h3>
-
-                        <?php if ($principal): ?>
-                            <div class="mb-6">
-                                <p class=" text-xl md:text-2xl font-bold text-slate-900 dark:text-white leading-tight">
-                                    <?php echo esc_html($principal); ?>
-                                </p>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php if ($entrada || $postre): ?>
-                            <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate-600 dark:text-slate-300 bg-gray-50 dark:bg-slate-800/50 p-4 rounded-lg inline-block">
-                                <?php if ($entrada): ?>
-                                    <div class="flex flex-col">
-                                        <span class="uppercase text-[10px] font-bold tracking-wider text-slate-400 mb-1">Entrada</span>
-                                        <span class="font-medium text-base text-slate-800 dark:text-slate-200"><?php echo esc_html($entrada); ?></span>
-                                    </div>
-                                <?php endif; ?>
-
-                                <?php if ($entrada && $postre): ?>
-                                    <div class="w-px bg-gray-300 dark:bg-slate-700 h-auto self-stretch"></div>
-                                <?php endif; ?>
-
-                                <?php if ($postre): ?>
-                                    <div class="flex flex-col">
-                                        <span class="uppercase text-[10px] font-bold tracking-wider text-slate-400 mb-1">Postre</span>
-                                        <span class="font-medium text-base text-slate-800 dark:text-slate-200"><?php echo esc_html($postre); ?></span>
-                                    </div>
-                                <?php endif; ?>
-                            </div>
-                        <?php endif; ?>
+                <div class="flex-1 p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-slate-100 dark:border-slate-800">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-1 h-8 bg-[#005eb8]"></div>
+                        <h1 class="text-sm font-black uppercase tracking-[0.2em] text-[#005eb8]">Sede San Luis</h1>
                     </div>
 
-                    <?php if ($principal_st || $entrada_st): ?>
-                        <div class="pt-6 border-t border-dashed border-gray-200 dark:border-slate-800">
-                            <h4 class="flex items-center gap-3  text-xl text-slate-700 dark:text-slate-200 mb-4">
-                                <img src="<?php echo esc_url($assets_url . '/images/sintacc.png'); ?>" alt="Sin TACC" class="w-7 h-7" onerror="this.outerHTML='<svg class=\'w-6 h-6 text-green-600\' fill=\'none\' stroke=\'currentColor\' viewBox=\'0 0 24 24\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\'/></svg>'">
-                                <span>Opción libre de gluten (Sin TACC)</span>
-                            </h4>
+                    <div class="space-y-8">
+                        <div>
+                            <span class="text-[10px] font-bold text-slate-700 uppercase tracking-widest block mb-2">Plato Principal</span>
+                            <p class="text-2xl font-bold text-slate-900 dark:text-white leading-tight mb-4"><?php echo $sl['principal'] ?: 'No cargado'; ?></p>
 
-                            <div class="pl-10">
-                                <?php if ($principal_st): ?>
-                                    <p class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-2"><?php echo esc_html($principal_st); ?></p>
+                            <div class="flex gap-6">
+                                <?php if ($sl['entrada']): ?>
+                                    <div class="flex flex-col">
+                                        <span class="text-[8px] font-bold text-slate-700 uppercase tracking-tighter">Entrada</span>
+                                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-700"><?php echo $sl['entrada']; ?></span>
+                                    </div>
                                 <?php endif; ?>
-
-                                <div class="text-sm text-slate-500 dark:text-slate-400 flex gap-4">
-                                    <?php if ($entrada_st) echo '<span><strong>Entrada:</strong> ' . esc_html($entrada_st) . '</span>'; ?>
-                                    <?php if ($postre_st) echo '<span><strong>Postre:</strong> ' . esc_html($postre_st) . '</span>'; ?>
-                                </div>
+                                <?php if ($sl['postre']): ?>
+                                    <div class="flex flex-col">
+                                        <span class="text-[8px] font-bold text-slate-700 uppercase tracking-tighter">Postre</span>
+                                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-700"><?php echo $sl['postre']; ?></span>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
-                    <?php endif; ?>
 
-                </div>
+                        <?php if ($sl['pri_st'] || $sl['ent_st'] || $sl['pos_st']): ?>
+                            <div class="bg-blue-50/50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-900/30 rounded-xl p-5">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="bg-[#3d6812] text-white text-[8px] font-black px-2 py-0.5 rounded uppercase">Sin TACC</span>
+                                </div>
+                                <p class="text-base font-bold text-slate-800 dark:text-slate-200 mb-3"><?php echo $sl['pri_st'] ?: 'Principal ST'; ?></p>
+                                <div class="flex gap-4">
+                                    <?php if ($sl['ent_st']): ?>
+                                        <span class="text-[11px] text-slate-500"><strong class="text-slate-700 font-normal">Entrada:</strong> <?php echo $sl['ent_st']; ?></span>
+                                    <?php endif; ?>
+                                    <?php if ($sl['pos_st']): ?>
+                                        <span class="text-[11px] text-slate-500"><strong class="text-slate-700 font-normal">Postre:</strong> <?php echo $sl['pos_st']; ?></span>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
 
-                <div class="md:w-[35%] bg-gray-50 dark:bg-slate-800/50 p-8 flex flex-col justify-center items-center border-t md:border-t-0 md:border-l border-gray-200 dark:border-slate-800">
-
-                    <?php if ($precio): ?>
-                        <div class="text-center mb-8">
-                            <span class="block uppercase tracking-widest text-xs font-bold text-slate-400 mb-2">Valor del Cubierto</span>
-                            <span class=" text-5xl font-bold text-[#416ed2] dark:text-white"><?php echo esc_html($precio); ?></span>
+                        <div class="flex items-center gap-2 pt-2">
+                            <span class="text-[10px] font-bold text-slate-700 uppercase">Ticket</span>
+                            <span class="text-3xl font-black text-[#005eb8]"><?php echo $sl['precio']; ?></span>
                         </div>
-                    <?php endif; ?>
-
-                    <button id="btn-suscribir-menu" class="group w-full bg-[#416ed2] hover:bg-[#001a3d] text-white transition-all duration-300 rounded-lg px-6 py-4 flex items-center justify-center gap-3 shadow-md hover:shadow-lg font-semibold tracking-wide">
-                        <svg class="w-5 h-5 transition-transform group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                        </svg>
-                        <span>Suscribirse al Menú</span>
-                    </button>
-
-                    <p class="text-xs text-slate-400 text-center mt-4 leading-relaxed px-4">
-                        Recibí las notificaciones del menú diario directamente en tu dispositivo.
-                    </p>
+                    </div>
                 </div>
 
+                <div class="flex-1 p-8 md:p-10 bg-slate-50/50 dark:bg-slate-900/30">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-1 h-8 bg-[#63350c]"></div>
+                        <h1 class="text-sm font-black uppercase tracking-[0.2em] text-[#63350c]">Sede Villa Mercedes</h1>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div>
+                            <span class="text-[10px] font-bold text-slate-700 uppercase tracking-widest block mb-2">Plato Principal</span>
+                            <p class="text-2xl font-bold text-slate-900 dark:text-white leading-tight mb-4"><?php echo $vm['principal'] ?: 'No cargado'; ?></p>
+
+                            <div class="flex gap-6">
+                                <?php if ($vm['entrada']): ?>
+                                    <div class="flex flex-col">
+                                        <span class="text-[8px] font-bold text-slate-700 uppercase tracking-tighter">Entrada</span>
+                                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-700"><?php echo $vm['entrada']; ?></span>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($vm['postre']): ?>
+                                    <div class="flex flex-col">
+                                        <span class="text-[8px] font-bold text-slate-700 uppercase tracking-tighter">Postre</span>
+                                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-700"><?php echo $vm['postre']; ?></span>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+
+                        <?php if ($vm['pri_st'] || $vm['ent_st'] || $vm['pos_st']): ?>
+                            <div class="bg-orange-50/50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/30 rounded-xl p-5">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="bg-[#3d6812] text-white text-[8px] font-black px-2 py-0.5 rounded uppercase">Sin TACC</span>
+                                </div>
+                                <p class="text-base font-bold text-slate-800 dark:text-slate-200 mb-3"><?php echo $vm['pri_st'] ?: 'Principal ST'; ?></p>
+                                <div class="flex gap-4">
+                                    <?php if ($vm['ent_st']): ?>
+                                        <span class="text-[11px] text-slate-500"><strong class="text-slate-700 font-normal">Entrada:</strong> <?php echo $vm['ent_st']; ?></span>
+                                    <?php endif; ?>
+                                    <?php if ($vm['pos_st']): ?>
+                                        <span class="text-[11px] text-slate-500"><strong class="text-slate-700 font-normal">Postre:</strong> <?php echo $vm['pos_st']; ?></span>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+
+                        <div class="flex items-center gap-2 pt-2">
+                            <span class="text-[10px] font-bold text-slate-700 uppercase">Ticket</span>
+                            <span class="text-3xl font-black text-[#63350c]"><?php echo $vm['precio']; ?></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="p-6 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 flex items-center justify-center">
+                <button id="btn-suscribir-menu" class="group bg-slate-900 hover:bg-[#005eb8] text-white transition-all duration-300 rounded px-8 py-3 flex items-center gap-3 shadow-lg font-bold text-xs uppercase tracking-widest">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <span>Suscribirse al menú</span>
+                </button>
             </div>
         </div>
 
     <?php endif; ?>
+
+
 
 
 
@@ -321,31 +362,48 @@
             `;
                 document.body.appendChild(modal);
             }
-            // Función para activar notificaciones (cuando ya está instalada)
+
             function activarNotificaciones(boton) {
                 const textoOriginal = boton.innerHTML;
                 boton.innerHTML = '<span class="text-xs">Procesando...</span>';
+
                 window.OneSignal = window.OneSignal || [];
                 window.OneSignal.push(function() {
-                    if (typeof window.OneSignal.showSlidedownPrompt === 'function') {
-                        window.OneSignal.showSlidedownPrompt({
+
+                    // 1. Obtener el estado del permiso con la sintaxis moderna
+                    // Los valores posibles son: "default", "granted", o "denied"
+                    const currentPermission = OneSignal.Notifications.permissionNative;
+
+                    if (currentPermission === 'denied') {
+                        alert("Has bloqueado las notificaciones en tu navegador. Por favor, haz clic en el icono del candado junto a la URL para restablecer los permisos.");
+                        boton.innerHTML = textoOriginal;
+                        return;
+                    }
+
+                    if (currentPermission === 'granted') {
+                        alert("Ya tienes las notificaciones activadas. ¡Gracias!");
+                        boton.innerHTML = textoOriginal;
+                        return;
+                    }
+
+                    // 2. Ejecutar el Slidedown personalizado
+                    // En el SDK moderno se usa OneSignal.Slidedown.promptPush
+                    try {
+                        OneSignal.Slidedown.promptPush({
                             force: true
                         });
-                    } else if (typeof window.OneSignal.Slidedown === 'object' &&
-                        typeof window.OneSignal.Slidedown.promptPush === 'function') {
-                        window.OneSignal.Slidedown.promptPush({
-                            force: true
-                        });
-                    } else if (typeof window.OneSignal.showNativePrompt === 'function') {
-                        window.OneSignal.showNativePrompt();
-                    } else {
-                        window.OneSignal.registerForPushNotifications();
+                    } catch (e) {
+                        console.error("Error al intentar mostrar el prompt:", e);
+                        // Fallback en caso de que el Slidedown falle por configuración
+                        OneSignal.Notifications.requestPermission();
                     }
                 });
+
                 setTimeout(() => {
                     boton.innerHTML = textoOriginal;
                 }, 2000);
             }
+
         });
     </script>
 </section>

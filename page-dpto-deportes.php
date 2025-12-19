@@ -94,19 +94,19 @@ get_header();
                     </div>
 
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-orange-500">
+                        <div class="bg-gray-50 p-6 rounded-lg ">
                             <span class="block text-3xl font-bold text-gray-900 mb-1">+15</span>
                             <span class="text-sm text-gray-500 uppercase font-semibold">Disciplinas</span>
                         </div>
-                        <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-900">
+                        <div class="bg-gray-50 p-6 rounded-lg ">
                             <span class="block text-3xl font-bold text-gray-900 mb-1">100%</span>
                             <span class="text-sm text-gray-500 uppercase font-semibold">Gratuito</span>
                         </div>
-                        <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-900">
+                        <div class="bg-gray-50 p-6 rounded-lg ">
                             <span class="block text-3xl font-bold text-gray-900 mb-1">3</span>
                             <span class="text-sm text-gray-500 uppercase font-semibold">Centros deportivos</span>
                         </div>
-                        <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-orange-500">
+                        <div class="bg-gray-50 p-6 rounded-lg ">
                             <span class="block text-3xl font-bold text-gray-900 mb-1">JUR</span>
                             <span class="text-sm text-gray-500 uppercase font-semibold">Competencia regional</span>
                         </div>
