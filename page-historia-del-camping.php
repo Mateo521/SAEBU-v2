@@ -2,7 +2,7 @@
 
 /**
  * Template Name: Historia del Camping
- * Description: Archivo Histórico del Complejo Turístico La Florida
+ * Description: Archivo histórico del Complejo Turístico La Florida
  */
 
 get_header();
@@ -24,7 +24,7 @@ get_header();
                 </nav>
 
                 <h1 class="text-3xl md:text-5xl font-bold mb-6 serif tracking-wide">
-                    Archivo Histórico
+                    Archivo histórico
                 </h1>
 
                 <div class="w-16 h-1 bg-green-500 mx-auto mb-6"></div>
@@ -64,11 +64,11 @@ get_header();
                 <div class="relative border-l-2 border-gray-300 ml-4 md:ml-6 space-y-12">
 
                     <div class="relative pl-8 md:pl-12">
-                        <div class="absolute -left-[9px] top-0 w-5 h-5 bg-green-600 rounded-full border-4 border-white"></div>
+                        <div class="absolute -left-[11px] top-0 w-5 h-5 bg-green-600 rounded-full border-4 border-white"></div> 
 
                         <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
                             <span class="text-sm font-bold text-green-700 uppercase tracking-wide mb-2 block">Fase I</span>
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">Infraestructura Base</h3>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Infraestructura base</h3>
                             <p class="text-gray-600 mb-4">
                                 Se establecieron los cimientos del complejo. Esta etapa incluyó la construcción de quinchos, baterías de baños, asadores y la casa de ingreso para el cuidador.
                             </p>
@@ -85,7 +85,7 @@ get_header();
                     </div>
 
                     <div class="relative pl-8 md:pl-12">
-                        <div class="absolute -left-[9px] top-0 w-5 h-5 bg-green-600 rounded-full border-4 border-white"></div>
+                        <div class="absolute -left-[11px] top-0 w-5 h-5 bg-green-600 rounded-full border-4 border-white"></div>
 
                         <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
                             <span class="text-sm font-bold text-green-700 uppercase tracking-wide mb-2 block">Medio Ambiente</span>
@@ -97,7 +97,7 @@ get_header();
                     </div>
 
                     <div class="relative pl-8 md:pl-12">
-                        <div class="absolute -left-[9px] top-0 w-5 h-5 bg-green-600 rounded-full border-4 border-white"></div>
+                        <div class="absolute -left-[11px] top-0 w-5 h-5 bg-green-600 rounded-full border-4 border-white"></div>
 
                         <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
                             <span class="text-sm font-bold text-green-700 uppercase tracking-wide mb-2 block">1989</span>
@@ -109,11 +109,11 @@ get_header();
                     </div>
 
                     <div class="relative pl-8 md:pl-12">
-                        <div class="absolute -left-[9px] top-0 w-5 h-5 bg-green-600 rounded-full border-4 border-white"></div>
+                        <div class="absolute -left-[11px] top-0 w-5 h-5 bg-green-600 rounded-full border-4 border-white"></div>
 
                         <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
                             <span class="text-sm font-bold text-green-700 uppercase tracking-wide mb-2 block">Mayo 1990</span>
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">Consolidación de Servicios</h3>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Consolidación de servicios</h3>
                             <p class="text-gray-600">
                                 Habilitación de la cocina equipada, nuevos asadores, ampliación de sanitarios y barras de servicio, completando la infraestructura básica para la concesión del complejo.
                             </p>
@@ -131,9 +131,9 @@ get_header();
             <div class="max-w-7xl mx-auto">
 
                 <div class="text-center mb-12">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Registro Fotográfico</h2>
+                    <!--h2 class="text-2xl font-bold text-gray-900 mb-2">Registro fotográfico</h2-->
                     <div class="w-16 h-1 bg-gray-200 mx-auto"></div>
-                    <p class="text-gray-500 mt-4 text-sm uppercase tracking-widest">Archivo Documental</p>
+                    <p class="text-gray-500 mt-4 text-sm uppercase tracking-widest">Archivo documental</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -183,7 +183,7 @@ get_header();
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 00-2 2v2M7 7h10"></path>
                     </svg>
-                    <span class="text-sm italic">Fuente: Archivo Histórico y Documental UNSL</span>
+                    <span class="text-sm italic">Fuente: Archivo histórico y Documental UNSL</span>
                 </div>
 
             </div>

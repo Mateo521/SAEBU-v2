@@ -160,7 +160,7 @@ get_header();
                         <?php
                         $especialidades = [
                             'Enfermería',
-                            'Medicina General',
+                            'Medicina general',
                             'Kinesiología',
                             'Nutrición',
                             'Psicología',
@@ -168,7 +168,7 @@ get_header();
                             'Ginecología',
                             'Oftalmología',
                             'Fonoaudiología',
-                            'Análisis Clínicos'
+                            'Análisis clínicos'
                         ];
                         foreach ($especialidades as $esp):
                         ?>
