@@ -101,9 +101,9 @@ get_header();
 
                         <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
                             <span class="text-sm font-bold text-green-700 uppercase tracking-wide mb-2 block">1989</span>
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">Quincho Cerrado</h3>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">quincho</h3>
                             <p class="text-gray-600">
-                                Inauguración del salón de usos múltiples (Quincho Cerrado) con una superficie cubierta de <strong>200 m²</strong>, permitiendo actividades durante todo el año.
+                                Inauguración del salón de usos múltiples (quincho) con una superficie cubierta de <strong>200 m²</strong>, permitiendo actividades durante todo el año.
                             </p>
                         </div>
                     </div>
@@ -143,7 +143,7 @@ get_header();
                         ['id' => 2, 'alt' => 'Vista del dique', 'titulo' => 'Entorno natural', 'fecha' => 'Fase I'],
                         ['id' => 3, 'alt' => 'Construcción temprana', 'titulo' => 'Obras', 'fecha' => '1988'],
                         ['id' => 4, 'alt' => 'Instalaciones sanitarias', 'titulo' => 'Obra Sanitaria', 'fecha' => 'Fase I'],
-                        ['id' => 5, 'alt' => 'Quincho cerrado', 'titulo' => 'Techado del SUM', 'fecha' => '1989'],
+                        ['id' => 5, 'alt' => 'quincho', 'titulo' => 'Techado del SUM', 'fecha' => '1989'],
                         ['id' => 6, 'alt' => 'Vista del dique', 'titulo' => 'Entorno natural', 'fecha' => '1990'],
                         ['id' => 7, 'alt' => 'Cocina', 'titulo' => 'Equipamiento de cocina', 'fecha' => 'Mayo 1990'],
                         ['id' => 8, 'alt' => 'Asadores', 'titulo' => 'Zona de asadores', 'fecha' => '1990'],

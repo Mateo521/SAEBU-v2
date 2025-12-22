@@ -75,7 +75,7 @@ get_header();
                         </div>
 
                         <div class="w-full md:w-1/3 bg-slate-50 border border-gray-200 rounded-lg p-6">
-                            <h3 class="font-bold text-slate-900 mb-4">áreas Asistidas</h3>
+                            <h3 class="font-bold text-slate-900 mb-4">Áreas asistidas</h3>
                             <ul class="space-y-3">
                                 <li class="flex items-center gap-3 text-sm text-gray-700">
                                     <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
@@ -95,7 +95,7 @@ get_header();
                                 </li>
                                 <li class="flex items-center gap-3 text-sm text-gray-700">
                                     <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                                    Administración Central
+                                    Administración central
                                 </li>
                             </ul>
                         </div>

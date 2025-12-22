@@ -53,15 +53,15 @@ get_header();
                         <div class="text-gray-400 group-hover:text-[#005eb8] mb-3 transition-colors">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                         </div>
-                        <h3 class="font-bold text-gray-900 mb-1 text-base">Alimentación Óptima</h3>
-                        <p class="text-sm text-gray-600">Nutrición adecuada y accesible para estudiantes.</p>
+                        <h3 class="font-bold text-gray-900 mb-1 text-base">Alimentación óptima</h3>
+                        <p class="text-sm text-gray-600">Nutrición accesible para estudiantes.</p>
                     </div>
 
                     <div class="bg-gray-50 border border-gray-200 p-6 rounded-md hover:border-[#005eb8] transition-colors duration-300 group">
                         <div class="text-gray-400 group-hover:text-[#005eb8] mb-3 transition-colors">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                         </div>
-                        <h3 class="font-bold text-gray-900 mb-1 text-base">Atención Primaria</h3>
+                        <h3 class="font-bold text-gray-900 mb-1 text-base">Atención primaria</h3>
                         <p class="text-sm text-gray-600">Cobertura integral y prevención en salud.</p>
                     </div>
 
@@ -69,7 +69,7 @@ get_header();
                         <div class="text-gray-400 group-hover:text-[#005eb8] mb-3 transition-colors">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
-                        <h3 class="font-bold text-gray-900 mb-1 text-base">Formación Integral</h3>
+                        <h3 class="font-bold text-gray-900 mb-1 text-base">Formación integral</h3>
                         <p class="text-sm text-gray-600">Prácticas deportivas, recreativas y culturales.</p>
                     </div>
 
@@ -101,7 +101,7 @@ get_header();
                 <div>
                     <h2 class="text-2xl font-bold text-gray-900 mb-4">Nuestra Visión</h2>
                     <p class="text-lg text-gray-700 leading-relaxed">
-                        "Constituirnos en la <span class="font-semibold text-[#005eb8]">primera Secretaría de Asuntos Estudiantiles y Bienestar Universitario</span> en el ámbito de la Educación Superior dentro de los próximos 6 años, impulsados por nuestro compromiso de liderazgo y cambio."
+                        "Constituirnos en la <span class="font-semibold text-[#005eb8]">primera Secretaría de Asuntos Estudiantiles y Bienestar Universitario</span> en el ámbito de la Educación Superior dentro de los próximos 6 años, impulsados por nuestro compromiso de liderazgo y cambio"
                     </p>
                 </div>
             </div>
@@ -156,7 +156,7 @@ get_header();
                 Comprometidos con tu desarrollo integral
             </h2>
             <p class="text-blue-100 mb-8 max-w-2xl mx-auto">
-                Si tienes dudas sobre nuestros programas de becas, salud o deportes, estamos aquí para ayudarte.
+                Si tenés dudas sobre nuestros programas de becas, salud o deportes, estamos acá para ayudarte.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="<?php echo esc_url(home_url('/contacto')); ?>" class="inline-flex items-center justify-center gap-2 bg-white text-[#005eb8] px-8 py-3 rounded-md font-bold hover:bg-gray-100 transition-colors shadow-sm">

@@ -12,7 +12,7 @@ $total_posts = $wp_query->found_posts;
     
     <header class="bg-[#0f172a] text-white pt-20 pb-16">
         <div class="container mx-auto px-4">
-            <div class="max-w-5xl mx-auto">
+            <div class="max-w-6xl mx-auto">
                 
                 <div class="mb-8 text-xs font-bold uppercase tracking-widest text-slate-400">
                     <?php if (function_exists('saebu_breadcrumbs')) saebu_breadcrumbs(); ?>
@@ -47,7 +47,7 @@ $total_posts = $wp_query->found_posts;
 
     <div class="bg-white border-b border-gray-200 sticky top-0 z-30">
         <div class="container mx-auto px-4">
-            <div class="max-w-5xl mx-auto flex items-center justify-between py-4">
+            <div class="max-w-6xl mx-auto flex items-center justify-between py-4">
                 <a href="<?php echo home_url('/' . $term->slug); ?>" class="text-sm font-bold text-slate-500 hover:text-[#005eb8] flex items-center gap-2 transition-colors">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                     Volver a la portada de <?php echo esc_html($term->name); ?>
@@ -62,7 +62,7 @@ $total_posts = $wp_query->found_posts;
 
     <section class="py-16">
         <div class="container mx-auto px-4">
-            <div class="max-w-5xl mx-auto">
+            <div class="max-w-6xl mx-auto">
                 
                 <?php if (have_posts()) : ?>
                     
@@ -162,7 +162,7 @@ $total_posts = $wp_query->found_posts;
 
     <section class="bg-[#003366] text-white py-12 border-t border-white/10">
         <div class="container mx-auto px-4">
-            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
                     <h2 class="text-xl font-bold mb-1">¿Consultas sobre <?php echo esc_html($term->name); ?>?</h2>
                     <p class="text-blue-200 text-sm">Accede a los servicios y Contacto directo de esta área.</p>

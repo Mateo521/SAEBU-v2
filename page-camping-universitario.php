@@ -72,7 +72,7 @@ get_header();
                             ['titulo' => 'Náutica', 'desc' => 'Desembarcadero para embarcaciones y kayaks.', 'icon' => 'M13 10V3L4 14h7v7l9-11h-7z'],
                             ['titulo' => 'Juegos Infantiles', 'desc' => 'Plazas y espacios exclusivos para niños.', 'icon' => 'M8 18V6l8 6-8 6Z'],
                             ['titulo' => 'Pesca', 'desc' => 'Zonas habilitadas para pesca deportiva.', 'icon' => 'M6 12c0 1.6 3.35786 4 7.5 4 4.1421 0 6.9231-3.2 7.5-4-.5769-.8-3.3579-4-7.5-4C9.35786 8 6 10.4 6 12Zm0 0L3 9m3 3-3 3m12.9866-3.3723h.01M14 8c-1.7264 3.302-1.7098 5.0561 0 8'],
-                            ['titulo' => 'Proveeduría', 'desc' => 'Buffet, parrilla y quincho cerrado.', 'icon' => 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z']
+                            ['titulo' => 'Proveeduría', 'desc' => 'Buffet, parrilla y quincho.', 'icon' => 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z']
                         ];
 
                         foreach ($servicios as $servicio) : ?>
@@ -153,12 +153,12 @@ get_header();
                                         </svg>
                                         <span>Totalmente equipadas con cocina y baño privado.</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-sm text-gray-700">
+                                    <!--li class="flex items-start gap-3 text-sm text-gray-700">
                                         <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                         <span>Accesibles para personas con movilidad reducida.</span>
-                                    </li>
+                                    </li-->
                                 </ul>
                                 <div class="mt-4 pt-4 border-t border-gray-100 text-sm text-green-800 font-semibold">
                                     Requiere reserva previa.

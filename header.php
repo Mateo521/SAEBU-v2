@@ -88,6 +88,9 @@
 
                     <div class="gtranslate_wrapper"></div>
 
+                    <a href="<?php echo esc_url(saebu_get_ultimo_menu_url()); ?>" class="px-4 py-2 text-gray-700 hover:text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">
+                        Menú
+                    </a>
 
                     <?php
                     if (has_nav_menu('menu-principal')) {

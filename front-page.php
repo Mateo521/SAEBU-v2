@@ -117,7 +117,7 @@
         $timestamp = strtotime($sl['fecha']);
     ?>
 
-        <div class="bg-white dark:bg-slate-950  overflow-hidden border border-slate-100 dark:border-slate-800 font-sans"> <!-- shadow-2xl rounded-2xl -->
+        <div class="bg-white   overflow-hidden border border-slate-100  font-sans"> <!-- shadow-2xl rounded-2xl -->
 
             <div class="bg-[#00305d] p-8 flex flex-col md:flex-row items-center justify-between text-white relative">
                 <div class="absolute inset-0 opacity-10 pointer-events-none">
@@ -145,7 +145,7 @@
 
             <div class="flex flex-col lg:flex-row max-w-7xl mx-auto">
 
-                <div class="flex-1 p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-slate-100 dark:border-slate-800">
+                <div class="flex-1 p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-slate-100 ">
                     <div class="flex items-center gap-3 mb-8">
                         <div class="w-1 h-8 bg-[#005eb8]"></div>
                         <h1 class="text-sm font-black uppercase tracking-[0.2em] text-[#005eb8]">Sede San Luis</h1>
@@ -154,30 +154,30 @@
                     <div class="space-y-8">
                         <div>
                             <span class="text-[10px] font-bold text-slate-700 uppercase tracking-widest block mb-2">Plato Principal</span>
-                            <p class="text-2xl font-bold text-slate-900 dark:text-white leading-tight mb-4"><?php echo $sl['principal'] ?: 'No cargado'; ?></p>
+                            <p class="text-2xl font-bold text-slate-900  leading-tight mb-4"><?php echo $sl['principal'] ?: 'No cargado'; ?></p>
 
                             <div class="flex gap-6">
                                 <?php if ($sl['entrada']): ?>
                                     <div class="flex flex-col">
                                         <span class="text-[8px] font-bold text-slate-700 uppercase tracking-tighter">Entrada</span>
-                                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-700"><?php echo $sl['entrada']; ?></span>
+                                        <span class="text-sm font-semibold text-slate-600 "><?php echo $sl['entrada']; ?></span>
                                     </div>
                                 <?php endif; ?>
                                 <?php if ($sl['postre']): ?>
                                     <div class="flex flex-col">
                                         <span class="text-[8px] font-bold text-slate-700 uppercase tracking-tighter">Postre</span>
-                                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-700"><?php echo $sl['postre']; ?></span>
+                                        <span class="text-sm font-semibold text-slate-600 "><?php echo $sl['postre']; ?></span>
                                     </div>
                                 <?php endif; ?>
                             </div>
                         </div>
 
                         <?php if ($sl['pri_st'] || $sl['ent_st'] || $sl['pos_st']): ?>
-                            <div class="bg-blue-50/50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-900/30 rounded-xl p-5">
+                            <div class="bg-blue-50/50  border border-blue-100  rounded-xl p-5">
                                 <div class="flex items-center gap-2 mb-3">
                                     <span class="bg-[#3d6812] text-white text-[8px] font-black px-2 py-0.5 rounded uppercase">Sin TACC</span>
                                 </div>
-                                <p class="text-base font-bold text-slate-800 dark:text-slate-200 mb-3"><?php echo $sl['pri_st'] ?: 'Principal ST'; ?></p>
+                                <p class="text-base font-bold text-slate-800  mb-3"><?php echo $sl['pri_st'] ?: 'Principal ST'; ?></p>
                                 <div class="flex gap-4">
                                     <?php if ($sl['ent_st']): ?>
                                         <span class="text-[11px] text-slate-500"><strong class="text-slate-700 font-normal">Entrada:</strong> <?php echo $sl['ent_st']; ?></span>
@@ -196,7 +196,7 @@
                     </div>
                 </div>
 
-                <div class="flex-1 p-8 md:p-10 bg-slate-50/50 dark:bg-slate-900/30">
+                <div class="flex-1 p-8 md:p-10 bg-slate-50/50 ">
                     <div class="flex items-center gap-3 mb-8">
                         <div class="w-1 h-8 bg-[#63350c]"></div>
                         <h1 class="text-sm font-black uppercase tracking-[0.2em] text-[#63350c]">Sede Villa Mercedes</h1>
@@ -205,30 +205,30 @@
                     <div class="space-y-8">
                         <div>
                             <span class="text-[10px] font-bold text-slate-700 uppercase tracking-widest block mb-2">Plato Principal</span>
-                            <p class="text-2xl font-bold text-slate-900 dark:text-white leading-tight mb-4"><?php echo $vm['principal'] ?: 'No cargado'; ?></p>
+                            <p class="text-2xl font-bold text-slate-900  leading-tight mb-4"><?php echo $vm['principal'] ?: 'No cargado'; ?></p>
 
                             <div class="flex gap-6">
                                 <?php if ($vm['entrada']): ?>
                                     <div class="flex flex-col">
                                         <span class="text-[8px] font-bold text-slate-700 uppercase tracking-tighter">Entrada</span>
-                                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-700"><?php echo $vm['entrada']; ?></span>
+                                        <span class="text-sm font-semibold text-slate-600 "><?php echo $vm['entrada']; ?></span>
                                     </div>
                                 <?php endif; ?>
                                 <?php if ($vm['postre']): ?>
                                     <div class="flex flex-col">
                                         <span class="text-[8px] font-bold text-slate-700 uppercase tracking-tighter">Postre</span>
-                                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-700"><?php echo $vm['postre']; ?></span>
+                                        <span class="text-sm font-semibold text-slate-600 "><?php echo $vm['postre']; ?></span>
                                     </div>
                                 <?php endif; ?>
                             </div>
                         </div>
 
                         <?php if ($vm['pri_st'] || $vm['ent_st'] || $vm['pos_st']): ?>
-                            <div class="bg-orange-50/50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/30 rounded-xl p-5">
+                            <div class="bg-orange-50/50  border border-orange-100  rounded-xl p-5">
                                 <div class="flex items-center gap-2 mb-3">
                                     <span class="bg-[#3d6812] text-white text-[8px] font-black px-2 py-0.5 rounded uppercase">Sin TACC</span>
                                 </div>
-                                <p class="text-base font-bold text-slate-800 dark:text-slate-200 mb-3"><?php echo $vm['pri_st'] ?: 'Principal ST'; ?></p>
+                                <p class="text-base font-bold text-slate-800  mb-3"><?php echo $vm['pri_st'] ?: 'Principal ST'; ?></p>
                                 <div class="flex gap-4">
                                     <?php if ($vm['ent_st']): ?>
                                         <span class="text-[11px] text-slate-500"><strong class="text-slate-700 font-normal">Entrada:</strong> <?php echo $vm['ent_st']; ?></span>
@@ -249,13 +249,18 @@
 
             </div>
 
-            <div class="p-6 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 flex items-center justify-center">
+            <div class="p-6 bg-white  border-t border-slate-100  flex items-center justify-center">
                 <button id="btn-suscribir-menu" class="group bg-slate-900 hover:bg-[#005eb8] text-white transition-all duration-300 rounded px-8 py-3 flex items-center gap-3 shadow-lg font-bold text-xs uppercase tracking-widest">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg>
                     <span>Suscribirse al menú</span>
                 </button>
+
+
+
+
+
             </div>
         </div>
 
@@ -315,7 +320,7 @@
                             </div>
                             <div style="display: flex; align-items: start;">
                                 <span style="background: #005eb8; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; flex-shrink: 0;">3</span>
-                                <span style="color: #333;">Abre la app desde tu pantalla de inicio y vuelve aquí</span>
+                                <span style="color: #333;">Abre la app desde tu pantalla de inicio y vuelve acá</span>
                             </div>
                         </div>
                         <button onclick="this.closest('div').parentElement.remove()" style="background: #005eb8; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-weight: bold; font-size: 16px; cursor: pointer; width: 100%;">
@@ -381,7 +386,7 @@
                     }
 
                     if (currentPermission === 'granted') {
-                        alert("Ya tienes las notificaciones activadas. ¡Gracias!");
+                        alert("Ya tenés las notificaciones activadas. ¡Gracias!");
                         boton.innerHTML = textoOriginal;
                         return;
                     }
@@ -508,17 +513,60 @@
             $departamentos = array(
                 // Becas: Prioridad alta
                 [
-                    'name' => 'Becas',
+                    'name' => 'Dpto. Becas',
                     'slug' => 'becas',
                     'desc' => 'Programas de apoyo económico y equidad.',
                     'icon' => 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
                 ],
                 // CeSEU
                 [
-                    'name' => 'Salud estudiantil',
+                    'name' => 'Centro de Salud Estudiantil Universitaria (CeSEU)',
                     'slug' => 'ceseu',
                     'desc' => 'Atención primaria, prevención y cuidado.',
                     'icon' => 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
+                ],
+                // Camping
+                [
+                    'name' => 'Complejo Turístico y Recreativo La Florida',
+                    'slug' => 'camping-universitario',
+                    'desc' => 'Turismo, naturaleza y esparcimiento.',
+                    'icon' => 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+                ],
+
+                // Deportes
+                [
+                    'name' => 'Dpto. de Educación Física y Deporte',
+                    'slug' => 'dpto-deportes',
+                    'desc' => 'Actividad física, recreación y competencia.',
+                    'icon' => 'M13 10V3L4 14h7v7l9-11h-7z'
+                ],
+                // Trabajo Social
+                [
+                    'name' => 'Dpto. Trabajo Social',
+                    'slug' => 'dpto-trabajo-social',
+                    'desc' => 'Orientación, acompañamiento y asistencia.',
+                    'icon' => 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z'
+                ],
+                // Mesa de Entradas
+                [
+                    'name' => 'Dpto. Mesa de Entradas',
+                    'slug' => 'dpto-mesa-de-entradas',
+                    'desc' => 'Recepción y gestión de trámites.',
+                    'icon' => 'M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4'
+                ],
+                // Contable
+                [
+                    'name' => 'Dpto. Contable',
+                    'slug' => 'dpto-contable',
+                    'desc' => 'Administración financiera y presupuestaria.',
+                    'icon' => 'M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z'
+                ],
+                // Compras
+                [
+                    'name' => 'Dpto. de Compras',
+                    'slug' => 'dpto-compras',
+                    'desc' => 'Contrataciones y adquisiciones institucionales.',
+                    'icon' => 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01'
                 ],
                 // Comedor
                 [
@@ -527,54 +575,24 @@
                     'desc' => 'Alimentación nutricional accesible.',
                     'icon' => 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z'
                 ],
-                // Deportes
-                [
-                    'name' => 'Deportes',
-                    'slug' => 'dpto-deportes',
-                    'desc' => 'Actividad física, recreación y competencia.',
-                    'icon' => 'M13 10V3L4 14h7v7l9-11h-7z'
-                ],
-                // Trabajo Social
-                [
-                    'name' => 'Trabajo Social',
-                    'slug' => 'dpto-trabajo-social',
-                    'desc' => 'Orientación, acompañamiento y asistencia.',
-                    'icon' => 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z'
-                ],
-                // Mesa de Entradas
-                [
-                    'name' => 'Mesa de Entradas',
-                    'slug' => 'dpto-mesa-de-entradas',
-                    'desc' => 'Recepción y gestión de trámites.',
-                    'icon' => 'M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4'
-                ],
-                // Contable
-                [
-                    'name' => 'Contable',
-                    'slug' => 'dpto-contable',
-                    'desc' => 'Administración financiera y presupuestaria.',
-                    'icon' => 'M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z'
-                ],
-                // Compras
-                [
-                    'name' => 'Compras',
-                    'slug' => 'dpto-compras',
-                    'desc' => 'Contrataciones y adquisiciones institucionales.',
-                    'icon' => 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01'
-                ],
-                // Camping
-                [
-                    'name' => 'Camping',
-                    'slug' => 'camping-universitario',
-                    'desc' => 'Turismo, naturaleza y esparcimiento.',
-                    'icon' => 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
-                ],
                 // Club Universitario
                 [
                     'name' => 'Club Universitario',
                     'slug' => 'club-universitario',
                     'desc' => 'Espacio social y recreativo.',
-                    'icon' => 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z'
+                    'icon' => 'M5 14v7M5 4.971v9.541c5.6-5.538 8.4 2.64 14-.086v-9.54C13.4 7.61 10.6-.568 5 4.97Z'
+                ],
+                [
+                    'name' => 'Gimnasio',
+                    'slug' => 'gimnasio',
+                    'desc' => 'Espacio para actividad física y bienestar.',
+                    'icon' => 'M20 16v-4a8 8 0 1 0-16 0v4m16 0v2a2 2 0 0 1-2 2h-2v-6h2a2 2 0 0 1 2 2ZM4 16v2a2 2 0 0 0 2 2h2v-6H6a2 2 0 0 0-2 2Z'
+                ],
+                [
+                    'name' => 'Sedes',
+                    'slug' => 'sedes',
+                    'desc' => 'Coordinación de actividades en sedes regionales.',
+                    'icon' => 'M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z'
                 ]
             );
 
@@ -607,7 +625,7 @@
     <div class="container mx-auto px-4 ">
         <div class="flex items-center justify-between mb-10 max-w-7xl mx-auto">
             <h2 class="text-2xl font-bold text-gray-900 border-l-4 border-[#005eb8] pl-3">Novedades</h2>
-            <a href="<?php echo get_post_type_archive_link('noticia'); ?>" class="text-sm font-semibold text-[#005eb8] hover:underline">Ver archivo de noticias →</a>
+            <a href="<?php echo get_post_type_archive_link('noticia'); ?>" class="text-sm font-semibold text-[#005eb8] hover:underline">Ver más →</a>
         </div>
 
         <div class="max-w-7xl mx-auto relative">
@@ -664,7 +682,7 @@
                                             </div>
 
                                             <a href="<?php the_permalink(); ?>" class="text-[#005eb8] text-sm font-semibold hover:underline mt-auto inline-block">
-                                                Leer noticia completa
+                                                Ver más
                                             </a>
                                         </div>
                                     </article>

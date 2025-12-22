@@ -27,36 +27,33 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Gallery Slider (para galerías de noticias)
     const gallerySwiper = document.querySelector('.gallery-swiper');
     if (gallerySwiper) {
         new Swiper('.gallery-swiper', {
-            loop: true,
-            spaceBetween: 10,
-            slidesPerView: 1,
+            // Configuraciones base
+            loop: false,
+            spaceBetween: 0, // Eliminamos el espacio entre slides para un look más limpio
+            slidesPerView: 1, // Forzamos 1 slide siempre
+            centeredSlides: true,
+
             autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
+                delay: 5000,
+                disableOnInteraction: true, // Instagram suele detener el auto-play si el usuario interact
             },
+
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
                 dynamicBullets: true,
             },
+
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                },
-            },
+
+            // Eliminamos los breakpoints para mantener la consistencia de 1 slide por pantalla
+            effect: 'slide',
         });
     }
 

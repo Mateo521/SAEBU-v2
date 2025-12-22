@@ -5,10 +5,20 @@
 
             <div>
                 <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h1"></path>
-                        </svg>
+                    <div class="w-14 h-10 bg-white/10 rounded flex items-center justify-center text-white">
+                        <?php if (has_site_icon()) : ?>
+                            <div class="custom-logo-container">
+                                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="block">
+                                    <img src="<?php echo esc_url(get_site_icon_url(128)); ?>"
+                                        alt="<?php bloginfo('name'); ?>"
+                                        class="w-12 h-12 md:w-15 md:h-15 object-cover aspect-square rounded-sm">
+                                </a>
+                            </div>
+                        <?php else : ?>
+                            <a href="<?php echo esc_url(home_url('/')); ?>" class="font-bold uppercase tracking-tight">
+                                <?php bloginfo('name'); ?>
+                            </a>
+                        <?php endif; ?>
                     </div>
                     <h1 class="text-xl font-bold text-white leading-tight">
                         <?php bloginfo('name'); ?>
@@ -107,7 +117,7 @@
 </button>
 
 <?php wp_footer(); ?>
- 
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
 

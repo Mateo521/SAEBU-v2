@@ -113,7 +113,7 @@ get_header();
                                     
                                     <div class="mt-auto pt-4 border-t border-gray-100">
                                         <a href="<?php the_permalink(); ?>" class="inline-flex items-center text-xs font-bold uppercase tracking-wide text-slate-800 hover:text-[#005eb8] transition-colors">
-                                            Leer noticia completa
+                                            Ver más
                                             <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                                         </a>
                                     </div>

@@ -418,49 +418,54 @@ function saebu_breadcrumbs()
 
     echo '<nav class="bg-white border-b border-gray-200 py-4" aria-label="Breadcrumb">';
     echo '<div class="container mx-auto px-4">';
-    echo '<ol class="flex items-center flex-wrap text-sm">';
+    echo '<ol class="flex items-center flex-nowrap whitespace-nowrap text-sm h-12 overflow-x-auto scrollbar-hide">';
 
     // Inicio
-    echo '<li class="flex items-center">';
+    echo '<li class="flex items-center flex-shrink-0">';
     echo '<a href="' . home_url('/') . '" class="flex items-center gap-1 text-gray-600 hover:text-[#416ed2] font-medium">';
-    echo '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>';
+    echo '<svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>';
     echo $home_title;
     echo '</a>';
     echo $separator;
     echo '</li>';
 
     if (is_singular('noticia')) {
-        // Enlace a archivo de noticias
-        echo '<li class="flex items-center">';
+        echo '<li class="flex items-center flex-shrink-0">';
         echo '<a href="' . get_post_type_archive_link('noticia') . '" class="text-gray-600 hover:text-[#416ed2] font-medium">Noticias</a>';
         echo $separator;
         echo '</li>';
 
-        // Departamento si existe
         $terms = get_the_terms(get_the_ID(), 'departamento');
         if ($terms && !is_wp_error($terms)) {
             $term = array_shift($terms);
-            echo '<li class="flex items-center">';
+            echo '<li class="flex items-center flex-shrink-0">';
             echo '<a href="' . get_term_link($term) . '" class="text-gray-600 hover:text-[#416ed2] font-medium">' . esc_html($term->name) . '</a>';
             echo $separator;
             echo '</li>';
         }
 
+
+
+
+
+
+
+
         // Título actual
         echo '<li class="flex items-center">';
-        echo '<span class="text-gray-900 font-semibold line-clamp-1">' . get_the_title() . '</span>';
+        echo '<span class="text-gray-900 font-semibold">' . get_the_title() . '</span>';
         echo '</li>';
     } elseif (is_post_type_archive('noticia')) {
-        echo '<li class="flex items-center">';
+        echo '<li class="flex items-center flex-shrink-0">';
         echo '<span class="text-gray-900 font-semibold">Noticias</span>';
         echo '</li>';
     } elseif (is_tax('departamento')) {
         $term = get_queried_object();
-        echo '<li class="flex items-center">';
+        echo '<li class="flex items-center flex-shrink-0">';
         echo '<a href="' . get_post_type_archive_link('noticia') . '" class="text-gray-600 hover:text-[#416ed2] font-medium">Noticias</a>';
         echo $separator;
         echo '</li>';
-        echo '<li class="flex items-center">';
+        echo '<li class="flex items-center flex-shrink-0">';
         echo '<span class="text-gray-900 font-semibold">' . esc_html($term->name) . '</span>';
         echo '</li>';
     } elseif (is_page()) {
@@ -479,19 +484,19 @@ function saebu_breadcrumbs()
             echo implode('', $breadcrumbs);
         }
 
-        echo '<li class="flex items-center">';
+        echo '<li class="flex items-center flex-shrink-0">';
         echo '<span class="text-gray-900 font-semibold">' . get_the_title() . '</span>';
         echo '</li>';
     } elseif (is_category()) {
-        echo '<li class="flex items-center">';
+        echo '<li class="flex items-center flex-shrink-0">';
         echo '<span class="text-gray-900 font-semibold">' . single_cat_title('', false) . '</span>';
         echo '</li>';
     } elseif (is_search()) {
-        echo '<li class="flex items-center">';
+        echo '<li class="flex items-center flex-shrink-0">';
         echo '<span class="text-gray-900 font-semibold">Resultados de búsqueda: ' . get_search_query() . '</span>';
         echo '</li>';
     } elseif (is_404()) {
-        echo '<li class="flex items-center">';
+        echo '<li class="flex items-center flex-shrink-0">';
         echo '<span class="text-gray-900 font-semibold">Error 404</span>';
         echo '</li>';
     }

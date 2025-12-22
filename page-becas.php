@@ -44,7 +44,7 @@ get_header();
                             Gestión de Becas
                         </h2>
                         <p class="text-gray-600 text-lg mb-8">
-                            El Departamento de Becas actúa en los tres Centros Universitarios (San Luis, Villa Mercedes y Villa de Merlo), realizando el seguimiento administrativo y académico de los beneficiarios durante todo el año.
+                            El Departamento de Becas actúa en los tres Centros Universitarios (San Luis, Villa Mercedes y Villa de Merlo), haciendo el seguimiento administrativo y académico de los beneficiarios durante todo el año.
                         </p>
 
                         <div class="grid sm:grid-cols-2 gap-4">
@@ -118,7 +118,7 @@ get_header();
 
                             <div class="mt-6 pt-4 border-t border-gray-200">
                                 <a href="mailto:becasunsl@gmail.com" class="block w-full text-center bg-[#416ed2] hover:bg-[#004a99] text-white font-bold py-2 px-4 rounded transition-colors text-sm">
-                                    Enviar consulta
+                                    Consultar
                                 </a>
                             </div>
                         </div>
@@ -283,7 +283,7 @@ get_header();
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                             </svg>
-                                            Ver video explicativo
+                                            Beca en lengua de señas
                                         </button>
                                     <?php
                                     endif; ?>
@@ -292,12 +292,12 @@ get_header();
                         <?php endforeach; ?>
                     </div>
 
-                    <div class="mt-8 bg-blue-50 border border-blue-100 rounded-md p-4 flex items-center justify-center gap-3 text-[#005eb8] text-sm font-medium">
+                    <!--div class="mt-8 bg-blue-50 border border-blue-100 rounded-md p-4 flex items-center justify-center gap-3 text-[#005eb8] text-sm font-medium">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h1m10 0h1M3 12h18M3 16h1m10 0h1M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1h1a1 1 0 00-1 1v14a1 1 0 001 1z"></path>
                         </svg>
                         Toda la información está disponible en Lengua de Señas Argentina.
-                    </div>
+                    </div-->
 
                 </div>
             </div>

@@ -59,7 +59,7 @@ $organizacion = [
 
 <main class="bg-gray-50 min-h-screen py-16 px-4">
     <header class="max-w-4xl mx-auto text-center mb-12">
-        <h1 class="text-3xl md:text-4xl font-serif-inst font-bold text-slate-900 mb-4 uppercase tracking-tight">Autoridades</h1>
+        <h1 class="text-3xl md:text-4xl  font-bold text-slate-900 mb-4 uppercase tracking-tight">Autoridades</h1>
         <div class="h-1.5 w-16 bg-blue-900 mx-auto mb-8"></div>
         
         <div class="flex justify-center gap-6 md:gap-12 mt-10 border-b border-gray-200">
@@ -73,7 +73,7 @@ $organizacion = [
         
         <section class="flex flex-col items-center">
             <div class="max-w-sm w-full">
-                <div class="bg-white rounded-xl shadow-lg border-t-4 border-b-4 border-blue-900 p-8 text-center transition-transform ">
+                <div class="bg-white rounded-xl shadow-lg  border-blue-900 p-8 text-center transition-transform ">
                     <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-slate-100 shadow-inner">
                         <img src="<?php echo esc_url($organizacion['secretario']['imagen']); ?>" alt="Secretario" class="w-full h-full object-cover">
                     </div>
@@ -90,7 +90,7 @@ $organizacion = [
 
         <section class="flex flex-col items-center">
             <div class="max-w-sm w-full">
-                <div class="bg-white rounded-xl shadow-md border-t-4 border-b-4 border-slate-500 p-6 text-center transition-transform ">
+                <div class="bg-white rounded-xl shadow-md  border-slate-500 p-6 text-center transition-transform ">
                     <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-slate-100">
                         <img src="<?php echo esc_url($organizacion['subsecretario']['imagen']); ?>" alt="Subsecretario" class="w-full h-full object-cover">
                     </div>
