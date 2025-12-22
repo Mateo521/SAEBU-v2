@@ -32,7 +32,7 @@ get_header();
             <div class="max-w-6xl mx-auto">
                 <div class="flex flex-wrap items-center gap-x-8 gap-y-4 py-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
                     
-                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest mr-2">Filtrar:</span>
+                    <span class="text-xs font-bold text-gray-700 uppercase tracking-widest mr-2">Filtrar:</span>
 
                     <a href="<?php echo get_post_type_archive_link('noticia'); ?>" 
                        class="text-sm font-bold pb-1 border-b-2 transition-colors <?php echo !is_tax() ? 'text-[#005eb8] border-[#005eb8]' : 'text-gray-500 border-transparent hover:text-gray-800'; ?>">
@@ -75,7 +75,7 @@ get_header();
                             
                             <article class="group bg-white flex flex-col h-full border border-gray-200 hover:border-gray-300 transition-all duration-300 shadow-sm hover:shadow-md">
                                 
-                                <a href="<?php the_permalink(); ?>" class="block overflow-hidden relative aspect-video bg-gray-100">
+                                <a href="<?php the_permalink(); ?>" title="Leer noticia  <?php the_title(); ?>" class="block overflow-hidden relative aspect-video bg-gray-100">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium_large', array('class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out')); ?>
                                     <?php else: ?>
