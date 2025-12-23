@@ -20,11 +20,11 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
                 <div class="flex flex-wrap items-center gap-4 sm:gap-6">
-                    <a href="mailto:info@saebu.edu.ar" class="flex items-center gap-2 hover:text-blue-300 transition-colors">
+                    <a href="mailto:saebuunsl@unsl.edu.ar" class="flex items-center gap-2 hover:text-blue-300 transition-colors">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                         </svg>
-                        <span class="hidden sm:inline">info@saebu.edu.ar</span>
+                        <span class="hidden sm:inline">saebuunsl@unsl.edu.ar</span>
                         <span class="sm:hidden">Email</span>
                     </a>
                     <a href="tel:2661234567" class="flex items-center gap-2 hover:text-blue-300 transition-colors">
@@ -192,11 +192,11 @@
             <div class="pt-6 border-t border-gray-200">
                 <h3 class="text-sm font-bold text-gray-900 mb-4 px-4">Información de Contacto</h3>
                 <div class="space-y-3">
-                    <a href="mailto:info@saebu.edu.ar" class="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+                    <a href="mailto:saebuunsl@unsl.edu.ar" class="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                         <svg class="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                         </svg>
-                        <span class="text-sm">info@saebu.edu.ar</span>
+                        <span class="text-sm">saebuunsl@unsl.edu.ar</span>
                     </a>
                     <a href="tel:2661234567" class="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                         <svg class="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

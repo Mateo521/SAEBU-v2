@@ -1,16 +1,15 @@
 <?php
 
 /**
- * SAEBU Theme Functions
- * Theme con Tailwind CSS 4
+ * SAEBU Theme functions
+ * 
  */
 
-// Cargar archivos necesarios
 
 require_once get_template_directory() . '/inc/custom-post-types.php';
 require_once get_template_directory() . '/inc/taxonomies.php';
 
-// Soporte del theme
+
 function saebu_theme_support()
 {
     add_theme_support('title-tag');
@@ -18,14 +17,14 @@ function saebu_theme_support()
     add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
     add_theme_support('custom-logo');
 
-    // Tamaños de imagen personalizados
+  
     add_image_size('banner-grande', 1920, 600, true);
     add_image_size('noticia-destacada', 800, 450, true);
     add_image_size('noticia-thumbnail', 400, 250, true);
 }
 add_action('after_setup_theme', 'saebu_theme_support');
 
-// Registrar menús
+
 function saebu_register_menus()
 {
     register_nav_menus(array(
@@ -53,12 +52,10 @@ function mi_script_header()
 add_action('wp_enqueue_scripts', 'mi_script_header');
 
 
-/**
- * Enqueue styles and scripts
- */
+
 function saebu_enqueue_assets()
 {
-    // Tailwind CSS compilado (output.css)
+ 
     wp_enqueue_style(
         'saebu-tailwind',
         get_template_directory_uri() . '/assets/css/output.css',
@@ -66,7 +63,7 @@ function saebu_enqueue_assets()
         filemtime(get_template_directory() . '/assets/css/output.css')
     );
 
-    // CSS personalizado adicional (si lo necesitas)
+
     if (file_exists(get_template_directory() . '/assets/css/custom.css')) {
         wp_enqueue_style(
             'saebu-custom-style',
@@ -76,7 +73,7 @@ function saebu_enqueue_assets()
         );
     }
 
-    // JavaScript principal
+ 
     if (file_exists(get_template_directory() . '/assets/js/main.js')) {
         wp_enqueue_script(
             'saebu-main-script',
@@ -90,9 +87,7 @@ function saebu_enqueue_assets()
 add_action('wp_enqueue_scripts', 'saebu_enqueue_assets');
 
 
-/**
- * Enqueue Swiper.js
- */
+
 function saebu_enqueue_swiper()
 {
     // Swiper CSS
@@ -112,7 +107,7 @@ function saebu_enqueue_swiper()
         true
     );
 
-    // Script personalizado para inicializar Swiper
+  
     if (file_exists(get_template_directory() . '/assets/js/swiper-init.js')) {
         wp_enqueue_script(
             'saebu-swiper-init',
@@ -125,12 +120,6 @@ function saebu_enqueue_swiper()
 }
 add_action('wp_enqueue_scripts', 'saebu_enqueue_swiper');
 
-/**
- * Remover la configuración de Tailwind del CDN (ya no la necesitamos)
- * Comentar o eliminar esta función:
- */
-// function saebu_tailwind_config() { ... }
-// add_action('wp_head', 'saebu_tailwind_config', 100);
 
 
 function saebu_enqueue_all_fonts()
@@ -145,7 +134,7 @@ function saebu_enqueue_all_fonts()
 add_action('wp_enqueue_scripts', 'saebu_enqueue_all_fonts');
 
 
-// Función auxiliar para obtener noticias por departamento
+
 function saebu_get_noticias_by_departamento($slug, $posts_per_page = -1)
 {
     $args = array(
@@ -165,7 +154,7 @@ function saebu_get_noticias_by_departamento($slug, $posts_per_page = -1)
     return new WP_Query($args);
 }
 
-// Función para obtener noticias generales
+
 function saebu_get_noticias_generales($posts_per_page = -1)
 {
     $args = array(
@@ -184,7 +173,7 @@ function saebu_get_noticias_generales($posts_per_page = -1)
     return new WP_Query($args);
 }
 
-// Función para obtener noticias destacadas
+
 function saebu_get_noticias_destacadas($num_posts = 3)
 {
     $args = array(
@@ -199,9 +188,7 @@ function saebu_get_noticias_destacadas($num_posts = 3)
     return new WP_Query($args);
 }
 
-/**
- * Custom Rewrite Rules para las URLs de noticias por departamento
- */
+
 function saebu_custom_rewrite_rules()
 {
     $departamentos = array('becas', 'camping', 'ceseu', 'dpto-trabajo-social', 'club-universitario', 'dpto-deportes');
@@ -214,7 +201,7 @@ function saebu_custom_rewrite_rules()
             'top'
         );
 
-        // URL: /departamento/noticia/slug
+      
         add_rewrite_rule(
             '^' . $depto . '/noticia/([^/]+)/?$',
             'index.php?noticia=$matches[1]&departamento_context=' . $depto,
@@ -222,7 +209,7 @@ function saebu_custom_rewrite_rules()
         );
     }
 
-    // Noticias generales
+  
     add_rewrite_rule(
         '^noticias/?$',
         'index.php?post_type=noticia',
@@ -231,9 +218,7 @@ function saebu_custom_rewrite_rules()
 }
 add_action('init', 'saebu_custom_rewrite_rules');
 
-/**
- * Modificar query vars
- */
+
 function saebu_custom_query_vars($vars)
 {
     $vars[] = 'departamento_context';
@@ -241,9 +226,7 @@ function saebu_custom_query_vars($vars)
 }
 add_filter('query_vars', 'saebu_custom_query_vars');
 
-/**
- * Registrar áreas de widgets
- */
+
 function saebu_widgets_init()
 {
     register_sidebar(array(
@@ -268,9 +251,7 @@ function saebu_widgets_init()
 }
 add_action('widgets_init', 'saebu_widgets_init');
 
-/**
- * Widget para mostrar noticias recientes por departamento
- */
+
 class SAEBU_Recent_News_Widget extends WP_Widget
 {
 
@@ -389,9 +370,7 @@ function saebu_register_widgets()
 }
 add_action('widgets_init', 'saebu_register_widgets');
 
-/**
- * Personalizar el excerpt
- */
+
 function saebu_custom_excerpt_length($length)
 {
     return 30;
@@ -404,9 +383,7 @@ function saebu_custom_excerpt_more($more)
 }
 add_filter('excerpt_more', 'saebu_custom_excerpt_more');
 
-/**
- * Breadcrumbs mejorado con Tailwind
- */
+
 function saebu_breadcrumbs()
 {
     if (is_front_page()) {
@@ -451,7 +428,7 @@ function saebu_breadcrumbs()
 
 
 
-        // Título actual
+     
         echo '<li class="flex items-center">';
         echo '<span class="text-gray-900 font-semibold">' . get_the_title() . '</span>';
         echo '</li>';
@@ -507,9 +484,7 @@ function saebu_breadcrumbs()
 }
 
 
-/**
- * Agregar clase al body según el departamento
- */
+
 function saebu_body_classes($classes)
 {
     if (is_singular('noticia')) {
@@ -530,9 +505,7 @@ function saebu_body_classes($classes)
 }
 add_filter('body_class', 'saebu_body_classes');
 
-/**
- * Metabox para noticias destacadas
- */
+
 function saebu_add_custom_metaboxes()
 {
     add_meta_box(
@@ -570,9 +543,7 @@ function saebu_save_noticia_destacada($post_id)
 }
 add_action('save_post', 'saebu_save_noticia_destacada');
 
-/**
- * Metabox para información de contacto en páginas
- */
+
 function saebu_contact_metaboxes()
 {
     add_meta_box(
@@ -653,9 +624,7 @@ function saebu_save_contact_info($post_id)
 }
 add_action('save_post', 'saebu_save_contact_info');
 
-/**
- * Shortcode para mostrar información de contacto
- */
+
 function saebu_contact_info_shortcode($atts)
 {
     $atts = shortcode_atts(array(
@@ -709,9 +678,7 @@ function saebu_contact_info_shortcode($atts)
 }
 add_shortcode('contact_info', 'saebu_contact_info_shortcode');
 
-/**
- * SEO - Meta description
- */
+
 function saebu_add_meta_description()
 {
     if (is_singular('noticia')) {
@@ -724,9 +691,7 @@ function saebu_add_meta_description()
 }
 add_action('wp_head', 'saebu_add_meta_description');
 
-/**
- * SEO - Open Graph tags
- */
+
 function saebu_add_og_tags()
 {
     if (is_singular('noticia')) {
@@ -756,13 +721,6 @@ add_action('wp_head', 'saebu_add_og_tags');
 
 
 
-/* ==========================================================================
-   1. CONFIGURACIÓN DEL MENÚ DEL DÍA (Con opción Sin TACC)
-   ========================================================================== */
-
-/**
- * Registro del CPT: Menú del Día
- */
 function saebu_register_menu_dia_cpt()
 {
     $labels = array(
@@ -797,23 +755,19 @@ function saebu_register_menu_dia_cpt()
 }
 add_action('init', 'saebu_register_menu_dia_cpt');
 
-/**
- * Metaboxes para Menú del Día
- */
+
 function saebu_menu_dia_metaboxes()
 {
     add_meta_box('menu_dia_detalles', 'Configuración de Menús por Sede', 'saebu_menu_dia_metabox_callback', 'menu_dia', 'normal', 'high');
 }
 add_action('add_meta_boxes', 'saebu_menu_dia_metaboxes');
 
-/**
- * Callback del metabox (Formulario con campos Sin TACC)
- */
+
 function saebu_menu_dia_metabox_callback($post)
 {
     wp_nonce_field('saebu_menu_dia_nonce', 'menu_dia_nonce');
 
-    // Carga de datos Sede San Luis
+
     $sl_data = array(
         'fecha'     => get_post_meta($post->ID, '_menu_sl_fecha', true),
         'precio'    => get_post_meta($post->ID, '_menu_sl_precio', true),
@@ -825,7 +779,7 @@ function saebu_menu_dia_metabox_callback($post)
         'pos_st'    => get_post_meta($post->ID, '_menu_sl_pos_st', true),
     );
 
-    // Carga de datos Sede Villa Mercedes
+   
     $vm_data = array(
         'precio'    => get_post_meta($post->ID, '_menu_vm_precio', true),
         'entrada'   => get_post_meta($post->ID, '_menu_vm_entrada', true),
@@ -900,7 +854,7 @@ function saebu_save_menu_dia_meta($post_id)
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
     if (!current_user_can('edit_post', $post_id)) return;
 
-    // Prefijos para facilitar el guardado en bucle
+  
     $campos = array(
         'sl' => array('fecha', 'precio', 'entrada', 'principal', 'postre', 'ent_st', 'pri_st', 'pos_st'),
         'vm' => array('precio', 'entrada', 'principal', 'postre', 'ent_st', 'pri_st', 'pos_st')
@@ -917,7 +871,7 @@ function saebu_save_menu_dia_meta($post_id)
         }
     }
 
-    // Notificación
+
     $notificar = isset($_POST['menu_notificar']) ? '1' : '0';
     update_post_meta($post_id, '_menu_notificar', $notificar);
 
@@ -926,14 +880,14 @@ function saebu_save_menu_dia_meta($post_id)
         update_post_meta($post_id, '_menu_notificar', '0');
     }
 }
-add_action('save_post_menu_dia', 'saebu_save_menu_dia_meta'); // Hook específico para el CPT
+add_action('save_post_menu_dia', 'saebu_save_menu_dia_meta'); 
 
 
 
 
 function saebu_save_menu_dia_meta_wrapper($post_id, $post)
 {
-    // Solo ejecutar para menu_dia
+ 
     if ($post->post_type !== 'menu_dia') {
         return;
     }
@@ -945,25 +899,25 @@ function saebu_save_menu_dia_meta_wrapper($post_id, $post)
 
 function saebu_enviar_notificacion_menu($post_id)
 {
-    // 1. Recuperamos los metadatos de Sede San Luis
+   
     $fecha_sl     = get_post_meta($post_id, '_menu_sl_fecha', true);
     $principal_sl = get_post_meta($post_id, '_menu_sl_principal', true);
     $precio_sl    = get_post_meta($post_id, '_menu_sl_precio', true);
 
-    // 2. Recuperamos los metadatos de Sede Villa Mercedes
+
     $principal_vm = get_post_meta($post_id, '_menu_vm_principal', true);
     $precio_vm    = get_post_meta($post_id, '_menu_vm_precio', true);
 
-    // Si no hay platos principales, cancelamos el envío para no enviar una notificación vacía
+   
     if (empty($principal_sl) && empty($principal_vm)) {
         return;
     }
 
-    // Formateo de fecha (usando San Luis como referencia)
+   
     $fecha_formateada = date_i18n('d/m', strtotime($fecha_sl));
     $titulo = "Menu del Dia (" . $fecha_formateada . ")";
 
-    // Construcción del mensaje combinando ambas sedes
+    
     $lineas = array();
 
     if (!empty($principal_sl)) {
@@ -976,7 +930,7 @@ function saebu_enviar_notificacion_menu($post_id)
 
     $mensaje = implode("\n", $lineas);
 
-    // Configuración de OneSignal
+   
     $app_id = '58790c7e-7e27-46bc-a016-4861b88f45d3';
     $rest_api_key = 'M2NlM2MzODItOGFkYS00NjYyLTk1MTUtMWQ1NTQyM2Q4NTBi';
 
@@ -1027,7 +981,7 @@ function saebu_enviar_notificacion_menu($post_id)
 
 
 /**
- * Metabox Notificación para Noticias
+ * Metaboxntificación para noticias
  */
 function saebu_cpt_noticia_push_metabox()
 {
@@ -1050,9 +1004,7 @@ function saebu_cpt_noticia_callback($post)
 <?php
 }
 
-/**
- * Guardar Noticia
- */
+
 function saebu_save_cpt_noticia_meta($post_id)
 {
     if (!isset($_POST['noticia_nonce']) || !wp_verify_nonce($_POST['noticia_nonce'], 'saebu_noticia_nonce')) return;
@@ -1069,14 +1021,12 @@ function saebu_save_cpt_noticia_meta($post_id)
 }
 add_action('save_post_noticia', 'saebu_save_cpt_noticia_meta');
 
-/**
- * ENVÍO PUSH NOTICIA (Configurado para llave 'noticias')
- */
+
 function saebu_enviar_push_noticia_cpt($post_id)
 {
     $titulo_post = get_the_title($post_id);
 
-    // Contenido
+  
     $contenido = get_the_excerpt($post_id);
     if (empty($contenido)) {
         $contenido_raw = get_post_field('post_content', $post_id);
@@ -1097,18 +1047,17 @@ function saebu_enviar_push_noticia_cpt($post_id)
         'url' => get_permalink($post_id),
     );
 
-    // --- CORRECCIÓN DE IMÁGENES ---
+  
     if (has_post_thumbnail($post_id)) {
-        // Obtenemos la URL y forzamos HTTPS por seguridad
+        
         $img_url_raw = get_the_post_thumbnail_url($post_id, 'large');
         $img_url = set_url_scheme($img_url_raw, 'https');
 
-        // 1. Chrome Web Image / Big Picture (Imagen grande debajo del texto)
+     
         $fields['big_picture'] = $img_url;
         $fields['chrome_web_image'] = $img_url;
 
-        // 2. Large Icon (El cuadradito a la derecha del texto)
-        // Usamos la misma imagen para que destaque
+  
         $fields['chrome_web_icon'] = $img_url;
         $fields['firefox_icon'] = $img_url;
     }
@@ -1133,7 +1082,7 @@ function saebu_get_menu_del_dia()
 {
     $hoy = date('Y-m-d');
 
-    // 1. Intentar buscar el menú exacto de HOY
+   
     $args = array(
         'post_type'      => 'menu_dia',
         'posts_per_page' => 1,
@@ -1142,7 +1091,7 @@ function saebu_get_menu_del_dia()
         'order'          => 'DESC',
         'meta_query'     => array(
             array(
-                'key'     => '_menu_sl_fecha', // Cambiado de _menu_fecha a _menu_sl_fecha
+                'key'     => '_menu_sl_fecha', 
                 'value'   => $hoy,
                 'compare' => '=',
                 'type'    => 'DATE',
@@ -1156,12 +1105,12 @@ function saebu_get_menu_del_dia()
         return $query->posts[0];
     }
 
-    // 2. Si no hay de hoy, buscar el más reciente que tenga fecha cargada
+  
     $args_fallback = array(
         'post_type'      => 'menu_dia',
         'posts_per_page' => 1,
         'post_status'    => 'publish',
-        'meta_key'       => '_menu_sl_fecha', // Cambiado
+        'meta_key'       => '_menu_sl_fecha', 
         'orderby'        => array(
             'meta_value' => 'DESC',
             'ID'         => 'DESC',
@@ -1181,7 +1130,7 @@ function saebu_get_menu_del_dia()
 
 
 /**
- * Metabox para Galería de Imágenes (Swiper)
+ * Metabox para galería
  */
 function saebu_galeria_metabox()
 {
@@ -1197,7 +1146,7 @@ function saebu_galeria_metabox()
 add_action('add_meta_boxes', 'saebu_galeria_metabox');
 
 /**
- * Callback del Metabox de Galería
+ * Callback del metabox
  */
 function saebu_galeria_metabox_callback($post)
 {
@@ -1295,7 +1244,7 @@ function saebu_galeria_metabox_callback($post)
         jQuery(document).ready(function($) {
             var frame;
 
-            // Agregar imágenes
+        
             $('#agregar-imagenes-galeria').on('click', function(e) {
                 e.preventDefault();
 
@@ -1342,7 +1291,7 @@ function saebu_galeria_metabox_callback($post)
                 frame.open();
             });
 
-            // Remover imagen individual
+          
             $(document).on('click', '.remove-imagen', function(e) {
                 e.preventDefault();
                 var item = $(this).closest('.galeria-item');
@@ -1358,7 +1307,7 @@ function saebu_galeria_metabox_callback($post)
                 item.remove();
             });
 
-            // Limpiar toda la galería
+           
             $('#limpiar-galeria').on('click', function(e) {
                 e.preventDefault();
                 if (confirm('¿Estás seguro de que querés limpiar toda la galería?')) {
@@ -1373,7 +1322,7 @@ function saebu_galeria_metabox_callback($post)
 }
 
 /**
- * Guardar Galería
+ * Guardar galería
  */
 function saebu_save_galeria_meta($post_id)
 {
@@ -1399,20 +1348,20 @@ add_action('save_post_noticia', 'saebu_save_galeria_meta');
 
 
 /**
- * Custom Walker for Desktop Menu with Multi-level Dropdowns
+ * Custom Walker
  */
 class Saebu_Desktop_Walker_Nav_Menu extends Walker_Nav_Menu
 {
-    // Start Level (submenu wrapper)
+    
     function start_lvl(&$output, $depth = 0, $args = null)
     {
         $indent = str_repeat("\t", $depth);
 
         if ($depth === 0) {
-            // Primer nivel de dropdown
+          
             $output .= "\n$indent<ul class=\"dropdown-menu absolute left-0 top-full mt-2 min-w-[220px] bg-white rounded-xl shadow-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50\">\n";
         } else {
-            // Sub-submenús (nivel 2+)
+            
             $output .= "\n$indent<ul class=\"dropdown-submenu absolute left-full top-0 ml-1 min-w-[220px] bg-white rounded-xl shadow-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50\">\n";
         }
     }
@@ -1482,7 +1431,7 @@ class Saebu_Desktop_Walker_Nav_Menu extends Walker_Nav_Menu
 }
 
 /**
- * Custom Walker for Mobile Menu with Accordions (CORREGIDO)
+ * Custom Walker
  */
 class Saebu_Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
 {
@@ -1515,19 +1464,19 @@ class Saebu_Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
         $has_children = in_array('menu-item-has-children', $classes);
 
         if ($depth === 0 && $has_children) {
-            // Item padre con submenú
+           
             $output .= $indent . '<li x-data="{ open: false }" class="relative">';
 
-            // Contenedor flex para el link y el botón
+          
             $output .= '<div class="flex items-center justify-between">';
 
-            // Link del padre
+          
             $output .= '<a href="' . esc_url($item->url) . '" 
                         class="flex-1 px-4 py-3 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium transition-colors">'
                 . apply_filters('the_title', $item->title, $item->ID) .
                 '</a>';
 
-            // Botón toggle
+           
             $output .= '<button @click.prevent="open = !open" 
                         type="button"
                         class="p-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 mr-2"
@@ -1543,14 +1492,14 @@ class Saebu_Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
             $output .= '</button>';
             $output .= '</div>';
         } elseif ($depth === 0 && !$has_children) {
-            // Item padre sin submenú
+         
             $output .= $indent . '<li>';
             $output .= '<a href="' . esc_url($item->url) . '" 
                         class="block px-4 py-3 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium transition-colors">'
                 . apply_filters('the_title', $item->title, $item->ID) .
                 '</a>';
         } else {
-            // Items de submenú
+        
             $output .= $indent . '<li>';
             $output .= '<a href="' . esc_url($item->url) . '" 
                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-700 rounded-lg transition-colors">'
@@ -1569,14 +1518,14 @@ class Saebu_Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
 
 
 /**
- * Función para mostrar la sección de noticias por departamento
+ * funcion para mostrar la sección de noticias por departamento
  * 
- * @param array $args Array con la configuración del departamento
+ * @param array $args Array con la configuracion del departamento
  */
 function saebu_noticias_departamento($args = array())
 {
 
-    // Valores por defecto
+   
     $defaults = array(
         'slug'        => 'becas',
         'nombre'      => 'Becas',
@@ -1586,10 +1535,10 @@ function saebu_noticias_departamento($args = array())
         'icono'       => 'M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z',
     );
 
-    // Combinar con los argumentos proporcionados
+   
     $config = wp_parse_args($args, $defaults);
 
-    // Query de noticias
+   
     $noticias_query = new WP_Query(array(
         'post_type'      => 'noticia',
         'posts_per_page' => $config['posts_count'],
@@ -1602,13 +1551,13 @@ function saebu_noticias_departamento($args = array())
         ),
     ));
 
-    // Output del HTML
+
 ?>
     <section class="py-20 bg-white border-t border-gray-200">
         <div class="container mx-auto px-4">
             <div class="max-w-7xl mx-auto">
 
-                <!-- Header -->
+               
                 <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
                     <div>
                         <h2 class="text-2xl font-bold text-gray-900 mb-2 border-l-4 border-<?php echo esc_attr($config['color']); ?>-700 pl-3">
@@ -1627,13 +1576,13 @@ function saebu_noticias_departamento($args = array())
                     </a>
                 </div>
 
-                <!-- Grid de Noticias -->
+             
                 <div class="grid md:grid-cols-3 gap-8">
                     <?php if ($noticias_query->have_posts()) : ?>
                         <?php while ($noticias_query->have_posts()) : $noticias_query->the_post(); ?>
                             <article class="flex flex-col h-full bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg hover:border-<?php echo esc_attr($config['color']); ?>-300 transition-all duration-300 group">
 
-                                <!-- Imagen -->
+                             
                                 <a href="<?php the_permalink(); ?>" class="block relative h-48 overflow-hidden bg-gray-100">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium', array('class' => 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-105')); ?>
@@ -1645,7 +1594,7 @@ function saebu_noticias_departamento($args = array())
                                         </div>
                                     <?php endif; ?>
 
-                                    <!-- Badge -->
+                                  
                                     <div class="absolute top-3 left-3">
                                         <span class="px-2 py-1 bg-<?php echo esc_attr($config['color']); ?>-600 text-white text-[10px] font-bold uppercase tracking-wider rounded">
                                             <?php echo esc_html($config['nombre']); ?>
@@ -1653,9 +1602,9 @@ function saebu_noticias_departamento($args = array())
                                     </div>
                                 </a>
 
-                                <!-- Contenido -->
+                           
                                 <div class="p-6 flex-1 flex flex-col">
-                                    <!-- Fecha -->
+                                
                                     <div class="text-xs text-gray-500 mb-2 flex items-center gap-2">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
@@ -1663,19 +1612,19 @@ function saebu_noticias_departamento($args = array())
                                         <?php echo get_the_date('d/m/Y'); ?>
                                     </div>
 
-                                    <!-- Título -->
+                                
                                     <h3 class="text-lg font-bold text-gray-900 mb-3 leading-snug group-hover:text-<?php echo esc_attr($config['color']); ?>-600 transition-colors">
                                         <a href="<?php the_permalink(); ?>">
                                             <?php the_title(); ?>
                                         </a>
                                     </h3>
 
-                                    <!-- Extracto -->
+                                    
                                     <p class="text-sm text-gray-600 line-clamp-3 mb-4 flex-1">
                                         <?php echo wp_trim_words(get_the_excerpt(), 15, '...'); ?>
                                     </p>
 
-                                    <!-- Link -->
+                                
                                     <a href="<?php the_permalink(); ?>" class="inline-flex items-center text-sm font-semibold text-<?php echo esc_attr($config['color']); ?>-700 hover:underline mt-auto">
                                         Leer más
                                         <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1687,7 +1636,7 @@ function saebu_noticias_departamento($args = array())
                         <?php endwhile; ?>
                         <?php wp_reset_postdata(); ?>
                     <?php else : ?>
-                        <!-- Sin resultados -->
+                      
                         <div class="col-span-3 bg-<?php echo esc_attr($config['color']); ?>-50 border border-<?php echo esc_attr($config['color']); ?>-200 rounded-lg p-8 text-center">
                             <svg class="w-12 h-12 text-<?php echo esc_attr($config['color']); ?>-300 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="<?php echo esc_attr($config['icono']); ?>"></path>
@@ -1706,13 +1655,7 @@ function saebu_noticias_departamento($args = array())
 
 
 
-/**
- * ============================================
- * CONVERTIR EL SITIO EN PWA
- * ============================================
- */
 
-// 1. Crear el archivo manifest.json dinámicamente
 function saebu_manifest_json()
 {
     header('Content-Type: application/json');
@@ -1745,14 +1688,14 @@ function saebu_manifest_json()
     exit;
 }
 
-// 2. Crear la ruta del manifest
+
 function saebu_manifest_rewrite()
 {
     add_rewrite_rule('^manifest\.json$', 'index.php?manifest=1', 'top');
 }
 add_action('init', 'saebu_manifest_rewrite');
 
-// 3. Detectar la query var
+
 function saebu_manifest_query_vars($vars)
 {
     $vars[] = 'manifest';
@@ -1760,7 +1703,7 @@ function saebu_manifest_query_vars($vars)
 }
 add_filter('query_vars', 'saebu_manifest_query_vars');
 
-// 4. Ejecutar la función cuando se llame al manifest
+
 function saebu_manifest_template()
 {
     if (get_query_var('manifest')) {
@@ -1769,7 +1712,7 @@ function saebu_manifest_template()
 }
 add_action('template_redirect', 'saebu_manifest_template');
 
-// 5. Agregar meta tags en el head
+
 function saebu_pwa_meta_tags()
 {
 ?>
@@ -1777,7 +1720,7 @@ function saebu_pwa_meta_tags()
     <meta name="theme-color" content="#005eb8">
     <meta name="mobile-web-app-capable" content="yes">
 
-    <!-- iOS específico -->
+
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="SAEBU">
@@ -1786,7 +1729,7 @@ function saebu_pwa_meta_tags()
 }
 add_action('wp_head', 'saebu_pwa_meta_tags');
 
-// 6. IMPORTANTE: Refrescar permalinks (ejecuta una sola vez)
+
 function saebu_activate_manifest()
 {
     saebu_manifest_rewrite();
@@ -1795,9 +1738,7 @@ function saebu_activate_manifest()
 register_activation_hook(__FILE__, 'saebu_activate_manifest');
 
 
-/**
- * Obtener URL del último menú del día disponible
- */
+
 function saebu_get_ultimo_menu_url()
 {
     $menu = saebu_get_menu_del_dia();
@@ -1806,7 +1747,7 @@ function saebu_get_ultimo_menu_url()
         return get_permalink($menu->ID);
     }
 
-    // Si no hay menú, redirigir al archivo de menús
+   
     return get_post_type_archive_link('menu_dia');
 }
 
@@ -1817,7 +1758,7 @@ function registrar_cpt_consultas() {
         'name'                  => 'Consultas',
         'singular_name'         => 'Consulta',
         'menu_name'             => 'Consultas',
-        'add_new'               => 'Ver Consultas', // Cambiamos el texto
+        'add_new'               => 'Ver Consultas', 
         'all_items'             => 'Todas las Consultas',
     );
 
@@ -1828,10 +1769,10 @@ function registrar_cpt_consultas() {
         'show_in_menu'       => true,
         'menu_position'      => 20,
         'menu_icon'          => 'dashicons-email-alt',
-        // ELIMINAMOS 'editor' para que no sea editable
+      
         'supports'           => array('title'), 
         'capabilities' => array(
-            'create_posts' => 'do_not_allow', // Impide crear consultas manualmente desde el admin
+            'create_posts' => 'do_not_allow', 
         ),
         'map_meta_cap'       => true,
     );
@@ -1841,7 +1782,7 @@ function registrar_cpt_consultas() {
 add_action('init', 'registrar_cpt_consultas');
 
 
-// 1. Definir las columnas
+
 function columnas_para_consultas($columns) {
     $new_columns = array(
         'cb'      => $columns['cb'],
@@ -1853,7 +1794,7 @@ function columnas_para_consultas($columns) {
 }
 add_filter('manage_consulta_posts_columns', 'columnas_para_consultas');
 
-// 2. Rellenar las columnas con datos
+
 function contenido_columnas_consultas($column, $post_id) {
     if ($column === 'email') {
         $email = get_post_meta($post_id, '_email_remitente', true);
@@ -1877,11 +1818,11 @@ function agregar_metabox_consulta() {
 add_action('add_meta_boxes', 'agregar_metabox_consulta');
 
 function mostrar_contenido_consulta($post) {
-    // Recuperamos los datos
+
     $email = get_post_meta($post->ID, '_email_remitente', true);
-    $contenido = $post->post_content; // El mensaje guardado en post_content
+    $contenido = $post->post_content; 
     
-    // Mostramos la información (Estructura de solo lectura)
+
     echo '<div style="padding: 10px;">';
     echo '<p><strong>Email del remitente:</strong><br>' . esc_html($email) . '</p>';
     echo '<hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">';

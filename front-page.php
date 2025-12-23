@@ -502,7 +502,7 @@
 <section id="servydep" class="py-20 bg-[#cda2ff47]">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-3">Departamentos y Áreas</h2>
+            <h2 class="text-3xl font-bold text-gray-900 mb-3">Departamentos y áreas</h2>
             <div class="w-20 h-1 bg-[#416ed2] mx-auto mb-4"></div>
             <p class="text-gray-600 max-w-2xl mx-auto">Estructura organizativa al servicio de la comunidad universitaria.</p>
         </div>
