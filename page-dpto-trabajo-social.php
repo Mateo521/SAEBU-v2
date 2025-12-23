@@ -143,7 +143,7 @@ get_header();
                                     </svg>
                                     <div>
                                         <span class="block font-bold text-gray-900">Dirección</span>
-                                        <span class="text-gray-600">Calle Justo Daract Nº 1661, San Luis Capital.</span>
+                                        <span class="text-gray-600">Calle Rivadavia 1029, San Luis</span>
                                     </div>
                                 </li>
                                 <li class="flex gap-4">

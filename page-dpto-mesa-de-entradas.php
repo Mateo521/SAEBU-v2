@@ -75,7 +75,7 @@ get_header();
                                     </svg>
                                 </div>
                                 <h1 class="font-bold text-gray-900 mb-2 text-base">Ubicación</h1>
-                                <p class="text-gray-600 text-sm">Rivadavia 1029, 1º Piso<br>San Luis Capital</p>
+                                <p class="text-gray-600 text-sm">Rivadavia 1029<br>San Luis Capital</p>
                             </div>
 
                             <div class="flex flex-col items-center text-center p-4">

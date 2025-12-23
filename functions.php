@@ -1809,3 +1809,85 @@ function saebu_get_ultimo_menu_url()
     // Si no hay menú, redirigir al archivo de menús
     return get_post_type_archive_link('menu_dia');
 }
+
+
+
+function registrar_cpt_consultas() {
+    $labels = array(
+        'name'                  => 'Consultas',
+        'singular_name'         => 'Consulta',
+        'menu_name'             => 'Consultas',
+        'add_new'               => 'Ver Consultas', // Cambiamos el texto
+        'all_items'             => 'Todas las Consultas',
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => false,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'menu_position'      => 20,
+        'menu_icon'          => 'dashicons-email-alt',
+        // ELIMINAMOS 'editor' para que no sea editable
+        'supports'           => array('title'), 
+        'capabilities' => array(
+            'create_posts' => 'do_not_allow', // Impide crear consultas manualmente desde el admin
+        ),
+        'map_meta_cap'       => true,
+    );
+
+    register_post_type('consulta', $args);
+}
+add_action('init', 'registrar_cpt_consultas');
+
+
+// 1. Definir las columnas
+function columnas_para_consultas($columns) {
+    $new_columns = array(
+        'cb'      => $columns['cb'],
+        'title'   => 'Remitente / Asunto',
+        'email'   => 'Correo electrónico',
+        'date'    => 'Fecha de Recepción',
+    );
+    return $new_columns;
+}
+add_filter('manage_consulta_posts_columns', 'columnas_para_consultas');
+
+// 2. Rellenar las columnas con datos
+function contenido_columnas_consultas($column, $post_id) {
+    if ($column === 'email') {
+        $email = get_post_meta($post_id, '_email_remitente', true);
+        echo $email ? '<a href="mailto:'.$email.'">'.$email.'</a>' : '—';
+    }
+}
+add_action('manage_consulta_posts_custom_column', 'contenido_columnas_consultas', 10, 2);
+
+
+
+function agregar_metabox_consulta() {
+    add_meta_box(
+        'detalle_consulta_box',
+        'Detalles de la Consulta',
+        'mostrar_contenido_consulta',
+        'consulta',
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'agregar_metabox_consulta');
+
+function mostrar_contenido_consulta($post) {
+    // Recuperamos los datos
+    $email = get_post_meta($post->ID, '_email_remitente', true);
+    $contenido = $post->post_content; // El mensaje guardado en post_content
+    
+    // Mostramos la información (Estructura de solo lectura)
+    echo '<div style="padding: 10px;">';
+    echo '<p><strong>Email del remitente:</strong><br>' . esc_html($email) . '</p>';
+    echo '<hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">';
+    echo '<p><strong>Mensaje:</strong></p>';
+    echo '<div style="background: #f9f9f9; padding: 15px; border: 1px solid #ddd; border-radius: 4px; white-space: pre-wrap;">';
+    echo esc_html($contenido);
+    echo '</div>';
+    echo '</div>';
+}

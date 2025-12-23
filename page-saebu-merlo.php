@@ -128,8 +128,8 @@ get_header();
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
                     <div class="text-center mb-10">
-                        <h2 class="text-2xl font-bold text-gray-900">Servicios Disponibles</h2>
-                        <p class="text-gray-500">Gestiones que puedes realizar en esta sede</p>
+                        <h2 class="text-2xl font-bold text-gray-900">Servicios disponibles</h2>
+                        <p class="text-gray-500">Gestiones que podés realizar en esta sede</p>
                     </div>
 
                     <div class="grid md:grid-cols-3 gap-6">

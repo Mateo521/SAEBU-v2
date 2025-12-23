@@ -10,7 +10,7 @@ $organizacion = [
         'nombre' => 'Nombre del Secretario',
         'cargo'  => 'Secretario',
         'area'   => 'Conducción General',
-        'email'  => 'secretario.saebu@unsl.edu.ar',
+        'email'  => 'secretario.saebuunsl@unsl.edu.ar',
         'telefono'=> 'Int. 5500',
         'imagen' => '' 
     ],
