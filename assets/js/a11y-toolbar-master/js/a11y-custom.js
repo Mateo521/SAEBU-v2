@@ -80,7 +80,7 @@
     const panel = document.createElement('div');
     panel.id = panelId;
     panel.className =
-      'a11y-custom-panel fixed bottom-28 left-4 w-80 max-w-[90vw] bg-white dark:bg-slate-800 p-3 rounded shadow-lg ring-1 ring-slate-200 z-[9999]';
+      'a11y-custom-panel fixed bottom-28 left-4 w-80 max-w-[90vw] bg-white  p-3 rounded shadow-lg ring-1 ring-slate-200 z-[9999]';
     panel.setAttribute('role', 'dialog');
     panel.setAttribute('aria-modal', 'false');
     panel.setAttribute('aria-hidden', 'true');

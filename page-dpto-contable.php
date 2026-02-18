@@ -180,7 +180,7 @@ get_header();
                         </div>
                         
                         <div class="w-full md:w-1/3">
-                            <div class="bg-slate-800 text-white p-8 rounded-lg text-center shadow-lg border-t-4 border-emerald-500">
+                            <div class="bg-slate-800 text-white p-8  text-center shadow-lg border-t-4 border-emerald-500">
                                 <svg class="w-12 h-12 mx-auto mb-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
                                 <h3 class="text-xl font-bold mb-1">Departamento Contable</h3>
                                 <p class="text-slate-400 text-sm">Centro de Gestión Financiera</p>

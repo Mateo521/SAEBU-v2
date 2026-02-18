@@ -97,13 +97,13 @@ get_header(); ?>
                 <div class="col-span-1">
                     <label for="email" class="text-xl font-black uppercase  text-gray-700 mb-2 block">Correo electrónico</label>
                     <input type="email" name="email" id="email" required
-                        class="w-full border-b border-gray-200 py-2 focus:border-unsl-blue outline-none transition-colors placeholder-gray-800 text-sm" placeholder="email@dominio.com">
+                        class="w-full border-b border-gray-200 py-2 focus:border-unsl-blue outline-none transition-colors placeholder-gray-800 text-sm" placeholder="email@ejemplo.com">
                 </div>
 
                 <div class="col-span-full">
                     <label for="asunto" class="text-xl font-black uppercase  text-gray-700 mb-2 block">Asunto de la consulta</label>
                     <input type="text" name="asunto" id="asunto" required
-                        class="w-full border-b border-gray-200 py-2 focus:border-unsl-blue outline-none transition-colors placeholder-gray-800 text-sm" placeholder="Ej. Beca, Comedor, Residencia...">
+                        class="w-full border-b border-gray-200 py-2 focus:border-unsl-blue outline-none transition-colors placeholder-gray-800 text-sm" placeholder="Ej. Beca, comedor, residencia...">
                 </div>
 
                 <div class="col-span-full">
