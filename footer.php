@@ -25,7 +25,7 @@
                     </h1>
                 </div>
                 <p class="text-sm text-gray-400 leading-relaxed mb-6">
-                    <?php bloginfo('description'); ?>. Lorem.
+                    <?php bloginfo('description'); ?>
                 </p>
 
                 <div class="flex gap-4">

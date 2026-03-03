@@ -126,9 +126,10 @@ get_header();
                             </div>
                             <h1 class="text-lg font-bold text-slate-900 mb-3">Trámites de comedor</h1>
                             <p class="text-sm text-gray-600 leading-relaxed mb-4">
-                                Recepción y procesamiento de la documentación para acceder a las becas de comedor y beneficios alimentarios.
+                                Recepción y procesamiento de la documentación para acceder a los servicios de comedor y beneficios de cocina para celíacos.
                             </p>
                             <span class="text-xs font-semibold text-blue-600 uppercase">Documentación requerida</span>
+
                         </div>
 
                         <div class="bg-white p-6 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all duration-300">
@@ -161,6 +162,63 @@ get_header();
                 </div>
             </div>
         </section>
+
+        <section class="py-16 bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <h2 class="text-2xl font-bold text-center text-gray-900 mb-10">Preguntas frecuentes</h2>
+
+                <div class="space-y-2">
+                    <details class="group bg-white border border-gray-200 rounded-md">
+                        <summary class="flex items-center justify-between p-4 cursor-pointer font-medium text-gray-800 hover:bg-gray-50 transition-colors">
+                            ¿Qué necesito para el servicio de comedor siendo ingresante?
+                            <span class="text-gray-400 group-open:rotate-180 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg></span>
+                        </summary>
+                        <div class="p-4 text-gray-600 text-sm leading-relaxed border-t border-transparent group-open:border-gray-100">
+                            Necesitas tu DNI y certificado de inscripción a la carrera.
+                        </div>
+                    </details>
+
+                    <details class="group bg-white border border-gray-200 rounded-md">
+                        <summary class="flex items-center justify-between p-4 cursor-pointer font-medium text-gray-800 hover:bg-gray-50 transition-colors">
+                            ¿Si soy estudiante debo renovar mi servicio de comedor anualmente?
+                            <span class="text-gray-400 group-open:rotate-180 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg></span>
+                        </summary>
+                        <div class="p-4 text-gray-600 text-sm leading-relaxed border-t border-transparent group-open:border-gray-100">
+                            Sí, necesitas tu DNI e historia académica actualizada.
+                        </div>
+                    </details>
+
+                    <details class="group bg-white border border-gray-200 rounded-md">
+                        <summary class="flex items-center justify-between p-4 cursor-pointer font-medium text-gray-800 hover:bg-gray-50 transition-colors">
+                            ¿Como puedo acceder al servicio del comedor sin TACC?
+                            <span class="text-gray-400 group-open:rotate-180 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg></span>
+                        </summary>
+                        <div class="p-4 text-gray-600 text-sm leading-relaxed border-t border-transparent group-open:border-gray-100">
+                            Necesitas tu DNI, copia de biopsia, certificado médico y documentación que acredite tu vínculo con la UNSL (historia académica, certificado de inscripción a carrera, etc).
+                        </div>
+                    </details>
+
+                    <details class="group bg-white border border-gray-200 rounded-md">
+                        <summary class="flex items-center justify-between p-4 cursor-pointer font-medium text-gray-800 hover:bg-gray-50 transition-colors">
+                            ¿A dónde entrego mi documentación?
+                            <span class="text-gray-400 group-open:rotate-180 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg></span>
+                        </summary>
+                        <div class="p-4 text-gray-600 text-sm leading-relaxed border-t border-transparent group-open:border-gray-100">
+                            Necesitás acercarte personalmente a las oficinas en Rivadavia 1029 en San Luis Capital, Junín 269 en Villa Mercedes o Av. del Libertador - Barranca Colorada en Merlo.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
 
         <section class="py-16 bg-white border-t border-gray-200">
             <div class="container mx-auto px-4">

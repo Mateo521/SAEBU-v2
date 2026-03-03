@@ -198,17 +198,7 @@ get_header();
                                 ],
                                 'video' => get_template_directory_uri() . '/assets/videos/contraprestacion.mp4'
                             ],
-                            [
-                                'titulo' => 'Residencia',
-                                'subtitulo' => 'Alojamiento',
-                                'icon' => 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
-                                'desc' => 'Alojamiento para estudiantes que vivan a más de 30 km de la sede universitaria. Disponible en San Luis y Villa Mercedes.',
-                                'detalles' => [
-                                    'Distancia > 30km',
-                                    'Toda la carrera'
-                                ],
-                                'video' => get_template_directory_uri() . '/assets/videos/residencia.mp4'
-                            ],
+
                             [
                                 'titulo' => 'Beca Integral',
                                 'subtitulo' => 'Doble monto',
@@ -316,7 +306,7 @@ get_header();
                                 </svg></span>
                         </summary>
                         <div class="p-4 pt-0 text-gray-600 text-sm leading-relaxed border-t border-transparent group-open:border-gray-100 mt-2">
-                            Sí, podés combinar diferentes becas según tu situación. Por ejemplo, podés tener una Beca de Ayuda Económica y una de Comedor al mismo tiempo, siempre que cumplas con los requisitos de cada una.
+                            Dependiendo el tipo de beca podés combinar diferentes becas según tu situación. Por ejemplo, podés tener una Beca de Comedor y una de Transporte al mismo tiempo, siempre que cumplas con los requisitos de cada una. Pero no se puede combinar la beca de Comedor y ayuda Económica, ya que ambas cubren gastos relacionados a la alimentación.
                         </div>
                     </details>
 
@@ -349,10 +339,10 @@ get_header();
 
     <?php endwhile; ?>
 
-    <!-- Modal para reproducir videos -->
+
     <div id="video-modal" class="fixed inset-0 bg-black bg-opacity-75 z-[10000] hidden flex items-center justify-center p-4">
         <div class="relative w-full max-w-4xl bg-white rounded-lg shadow-2xl overflow-hidden">
-            <!-- Header del modal -->
+
             <div class="flex items-center justify-between p-4 border-b border-gray-200 bg-slate-50">
                 <h3 id="modal-titulo" class="text-lg font-bold text-gray-900"></h3>
                 <button id="cerrar-modal" class="p-2 hover:bg-gray-200 rounded-full transition-colors" aria-label="Cerrar video">
@@ -362,7 +352,7 @@ get_header();
                 </button>
             </div>
 
-            <!-- Contenedor del video -->
+
             <div class="relative bg-black aspect-video">
                 <video
                     id="video-player"
@@ -375,7 +365,7 @@ get_header();
                 </video>
             </div>
 
-            <!-- Footer con información -->
+
             <div class="p-4 bg-slate-50 border-t border-gray-200">
                 <div class="flex items-center gap-3 text-sm text-gray-600">
                     <svg class="w-5 h-5 text-[#005eb8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -396,33 +386,39 @@ get_header();
             const cerrarModal = document.getElementById('cerrar-modal');
             const botonesVideo = document.querySelectorAll('.btn-ver-video');
 
-            // Abrir modal y cargar video
+
+
             botonesVideo.forEach(btn => {
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
                     const videoUrl = this.getAttribute('data-video');
                     const titulo = this.getAttribute('data-titulo');
 
-                    // Configurar modal
+
+
                     modalTitulo.textContent = titulo;
                     videoSource.src = videoUrl;
                     videoPlayer.load();
 
-                    // Mostrar modal
+
+
                     modal.classList.remove('hidden');
                     modal.classList.add('flex');
 
-                    // Prevenir scroll del body
+
+
                     document.body.style.overflow = 'hidden';
 
-                    // Reproducir automáticamente
+
+
                     videoPlayer.play().catch(err => {
                         console.log('Autoplay bloqueado:', err);
                     });
                 });
             });
 
-            // Función para cerrar modal
+
+
             function closeModal() {
                 videoPlayer.pause();
                 videoPlayer.currentTime = 0;
@@ -432,24 +428,27 @@ get_header();
                 document.body.style.overflow = '';
             }
 
-            // Cerrar con botón X
+
+
             cerrarModal.addEventListener('click', closeModal);
 
-            // Cerrar con clic fuera del contenido
+
+
             modal.addEventListener('click', function(e) {
                 if (e.target === modal) {
                     closeModal();
                 }
             });
 
-            // Cerrar con tecla ESC
+
+
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
                     closeModal();
                 }
             });
 
-            // Pausar video si se sale de la página
+
             window.addEventListener('beforeunload', function() {
                 if (!videoPlayer.paused) {
                     videoPlayer.pause();

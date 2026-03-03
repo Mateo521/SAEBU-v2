@@ -30,7 +30,7 @@ $placeholder = 'https://via.placeholder.com/400x400?text=Sin+Foto';
 
 <main class="bg-gray-50 min-h-screen py-16 px-4">
     <header class="max-w-4xl mx-auto text-center mb-12">
-        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 uppercase tracking-tight">Autoridades</h1>
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 uppercase tracking-tight">Personal</h1>
         <div class="h-1.5 w-16 bg-blue-900 mx-auto mb-8"></div>
         
         <div class="flex justify-center gap-6 md:gap-12 mt-10 border-b border-gray-200">
@@ -53,7 +53,7 @@ $placeholder = 'https://via.placeholder.com/400x400?text=Sin+Foto';
                 <div class="flex flex-col items-center mb-12">
                     <div class="max-w-sm w-full">
                         <div class="bg-white  shadow-lg border-t-4 border-blue-900 p-8 text-center transition-transform hover:scale-[1.02]">
-                            <div class="size-full mx-auto mb-6 rounded-xl overflow-hidden border-4 border-slate-100 shadow-inner">
+                            <div class="size-full mx-auto mb-6 rounded overflow-hidden border-4 border-slate-100 shadow-inner">
                                 <img src="<?php echo esc_url($foto); ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover">
                             </div>
                             <h2 class="text-xl font-bold text-slate-900 mb-1"><?php the_title(); ?></h2>
@@ -84,13 +84,13 @@ $placeholder = 'https://via.placeholder.com/400x400?text=Sin+Foto';
                     <?php if ($query_sl->have_posts()) : while ($query_sl->have_posts()) : $query_sl->the_post(); 
                         $foto_depto = get_the_post_thumbnail_url(get_the_ID(), 'medium') ?: $placeholder;
                     ?>
-                        <div class="bg-white rounded-lg border border-slate-200 p-5 flex flex-col items-center text-center group hover:border-blue-400 transition-all shadow-sm">
-                            <div class="size-full rounded-xl overflow-hidden mb-4 border border-slate-100  transition-transform">
+                        <div class="bg-white rounded-lg border border-slate-200 p-2 flex flex-col items-center text-center group hover:border-blue-400 transition-all shadow-sm">
+                            <div class="size-full rounded overflow-hidden mb-4 border border-slate-100  transition-transform">
                                 <img src="<?php echo esc_url($foto_depto); ?>" class="w-full h-full object-cover">
                             </div>
-                            <h4 class="text-sm font-bold text-slate-900"><?php the_title(); ?></h4>
-                            <p class="text-[10px] text-blue-800 font-bold uppercase mb-1"><?php echo esc_html(get_field('cargo')); ?></p>
-                            <p class="text-[9px] text-slate-400 italic"><?php echo esc_html(get_field('area')); ?></p>
+                            <h4 class="text-base font-bold text-slate-900"><?php the_title(); ?></h4>
+                            <p class="text-sm text-blue-800 font-bold uppercase mb-1"><?php echo esc_html(get_field('cargo')); ?></p>
+                            <p class="text-sm text-slate-400 italic"><?php echo esc_html(get_field('area')); ?></p>
                         </div>
                     <?php endwhile; wp_reset_postdata(); endif; ?>
                 </div>
@@ -103,12 +103,12 @@ $placeholder = 'https://via.placeholder.com/400x400?text=Sin+Foto';
                         $foto_vm = get_the_post_thumbnail_url(get_the_ID(), 'medium') ?: $placeholder;
                     ?>
                         <div class="bg-white rounded-lg border border-slate-200 p-5 flex flex-col items-center text-center group hover:border-emerald-400 transition-all shadow-sm">
-                            <div class="size-full rounded-xl overflow-hidden mb-4 border border-slate-100">
+                            <div class="size-full rounded overflow-hidden mb-4 border border-slate-100">
                                 <img src="<?php echo esc_url($foto_vm); ?>" class="w-full h-full object-cover">
                             </div>
-                            <h4 class="text-sm font-bold text-slate-900"><?php the_title(); ?></h4>
-                            <p class="text-[10px] text-emerald-800 font-bold uppercase mb-1"><?php echo esc_html(get_field('cargo')); ?></p>
-                            <p class="text-[9px] text-slate-400 italic"><?php echo esc_html(get_field('area')); ?></p>
+                            <h4 class="text-base font-bold text-slate-900"><?php the_title(); ?></h4>
+                            <p class="text-sm text-emerald-800 font-bold uppercase mb-1"><?php echo esc_html(get_field('cargo')); ?></p>
+                            <p class="text-sm text-slate-400 italic"><?php echo esc_html(get_field('area')); ?></p>
                         </div>
                     <?php endwhile; wp_reset_postdata(); endif; ?>
                 </div>

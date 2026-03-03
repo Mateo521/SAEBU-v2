@@ -175,8 +175,7 @@
                     <h2 class="text-xl md:text-2xl font-bold mb-4">
                         ¿Necesitás más información?
                     </h2>
-                    <p class="text-xl text-blue-100 mb-8 mx-auto">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+     
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="<?php echo home_url('/contacto'); ?>"
                             class="inline-flex items-center justify-center gap-2 bg-white text-[#416ed2] px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 shadow-xl transition-all">

@@ -35,7 +35,7 @@
                 fetchpriority="high"
                 class="absolute inset-0 w-full h-full object-cover opacity-40">
         <?php endif; ?>
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/70 to-slate-900/20 z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-slate-900/70 to-slate-900/20 z-10"></div>
     </div>
     <div class="relative z-10 container mx-auto px-4 py-12">
         <div class="grid lg:grid-cols-[1.5fr_1fr] gap-12 items-center">
@@ -49,20 +49,20 @@
                         Secretaría de <br>
                         Asuntos Estudiantiles y Bienestar Universitario
                     </h1>
-                    <p class="text-lg text-gray-300 max-w-2xl leading-relaxed font-light">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit minima earum modi eligendi voluptatum
+                    <p class="text-base text-gray-300 max-w-2xl leading-relaxed font-light">
+                        Su función principal es acompañar a las y los estudiantes durante su trayectoria universitaria, promoviendo el bienestar integral y la participación en la vida académica y social.
                     </p>
                 </div>
                 <div class="flex flex-wrap items-center gap-4 pt-4">
 
 
-                    <a href="<?php echo home_url('/servicios'); ?>"
+                    <!--a href="<?php echo home_url('/servicios'); ?>"
                         class="inline-flex items-center gap-2 bg-[#416ed2] hover:bg-[#004a99] text-white px-8 py-3 rounded-md font-semibold transition-colors duration-300 shadow-sm">
                         <span>Lorem</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
-                    </a>
+                    </a-->
                     <a href="<?php echo home_url('/institucional'); ?>"
                         class="inline-flex items-center gap-2 bg-transparent border border-white/30 hover:bg-white/10 text-white px-8 py-3 rounded-md font-medium transition-all duration-300">
                         <span>Institucional</span>
@@ -421,16 +421,16 @@
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-white text-center divide-y md:divide-y-0 md:divide-x divide-white/20">
             <div class="px-4 py-2">
-                <p class="text-3xl font-bold mb-1">lorem</p>
-                <p class="text-sm text-white uppercase tracking-wider">Departamentos</p>
+                <!--p class="text-3xl font-bold mb-1">lorem</p-->
+                <p class="text-xl text-white uppercase tracking-wider">Departamentos</p>
             </div>
             <div class="px-4 py-2">
-                <p class="text-3xl font-bold mb-1">lorem</p>
-                <p class="text-sm text-white uppercase tracking-wider">Servicios al estudiante</p>
+                <!--p class="text-3xl font-bold mb-1">lorem</p-->
+                <p class="text-xl text-white uppercase tracking-wider">Servicios al estudiante</p>
             </div>
             <div class="px-4 py-2">
-                <p class="text-3xl font-bold mb-1">lorem</p>
-                <p class="text-sm text-white uppercase tracking-wider">Compromiso público</p>
+                <!--p class="text-3xl font-bold mb-1">lorem</p-->
+                <p class="text-xl text-white uppercase tracking-wider">Compromiso público</p>
             </div>
         </div>
     </div>
