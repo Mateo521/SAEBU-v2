@@ -4,7 +4,7 @@
 
     <?php while (have_posts()) : the_post(); ?>
 
-        <article class="container mx-auto px-4 max-w-4xl py-12 md:py-20">
+        <article class="container mx-auto px-4 max-w-7xl py-12 md:py-20">
 
             <header class="text-center mb-12">
 
@@ -167,7 +167,7 @@
                                 <a href="<?php the_permalink(); ?>" class="group block bg-white border border-gray-200 hover:border-gray-300 transition-all">
                                     <div class="overflow-hidden aspect-video bg-gray-100 relative">
                                         <?php if (has_post_thumbnail()) : ?>
-                                            <?php the_post_thumbnail('medium_large', array('class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-500')); ?>
+                                            <?php the_post_thumbnail('medium_large', array('class' => 'w-full h-full object-cover group- transition-transform duration-500')); ?>
                                         <?php else: ?>
                                             <div class="w-full h-full flex items-center justify-center text-gray-300">
                                                 <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">

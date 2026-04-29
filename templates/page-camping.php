@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Página Camping
+ * Template Name: Página camping
  */
 get_header();
 ?>
@@ -10,7 +10,7 @@ get_header();
 
     <?php while (have_posts()) : the_post(); ?>
 
-        <!-- Hero Section -->
+
         <section class="relative bg-gradient-to-br from-green-600 to-green-800 text-white py-20">
             <div class="absolute inset-0 opacity-10">
                 <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -20,7 +20,7 @@ get_header();
 
             <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-7xl mx-auto text-center">
-                    <!-- Icono del departamento -->
+
                     <div class="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-md rounded-full mb-6">
                         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
@@ -31,7 +31,7 @@ get_header();
                         <?php the_title(); ?>
                     </h1>
 
-                    <!-- Breadcrumbs integrado en el hero -->
+
                     <div class="flex items-center justify-center gap-2 text-green-100">
                         <a href="<?php echo home_url('/'); ?>" class="hover:text-white">Inicio</a>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,12 +43,12 @@ get_header();
             </div>
         </section>
 
-        <!-- Contenido principal -->
+
         <section class="py-16">
             <div class="container mx-auto px-4">
                 <div class="max-w-7xl mx-auto">
 
-                    <!-- Información del departamento -->
+
                     <?php if (get_the_content()) : ?>
                         <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 md:p-12 mb-12">
                             <div class="prose prose-lg max-w-none">
@@ -57,7 +57,7 @@ get_header();
                         </div>
                     <?php endif; ?>
 
-                    <!-- Información de contacto/servicios (opcional) -->
+
                     <div class="grid md:grid-cols-3 gap-6 mb-12">
 
                         <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 text-center hover:shadow-md transition-shadow">
@@ -99,20 +99,20 @@ get_header();
 
     <?php endwhile; ?>
 
-    <!-- Noticias del departamento -->
+
     <section class="py-16 bg-white border-t border-gray-200">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
 
-                <!-- Encabezado de sección -->
+
                 <div class="flex items-center justify-between mb-10">
                     <div>
                         <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-2">Noticias de Camping</h2>
-                        <p class="text-gray-600">Mantente informado sobre nuestras actividades y novedades</p>
+                        <p class="text-gray-600">Mantenete informado sobre nuestras actividades y novedades</p>
                     </div>
                 </div>
 
-                <!-- Grid de noticias -->
+
                 <?php
                 $noticias = saebu_get_noticias_by_departamento('camping', 6);
 
@@ -124,7 +124,7 @@ get_header();
                             <article class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow group">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <a href="<?php the_permalink(); ?>" class="block overflow-hidden">
-                                        <?php the_post_thumbnail('noticia-thumbnail', array('class' => 'w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300')); ?>
+                                        <?php the_post_thumbnail('noticia-thumbnail', array('class' => 'w-full h-56 object-cover group- transition-transform duration-300')); ?>
                                     </a>
                                 <?php else: ?>
                                     <a href="<?php the_permalink(); ?>" class="block h-56 bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center">

@@ -1560,8 +1560,8 @@ function saebu_noticias_departamento($args = array())
 
                 <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
                     <div>
-                        <h2 class="text-2xl font-bold text-gray-900 mb-2 border-l-4 border-<?php echo esc_attr($config['color']); ?>-700 pl-3">
-                            Novedades de <?php echo esc_html($config['nombre']); ?>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2   pl-3">
+                            Noticias de <?php echo esc_html($config['nombre']); ?>
                         </h2>
                         <p class="text-gray-600 text-sm">
                             <?php echo esc_html($config['descripcion']); ?>
@@ -1585,7 +1585,7 @@ function saebu_noticias_departamento($args = array())
 
                                 <a href="<?php the_permalink(); ?>" class="block relative h-48 overflow-hidden bg-gray-100">
                                     <?php if (has_post_thumbnail()) : ?>
-                                        <?php the_post_thumbnail('medium', array('class' => 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-105')); ?>
+                                        <?php the_post_thumbnail('medium', array('class' => 'w-full h-full object-cover transition-transform duration-500 group-')); ?>
                                     <?php else : ?>
                                         <div class="w-full h-full flex items-center justify-center text-gray-300">
                                             <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">

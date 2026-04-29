@@ -6,243 +6,206 @@
 get_header();
 ?>
 
-<main class="bg-gray-50">
+<main class="bg-white font-sans">
 
     <?php while (have_posts()) : the_post(); ?>
 
-        <section class="relative bg-slate-900 text-white py-20 border-b-4 border-indigo-600">
-            <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M0 40L40 0H20L0 20M40 40V20L20 40\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        <section class="bg-slate-900 py-32 border-b border-slate-800 text-center">
+            <div class="container mx-auto px-6 max-w-4xl relative z-10">
 
-            <div class="container mx-auto px-4 relative z-10">
-                <div class="max-w-4xl mx-auto text-center">
-                    <nav class="flex justify-center items-center gap-2 text-sm text-gray-400 mb-6 font-sans uppercase tracking-widest text-xs">
-                        <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors font-bold">INICIO</a>
-                        <span class="text-gray-600">/</span>
-                        <?php
-                        // Lógica para detectar padres (Jerarquía)
-                        global $post;
-                        if (is_page() && $post->post_parent) {
-                            // Obtener ancestros (padres, abuelos...)
-                            $ancestors = get_post_ancestors($post->ID);
-                            // Invertimos el orden para que vaya de Padre -> Hijo
-                            $ancestors = array_reverse($ancestors);
-                            foreach ($ancestors as $ancestor_id) {
-                        ?>
-                                <a href="<?php echo get_permalink($ancestor_id); ?>" class="hover:text-white transition-colors font-bold">
-                                    <?php echo get_the_title($ancestor_id); ?>
-                                </a>
-                                <span class="text-gray-600">/</span>
-                        <?php
-                            }
+                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold tracking-widest uppercase text-slate-500 mb-8">
+                    <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
+                    <span>/</span>
+                    <?php
+                    global $post;
+                    if (is_page() && $post->post_parent) {
+                        $ancestors = array_reverse(get_post_ancestors($post->ID));
+                        foreach ($ancestors as $ancestor_id) {
+                    ?>
+                            <a href="<?php echo get_permalink($ancestor_id); ?>" class="hover:text-white transition-colors">
+                                <?php echo get_the_title($ancestor_id); ?>
+                            </a>
+                            <span>/</span>
+                    <?php
                         }
-                        ?>
-                        <span class="text-white font-bold">
-                            <?php the_title(); ?>
-                        </span>
-                    </nav>
-                    <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight  tracking-tight text-white">
-                        <?php the_title(); ?>
-                    </h1>
-                    <div class="w-24 h-1 bg-[#416ed2] mx-auto mb-6"></div>
-                    <div class="text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed font-sans">
-                        <?php
-                        if (has_excerpt()) {
-                            echo get_the_excerpt();
-                        } else {
-                            // Fallback opcional si no cargaron extracto
-                            echo 'Información institucional y servicios de ' . get_the_title();
-                        }
-                        ?>
-                    </div>
-                </div>
-            </div>
+                    }
+                    ?>
+                    <span class="text-[#005eb8]"><?php the_title(); ?></span>
+                </nav>
 
+                <h1 class="text-4xl md:text-6xl font-light text-white leading-tight mb-8 tracking-tight">
+                    Departamento de <strong class="font-semibold">Compras</strong>
+                </h1>
 
-        </section>
-
-        <section class="py-16 bg-white border-b border-gray-200">
-            <div class="container mx-auto px-4">
-                <div class="max-w-5xl mx-auto">
-                    <div class="flex flex-col md:flex-row gap-12 items-start">
-                        <div class="flex-1">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-4 border-l-4 border-indigo-600 pl-4">Función del área</h2>
-                            <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                                El Departamento de Compras ejecuta los procesos administrativos necesarios para la adquisición de bienes y servicios requeridos por todas las áreas de la SAEBU.
-                            </p>
-                            <p class="text-gray-600 text-lg leading-relaxed">
-                                Desde insumos alimenticios para el Comedor universitario hasta equipamiento deportivo complejo, asegurando el cumplimiento de la normativa vigente y la transparencia en la gestión pública.
-                            </p>
-                        </div>
-
-                        <div class="w-full md:w-1/3 bg-slate-50 border border-gray-200 rounded-lg p-6">
-                            <h3 class="font-bold text-slate-900 mb-4">Áreas asistidas</h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-center gap-3 text-sm text-gray-700">
-                                    <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                                    Comedor universitario
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-gray-700">
-                                    <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                                    Departamento de Deportes
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-gray-700">
-                                    <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                                    Complejo La Florida
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-gray-700">
-                                    <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                                    Centros de Salud
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-gray-700">
-                                    <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                                    Administración central
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <p class="text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                    <?php
+                    if (has_excerpt()) {
+                        echo get_the_excerpt();
+                    } else {
+                        echo 'Ejecutamos los procesos administrativos para la adquisición de bienes y servicios, garantizando el cumplimiento normativo y la transparencia en la gestión.';
+                    }
+                    ?>
+                </p>
             </div>
         </section>
 
-        <section class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="max-w-6xl mx-auto">
-                    <div class="text-center mb-12">
-                        <h2 class="text-2xl font-bold text-slate-900">Modalidades de adquisición</h2>
-                        <p class="text-gray-500 mt-2">Procedimientos administrativos según normativa</p>
-                    </div>
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="grid md:grid-cols-[1.5fr_1fr] gap-16 items-start">
 
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="bg-white p-8 rounded-lg border border-gray-200 shadow-sm hover:border-indigo-500 transition-all group">
-                            <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-bold text-slate-900 mb-3">Licitación privada</h3>
-                            <p class="text-sm text-gray-600 mb-4 leading-relaxed">
-                                Procedimiento formal utilizado para compras de gran volumen, como los insumos alimenticios del comedor. Requiere pliegos y múltiples oferentes.
-                            </p>
-                            <span class="text-xs font-semibold text-indigo-600 uppercase tracking-wide">Alta Complejidad</span>
-                        </div>
-
-                        <div class="bg-white p-8 rounded-lg border border-gray-200 shadow-sm hover:border-indigo-500 transition-all group">
-                            <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-bold text-slate-900 mb-3">Compra directa</h3>
-                            <p class="text-sm text-gray-600 mb-4 leading-relaxed">
-                                Procedimiento ágil por compulsa abreviada. Se utiliza para necesidades urgentes, montos menores o proveedores específicos.
-                            </p>
-                            <span class="text-xs font-semibold text-indigo-600 uppercase tracking-wide">Respuesta Rápida</span>
-                        </div>
-
-                        <div class="bg-white p-8 rounded-lg border border-gray-200 shadow-sm hover:border-indigo-500 transition-all group">
-                            <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-bold text-slate-900 mb-3">Plan anual</h3>
-                            <p class="text-sm text-gray-600 mb-4 leading-relaxed">
-                                Planificación estratégica de adquisiciones recurrentes para todo el año fiscal, optimizando recursos y tiempos administrativos.
-                            </p>
-                            <span class="text-xs font-semibold text-indigo-600 uppercase tracking-wide">Planificación</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-16 bg-white border-t border-gray-200">
-            <div class="container mx-auto px-4">
-                <div class="max-w-6xl mx-auto">
-                    <h2 class="text-2xl font-bold text-center text-slate-900 mb-12">Circuito Administrativo</h2>
-
-                    <div class="relative">
-                        <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2 z-0"></div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
-                            <div class="bg-white p-4 text-center">
-                                <div class="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold border-4 border-white">1</div>
-                                <h1 class="font-bold text-slate-900 text-base mb-2">Solicitud</h1>
-                                <p class="text-xs text-gray-500">El departamento requirente envía el pedido formal.</p>
-                            </div>
-
-                            <div class="bg-white p-4 text-center">
-                                <div class="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold border-4 border-white">2</div>
-                                <h1 class="font-bold text-slate-900 text-base mb-2">Evaluación</h1>
-                                <p class="text-xs text-gray-500">Compras clasifica y selecciona el procedimiento.</p>
-                            </div>
-
-                            <div class="bg-white p-4 text-center">
-                                <div class="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold border-4 border-white">3</div>
-                                <h1 class="font-bold text-slate-900 text-base mb-2">Tramitación</h1>
-                                <p class="text-xs text-gray-500">Pliegos, presupuestos y selección de proveedor.</p>
-                            </div>
-
-                            <div class="bg-white p-4 text-center">
-                                <div class="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold border-4 border-white">4</div>
-                                <h1 class="font-bold text-slate-900 text-base mb-2">Adjudicación</h1>
-                                <p class="text-xs text-gray-500">Compra efectiva y entrega del insumo.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-16 bg-slate-900 text-white">
-            <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto bg-indigo-700 rounded-lg p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
                     <div>
-                        <h2 class="text-2xl font-bold mb-2">Portal de Compras UNSL</h2>
-                        <p class="text-indigo-100 mb-4">Acceso a licitaciones, proveedores y estado de trámites.</p>
-                        <div class="flex items-center gap-2 text-xs text-indigo-100">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                            </svg>
-                            Sitio seguro y oficial
+                        <h2 class="text-3xl font-light text-slate-900 tracking-tight mb-8">
+                            Gestión de <strong class="font-semibold">Adquisiciones</strong>
+                        </h2>
+                        <div class="space-y-6 text-lg text-slate-600 font-light leading-relaxed">
+                            <p>
+                                El Departamento de Compras ejecuta los procedimientos administrativos necesarios para proveer de bienes y servicios a todas las dependencias que integran la SAEBU.
+                            </p>
+                            <p>
+                                Nuestra labor abarca desde la compra de insumos alimenticios a gran escala para el Comedor Universitario, hasta el equipamiento técnico o deportivo más específico. Todo el proceso se realiza bajo estrictos estándares de control, asegurando el cumplimiento de la normativa vigente aplicable a la Universidad Nacional y la <strong class="font-medium text-slate-900">transparencia absoluta en el manejo de los fondos públicos</strong>.
+                            </p>
                         </div>
                     </div>
-                    <a href="https://compras.unsl.edu.ar" target="_blank" class="px-8 py-4 bg-white text-indigo-700 font-bold rounded hover:bg-gray-100 transition-colors shadow-md text-center whitespace-nowrap">
-                        Ingresar al Portal
-                    </a>
+
+                    <div class="md:pl-12 md:border-l border-slate-200">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Áreas Asistidas</h3>
+                        <ul class="space-y-4">
+                            <li class="border-b border-slate-100 pb-4">
+                                <span class="block text-sm font-medium text-slate-900">Comedor Universitario</span>
+                            </li>
+                            <li class="border-b border-slate-100 pb-4">
+                                <span class="block text-sm font-medium text-slate-900">Departamento de Deportes</span>
+                            </li>
+                            <li class="border-b border-slate-100 pb-4">
+                                <span class="block text-sm font-medium text-slate-900">Complejo Turístico La Florida</span>
+                            </li>
+                            <li class="border-b border-slate-100 pb-4">
+                                <span class="block text-sm font-medium text-slate-900">Centros de Salud (CeSEU)</span>
+                            </li>
+                            <li class="pt-2">
+                                <span class="block text-sm font-medium text-slate-900">Administración Central y Residencias</span>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <section class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-8">Contacto directo</h2>
+        <section class="py-24 bg-slate-50 border-y border-slate-200">
+            <div class="container mx-auto px-6 max-w-7xl">
 
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="p-6 border border-gray-200 rounded-lg hover:border-indigo-500 transition-colors">
-                            <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-600">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <h1 class="font-bold text-base text-slate-900 mb-1">Correo electrónico</h1>
-                            <a href="mailto:dptocomprassaebu@gmail.com" class="text-indigo-600 font-medium hover:underline">dptocomprassaebu@gmail.com</a>
-                            <p class="text-xs text-gray-500 mt-2">Consultas y envío de solicitudes</p>
-                        </div>
+                <div class="mb-16">
+                    <h2 class="text-3xl font-light text-slate-900 tracking-tight mb-4">
+                        Modalidades de <strong class="font-semibold">Contratación</strong>
+                    </h2>
+                    <p class="text-lg text-slate-500 font-light">Procedimientos administrativos aplicados según normativa y volumen de compra.</p>
+                </div>
 
-                        <div class="p-6 border border-gray-200 rounded-lg hover:border-indigo-500 transition-colors">
-                            <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-600">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                </svg>
-                            </div>
-                            <h1 class="font-bold text-base text-slate-900 mb-1">Teléfono Interno</h1>
-                            <p class="text-indigo-600 font-medium text-lg">8139</p>
-                            <p class="text-xs text-gray-500 mt-2">Red interna UNSL</p>
-                        </div>
+                <div class="grid md:grid-cols-3 gap-12">
+
+                    <div class="border-t border-slate-300 pt-6 group">
+                        <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-widest mb-3 block">Alta Complejidad</span>
+                        <h3 class="text-xl font-medium text-slate-900 mb-3">Licitación Privada / Pública</h3>
+                        <p class="text-sm text-slate-500 font-light leading-relaxed">
+                            Procedimiento formal y riguroso utilizado para adquisiciones de gran volumen (ej. insumos alimenticios anuales). Requiere la elaboración de pliegos, publicación oficial y compulsa de múltiples oferentes.
+                        </p>
+                    </div>
+
+                    <div class="border-t border-slate-300 pt-6 group">
+                        <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-widest mb-3 block">Respuesta Rápida</span>
+                        <h3 class="text-xl font-medium text-slate-900 mb-3">Compra Directa</h3>
+                        <p class="text-sm text-slate-500 font-light leading-relaxed">
+                            Procedimiento ágil por compulsa abreviada de precios. Se aplica para resolver necesidades urgentes, adquisiciones de montos menores o proveedores únicos y específicos.
+                        </p>
+                    </div>
+
+                    <div class="border-t border-slate-300 pt-6 group">
+                        <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-widest mb-3 block">Planificación</span>
+                        <h3 class="text-xl font-medium text-slate-900 mb-3">Plan Anual de Compras</h3>
+                        <p class="text-sm text-slate-500 font-light leading-relaxed">
+                            Estrategia de consolidación de adquisiciones recurrentes proyectadas para todo el año fiscal. Permite optimizar los recursos económicos y reducir los tiempos administrativos.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-7xl">
+
+                <h2 class="text-3xl font-light text-slate-900 text-center tracking-tight mb-16">
+                    Circuito <strong class="font-semibold">Administrativo</strong>
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+                    <div class="border-t-2 border-slate-900 pt-4">
+                        <span class="text-3xl font-light text-slate-300 block mb-2">01</span>
+                        <h3 class="text-base font-bold text-slate-900 mb-2 uppercase tracking-wide">Solicitud</h3>
+                        <p class="text-sm text-slate-500 font-light leading-relaxed">El departamento o área requirente elabora y envía el pedido formal justificando la necesidad.</p>
+                    </div>
+
+                    <div class="border-t-2 border-slate-900 pt-4 mt-4 md:mt-0 opacity-80 hover:opacity-100 transition-opacity">
+                        <span class="text-3xl font-light text-slate-300 block mb-2">02</span>
+                        <h3 class="text-base font-bold text-slate-900 mb-2 uppercase tracking-wide">Evaluación</h3>
+                        <p class="text-sm text-slate-500 font-light leading-relaxed">Compras clasifica el requerimiento, verifica fondos y selecciona el procedimiento normativo adecuado.</p>
+                    </div>
+
+                    <div class="border-t-2 border-slate-900 pt-4 mt-4 md:mt-0 opacity-60 hover:opacity-100 transition-opacity">
+                        <span class="text-3xl font-light text-slate-300 block mb-2">03</span>
+                        <h3 class="text-base font-bold text-slate-900 mb-2 uppercase tracking-wide">Tramitación</h3>
+                        <p class="text-sm text-slate-500 font-light leading-relaxed">Elaboración de pliegos, solicitud de presupuestos, evaluación de ofertas y selección del proveedor.</p>
+                    </div>
+
+                    <div class="border-t-2 border-[#005eb8] pt-4 mt-4 md:mt-0">
+                        <span class="text-3xl font-light text-[#005eb8] block mb-2">04</span>
+                        <h3 class="text-base font-bold text-[#005eb8] mb-2 uppercase tracking-wide">Adjudicación</h3>
+                        <p class="text-sm text-slate-500 font-light leading-relaxed">Emisión de orden de compra, recepción conforme del bien/servicio y pase a pago.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-20 bg-[#005eb8] text-white text-center">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-200 mb-4">Acceso a Proveedores</h2>
+                <h3 class="text-3xl md:text-4xl font-light mb-6">Portal de Compras UNSL</h3>
+                <p class="text-blue-100 font-light text-lg mb-10 max-w-2xl mx-auto">
+                    Plataforma oficial para acceder a las licitaciones públicas y privadas, inscribirse como proveedor y consultar el estado de los expedientes en curso.
+                </p>
+                <a href="https://compras.unsl.edu.ar" target="_blank" rel="noopener noreferrer"
+                    class="inline-block bg-white text-[#005eb8] px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-slate-100  transition-all duration-300">
+                    Ingresar al Portal Oficial
+                </a>
+            </div>
+        </section>
+
+        <section class="bg-slate-900 py-24 text-white text-center">
+            <div class="container mx-auto px-6 max-w-3xl">
+
+                <h2 class="text-3xl font-light mb-6 tracking-tight">Contacto Directo</h2>
+                <p class="text-slate-400 font-light text-lg mb-12">
+                    Para consultas sobre trámites en curso o inscripción como proveedores de la Secretaría.
+                </p>
+
+                <div class="mb-12 inline-block">
+                    <h3 class="text-xl font-medium text-white mb-2">Téc. Inés Moreno</h3>
+                    <p class="text-xs text-[#005eb8] uppercase tracking-widest font-bold">Jefa de Departamento de Compras</p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="mailto:dptocomprassaebu@gmail.com" class="inline-block bg-white text-slate-900 px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-slate-100  transition-all duration-300">
+                        Enviar Correo
+                    </a>
+                    <div class="inline-block border border-slate-600 text-white px-10 py-4 text-sm font-bold uppercase tracking-widest cursor-default">
+                        Interno 8135
                     </div>
                 </div>
+
             </div>
         </section>
 

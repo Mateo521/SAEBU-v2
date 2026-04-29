@@ -156,7 +156,7 @@ get_header();
                             <article class="group border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <a href="<?php the_permalink(); ?>" class="block overflow-hidden">
-                                        <?php the_post_thumbnail('noticia-thumbnail', array('class' => 'w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300')); ?>
+                                        <?php the_post_thumbnail('noticia-thumbnail', array('class' => 'w-full h-48 object-cover group- transition-transform duration-300')); ?>
                                     </a>
                                 <?php else: ?>
                                     <a href="<?php the_permalink(); ?>" class="block h-48 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">

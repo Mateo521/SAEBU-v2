@@ -15,7 +15,7 @@ get_header();
             <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
 
             <div class="container mx-auto px-4 relative z-10">
-                <div class="max-w-4xl mx-auto text-center">
+                <div class="max-w-7xl mx-auto text-center">
                     <nav class="flex justify-center items-center gap-2 text-sm text-slate-400 mb-6">
                         <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                         <span>/</span>
@@ -23,7 +23,7 @@ get_header();
                     </nav>
 
                     <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight tracking-tight">
-                        Sedes y Centros Regionales
+                        Sedes regionales
                     </h1>
 
                     <div class="w-24 h-1 bg-slate-500 mx-auto mb-6"></div>
@@ -178,7 +178,7 @@ get_header();
         <section class="py-16 bg-white border-t border-gray-200">
             <div class="container mx-auto px-4 text-center">
                 <!--h2 class="text-2xl font-bold text-slate-900 mb-8">Alcance Provincial</h2-->
-                <div class="max-w-4xl mx-auto bg-slate-50 rounded-2xl p-8 border border-gray-200">
+                <div class="max-w-7xl mx-auto bg-slate-50 rounded-2xl p-8 border border-gray-200">
                     <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
                         <div class="text-center">
                             <div class="w-4 h-4 bg-teal-700 rounded-full mx-auto mb-2"></div>

@@ -66,7 +66,7 @@ get_header();
                             <article class="group bg-white flex flex-col h-full border border-gray-200 hover:border-gray-300 transition-all duration-300 shadow-sm hover:shadow-md">
                                 <a href="<?php the_permalink(); ?>" title="Leer noticia  <?php the_title(); ?>" class="block overflow-hidden relative aspect-video bg-gray-100">
                                     <?php if (has_post_thumbnail()) : ?>
-                                        <?php the_post_thumbnail('medium_large', array('class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out')); ?>
+                                        <?php the_post_thumbnail('medium_large', array('class' => 'w-full h-full object-cover group- transition-transform duration-700 ease-out')); ?>
                                     <?php else: ?>
                                         <div class="flex items-center justify-center w-full h-full text-gray-300">
                                             <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -5,7 +5,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Alpine.js desde CDN -->
+
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
 
@@ -15,7 +15,7 @@
 <body <?php body_class('bg-white overflow-x-hidden'); ?> x-data="{ mobileMenuOpen: false }" :class="{ 'overflow-hidden': mobileMenuOpen }">
     <?php wp_body_open(); ?>
 
-    <!-- Top Bar -->
+
     <!--div class="bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 text-white py-2.5 text-sm border-b border-slate-600">
         <div class="container mx-auto px-4">
             <div class="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
@@ -53,12 +53,12 @@
         </div>
     </div-->
 
-    <!-- Main Header -->
+
     <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-md">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between h-20">
 
-                <!-- Logo -->
+
                 <div class="site-branding flex items-center gap-3 relative">
                     <?php if (has_custom_logo()) : ?>
                         <div class="custom-logo-container">
@@ -66,7 +66,7 @@
                         </div>
                     <?php else : ?>
                         <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-3 group">
-                            <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center shadow-lg group- transition-transform">
                                 <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                                 </svg>
@@ -83,7 +83,7 @@
                     <?php endif; ?>
                 </div>
 
-                <!-- Desktop Navigation with Dropdowns -->
+
                 <nav class="hidden xl:flex gap-1 items-center">
 
                     <div class="gtranslate_wrapper"></div>
@@ -102,7 +102,7 @@
                             'fallback_cb'    => false,
                         ));
                     } else {
-                        // Menú por defecto
+
                         echo '<ul class="flex items-center gap-1">';
                         echo '<li><a href="' . esc_url(home_url('/')) . '" class="px-4 py-2 text-gray-700 hover:text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">Inicio</a></li>';
                         echo '<li><a href="#" class="px-4 py-2 text-gray-700 hover:text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">Servicios</a></li>';
@@ -117,7 +117,7 @@
 
                 </nav>
 
-                <!-- Mobile Menu Button -->
+
                 <button
                     type="button"
                     @click="mobileMenuOpen = !mobileMenuOpen"
@@ -136,7 +136,7 @@
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
+
     <div
         x-show="mobileMenuOpen"
         x-transition:enter="transition-opacity ease-out duration-300"
@@ -149,7 +149,7 @@
         class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9990] xl:hidden"
         x-cloak></div>
 
-    <!-- Mobile Navigation with Accordions -->
+
     <nav
         x-show="mobileMenuOpen"
         x-transition:enter="transition-transform ease-out duration-300"
@@ -164,7 +164,7 @@
         x-cloak>
         <div class="p-6 pt-24">
 
-            <!-- Mobile Menu Items with Accordions -->
+
             <div class="space-y-2 mb-8">
                 <?php
                 if (has_nav_menu('menu-principal')) {
@@ -188,7 +188,7 @@
                 </div>
             </div>
 
-            <!-- Mobile Contact Info -->
+
             <div class="pt-6 border-t border-gray-200">
                 <h3 class="text-sm font-bold text-gray-900 mb-4 px-4">Información de Contacto</h3>
                 <div class="space-y-3">
@@ -217,7 +217,7 @@
             });
         });
     </script-->
-    <!-- Style para x-cloak -->
+
     <style>
         [x-cloak] {
             display: none !important;

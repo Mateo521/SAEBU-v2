@@ -6,373 +6,319 @@
 get_header();
 ?>
 
-<main class="bg-gray-50">
+<main class="bg-white font-sans">
 
     <?php while (have_posts()) : the_post(); ?>
 
-        <section class="relative bg-slate-900 text-white py-20 border-b-4 border-[#005eb8]">
-            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-20"></div>
+        <section class="bg-slate-900 py-32 border-b border-slate-800 text-center">
+            <div class="container mx-auto px-6 max-w-4xl relative z-10">
+                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-8">
+                    <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
+                    <span>/</span>
+                    <span class="text-[#005eb8]">Departamento de Becas</span>
+                </nav>
 
-            <div class="container mx-auto px-4 relative z-10">
-                <div class="max-w-4xl mx-auto text-center">
-                    <nav class="flex justify-center items-center gap-2 text-sm text-gray-400 mb-6">
-                        <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
-                        <span>/</span>
-                        <span class="text-white font-medium">Departamento de Becas</span>
-                    </nav>
+                <h1 class="text-4xl md:text-6xl font-light text-white leading-tight mb-8 tracking-tight">
+                    Becas y <strong class="font-semibold">beneficios</strong>
+                </h1>
 
-                    <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-                        Becas y Beneficios
-                    </h1>
-
-                    <div class="w-24 h-1 bg-[#416ed2] mx-auto mb-6"></div>
-
-                    <p class="text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
-                        Gestionamos programas de apoyo económico para garantizar la igualdad de oportunidades y la permanencia en tus estudios universitarios.
-                    </p>
-                </div>
+                <p class="text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                    Gestionamos programas de apoyo económico para garantizar la igualdad de oportunidades y la permanencia en tus estudios universitarios.
+                </p>
             </div>
         </section>
 
-        <section class="py-16 bg-white border-b border-gray-200">
-            <div class="container mx-auto px-4">
-                <div class="grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="grid md:grid-cols-[1.5fr_1fr] gap-16 items-start">
 
-                    <div class="lg:col-span-2">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                            <span class="w-2 h-8 bg-[#416ed2] rounded-sm"></span>
-                            Gestión de Becas
+                    <div>
+                        <h2 class="text-3xl font-light text-slate-900 tracking-tight mb-8">
+                            Gestión y <strong class="font-semibold">acompañamiento</strong>
                         </h2>
-                        <p class="text-gray-600 text-lg mb-8">
-                            El Departamento de Becas actúa en los tres Centros Universitarios (San Luis, Villa Mercedes y Villa de Merlo), haciendo el seguimiento administrativo y académico de los beneficiarios durante todo el año.
+
+                        <p class="text-lg text-slate-600 font-light leading-relaxed mb-12">
+                            Actuamos en los tres Centros Universitarios (San Luis, Villa Mercedes y Villa de Merlo), realizando el seguimiento administrativo y académico de los beneficiarios durante todo el año.
                         </p>
 
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div class="flex gap-4 p-4 border border-gray-100 rounded-lg hover:border-gray-300 transition-colors">
-                                <div class="text-[#005eb8]"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
-                                    </svg></div>
-                                <div>
-                                    <h1 class="font-bold text-base text-gray-900">Convocatorias</h1>
-                                    <p class="text-sm text-gray-500">Gestión anual de inscripciones.</p>
-                                </div>
+                        <div class="grid sm:grid-cols-2 gap-x-12 gap-y-10">
+                            <div class="border-t border-slate-200 pt-5">
+                                <h3 class="text-xs uppercase tracking-widest font-bold text-slate-900 mb-2">Convocatorias</h3>
+                                <p class="text-slate-500 font-light text-sm">Gestión anual de inscripciones e información para postulantes.</p>
                             </div>
-                            <div class="flex gap-4 p-4 border border-gray-100 rounded-lg hover:border-gray-300 transition-colors">
-                                <div class="text-[#005eb8]"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg></div>
-                                <div>
-                                    <h1 class="font-bold text-base text-gray-900">Adjudicación</h1>
-                                    <p class="text-sm text-gray-500">Preselección y otorgamiento.</p>
-                                </div>
+                            <div class="border-t border-slate-200 pt-5">
+                                <h3 class="text-xs uppercase tracking-widest font-bold text-slate-900 mb-2">Adjudicación</h3>
+                                <p class="text-slate-500 font-light text-sm">Proceso transparente de preselección y otorgamiento.</p>
                             </div>
-                            <div class="flex gap-4 p-4 border border-gray-100 rounded-lg hover:border-gray-300 transition-colors">
-                                <div class="text-[#005eb8]"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                                    </svg></div>
-                                <div>
-                                    <h1 class="font-bold text-base text-gray-900">Control Académico</h1>
-                                    <p class="text-sm text-gray-500">Seguimiento de rendimiento.</p>
-                                </div>
+                            <div class="border-t border-slate-200 pt-5">
+                                <h3 class="text-xs uppercase tracking-widest font-bold text-slate-900 mb-2">Control académico</h3>
+                                <p class="text-slate-500 font-light text-sm">Seguimiento continuo del rendimiento para mantener beneficios.</p>
                             </div>
-                            <div class="flex gap-4 p-4 border border-gray-100 rounded-lg hover:border-gray-300 transition-colors">
-                                <div class="text-[#005eb8]"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg></div>
-                                <div>
-                                    <h1 class="font-bold text-base text-gray-900">Pagos</h1>
-                                    <p class="text-sm text-gray-500">Gestión mensual de beneficios.</p>
-                                </div>
+                            <div class="border-t border-slate-200 pt-5">
+                                <h3 class="text-xs uppercase tracking-widest font-bold text-slate-900 mb-2">Pagos</h3>
+                                <p class="text-slate-500 font-light text-sm">Administración y gestión mensual de los depósitos.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="lg:col-span-1">
-                        <div class="bg-slate-50 border border-gray-200 rounded-lg p-6 shadow-sm sticky top-24">
-                            <h1 class="text-lg font-bold text-gray-900 mb-4 border-b border-gray-200 pb-2">Contacto</h1>
-
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3">
-                                    <div class="w-8 h-8 bg-white border border-gray-200 rounded flex items-center justify-center text-[#005eb8] flex-shrink-0">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <span class="block text-xs font-bold text-gray-500 uppercase">Email</span>
-                                        <a href="mailto:becasunsl@gmail.com" class="text-[#005eb8] font-semibold hover:underline">becasunsl@gmail.com</a>
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <div class="w-8 h-8 bg-white border border-gray-200 rounded flex items-center justify-center text-[#005eb8] flex-shrink-0">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <span class="block text-xs font-bold text-gray-500 uppercase">Teléfono</span>
-                                        <a href="tel:02664422818" class="text-gray-700 font-medium hover:text-[#005eb8]">0266-4422818 int. 8134</a>
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <div class="mt-6 pt-4 border-t border-gray-200">
-                                <a href="mailto:becasunsl@gmail.com" class="block w-full text-center bg-[#416ed2] hover:bg-[#004a99] text-white font-bold py-2 px-4 rounded transition-colors text-sm">
-                                    Consultar
-                                </a>
+                    <div class="md:pl-12 md:border-l border-slate-200 sticky top-24">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Contacto</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <span class="block text-[10px] uppercase tracking-widest text-slate-400 mb-1">Correo Electrónico</span>
+                                <a href="mailto:becasunsl@gmail.com" class="text-lg text-slate-900 hover:text-[#005eb8] transition-colors">becasunsl@gmail.com</a>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] uppercase tracking-widest text-slate-400 mb-1">Teléfono Directo</span>
+                                <a href="tel:02664422818" class="text-lg text-slate-900 hover:text-[#005eb8] transition-colors">0266-4422818 <span class="text-sm text-slate-500">int. 8134</span></a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="max-w-7xl mx-auto">
-
-                    <div class="text-center mb-12">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestra oferta de becas</h2>
-                        <div class="w-16 h-1 bg-gray-300 mx-auto mb-4"></div>
-                        <p class="text-gray-600 max-w-2xl mx-auto">
-                            Disponemos de 9 tipos de beneficios diseñados para acompañar las distintas necesidades de la comunidad estudiantil.
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <?php
-                        // Array de Becas con sus videos
-                        $becas = [
-                            [
-                                'titulo' => 'Ayuda Económica',
-                                'subtitulo' => 'Monto mensual para gastos',
-                                'icon' => 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
-                                'desc' => 'Monto de dinero depositado mensualmente para gastos relacionados a la actividad estudiantil (apuntes, conectividad, librería).',
-                                'detalles' => [
-                                    '100% Gratuita',
-                                    'Depósito bancario'
-                                ],
-                                'video' => get_template_directory_uri() . '/assets/videos/ayuda-economica.mp4'
-                            ],
-                            [
-                                'titulo' => 'Comedor universitario',
-                                'subtitulo' => 'Alimentación nutricional',
-                                'icon' => 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z',
-                                'desc' => 'Consiste en 24 viandas mensuales del Comedor universitario sin costo alguno. Cobertura de marzo a diciembre.',
-                                'detalles' => [
-                                    'Para ingresantes y avanzados',
-                                    'Marzo a Diciembre'
-                                ],
-                                'video' => get_template_directory_uri() . '/assets/videos/comedor.mp4'
-                            ],
-                            [
-                                'titulo' => 'Transporte',
-                                'subtitulo' => 'Traslado interurbano',
-                                'icon' => 'M8 20V7m0 13-4-4m4 4 4-4m4-12v13m0-13 4 4m-4-4-4 4',
-                                'desc' => 'Monto mensual durante 10 meses para estudiantes con domicilio en localidades aledañas que deban viajar para cursar.',
-                                'detalles' => [
-                                    'Cobertura 10 meses',
-                                    'Req: Localidad aledaña'
-                                ],
-                                'video' => get_template_directory_uri() . '/assets/videos/transporte.mp4'
-                            ],
-                            [
-                                'titulo' => 'Cuidados Infantiles',
-                                'subtitulo' => 'Apoyo familiar',
-                                'icon' => 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
-                                'desc' => 'Monto mensual (10 meses) para estudiantes con hijos/as menores de 4 años (o hasta 18 si poseen discapacidad).',
-                                'detalles' => [
-                                    'Hijos/as < 4 años',
-                                    'Para ingresantes y avanzados'
-                                ],
-                                'video' => get_template_directory_uri() . '/assets/videos/cuidados-infantiles.mp4'
-                            ],
-                            [
-                                'titulo' => 'Contraprestación',
-                                'subtitulo' => 'Servicios',
-                                'icon' => 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
-                                'desc' => 'Para estudiantes que realicen tareas de apoyo (gremiales, sociales, deportivas) en la Universidad. Máximo 10hs semanales.',
-                                'detalles' => [
-                                    'Máx. 10 horas semanales',
-                                    'Requiere 1º año cursado'
-                                ],
-                                'video' => get_template_directory_uri() . '/assets/videos/contraprestacion.mp4'
-                            ],
-
-                            [
-                                'titulo' => 'Beca Integral',
-                                'subtitulo' => 'Doble monto',
-                                'icon' => 'M8 8v8m0-8h8M8 8H6a2 2 0 1 1 2-2v2Zm0 8h8m-8 0H6a2 2 0 1 0 2 2v-2Zm8 0V8m0 8h2a2 2 0 1 1-2 2v-2Zm0-8h2a2 2 0 1 0-2-2v2Z',
-                                'desc' => 'Otorga el doble del monto de ayuda económica. Requiere haber rendido el 70% de las materias del plan de estudios del año anterior.',
-                                'detalles' => [
-                                    'A partir de 2º año',
-                                    '70% materias aprobadas'
-                                ],
-                                'video' => get_template_directory_uri() . '/assets/videos/integral.mp4'
-                            ],
-                            [
-                                'titulo' => 'Beca Excepcional',
-                                'subtitulo' => 'Situaciones urgentes',
-                                'icon' => 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z',
-                                'desc' => 'Para casos de cambio brusco en la situación socio-económica. Se otorga por única vez en toda la carrera mediante nota formal.',
-                                'detalles' => [
-                                    'Por única vez',
-                                    'Solicitud por nota'
-                                ],
-                                'video' => get_template_directory_uri() . '/assets/videos/excepcional.mp4'
-                            ],
-                            [
-                                'titulo' => 'Beca CREER',
-                                'subtitulo' => 'Mérito Académico',
-                                'icon' => 'M14.7141 15h4.268c.4043 0 .732-.3838.732-.8571V3.85714c0-.47338-.3277-.85714-.732-.85714H6.71411c-.55228 0-1 .44772-1 1v4m10.99999 7v-3h3v3h-3Zm-3 6H6.71411c-.55228 0-1-.4477-1-1 0-1.6569 1.34315-3 3-3h2.99999c1.6569 0 3 1.3431 3 3 0 .5523-.4477 1-1 1Zm-1-9.5c0 1.3807-1.1193 2.5-2.5 2.5s-2.49999-1.1193-2.49999-2.5S8.8334 9 10.2141 9s2.5 1.1193 2.5 2.5Z',
-                                'desc' => 'Para estudiantes de nivel medio con promedio superior a 8 en los dos últimos años, inscriptos en carreras prioritarias.',
-                                'detalles' => [
-                                    'Promedio > 8',
-                                    'Carreras Prioritarias'
-                                ],
-                                'video' => null
-                            ]
-                        ];
-
-                        foreach ($becas as $index => $beca) : ?>
-                            <article class="bg-white border border-gray-200 rounded-md p-6 hover:shadow-lg hover:border-[#005eb8] transition-all duration-300 group flex flex-col h-full">
-                                <div class="flex items-start gap-4 mb-4">
-                                    <div class="w-12 h-12 bg-blue-50 rounded-md flex items-center justify-center flex-shrink-0 group-hover:bg-[#416ed2] transition-colors duration-300">
-                                        <svg class="w-6 h-6 text-[#005eb8] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="<?php echo $beca['icon']; ?>"></path>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-bold text-gray-900 text-lg leading-tight group-hover:text-[#005eb8] transition-colors"><?php echo $beca['titulo']; ?></h3>
-                                        <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide"><?php echo $beca['subtitulo']; ?></span>
-                                    </div>
-                                </div>
-
-                                <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
-                                    <?php echo $beca['desc']; ?>
-                                </p>
-
-                                <div class="border-t border-gray-100 pt-4 mt-auto">
-                                    <ul class="space-y-2 mb-4">
-                                        <?php foreach ($beca['detalles'] as $detalle): ?>
-                                            <li class="flex items-center text-xs text-gray-500 font-medium">
-                                                <svg class="w-4 h-4 text-[#005eb8] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                                </svg>
-                                                <?php echo $detalle; ?>
-                                            </li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                    <?php
-                                    if ($beca['video']) : ?>
-                                        <button
-                                            data-video="<?php echo esc_url($beca['video']); ?>"
-                                            data-titulo="<?php echo esc_attr($beca['titulo']); ?>"
-                                            class="btn-ver-video w-full py-2 bg-gray-50 text-gray-600 text-xs font-bold rounded hover:bg-[#005eb8] hover:text-white transition-colors flex items-center justify-center gap-2">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                            </svg>
-                                            Beca en lengua de señas
-                                        </button>
-                                    <?php
-                                    endif; ?>
-                                </div>
-                            </article>
-                        <?php endforeach; ?>
-                    </div>
-
-                    <!--div class="mt-8 bg-blue-50 border border-blue-100 rounded-md p-4 flex items-center justify-center gap-3 text-[#005eb8] text-sm font-medium">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h1m10 0h1M3 12h18M3 16h1m10 0h1M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1h1a1 1 0 00-1 1v14a1 1 0 001 1z"></path>
-                        </svg>
-                        Toda la información está disponible en Lengua de Señas Argentina.
-                    </div-->
 
                 </div>
             </div>
         </section>
 
-        <section class="py-16 bg-white border-t border-gray-200">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-2xl font-bold text-center text-gray-900 mb-10">Preguntas frecuentes</h2>
+        <section class="py-24 bg-slate-50 border-y border-slate-200">
+            <div class="container mx-auto px-6 max-w-7xl">
 
-                <div class="space-y-2">
-                    <details class="group bg-white border border-gray-200 rounded-md">
-                        <summary class="flex items-center justify-between p-4 cursor-pointer font-medium text-gray-800 hover:bg-gray-50 transition-colors">
+                <div class="mb-16 md:flex justify-between items-end">
+                    <div class="max-w-2xl">
+                        <h2 class="text-3xl font-light text-slate-900 tracking-tight mb-4">
+                            Nuestra oferta de <strong class="font-semibold">becas</strong>
+                        </h2>
+                        <p class="text-lg text-slate-500 font-light">Disponemos de 9 tipos de beneficios diseñados para acompañar las distintas realidades de nuestra comunidad estudiantil.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+                    <?php
+
+                    $becas = [
+                        [
+                            'titulo' => 'Ayuda Económica',
+                            'subtitulo' => 'Monto mensual para gastos',
+                            'desc' => 'Monto de dinero depositado mensualmente para gastos relacionados a la actividad estudiantil (apuntes, conectividad, librería).',
+                            'detalles' => ['100% Gratuita', 'Depósito bancario'],
+                            'video' => get_template_directory_uri() . '/assets/videos/ayuda-economica.mp4'
+                        ],
+                        [
+                            'titulo' => 'Comedor Universitario',
+                            'subtitulo' => 'Alimentación nutricional',
+                            'desc' => 'Consiste en 24 viandas mensuales del Comedor universitario sin costo alguno. Cobertura de marzo a diciembre.',
+                            'detalles' => ['Ingresantes y avanzados', 'Marzo a diciembre'],
+                            'video' => get_template_directory_uri() . '/assets/videos/comedor.mp4'
+                        ],
+                        [
+                            'titulo' => 'Transporte',
+                            'subtitulo' => 'Traslado interurbano',
+                            'desc' => 'Monto mensual durante 10 meses para estudiantes con domicilio en localidades aledañas que deban viajar para cursar.',
+                            'detalles' => ['Cobertura 10 meses', 'Req: Localidad aledaña'],
+                            'video' => get_template_directory_uri() . '/assets/videos/transporte.mp4'
+                        ],
+                        [
+                            'titulo' => 'Cuidados Infantiles',
+                            'subtitulo' => 'Apoyo familiar',
+                            'desc' => 'Monto mensual (10 meses) para estudiantes con hijos/as menores de 4 años (o hasta 18 si poseen discapacidad).',
+                            'detalles' => ['Hijos/as < 4 años', 'Ingresantes y avanzados'],
+                            'video' => get_template_directory_uri() . '/assets/videos/cuidados-infantiles.mp4'
+                        ],
+                        [
+                            'titulo' => 'Contraprestación',
+                            'subtitulo' => 'Servicios',
+                            'desc' => 'Para estudiantes que realicen tareas de apoyo (gremiales, sociales, deportivas) en la Universidad.',
+                            'detalles' => ['Máx. 10 horas/semana', 'Requiere 1º año cursado'],
+                            'video' => get_template_directory_uri() . '/assets/videos/contraprestacion.mp4'
+                        ],
+                        [
+                            'titulo' => 'Beca Integral',
+                            'subtitulo' => 'Doble monto',
+                            'desc' => 'Otorga el doble del monto de ayuda económica. Requiere haber rendido el 70% de las materias del plan de estudios del año anterior.',
+                            'detalles' => ['A partir de 2º año', '70% materias aprobadas'],
+                            'video' => get_template_directory_uri() . '/assets/videos/integral.mp4'
+                        ],
+                        [
+                            'titulo' => 'Beca Excepcional',
+                            'subtitulo' => 'Situaciones urgentes',
+                            'desc' => 'Para casos de cambio brusco en la situación socio-económica. Se otorga por única vez en toda la carrera mediante nota formal.',
+                            'detalles' => ['Por única vez', 'Solicitud por nota'],
+                            'video' => get_template_directory_uri() . '/assets/videos/excepcional.mp4'
+                        ],
+                        [
+                            'titulo' => 'Beca CREER',
+                            'subtitulo' => 'Mérito Académico',
+                            'desc' => 'Para estudiantes de nivel medio con promedio superior a 8 en los dos últimos años, inscriptos en carreras prioritarias.',
+                            'detalles' => ['Promedio > 8', 'Carreras prioritarias'],
+                            'video' => null
+                        ]
+                    ];
+
+                    foreach ($becas as $index => $beca) : ?>
+                        <article class="flex flex-col h-full border-t border-slate-200 pt-6 group">
+
+                            <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-widest mb-2 block">
+                                <?php echo $beca['subtitulo']; ?>
+                            </span>
+
+                            <h3 class="text-xl font-medium text-slate-900 mb-4">
+                                <?php echo $beca['titulo']; ?>
+                            </h3>
+
+                            <p class="text-slate-600 text-sm font-light leading-relaxed mb-6 flex-1">
+                                <?php echo $beca['desc']; ?>
+                            </p>
+
+                            <div class="mt-auto">
+                                <div class="flex flex-wrap gap-x-4 gap-y-2 mb-6">
+                                    <?php foreach ($beca['detalles'] as $detalle): ?>
+                                        <span class="text-xs text-slate-500 font-medium bg-slate-100 px-2 py-1">
+                                            <?php echo $detalle; ?>
+                                        </span>
+                                    <?php endforeach; ?>
+                                </div>
+
+                                <?php if ($beca['video']) : ?>
+                                    <button
+                                        data-video="<?php echo esc_url($beca['video']); ?>"
+                                        data-titulo="<?php echo esc_attr($beca['titulo']); ?>"
+                                        class="btn-ver-video inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-900 hover:text-[#005eb8] transition-colors border-b border-slate-900 hover:border-[#005eb8] pb-1">
+                                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                        Ver en LSA
+                                    </button>
+                                <?php endif; ?>
+                            </div>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+
+                <h2 class="text-3xl font-light text-slate-900 text-center mb-16 tracking-tight">
+                    Preguntas <strong class="font-semibold">frecuentes</strong>
+                </h2>
+
+                <div class="space-y-4">
+                    <details class="group border-b border-slate-200 pb-4 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between cursor-pointer text-lg font-medium text-slate-900 hover:text-[#005eb8] transition-colors list-none">
+
                             ¿Puedo solicitar más de una beca?
-                            <span class="text-gray-400 group-open:rotate-180 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg></span>
+                            <span class="transition duration-300 group-open:-rotate-180">
+                                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+
                         </summary>
-                        <div class="p-4 pt-0 text-gray-600 text-sm leading-relaxed border-t border-transparent group-open:border-gray-100 mt-2">
-                            Dependiendo el tipo de beca podés combinar diferentes becas según tu situación. Por ejemplo, podés tener una Beca de Comedor y una de Transporte al mismo tiempo, siempre que cumplas con los requisitos de cada una. Pero no se puede combinar la beca de Comedor y ayuda Económica, ya que ambas cubren gastos relacionados a la alimentación.
-                        </div>
+                        <p class="text-slate-500 font-light mt-4 leading-relaxed pr-8">
+                            Dependiendo el tipo de beca podés combinar diferentes becas según tu situación. Por ejemplo, podés tener una Beca de Comedor y una de Transporte al mismo tiempo. No se puede combinar Comedor y Ayuda Económica, ya que ambas cubren gastos relacionados a la alimentación.
+                        </p>
                     </details>
 
-                    <details class="group bg-white border border-gray-200 rounded-md">
-                        <summary class="flex items-center justify-between p-4 cursor-pointer font-medium text-gray-800 hover:bg-gray-50 transition-colors">
+                    <details class="group border-b border-slate-200 pb-4 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between cursor-pointer text-lg font-medium text-slate-900 hover:text-[#005eb8] transition-colors list-none">
                             ¿Cuándo abren las convocatorias?
-                            <span class="text-gray-400 group-open:rotate-180 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg></span>
+                            <span class="transition duration-300 group-open:-rotate-180">
+                                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
                         </summary>
-                        <div class="p-4 pt-0 text-gray-600 text-sm leading-relaxed border-t border-transparent group-open:border-gray-100 mt-2">
-                            Las convocatorias se abren generalmente al inicio del ciclo lectivo. Te recomendamos estar atento a las comunicaciones oficiales de la universidad.
-                        </div>
+                        <p class="text-slate-500 font-light mt-4 leading-relaxed pr-8">
+                            Las convocatorias se abren generalmente al inicio del ciclo lectivo. Te recomendamos estar atento a las comunicaciones oficiales de la universidad y a esta misma página.
+                        </p>
                     </details>
 
-                    <details class="group bg-white border border-gray-200 rounded-md">
-                        <summary class="flex items-center justify-between p-4 cursor-pointer font-medium text-gray-800 hover:bg-gray-50 transition-colors">
+                    <details class="group border-b border-slate-200 pb-4 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between cursor-pointer text-lg font-medium text-slate-900 hover:text-[#005eb8] transition-colors list-none">
                             ¿Los ingresantes pueden solicitar becas?
-                            <span class="text-gray-400 group-open:rotate-180 transition-transform"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg></span>
+                            <span class="transition duration-300 group-open:-rotate-180">
+                                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
                         </summary>
-                        <div class="p-4 pt-0 text-gray-600 text-sm leading-relaxed border-t border-transparent group-open:border-gray-100 mt-2">
-                            ¡Sí! La mayoría de las becas (Ayuda Económica, Comedor, Transporte, Cuidados Infantiles) están disponibles tanto para ingresantes como para estudiantes que ya estén cursando.
-                        </div>
+                        <p class="text-slate-500 font-light mt-4 leading-relaxed pr-8">
+                            ¡Sí! La mayoría de las becas (Ayuda Económica, Comedor, Transporte, Cuidados Infantiles) están disponibles tanto para ingresantes como para estudiantes que ya estén cursando carreras de grado.
+                        </p>
                     </details>
                 </div>
+
+            </div>
+        </section>
+
+        <?php
+
+        saebu_noticias_departamento(array(
+            'slug'        => 'becas',
+            'nombre'      => 'Becas',
+            'color'       => 'blue',
+            'descripcion' => 'Últimos comunicados, fechas de cobro y convocatorias activas.',
+            'posts_count' => 3,
+            'icono'       => ''
+        ));
+        ?>
+
+        <section class="bg-slate-900 py-24 text-white text-center border-t border-slate-800">
+            <div class="container mx-auto px-6 max-w-3xl">
+
+                <h2 class="text-3xl font-light mb-6 tracking-tight">¿Dudas sobre tu postulación?</h2>
+                <p class="text-slate-400 font-light text-lg mb-12">
+                    Comunicate con nuestra jefatura para resolver casos particulares o recibir orientación sobre qué beca se adapta a tu situación.
+                </p>
+
+                <div class="mb-12 border-t border-slate-700 pt-8 inline-block">
+                    <h3 class="text-lg font-medium text-white mb-1">Sr. Daniel Rúa</h3>
+                    <p class="text-xs text-[#005eb8] uppercase tracking-widest font-bold">Jefe de Departamento de Becas</p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="mailto:becasunsl@gmail.com" class="inline-block bg-white text-slate-900 px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-slate-100  transition-all duration-300">
+                        Enviar Consulta
+                    </a>
+                    <a href="tel:2664927534" class="inline-block border border-slate-600 text-white px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-slate-800 transition-all duration-300">
+                        266492-7534
+                    </a>
+                </div>
+
             </div>
         </section>
 
     <?php endwhile; ?>
 
+    <div id="video-modal" class="fixed inset-0 bg-slate-900/90 backdrop-blur-sm z-[10000] hidden items-center justify-center p-4">
+        <div class="relative w-full max-w-5xl bg-black rounded overflow-hidden shadow-2xl">
 
-    <div id="video-modal" class="fixed inset-0 bg-black bg-opacity-75 z-[10000] hidden flex items-center justify-center p-4">
-        <div class="relative w-full max-w-4xl bg-white rounded-lg shadow-2xl overflow-hidden">
-
-            <div class="flex items-center justify-between p-4 border-b border-gray-200 bg-slate-50">
-                <h3 id="modal-titulo" class="text-lg font-bold text-gray-900"></h3>
-                <button id="cerrar-modal" class="p-2 hover:bg-gray-200 rounded-full transition-colors" aria-label="Cerrar video">
-                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            <div class="absolute top-0 left-0 w-full flex items-center justify-between p-4 bg-gradient-to-b from-black/80 to-transparent z-10">
+                <h3 id="modal-titulo" class="text-lg font-medium text-white"></h3>
+                <button id="cerrar-modal" class="p-2 text-white hover:text-red-400 transition-colors" aria-label="Cerrar video">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
             </div>
 
-
-            <div class="relative bg-black aspect-video">
+            <div class="relative aspect-video w-full bg-black">
                 <video
                     id="video-player"
                     class="w-full h-full"
                     controls
                     preload="metadata"
-                    aria-label="Video explicativo de la beca">
+                    aria-label="Video explicativo de la beca en LSA">
                     <source src="" type="video/mp4">
                     Tu navegador no soporta la reproducción de videos.
                 </video>
             </div>
 
-
-            <div class="p-4 bg-slate-50 border-t border-gray-200">
-                <div class="flex items-center gap-3 text-sm text-gray-600">
-                    <svg class="w-5 h-5 text-[#005eb8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <p>Este video incluye interpretación en Lengua de Señas Argentina (LSA)</p>
-                </div>
+            <div class="p-4 bg-slate-900">
+                <p class="text-xs text-slate-400 uppercase tracking-widest text-center">
+                    Interpretación oficial en Lengua de Señas Argentina (LSA)
+                </p>
             </div>
         </div>
     </div>
@@ -385,39 +331,22 @@ get_header();
             const modalTitulo = document.getElementById('modal-titulo');
             const cerrarModal = document.getElementById('cerrar-modal');
             const botonesVideo = document.querySelectorAll('.btn-ver-video');
-
-
-
             botonesVideo.forEach(btn => {
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
                     const videoUrl = this.getAttribute('data-video');
                     const titulo = this.getAttribute('data-titulo');
-
-
-
                     modalTitulo.textContent = titulo;
                     videoSource.src = videoUrl;
                     videoPlayer.load();
-
-
-
                     modal.classList.remove('hidden');
                     modal.classList.add('flex');
-
-
-
                     document.body.style.overflow = 'hidden';
-
-
-
                     videoPlayer.play().catch(err => {
                         console.log('Autoplay bloqueado:', err);
                     });
                 });
             });
-
-
 
             function closeModal() {
                 videoPlayer.pause();
@@ -427,28 +356,17 @@ get_header();
                 modal.classList.remove('flex');
                 document.body.style.overflow = '';
             }
-
-
-
             cerrarModal.addEventListener('click', closeModal);
-
-
-
             modal.addEventListener('click', function(e) {
                 if (e.target === modal) {
                     closeModal();
                 }
             });
-
-
-
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
                     closeModal();
                 }
             });
-
-
             window.addEventListener('beforeunload', function() {
                 if (!videoPlayer.paused) {
                     videoPlayer.pause();
@@ -456,20 +374,6 @@ get_header();
             });
         });
     </script>
-
-    <?php
-    saebu_noticias_departamento(array(
-        'slug'        => 'becas',
-        'nombre'      => 'Becas',
-        'color'       => 'blue',
-        'descripcion' => 'Últimos comunicados, fechas de cobro y convocatorias.',
-        'posts_count' => 3,
-        'icono'       => 'M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z',
-    ));
-    ?>
-
 </main>
 
-<?php
-get_footer();
-?>
+<?php get_footer(); ?>
