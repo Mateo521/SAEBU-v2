@@ -17,7 +17,7 @@ get_header();
 
         <div class="container mx-auto px-6 max-w-4xl relative z-10">
 
-            <nav class="flex justify-center items-center gap-3 text-[10px] font-bold tracking-widest uppercase text-green-400/70 mb-8">
+            <nav class="flex justify-center items-center gap-3 text-[10px] font-bold  uppercase text-green-400/70 mb-8">
                 <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                 <span>/</span>
                 <a href="<?php echo home_url('/camping-universitario'); ?>" class="hover:text-white transition-colors">Camping</a>
@@ -37,7 +37,7 @@ get_header();
 
     <section class="py-24 bg-white">
         <div class="container mx-auto px-6 max-w-4xl text-center">
-            <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">
+            <h2 class="text-xs font-bold uppercase  text-slate-400 mb-6">
                 Génesis del Proyecto
             </h2>
             <p class="text-2xl md:text-3xl font-light text-slate-800 leading-relaxed">
@@ -52,7 +52,7 @@ get_header();
             <div class="grid md:grid-cols-[1fr_2fr] gap-8 md:gap-16 py-12 border-b border-slate-200 items-start">
                 <div class="md:text-right">
                     <span class="text-4xl md:text-5xl font-light text-[#1a4731] tracking-tighter block mb-1">1988</span>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Inicio del Proyecto</span>
+                    <span class="text-[10px] font-bold uppercase  text-slate-400">Inicio del Proyecto</span>
                 </div>
                 <div>
                     <h3 class="text-xl font-medium text-slate-900 mb-3">Primeros movimientos</h3>
@@ -65,7 +65,7 @@ get_header();
             <div class="grid md:grid-cols-[1fr_2fr] gap-8 md:gap-16 py-12 border-b border-slate-200 items-start">
                 <div class="md:text-right">
                     <span class="text-4xl md:text-5xl font-light text-[#1a4731] tracking-tighter block mb-1">Fase I</span>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Infraestructura base</span>
+                    <span class="text-[10px] font-bold uppercase  text-slate-400">Infraestructura base</span>
                 </div>
                 <div>
                     <h3 class="text-xl font-medium text-slate-900 mb-3">Cimientos del complejo</h3>
@@ -86,7 +86,7 @@ get_header();
             <div class="grid md:grid-cols-[1fr_2fr] gap-8 md:gap-16 py-12 border-b border-slate-200 items-start">
                 <div class="md:text-right">
                     <span class="text-4xl md:text-5xl font-light text-[#1a4731] tracking-tighter block mb-1">Flora</span>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Medio ambiente</span>
+                    <span class="text-[10px] font-bold uppercase  text-slate-400">Medio ambiente</span>
                 </div>
                 <div>
                     <h3 class="text-xl font-medium text-slate-900 mb-3">Plan de forestación</h3>
@@ -99,7 +99,7 @@ get_header();
             <div class="grid md:grid-cols-[1fr_2fr] gap-8 md:gap-16 py-12 border-b border-slate-200 items-start">
                 <div class="md:text-right">
                     <span class="text-4xl md:text-5xl font-light text-[#1a4731] tracking-tighter block mb-1">1989</span>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Expansión</span>
+                    <span class="text-[10px] font-bold uppercase  text-slate-400">Expansión</span>
                 </div>
                 <div>
                     <h3 class="text-xl font-medium text-slate-900 mb-3">Salón de usos múltiples</h3>
@@ -112,7 +112,7 @@ get_header();
             <div class="grid md:grid-cols-[1fr_2fr] gap-8 md:gap-16 py-12 items-start">
                 <div class="md:text-right">
                     <span class="text-4xl md:text-5xl font-light text-[#1a4731] tracking-tighter block mb-1">1990</span>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Mayo</span>
+                    <span class="text-[10px] font-bold uppercase  text-slate-400">Mayo</span>
                 </div>
                 <div>
                     <h3 class="text-xl font-medium text-slate-900 mb-3">Consolidación de servicios</h3>
@@ -160,7 +160,7 @@ get_header();
                                 class="w-full h-full object-cover transition-transform duration-700 group- filter grayscale-[80%] group-hover:grayscale-0 sepia-[20%]">
 
                             <div class="absolute inset-0 bg-[#1a4731]/0 group-hover:bg-[#1a4731]/20 transition-colors duration-300 flex items-center justify-center">
-                                <span class="bg-white/90 text-[#1a4731] text-[10px] uppercase tracking-widest font-bold px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                <span class="bg-white/90 text-[#1a4731] text-[10px] uppercase  font-bold px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
                                     Ampliar
                                 </span>
                             </div>
@@ -169,7 +169,7 @@ get_header();
                         <div>
                             <div class="flex justify-between items-baseline mb-1">
                                 <h3 class="text-base font-medium text-slate-900"><?php echo $foto['titulo']; ?></h3>
-                                <span class="text-[10px] font-bold text-[#1a4731] uppercase tracking-widest"><?php echo $foto['fecha']; ?></span>
+                                <span class="text-[10px] font-bold text-[#1a4731] uppercase "><?php echo $foto['fecha']; ?></span>
                             </div>
                             <p class="text-sm text-slate-500 font-light truncate"><?php echo $foto['alt']; ?></p>
                         </div>
@@ -179,7 +179,7 @@ get_header();
             </div>
 
             <div class="mt-20 pt-8 border-t border-slate-200 text-center">
-                <span class="text-xs text-slate-400 font-light uppercase tracking-widest">
+                <span class="text-xs text-slate-400 font-light uppercase ">
                     Fuente: Archivo Histórico y Documental Institucional UNSL
                 </span>
             </div>

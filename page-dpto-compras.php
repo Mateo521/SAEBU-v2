@@ -13,7 +13,7 @@ get_header();
         <section class="bg-slate-900 py-32 border-b border-slate-800 text-center">
             <div class="container mx-auto px-6 max-w-4xl relative z-10">
 
-                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold tracking-widest uppercase text-slate-500 mb-8">
+                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold  uppercase text-slate-500 mb-8">
                     <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                     <span>/</span>
                     <?php
@@ -68,7 +68,7 @@ get_header();
                     </div>
 
                     <div class="md:pl-12 md:border-l border-slate-200">
-                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Áreas Asistidas</h3>
+                        <h3 class="text-xs font-bold text-slate-400 uppercase  mb-6">Áreas Asistidas</h3>
                         <ul class="space-y-4">
                             <li class="border-b border-slate-100 pb-4">
                                 <span class="block text-sm font-medium text-slate-900">Comedor Universitario</span>
@@ -105,7 +105,7 @@ get_header();
                 <div class="grid md:grid-cols-3 gap-12">
 
                     <div class="border-t border-slate-300 pt-6 group">
-                        <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-widest mb-3 block">Alta Complejidad</span>
+                        <span class="text-[10px] font-bold text-[#005eb8] uppercase  mb-3 block">Alta Complejidad</span>
                         <h3 class="text-xl font-medium text-slate-900 mb-3">Licitación Privada / Pública</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">
                             Procedimiento formal y riguroso utilizado para adquisiciones de gran volumen (ej. insumos alimenticios anuales). Requiere la elaboración de pliegos, publicación oficial y compulsa de múltiples oferentes.
@@ -113,7 +113,7 @@ get_header();
                     </div>
 
                     <div class="border-t border-slate-300 pt-6 group">
-                        <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-widest mb-3 block">Respuesta Rápida</span>
+                        <span class="text-[10px] font-bold text-[#005eb8] uppercase  mb-3 block">Respuesta Rápida</span>
                         <h3 class="text-xl font-medium text-slate-900 mb-3">Compra Directa</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">
                             Procedimiento ágil por compulsa abreviada de precios. Se aplica para resolver necesidades urgentes, adquisiciones de montos menores o proveedores únicos y específicos.
@@ -121,7 +121,7 @@ get_header();
                     </div>
 
                     <div class="border-t border-slate-300 pt-6 group">
-                        <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-widest mb-3 block">Planificación</span>
+                        <span class="text-[10px] font-bold text-[#005eb8] uppercase  mb-3 block">Planificación</span>
                         <h3 class="text-xl font-medium text-slate-900 mb-3">Plan Anual de Compras</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">
                             Estrategia de consolidación de adquisiciones recurrentes proyectadas para todo el año fiscal. Permite optimizar los recursos económicos y reducir los tiempos administrativos.
@@ -172,13 +172,13 @@ get_header();
 
         <section class="py-20 bg-[#005eb8] text-white text-center">
             <div class="container mx-auto px-6 max-w-4xl">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-200 mb-4">Acceso a Proveedores</h2>
+                <h2 class="text-xs font-bold uppercase  text-blue-200 mb-4">Acceso a Proveedores</h2>
                 <h3 class="text-3xl md:text-4xl font-light mb-6">Portal de Compras UNSL</h3>
                 <p class="text-blue-100 font-light text-lg mb-10 max-w-2xl mx-auto">
                     Plataforma oficial para acceder a las licitaciones públicas y privadas, inscribirse como proveedor y consultar el estado de los expedientes en curso.
                 </p>
                 <a href="https://compras.unsl.edu.ar" target="_blank" rel="noopener noreferrer"
-                    class="inline-block bg-white text-[#005eb8] px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-slate-100  transition-all duration-300">
+                    class="inline-block bg-white text-[#005eb8] px-10 py-4 text-sm font-bold uppercase  hover:bg-slate-100  transition-all duration-300">
                     Ingresar al Portal Oficial
                 </a>
             </div>
@@ -194,14 +194,14 @@ get_header();
 
                 <div class="mb-12 inline-block">
                     <h3 class="text-xl font-medium text-white mb-2">Téc. Inés Moreno</h3>
-                    <p class="text-xs text-[#005eb8] uppercase tracking-widest font-bold">Jefa de Departamento de Compras</p>
+                    <p class="text-xs text-[#005eb8] uppercase  font-bold">Jefa de Departamento de Compras</p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a href="mailto:dptocomprassaebu@gmail.com" class="inline-block bg-white text-slate-900 px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-slate-100  transition-all duration-300">
+                    <a href="mailto:dptocomprassaebu@gmail.com" class="inline-block bg-white text-slate-900 px-10 py-4 text-sm font-bold uppercase  hover:bg-slate-100  transition-all duration-300">
                         Enviar Correo
                     </a>
-                    <div class="inline-block border border-slate-600 text-white px-10 py-4 text-sm font-bold uppercase tracking-widest cursor-default">
+                    <div class="inline-block border border-slate-600 text-white px-10 py-4 text-sm font-bold uppercase  cursor-default">
                         Interno 8135
                     </div>
                 </div>

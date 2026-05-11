@@ -9,7 +9,7 @@ get_header();
     <header class="bg-[#0f172a] text-white pt-20 pb-16">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
-                <div class="mb-8 text-xs font-bold uppercase tracking-widest text-slate-400">
+                <div class="mb-8 text-xs font-bold uppercase  text-slate-400">
                     <?php if (function_exists('saebu_breadcrumbs')) saebu_breadcrumbs(); ?>
                 </div>
                 <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -29,7 +29,7 @@ get_header();
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
                 <div class="flex flex-wrap items-center gap-x-8 gap-y-4 py-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
-                    <span class="text-xs font-bold text-gray-700 uppercase tracking-widest mr-2">Filtrar:</span>
+                    <span class="text-xs font-bold text-gray-700 uppercase  mr-2">Filtrar:</span>
                     <a href="<?php echo get_post_type_archive_link('noticia'); ?>"
                         class="text-sm font-bold pb-1 border-b-2 transition-colors <?php echo !is_tax() ? 'text-[#005eb8] border-[#005eb8]' : 'text-gray-500 border-transparent hover:text-gray-800'; ?>">
                         Todas
@@ -79,7 +79,7 @@ get_header();
                                     if ($terms && !is_wp_error($terms)) :
                                         $term = array_shift($terms);
                                     ?>
-                                        <div class="absolute bottom-0 left-0 bg-[#005eb8] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5">
+                                        <div class="absolute bottom-0 left-0 bg-[#005eb8] text-white text-[10px] font-bold uppercase  px-3 py-1.5">
                                             <?php echo esc_html($term->name); ?>
                                         </div>
                                     <?php endif; ?>

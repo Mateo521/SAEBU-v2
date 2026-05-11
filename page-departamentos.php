@@ -91,7 +91,7 @@ $sedes = array(
         <section class="bg-slate-900 py-32 border-b border-slate-800 text-center">
             <div class="container mx-auto px-6 max-w-4xl relative z-10">
 
-                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold tracking-widest uppercase text-slate-500 mb-8">
+                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold  uppercase text-slate-500 mb-8">
                     <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                     <span>/</span>
                     <span class="text-[#005eb8]">Institucional</span>
@@ -131,7 +131,7 @@ $sedes = array(
                                 </span-->
 
                                 <?php if (isset($dpto['badge'])) : ?>
-                                    <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-widest">
+                                    <span class="text-[10px] font-bold text-[#005eb8] uppercase ">
                                         <?php echo $dpto['badge']; ?>
                                     </span>
                                 <?php endif; ?>
@@ -145,7 +145,7 @@ $sedes = array(
                                 <?php echo esc_html($dpto['descripcion']); ?>
                             </p>
 
-                            <div class="mt-auto inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-900 group-hover:text-[#005eb8] transition-colors">
+                            <div class="mt-auto inline-flex items-center gap-2 text-xs font-bold uppercase  text-slate-900 group-hover:text-[#005eb8] transition-colors">
                                 Ingresar al área
                                 <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -166,7 +166,7 @@ $sedes = array(
 
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-slate-200 pb-6">
                     <div>
-                        <h2 class="text-3xl font-light text-slate-900 tracking-tight">Sedes <strong class="font-semibold">Regionales</strong></h2>
+                        <h2 class="text-3xl font-light text-slate-900 tracking-tight">Sedes <strong class="font-semibold">regionales</strong></h2>
                         <p class="text-slate-500 font-light mt-2">Ubicación de centros de atención administrativa y de servicios.</p>
                     </div>
                 </div>
@@ -174,7 +174,7 @@ $sedes = array(
                 <div class="grid md:grid-cols-3 gap-12">
                     <?php foreach ($sedes as $sede) : ?>
                         <div class="flex flex-col">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 block">Delegación</span>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase  mb-2 block">Delegación</span>
                             <h3 class="text-xl font-medium text-slate-900 mb-2">
                                 <?php echo esc_html($sede['titulo']); ?>
                             </h3>
@@ -182,7 +182,7 @@ $sedes = array(
                                 <?php echo esc_html($sede['direccion']); ?>
                             </p>
 
-                            <a href="<?php echo esc_url(home_url('/' . $sede['slug'])); ?>" class="inline-block text-xs font-bold text-[#005eb8] uppercase tracking-widest hover:text-slate-900 transition-colors mt-auto">
+                            <a href="<?php echo esc_url(home_url('/' . $sede['slug'])); ?>" class="inline-block text-xs font-bold text-[#005eb8] uppercase  hover:text-slate-900 transition-colors mt-auto">
                                 Ver más &rarr;
                             </a>
                         </div>
@@ -200,7 +200,7 @@ $sedes = array(
                     Para consultas generales, inicio de expedientes o derivaciones, comunicate con el área central de atención.
                 </p>
 
-                <a href="<?php echo esc_url(home_url('/dpto-mesa-de-entradas')); ?>" class="inline-block bg-white text-slate-900 px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-slate-100  transition-all duration-300">
+                <a href="<?php echo esc_url(home_url('/dpto-mesa-de-entradas')); ?>" class="inline-block bg-white text-slate-900 px-10 py-4 text-sm font-bold uppercase  hover:bg-slate-100  transition-all duration-300">
                     Contactar Administración
                 </a>
 

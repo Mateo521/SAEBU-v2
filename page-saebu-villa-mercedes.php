@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: SAEBU Villa Mercedes
  * Description: Sede Villa Mercedes
@@ -6,146 +7,190 @@
 get_header();
 ?>
 
-<main class="bg-gray-50">
+<main class="bg-white font-sans">
 
     <?php while (have_posts()) : the_post(); ?>
 
-        <section class="relative bg-slate-900 text-white py-20 border-b-4 border-purple-700">
-            <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M0 40L40 0H20L0 20M40 40V20L20 40\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-            
-            <div class="container mx-auto px-4 relative z-10">
-                <div class="max-w-7xl mx-auto text-center">
-                    <nav class="flex justify-center items-center gap-2 text-sm text-purple-200 mb-6">
-                        <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
-                        <span>/</span>
-                        <span class="text-white font-medium">Sedes regionales</span>
-                    </nav>
+        <section class="bg-slate-900 py-32 border-b border-slate-800 text-center">
+            <div class="container mx-auto px-6 max-w-4xl relative z-10">
 
-                    <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-                        Sede Villa Mercedes
-                    </h1>
-                    
-                    <div class="w-24 h-1 bg-purple-700 mx-auto mb-6"></div>
+                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold  uppercase text-slate-500 mb-8">
+                    <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
+                    <span>/</span>
+                    <?php
+                    global $post;
+                    if (is_page() && $post->post_parent) {
+                        $ancestors = array_reverse(get_post_ancestors($post->ID));
+                        foreach ($ancestors as $ancestor_id) {
+                    ?>
+                            <a href="<?php echo get_permalink($ancestor_id); ?>" class="hover:text-white transition-colors">
+                                <?php echo get_the_title($ancestor_id); ?>
+                            </a>
+                            <span>/</span>
+                    <?php
+                        }
+                    }
+                    ?>
+                    <span class="text-purple-500">Sede Regional</span>
+                </nav>
 
-                    <p class="text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
-                        Centro regional de servicios estudiantiles para la comunidad universitaria de Villa Mercedes.
-                    </p>
+                <h1 class="text-4xl md:text-6xl font-light text-white leading-tight mb-8 tracking-tight">
+                    Sede <strong class="font-semibold">Villa Mercedes</strong>
+                </h1>
+
+                <p class="text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                    <?php
+                    if (has_excerpt()) {
+                        echo get_the_excerpt();
+                    } else {
+                        echo 'Centro regional de servicios estudiantiles y atención administrativa para la comunidad universitaria de Villa Mercedes.';
+                    }
+                    ?>
+                </p>
+            </div>
+        </section>
+
+        <section class="relative z-20 -mt-12 mb-12">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="bg-white border border-slate-200 shadow-sm grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+
+                    <div class="p-8 text-center md:text-left flex flex-col justify-center">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase  mb-2 block">Ubicación Física</span>
+                        <h3 class="text-lg font-medium text-slate-900 leading-snug">Junín 269</h3>
+                        <p class="text-sm text-slate-500 font-light">Entre 25 de Mayo y Almafuerte</p>
+                    </div>
+
+                    <div class="p-8 text-center md:text-left flex flex-col justify-center">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase  mb-2 block">Atención al Público</span>
+                        <h3 class="text-lg font-medium text-slate-900 leading-snug">Lunes a Viernes</h3>
+                        <p class="text-sm text-slate-500 font-light">8:00 a 13:00 hs</p>
+                    </div>
+
+                    <div class="p-8 text-center md:text-left flex flex-col justify-center bg-slate-50">
+                        <span class="text-[10px] font-bold text-purple-600 uppercase  mb-2 block">Contacto Directo</span>
+                        <a href="tel:2657420565" class="text-lg font-medium text-slate-900 hover:text-purple-600 transition-colors leading-snug block">
+                            (2657) 420565
+                        </a>
+                        <a href="mailto:subsaebu@gmail.com" class="text-sm text-purple-600 hover:text-slate-900 transition-colors font-light">
+                            subsaebu@gmail.com
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <section class="py-16 bg-white border-b border-gray-200">
-            <div class="container mx-auto px-4">
-                <div class="max-w-6xl mx-auto">
-                    
-                    <div class="grid lg:grid-cols-2 gap-12 items-start">
-                        
-                        <div>
-                            <div class="mb-8">
-                                <h2 class="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-purple-700 pl-4">Información de Contacto</h2>
-                                <p class="text-gray-600 text-lg">
-                                    Canales oficiales de comunicación y atención para estudiantes de las facultades en Villa Mercedes.
-                                </p>
-                            </div>
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-7xl">
 
-                            <div class="space-y-4">
-                                <div class="bg-white border border-gray-200 rounded-lg p-6 flex items-start gap-4 hover:border-purple-500 transition-colors">
-                                    <div class="bg-purple-50 p-3 rounded-md text-purple-700">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wide mb-1">Dirección</h3>
-                                        <p class="text-gray-700 font-medium">Junín 269</p>
-                                        <p class="text-gray-500 text-sm">Entre 25 de Mayo y Almafuerte</p>
-                                    </div>
-                                </div>
-
-                                <div class="bg-white border border-gray-200 rounded-lg p-6 flex items-start gap-4 hover:border-purple-500 transition-colors">
-                                    <div class="bg-purple-50 p-3 rounded-md text-purple-700">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wide mb-1">Teléfono</h3>
-                                        <a href="tel:2657420565" class="text-purple-700 font-bold text-lg hover:underline">2657 420565</a>
-                                        <p class="text-gray-500 text-sm">Lunes a Viernes de 8:00 a 13:00 hs</p>
-                                    </div>
-                                </div>
-
-                                <div class="bg-white border border-gray-200 rounded-lg p-6 flex items-start gap-4 hover:border-purple-500 transition-colors">
-                                    <div class="bg-purple-50 p-3 rounded-md text-purple-700">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wide mb-1">Correo electrónico</h3>
-                                        <a href="mailto:subsaebu@gmail.com" class="text-purple-700 font-medium hover:underline">subsaebu@gmail.com</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-8 flex gap-4">
-                                <a href="https://www.facebook.com/SsAEBU" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded hover:bg-blue-600 hover:text-white transition-all text-sm font-medium border border-gray-200">
-                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                                    Facebook
-                                </a>
-                                <a href="https://www.instagram.com/ssaebuu" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded hover:bg-pink-600 hover:text-white transition-all text-sm font-medium border border-gray-200">
-                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
-                                    Instagram
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="h-full min-h-[400px] bg-gray-100 rounded-lg overflow-hidden border border-gray-200 shadow-sm">
-                             
-                            <iframe  title="Mapa de Google"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3357.8!2d-65.466!3d-33.676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d2deff0000000%3A0x0!2sBuenos%20Aires%20122%2C%20Villa%20Mercedes%2C%20San%20Luis!5e0!3m2!1ses!2sar!4v1234567890" 
-                                width="100%" 
-                                height="100%" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy"
-                                class="w-full h-full grayscale hover:grayscale-0 transition-all duration-500">
-                            </iframe>
-                        </div>
-                        
+                <div class="mb-16 md:flex justify-between items-end">
+                    <div class="max-w-2xl">
+                        <h2 class="text-3xl font-light text-slate-900 tracking-tight mb-4">
+                            Servicios en <strong class="font-semibold">Sede</strong>
+                        </h2>
+                        <p class="text-lg text-slate-500 font-light">Gestiones administrativas y asistencia directa para garantizar tu bienestar estudiantil.</p>
                     </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-12">
+
+                    <div class="border-t border-slate-200 pt-5 group">
+                        <span class="text-[10px] font-bold text-slate-400  block mb-3 group-hover:text-purple-600 transition-colors">01</span>
+                        <h3 class="text-xl font-medium text-slate-900 mb-3">Becas y Beneficios</h3>
+                        <p class="text-sm text-slate-500 font-light leading-relaxed">
+                            Asesoramiento personalizado, recepción de documentación y seguimiento de expedientes para todos los programas de ayuda económica.
+                        </p>
+                    </div>
+
+                    <div class="border-t border-slate-200 pt-5 group">
+                        <span class="text-[10px] font-bold text-slate-400  block mb-3 group-hover:text-purple-600 transition-colors">02</span>
+                        <h3 class="text-xl font-medium text-slate-900 mb-3">Comedor Universitario</h3>
+                        <p class="text-sm text-slate-500 font-light leading-relaxed">
+                            Gestión de cuenta corriente, inscripciones al servicio de alimentación, renovación de beneficios y menú para celíacos.
+                        </p>
+                    </div>
+
+                    <div class="border-t border-slate-200 pt-5 group">
+                        <span class="text-[10px] font-bold text-slate-400  block mb-3 group-hover:text-purple-600 transition-colors">03</span>
+                        <h3 class="text-xl font-medium text-slate-900 mb-3">Salud (CeSEU)</h3>
+                        <p class="text-sm text-slate-500 font-light leading-relaxed">
+                            Atención primaria, tramitación del certificado médico de ingreso, y coordinación de turnos para especialidades clínicas.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <section class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="max-w-6xl mx-auto">
-                    <div class="text-center mb-10">
-                        <h2 class="text-2xl font-bold text-gray-900">Servicios en Sede</h2>
-                        <p class="text-gray-500">Gestiones administrativas y bienestar estudiantil</p>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="bg-white p-6 rounded border border-gray-200 text-center group hover:border-purple-500 transition-colors">
-                            <div class="w-12 h-12 bg-purple-50 text-purple-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-600 group-hover:text-white transition-colors">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                            </div>
-                            <h3 class="font-bold text-gray-900 mb-2 text-base">Becas</h3>
-                            <p class="text-sm text-gray-600">Asesoramiento y recepción de documentación.</p>
-                        </div>
+        <section class="py-24 bg-slate-50 border-y border-slate-200">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="grid lg:grid-cols-[1fr_2fr] gap-16 items-start">
 
-                        <div class="bg-white p-6 rounded border border-gray-200 text-center group hover:border-purple-500 transition-colors">
-                            <div class="w-12 h-12 bg-purple-50 text-purple-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-600 group-hover:text-white transition-colors">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            </div>
-                            <h3 class="font-bold text-gray-900 mb-2 text-base">Comedor</h3>
-                            <p class="text-sm text-gray-600">Gestión de cuenta corriente y beneficios alimentarios.</p>
-                        </div>
+                    <div class="sticky top-10">
+                        <h2 class="text-2xl font-light text-slate-900 tracking-tight mb-8">
+                            Redes <strong class="font-semibold">Oficiales</strong>
+                        </h2>
+                        <p class="text-slate-500 font-light text-sm mb-8 leading-relaxed">
+                            Seguinos en nuestras plataformas para enterarte de convocatorias, vencimientos y novedades de la sede Villa Mercedes.
+                        </p>
 
-                        <div class="bg-white p-6 rounded border border-gray-200 text-center group hover:border-purple-500 transition-colors">
-                            <div class="w-12 h-12 bg-purple-50 text-purple-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-600 group-hover:text-white transition-colors">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                            </div>
-                            <h3 class="font-bold text-gray-900 mb-2 text-base">Salud</h3>
-                            <p class="text-sm text-gray-600">Atención primaria y consultas médicas.</p>
+                        <div class="space-y-4">
+                            <a href="https://www.facebook.com/SsAEBU" target="_blank" class="block border border-slate-200 bg-white p-4 hover:border-purple-500 hover:shadow-sm transition-all group">
+                                <span class="block text-[10px] font-bold text-slate-400 uppercase  mb-1">Facebook</span>
+                                <span class="text-sm font-medium text-slate-900 group-hover:text-purple-600 transition-colors">@SsAEBU</span>
+                            </a>
+                            <a href="https://www.instagram.com/ssaebuu" target="_blank" class="block border border-slate-200 bg-white p-4 hover:border-purple-500 hover:shadow-sm transition-all group">
+                                <span class="block text-[10px] font-bold text-slate-400 uppercase  mb-1">Instagram</span>
+                                <span class="text-sm font-medium text-slate-900 group-hover:text-purple-600 transition-colors">@ssaebuu</span>
+                            </a>
                         </div>
                     </div>
+
+                    <div>
+                        <div class="bg-white p-2 border border-slate-200 shadow-sm">
+                            <div class="aspect-square md:aspect-video w-full bg-slate-200 relative overflow-hidden">
+                                <iframe title="Mapa de Google - Sede Villa Mercedes"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.657962450849!2d-65.46747202347101!3d-33.67382600795551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d2fc4ae37b5879%3A0xc34cc42ec8f85f54!2sJun%C3%ADn%20269%2C%20J5730%20Villa%20Mercedes%2C%20San%20Luis!5e0!3m2!1ses-419!2sar!4v1714400000000!5m2!1ses-419!2sar"
+                                    width="100%"
+                                    height="100%"
+                                    style="border:0;"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    class="w-full h-full filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
+                                </iframe>
+                            </div>
+                        </div>
+                        <p class="text-right text-[10px] text-slate-400 uppercase  mt-3 font-bold">
+                            Ubicación Geográfica
+                        </p>
+                    </div>
+
                 </div>
+            </div>
+        </section>
+
+        <section class="bg-slate-900 py-24 text-white text-center border-t border-slate-800">
+            <div class="container mx-auto px-6 max-w-3xl">
+
+                <h2 class="text-3xl font-light mb-6 tracking-tight">¿Necesitás iniciar un trámite?</h2>
+                <p class="text-slate-400 font-light text-lg mb-12">
+                    Podés enviarnos tu consulta por correo electrónico o acercarte personalmente a nuestras oficinas en Villa Mercedes.
+                </p>
+
+                <div class="mb-12 border-t border-slate-700 pt-8 inline-block">
+                    <h3 class="text-xl font-medium text-white mb-2">Administración Sede V. Mercedes</h3>
+                    <p class="text-xs text-purple-500 uppercase  font-bold">Atención a la Comunidad</p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="mailto:subsaebu@gmail.com" class="inline-block bg-white text-slate-900 px-10 py-4 text-sm font-bold uppercase  hover:bg-slate-100 hover:scale-105 transition-all duration-300">
+                        Enviar Email
+                    </a>
+                    <a href="tel:2657420565" class="inline-block border border-slate-600 text-white px-10 py-4 text-sm font-bold uppercase  hover:bg-slate-800 transition-all duration-300">
+                        Llamar a Sede
+                    </a>
+                </div>
+
             </div>
         </section>
 

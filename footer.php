@@ -15,7 +15,7 @@
                         <a href="<?php echo esc_url(home_url('/')); ?>" class="text-lg font-medium text-white leading-tight block">
                             <?php bloginfo('name'); ?>
                         </a>
-                        <span class="text-xs uppercase tracking-widest text-[#005eb8] font-bold">UNSL</span>
+                        <span class="text-xs uppercase  text-[#005eb8] font-bold">UNSL</span>
                     </div>
                 </div>
 
@@ -43,25 +43,25 @@
             </div>
 
             <div class="md:col-span-4 lg:col-span-3">
-                <h3 class="text-xs font-bold text-white uppercase tracking-widest mb-6">Contacto</h3>
+                <h3 class="text-xs font-bold text-white uppercase  mb-6">Contacto</h3>
                 <ul class="space-y-6 text-sm font-light">
                     <li>
-                        <span class="block text-[10px] uppercase tracking-widest text-slate-500 mb-1">Dirección</span>
+                        <span class="block text-[10px] uppercase  text-slate-500 mb-1">Dirección</span>
                         <span class="text-slate-300">Rivadavia 1029<br>San Luis Capital (D5700)</span>
                     </li>
                     <li>
-                        <span class="block text-[10px] uppercase tracking-widest text-slate-500 mb-1">Teléfono</span>
+                        <span class="block text-[10px] uppercase  text-slate-500 mb-1">Teléfono</span>
                         <a href="tel:02664520300" class="text-slate-300 hover:text-white transition-colors">(0266) 452-0300 Int. 8139</a>
                     </li>
                     <li>
-                        <span class="block text-[10px] uppercase tracking-widest text-slate-500 mb-1">Correo Electrónico</span>
+                        <span class="block text-[10px] uppercase  text-slate-500 mb-1">Correo Electrónico</span>
                         <a href="mailto:saebuunsl@unsl.edu.ar" class="text-slate-300 hover:text-white transition-colors">saebuunsl@unsl.edu.ar</a>
                     </li>
                 </ul>
             </div>
 
             <div class="md:col-span-4 lg:col-span-2">
-                <h3 class="text-xs font-bold text-white uppercase tracking-widest mb-6">Áreas</h3>
+                <h3 class="text-xs font-bold text-white uppercase  mb-6">Áreas</h3>
                 <ul class="space-y-3 text-sm font-light">
                     <li><a href="<?php echo home_url('/becas'); ?>" class="text-slate-400 hover:text-white transition-colors">Becas</a></li>
                     <li><a href="<?php echo home_url('/comedor'); ?>" class="text-slate-400 hover:text-white transition-colors">Comedor universitario</a></li>
@@ -72,7 +72,7 @@
             </div>
 
             <div class="md:col-span-4 lg:col-span-3">
-                <h3 class="text-xs font-bold text-white uppercase tracking-widest mb-6">Institucional</h3>
+                <h3 class="text-xs font-bold text-white uppercase  mb-6">Institucional</h3>
                 <ul class="space-y-3 text-sm font-light">
                     <li><a href="<?php echo home_url('/autoridades'); ?>" class="text-slate-400 hover:text-white transition-colors">Autoridades</a></li>
                     <li><a href="<?php echo home_url('/sedes'); ?>" class="text-slate-400 hover:text-white transition-colors">Sedes regionales</a></li>

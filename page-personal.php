@@ -55,7 +55,7 @@ function renderizar_tarjeta_unica($post, $placeholder)
         </div>
 
         <div class="text-center md:text-left flex-1 pt-2">
-            <span class="text-xs font-bold text-[#005eb8] uppercase tracking-widest block mb-3">
+            <span class="text-xs font-bold text-[#005eb8] uppercase  block mb-3">
                 <?php echo esc_html($cargo_label); ?>
             </span>
             <h2 class="text-3xl font-light text-slate-900 mb-6 tracking-tight">
@@ -65,7 +65,7 @@ function renderizar_tarjeta_unica($post, $placeholder)
             <div class="space-y-3 text-sm font-light text-slate-500 mt-8">
                 <?php if ($email): ?>
                     <p class="flex items-center justify-center md:justify-start gap-4">
-                        <span class="uppercase tracking-widest text-[10px] text-slate-900 font-bold w-12">Email</span>
+                        <span class="uppercase  text-[10px] text-slate-900 font-bold w-12">Email</span>
                         <a href="mailto:<?php echo esc_attr($email); ?>" class="hover:text-[#005eb8] transition-colors">
                             <?php echo esc_html($email); ?>
                         </a>
@@ -74,7 +74,7 @@ function renderizar_tarjeta_unica($post, $placeholder)
 
                 <?php if ($tel): ?>
                     <p class="flex items-center justify-center md:justify-start gap-4">
-                        <span class="uppercase tracking-widest text-[10px] text-slate-900 font-bold w-12">Tel</span>
+                        <span class="uppercase  text-[10px] text-slate-900 font-bold w-12">Tel</span>
                         <a href="tel:<?php echo esc_attr($tel); ?>" class="hover:text-[#005eb8] transition-colors">
                             <?php echo esc_html($tel); ?>
                         </a>
@@ -153,7 +153,7 @@ function renderizar_tarjeta_grilla($post, $placeholder)
 
             <?php if (!empty($jerarquia['jefe_departamento'])) : ?>
                 <div class="mb-24">
-                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-10 pb-4 border-b border-slate-200">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase  mb-10 pb-4 border-b border-slate-200">
                         Jefes de Departamento
                     </h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16">
@@ -166,7 +166,7 @@ function renderizar_tarjeta_grilla($post, $placeholder)
 
             <?php if (!empty($jerarquia['coordinador'])) : ?>
                 <div class="mb-24">
-                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-10 pb-4 border-b border-slate-200">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase  mb-10 pb-4 border-b border-slate-200">
                         Coordinadores de Área
                     </h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16">

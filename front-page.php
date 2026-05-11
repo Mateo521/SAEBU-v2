@@ -36,13 +36,13 @@
         <div class="max-w-7xl space-y-8">
             <div class="inline-flex items-center gap-4">
                 <img class="w-10 opacity-90" src="<?php echo esc_url(get_template_directory_uri()); ?>/logo-unsl-2.png" alt="UNSL Logo">
-                <span class="text-sm text-slate-300 font-medium tracking-widest uppercase">Universidad Nacional de San Luis</span>
+                <span class="text-sm text-slate-300 font-medium  uppercase">Universidad Nacional de San Luis</span>
             </div>
 
             <div>
                 <h1 class="text-4xl md:text-5xl lg:text-7xl font-light text-white leading-tight mb-6 tracking-tight">
-                    Secretaría de <br>
-                    <strong class="font-semibold">Asuntos Estudiantiles y Bienestar Universitario</strong>
+                    Secretaría de   
+                    <strong class="font-semibold">Asuntos Estudiantiles <br> y Bienestar Universitario</strong>
                 </h1>
                 <p class="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed font-light">
                     Acompañamos a las y los estudiantes durante su trayectoria universitaria, promoviendo el bienestar integral y la participación activa en la vida académica y social.
@@ -51,7 +51,7 @@
 
             <div class="pt-4">
                 <a href="<?php echo home_url('/institucional'); ?>"
-                    class="inline-flex items-center gap-3 bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 text-sm uppercase tracking-widest font-semibold transition-colors duration-300">
+                    class="inline-flex items-center gap-3 bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 text-sm uppercase  font-semibold transition-colors duration-300">
                     Institucional
                 </a>
             </div>
@@ -63,15 +63,15 @@
     <div class="container mx-auto px-6 max-w-7xl">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-200">
             <div class="px-6 py-2">
-                <h3 class="text-sm text-slate-500 uppercase tracking-widest mb-1">Organización</h3>
+                <h3 class="text-sm text-slate-500 uppercase  mb-1">Organización</h3>
                 <p class="text-lg text-slate-900 font-medium">Departamentos</p>
             </div>
             <div class="px-6 py-2">
-                <h3 class="text-sm text-slate-500 uppercase tracking-widest mb-1">Comunidad</h3>
+                <h3 class="text-sm text-slate-500 uppercase  mb-1">Comunidad</h3>
                 <p class="text-lg text-slate-900 font-medium">Servicios al estudiante</p>
             </div>
             <div class="px-6 py-2">
-                <h3 class="text-sm text-slate-500 uppercase tracking-widest mb-1">Extensión</h3>
+                <h3 class="text-sm text-slate-500 uppercase  mb-1">Extensión</h3>
                 <p class="text-lg text-slate-900 font-medium">Compromiso público</p>
             </div>
         </div>
@@ -123,7 +123,7 @@
                     </video>
 
                     <button id="play-pause-btn" class="absolute inset-0 w-full h-full flex items-center justify-center bg-slate-900/10 hover:bg-slate-900/20 transition-all cursor-pointer">
-                        <span class="bg-white text-slate-900 text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full shadow-sm  transition-transform">
+                        <span class="bg-white text-slate-900 text-xs font-bold uppercase  px-6 py-3 rounded-full shadow-sm  transition-transform">
                             Ver Video
                         </span>
                     </button>
@@ -174,14 +174,14 @@ if ($menu_dia) :
                     <h2 class="text-3xl font-light text-slate-900 tracking-tight">Menú del Día</h2>
                     <p class="text-slate-500 mt-2"><?php echo date_i18n('l, d \d\e F', $timestamp); ?></p>
                 </div>
-                <button id="btn-suscribir-menu" class="mt-4 md:mt-0 text-sm text-[#005eb8] font-medium uppercase tracking-widest hover:text-slate-900 transition-colors">
+                <button id="btn-suscribir-menu" class="mt-4 md:mt-0 text-sm text-[#005eb8] font-medium uppercase  hover:text-slate-900 transition-colors">
                     Suscribirse al Menú
                 </button>
             </div>
 
             <div class="grid md:grid-cols-2 gap-16">
                 <div>
-                    <h3 class="text-xs text-slate-400 font-bold uppercase tracking-widest mb-6 pb-2 border-b border-slate-200">Sede San Luis</h3>
+                    <h3 class="text-xs text-slate-400 font-bold uppercase  mb-6 pb-2 border-b border-slate-200">Sede San Luis</h3>
 
                     <div class="space-y-6">
                         <div>
@@ -223,7 +223,7 @@ if ($menu_dia) :
                 </div>
 
                 <div>
-                    <h3 class="text-xs text-slate-400 font-bold uppercase tracking-widest mb-6 pb-2 border-b border-slate-200">Sede Villa Mercedes</h3>
+                    <h3 class="text-xs text-slate-400 font-bold uppercase  mb-6 pb-2 border-b border-slate-200">Sede Villa Mercedes</h3>
 
                     <div class="space-y-6">
                         <div>
@@ -276,7 +276,7 @@ if ($menu_dia) :
                 <h2 class="text-3xl font-light text-slate-900 tracking-tight mb-3">Departamentos y áreas</h2>
                 <p class="text-lg text-slate-500 font-light">Estructura organizativa al servicio de la comunidad universitaria.</p>
             </div>
-            <a href="<?php echo home_url('/departamentos'); ?>" class="hidden md:inline-block text-sm text-[#005eb8] font-medium uppercase tracking-widest hover:text-slate-900 transition-colors">
+            <a href="<?php echo home_url('/departamentos'); ?>" class="hidden md:inline-block text-sm text-[#005eb8] font-medium uppercase  hover:text-slate-900 transition-colors">
                 Ver organigrama
             </a>
         </div>
@@ -315,7 +315,7 @@ if ($menu_dia) :
         </div>
 
         <div class="mt-8 text-center md:hidden">
-            <a href="<?php echo home_url('/departamentos'); ?>" class="inline-block bg-white/95 backdrop-blur-sm px-6 py-4 text-sm text-[#005eb8] font-medium uppercase tracking-widest hover:text-slate-900 shadow-sm transition-colors">
+            <a href="<?php echo home_url('/departamentos'); ?>" class="inline-block bg-white/95 backdrop-blur-sm px-6 py-4 text-sm text-[#005eb8] font-medium uppercase  hover:text-slate-900 shadow-sm transition-colors">
                 Ver Organigrama completo
             </a>
         </div>
@@ -330,7 +330,7 @@ if ($menu_dia) :
     <div class="container mx-auto px-6 max-w-7xl">
         <div class="flex items-end justify-between mb-16 border-b border-slate-200 pb-6">
             <h2 class="text-3xl font-light text-slate-900 tracking-tight">Noticias</h2>
-            <a href="<?php echo get_post_type_archive_link('noticia'); ?>" class="text-sm text-[#005eb8] font-medium uppercase tracking-widest hover:text-slate-900 transition-colors">
+            <a href="<?php echo get_post_type_archive_link('noticia'); ?>" class="text-sm text-[#005eb8] font-medium uppercase  hover:text-slate-900 transition-colors">
                 Ver más
             </a>
         </div>
@@ -360,7 +360,7 @@ if ($menu_dia) :
                                     </a>
 
                                     <div class="flex-1 flex flex-col">
-                                        <div class="text-xs text-slate-400 uppercase tracking-widest mb-3">
+                                        <div class="text-xs text-slate-400 uppercase  mb-3">
                                             <?php echo get_the_date('d F, Y'); ?>
                                         </div>
 

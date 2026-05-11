@@ -13,7 +13,7 @@ get_header();
         <section class="bg-slate-900 py-32 border-b border-slate-800 text-center">
             <div class="container mx-auto px-6 max-w-4xl relative z-10">
 
-                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold tracking-widest uppercase text-slate-500 mb-8">
+                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold  uppercase text-slate-500 mb-8">
                     <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                     <span>/</span>
                     <?php
@@ -116,31 +116,31 @@ get_header();
                         <div class="grid grid-cols-2 gap-8 mb-12 border-b border-slate-200 pb-12">
                             <div>
                                 <span class="block text-4xl md:text-5xl font-light text-[#005eb8] mb-2">40</span>
-                                <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Módulos Habitacionales</span>
+                                <span class="text-xs font-bold uppercase  text-slate-400">Módulos Habitacionales</span>
                             </div>
                             <div>
                                 <span class="block text-4xl md:text-5xl font-light text-[#005eb8] mb-2">Capital</span>
-                                <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Sede San Luis</span>
+                                <span class="text-xs font-bold uppercase  text-slate-400">Sede San Luis</span>
                             </div>
                         </div>
 
                         <div class="space-y-8">
                             <div>
-                                <h3 class="text-sm font-bold text-slate-900 uppercase tracking-widest mb-2">Ubicación y Distribución</h3>
+                                <h3 class="text-sm font-bold text-slate-900 uppercase  mb-2">Ubicación y Distribución</h3>
                                 <p class="text-slate-600 font-light leading-relaxed">
                                     Ubicada en <strong>Rivadavia 1029</strong> (San Luis). El complejo cuenta con sectores habitacionales divididos para varones y mujeres.
                                 </p>
                             </div>
 
                             <div>
-                                <h3 class="text-sm font-bold text-slate-900 uppercase tracking-widest mb-2">Población Objetivo</h3>
+                                <h3 class="text-sm font-bold text-slate-900 uppercase  mb-2">Población Objetivo</h3>
                                 <p class="text-slate-600 font-light leading-relaxed">
                                     Se otorga prioridad absoluta de ingreso a estudiantes que sean beneficiarios de las <strong>Becas SAEBU</strong> y del <strong>Programa Progresar</strong>.
                                 </p>
                             </div>
 
                             <div>
-                                <h3 class="text-sm font-bold text-slate-900 uppercase tracking-widest mb-2">Acompañamiento Académico</h3>
+                                <h3 class="text-sm font-bold text-slate-900 uppercase  mb-2">Acompañamiento Académico</h3>
                                 <p class="text-slate-600 font-light leading-relaxed">
                                     Implementamos <strong>Acuerdos Académicos</strong> para flexibilizar las exigencias del reglamento general, previniendo la deserción universitaria y brindando apoyo a los residentes que lo necesiten.
                                 </p>
@@ -156,7 +156,7 @@ get_header();
             <div class="container mx-auto px-6 max-w-5xl">
 
                 <div class="text-center mb-16">
-                    <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-widest mb-4 block">Programa Específico</span>
+                    <span class="text-[10px] font-bold text-[#005eb8] uppercase  mb-4 block">Programa Específico</span>
                     <h2 class="text-3xl font-light text-slate-900 tracking-tight mb-4">
                         Área de Discapacidad e <strong class="font-semibold">Inclusión</strong>
                     </h2>
@@ -178,7 +178,7 @@ get_header();
                     foreach ($recursos_discapacidad as $titulo => $desc):
                     ?>
                         <div class="border-t border-slate-200 pt-4">
-                            <span class="text-[10px] font-bold text-slate-300 tracking-widest block mb-2">0<?php echo $contador++; ?></span>
+                            <span class="text-[10px] font-bold text-slate-300  block mb-2">0<?php echo $contador++; ?></span>
                             <h3 class="text-lg font-medium text-slate-900 mb-2"><?php echo $titulo; ?></h3>
                             <p class="text-sm text-slate-500 font-light leading-relaxed"><?php echo $desc; ?></p>
                         </div>
@@ -186,7 +186,7 @@ get_header();
                 </div>
 
                 <div class="bg-slate-50 border-l-2 border-[#005eb8] p-8 md:p-10">
-                    <h3 class="text-sm font-bold text-slate-900 uppercase tracking-widest mb-3">Promoción y Difusión Temprana</h3>
+                    <h3 class="text-sm font-bold text-slate-900 uppercase  mb-3">Promoción y Difusión Temprana</h3>
                     <p class="text-slate-600 font-light leading-relaxed mb-4">
                         Realizamos talleres informativos en los cursos de ingreso y jornadas de promoción de carreras. Nuestro objetivo central es lograr que el estudiante conozca y utilice la amplia gama de beneficios a su disposición <strong>desde el primer día de clases</strong>.
                     </p>
@@ -205,14 +205,14 @@ get_header();
 
                 <div class="mb-12 border-t border-slate-700 pt-8 inline-block">
                     <h3 class="text-xl font-medium text-white mb-2">Lic. Rosales Vanina del Valle</h3>
-                    <p class="text-xs text-[#005eb8] uppercase tracking-widest font-bold">Jefa de Dpto. de Trabajo Social</p>
+                    <p class="text-xs text-[#005eb8] uppercase  font-bold">Jefa de Dpto. de Trabajo Social</p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a href="mailto:trabajosocial.unsl@gmail.com" class="inline-block bg-white text-slate-900 px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-slate-100  transition-all duration-300">
+                    <a href="mailto:trabajosocial.unsl@gmail.com" class="inline-block bg-white text-slate-900 px-10 py-4 text-sm font-bold uppercase  hover:bg-slate-100  transition-all duration-300">
                         Enviar Consulta
                     </a>
-                    <a href="tel:02664520300" class="inline-block border border-slate-600 text-white px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-slate-800 transition-all duration-300">
+                    <a href="tel:02664520300" class="inline-block border border-slate-600 text-white px-10 py-4 text-sm font-bold uppercase  hover:bg-slate-800 transition-all duration-300">
                         Interno 8132
                     </a>
                 </div>

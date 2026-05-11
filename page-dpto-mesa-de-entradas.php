@@ -13,7 +13,7 @@ get_header();
         <section class="bg-slate-900 py-32 border-b border-slate-800 text-center">
             <div class="container mx-auto px-6 max-w-4xl relative z-10">
 
-                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold tracking-widest uppercase text-slate-500 mb-8">
+                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold  uppercase text-slate-500 mb-8">
                     <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                     <span>/</span>
                     <?php
@@ -54,19 +54,19 @@ get_header();
                 <div class="bg-white border border-slate-200 shadow-sm grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200">
 
                     <div class="p-8 text-center md:text-left flex flex-col justify-center">
-                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 block">Ubicación</span>
+                        <span class="text-[10px] font-bold text-slate-400 uppercase  mb-2 block">Ubicación</span>
                         <h3 class="text-lg font-medium text-slate-900 leading-snug">Rivadavia 1029</h3>
                         <p class="text-sm text-slate-500 font-light">San Luis Capital</p>
                     </div>
 
                     <div class="p-8 text-center md:text-left flex flex-col justify-center">
-                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 block">Horario de atención</span>
+                        <span class="text-[10px] font-bold text-slate-400 uppercase  mb-2 block">Horario de atención</span>
                         <h3 class="text-lg font-medium text-slate-900 leading-snug">Lunes a Viernes</h3>
                         <p class="text-sm text-slate-500 font-light">8:00 a 13:00 hs <span class="mx-2">|</span> 18:00 a 20:00 hs</p>
                     </div>
 
                     <div class="p-8 text-center md:text-left flex flex-col justify-center bg-slate-50">
-                        <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-widest mb-2 block">Contacto</span>
+                        <span class="text-[10px] font-bold text-[#005eb8] uppercase  mb-2 block">Contacto</span>
                         <a href="tel:02664520300" class="text-lg font-medium text-slate-900 hover:text-[#005eb8] transition-colors leading-snug block">
                             (0266) 4520300 <span class="text-sm font-light text-slate-500">int. 8139</span>
                         </a>
@@ -92,7 +92,7 @@ get_header();
                 <div class="grid md:grid-cols-3 gap-12">
 
                     <div class="border-t border-slate-200 pt-6 group">
-                        <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-widest mb-3 block">Documentación requerida</span>
+                        <span class="text-[10px] font-bold text-[#005eb8] uppercase  mb-3 block">Documentación requerida</span>
                         <h3 class="text-xl font-medium text-slate-900 mb-3">Trámites de Comedor</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">
                             Recepción, verificación y procesamiento de la documentación necesaria para acceder a los servicios de comedor general y a los beneficios específicos de la cocina para personas celíacas.
@@ -100,7 +100,7 @@ get_header();
                     </div>
 
                     <div class="border-t border-slate-200 pt-6 group">
-                        <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-widest mb-3 block">Gestión administrativa</span>
+                        <span class="text-[10px] font-bold text-[#005eb8] uppercase  mb-3 block">Gestión administrativa</span>
                         <h3 class="text-xl font-medium text-slate-900 mb-3">Expedientes y notas</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">
                             Punto de ingreso oficial y registro para la presentación de notas, inicio de expedientes y todas las actuaciones administrativas dirigidas a las autoridades de SAEBU.
@@ -108,7 +108,7 @@ get_header();
                     </div>
 
                     <div class="border-t border-slate-200 pt-6 group">
-                        <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-widest mb-3 block">Atención al público</span>
+                        <span class="text-[10px] font-bold text-[#005eb8] uppercase  mb-3 block">Atención al público</span>
                         <h3 class="text-xl font-medium text-slate-900 mb-3">Información general</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">
                             Asesoramiento integral y orientación al estudiante sobre el funcionamiento de los diferentes servicios, ubicaciones de dependencias y requisitos reglamentarios.
@@ -192,7 +192,7 @@ get_header();
 
                 <div class="flex items-end justify-between mb-16 border-b border-slate-200 pb-6">
                     <h2 class="text-3xl font-light text-slate-900 tracking-tight">Noticias</h2>
-                    <a href="<?php echo get_post_type_archive_link('noticia'); ?>" class="text-sm text-[#005eb8] font-medium uppercase tracking-widest hover:text-slate-900 transition-colors">
+                    <a href="<?php echo get_post_type_archive_link('noticia'); ?>" class="text-sm text-[#005eb8] font-medium uppercase  hover:text-slate-900 transition-colors">
                         Ver archivo
                     </a>
                 </div>
@@ -222,14 +222,14 @@ get_header();
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium_large', array('class' => 'w-full h-full object-cover transition-transform duration-700 group- filter grayscale-[20%] group-hover:grayscale-0')); ?>
                                     <?php else : ?>
-                                        <div class="w-full h-full flex items-center justify-center text-slate-300 font-light text-sm uppercase tracking-widest">
+                                        <div class="w-full h-full flex items-center justify-center text-slate-300 font-light text-sm uppercase ">
                                             Sin imagen
                                         </div>
                                     <?php endif; ?>
                                 </a>
 
                                 <div class="flex-1 flex flex-col">
-                                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">
+                                    <div class="text-[10px] font-bold text-slate-400 uppercase  mb-3">
                                         <?php echo get_the_date('d M Y'); ?>
                                     </div>
 
@@ -267,14 +267,14 @@ get_header();
 
                 <div class="mb-12 border-t border-slate-700 pt-8 inline-block">
                     <h3 class="text-xl font-medium text-white mb-2">Téc. Elisabeth López</h3>
-                    <p class="text-xs text-[#005eb8] uppercase tracking-widest font-bold">Jefa de Dpto. de Mesa de Entradas y Personal</p>
+                    <p class="text-xs text-[#005eb8] uppercase  font-bold">Jefa de Dpto. de Mesa de Entradas y Personal</p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a href="mailto:mesadeentradassaebu@gmail.com" class="inline-block bg-white text-slate-900 px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-slate-100  transition-all duration-300">
+                    <a href="mailto:mesadeentradassaebu@gmail.com" class="inline-block bg-white text-slate-900 px-10 py-4 text-sm font-bold uppercase  hover:bg-slate-100  transition-all duration-300">
                         Enviar email
                     </a>
-                    <a href="tel:02664520300" class="inline-block border border-slate-600 text-white px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-slate-800 transition-all duration-300">
+                    <a href="tel:02664520300" class="inline-block border border-slate-600 text-white px-10 py-4 text-sm font-bold uppercase  hover:bg-slate-800 transition-all duration-300">
                         Llamar a interno
                     </a>
                 </div>

@@ -34,9 +34,10 @@ function saebu_register_menus()
 }
 add_action('init', 'saebu_register_menus');
 
-
+/*
 function mi_script_header()
 {
+ 
     wp_enqueue_script(
         'mi-script',
         get_template_directory_uri() . '/assets/js/a11y-toolbar-master/js/a11y-custom.js',
@@ -48,10 +49,11 @@ function mi_script_header()
     wp_localize_script('mi-script', 'miThemeData', array(
         'imgAccesibilidad' => get_template_directory_uri() . '/assets/images/accesibilidad-blanco.png'
     ));
+
 }
 add_action('wp_enqueue_scripts', 'mi_script_header');
 
-
+*/
 
 function saebu_enqueue_assets()
 {
@@ -724,9 +726,9 @@ add_action('wp_head', 'saebu_add_og_tags');
 function saebu_register_menu_dia_cpt()
 {
     $labels = array(
-        'name'                  => 'Menú del Día',
+        'name'                  => 'Menú del día',
         'singular_name'         => 'Menú',
-        'menu_name'             => 'Menú del Día',
+        'menu_name'             => 'Menú del día',
         'add_new'               => 'Agregar Menú',
         'add_new_item'          => 'Agregar Nuevo Menú',
         'edit_item'             => 'Editar Menú',
@@ -756,38 +758,41 @@ function saebu_register_menu_dia_cpt()
 add_action('init', 'saebu_register_menu_dia_cpt');
 
 
+
 function saebu_menu_dia_metaboxes()
 {
     add_meta_box('menu_dia_detalles', 'Configuración de Menús por Sede', 'saebu_menu_dia_metabox_callback', 'menu_dia', 'normal', 'high');
 }
 add_action('add_meta_boxes', 'saebu_menu_dia_metaboxes');
 
-
 function saebu_menu_dia_metabox_callback($post)
 {
     wp_nonce_field('saebu_menu_dia_nonce', 'menu_dia_nonce');
 
 
+    $fecha = get_post_meta($post->ID, '_menu_sl_fecha', true);
+
+
     $sl_data = array(
-        'fecha'     => get_post_meta($post->ID, '_menu_sl_fecha', true),
-        'precio'    => get_post_meta($post->ID, '_menu_sl_precio', true),
-        'entrada'   => get_post_meta($post->ID, '_menu_sl_entrada', true),
-        'principal' => get_post_meta($post->ID, '_menu_sl_principal', true),
-        'postre'    => get_post_meta($post->ID, '_menu_sl_postre', true),
-        'ent_st'    => get_post_meta($post->ID, '_menu_sl_ent_st', true),
-        'pri_st'    => get_post_meta($post->ID, '_menu_sl_pri_st', true),
-        'pos_st'    => get_post_meta($post->ID, '_menu_sl_pos_st', true),
+        'entrada'         => get_post_meta($post->ID, '_menu_sl_entrada', true),
+        'principal'       => get_post_meta($post->ID, '_menu_sl_principal', true),
+        'postre'          => get_post_meta($post->ID, '_menu_sl_postre', true),
+        'entrada_noche'   => get_post_meta($post->ID, '_menu_sl_entrada_noche', true),
+        'principal_noche' => get_post_meta($post->ID, '_menu_sl_principal_noche', true),
+        'postre_noche'    => get_post_meta($post->ID, '_menu_sl_postre_noche', true),
+        'ent_st'          => get_post_meta($post->ID, '_menu_sl_ent_st', true),
+        'pri_st'          => get_post_meta($post->ID, '_menu_sl_pri_st', true),
+        'pos_st'          => get_post_meta($post->ID, '_menu_sl_pos_st', true),
     );
 
 
     $vm_data = array(
-        'precio'    => get_post_meta($post->ID, '_menu_vm_precio', true),
-        'entrada'   => get_post_meta($post->ID, '_menu_vm_entrada', true),
-        'principal' => get_post_meta($post->ID, '_menu_vm_principal', true),
-        'postre'    => get_post_meta($post->ID, '_menu_vm_postre', true),
-        'ent_st'    => get_post_meta($post->ID, '_menu_vm_ent_st', true),
-        'pri_st'    => get_post_meta($post->ID, '_menu_vm_pri_st', true),
-        'pos_st'    => get_post_meta($post->ID, '_menu_vm_pos_st', true),
+        'entrada'         => get_post_meta($post->ID, '_menu_vm_entrada', true),
+        'principal'       => get_post_meta($post->ID, '_menu_vm_principal', true),
+        'postre'          => get_post_meta($post->ID, '_menu_vm_postre', true),
+        'entrada_noche'   => get_post_meta($post->ID, '_menu_vm_entrada_noche', true),
+        'principal_noche' => get_post_meta($post->ID, '_menu_vm_principal_noche', true),
+        'postre_noche'    => get_post_meta($post->ID, '_menu_vm_postre_noche', true),
     );
 
     $notificar = get_post_meta($post->ID, '_menu_notificar', true);
@@ -795,46 +800,53 @@ function saebu_menu_dia_metabox_callback($post)
 
     <div style="background:#eee; padding:15px; margin-bottom:20px; border-radius:5px;">
         <label><strong> Fecha general del menú:</strong></label>
-        <input type="date" name="menu_sl_fecha" value="<?php echo esc_attr($sl_data['fecha']); ?>" />
+        <input type="date" name="menu_sl_fecha" value="<?php echo esc_attr($fecha); ?>" />
     </div>
 
-    <div style="display: flex; gap: 20px;">
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
 
-        <div style="flex: 1; border: 2px solid #005eb8; padding: 15px; border-radius: 8px;">
-            <h2 style="color:#005eb8; border-bottom: 2px solid #005eb8; margin-top:0;"> Sede San Luis</h2>
-            <p><label>Precio Ticket:</label><input type="text" name="menu_sl_precio" value="<?php echo esc_attr($sl_data['precio']); ?>" style="width:100%" /></p>
 
-            <fieldset style="background:#f0faff; padding:10px; border:1px solid #b3d4fc;">
-                <legend><strong>Menú General SL</strong></legend>
+        <div style="flex: 1; min-width: 300px; border: 2px solid #005eb8; padding: 15px; border-radius: 8px;">
+            <h2 style="color:#005eb8; border-bottom: 2px solid #005eb8; margin-top:0; padding-bottom: 10px;"> Sede San Luis</h2>
+
+            <fieldset style="background:#f0faff; padding:10px; border:1px solid #b3d4fc; margin-bottom: 15px;">
+                <legend><strong>Mediodía SL</strong></legend>
                 <input type="text" name="menu_sl_entrada" placeholder="Entrada" value="<?php echo esc_attr($sl_data['entrada']); ?>" style="width:100%; margin-bottom:5px;" />
                 <input type="text" name="menu_sl_principal" placeholder="Principal" value="<?php echo esc_attr($sl_data['principal']); ?>" style="width:100%; margin-bottom:5px;" />
                 <input type="text" name="menu_sl_postre" placeholder="Postre" value="<?php echo esc_attr($sl_data['postre']); ?>" style="width:100%;" />
             </fieldset>
 
-            <fieldset style="background:#f2fff0; padding:10px; border:1px solid #b8e0b3; margin-top:10px;">
-                <legend><strong>Menú Sin TACC SL</strong></legend>
+            <fieldset style="background:#f8f9fa; padding:10px; border:1px solid #cbd5e1; margin-bottom: 15px;">
+                <legend><strong>Noche SL</strong></legend>
+                <input type="text" name="menu_sl_entrada_noche" placeholder="Entrada Noche" value="<?php echo esc_attr($sl_data['entrada_noche']); ?>" style="width:100%; margin-bottom:5px;" />
+                <input type="text" name="menu_sl_principal_noche" placeholder="Principal Noche" value="<?php echo esc_attr($sl_data['principal_noche']); ?>" style="width:100%; margin-bottom:5px;" />
+                <input type="text" name="menu_sl_postre_noche" placeholder="Postre Noche" value="<?php echo esc_attr($sl_data['postre_noche']); ?>" style="width:100%;" />
+            </fieldset>
+
+            <fieldset style="background:#f2fff0; padding:10px; border:1px solid #b8e0b3;">
+                <legend><strong>Sin TACC SL (Mediodía/Noche)</strong></legend>
                 <input type="text" name="menu_sl_ent_st" placeholder="Entrada Sin TACC" value="<?php echo esc_attr($sl_data['ent_st']); ?>" style="width:100%; margin-bottom:5px;" />
                 <input type="text" name="menu_sl_pri_st" placeholder="Principal Sin TACC" value="<?php echo esc_attr($sl_data['pri_st']); ?>" style="width:100%; margin-bottom:5px;" />
                 <input type="text" name="menu_sl_pos_st" placeholder="Postre Sin TACC" value="<?php echo esc_attr($sl_data['pos_st']); ?>" style="width:100%;" />
             </fieldset>
         </div>
 
-        <div style="flex: 1; border: 2px solid #e67e22; padding: 15px; border-radius: 8px;">
-            <h2 style="color:#e67e22; border-bottom: 2px solid #e67e22; margin-top:0;"> Sede Villa Mercedes</h2>
-            <p><label>Precio Ticket:</label><input type="text" name="menu_vm_precio" value="<?php echo esc_attr($vm_data['precio']); ?>" style="width:100%" /></p>
 
-            <fieldset style="background:#fff7f0; padding:10px; border:1px solid #fad7b3;">
-                <legend><strong>Menú General VM</strong></legend>
+        <div style="flex: 1; min-width: 300px; border: 2px solid #e67e22; padding: 15px; border-radius: 8px;">
+            <h2 style="color:#e67e22; border-bottom: 2px solid #e67e22; margin-top:0; padding-bottom: 10px;"> Sede Villa Mercedes</h2>
+
+            <fieldset style="background:#fff7f0; padding:10px; border:1px solid #fad7b3; margin-bottom: 15px;">
+                <legend><strong>Mediodía VM</strong></legend>
                 <input type="text" name="menu_vm_entrada" placeholder="Entrada" value="<?php echo esc_attr($vm_data['entrada']); ?>" style="width:100%; margin-bottom:5px;" />
                 <input type="text" name="menu_vm_principal" placeholder="Principal" value="<?php echo esc_attr($vm_data['principal']); ?>" style="width:100%; margin-bottom:5px;" />
                 <input type="text" name="menu_vm_postre" placeholder="Postre" value="<?php echo esc_attr($vm_data['postre']); ?>" style="width:100%;" />
             </fieldset>
 
-            <fieldset style="background:#f2fff0; padding:10px; border:1px solid #b8e0b3; margin-top:10px;">
-                <legend><strong>Menú Sin TACC VM</strong></legend>
-                <input type="text" name="menu_vm_ent_st" placeholder="Entrada Sin TACC" value="<?php echo esc_attr($vm_data['ent_st']); ?>" style="width:100%; margin-bottom:5px;" />
-                <input type="text" name="menu_vm_pri_st" placeholder="Principal Sin TACC" value="<?php echo esc_attr($vm_data['pri_st']); ?>" style="width:100%; margin-bottom:5px;" />
-                <input type="text" name="menu_vm_pos_st" placeholder="Postre Sin TACC" value="<?php echo esc_attr($vm_data['pos_st']); ?>" style="width:100%;" />
+            <fieldset style="background:#f8f9fa; padding:10px; border:1px solid #cbd5e1;">
+                <legend><strong>Noche VM</strong></legend>
+                <input type="text" name="menu_vm_entrada_noche" placeholder="Entrada Noche" value="<?php echo esc_attr($vm_data['entrada_noche']); ?>" style="width:100%; margin-bottom:5px;" />
+                <input type="text" name="menu_vm_principal_noche" placeholder="Principal Noche" value="<?php echo esc_attr($vm_data['principal_noche']); ?>" style="width:100%; margin-bottom:5px;" />
+                <input type="text" name="menu_vm_postre_noche" placeholder="Postre Noche" value="<?php echo esc_attr($vm_data['postre_noche']); ?>" style="width:100%;" />
             </fieldset>
         </div>
     </div>
@@ -856,8 +868,8 @@ function saebu_save_menu_dia_meta($post_id)
 
 
     $campos = array(
-        'sl' => array('fecha', 'precio', 'entrada', 'principal', 'postre', 'ent_st', 'pri_st', 'pos_st'),
-        'vm' => array('precio', 'entrada', 'principal', 'postre', 'ent_st', 'pri_st', 'pos_st')
+        'sl' => array('fecha', 'entrada', 'principal', 'postre', 'entrada_noche', 'principal_noche', 'postre_noche', 'ent_st', 'pri_st', 'pos_st'),
+        'vm' => array('entrada', 'principal', 'postre', 'entrada_noche', 'principal_noche', 'postre_noche')
     );
 
     foreach ($campos as $sede => $lista) {
@@ -871,7 +883,6 @@ function saebu_save_menu_dia_meta($post_id)
         }
     }
 
-
     $notificar = isset($_POST['menu_notificar']) ? '1' : '0';
     update_post_meta($post_id, '_menu_notificar', $notificar);
 
@@ -881,7 +892,6 @@ function saebu_save_menu_dia_meta($post_id)
     }
 }
 add_action('save_post_menu_dia', 'saebu_save_menu_dia_meta');
-
 
 
 
@@ -899,41 +909,24 @@ function saebu_save_menu_dia_meta_wrapper($post_id, $post)
 
 function saebu_enviar_notificacion_menu($post_id)
 {
-
     $fecha_sl     = get_post_meta($post_id, '_menu_sl_fecha', true);
     $principal_sl = get_post_meta($post_id, '_menu_sl_principal', true);
-    $precio_sl    = get_post_meta($post_id, '_menu_sl_precio', true);
-
-
     $principal_vm = get_post_meta($post_id, '_menu_vm_principal', true);
-    $precio_vm    = get_post_meta($post_id, '_menu_vm_precio', true);
 
-
-    if (empty($principal_sl) && empty($principal_vm)) {
-        return;
-    }
-
+    if (empty($principal_sl) && empty($principal_vm)) return;
 
     $fecha_formateada = date_i18n('d/m', strtotime($fecha_sl));
-    $titulo = "Menu del Dia (" . $fecha_formateada . ")";
-
+    $titulo = "Menú del día (" . $fecha_formateada . ")";
 
     $lineas = array();
-
-    if (!empty($principal_sl)) {
-        $lineas[] = "San Luis: " . $principal_sl;
-    }
-
-    if (!empty($principal_vm)) {
-        $lineas[] = "Villa Mercedes: " . $principal_vm;
-    }
+    if (!empty($principal_sl)) $lineas[] = "San Luis: " . $principal_sl;
+    if (!empty($principal_vm)) $lineas[] = "Villa Mercedes: " . $principal_vm;
 
     $mensaje = implode("\n", $lineas);
 
 
     $app_id = '58790c7e-7e27-46bc-a016-4861b88f45d3';
     $rest_api_key = 'M2NlM2MzODItOGFkYS00NjYyLTk1MTUtMWQ1NTQyM2Q4NTBi';
-
     $fields = array(
         'app_id' => $app_id,
         'filters' => array(
@@ -944,30 +937,23 @@ function saebu_enviar_notificacion_menu($post_id)
         'url' => get_permalink($post_id),
     );
 
-    // Imagen destacada (si existe)
     if (has_post_thumbnail($post_id)) {
-        $img_url_raw = get_the_post_thumbnail_url($post_id, 'large');
-        $img_url = set_url_scheme($img_url_raw, 'https');
+        $img_url = set_url_scheme(get_the_post_thumbnail_url($post_id, 'large'), 'https');
         $fields['big_picture'] = $img_url;
         $fields['chrome_web_image'] = $img_url;
     }
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Content-Type: application/json; charset=utf-8',
-        'Authorization: Basic ' . $rest_api_key
-    ));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8', 'Authorization: Basic ' . $rest_api_key));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
     curl_setopt($ch, CURLOPT_HEADER, FALSE);
     curl_setopt($ch, CURLOPT_POST, TRUE);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-
-    $response = curl_exec($ch);
+    curl_exec($ch);
     curl_close($ch);
 }
-
 
 
 
@@ -997,7 +983,7 @@ function saebu_cpt_noticia_callback($post)
     <div style="margin-top: 10px;">
         <label style="font-weight:bold;">
             <input type="checkbox" name="noticia_enviar_push" value="1" <?php checked($notificar, '1'); ?> />
-            Enviar notificación Push
+            Enviar notificación push
         </label>
         <p class="description">Se enviará a la categoría <strong>"Noticias universitarias"</strong>.</p>
     </div>
@@ -1129,14 +1115,11 @@ function saebu_get_menu_del_dia()
 
 
 
-/**
- * Metabox para galería
- */
 function saebu_galeria_metabox()
 {
     add_meta_box(
         'saebu_galeria',
-        'Galería de Imágenes (Swiper)',
+        'Galería de imágenes',
         'saebu_galeria_metabox_callback',
         'noticia',
         'normal',
@@ -1866,3 +1849,24 @@ function registrar_autoridades_saebu()
     ]);
 }
 add_action('init', 'registrar_autoridades_saebu');
+
+
+
+function saebu_reemplazar_url_menu_dinamico_objetos($items, $args)
+{
+    foreach ($items as $item) {
+
+        if ($item->url === '#menu-dinamico' || strpos($item->url, '#menu-dinamico') !== false) {
+
+
+            if (function_exists('saebu_get_ultimo_menu_url')) {
+                $item->url = esc_url(saebu_get_ultimo_menu_url());
+            } else {
+                $item->url = home_url('/');
+            }
+        }
+    }
+    return $items;
+}
+
+add_filter('wp_nav_menu_objects', 'saebu_reemplazar_url_menu_dinamico_objetos', 10, 2);

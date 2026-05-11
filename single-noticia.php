@@ -9,7 +9,7 @@
             <header class="text-center mb-12">
 
                 <div class="mb-8 flex justify-center">
-                    <div class="text-xs font-bold overflow-auto uppercase tracking-widest text-slate-400">
+                    <div class="text-xs font-bold overflow-auto uppercase  text-slate-400">
                         <?php if (function_exists('saebu_breadcrumbs')) saebu_breadcrumbs(); ?>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                         foreach ($categorias as $categoria) :
                     ?>
                             <a href="<?php echo get_term_link($categoria); ?>"
-                                class="text-[#005eb8] text-[11px] font-bold uppercase tracking-widest border-b border-transparent hover:border-[#005eb8] transition-colors pb-0.5">
+                                class="text-[#005eb8] text-[11px] font-bold uppercase  border-b border-transparent hover:border-[#005eb8] transition-colors pb-0.5">
                                 <?php echo esc_html($categoria->name); ?>
                             </a>
                     <?php
@@ -106,7 +106,7 @@
 
             <footer class="mt-20 pt-10 border-t border-gray-200">
                 <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
-                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Compartir</span>
+                    <span class="text-xs font-bold text-slate-400 uppercase ">Compartir</span>
 
                     <div class="flex gap-4">
                         <?php
@@ -159,7 +159,7 @@
                     <div class="container mx-auto px-4 max-w-6xl">
                         <div class="flex items-center justify-between mb-10">
                             <h2 class="text-xl font-bold text-slate-900 uppercase tracking-tight">Lecturas relacionadas</h2>
-                            <a href="<?php echo get_post_type_archive_link('noticia'); ?>" class="text-xs font-bold text-[#005eb8] uppercase tracking-widest hover:underline">Ver todas</a>
+                            <a href="<?php echo get_post_type_archive_link('noticia'); ?>" class="text-xs font-bold text-[#005eb8] uppercase  hover:underline">Ver todas</a>
                         </div>
 
                         <div class="grid md:grid-cols-3 gap-8">
@@ -177,7 +177,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="p-6">
-                                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
+                                        <div class="text-[10px] font-bold text-slate-400 uppercase  mb-2">
                                             <?php echo get_the_date('d/m/Y'); ?>
                                         </div>
                                         <h3 class="font-bold text-lg text-slate-900 leading-snug group-hover:text-[#005eb8] transition-colors">

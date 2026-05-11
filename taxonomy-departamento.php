@@ -14,13 +14,13 @@ $total_posts = $wp_query->found_posts;
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
                 
-                <div class="mb-8 text-xs font-bold uppercase tracking-widest text-slate-400">
+                <div class="mb-8 text-xs font-bold uppercase  text-slate-400">
                     <?php if (function_exists('saebu_breadcrumbs')) saebu_breadcrumbs(); ?>
                 </div>
 
                 <div class="flex flex-col md:flex-row items-start justify-between gap-8">
                     <div class="flex-1">
-                        <span class="inline-block border border-blue-500/30 bg-blue-500/10 text-blue-300 text-[10px] font-bold uppercase tracking-widest px-2 py-1 mb-4">
+                        <span class="inline-block border border-blue-500/30 bg-blue-500/10 text-blue-300 text-[10px] font-bold uppercase  px-2 py-1 mb-4">
                             Departamento
                         </span>
 
@@ -37,7 +37,7 @@ $total_posts = $wp_query->found_posts;
 
                     <div class="bg-white/5 border border-white/10 p-6 min-w-[200px] text-center">
                         <span class="block text-4xl font-bold text-white mb-1"><?php echo $total_posts; ?></span>
-                        <span class="text-xs text-slate-400 uppercase tracking-widest">Publicaciones</span>
+                        <span class="text-xs text-slate-400 uppercase ">Publicaciones</span>
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@ $total_posts = $wp_query->found_posts;
                     Volver a la portada de <?php echo esc_html($term->name); ?>
                 </a>
                 
-                <div class="text-xs font-bold text-slate-400 uppercase tracking-widest hidden sm:block">
+                <div class="text-xs font-bold text-slate-400 uppercase  hidden sm:block">
                     Archivo de Noticias
                 </div>
             </div>
@@ -102,7 +102,7 @@ $total_posts = $wp_query->found_posts;
                                     </p>
 
                                     <div class="mt-auto">
-                                        <a href="<?php the_permalink(); ?>" class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 border-gray-200 pb-1 hover:border-[#005eb8] hover:text-[#005eb8] transition-all">
+                                        <a href="<?php the_permalink(); ?>" class="inline-flex items-center text-xs font-bold uppercase  text-slate-900 border-b-2 border-gray-200 pb-1 hover:border-[#005eb8] hover:text-[#005eb8] transition-all">
                                             Ver más
                                             <svg class="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                                         </a>
@@ -169,7 +169,7 @@ $total_posts = $wp_query->found_posts;
                 </div>
                 <div class="flex gap-4">
                     <a href="<?php echo home_url('/' . $term->slug); ?>" 
-                       class="px-6 py-3 bg-white text-[#003366] text-xs font-bold uppercase tracking-widest hover:bg-gray-100 transition-colors">
+                       class="px-6 py-3 bg-white text-[#003366] text-xs font-bold uppercase  hover:bg-gray-100 transition-colors">
                         Ir al Departamento
                     </a>
                 </div>

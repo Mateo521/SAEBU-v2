@@ -59,7 +59,7 @@
             <div class="flex items-center justify-between h-20">
 
 
-                <div class="site-branding flex items-center gap-3 relative">
+                <div class="site-branding flex items-center gap-3 relative px-2 py-1">
                     <?php if (has_custom_logo()) : ?>
                         <div class="custom-logo-container">
                             <?php the_custom_logo(); ?>
@@ -88,10 +88,6 @@
 
                     <div class="gtranslate_wrapper"></div>
 
-                    <a href="<?php echo esc_url(saebu_get_ultimo_menu_url()); ?>" class="px-4 py-2 text-gray-700 hover:text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">
-                        Menú
-                    </a>
-
                     <?php
                     if (has_nav_menu('menu-principal')) {
                         wp_nav_menu(array(
@@ -102,18 +98,11 @@
                             'fallback_cb'    => false,
                         ));
                     } else {
-
                         echo '<ul class="flex items-center gap-1">';
                         echo '<li><a href="' . esc_url(home_url('/')) . '" class="px-4 py-2 text-gray-700 hover:text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">Inicio</a></li>';
-                        echo '<li><a href="#" class="px-4 py-2 text-gray-700 hover:text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">Servicios</a></li>';
-                        echo '<li><a href="#" class="px-4 py-2 text-gray-700 hover:text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">Contacto</a></li>';
                         echo '</ul>';
                     }
-
                     ?>
-
-
-
 
                 </nav>
 
@@ -190,7 +179,7 @@
 
 
             <div class="pt-6 border-t border-gray-200">
-                <h3 class="text-sm font-bold text-gray-900 mb-4 px-4">Información de Contacto</h3>
+                <h3 class="text-sm font-bold text-gray-900 mb-4 px-4">Información de contacto</h3>
                 <div class="space-y-3">
                     <a href="mailto:saebuunsl@unsl.edu.ar" class="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                         <svg class="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -225,9 +214,9 @@
     </style>
 
 
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/js/a11y-toolbar-master/css/a11y-toolbar.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/js/a11y-toolbar-master/css/a11y-custom.css">
-    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/a11y-toolbar-master/js/a11y-custom.js"></script>
+    <!--link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/js/a11y-toolbar-master/css/a11y-toolbar.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/js/a11y-toolbar-master/css/a11y-custom.css"-->
+    <!--script src="<?php echo get_template_directory_uri(); ?>/assets/js/a11y-toolbar-master/js/a11y-custom.js"></script-->
     <script>
         window.gtranslateSettings = {
             "default_language": "es",
