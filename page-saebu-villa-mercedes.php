@@ -95,7 +95,7 @@ get_header();
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-12">
 
                     <div class="border-t border-slate-200 pt-5 group">
-                        <span class="text-[10px] font-bold text-slate-400  block mb-3 group-hover:text-purple-600 transition-colors">01</span>
+
                         <h3 class="text-xl font-medium text-slate-900 mb-3">Becas y Beneficios</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">
                             Asesoramiento personalizado, recepción de documentación y seguimiento de expedientes para todos los programas de ayuda económica.
@@ -103,7 +103,7 @@ get_header();
                     </div>
 
                     <div class="border-t border-slate-200 pt-5 group">
-                        <span class="text-[10px] font-bold text-slate-400  block mb-3 group-hover:text-purple-600 transition-colors">02</span>
+
                         <h3 class="text-xl font-medium text-slate-900 mb-3">Comedor Universitario</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">
                             Gestión de cuenta corriente, inscripciones al servicio de alimentación, renovación de beneficios y menú para celíacos.
@@ -111,7 +111,7 @@ get_header();
                     </div>
 
                     <div class="border-t border-slate-200 pt-5 group">
-                        <span class="text-[10px] font-bold text-slate-400  block mb-3 group-hover:text-purple-600 transition-colors">03</span>
+
                         <h3 class="text-xl font-medium text-slate-900 mb-3">Salud (CeSEU)</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">
                             Atención primaria, tramitación del certificado médico de ingreso, y coordinación de turnos para especialidades clínicas.

@@ -89,37 +89,37 @@ get_header();
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
 
                     <div class="border-t border-slate-200 pt-5 group">
-                        <span class="text-[10px] font-bold text-slate-400  block mb-3 group-hover:text-[#005eb8] transition-colors">01</span>
+
                         <h3 class="text-lg font-medium text-slate-900 mb-2">Control y Administración</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">Supervisión contable y financiera de las cuentas corrientes de la SAEBU, asegurando transparencia y orden documental.</p>
                     </div>
 
                     <div class="border-t border-slate-200 pt-5 group">
-                        <span class="text-[10px] font-bold text-slate-400  block mb-3 group-hover:text-[#005eb8] transition-colors">02</span>
+
                         <h3 class="text-lg font-medium text-slate-900 mb-2">Pago de Becas</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">Gestión operativa y ejecución de pagos de Ayuda Económica, Beca CREER y planes de Contraprestación.</p>
                     </div>
 
                     <div class="border-t border-slate-200 pt-5 group">
-                        <span class="text-[10px] font-bold text-slate-400  block mb-3 group-hover:text-[#005eb8] transition-colors">03</span>
+
                         <h3 class="text-lg font-medium text-slate-900 mb-2">Comedor Universitario</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">Manejo y control de la cuenta corriente del comedor, abarcando la gestión de cobros y el pago a proveedores de alimentos.</p>
                     </div>
 
                     <div class="border-t border-slate-200 pt-5 group">
-                        <span class="text-[10px] font-bold text-slate-400  block mb-3 group-hover:text-[#005eb8] transition-colors">04</span>
+
                         <h3 class="text-lg font-medium text-slate-900 mb-2">Proveedores</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">Procesamiento y pago a proveedores de bienes y servicios vinculados a todas las dependencias de la Secretaría.</p>
                     </div>
 
                     <div class="border-t border-slate-200 pt-5 group">
-                        <span class="text-[10px] font-bold text-slate-400  block mb-3 group-hover:text-[#005eb8] transition-colors">05</span>
+
                         <h3 class="text-lg font-medium text-slate-900 mb-2">Servicios Contratados</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">Administración de contratos de servicios externos, incluyendo mantenimiento edilicio y seguridad de la Residencia.</p>
                     </div>
 
                     <div class="border-t border-slate-200 pt-5 group">
-                        <span class="text-[10px] font-bold text-slate-400  block mb-3 group-hover:text-[#005eb8] transition-colors">06</span>
+
                         <h3 class="text-lg font-medium text-slate-900 mb-2">Complejo La Florida</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">Coordinación contable de los ingresos y egresos derivados de la actividad del Complejo Turístico y Recreativo.</p>
                     </div>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: SAEBU Merlo
  * Description: Sede Villa de Merlo
@@ -12,7 +13,7 @@ get_header();
 
         <section class="bg-slate-900 py-32 border-b border-slate-800 text-center">
             <div class="container mx-auto px-6 max-w-4xl relative z-10">
-                
+
                 <nav class="flex justify-center items-center gap-3 text-[10px] font-bold  uppercase text-slate-500 mb-8">
                     <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                     <span>/</span>
@@ -34,7 +35,7 @@ get_header();
         <section class="relative z-20 -mt-12 mb-12">
             <div class="container mx-auto px-6 max-w-6xl">
                 <div class="bg-white border border-slate-200 shadow-sm grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200">
-                    
+
                     <div class="p-8 text-center md:text-left flex flex-col justify-center">
                         <span class="text-[10px] font-bold text-slate-400 uppercase  mb-2 block">Ubicación Física</span>
                         <h3 class="text-lg font-medium text-slate-900 leading-snug">Av. del Libertador S/N</h3>
@@ -63,7 +64,7 @@ get_header();
 
         <section class="py-24 bg-white">
             <div class="container mx-auto px-6 max-w-7xl">
-                
+
                 <div class="mb-16 md:flex justify-between items-end">
                     <div class="max-w-2xl">
                         <h2 class="text-3xl font-light text-slate-900 tracking-tight mb-4">
@@ -74,9 +75,9 @@ get_header();
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-12">
-                    
+
                     <div class="border-t border-slate-200 pt-5 group">
-                        <span class="text-[10px] font-bold text-slate-400  block mb-3 group-hover:text-teal-600 transition-colors">01</span>
+
                         <h3 class="text-xl font-medium text-slate-900 mb-3">Programa de Becas</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">
                             Asesoramiento integral, recepción de documentación respaldatoria y orientación sobre beneficios económicos vigentes.
@@ -84,7 +85,7 @@ get_header();
                     </div>
 
                     <div class="border-t border-slate-200 pt-5 group">
-                        <span class="text-[10px] font-bold text-slate-400  block mb-3 group-hover:text-teal-600 transition-colors">02</span>
+
                         <h3 class="text-xl font-medium text-slate-900 mb-3">Deportes y Recreación</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">
                             Información, horarios e inscripciones sobre actividades formativas, recreativas y torneos universitarios desarrollados en la sede.
@@ -92,7 +93,7 @@ get_header();
                     </div>
 
                     <div class="border-t border-slate-200 pt-5 group">
-                        <span class="text-[10px] font-bold text-slate-400  block mb-3 group-hover:text-teal-600 transition-colors">03</span>
+
                         <h3 class="text-xl font-medium text-slate-900 mb-3">Salud Universitaria</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">
                             Consultas sobre cobertura sanitaria para estudiantes, convenios vigentes en la localidad y requerimientos médicos de ingreso.
@@ -106,7 +107,7 @@ get_header();
         <section class="py-24 bg-slate-50 border-y border-slate-200">
             <div class="container mx-auto px-6 max-w-7xl">
                 <div class="grid lg:grid-cols-[1fr_2fr] gap-16 items-start">
-                    
+
                     <div class="sticky top-10">
                         <h2 class="text-2xl font-light text-slate-900 tracking-tight mb-8">
                             Novedades <strong class="font-semibold">Oficiales</strong>
@@ -114,7 +115,7 @@ get_header();
                         <p class="text-slate-500 font-light text-sm mb-8 leading-relaxed">
                             Seguinos en nuestras redes sociales para estar al día con los eventos, competencias y comunicados de la FTU.
                         </p>
-                        
+
                         <div class="space-y-4">
                             <a href="https://www.facebook.com/SAEBUMerlo" target="_blank" rel="noopener" class="block border border-slate-200 bg-white p-4 hover:border-teal-600 hover:shadow-sm transition-all group">
                                 <span class="block text-[10px] font-bold text-slate-400 uppercase  mb-1">Facebook</span>
@@ -131,11 +132,11 @@ get_header();
                         <div class="bg-white p-2 border border-slate-200 shadow-sm">
                             <div class="aspect-square md:aspect-video w-full bg-slate-200 relative overflow-hidden">
                                 <iframe title="Mapa de Google - Sede Merlo"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.56789!2d-65.012345!3d-32.345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM6LCsDIwJzQ0LjQiUyA2NcKwMDAnNDQuNCJX!5e0!3m2!1ses!2sar!4v1600000000000!5m2!1ses!2sar" 
-                                    width="100%" 
-                                    height="100%" 
-                                    style="border:0;" 
-                                    allowfullscreen="" 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.56789!2d-65.012345!3d-32.345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM6LCsDIwJzQ0LjQiUyA2NcKwMDAnNDQuNCJX!5e0!3m2!1ses!2sar!4v1600000000000!5m2!1ses!2sar"
+                                    width="100%"
+                                    height="100%"
+                                    style="border:0;"
+                                    allowfullscreen=""
                                     loading="lazy"
                                     class="w-full h-full filter grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
                                 </iframe>
@@ -152,7 +153,7 @@ get_header();
 
         <section class="bg-slate-900 py-24 text-white text-center border-t border-slate-800">
             <div class="container mx-auto px-6 max-w-3xl">
-                
+
                 <h2 class="text-3xl font-light mb-6 tracking-tight">¿Dudas o Gestiones?</h2>
                 <p class="text-slate-400 font-light text-lg mb-12">
                     Estamos disponibles para resolver tus inquietudes operativas, deportivas o administrativas de forma presencial o por correo.
@@ -171,7 +172,7 @@ get_header();
                         Llamar a Sede
                     </a>
                 </div>
-                
+
             </div>
         </section>
 

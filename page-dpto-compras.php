@@ -142,25 +142,25 @@ get_header();
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
 
                     <div class="border-t-2 border-slate-900 pt-4">
-                        <span class="text-3xl font-light text-slate-300 block mb-2">01</span>
+                     
                         <h3 class="text-base font-bold text-slate-900 mb-2 uppercase tracking-wide">Solicitud</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">El departamento o área requirente elabora y envía el pedido formal justificando la necesidad.</p>
                     </div>
 
                     <div class="border-t-2 border-slate-900 pt-4 mt-4 md:mt-0 opacity-80 hover:opacity-100 transition-opacity">
-                        <span class="text-3xl font-light text-slate-300 block mb-2">02</span>
+                      
                         <h3 class="text-base font-bold text-slate-900 mb-2 uppercase tracking-wide">Evaluación</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">Compras clasifica el requerimiento, verifica fondos y selecciona el procedimiento normativo adecuado.</p>
                     </div>
 
                     <div class="border-t-2 border-slate-900 pt-4 mt-4 md:mt-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <span class="text-3xl font-light text-slate-300 block mb-2">03</span>
+                       
                         <h3 class="text-base font-bold text-slate-900 mb-2 uppercase tracking-wide">Tramitación</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">Elaboración de pliegos, solicitud de presupuestos, evaluación de ofertas y selección del proveedor.</p>
                     </div>
 
                     <div class="border-t-2 border-[#005eb8] pt-4 mt-4 md:mt-0">
-                        <span class="text-3xl font-light text-[#005eb8] block mb-2">04</span>
+                      
                         <h3 class="text-base font-bold text-[#005eb8] mb-2 uppercase tracking-wide">Adjudicación</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">Emisión de orden de compra, recepción conforme del bien/servicio y pase a pago.</p>
                     </div>
