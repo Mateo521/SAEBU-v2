@@ -1508,7 +1508,6 @@ class Saebu_Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
 function saebu_noticias_departamento($args = array())
 {
 
-
     $defaults = array(
         'slug'        => 'becas',
         'nombre'      => 'Becas',
@@ -1518,9 +1517,7 @@ function saebu_noticias_departamento($args = array())
         'icono'       => 'M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z',
     );
 
-
     $config = wp_parse_args($args, $defaults);
-
 
     $noticias_query = new WP_Query(array(
         'post_type'      => 'noticia',
@@ -1533,8 +1530,6 @@ function saebu_noticias_departamento($args = array())
             ),
         ),
     ));
-
-
 ?>
     <section class="py-20 bg-white border-t border-gray-200">
         <div class="container mx-auto px-4">

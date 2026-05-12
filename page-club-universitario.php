@@ -115,7 +115,7 @@ get_header();
                 <div class="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto mb-16">
 
                     <div class="px-6 py-3 border border-slate-200 bg-white text-slate-700 font-medium text-base flex flex-col justify-center items-center gap-1 min-w-[200px]">
-                        <span>Gimnasia Deportiva</span>
+                        <span>Gimnasia deportiva</span>
                         <span class="text-base text-slate-400 font-light">Fem: <span class="text-red-500 font-medium">Sin cupos</span> | Masc: <span class="text-green-600 font-medium">Disponible</span></span>
                     </div>
 
@@ -124,7 +124,7 @@ get_header();
                         'Vóley',
                         'Básquet',
                         'Futsal',
-                        'Baby Fútbol',
+                        'Baby fútbol',
                         'Handball',
                         'Atletismo'
                     ];
