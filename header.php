@@ -12,8 +12,11 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('bg-white overflow-x-hidden'); ?> x-data="{ mobileMenuOpen: false }" :class="{ 'overflow-hidden': mobileMenuOpen }">
-    <?php wp_body_open(); ?>
+<body <?php body_class('bg-white overflow-x-hidden font-sans'); ?> x-data="{ mobileMenuOpen: false, searchOpen: false }" :class="{ 'overflow-hidden': mobileMenuOpen || searchOpen }">
+        <?php wp_body_open(); ?>
+
+
+
 
     <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm transition-all duration-300">
         <div class="container mx-auto px-4">
@@ -166,7 +169,7 @@
             <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-widest block mb-4">Portal de noticias</span>
             <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
                 <input type="hidden" name="post_type" value="noticia" />
-                <input type="search" name="s" placeholder="¿Qué estás buscando?" class="w-full bg-transparent border-0 border-b-2 border-slate-300 focus:border-[#005eb8] focus:ring-0 px-0 py-4 text-4xl md:text-6xl font-light text-slate-900 placeholder:text-slate-300 transition-colors" x-ref="searchInput" x-init="$watch('searchOpen', value => { if(value) setTimeout(() => $refs.searchInput.focus(), 100) })" required>
+                <input type="search" name="s" placeholder="¿Qué estás buscando?" class="w-full bg-transparent border-0 border-b-2 border-slate-300 focus:border-[#005eb8] focus:ring-0 px-6 py-4 text-4xl md:text-6xl font-light text-slate-900 placeholder:text-slate-300 transition-colors" x-ref="searchInput" x-init="$watch('searchOpen', value => { if(value) setTimeout(() => $refs.searchInput.focus(), 100) })" required>
             </form>
             <p class="text-xs text-slate-400 uppercase tracking-widest mt-6">Escribí tu consulta y presioná Enter</p>
         </div>

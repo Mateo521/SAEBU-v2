@@ -72,7 +72,7 @@ $total_results = $wp_query->found_posts;
 
                                 <div class="mt-auto pt-4 border-t border-slate-100">
                                     <a href="<?php the_permalink(); ?>" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-900 group-hover:text-[#005eb8] transition-colors">
-                                        Leer Artículo
+                                        Ver noticia
                                         <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                                         </svg>
