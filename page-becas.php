@@ -230,7 +230,7 @@ get_header();
                             </span>
                         </summary>
                         <p class="text-slate-500 font-light mt-4 leading-relaxed pr-8">
-                            Las convocatorias se abren generalmente al inicio del ciclo lectivo. Te recomendamos estar atento a las comunicaciones oficiales de la universidad y a esta misma página.
+                            Las convocatorias se abren generalmente al inicio del ciclo lectivo. Te recomendamos estar atento a las comunicaciones de la universidad y a esta misma página.
                         </p>
                     </details>
 

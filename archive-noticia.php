@@ -18,7 +18,7 @@ get_header();
                             Sala de Prensa
                         </h1-->
                         <p class="text-slate-400 text-lg max-w-2xl font-light">
-                            Actualidad, comunicados oficiales y agenda de actividades de la institución.
+                            Actualidad, comunicados y agenda de actividades de la institución.
                         </p>
                     </div>
                 </div>

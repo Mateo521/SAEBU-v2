@@ -56,14 +56,13 @@ get_header();
 
                     <div class="p-8 text-center md:text-left flex flex-col justify-center">
                         <span class="text-[10px] font-bold text-slate-400 uppercase  mb-2 block">Ubicación Física</span>
-                        <h3 class="text-lg font-medium text-slate-900 leading-snug">Junín 269</h3>
-                        <p class="text-sm text-slate-500 font-light">Entre 25 de Mayo y Almafuerte</p>
+                        <h3 class="text-lg font-medium text-slate-900 leading-snug">Ruta Provincial 55 extremo norte</h3>
                     </div>
 
                     <div class="p-8 text-center md:text-left flex flex-col justify-center">
                         <span class="text-[10px] font-bold text-slate-400 uppercase  mb-2 block">Atención al Público</span>
                         <h3 class="text-lg font-medium text-slate-900 leading-snug">Lunes a Viernes</h3>
-                        <p class="text-sm text-slate-500 font-light">8:00 a 13:00 hs</p>
+                        <p class="text-sm text-slate-500 font-light">8:00 a 12:00 hs</p>
                     </div>
 
                     <div class="p-8 text-center md:text-left flex flex-col justify-center bg-slate-50">
@@ -128,7 +127,7 @@ get_header();
 
                     <div class="sticky top-10">
                         <h2 class="text-2xl font-light text-slate-900 tracking-tight mb-8">
-                            Redes <strong class="font-semibold">Oficiales</strong>
+                            Redes
                         </h2>
                         <p class="text-slate-500 font-light text-sm mb-8 leading-relaxed">
                             Seguinos en nuestras plataformas para enterarte de convocatorias, vencimientos y novedades de la sede Villa Mercedes.
@@ -150,7 +149,8 @@ get_header();
                         <div class="bg-white p-2 border border-slate-200 shadow-sm">
                             <div class="aspect-square md:aspect-video w-full bg-slate-200 relative overflow-hidden">
                                 <iframe title="Mapa de Google - Sede Villa Mercedes"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.657962450849!2d-65.46747202347101!3d-33.67382600795551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d2fc4ae37b5879%3A0xc34cc42ec8f85f54!2sJun%C3%ADn%20269%2C%20J5730%20Villa%20Mercedes%2C%20San%20Luis!5e0!3m2!1ses-419!2sar!4v1714400000000!5m2!1ses-419!2sar"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1108.4269164908467!2d-65.44854390978057!3d-33.643485104844096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d16baf7a99e9cf%3A0x2fc3cfeb14dd2139!2sComedor%20UNIVERSITARIO%20FICA!5e0!3m2!1ses!2sar!4v1778594467379!5m2!1ses!2sar"
+
                                     width="100%"
                                     height="100%"
                                     style="border:0;"

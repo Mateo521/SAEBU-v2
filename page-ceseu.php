@@ -127,8 +127,8 @@ get_header();
                 <div class="grid md:grid-cols-3 gap-12 relative">
 
                     <div class="relative z-10">
-                        <span class="text-3xl font-light text-slate-300 block mb-4">01</span>
-                        <h3 class="text-lg font-medium text-slate-900 mb-3">Análisis Clínicos</h3>
+                         
+                        <h3 class="text-lg font-medium text-slate-900 mb-3">Análisis clínicos</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed mb-4">
                             Deben realizarse en una entidad pública o privada. <strong>Tienen 4 meses de validez</strong> desde su extracción.
                         </p>

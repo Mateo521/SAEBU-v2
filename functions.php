@@ -128,7 +128,7 @@ function saebu_enqueue_all_fonts()
 {
     wp_enqueue_style(
         'saebu-all-fonts',
-        'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap',
+        'https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap',
         [],
         null
     );

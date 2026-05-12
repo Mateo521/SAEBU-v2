@@ -68,7 +68,7 @@ get_header();
                 <div class="mb-16 md:flex justify-between items-end">
                     <div class="max-w-2xl">
                         <h2 class="text-3xl font-light text-slate-900 tracking-tight mb-4">
-                            Servicios <strong class="font-semibold">Disponibles</strong>
+                            Servicios <strong class="font-semibold">disponibles</strong>
                         </h2>
                         <p class="text-lg text-slate-500 font-light">Gestiones y programas activos para estudiantes del Campus Barranca Colorada.</p>
                     </div>
@@ -110,7 +110,7 @@ get_header();
 
                     <div class="sticky top-10">
                         <h2 class="text-2xl font-light text-slate-900 tracking-tight mb-8">
-                            Novedades <strong class="font-semibold">Oficiales</strong>
+                            Novedades
                         </h2>
                         <p class="text-slate-500 font-light text-sm mb-8 leading-relaxed">
                             Seguinos en nuestras redes sociales para estar al día con los eventos, competencias y comunicados de la FTU.
@@ -132,7 +132,8 @@ get_header();
                         <div class="bg-white p-2 border border-slate-200 shadow-sm">
                             <div class="aspect-square md:aspect-video w-full bg-slate-200 relative overflow-hidden">
                                 <iframe title="Mapa de Google - Sede Merlo"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.56789!2d-65.012345!3d-32.345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM6LCsDIwJzQ0LjQiUyA2NcKwMDAnNDQuNCJX!5e0!3m2!1ses!2sar!4v1600000000000!5m2!1ses!2sar"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48042.246215234554!2d-65.07367909242252!3d-32.356153425402596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d2e149a54b86c1%3A0xf2baee8df0ebf24b!2sUniversidad%20Nacional%20de%20San%20Luis%3A%20Facultad%20de%20Turismo%20y%20Urbanismo!5e0!3m2!1ses!2sar!4v1778594569884!5m2!1ses!2sar"
+
                                     width="100%"
                                     height="100%"
                                     style="border:0;"
