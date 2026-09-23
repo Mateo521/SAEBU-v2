@@ -71,7 +71,7 @@ while (have_posts()) : the_post();
 
 
             <article class="md:pr-16 flex flex-col h-full">
-                <h2 class="text-xs font-bold text-[#005eb8] uppercase  mb-8 pb-4 border-b border-slate-200">
+                <h2 class="text-sm font-bold text-[#005eb8] uppercase  mb-8 pb-4 border-b border-slate-200">
                     Sede San Luis
                 </h2>
 
@@ -156,7 +156,7 @@ while (have_posts()) : the_post();
 
 
             <article class="md:pl-16 flex flex-col h-full border-t md:border-t-0 border-slate-200 pt-16 md:pt-0">
-                <h2 class="text-xs font-bold text-[#e67e22] uppercase  mb-8 pb-4 border-b border-slate-200">
+                <h2 class="text-sm font-bold text-[#e67e22] uppercase  mb-8 pb-4 border-b border-slate-200">
                     Sede Villa Mercedes
                 </h2>
 
@@ -217,7 +217,7 @@ while (have_posts()) : the_post();
 
 
         <div class="max-w-5xl mx-auto mt-24 text-center border-t border-slate-200 pt-16">
-            <button id="btn-suscribir-single" class="inline-flex items-center gap-3 px-10 py-4 bg-slate-900 text-white text-xs font-bold uppercase  hover:bg-[#005eb8] transition-colors duration-300">
+            <button id="btn-suscribir-single" class="inline-flex items-center gap-3 px-10 py-4 bg-slate-900 text-white text-sm font-bold uppercase  hover:bg-[#005eb8] transition-colors duration-300">
                 Suscribirse al menú diario
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />

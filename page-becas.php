@@ -12,7 +12,7 @@ get_header();
 
         <section class="bg-slate-900 py-32 border-b border-slate-800 text-center">
             <div class="container mx-auto px-6 max-w-4xl relative z-10">
-                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold  uppercase text-slate-400 mb-8">
+                <nav class="flex justify-center items-center gap-3 text-sm font-bold  uppercase text-slate-400 mb-8">
                     <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                     <span>/</span>
                     <span class="text-[#005eb8]">Departamento de Becas</span>
@@ -43,33 +43,33 @@ get_header();
 
                         <div class="grid sm:grid-cols-2 gap-x-12 gap-y-10">
                             <div class="border-t border-slate-200 pt-5">
-                                <h3 class="text-xs uppercase  font-bold text-slate-900 mb-2">Convocatorias</h3>
+                                <h3 class="text-sm uppercase  font-bold text-slate-900 mb-2">Convocatorias</h3>
                                 <p class="text-slate-500 font-light text-sm">Gestión anual de inscripciones e información para postulantes.</p>
                             </div>
                             <div class="border-t border-slate-200 pt-5">
-                                <h3 class="text-xs uppercase  font-bold text-slate-900 mb-2">Adjudicación</h3>
+                                <h3 class="text-sm uppercase  font-bold text-slate-900 mb-2">Adjudicación</h3>
                                 <p class="text-slate-500 font-light text-sm">Proceso transparente de preselección y otorgamiento.</p>
                             </div>
                             <div class="border-t border-slate-200 pt-5">
-                                <h3 class="text-xs uppercase  font-bold text-slate-900 mb-2">Control académico</h3>
+                                <h3 class="text-sm uppercase  font-bold text-slate-900 mb-2">Control académico</h3>
                                 <p class="text-slate-500 font-light text-sm">Seguimiento continuo del rendimiento para mantener beneficios.</p>
                             </div>
                             <div class="border-t border-slate-200 pt-5">
-                                <h3 class="text-xs uppercase  font-bold text-slate-900 mb-2">Pagos</h3>
+                                <h3 class="text-sm uppercase  font-bold text-slate-900 mb-2">Pagos</h3>
                                 <p class="text-slate-500 font-light text-sm">Administración y gestión mensual de los depósitos.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="md:pl-12 md:border-l border-slate-200 sticky top-24">
-                        <h3 class="text-xs font-bold text-slate-400 uppercase  mb-6">Contacto</h3>
+                        <h3 class="text-sm font-bold text-slate-400 uppercase  mb-6">Contacto</h3>
                         <div class="space-y-6">
                             <div>
-                                <span class="block text-[10px] uppercase  text-slate-400 mb-1">Correo Electrónico</span>
+                                <span class="block text-sm uppercase  text-slate-400 mb-1">Correo Electrónico</span>
                                 <a href="mailto:becasunsl@gmail.com" class="text-lg text-slate-900 hover:text-[#005eb8] transition-colors">becasunsl@gmail.com</a>
                             </div>
                             <div>
-                                <span class="block text-[10px] uppercase  text-slate-400 mb-1">Teléfono Directo</span>
+                                <span class="block text-sm uppercase  text-slate-400 mb-1">Teléfono Directo</span>
                                 <a href="tel:02664422818" class="text-lg text-slate-900 hover:text-[#005eb8] transition-colors">0266-4422818 <span class="text-sm text-slate-500">int. 8134</span></a>
                             </div>
                         </div>
@@ -156,7 +156,7 @@ get_header();
                     foreach ($becas as $index => $beca) : ?>
                         <article class="flex flex-col h-full border-t border-slate-200 pt-6 group">
 
-                            <span class="text-[10px] font-bold text-[#005eb8] uppercase  mb-2 block">
+                            <span class="text-sm font-bold text-[#005eb8] uppercase  mb-2 block">
                                 <?php echo $beca['subtitulo']; ?>
                             </span>
 
@@ -171,7 +171,7 @@ get_header();
                             <div class="mt-auto">
                                 <div class="flex flex-wrap gap-x-4 gap-y-2 mb-6">
                                     <?php foreach ($beca['detalles'] as $detalle): ?>
-                                        <span class="text-xs text-slate-500 font-medium bg-slate-100 px-2 py-1">
+                                        <span class="text-sm text-slate-500 font-medium bg-slate-100 px-2 py-1">
                                             <?php echo $detalle; ?>
                                         </span>
                                     <?php endforeach; ?>
@@ -181,7 +181,7 @@ get_header();
                                     <button
                                         data-video="<?php echo esc_url($beca['video']); ?>"
                                         data-titulo="<?php echo esc_attr($beca['titulo']); ?>"
-                                        class="btn-ver-video inline-flex items-center gap-2 text-xs font-bold uppercase  text-slate-900 hover:text-[#005eb8] transition-colors border-b border-slate-900 hover:border-[#005eb8] pb-1">
+                                        class="btn-ver-video inline-flex items-center gap-2 text-sm font-bold uppercase  text-slate-900 hover:text-[#005eb8] transition-colors border-b border-slate-900 hover:border-[#005eb8] pb-1">
                                         <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M8 5v14l11-7z" />
                                         </svg>
@@ -274,7 +274,7 @@ get_header();
 
                 <div class="mb-12 border-t border-slate-700 pt-8 inline-block">
                     <h3 class="text-lg font-medium text-white mb-1">Sr. Daniel Rúa</h3>
-                    <p class="text-xs text-[#005eb8] uppercase  font-bold">Jefe de Departamento de Becas</p>
+                    <p class="text-sm text-[#005eb8] uppercase  font-bold">Jefe de Departamento de Becas</p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">
@@ -316,7 +316,7 @@ get_header();
             </div>
 
             <div class="p-4 bg-slate-900">
-                <p class="text-xs text-slate-400 uppercase  text-center">
+                <p class="text-sm text-slate-400 uppercase  text-center">
                     Interpretación oficial en Lengua de Señas Argentina (LSA)
                 </p>
             </div>

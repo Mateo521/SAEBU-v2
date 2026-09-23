@@ -20,7 +20,7 @@ get_header();
             <div class="container mx-auto px-6 relative z-10">
                 <div class="max-w-7xl mx-auto text-center">
 
-                    <span class="text-xs font-bold  uppercase text-green-300 mb-6 block">
+                    <span class="text-sm font-bold  uppercase text-green-300 mb-6 block">
                         Naturaleza y recreación
                     </span>
 
@@ -92,7 +92,7 @@ get_header();
                 <div class="grid md:grid-cols-2 gap-16 divide-y md:divide-y-0 md:divide-x divide-slate-200">
 
                     <div class="md:pr-8">
-                        <h3 class="text-xs font-bold text-slate-400 uppercase  mb-6 pb-4 border-b border-[#1a4731]/20">
+                        <h3 class="text-sm font-bold text-slate-400 uppercase  mb-6 pb-4 border-b border-[#1a4731]/20">
                             Sector Camping
                         </h3>
                         <p class="text-slate-600 font-light text-lg mb-8 leading-relaxed">
@@ -111,7 +111,7 @@ get_header();
                     </div>
 
                     <div class="md:pl-8 pt-10 md:pt-0">
-                        <h3 class="text-xs font-bold text-slate-400 uppercase  mb-6 pb-4 border-b border-[#1a4731]/20">
+                        <h3 class="text-sm font-bold text-slate-400 uppercase  mb-6 pb-4 border-b border-[#1a4731]/20">
                             Cabañas equipadas
                         </h3>
                         <p class="text-slate-600 font-light text-lg mb-8 leading-relaxed">
@@ -145,9 +145,9 @@ get_header();
                     <table class="w-full text-left border-collapse">
                         <thead>
                             <tr class="border-b-2 border-[#1a4731]">
-                                <th class="py-4 px-3 text-xs font-bold text-slate-900 uppercase ">Categoría</th>
-                                <th class="py-4 px-6 text-xs font-bold text-slate-900 uppercase  text-right">Día de campo</th>
-                                <th class="py-4 px-3 text-xs font-bold text-slate-900 uppercase  text-right">Acampe (noche)</th>
+                                <th class="py-4 px-3 text-sm font-bold text-slate-900 uppercase ">Categoría</th>
+                                <th class="py-4 px-6 text-sm font-bold text-slate-900 uppercase  text-right">Día de campo</th>
+                                <th class="py-4 px-3 text-sm font-bold text-slate-900 uppercase  text-right">Acampe (noche)</th>
                             </tr>
                         </thead>
                         <tbody class="text-sm font-light text-slate-600 divide-y divide-slate-100">
@@ -202,13 +202,13 @@ get_header();
                             <tr class="bg-slate-50">
                                 <td class="py-4 px-3 font-medium text-slate-900">Motorhome / Casilla rodante</td>
                                 <td colspan="2" class="py-4 px-3 text-right text-slate-900">
-                                    <?php echo get_field('tarifa_motorhome', 41) ?: '$XXX'; ?> <span class="text-slate-400 text-xs">/ día</span>
+                                    <?php echo get_field('tarifa_motorhome', 41) ?: '$XXX'; ?> <span class="text-slate-400 text-sm">/ día</span>
                                 </td>
                             </tr>
                             <tr class="bg-slate-50 border-t border-slate-100">
                                 <td class="py-4 px-3 font-medium text-slate-900">Alquiler mensual permanente</td>
                                 <td colspan="2" class="py-4 px-3 text-right text-slate-900">
-                                    $80.000 <span class="text-slate-400 text-xs">/ mes</span>
+                                    $80.000 <span class="text-slate-400 text-sm">/ mes</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -265,7 +265,7 @@ get_header();
                             El predio cuenta con una rica historia de desarrollo institucional, pasando de ser un terreno agreste a uno de los complejos universitarios más completos de la región.
                         </p>
 
-                        <a href="<?php echo home_url('/camping-universitario/historia-del-camping/'); ?>" class="inline-flex items-center gap-2 text-xs font-bold uppercase  text-[#1a4731] hover:text-slate-900 transition-colors border-b border-[#1a4731] pb-1">
+                        <a href="<?php echo home_url('/camping-universitario/historia-del-camping/'); ?>" class="inline-flex items-center gap-2 text-sm font-bold uppercase  text-[#1a4731] hover:text-slate-900 transition-colors border-b border-[#1a4731] pb-1">
                             Ver Galería y Archivo Histórico
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -310,7 +310,7 @@ get_header();
                                 </a>
 
                                 <div class="flex-1 flex flex-col">
-                                    <div class="text-xs text-slate-400 uppercase  mb-3">
+                                    <div class="text-sm text-slate-400 uppercase  mb-3">
                                         <?php echo get_the_date('d F, Y'); ?>
                                     </div>
 
@@ -348,7 +348,7 @@ get_header();
 
                 <div class="mb-12 border-t border-green-800/50 pt-8 inline-block">
                     <h3 class="text-xl font-medium text-white mb-1">Sr. Daniel Juárez</h3>
-                    <p class="text-xs text-green-300 uppercase  font-bold">Coordinador de Departamento La Florida</p>
+                    <p class="text-sm text-green-300 uppercase  font-bold">Coordinador de Departamento La Florida</p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">

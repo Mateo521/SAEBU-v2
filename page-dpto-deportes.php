@@ -12,7 +12,7 @@ get_header();
         <section class="bg-slate-900 py-32 border-b border-slate-800 text-center">
             <div class="container mx-auto px-6 max-w-4xl relative z-10">
 
-                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold  uppercase text-slate-500 mb-8">
+                <nav class="flex justify-center items-center gap-3 text-sm font-bold  uppercase text-slate-500 mb-8">
                     <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                     <span>/</span>
                     <?php
@@ -78,22 +78,22 @@ get_header();
                     <div class="grid grid-cols-2 gap-x-8 gap-y-16 pt-2 lg:pl-16 lg:border-l border-slate-200">
                         <div>
                             <span class="block text-5xl md:text-7xl font-light text-slate-900 tracking-tighter mb-2">+10</span>
-                            <span class="text-xs font-bold uppercase  text-orange-600 block mb-1">Disciplinas</span>
+                            <span class="text-sm font-bold uppercase  text-orange-600 block mb-1">Disciplinas</span>
                             <p class="text-sm text-slate-500 font-light">Disponibles en modalidades recreativas y competitivas.</p>
                         </div>
                         <div>
                             <span class="block text-5xl md:text-7xl font-light text-slate-900 tracking-tighter mb-2">100%</span>
-                            <span class="text-xs font-bold uppercase  text-orange-600 block mb-1">Gratuito</span>
+                            <span class="text-sm font-bold uppercase  text-orange-600 block mb-1">Gratuito</span>
                             <p class="text-sm text-slate-500 font-light">Para todos los alumnos regulares de la UNSL.</p>
                         </div>
                         <div>
                             <span class="block text-5xl md:text-7xl font-light text-slate-900 tracking-tighter mb-2">03</span>
-                            <span class="text-xs font-bold uppercase  text-orange-600 block mb-1">Centros</span>
+                            <span class="text-sm font-bold uppercase  text-orange-600 block mb-1">Centros</span>
                             <p class="text-sm text-slate-500 font-light">Infraestructura deportiva distribuida en las distintas sedes.</p>
                         </div>
                         <div>
                             <span class="block text-5xl md:text-7xl font-light text-slate-900 tracking-tighter mb-2">Seguro</span>
-                            <span class="text-xs font-bold uppercase  text-orange-600 block mb-1">Cobertura</span>
+                            <span class="text-sm font-bold uppercase  text-orange-600 block mb-1">Cobertura</span>
                             <p class="text-sm text-slate-500 font-light">Incluye seguro de asistencia deportiva total.</p>
                         </div>
                     </div>
@@ -105,7 +105,7 @@ get_header();
         <section class="bg-slate-50 border-y border-slate-200 py-16">
             <div class="container mx-auto px-6 max-w-7xl flex flex-col md:flex-row items-center justify-between gap-8">
                 <div class="md:w-1/3">
-                    <h3 class="text-[10px] font-bold uppercase  text-slate-400 mb-2">Competencia regional</h3>
+                    <h3 class="text-sm font-bold uppercase  text-slate-400 mb-2">Competencia regional</h3>
                     <div class="text-4xl font-light text-slate-900 tracking-tight">Juegos <strong class="font-medium">JUR</strong></div>
                 </div>
                 <div class="md:w-2/3 md:border-l border-slate-300 md:pl-8">
@@ -151,7 +151,7 @@ get_header();
                 </div>
 
                 <div class="max-w-3xl mx-auto bg-slate-50 border border-slate-200 p-8 shadow-sm text-left md:text-center">
-                    <span class="text-[10px] font-bold text-orange-600 uppercase  block mb-3">Información e inscripciones</span>
+                    <span class="text-sm font-bold text-orange-600 uppercase  block mb-3">Información e inscripciones</span>
                     <p class="text-slate-700 font-light leading-relaxed">
                         La única forma de inscribirse o recibir información sobre las disciplinas deportivas es <strong>acercándose presencialmente</strong> al Polideportivo de Lavalle 950 o al Departamento de Deportes ubicado en el 1er piso del Comedor Universitario (Rivadavia 1029).
                     </p>
@@ -170,33 +170,33 @@ get_header();
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="bg-white border border-slate-200 p-8 flex flex-col justify-between">
                         <div>
-                            <span class="text-[10px] font-bold text-slate-400 uppercase  mb-2 block">Sede principal</span>
+                            <span class="text-sm font-bold text-slate-400 uppercase  mb-2 block">Sede principal</span>
                             <h3 class="text-xl font-medium text-slate-900 mb-4">San Luis</h3>
                             <p class="text-sm text-slate-500 font-light leading-relaxed mb-8">Centro principal de actividades deportivas de salón, gimnasio y gestión administrativa del departamento.</p>
                         </div>
-                        <div class="pt-4 border-t border-slate-100 text-xs text-slate-900 font-medium uppercase tracking-wider">
+                        <div class="pt-4 border-t border-slate-100 text-sm text-slate-900 font-medium uppercase tracking-wider">
                             Rivadavia 1029 (1er Piso) <br><span class="text-slate-400 font-light mt-1 block">Polideportivo: Lavalle 950</span>
                         </div>
                     </div>
 
                     <div class="bg-white border border-slate-200 p-8 flex flex-col justify-between">
                         <div>
-                            <span class="text-[10px] font-bold text-slate-400 uppercase  mb-2 block">Sede regional</span>
+                            <span class="text-sm font-bold text-slate-400 uppercase  mb-2 block">Sede regional</span>
                             <h3 class="text-xl font-medium text-slate-900 mb-4">Villa Mercedes</h3>
                             <p class="text-sm text-slate-500 font-light leading-relaxed mb-8">Instalaciones deportivas completas integradas al campus de las facultades de ingeniería y ciencias.</p>
                         </div>
-                        <div class="pt-4 border-t border-slate-100 text-xs text-slate-900 font-medium uppercase tracking-wider">
+                        <div class="pt-4 border-t border-slate-100 text-sm text-slate-900 font-medium uppercase tracking-wider">
                             Consultar en Campus
                         </div>
                     </div>
 
                     <div class="bg-white border border-slate-200 p-8 flex flex-col justify-between">
                         <div>
-                            <span class="text-[10px] font-bold text-slate-400 uppercase  mb-2 block">Sede regional</span>
+                            <span class="text-sm font-bold text-slate-400 uppercase  mb-2 block">Sede regional</span>
                             <h3 class="text-xl font-medium text-slate-900 mb-4">Villa de Merlo</h3>
                             <p class="text-sm text-slate-500 font-light leading-relaxed mb-8">Desarrollo de actividades recreativas, turismo universitario y deportes al aire libre.</p>
                         </div>
-                        <div class="pt-4 border-t border-slate-100 text-xs text-slate-900 font-medium uppercase tracking-wider">
+                        <div class="pt-4 border-t border-slate-100 text-sm text-slate-900 font-medium uppercase tracking-wider">
                             Campus Barranca Colorada
                         </div>
                     </div>
@@ -211,7 +211,7 @@ get_header();
 
                 <div class="mb-12 inline-block">
                     <h3 class="text-xl font-medium text-white mb-2">Téc. Jorge Francisco Verón</h3>
-                    <p class="text-xs text-orange-500 uppercase  font-bold">Jefe de Dpto. Educación Física y Deportes</p>
+                    <p class="text-sm text-orange-500 uppercase  font-bold">Jefe de Dpto. Educación Física y Deportes</p>
                 </div>
 
                 <div class="flex justify-center">

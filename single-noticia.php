@@ -9,7 +9,7 @@
             <header class="text-center mb-12">
 
                 <div class="mb-8 flex justify-center">
-                    <div class="text-xs font-bold overflow-auto uppercase  text-slate-400">
+                    <div class="text-sm font-bold overflow-auto uppercase  text-slate-400">
                         <?php if (function_exists('saebu_breadcrumbs')) saebu_breadcrumbs(); ?>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                 </h1>
 
                 <div class="flex items-center justify-center border-t border-b border-gray-100 py-4 max-w-xs mx-auto">
-                    <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500">
+                    <div class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-slate-500">
                         <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                         </svg>
@@ -86,7 +86,7 @@
                         ?>
                     </div>
                     <?php if (get_the_post_thumbnail_caption()) : ?>
-                        <figcaption class="text-center text-xs text-slate-500 mt-3 uppercase tracking-wide">
+                        <figcaption class="text-center text-sm text-slate-500 mt-3 uppercase tracking-wide">
                             <?php the_post_thumbnail_caption(); ?>
                         </figcaption>
                     <?php endif; ?>
@@ -106,7 +106,7 @@
 
             <footer class="mt-20 pt-10 border-t border-gray-200">
                 <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
-                    <span class="text-xs font-bold text-slate-400 uppercase ">Compartir</span>
+                    <span class="text-sm font-bold text-slate-400 uppercase ">Compartir</span>
 
                     <div class="flex gap-4">
                         <?php
@@ -159,7 +159,7 @@
                     <div class="container mx-auto px-4 max-w-6xl">
                         <div class="flex items-center justify-between mb-10">
                             <h2 class="text-xl font-bold text-slate-900 uppercase tracking-tight">Lecturas relacionadas</h2>
-                            <a href="<?php echo get_post_type_archive_link('noticia'); ?>" class="text-xs font-bold text-[#005eb8] uppercase  hover:underline">Ver todas</a>
+                            <a href="<?php echo get_post_type_archive_link('noticia'); ?>" class="text-sm font-bold text-[#005eb8] uppercase  hover:underline">Ver todas</a>
                         </div>
 
                         <div class="grid md:grid-cols-3 gap-8">
@@ -177,7 +177,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="p-6">
-                                        <div class="text-[10px] font-bold text-slate-400 uppercase  mb-2">
+                                        <div class="text-sm font-bold text-slate-400 uppercase  mb-2">
                                             <?php echo get_the_date('d/m/Y'); ?>
                                         </div>
                                         <h3 class="font-bold text-lg text-slate-900 leading-snug group-hover:text-[#005eb8] transition-colors">

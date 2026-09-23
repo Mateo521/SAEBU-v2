@@ -13,7 +13,7 @@
 </head>
 
 <body <?php body_class('bg-white overflow-x-hidden font-sans'); ?> x-data="{ mobileMenuOpen: false, searchOpen: false }" :class="{ 'overflow-hidden': mobileMenuOpen || searchOpen }">
-        <?php wp_body_open(); ?>
+    <?php wp_body_open(); ?>
 
 
 
@@ -38,7 +38,7 @@
                                 <h1 class="text-xl md:text-2xl font-bold text-slate-800 leading-tight group-hover:text-[#005eb8] transition-colors">
                                     <?php bloginfo('name'); ?>
                                 </h1>
-                                <p class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wide">
+                                <p class="text-sm md:text-sm text-slate-500 uppercase tracking-wide">
                                     <?php bloginfo('description'); ?>
                                 </p>
                             </div>
@@ -166,12 +166,12 @@
             </svg>
         </button>
         <div class="w-full max-w-4xl px-6">
-            <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-widest block mb-4">Portal de noticias</span>
+            <span class="text-sm font-bold text-[#005eb8] uppercase tracking-widest block mb-4">Portal de noticias</span>
             <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
                 <input type="hidden" name="post_type" value="noticia" />
                 <input type="search" name="s" placeholder="¿Qué estás buscando?" class="w-full bg-transparent border-0 border-b-2 border-slate-300 focus:border-[#005eb8] focus:ring-0 px-6 py-4 text-4xl md:text-6xl font-light text-slate-900 placeholder:text-slate-300 transition-colors" x-ref="searchInput" x-init="$watch('searchOpen', value => { if(value) setTimeout(() => $refs.searchInput.focus(), 100) })" required>
             </form>
-            <p class="text-xs text-slate-400 uppercase tracking-widest mt-6">Escribí tu consulta y presioná Enter</p>
+            <p class="text-sm text-slate-400 uppercase tracking-widest mt-6">Escribí tu consulta y presioná Enter</p>
         </div>
     </div>
     <style>
@@ -198,4 +198,11 @@
             "globe_size": 20
         }
     </script>
+    <style>
+        .custom-logo-container img {
+            height: 55px;
+            width: 100%;
+
+        }
+    </style>
     <script src="https://cdn.gtranslate.net/widgets/latest/globe.js" defer></script>

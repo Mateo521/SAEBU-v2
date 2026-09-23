@@ -13,7 +13,7 @@ get_header();
         <section class="bg-slate-900 py-32 border-b border-slate-800 text-center">
             <div class="container mx-auto px-6 max-w-4xl relative z-10">
 
-                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold  uppercase text-slate-500 mb-8">
+                <nav class="flex justify-center items-center gap-3 text-sm font-bold  uppercase text-slate-500 mb-8">
                     <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                     <span>/</span>
                     <?php
@@ -58,7 +58,7 @@ get_header();
                             Función <strong class="font-semibold">Estratégica</strong>
                         </h2>
                         <div class="h-px w-12 bg-slate-900 mt-8 mb-8"></div>
-                        <span class="inline-block border border-slate-200 text-[10px] font-bold uppercase  text-slate-500 px-4 py-2">
+                        <span class="inline-block border border-slate-200 text-sm font-bold uppercase  text-slate-500 px-4 py-2">
                             Dir. Administrativo-Contable
                         </span>
                     </div>
@@ -137,7 +137,7 @@ get_header();
                 <div class="grid md:grid-cols-3 gap-8 items-stretch">
 
                     <div class="flex flex-col justify-center border border-slate-200 p-8">
-                        <span class="text-[10px] uppercase  text-slate-400 font-bold mb-4 block">Demandas Internas</span>
+                        <span class="text-sm uppercase  text-slate-400 font-bold mb-4 block">Demandas Internas</span>
                         <ul class="text-sm text-slate-600 font-light space-y-2">
                             <li>Administración General</li>
                             <li>Salud Estudiantil</li>
@@ -146,13 +146,13 @@ get_header();
                     </div>
 
                     <div class="flex flex-col justify-center bg-slate-900 text-white p-8 scale-105 shadow-xl z-10">
-                        <span class="text-[10px] uppercase  text-[#005eb8] font-bold mb-2 block">Nodo Central</span>
+                        <span class="text-sm uppercase  text-[#005eb8] font-bold mb-2 block">Nodo Central</span>
                         <h3 class="text-lg font-medium mb-2">Dpto. Contable</h3>
-                        <p class="text-xs text-slate-400 font-light">Procesamiento y Gestión Financiera</p>
+                        <p class="text-sm text-slate-400 font-light">Procesamiento y Gestión Financiera</p>
                     </div>
 
                     <div class="flex flex-col justify-center border border-slate-200 p-8 bg-slate-50">
-                        <span class="text-[10px] uppercase  text-slate-400 font-bold mb-4 block">Ejecución de Servicios</span>
+                        <span class="text-sm uppercase  text-slate-400 font-bold mb-4 block">Ejecución de Servicios</span>
                         <ul class="text-sm text-slate-600 font-light space-y-2">
                             <li>Sistema de Becas</li>
                             <li>Comedor Universitario</li>
@@ -225,19 +225,19 @@ get_header();
 
                 <div class="mb-12 inline-block">
                     <h3 class="text-xl font-medium text-white mb-2">Téc. Gustavo Garay</h3>
-                    <p class="text-xs text-[#005eb8] uppercase  font-bold">Jefe de Departamento Contable</p>
+                    <p class="text-sm text-[#005eb8] uppercase  font-bold">Jefe de Departamento Contable</p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">
                     <a href="mailto:saebucontable@gmail.com" class="inline-block bg-white text-slate-900 px-10 py-4 text-sm font-bold uppercase  hover:bg-slate-100  transition-all duration-300">
-                        Enviar Correo
+                        Enviar correo
                     </a>
                     <a href="tel:26644520300" class="inline-block border border-slate-600 text-white px-10 py-4 text-sm font-bold uppercase  hover:bg-slate-800 transition-all duration-300">
                         Llamar a Interno
                     </a>
                 </div>
 
-                <p class="text-xs text-slate-500 font-light mt-8">Línea rotativa: 2664 4520300 — Interno: 8131</p>
+                <p class="text-sm text-slate-500 font-light mt-8">Línea rotativa: 2664 4520300 — Interno: 8131</p>
 
             </div>
         </section>

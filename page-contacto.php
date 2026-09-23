@@ -43,7 +43,7 @@ get_header(); ?>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                         <div>
-                            <h3 class="text-xs font-bold uppercase  opacity-60 mb-1">Dirección</h3>
+                            <h3 class="text-sm font-bold uppercase  opacity-60 mb-1">Dirección</h3>
                             <p class="text-lg font-light italic">Rivadavia 1029, San Luis</p>
                         </div>
                     </div>
@@ -53,7 +53,7 @@ get_header(); ?>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                         <div>
-                            <h3 class="text-xs font-bold uppercase  opacity-60 mb-1">Consultas</h3>
+                            <h3 class="text-sm font-bold uppercase  opacity-60 mb-1">Consultas</h3>
                             <a href="mailto:saebuunsl@unsl.edu.ar" class="block text-base hover:underline decoration-1 underline-offset-4">saebuunsl@unsl.edu.ar</a>
                             <a href="mailto:saebu.unsl.edu@gmail.com" class="block text-base hover:underline decoration-1 underline-offset-4">saebu.unsl.edu@gmail.com</a>
                         </div>
@@ -64,14 +64,14 @@ get_header(); ?>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <div>
-                            <h3 class="text-xs font-bold uppercase  opacity-60 mb-1">Horario de atención</h3>
+                            <h3 class="text-sm font-bold uppercase  opacity-60 mb-1">Horario de atención</h3>
                             <p class="text-base font-light">Lunes a Viernes<br>08:00 hs — 14:00 hs</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!--div class="mt-12 pt-8 border-t border-white/10 text-xs opacity-50 font-light italic">
+            <!--div class="mt-12 pt-8 border-t border-white/10 text-sm opacity-50 font-light italic">
                 Secretaría de Asuntos Estudiantiles y Bienestar Universitario - UNSL
             </div-->
         </section>
@@ -115,7 +115,7 @@ get_header(); ?>
                 <div class="col-span-full pt-4">
                     <a href="#!">
                         <button type="submit" name="enviar_consulta"
-                            class="group relative inline-flex items-center gap-4 bg-[#416ed2] px-12 py-4  text-xs font-bold uppercase text-white hover:text-black hover:bg-[#F1E4FF] transition-all duration-500 ">
+                            class="group relative inline-flex items-center gap-4 bg-[#416ed2] px-12 py-4  text-sm font-bold uppercase text-white hover:text-black hover:bg-[#F1E4FF] transition-all duration-500 ">
                             Enviar Consulta
                             <svg class="w-4 h-4 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />

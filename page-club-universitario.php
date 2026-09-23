@@ -77,7 +77,7 @@ get_header();
                     </div>
 
                     <div class="lg:pl-16 lg:border-l border-slate-200">
-                        <h3 class="text-xs font-bold text-slate-400 uppercase  mb-10 pb-4 border-b border-slate-200">
+                        <h3 class="text-sm font-bold text-slate-400 uppercase  mb-10 pb-4 border-b border-slate-200">
                             Nuestros Valores
                         </h3>
 

@@ -11,7 +11,7 @@ get_header();
     <section class="py-24 md:py-32 text-center border-b border-slate-200">
         <div class="container mx-auto px-6 max-w-3xl">
 
-            <span class="text-[10px] font-bold  uppercase text-[#005eb8] mb-4 block">
+            <span class="text-sm font-bold  uppercase text-[#005eb8] mb-4 block">
                 Error de navegación
             </span>
 
@@ -40,7 +40,7 @@ get_header();
             <div class="grid md:grid-cols-[1.5fr_1fr] gap-16 md:gap-24 items-start">
 
                 <div>
-                    <h3 class="text-xs font-bold text-slate-400 uppercase  mb-8">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase  mb-8">
                         ¿Qué estabas buscando?
                     </h3>
                     <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" class="relative flex gap-4">
@@ -56,7 +56,7 @@ get_header();
                 </div>
 
                 <div class="md:border-l border-slate-200 md:pl-16">
-                    <h3 class="text-xs font-bold text-slate-400 uppercase  mb-8">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase  mb-8">
                         Enlaces útiles
                     </h3>
                     <ul class="space-y-4">
@@ -71,7 +71,7 @@ get_header();
                             </a>
                         </li>
                         <li>
-                            <a href="<?php echo home_url('/comedor-universitario'); ?>" class="text-lg font-medium text-slate-700 hover:text-[#005eb8] transition-colors">
+                            <a href="<?php echo home_url('/comedor'); ?>" class="text-lg font-medium text-slate-700 hover:text-[#005eb8] transition-colors">
                                 Comedor universitario
                             </a>
                         </li>
@@ -127,7 +127,7 @@ get_header();
                             </a>
 
                             <div class="flex-1 flex flex-col">
-                                <div class="text-[10px] font-bold text-[#005eb8] uppercase  mb-3">
+                                <div class="text-sm font-bold text-[#005eb8] uppercase  mb-3">
                                     <?php echo get_the_date('d M Y'); ?>
                                 </div>
 

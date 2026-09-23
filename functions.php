@@ -1574,7 +1574,7 @@ function saebu_noticias_departamento($args = array())
 
 
                                     <div class="absolute top-3 left-3">
-                                        <span class="px-2 py-1 bg-<?php echo esc_attr($config['color']); ?>-600 text-white text-[10px] font-bold uppercase tracking-wider rounded">
+                                        <span class="px-2 py-1 bg-<?php echo esc_attr($config['color']); ?>-600 text-white text-sm font-bold uppercase tracking-wider rounded">
                                             <?php echo esc_html($config['nombre']); ?>
                                         </span>
                                     </div>
@@ -1583,7 +1583,7 @@ function saebu_noticias_departamento($args = array())
 
                                 <div class="p-6 flex-1 flex flex-col">
 
-                                    <div class="text-xs text-gray-500 mb-2 flex items-center gap-2">
+                                    <div class="text-sm text-gray-500 mb-2 flex items-center gap-2">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                         </svg>
@@ -1824,22 +1824,23 @@ function mostrar_contenido_consulta($post)
 
 function registrar_autoridades_saebu()
 {
-
     register_post_type('autoridad', [
         'labels' => [
             'name' => 'Autoridades',
             'singular_name' => 'Autoridad'
         ],
-        'public'      => true,
-        'menu_icon'   => 'dashicons-businessperson',
-        'supports'    => ['title', 'thumbnail'],
-        'has_archive' => false,
+        'public'              => true,  
+        'publicly_queryable'  => false,  
+        'exclude_from_search' => true,   
+        'show_in_nav_menus'   => false,  
+        'menu_icon'           => 'dashicons-businessperson',
+        'supports'            => ['title', 'thumbnail'],
+        'has_archive'         => false,
     ]);
 
-
     register_taxonomy('sede', 'autoridad', [
-        'label'        => 'Sedes',
-        'hierarchical' => true,
+        'label'             => 'Sedes',
+        'hierarchical'      => true,
         'show_admin_column' => true,
     ]);
 }
@@ -1865,3 +1866,7 @@ function saebu_reemplazar_url_menu_dinamico_objetos($items, $args)
 }
 
 add_filter('wp_nav_menu_objects', 'saebu_reemplazar_url_menu_dinamico_objetos', 10, 2);
+
+
+
+

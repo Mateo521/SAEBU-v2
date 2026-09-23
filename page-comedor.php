@@ -46,7 +46,7 @@ $chequera_25     = get_field('precio_chequera_25') ?: '$62.500';
         </section>
 
         <div class="bg-[#005eb8] text-white py-4 text-center">
-            <span class="text-xs md:text-base font-bold uppercase ">
+            <span class="text-sm md:text-base font-bold uppercase ">
                 Servicio exclusivo para estudiantes regulares que cursen una carrera en la UNSL
             </span>
         </div>
@@ -259,17 +259,17 @@ $chequera_25     = get_field('precio_chequera_25') ?: '$62.500';
                     <div>
 
                         <h4 class="text-base font-medium text-slate-900 mb-2">Inscripción activa</h4>
-                        <p class="text-xs text-slate-500 font-light leading-relaxed">Debe estar formalmente inscripto/a al comedor como ingresante o renovante.</p>
+                        <p class="text-sm text-slate-500 font-light leading-relaxed">Debe estar formalmente inscripto/a al comedor como ingresante o renovante.</p>
                     </div>
                     <div>
 
                         <h4 class="text-base font-medium text-slate-900 mb-2">Certificado médico</h4>
-                        <p class="text-xs text-slate-500 font-light leading-relaxed">Presentar certificado médico original actualizado expedido por especialista.</p>
+                        <p class="text-sm text-slate-500 font-light leading-relaxed">Presentar certificado médico original actualizado expedido por especialista.</p>
                     </div>
                     <div>
 
                         <h4 class="text-base font-medium text-slate-900 mb-2">Estudio clínico</h4>
-                        <p class="text-xs text-slate-500 font-light leading-relaxed">Presentar fotocopia del estudio de biopsia confirmatorio.</p>
+                        <p class="text-sm text-slate-500 font-light leading-relaxed">Presentar fotocopia del estudio de biopsia confirmatorio.</p>
                     </div>
                 </div>
 

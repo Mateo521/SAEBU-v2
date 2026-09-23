@@ -13,7 +13,7 @@ get_header();
         <section class="bg-slate-900 py-32 border-b border-slate-800 text-center">
             <div class="container mx-auto px-6 max-w-4xl relative z-10">
 
-                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold  uppercase text-slate-500 mb-8">
+                <nav class="flex justify-center items-center gap-3 text-sm font-bold  uppercase text-slate-500 mb-8">
                     <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                     <span>/</span>
                     <?php
@@ -62,20 +62,20 @@ get_header();
                 <div class="grid md:grid-cols-2 gap-12">
 
                     <div class="border-t border-slate-200 pt-8">
-                        <span class="text-[10px] font-bold text-[#005eb8] uppercase  mb-3 block">Sede Capital</span>
+                        <span class="text-sm font-bold text-[#005eb8] uppercase  mb-3 block">Sede Capital</span>
                         <h3 class="text-2xl font-medium text-slate-900 mb-6">San Luis</h3>
 
                         <div class="space-y-4">
                             <div>
-                                <span class="block text-xs font-bold text-slate-400 uppercase  mb-1">Dirección</span>
+                                <span class="block text-base font-bold text-slate-400 uppercase  mb-1">Dirección</span>
                                 <p class="text-sm text-slate-700 font-light">Rivadavia 1359 (entre Av. España y Tomás Jofré)</p>
                             </div>
                             <div>
-                                <span class="block text-xs font-bold text-slate-400 uppercase  mb-1">Horario de Atención</span>
+                                <span class="block text-base font-bold text-slate-400 uppercase  mb-1">Horario de Atención</span>
                                 <p class="text-sm text-slate-700 font-light">Lunes a viernes de 8:00 a 13:00 hs</p>
                             </div>
                             <div>
-                                <span class="block text-xs font-bold text-slate-400 uppercase  mb-1">Contacto</span>
+                                <span class="block text-base font-bold text-slate-400 uppercase  mb-1">Contacto</span>
                                 <a href="tel:02664520300" class="text-sm text-slate-700 font-medium hover:text-[#005eb8] transition-colors">(0266) 4520300 Int. 8820</a><br>
                                 <a href="mailto:ceseu.saebu.unsl@gmail.com" class="text-sm text-slate-500 font-light hover:text-[#005eb8] transition-colors">ceseu.saebu.unsl@gmail.com</a>
                             </div>
@@ -83,20 +83,20 @@ get_header();
                     </div>
 
                     <div class="border-t border-slate-200 pt-8">
-                        <span class="text-[10px] font-bold text-[#005eb8] uppercase  mb-3 block">Sede Regional</span>
+                        <span class="text-sm font-bold text-[#005eb8] uppercase  mb-3 block">Sede Regional</span>
                         <h3 class="text-2xl font-medium text-slate-900 mb-6">Villa Mercedes</h3>
 
                         <div class="space-y-4">
                             <div>
-                                <span class="block text-xs font-bold text-slate-400 uppercase  mb-1">Dirección</span>
+                                <span class="block text-base font-bold text-slate-400 uppercase  mb-1">Dirección</span>
                                 <p class="text-sm text-slate-700 font-light">Buenos Aires 122 (Gral. Paz y San Martin)</p>
                             </div>
                             <div>
-                                <span class="block text-xs font-bold text-slate-400 uppercase  mb-1">Horario de Atención</span>
+                                <span class="block text-base font-bold text-slate-400 uppercase  mb-1">Horario de Atención</span>
                                 <p class="text-sm text-slate-700 font-light">Lunes a viernes de 8:00 a 13:00 hs</p>
                             </div>
                             <div>
-                                <span class="block text-xs font-bold text-slate-400 uppercase  mb-1">Contacto</span>
+                                <span class="block text-base font-bold text-slate-400 uppercase  mb-1">Contacto</span>
                                 <a href="tel:2657420565" class="text-sm text-slate-700 font-medium hover:text-[#005eb8] transition-colors">2657 420565</a><br>
                                 <a href="mailto:cuseunsl@gmail.com" class="text-sm text-slate-500 font-light hover:text-[#005eb8] transition-colors">cuseunsl@gmail.com</a>
                             </div>
@@ -106,7 +106,7 @@ get_header();
                 </div>
 
                 <div class="mt-16 pt-8 border-t border-slate-100 flex flex-wrap justify-center gap-x-12 gap-y-4 text-sm font-light text-slate-500">
-                    <span class="uppercase  text-[10px] font-bold text-slate-400 self-center">Equipo Administrativo:</span>
+                    <span class="uppercase  text-sm font-bold text-slate-400 self-center">Equipo Administrativo:</span>
                     <span><strong>Natalia Villegas</strong> (Adm)</span>
                     <span><strong>Juana Sarmiento</strong> (Adm)</span>
                     <span><strong>Patricia Agüero</strong> (Servicios Grales)</span>
@@ -118,7 +118,7 @@ get_header();
             <div class="container mx-auto px-6 max-w-5xl">
 
                 <div class="text-center mb-16">
-                    <span class="text-[10px] font-bold text-[#005eb8] uppercase  mb-4 block">Ingresantes</span>
+                    <span class="text-sm font-bold text-[#005eb8] uppercase  mb-4 block">Ingresantes</span>
                     <h2 class="text-3xl font-light text-slate-900 tracking-tight">
                         Certificado de <strong class="font-semibold">Salud Estudiantil</strong>
                     </h2>
@@ -127,13 +127,13 @@ get_header();
                 <div class="grid md:grid-cols-3 gap-12 relative">
 
                     <div class="relative z-10">
-                         
+                         <span class="text-3xl font-light text-slate-300 block mb-4">1</span>
                         <h3 class="text-lg font-medium text-slate-900 mb-3">Análisis clínicos</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed mb-4">
                             Deben realizarse en una entidad pública o privada. <strong>Tienen 4 meses de validez</strong> desde su extracción.
                         </p>
                         <div class="bg-white p-4 border border-slate-200">
-                            <ul class="grid grid-cols-2 gap-y-2 text-xs text-slate-700 font-medium">
+                            <ul class="grid grid-cols-2 gap-y-2 text-base text-slate-700 font-medium">
                                 <li>Hemograma</li>
                                 <li>Glucemia</li>
                                 <li>Colesterol Total</li>
@@ -147,7 +147,7 @@ get_header();
                     </div>
 
                     <div class="relative z-10 md:mt-12">
-                        <span class="text-3xl font-light text-slate-300 block mb-4">02</span>
+                        <span class="text-3xl font-light text-slate-300 block mb-4">2</span>
                         <h3 class="text-lg font-medium text-slate-900 mb-3">Registro Digital</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed mb-6">
                             Una vez obtenidos todos los resultados del laboratorio, es obligatorio completar el registro en nuestro sistema web.
@@ -161,12 +161,12 @@ get_header();
                     </div>
 
                     <div class="relative z-10">
-                        <span class="text-3xl font-light text-slate-300 block mb-4">03</span>
+                        <span class="text-3xl font-light text-slate-300 block mb-4">3</span>
                         <h3 class="text-lg font-medium text-slate-900 mb-3">Presentación</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed mb-4">
                             Presentarse con el <strong>resultado físico</strong> de los análisis en Sede San Luis (Rivadavia 1359). La atención es por orden de llegada.
                         </p>
-                        <ul class="text-xs text-slate-600 font-medium space-y-1">
+                        <ul class="text-base text-slate-600 font-medium space-y-1">
                             <li><span class="text-slate-400">Lun, Jue y Vie:</span> 7:30 a 13:30 hs.</li>
                             <li><span class="text-slate-400">Martes:</span> 9:00 a 12:00 hs.</li>
                             <li><span class="text-slate-400">Miércoles:</span> 7:30 a 16:30 hs.</li>
@@ -243,8 +243,8 @@ get_header();
                                         <li><?php echo $profesional; ?></li>
                                     <?php endforeach; ?>
                                 </ul>
-                                <p class="text-xs text-slate-500 font-light">
-                                    <strong class="uppercase  text-[10px] text-slate-400 mr-1">Atención:</strong>
+                                <p class="text-base text-slate-500 font-light">
+                                    <strong class="uppercase  text-sm text-slate-400 mr-1">Atención:</strong>
                                     <?php echo $esp['modalidad']; ?>
                                 </p>
                             </div>
@@ -258,7 +258,7 @@ get_header();
         <section class="py-16 bg-[#005eb8] text-white">
             <div class="container mx-auto px-6 max-w-5xl flex flex-col md:flex-row items-center justify-between gap-8">
                 <div class="md:w-1/3">
-                    <h3 class="text-[10px] font-bold uppercase  text-blue-200 mb-2">Programa Nacional</h3>
+                    <h3 class="text-sm font-bold uppercase  text-blue-200 mb-2">Programa Nacional</h3>
                     <div class="text-4xl font-light tracking-tight">Plan <strong class="font-semibold">REMEDIAR</strong></div>
                 </div>
                 <div class="md:w-2/3 md:border-l border-blue-400/30 md:pl-8">
@@ -311,7 +311,7 @@ get_header();
                                 </a>
 
                                 <div class="flex-1 flex flex-col">
-                                    <div class="text-[10px] font-bold text-[#005eb8] uppercase  mb-3">
+                                    <div class="text-sm font-bold text-[#005eb8] uppercase  mb-3">
                                         <?php echo get_the_date('d M Y'); ?>
                                     </div>
 
@@ -349,12 +349,12 @@ get_header();
 
                 <div class="mb-12 border-t border-slate-700 pt-8 inline-block">
                     <h3 class="text-xl font-medium text-white mb-2">Esp. María Agustina Romero Vieyra</h3>
-                    <p class="text-xs text-[#005eb8] uppercase  font-bold">Coordinadora del CeSEU</p>
+                    <p class="text-base text-[#005eb8] uppercase  font-bold">Coordinadora del CeSEU</p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">
                     <a href="mailto:ceseu.saebu.unsl@gmail.com" class="inline-block bg-white text-slate-900 px-10 py-4 text-sm font-bold uppercase  hover:bg-slate-100  transition-all duration-300">
-                        Enviar Correo
+                        Enviar correo
                     </a>
                     <div class="inline-block border border-slate-600 text-white px-10 py-4 text-sm font-bold uppercase  cursor-default">
                         Sede SL: Int. 8820

@@ -12,7 +12,7 @@ $total_results = $wp_query->found_posts;
 
     <section class="bg-slate-50 py-24 border-b border-slate-200 text-center">
         <div class="container mx-auto px-6 max-w-4xl">
-            <span class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-6 block">
+            <span class="text-sm font-bold tracking-widest uppercase text-slate-400 mb-6 block">
                 Resultados de búsqueda
             </span>
 
@@ -51,11 +51,11 @@ $total_results = $wp_query->found_posts;
 
                             <div class="flex-1 flex flex-col">
                                 <div class="flex items-center gap-3 mb-3">
-                                    <span class="text-[10px] font-bold text-[#005eb8] uppercase tracking-widest">
+                                    <span class="text-sm font-bold text-[#005eb8] uppercase tracking-widest">
                                         Noticia
                                     </span>
                                     <span class="w-1 h-1 rounded-full bg-slate-300"></span>
-                                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                                    <span class="text-sm font-bold text-slate-400 uppercase tracking-widest">
                                         <?php echo get_the_date('d M Y'); ?>
                                     </span>
                                 </div>
@@ -71,7 +71,7 @@ $total_results = $wp_query->found_posts;
                                 </div>
 
                                 <div class="mt-auto pt-4 border-t border-slate-100">
-                                    <a href="<?php the_permalink(); ?>" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-900 group-hover:text-[#005eb8] transition-colors">
+                                    <a href="<?php the_permalink(); ?>" class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-slate-900 group-hover:text-[#005eb8] transition-colors">
                                         Ver noticia
                                         <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>

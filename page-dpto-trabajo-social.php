@@ -13,7 +13,7 @@ get_header();
         <section class="bg-slate-900 py-32 border-b border-slate-800 text-center">
             <div class="container mx-auto px-6 max-w-4xl relative z-10">
 
-                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold  uppercase text-slate-500 mb-8">
+                <nav class="flex justify-center items-center gap-3 text-sm font-bold  uppercase text-slate-500 mb-8">
                     <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                     <span>/</span>
                     <?php
@@ -54,7 +54,7 @@ get_header();
 
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-light text-slate-900 tracking-tight mb-4">
-                        Circuito de Gestión de <strong class="font-semibold">Becas</strong>
+                        Circuito de gestión de <strong class="font-semibold">Becas</strong>
                     </h2>
                     <p class="text-lg text-slate-500 font-light">El proceso integral desde el asesoramiento inicial hasta la adjudicación final del beneficio.</p>
                 </div>
@@ -62,7 +62,7 @@ get_header();
                 <div class="relative border-l border-slate-200 pl-8 md:pl-12 space-y-12 ml-4 md:ml-0">
 
                     <div class="relative">
-                        <div class="absolute -left-[41px] md:-left-[69px] top-1 bg-white border-2 border-[#005eb8] text-[#005eb8] w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-xs md:text-sm font-bold">01</div>
+                        <div class="absolute -left-[41px] md:-left-[69px] top-1 bg-white border-2 border-[#005eb8] text-[#005eb8] w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-sm font-bold">1</div>
                         <h3 class="text-xl font-medium text-slate-900 mb-2">Asesoramiento</h3>
                         <p class="text-slate-600 font-light leading-relaxed">
                             Brindamos información detallada sobre el sistema de becas de la UNSL y orientamos sobre el Programa Nacional Progresar para la promoción de carreras.
@@ -70,7 +70,7 @@ get_header();
                     </div>
 
                     <div class="relative">
-                        <div class="absolute -left-[41px] md:-left-[69px] top-1 bg-white border-2 border-[#005eb8] text-[#005eb8] w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-xs md:text-sm font-bold">02</div>
+                        <div class="absolute -left-[41px] md:-left-[69px] top-1 bg-white border-2 border-[#005eb8] text-[#005eb8] w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-sm font-bold">2</div>
                         <h3 class="text-xl font-medium text-slate-900 mb-2">Convocatoria</h3>
                         <p class="text-slate-600 font-light leading-relaxed">
                             Apertura y seguimiento de inscripciones mediante el sistema informático institucional, en estrecha coordinación con el Departamento de Becas.
@@ -78,7 +78,7 @@ get_header();
                     </div>
 
                     <div class="relative">
-                        <div class="absolute -left-[41px] md:-left-[69px] top-1 bg-white border-2 border-[#005eb8] text-[#005eb8] w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-xs md:text-sm font-bold">03</div>
+                        <div class="absolute -left-[41px] md:-left-[69px] top-1 bg-white border-2 border-[#005eb8] text-[#005eb8] w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-sm font-bold">3</div>
                         <h3 class="text-xl font-medium text-slate-900 mb-2">Entrevistas</h3>
                         <p class="text-slate-600 font-light leading-relaxed">
                             Se realizan entrevistas socioeconómicas de valoración a todos los estudiantes que soliciten asistencia, asegurando equidad en el proceso.
@@ -86,7 +86,7 @@ get_header();
                     </div>
 
                     <div class="relative">
-                        <div class="absolute -left-[41px] md:-left-[69px] top-1 bg-[#005eb8] text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-xs md:text-sm font-bold">04</div>
+                        <div class="absolute -left-[41px] md:-left-[69px] top-1 bg-[#005eb8] text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-sm font-bold">4</div>
                         <h3 class="text-xl font-medium text-[#005eb8] mb-2">Adjudicación</h3>
                         <p class="text-slate-600 font-light leading-relaxed">
                             Otorgamiento formal de los beneficios a través del dictamen de la Comisión de Becas y Residencias de la SAEBU.
@@ -102,11 +102,11 @@ get_header();
 
                 <div class="grid lg:grid-cols-[1fr_1.5fr] gap-16 items-start">
 
-                    <div class="sticky top-10">
+                    <div class="relative md:sticky top-0 md:top-26">
                         <h2 class="text-3xl font-light text-slate-900 tracking-tight">
-                            Residencia <strong class="font-semibold">Universitaria</strong>
+                            Residencia <strong class="font-semibold">universitaria</strong>
                         </h2>
-                        <div class="h-px w-12 bg-slate-900 mt-8 mb-8"></div>
+                        <div class="h-px w-12 bg-slate-900 mt-4 mb-4"></div>
                         <p class="text-lg text-slate-500 font-light leading-relaxed">
                             Nuestro objetivo principal es atender las necesidades habitacionales y de convivencia, garantizando un entorno adecuado para el desarrollo de la vida académica.
                         </p>
@@ -116,31 +116,31 @@ get_header();
                         <div class="grid grid-cols-2 gap-8 mb-12 border-b border-slate-200 pb-12">
                             <div>
                                 <span class="block text-4xl md:text-5xl font-light text-[#005eb8] mb-2">40</span>
-                                <span class="text-xs font-bold uppercase  text-slate-400">Módulos Habitacionales</span>
+                                <span class="text-sm font-bold uppercase  text-slate-400">Módulos habitacionales</span>
                             </div>
                             <div>
                                 <span class="block text-4xl md:text-5xl font-light text-[#005eb8] mb-2">Capital</span>
-                                <span class="text-xs font-bold uppercase  text-slate-400">Sede San Luis</span>
+                                <span class="text-sm font-bold uppercase  text-slate-400">Sede San Luis</span>
                             </div>
                         </div>
 
                         <div class="space-y-8">
                             <div>
-                                <h3 class="text-sm font-bold text-slate-900 uppercase  mb-2">Ubicación y Distribución</h3>
+                                <h3 class="text-sm font-bold text-slate-900 uppercase  mb-2">Ubicación y distribución</h3>
                                 <p class="text-slate-600 font-light leading-relaxed">
                                     Ubicada en <strong>Rivadavia 1029</strong> (San Luis). El complejo cuenta con sectores habitacionales divididos para varones y mujeres.
                                 </p>
                             </div>
 
                             <div>
-                                <h3 class="text-sm font-bold text-slate-900 uppercase  mb-2">Población Objetivo</h3>
+                                <h3 class="text-sm font-bold text-slate-900 uppercase  mb-2">Población objetivo</h3>
                                 <p class="text-slate-600 font-light leading-relaxed">
                                     Se otorga prioridad absoluta de ingreso a estudiantes que sean beneficiarios de las <strong>Becas SAEBU</strong> y del <strong>Programa Progresar</strong>.
                                 </p>
                             </div>
 
                             <div>
-                                <h3 class="text-sm font-bold text-slate-900 uppercase  mb-2">Acompañamiento Académico</h3>
+                                <h3 class="text-sm font-bold text-slate-900 uppercase  mb-2">Acompañamiento académico</h3>
                                 <p class="text-slate-600 font-light leading-relaxed">
                                     Implementamos <strong>Acuerdos Académicos</strong> para flexibilizar las exigencias del reglamento general, previniendo la deserción universitaria y brindando apoyo a los residentes que lo necesiten.
                                 </p>
@@ -156,7 +156,7 @@ get_header();
             <div class="container mx-auto px-6 max-w-5xl">
 
                 <div class="text-center mb-16">
-                    <span class="text-[10px] font-bold text-[#005eb8] uppercase  mb-4 block">Programa Específico</span>
+                    <span class="text-sm font-bold text-[#005eb8] uppercase  mb-4 block">Programa específico</span>
                     <h2 class="text-3xl font-light text-slate-900 tracking-tight mb-4">
                         Área de Discapacidad e <strong class="font-semibold">Inclusión</strong>
                     </h2>
@@ -168,25 +168,25 @@ get_header();
                 <div class="grid md:grid-cols-2 gap-x-16 gap-y-12 mb-16">
                     <?php
                     $recursos_discapacidad = [
-                        'Recursos Materiales' => 'Gestión y provisión de los elementos físicos y de estudio necesarios para el cursado regular.',
-                        'Recursos Humanos' => 'Asignación de tutores y acompañamiento profesional personalizado durante la trayectoria académica.',
-                        'Recursos Tecnológicos' => 'Implementación de herramientas de accesibilidad digital y software adaptado a cada necesidad.',
-                        'Recursos Económicos' => 'Gestión prioritaria de becas, subsidios y ayudas financieras institucionales.'
+                        'Recursos materiales' => 'Gestión y provisión de los elementos físicos y de estudio necesarios para el cursado regular.',
+                        'Recursos humanos' => 'Asignación de tutores y acompañamiento profesional personalizado durante la trayectoria académica.',
+                        'Recursos tecnológicos' => 'Implementación de herramientas de accesibilidad digital y software adaptado a cada necesidad.',
+                        'Recursos económicos' => 'Gestión prioritaria de becas, subsidios y ayudas financieras institucionales.'
                     ];
 
                     $contador = 1;
                     foreach ($recursos_discapacidad as $titulo => $desc):
                     ?>
                         <div class="border-t border-slate-200 pt-4">
-                            <span class="text-[10px] font-bold text-slate-300  block mb-2">0<?php echo $contador++; ?></span>
+                            <span class="text-sm font-bold text-slate-300  block mb-2"><?php echo $contador++; ?></span>
                             <h3 class="text-lg font-medium text-slate-900 mb-2"><?php echo $titulo; ?></h3>
                             <p class="text-sm text-slate-500 font-light leading-relaxed"><?php echo $desc; ?></p>
                         </div>
                     <?php endforeach; ?>
                 </div>
 
-                <div class="bg-slate-50 border-l-2 border-[#005eb8] p-8 md:p-10">
-                    <h3 class="text-sm font-bold text-slate-900 uppercase  mb-3">Promoción y Difusión Temprana</h3>
+                <div class="bg-slate-50   p-8 md:p-10">
+                    <h3 class="text-sm font-bold text-slate-900 uppercase  mb-3">Promoción y difusión temprana</h3>
                     <p class="text-slate-600 font-light leading-relaxed mb-4">
                         Realizamos talleres informativos en los cursos de ingreso y jornadas de promoción de carreras. Nuestro objetivo central es lograr que el estudiante conozca y utilice la amplia gama de beneficios a su disposición <strong>desde el primer día de clases</strong>.
                     </p>
@@ -205,7 +205,7 @@ get_header();
 
                 <div class="mb-12 border-t border-slate-700 pt-8 inline-block">
                     <h3 class="text-xl font-medium text-white mb-2">Lic. Rosales Vanina del Valle</h3>
-                    <p class="text-xs text-[#005eb8] uppercase  font-bold">Jefa de Dpto. de Trabajo Social</p>
+                    <p class="text-sm text-[#005eb8] uppercase  font-bold">Jefa de Dpto. de Trabajo Social</p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">

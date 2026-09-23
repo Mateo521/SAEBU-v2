@@ -34,14 +34,10 @@
 
     <div class="relative z-10 container mx-auto px-6 py-12 max-w-7xl">
         <div class="max-w-7xl space-y-8">
-            <div class="inline-flex items-center gap-4">
-                <img class="w-10 opacity-90" src="<?php echo esc_url(get_template_directory_uri()); ?>/logo-unsl-2.png" alt="UNSL Logo">
-                <span class="text-sm text-slate-300 font-medium  uppercase">Universidad Nacional de San Luis</span>
-            </div>
 
             <div>
                 <h1 class="text-4xl md:text-5xl lg:text-7xl font-light text-white leading-tight mb-6 tracking-tight">
-                    Secretaría de   
+                    Secretaría de
                     <strong class="font-semibold">Asuntos Estudiantiles <br> y Bienestar Universitario</strong>
                 </h1>
                 <p class="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed font-light">
@@ -63,16 +59,23 @@
     <div class="container mx-auto px-6 max-w-7xl">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-200">
             <div class="px-6 py-2">
-                <h3 class="text-sm text-slate-500 uppercase  mb-1">Organización</h3>
-                <p class="text-lg text-slate-900 font-medium">Departamentos</p>
+                <a href="<?php echo home_url('/comedor'); ?>" class="block">
+                    <h3 class="text-sm text-slate-500 uppercase  mb-1">Comedor</h3>
+                    <p class="text-lg text-slate-900 font-medium">Servicio de alimentación nutricional, accesible y de calidad, diseñado para acompañar el rendimiento académico.</p>
+                </a>
             </div>
             <div class="px-6 py-2">
-                <h3 class="text-sm text-slate-500 uppercase  mb-1">Comunidad</h3>
-                <p class="text-lg text-slate-900 font-medium">Servicios al estudiante</p>
+                <a href="<?php echo home_url('//departamentos/dpto-trabajo-social/ceseu/'); ?>" class="block">
+
+                    <h3 class="text-sm text-slate-500 uppercase  mb-1">CeSEU</h3>
+                    <p class="text-lg text-slate-900 font-medium">Brindamos atención primaria, prevención y cuidado integral para asegurar el bienestar de nuestra comunidad estudiantil.</p>
+                </a>
             </div>
             <div class="px-6 py-2">
-                <h3 class="text-sm text-slate-500 uppercase  mb-1">Extensión</h3>
-                <p class="text-lg text-slate-900 font-medium">Compromiso público</p>
+                <a href="<?php echo home_url('/camping-universitario/'); ?>" class="block">
+                    <h3 class="text-sm text-slate-500 uppercase  mb-1">Camping Universitario</h3>
+                    <p class="text-lg text-slate-900 font-medium">Un espacio natural a orillas del dique, equipado para el descanso, el deporte y la recreación al aire libre.</p>
+                </a>
             </div>
         </div>
     </div>
@@ -123,7 +126,7 @@
                     </video>
 
                     <button id="play-pause-btn" class="absolute inset-0 w-full h-full flex items-center justify-center bg-slate-900/10 hover:bg-slate-900/20 transition-all cursor-pointer">
-                        <span class="bg-white text-slate-900 text-xs font-bold uppercase  px-6 py-3 rounded-full shadow-sm  transition-transform">
+                        <span class="bg-white text-slate-900 text-sm font-bold uppercase  px-6 py-3 rounded-full shadow-sm  transition-transform">
                             Ver Video
                         </span>
                     </button>
@@ -181,24 +184,24 @@ if ($menu_dia) :
 
             <div class="grid md:grid-cols-2 gap-16">
                 <div>
-                    <h3 class="text-xs text-slate-400 font-bold uppercase  mb-6 pb-2 border-b border-slate-200">Sede San Luis</h3>
+                    <h3 class="text-sm text-slate-400 font-bold uppercase  mb-6 pb-2 border-b border-slate-200">Sede San Luis</h3>
 
                     <div class="space-y-6">
                         <div>
-                            <span class="text-xs text-slate-500 uppercase tracking-wider block mb-1">Principal</span>
+                            <span class="text-sm text-slate-500 uppercase tracking-wider block mb-1">Principal</span>
                             <p class="text-xl text-slate-900 font-medium"><?php echo $sl['principal'] ?: 'No cargado'; ?></p>
                         </div>
 
                         <div class="grid grid-cols-2 gap-4">
                             <?php if ($sl['entrada']): ?>
                                 <div>
-                                    <span class="text-xs text-slate-500 uppercase tracking-wider block mb-1">Entrada</span>
+                                    <span class="text-sm text-slate-500 uppercase tracking-wider block mb-1">Entrada</span>
                                     <p class="text-slate-700"><?php echo $sl['entrada']; ?></p>
                                 </div>
                             <?php endif; ?>
                             <?php if ($sl['postre']): ?>
                                 <div>
-                                    <span class="text-xs text-slate-500 uppercase tracking-wider block mb-1">Postre</span>
+                                    <span class="text-sm text-slate-500 uppercase tracking-wider block mb-1">Postre</span>
                                     <p class="text-slate-700"><?php echo $sl['postre']; ?></p>
                                 </div>
                             <?php endif; ?>
@@ -206,7 +209,7 @@ if ($menu_dia) :
 
                         <?php if ($sl['pri_st'] || $sl['ent_st'] || $sl['pos_st']): ?>
                             <div class="pt-6 mt-6 border-t border-slate-200 border-dashed">
-                                <span class="text-xs text-slate-900 font-bold uppercase tracking-wider block mb-2">Opción Sin TACC</span>
+                                <span class="text-sm text-slate-900 font-bold uppercase tracking-wider block mb-2">Opción Sin TACC</span>
                                 <p class="text-slate-800 font-medium"><?php echo $sl['pri_st'] ?: 'Principal ST'; ?></p>
                                 <div class="text-sm text-slate-600 mt-2 space-y-1">
                                     <?php if ($sl['ent_st']) echo "<p>Entrada: {$sl['ent_st']}</p>"; ?>
@@ -223,24 +226,24 @@ if ($menu_dia) :
                 </div>
 
                 <div>
-                    <h3 class="text-xs text-slate-400 font-bold uppercase  mb-6 pb-2 border-b border-slate-200">Sede Villa Mercedes</h3>
+                    <h3 class="text-sm text-slate-400 font-bold uppercase  mb-6 pb-2 border-b border-slate-200">Sede Villa Mercedes</h3>
 
                     <div class="space-y-6">
                         <div>
-                            <span class="text-xs text-slate-500 uppercase tracking-wider block mb-1">Principal</span>
+                            <span class="text-sm text-slate-500 uppercase tracking-wider block mb-1">Principal</span>
                             <p class="text-xl text-slate-900 font-medium"><?php echo $vm['principal'] ?: 'No cargado'; ?></p>
                         </div>
 
                         <div class="grid grid-cols-2 gap-4">
                             <?php if ($vm['entrada']): ?>
                                 <div>
-                                    <span class="text-xs text-slate-500 uppercase tracking-wider block mb-1">Entrada</span>
+                                    <span class="text-sm text-slate-500 uppercase tracking-wider block mb-1">Entrada</span>
                                     <p class="text-slate-700"><?php echo $vm['entrada']; ?></p>
                                 </div>
                             <?php endif; ?>
                             <?php if ($vm['postre']): ?>
                                 <div>
-                                    <span class="text-xs text-slate-500 uppercase tracking-wider block mb-1">Postre</span>
+                                    <span class="text-sm text-slate-500 uppercase tracking-wider block mb-1">Postre</span>
                                     <p class="text-slate-700"><?php echo $vm['postre']; ?></p>
                                 </div>
                             <?php endif; ?>
@@ -248,7 +251,7 @@ if ($menu_dia) :
 
                         <?php if ($vm['pri_st'] || $vm['ent_st'] || $vm['pos_st']): ?>
                             <div class="pt-6 mt-6 border-t border-slate-200 border-dashed">
-                                <span class="text-xs text-slate-900 font-bold uppercase tracking-wider block mb-2">Opción Sin TACC</span>
+                                <span class="text-sm text-slate-900 font-bold uppercase tracking-wider block mb-2">Opción Sin TACC</span>
                                 <p class="text-slate-800 font-medium"><?php echo $vm['pri_st'] ?: 'Principal ST'; ?></p>
                                 <div class="text-sm text-slate-600 mt-2 space-y-1">
                                     <?php if ($vm['ent_st']) echo "<p>Entrada: {$vm['ent_st']}</p>"; ?>
@@ -300,13 +303,13 @@ if ($menu_dia) :
             );
 
             foreach ($departamentos as $depto) : ?>
-            
+
                 <a href="<?php echo home_url('/' . $depto['slug']); ?>"
                     class="group block bg-white/95 backdrop-blur-sm p-8 hover:border-[#005eb8] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                     <h3 class="text-lg font-medium text-slate-900 group-hover:text-[#005eb8] transition-colors mb-2">
                         <?php echo $depto['name']; ?>
                     </h3>
-                    <p class="text-sm text-slate-500 font-light leading-relaxed">  
+                    <p class="text-sm text-slate-500 font-light leading-relaxed">
                         <?php echo $depto['desc']; ?>
                     </p>
                 </a>
@@ -360,7 +363,7 @@ if ($menu_dia) :
                                     </a>
 
                                     <div class="flex-1 flex flex-col">
-                                        <div class="text-xs text-slate-400 uppercase  mb-3">
+                                        <div class="text-sm text-slate-400 uppercase  mb-3">
                                             <?php echo get_the_date('d F, Y'); ?>
                                         </div>
 

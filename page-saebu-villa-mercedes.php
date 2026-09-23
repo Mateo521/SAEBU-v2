@@ -14,7 +14,7 @@ get_header();
         <section class="bg-slate-900 py-32 border-b border-slate-800 text-center">
             <div class="container mx-auto px-6 max-w-4xl relative z-10">
 
-                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold  uppercase text-slate-500 mb-8">
+                <nav class="flex justify-center items-center gap-3 text-sm font-bold  uppercase text-slate-500 mb-8">
                     <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                     <span>/</span>
                     <?php
@@ -55,18 +55,18 @@ get_header();
                 <div class="bg-white border border-slate-200 shadow-sm grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200">
 
                     <div class="p-8 text-center md:text-left flex flex-col justify-center">
-                        <span class="text-[10px] font-bold text-slate-400 uppercase  mb-2 block">Ubicación Física</span>
+                        <span class="text-sm font-bold text-slate-400 uppercase  mb-2 block">Ubicación Física</span>
                         <h3 class="text-lg font-medium text-slate-900 leading-snug">Ruta Provincial 55 extremo norte</h3>
                     </div>
 
                     <div class="p-8 text-center md:text-left flex flex-col justify-center">
-                        <span class="text-[10px] font-bold text-slate-400 uppercase  mb-2 block">Atención al Público</span>
+                        <span class="text-sm font-bold text-slate-400 uppercase  mb-2 block">Atención al Público</span>
                         <h3 class="text-lg font-medium text-slate-900 leading-snug">Lunes a Viernes</h3>
                         <p class="text-sm text-slate-500 font-light">8:00 a 12:00 hs</p>
                     </div>
 
                     <div class="p-8 text-center md:text-left flex flex-col justify-center bg-slate-50">
-                        <span class="text-[10px] font-bold text-purple-600 uppercase  mb-2 block">Contacto Directo</span>
+                        <span class="text-sm font-bold text-purple-600 uppercase  mb-2 block">Contacto Directo</span>
                         <a href="tel:2657420565" class="text-lg font-medium text-slate-900 hover:text-purple-600 transition-colors leading-snug block">
                             (2657) 420565
                         </a>
@@ -135,11 +135,11 @@ get_header();
 
                         <div class="space-y-4">
                             <a href="https://www.facebook.com/SsAEBU" target="_blank" class="block border border-slate-200 bg-white p-4 hover:border-purple-500 hover:shadow-sm transition-all group">
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase  mb-1">Facebook</span>
+                                <span class="block text-sm font-bold text-slate-400 uppercase  mb-1">Facebook</span>
                                 <span class="text-sm font-medium text-slate-900 group-hover:text-purple-600 transition-colors">@SsAEBU</span>
                             </a>
                             <a href="https://www.instagram.com/ssaebuu" target="_blank" class="block border border-slate-200 bg-white p-4 hover:border-purple-500 hover:shadow-sm transition-all group">
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase  mb-1">Instagram</span>
+                                <span class="block text-sm font-bold text-slate-400 uppercase  mb-1">Instagram</span>
                                 <span class="text-sm font-medium text-slate-900 group-hover:text-purple-600 transition-colors">@ssaebuu</span>
                             </a>
                         </div>
@@ -160,7 +160,7 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1108.4269164908467!2d
                                 </iframe>
                             </div>
                         </div>
-                        <p class="text-right text-[10px] text-slate-400 uppercase  mt-3 font-bold">
+                        <p class="text-right text-sm text-slate-400 uppercase  mt-3 font-bold">
                             Ubicación Geográfica
                         </p>
                     </div>
@@ -179,7 +179,7 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1108.4269164908467!2d
 
                 <div class="mb-12 border-t border-slate-700 pt-8 inline-block">
                     <h3 class="text-xl font-medium text-white mb-2">Administración Sede V. Mercedes</h3>
-                    <p class="text-xs text-purple-500 uppercase  font-bold">Atención a la Comunidad</p>
+                    <p class="text-sm text-purple-500 uppercase  font-bold">Atención a la Comunidad</p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">

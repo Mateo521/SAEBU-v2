@@ -14,7 +14,7 @@ get_header();
         <section class="bg-slate-900 py-32 border-b border-slate-800 text-center">
             <div class="container mx-auto px-6 max-w-4xl relative z-10">
 
-                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold  uppercase text-slate-500 mb-8">
+                <nav class="flex justify-center items-center gap-3 text-sm font-bold  uppercase text-slate-500 mb-8">
                     <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                     <span>/</span>
                     <a href="<?php echo home_url('/sedes'); ?>" class="hover:text-white transition-colors">Sedes regionales</a>
@@ -37,19 +37,19 @@ get_header();
                 <div class="bg-white border border-slate-200 shadow-sm grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200">
 
                     <div class="p-8 text-center md:text-left flex flex-col justify-center">
-                        <span class="text-[10px] font-bold text-slate-400 uppercase  mb-2 block">Ubicación Física</span>
+                        <span class="text-sm font-bold text-slate-400 uppercase  mb-2 block">Ubicación Física</span>
                         <h3 class="text-lg font-medium text-slate-900 leading-snug">Av. del Libertador S/N</h3>
                         <p class="text-sm text-slate-500 font-light">Campus Universitario Barranca Colorada</p>
                     </div>
 
                     <div class="p-8 text-center md:text-left flex flex-col justify-center">
-                        <span class="text-[10px] font-bold text-slate-400 uppercase  mb-2 block">Atención al Público</span>
+                        <span class="text-sm font-bold text-slate-400 uppercase  mb-2 block">Atención al Público</span>
                         <h3 class="text-lg font-medium text-slate-900 leading-snug">Lunes a Viernes</h3>
                         <p class="text-sm text-slate-500 font-light">8:00 a 13:00 hs</p>
                     </div>
 
                     <div class="p-8 text-center md:text-left flex flex-col justify-center bg-slate-50">
-                        <span class="text-[10px] font-bold text-teal-600 uppercase  mb-2 block">Contacto Directo</span>
+                        <span class="text-sm font-bold text-teal-600 uppercase  mb-2 block">Contacto Directo</span>
                         <a href="tel:2664409340" class="text-lg font-medium text-slate-900 hover:text-teal-600 transition-colors leading-snug block">
                             (266) 4409340
                         </a>
@@ -118,11 +118,11 @@ get_header();
 
                         <div class="space-y-4">
                             <a href="https://www.facebook.com/SAEBUMerlo" target="_blank" rel="noopener" class="block border border-slate-200 bg-white p-4 hover:border-teal-600 hover:shadow-sm transition-all group">
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase  mb-1">Facebook</span>
+                                <span class="block text-sm font-bold text-slate-400 uppercase  mb-1">Facebook</span>
                                 <span class="text-sm font-medium text-slate-900 group-hover:text-teal-600 transition-colors">@SAEBUMerlo</span>
                             </a>
                             <a href="https://www.instagram.com/saebuftu" target="_blank" rel="noopener" class="block border border-slate-200 bg-white p-4 hover:border-teal-600 hover:shadow-sm transition-all group">
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase  mb-1">Instagram</span>
+                                <span class="block text-sm font-bold text-slate-400 uppercase  mb-1">Instagram</span>
                                 <span class="text-sm font-medium text-slate-900 group-hover:text-teal-600 transition-colors">@saebuftu</span>
                             </a>
                         </div>
@@ -143,7 +143,7 @@ get_header();
                                 </iframe>
                             </div>
                         </div>
-                        <p class="text-right text-[10px] text-slate-400 uppercase  mt-3 font-bold">
+                        <p class="text-right text-sm text-slate-400 uppercase  mt-3 font-bold">
                             Ubicación: Campus Barranca Colorada
                         </p>
                     </div>
@@ -162,7 +162,7 @@ get_header();
 
                 <div class="mb-12 border-t border-slate-700 pt-8 inline-block">
                     <h3 class="text-xl font-medium text-white mb-2">Administración Sede Merlo</h3>
-                    <p class="text-xs text-teal-500 uppercase  font-bold">Asistencia Universitaria FTU</p>
+                    <p class="text-sm text-teal-500 uppercase  font-bold">Asistencia Universitaria FTU</p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">

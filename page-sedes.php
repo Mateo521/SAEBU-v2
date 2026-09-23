@@ -14,7 +14,7 @@ get_header();
         <section class="bg-slate-900 py-32 border-b border-slate-800 text-center">
             <div class="container mx-auto px-6 max-w-4xl relative z-10">
 
-                <nav class="flex justify-center items-center gap-3 text-[10px] font-bold  uppercase text-slate-500 mb-8">
+                <nav class="flex justify-center items-center gap-3 text-sm font-bold  uppercase text-slate-500 mb-8">
                     <a href="<?php echo home_url(); ?>" class="hover:text-white transition-colors">Inicio</a>
                     <span>/</span>
                     <span class="text-[#005eb8]">Sedes regionales</span>
@@ -43,28 +43,28 @@ get_header();
 
                     <article class="flex flex-col h-full group md:pr-8">
                         <div class="mb-8">
-                            <span class="text-[10px] font-bold text-[#005eb8] uppercase  mb-3 block">Sede central</span>
+                            <span class="text-sm font-bold text-[#005eb8] uppercase  mb-3 block">Sede central</span>
                             <h2 class="text-3xl font-medium text-slate-900 mb-4">San Luis</h2>
                             <p class="text-sm text-slate-500 font-light leading-relaxed">Administración central y coordinación general de servicios estudiantiles.</p>
                         </div>
 
                         <div class="space-y-6 mb-12 flex-1">
                             <div>
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase  mb-1">Dirección</span>
+                                <span class="block text-sm font-bold text-slate-400 uppercase  mb-1">Dirección</span>
                                 <p class="text-sm text-slate-700 font-light">Rivadavia 1029</p>
                             </div>
                             <div>
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase  mb-1">Teléfono</span>
+                                <span class="block text-sm font-bold text-slate-400 uppercase  mb-1">Teléfono</span>
                                 <a href="tel:02664520300" class="text-sm text-slate-700 font-medium hover:text-[#005eb8] transition-colors">(0266) 4520300</a>
                             </div>
                             <div>
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase  mb-1">Correo Electrónico</span>
+                                <span class="block text-sm font-bold text-slate-400 uppercase  mb-1">Correo Electrónico</span>
                                 <a href="mailto:saebuunsl@unsl.edu.ar" class="text-sm text-slate-500 font-light hover:text-[#005eb8] transition-colors">saebuunsl@unsl.edu.ar</a>
                             </div>
                         </div>
 
                         <div class="mt-auto pt-6 border-t border-slate-100">
-                            <a href="<?php echo home_url('/contacto'); ?>" class="inline-flex items-center gap-2 text-xs font-bold uppercase  text-slate-900 group-hover:text-[#005eb8] transition-colors">
+                            <a href="<?php echo home_url('/contacto'); ?>" class="inline-flex items-center gap-2 text-sm font-bold uppercase  text-slate-900 group-hover:text-[#005eb8] transition-colors">
                                 Ver administración
                                 <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -75,28 +75,28 @@ get_header();
 
                     <article class="flex flex-col h-full group md:px-8 border-t md:border-t-0 border-slate-200 pt-12 md:pt-0">
                         <div class="mb-8">
-                            <span class="text-[10px] font-bold text-purple-600 uppercase  mb-3 block">Sede regional</span>
+                            <span class="text-sm font-bold text-purple-600 uppercase  mb-3 block">Sede regional</span>
                             <h2 class="text-3xl font-medium text-slate-900 mb-4">Villa Mercedes</h2>
                             <p class="text-sm text-slate-500 font-light leading-relaxed">Centro de servicios para facultades de ingeniería y ciencias económico-jurídicas.</p>
                         </div>
 
                         <div class="space-y-6 mb-12 flex-1">
                             <div>
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase  mb-1">Dirección</span>
+                                <span class="block text-sm font-bold text-slate-400 uppercase  mb-1">Dirección</span>
                                 <p class="text-sm text-slate-700 font-light">Junín 269</p>
                             </div>
                             <div>
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase  mb-1">Teléfono</span>
+                                <span class="block text-sm font-bold text-slate-400 uppercase  mb-1">Teléfono</span>
                                 <a href="tel:2657420565" class="text-sm text-slate-700 font-medium hover:text-purple-600 transition-colors">2657 420565</a>
                             </div>
                             <div>
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase  mb-1">Correo Electrónico</span>
+                                <span class="block text-sm font-bold text-slate-400 uppercase  mb-1">Correo Electrónico</span>
                                 <a href="mailto:subsaebu@gmail.com" class="text-sm text-slate-500 font-light hover:text-purple-600 transition-colors">subsaebu@gmail.com</a>
                             </div>
                         </div>
 
                         <div class="mt-auto pt-6 border-t border-slate-100">
-                            <a href="<?php echo home_url('/saebu-villa-mercedes'); ?>" class="inline-flex items-center gap-2 text-xs font-bold uppercase  text-slate-900 group-hover:text-purple-600 transition-colors">
+                            <a href="<?php echo home_url('/saebu-villa-mercedes'); ?>" class="inline-flex items-center gap-2 text-sm font-bold uppercase  text-slate-900 group-hover:text-purple-600 transition-colors">
                                 Ir a sede local
                                 <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -107,28 +107,28 @@ get_header();
 
                     <article class="flex flex-col h-full group md:pl-8 border-t md:border-t-0 border-slate-200 pt-12 md:pt-0">
                         <div class="mb-8">
-                            <span class="text-[10px] font-bold text-teal-600 uppercase  mb-3 block">Sede regional</span>
+                            <span class="text-sm font-bold text-teal-600 uppercase  mb-3 block">Sede regional</span>
                             <h2 class="text-3xl font-medium text-slate-900 mb-4">Villa de Merlo</h2>
                             <p class="text-sm text-slate-500 font-light leading-relaxed">Atención a estudiantes de la Facultad de Turismo y Urbanismo (FTU).</p>
                         </div>
 
                         <div class="space-y-6 mb-12 flex-1">
                             <div>
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase  mb-1">Dirección</span>
+                                <span class="block text-sm font-bold text-slate-400 uppercase  mb-1">Dirección</span>
                                 <p class="text-sm text-slate-700 font-light">Av. del Libertador S/N</p>
                             </div>
                             <div>
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase  mb-1">Teléfono</span>
+                                <span class="block text-sm font-bold text-slate-400 uppercase  mb-1">Teléfono</span>
                                 <a href="tel:2664409340" class="text-sm text-slate-700 font-medium hover:text-teal-600 transition-colors">2664 409340</a>
                             </div>
                             <div>
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase  mb-1">Correo Electrónico</span>
+                                <span class="block text-sm font-bold text-slate-400 uppercase  mb-1">Correo Electrónico</span>
                                 <a href="mailto:saebumerloftu@gmail.com" class="text-sm text-slate-500 font-light hover:text-teal-600 transition-colors">saebumerloftu@gmail.com</a>
                             </div>
                         </div>
 
                         <div class="mt-auto pt-6 border-t border-slate-100">
-                            <a href="<?php echo home_url('/saebu-merlo'); ?>" class="inline-flex items-center gap-2 text-xs font-bold uppercase  text-slate-900 group-hover:text-teal-600 transition-colors">
+                            <a href="<?php echo home_url('/saebu-merlo'); ?>" class="inline-flex items-center gap-2 text-sm font-bold uppercase  text-slate-900 group-hover:text-teal-600 transition-colors">
                                 Ir a sede local
                                 <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -165,7 +165,7 @@ get_header();
                         <div class="bg-slate-50 px-6 py-2 text-center">
                             <div class="w-4 h-4 bg-[#005eb8] rounded-full mx-auto mb-3 ring-4 ring-blue-50"></div>
                             <h3 class="font-medium text-slate-900">San Luis</h3>
-                            <span class="block text-[10px] uppercase  text-slate-400 mt-1">Sede Central</span>
+                            <span class="block text-sm uppercase  text-slate-400 mt-1">Sede Central</span>
                         </div>
 
                         <div class="bg-slate-50 px-6 py-2 text-center">

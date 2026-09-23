@@ -9,7 +9,7 @@ get_header();
     <header class="bg-[#0f172a] text-white pt-20 pb-16">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
-                <div class="mb-8 text-xs font-bold uppercase  text-slate-400">
+                <div class="mb-8 text-sm font-bold uppercase  text-slate-400">
                     <?php if (function_exists('saebu_breadcrumbs')) saebu_breadcrumbs(); ?>
                 </div>
                 <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -29,7 +29,7 @@ get_header();
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
                 <div class="flex flex-wrap items-center gap-x-8 gap-y-4 py-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
-                    <span class="text-xs font-bold text-gray-700 uppercase  mr-2">Filtrar:</span>
+                    <span class="text-sm font-bold text-gray-700 uppercase  mr-2">Filtrar:</span>
                     <a href="<?php echo get_post_type_archive_link('noticia'); ?>"
                         class="text-sm font-bold pb-1 border-b-2 transition-colors <?php echo !is_tax() ? 'text-[#005eb8] border-[#005eb8]' : 'text-gray-500 border-transparent hover:text-gray-800'; ?>">
                         Todas
@@ -79,13 +79,13 @@ get_header();
                                     if ($terms && !is_wp_error($terms)) :
                                         $term = array_shift($terms);
                                     ?>
-                                        <div class="absolute bottom-0 left-0 bg-[#005eb8] text-white text-[10px] font-bold uppercase  px-3 py-1.5">
+                                        <div class="absolute bottom-0 left-0 bg-[#005eb8] text-white text-sm font-bold uppercase  px-3 py-1.5">
                                             <?php echo esc_html($term->name); ?>
                                         </div>
                                     <?php endif; ?>
                                 </a>
                                 <div class="p-6 flex flex-col flex-1">
-                                    <div class="text-xs text-gray-500 font-medium mb-3 flex items-center gap-2">
+                                    <div class="text-sm text-gray-500 font-medium mb-3 flex items-center gap-2">
                                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                         </svg>
@@ -100,7 +100,7 @@ get_header();
                                         <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
                                     </p>
                                     <div class="mt-auto pt-4 border-t border-gray-100">
-                                        <a href="<?php the_permalink(); ?>" class="inline-flex items-center text-xs font-bold uppercase tracking-wide text-slate-800 hover:text-[#005eb8] transition-colors">
+                                        <a href="<?php the_permalink(); ?>" class="inline-flex items-center text-sm font-bold uppercase tracking-wide text-slate-800 hover:text-[#005eb8] transition-colors">
                                             Ver más
                                             <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>

@@ -9,7 +9,7 @@ get_header();
 
 <section class="bg-slate-900 py-32 font-sans border-b border-slate-800">
     <div class="container mx-auto px-6 max-w-7xl text-center">
-        <span class="text-xs font-bold  uppercase text-slate-400 mb-6 block">
+        <span class="text-sm font-bold  uppercase text-slate-400 mb-6 block">
             Sobre Nosotros
         </span>
         <h1 class="text-4xl md:text-6xl font-light text-white leading-tight mb-8 tracking-tight">
@@ -39,19 +39,19 @@ get_header();
                 
                 <div class="grid sm:grid-cols-2 gap-x-12 gap-y-10">
                     <div class="border-t border-slate-200 pt-5">
-                        <h3 class="text-xs uppercase  font-bold text-slate-900 mb-2">Alimentación Óptima</h3>
+                        <h3 class="text-sm uppercase  font-bold text-slate-900 mb-2">Alimentación Óptima</h3>
                         <p class="text-slate-500 font-light text-sm leading-relaxed">Garantizamos acceso a nutrición equilibrada y accesible para toda la comunidad estudiantil.</p>
                     </div>
                     <div class="border-t border-slate-200 pt-5">
-                        <h3 class="text-xs uppercase  font-bold text-slate-900 mb-2">Atención Primaria</h3>
+                        <h3 class="text-sm uppercase  font-bold text-slate-900 mb-2">Atención Primaria</h3>
                         <p class="text-slate-500 font-light text-sm leading-relaxed">Brindamos cobertura integral, contención y prevención en salud a través de nuestros centros.</p>
                     </div>
                     <div class="border-t border-slate-200 pt-5">
-                        <h3 class="text-xs uppercase  font-bold text-slate-900 mb-2">Formación Integral</h3>
+                        <h3 class="text-sm uppercase  font-bold text-slate-900 mb-2">Formación Integral</h3>
                         <p class="text-slate-500 font-light text-sm leading-relaxed">Fomentamos el desarrollo humano mediante prácticas deportivas, recreativas y culturales.</p>
                     </div>
                     <div class="border-t border-slate-200 pt-5">
-                        <h3 class="text-xs uppercase  font-bold text-slate-900 mb-2">Equidad e Igualdad</h3>
+                        <h3 class="text-sm uppercase  font-bold text-slate-900 mb-2">Equidad e Igualdad</h3>
                         <p class="text-slate-500 font-light text-sm leading-relaxed">Gestionamos becas y residencias para sostener el acceso irrestricto a la educación superior.</p>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ get_header();
 
 <section class="py-32 bg-slate-50 font-sans border-y border-slate-200">
     <div class="container mx-auto px-6 max-w-5xl text-center">
-        <h2 class="text-xs font-bold uppercase  text-slate-400 mb-10">Nuestra Visión</h2>
+        <h2 class="text-sm font-bold uppercase  text-slate-400 mb-10">Nuestra Visión</h2>
         <p class="text-xl md:text-2xl font-light text-slate-900 leading-tight">
             "Constituirnos en la <strong class="font-medium text-[#005eb8]">primera Secretaría</strong> de Asuntos Estudiantiles y Bienestar Universitario en el ámbito de la Educación Superior dentro de los próximos 6 años, impulsados por nuestro compromiso de liderazgo y cambio."
         </p>
@@ -84,7 +84,6 @@ get_header();
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-12">
             <?php
-            // El mismo array de valores, pero simplificado, ya no necesitamos la clave 'icon'
             $valores = [
                 ['titulo' => 'Respeto', 'desc' => 'Valoramos la dignidad de cada persona, promoviendo un trato justo e igualitario.'],
                 ['titulo' => 'Empatía', 'desc' => 'Comprendemos y compartimos las realidades de nuestros estudiantes para brindar un apoyo real.'],
@@ -98,8 +97,8 @@ get_header();
 
             foreach ($valores as $index => $valor) : ?>
                 <div class="border-t border-slate-200 pt-5 group">
-                    <span class="text-[10px] font-bold text-slate-400  block mb-3 group-hover:text-[#005eb8] transition-colors">
-                        0<?php echo $index + 1; ?>
+                    <span class="text-sm font-bold text-slate-400  block mb-3 group-hover:text-[#005eb8] transition-colors">
+                        <?php echo $index + 1; ?>
                     </span>
                     <h3 class="text-lg font-medium text-slate-900 mb-2"><?php echo $valor['titulo']; ?></h3>
                     <p class="text-sm text-slate-500 font-light leading-relaxed"><?php echo $valor['desc']; ?></p>
