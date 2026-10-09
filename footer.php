@@ -6,17 +6,12 @@
                 <div class="flex items-center gap-4 mb-6">
                     <?php if (has_site_icon()) : ?>
                         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="block shrink-0">
-                            <img src="<?php echo esc_url(get_site_icon_url(128)); ?>"
+                            <img src="<?php echo get_template_directory_uri() . '/assets/img/logo-p.png'; ?>"
                                 alt="Logo <?php bloginfo('name'); ?>"
-                                class="w-12 h-12 rounded-sm object-contain opacity-90">
+                                class="w-full h-14 rounded-sm object-contain opacity-90">
                         </a>
                     <?php endif; ?>
-                    <div>
-                        <a href="<?php echo esc_url(home_url('/')); ?>" class="text-lg font-medium text-white leading-tight block">
-                            <?php bloginfo('name'); ?>
-                        </a>
-                        <span class="text-sm uppercase  text-[#005eb8] font-bold">UNSL</span>
-                    </div>
+
                 </div>
 
                 <p class="text-sm font-light leading-relaxed text-slate-400 mb-8 max-w-sm">
@@ -86,8 +81,8 @@
 
     <div class="bg-slate-950 border-t border-slate-800 py-8">
         <div class="container mx-auto px-6 max-w-7xl flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500 font-light">
-            <p>&copy; <?php echo date('Y'); ?> Universidad Nacional de San Luis.</p>
-            <p>Secretaría de Imagen y Comunicación Institucional.</p>
+            <p> <?php echo date('Y'); ?> Universidad Nacional de San Luis</p>
+            <p>Diseño y Desarrollo a cargo de la Secretaría de Imagen y Comunicación Institucional</p>
         </div>
     </div>
 </footer>

@@ -1,9 +1,4 @@
-/* public/assets/css/a11y-custom.css
- Variables CSS + reglas utilitarias para la toolbar personalizada
- - Mantén este archivo en public/assets/css/
- - Este CSS usa variables para que el JS sólo actualice variables, no
-estilos inline.
-*/
+
 :root{
 --a11y-font-scale: 1;
 --a11y-line-height: 1.6;
@@ -13,11 +8,11 @@ estilos inline.
 --a11y-contrast: 1;
 --a11y-invert: 0; /* 0 or 1 */
 }
-/* Aplicamos las variables globalmente. Tailwind puede coexistir con esto. */
+
 html{
-/* Multiplica la raíz para escalar fuentes sin romper rems */
+
 font-size: calc(1rem * var(--a11y-font-scale));
-/* filtros visuales globales */
+
 filter: saturate(var(--a11y-saturation)) contrast(var(--a11y-contrast))
 invert(var(--a11y-invert));
 }
@@ -26,7 +21,7 @@ line-height: var(--a11y-line-height);
 letter-spacing: var(--a11y-letter-spacing);
 text-align: var(--a11y-text-align);
 }
-/* Ocultar imágenes y vídeos */
+
 .a11y-hide-media img,
 .a11y-hide-media picture,
 .a11y-hide-media video,
@@ -34,23 +29,22 @@ text-align: var(--a11y-text-align);
 display: none !important;
 visibility: hidden !important;
 }
-/* Resaltar enlaces (outline y foco más claro) */
+
 .a11y-highlight-links a,
 .a11y-highlight-links a:focus{
 outline: 3px solid rgba(255,200,0,0.95) !important;
 background: rgba(255,255,0,0.06) !important;
 }
-/* Cursores (añade tus archivos .cur/.png en public/assets/cursors/) */
-.cursor-large *{ cursor: url('https://saebuvz.unsl.edu.ar/wp-content/themes/SAEBU-v2/assets/archivos/cursor-large.cur'), auto !
+
+.cursor-large *{ cursor: url('https://saebu.unsl.edu.ar/wp-content/themes/SAEBU-v2/assets/archivos/cursor-large.cur'), auto !
 important; }
-.cursor-dot *{ cursor: url('https://saebuvz.unsl.edu.ar/wp-content/themes/SAEBU-v2/assets/archivos/cursor-dot.cur'), auto !
+.cursor-dot *{ cursor: url('https://saebu.unsl.edu.ar/wp-content/themes/SAEBU-v2/assets/archivos/cursor-dot.cur'), auto !
 important; }
-/* Pequeñas mejoras para controles inyectados si no usas Tailwind en los
-controles */
+
 .a11y-custom-panel{ z-index: 9999; }
 .a11y-custom-panel .control-row{ display:flex; gap:.5rem; alignitems:center; margin: .45rem 0; }
 .a11y-custom-panel label{ display:block; font-size: .9rem; }
-/* Focus visible por si hay estilos globales que los escondan */
+
 :focus{ outline: 3px solid rgba(59,130,246,0.6); outline-offset: 2px; }
 
 
@@ -83,7 +77,7 @@ controles */
     display: block !important;
 }
 
-/* Estilos para modo oscuro */
+
 @media (prefers-color-scheme: dark) {
     .a11y-custom-panel {
         background: #1f2937 !important;
@@ -92,7 +86,7 @@ controles */
     }
 }
 
-/* Estilos para los controles */
+
 .control-row {
     margin-bottom: 12px !important;
     display: flex !important;

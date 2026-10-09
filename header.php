@@ -179,9 +179,14 @@
             display: none !important;
         }
     </style>
-    <!--link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/js/a11y-toolbar-master/css/a11y-toolbar.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/js/a11y-toolbar-master/css/a11y-custom.css"-->
-    <!--script src="<?php echo get_template_directory_uri(); ?>/assets/js/a11y-toolbar-master/js/a11y-custom.js"></script-->
+
+
+    <link rel="stylesheet" href="https://www.unsl.edu.ar/assets/js/a11y-toolbar-master/css/a11y-toolbar.css">
+    <link rel="stylesheet" href="https://www.unsl.edu.ar/assets/js/a11y-toolbar-master/css/a11y-custom.css">
+    <script src="https://www.unsl.edu.ar/assets/js/a11y-toolbar-master/js/a11y-custom.js"></script>
+
+
+
     <script>
         window.gtranslateSettings = {
             "default_language": "es",

@@ -43,11 +43,11 @@ while (have_posts()) : the_post();
 
 
         <div class="max-w-5xl mx-auto mb-16 text-center">
-            <a href="<?php echo home_url(); ?>" class="inline-flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors text-base uppercase  font-bold mb-12">
+            <a href="<?php echo esc_url(home_url('/menu-dia/')); ?>" class="inline-flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors text-base uppercase  font-bold mb-12">
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M15 19l-7-7 7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                Volver al inicio
+                Volver a todos los menús
             </a>
 
             <div class="flex flex-col items-center">

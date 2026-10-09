@@ -10,6 +10,7 @@ $precio_ticket   = get_field('precio_ticket_diario') ?: '$2.800';
 $precio_bandeja  = get_field('precio_bandeja_vianda') ?: '$600';
 $chequera_5      = get_field('precio_chequera_5') ?: '$12.500';
 $chequera_10     = get_field('precio_chequera_10') ?: '$25.000';
+$chequera_15     = get_field('precio_chequera_15') ?: '$42.000';
 $chequera_20     = get_field('precio_chequera_20') ?: '$50.000';
 $chequera_25     = get_field('precio_chequera_25') ?: '$62.500';
 ?>
@@ -222,6 +223,11 @@ $chequera_25     = get_field('precio_chequera_25') ?: '$62.500';
                             <div class="flex justify-between items-center py-5 group hover:bg-slate-50 transition-colors px-4 -mx-4">
                                 <span class="text-lg font-medium text-slate-900">10 Comidas</span>
                                 <span class="text-xl font-light text-slate-500 group-hover:text-[#005eb8] transition-colors"><?php echo esc_html($chequera_10); ?></span>
+                            </div>
+
+                            <div class="flex justify-between items-center py-5 group hover:bg-slate-50 transition-colors px-4 -mx-4">
+                                <span class="text-lg font-medium text-slate-900">15 Comidas</span>
+                                <span class="text-xl font-light text-slate-500 group-hover:text-[#005eb8] transition-colors"><?php echo esc_html($chequera_15); ?></span>
                             </div>
 
                             <div class="flex justify-between items-center py-5 group hover:bg-slate-50 transition-colors px-4 -mx-4">

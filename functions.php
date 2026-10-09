@@ -1850,16 +1850,21 @@ add_action('init', 'registrar_autoridades_saebu');
 
 function saebu_reemplazar_url_menu_dinamico_objetos($items, $args)
 {
+
+    $noticia_id = isset($_GET['noticia_id']) ? absint($_GET['noticia_id']) : 0;
+    $url_dinamica = '';
+
+    if ($noticia_id && get_post_type($noticia_id) === 'noticia' && get_post_status($noticia_id) === 'publish') {
+        $url_dinamica = get_permalink($noticia_id);
+    } elseif (function_exists('saebu_get_ultimo_menu_url')) {
+        $url_dinamica = saebu_get_ultimo_menu_url();
+    } else {
+        $url_dinamica = home_url('/');
+    }
+
     foreach ($items as $item) {
-
-        if ($item->url === '#menu-dinamico' || strpos($item->url, '#menu-dinamico') !== false) {
-
-
-            if (function_exists('saebu_get_ultimo_menu_url')) {
-                $item->url = esc_url(saebu_get_ultimo_menu_url());
-            } else {
-                $item->url = home_url('/');
-            }
+        if (strpos((string) $item->url, '#menu-dinamico') !== false) {
+            $item->url = esc_url($url_dinamica);
         }
     }
     return $items;
