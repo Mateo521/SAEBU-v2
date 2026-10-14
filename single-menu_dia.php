@@ -185,8 +185,6 @@ while (have_posts()) : the_post();
                             </div>
                         </div>
                     <?php endif; ?>
-
-
                     <?php if ($vm['principal_noche']): ?>
                         <div class="pt-6 border-t border-slate-100">
                             <span class="inline-block text-base bg-slate-800 text-white px-2 py-1 uppercase  font-bold mb-4">Noche</span>
@@ -232,11 +230,15 @@ while (have_posts()) : the_post();
             if (botonSuscribir) {
                 botonSuscribir.addEventListener('click', function(e) {
                     e.preventDefault();
-                    if (window.OneSignal) {
-                        window.OneSignal.push(function() {
-                            window.OneSignal.showSlidedownPrompt({
-                                force: true
-                            });
+                    if (window.OneSignal && window.OneSignal.Slidedown && typeof window.OneSignal.Slidedown.promptPush === 'function') {
+                        window.OneSignal.Slidedown.promptPush();
+                    } else if (window.OneSignal && typeof window.OneSignal.showSlidedownPrompt === 'function') {
+                        window.OneSignal.showSlidedownPrompt({ force: true });
+                    } else if (window.OneSignalDeferred) {
+                        window.OneSignalDeferred.push(async function(OneSignal) {
+                            if (OneSignal.Slidedown && typeof OneSignal.Slidedown.promptPush === 'function') {
+                                await OneSignal.Slidedown.promptPush();
+                            }
                         });
                     }
                 });
